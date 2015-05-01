@@ -1,0 +1,16 @@
+C:\Users\Ntokozo\Repos\Visual Studio\SIMS\SIMS\bin\Debug\SIMS.exe.config
+C:\Users\Ntokozo\Repos\Visual Studio\SIMS\SIMS\bin\Debug\SIMS.exe
+C:\Users\Ntokozo\Repos\Visual Studio\SIMS\SIMS\bin\Debug\SIMS.pdb
+C:\Users\Ntokozo\Repos\Visual Studio\SIMS\SIMS\bin\Debug\MetroFramework.Design.dll
+C:\Users\Ntokozo\Repos\Visual Studio\SIMS\SIMS\bin\Debug\MetroFramework.dll
+C:\Users\Ntokozo\Repos\Visual Studio\SIMS\SIMS\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Ntokozo\Repos\Visual Studio\SIMS\SIMS\obj\Debug\SIMS.csprojResolveAssemblyReference.cache
+C:\Users\Ntokozo\Repos\Visual Studio\SIMS\SIMS\obj\Debug\SIMS.ParentForm.resources
+C:\Users\Ntokozo\Repos\Visual Studio\SIMS\SIMS\obj\Debug\SIMS.Properties.Resources.resources
+C:\Users\Ntokozo\Repos\Visual Studio\SIMS\SIMS\obj\Debug\SIMS.csproj.GenerateResource.Cache
+C:\Users\Ntokozo\Repos\Visual Studio\SIMS\SIMS\obj\Debug\SIMS.exe
+C:\Users\Ntokozo\Repos\Visual Studio\SIMS\SIMS\obj\Debug\SIMS.pdb
+C:\Users\Ntokozo\Repos\Visual Studio\SIMS\SIMS\obj\Debug\SIMS.LoginForm.resources
+C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\bin\Debug\SIMS.exe.config
+C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.exe
+C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.pdb
