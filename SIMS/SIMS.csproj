@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LearnerModule\AddLearnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LearnerModule\AddLearnerForm.Designer.cs">
+      <DependentUpon>AddLearnerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SimsDS.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="LearnerModule\AddLearnerForm.resx">
+      <DependentUpon>AddLearnerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
