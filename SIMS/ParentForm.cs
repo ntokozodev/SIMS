@@ -17,12 +17,16 @@ using MetroFramework.Interfaces;
 
 using Oracle.ManagedDataAccess.Client;
 using Oracle.ManagedDataAccess.Types;
+using SIMS.LearnerModule;
 
 namespace SIMS
 {
     public partial class ParentForm : MetroForm
     {
         LoginForm log = new LoginForm();
+        private AddLearner learner = null;
+        private BrowseDetails details = null;
+
         public ParentForm()
         {
             InitializeComponent();
@@ -51,61 +55,48 @@ namespace SIMS
 
         internal void FormSetUp(MetroForm ChildForm)
         {
-
-            var child = ChildForm;
-            child.MdiParent = this;
-            //child.WindowState = FormWindowState.Maximized;
-            child.TopLevel = false;
-            child.AutoScroll = true;
-            MainPanel.Controls.Add(child);
-            child.Dock = DockStyle.Fill;
-            child.Show();
+            try 
+            {
+                var child = ChildForm;
+                child.MdiParent = this;
+                child.TopLevel = false;
+                child.AutoScroll = true;
+                MainPanel.Controls.Add(child);
+                MainPanel.Controls.SetChildIndex(child, 0);
+                child.Dock = DockStyle.Fill;
+                child.Show();
+            }
+            catch (Exception ex) 
+            {
+                MetroMessageBox.Show(this, "Error:\n" + ex.Message.ToString());
+            }
         }
 
         private void exitTile_Click(object sender, EventArgs e)
         {
             DialogResult reply = default(DialogResult);
-            reply = MetroMessageBox.Show(this, "Are you sure you want to exit application?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            reply = MetroMessageBox.Show(this, "Do you want to close the application?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (reply == DialogResult.Yes)
                 Application.Exit();
-        }
-
-        private void LearnerModuleTile_Click(object sender, EventArgs e)
-        {
-            LearnerModule.AddLearnerForm learner = new LearnerModule.AddLearnerForm();
-            if (learner.IsMdiChild == false)
-                FormSetUp(learner);
-            else
-                MetroMessageBox.Show(this, "Already on Student Module Form");
-
-        }
-
-        /* 
-         * The String WndCls is the windows full path. Namespace.Classname 
-         */
-        internal bool CheckMdiClientDuplicates(string WndCls)
-        {
-            Form[] mdichld = ParentForm.MdiChildren;
-            if (this.MdiChildren.Length == 0)
-                return true;
-            
-            foreach (MetroForm selfm in mdichld)
-            {
-                string str = selfm.Name;
-                str = str.IndexOf(WndCls).ToString();
-                if (str != "-1")
-                    return true;
-            }
-            return false;
         }
 
         private void aboutTile_Click(object sender, EventArgs e)
         {}
 
         private void addNewLearnerToolStripMenuItem_Click(object sender, EventArgs e)
-        {}
+        {
+            if (learner != null)
+                learner.Close();
+            learner = new AddLearner();
+            FormSetUp(learner);
+        }
 
-        private void MainPanel_Paint(object sender, PaintEventArgs e)
-        {}
+        private void browseLearnerDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (details != null)
+                details.Close();
+            details = new BrowseDetails();
+            FormSetUp(details);
+        }
     }
 }
