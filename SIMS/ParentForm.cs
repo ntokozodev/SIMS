@@ -24,8 +24,10 @@ namespace SIMS
     public partial class ParentForm : MetroForm
     {
         LoginForm log = new LoginForm();
+
         private AddLearner learner = null;
         private BrowseDetails details = null;
+        private AsignLearner asign = null;
 
         public ParentForm()
         {
@@ -97,6 +99,14 @@ namespace SIMS
                 details.Close();
             details = new BrowseDetails();
             FormSetUp(details);
+        }
+
+        private void assignLearnerToClassToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (asign != null)
+                asign.Close();
+            asign = new AsignLearner();
+            FormSetUp(asign);
         }
     }
 }

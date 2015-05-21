@@ -38,16 +38,16 @@
             this.browseLearnerDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.assignLearnerToClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
-            this.helpTile = new MetroFramework.Controls.MetroTile();
-            this.aboutTile = new MetroFramework.Controls.MetroTile();
-            this.StaffTile = new MetroFramework.Controls.MetroTile();
-            this.metroTile2 = new MetroFramework.Controls.MetroTile();
-            this.MainPanel = new MetroFramework.Controls.MetroPanel();
             this.AccessMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpTile = new MetroFramework.Controls.MetroTile();
+            this.aboutTile = new MetroFramework.Controls.MetroTile();
+            this.StaffTile = new MetroFramework.Controls.MetroTile();
+            this.metroTile2 = new MetroFramework.Controls.MetroTile();
+            this.MainPanel = new MetroFramework.Controls.MetroPanel();
             this.ParentButtonPanel.SuspendLayout();
             this.StudentMenu.SuspendLayout();
             this.AccessMenu.SuspendLayout();
@@ -122,7 +122,7 @@
             this.StudentMenu.Name = "StudentMenu";
             this.StudentMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.StudentMenu.ShowImageMargin = false;
-            this.StudentMenu.Size = new System.Drawing.Size(226, 82);
+            this.StudentMenu.Size = new System.Drawing.Size(226, 104);
             this.StudentMenu.Style = MetroFramework.MetroColorStyle.Brown;
             this.StudentMenu.Text = "StudentMenu";
             this.StudentMenu.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -153,6 +153,7 @@
             this.assignLearnerToClassToolStripMenuItem.Name = "assignLearnerToClassToolStripMenuItem";
             this.assignLearnerToClassToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
             this.assignLearnerToClassToolStripMenuItem.Text = "Assign Learner to Class";
+            this.assignLearnerToClassToolStripMenuItem.Click += new System.EventHandler(this.assignLearnerToClassToolStripMenuItem_Click);
             // 
             // metroTile1
             // 
@@ -170,6 +171,55 @@
             this.metroTile1.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile1.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.metroTile1.UseSelectable = true;
+            // 
+            // AccessMenu
+            // 
+            this.AccessMenu.BackColor = System.Drawing.Color.Purple;
+            this.AccessMenu.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.AccessMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.changePasswordToolStripMenuItem,
+            this.loginToolStripMenuItem,
+            this.logoutToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.AccessMenu.Name = "AccessMenu";
+            this.AccessMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.AccessMenu.ShowImageMargin = false;
+            this.AccessMenu.Size = new System.Drawing.Size(190, 108);
+            this.AccessMenu.Style = MetroFramework.MetroColorStyle.Purple;
+            this.AccessMenu.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.AccessMenu.UseStyleColors = true;
+            // 
+            // changePasswordToolStripMenuItem
+            // 
+            this.changePasswordToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.changePasswordToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.changePasswordToolStripMenuItem.Text = "Change Password";
+            // 
+            // loginToolStripMenuItem
+            // 
+            this.loginToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.loginToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.loginToolStripMenuItem.Text = "Login";
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.logoutToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.exitToolStripMenuItem.Text = "E&xit";
             // 
             // helpTile
             // 
@@ -256,55 +306,6 @@
             this.MainPanel.VerticalScrollbarBarColor = true;
             this.MainPanel.VerticalScrollbarHighlightOnWheel = false;
             this.MainPanel.VerticalScrollbarSize = 10;
-            // 
-            // AccessMenu
-            // 
-            this.AccessMenu.BackColor = System.Drawing.Color.Purple;
-            this.AccessMenu.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.AccessMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.changePasswordToolStripMenuItem,
-            this.loginToolStripMenuItem,
-            this.logoutToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.AccessMenu.Name = "AccessMenu";
-            this.AccessMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.AccessMenu.ShowImageMargin = false;
-            this.AccessMenu.Size = new System.Drawing.Size(190, 108);
-            this.AccessMenu.Style = MetroFramework.MetroColorStyle.Purple;
-            this.AccessMenu.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.AccessMenu.UseStyleColors = true;
-            // 
-            // changePasswordToolStripMenuItem
-            // 
-            this.changePasswordToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.changePasswordToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
-            this.changePasswordToolStripMenuItem.Text = "Change Password";
-            // 
-            // loginToolStripMenuItem
-            // 
-            this.loginToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.loginToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
-            this.loginToolStripMenuItem.Text = "Login";
-            // 
-            // logoutToolStripMenuItem
-            // 
-            this.logoutToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.logoutToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
-            this.logoutToolStripMenuItem.Text = "Logout";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
-            this.exitToolStripMenuItem.Text = "E&xit";
             // 
             // ParentForm
             // 

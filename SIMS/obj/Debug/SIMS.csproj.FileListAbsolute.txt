@@ -26,3 +26,4 @@ C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.Properties.Resource
 C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.csproj.GenerateResource.Cache
 C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.LearnerModule.BrowseDetails.resources
 C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.LearnerModule.AddLearner.resources
+C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.LearnerModule.AsignLearner.resources

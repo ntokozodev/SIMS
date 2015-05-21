@@ -60,6 +60,12 @@
     <Compile Include="LearnerModule\AddLearner.Designer.cs">
       <DependentUpon>AddLearner.cs</DependentUpon>
     </Compile>
+    <Compile Include="LearnerModule\AsignLearner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LearnerModule\AsignLearner.Designer.cs">
+      <DependentUpon>AsignLearner.cs</DependentUpon>
+    </Compile>
     <Compile Include="LearnerModule\BrowseDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     </Compile>
     <EmbeddedResource Include="LearnerModule\AddLearner.resx">
       <DependentUpon>AddLearner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LearnerModule\AsignLearner.resx">
+      <DependentUpon>AsignLearner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LearnerModule\BrowseDetails.resx">
       <DependentUpon>BrowseDetails.cs</DependentUpon>
