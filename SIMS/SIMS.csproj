@@ -60,28 +60,28 @@
     <Compile Include="AboutSIMS.Designer.cs">
       <DependentUpon>AboutSIMS.cs</DependentUpon>
     </Compile>
-    <Compile Include="AccessControl\AddUser.cs">
+    <Compile Include="AdminControl\AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccessControl\AddUser.Designer.cs">
+    <Compile Include="AdminControl\AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="AccessControl\ChangePassword.cs">
+    <Compile Include="AdminControl\ChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccessControl\ChangePassword.Designer.cs">
+    <Compile Include="AdminControl\ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="AccessControl\Login.cs">
+    <Compile Include="AdminControl\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccessControl\Login.Designer.cs">
+    <Compile Include="AdminControl\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="AccessControl\Logout.cs">
+    <Compile Include="AdminControl\Logout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccessControl\Logout.Designer.cs">
+    <Compile Include="AdminControl\Logout.Designer.cs">
       <DependentUpon>Logout.cs</DependentUpon>
     </Compile>
     <Compile Include="AccountModule\AddExpenseType.cs">
@@ -144,6 +144,9 @@
     <Compile Include="AccountModule\ViewExpenses.Designer.cs">
       <DependentUpon>ViewExpenses.cs</DependentUpon>
     </Compile>
+    <Compile Include="CentreModule\Address.cs" />
+    <Compile Include="CentreModule\Centre.cs" />
+    <Compile Include="CentreModule\ClassRoom.cs" />
     <Compile Include="EmployeeModule\AddNewStaffGrade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +207,10 @@
     <Compile Include="LearnerModule\BrowseDetails.Designer.cs">
       <DependentUpon>BrowseDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="LearnerModule\Guardian.cs" />
+    <Compile Include="LearnerModule\GuardianStudent.cs" />
+    <Compile Include="LearnerModule\IStudent.cs" />
+    <Compile Include="LearnerModule\Student.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,19 +230,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SimsDS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Validation\Valid.cs" />
     <EmbeddedResource Include="AboutSIMS.resx">
       <DependentUpon>AboutSIMS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AccessControl\AddUser.resx">
+    <EmbeddedResource Include="AdminControl\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AccessControl\ChangePassword.resx">
+    <EmbeddedResource Include="AdminControl\ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AccessControl\Login.resx">
+    <EmbeddedResource Include="AdminControl\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AccessControl\Logout.resx">
+    <EmbeddedResource Include="AdminControl\Logout.resx">
       <DependentUpon>Logout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AccountModule\AddExpenseType.resx">

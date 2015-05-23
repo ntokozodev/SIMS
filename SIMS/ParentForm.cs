@@ -111,6 +111,13 @@ namespace SIMS
             }
         }
 
+        internal void createObject(MetroForm form)
+        {
+            if (form != null)
+                form.Close();
+            form = new MetroForm();
+        }
+
         private void exitTile_Click(object sender, EventArgs e)
         {
             DialogResult reply = default(DialogResult);
@@ -135,6 +142,7 @@ namespace SIMS
         #region Learner Module
         private void addNewLearnerToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MainPanel.Controls.Clear();
             if (learner != null)
                 learner.Close();
             learner = new AddLearner();
@@ -143,6 +151,7 @@ namespace SIMS
 
         private void browseLearnerDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MainPanel.Controls.Clear();
             if (details != null)
                 details.Close();
             details = new BrowseDetails();
@@ -151,6 +160,7 @@ namespace SIMS
 
         private void assignLearnerToClassToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MainPanel.Controls.Clear();
             if (asign != null)
                 asign.Close();
             asign = new AsignLearner();

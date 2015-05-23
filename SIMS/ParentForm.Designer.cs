@@ -37,8 +37,8 @@
             this.addNewLearnerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.browseLearnerDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.assignLearnerToClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.metroTile1 = new MetroFramework.Controls.MetroTile();
-            this.AccessMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
+            this.accessControlTile = new MetroFramework.Controls.MetroTile();
+            this.AdminMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,9 +72,10 @@
             this.MainPanel = new MetroFramework.Controls.MetroPanel();
             this.mainPanelContextMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.clearAllControlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addCentreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ParentButtonPanel.SuspendLayout();
             this.StudentMenu.SuspendLayout();
-            this.AccessMenu.SuspendLayout();
+            this.AdminMenu.SuspendLayout();
             this.EmployeeMenu.SuspendLayout();
             this.AccountsMenu.SuspendLayout();
             this.mainPanelContextMenu.SuspendLayout();
@@ -103,7 +104,7 @@
             this.ParentButtonPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ParentButtonPanel.Controls.Add(this.LearnerModuleTile);
-            this.ParentButtonPanel.Controls.Add(this.metroTile1);
+            this.ParentButtonPanel.Controls.Add(this.accessControlTile);
             this.ParentButtonPanel.Controls.Add(this.helpTile);
             this.ParentButtonPanel.Controls.Add(this.aboutTile);
             this.ParentButtonPanel.Controls.Add(this.StaffTile);
@@ -182,39 +183,40 @@
             this.assignLearnerToClassToolStripMenuItem.Text = "Assign Learner to Class";
             this.assignLearnerToClassToolStripMenuItem.Click += new System.EventHandler(this.assignLearnerToClassToolStripMenuItem_Click);
             // 
-            // metroTile1
+            // accessControlTile
             // 
-            this.metroTile1.ActiveControl = null;
-            this.metroTile1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroTile1.ContextMenuStrip = this.AccessMenu;
-            this.metroTile1.Location = new System.Drawing.Point(37, 1);
-            this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(170, 27);
-            this.metroTile1.Style = MetroFramework.MetroColorStyle.Purple;
-            this.metroTile1.TabIndex = 2;
-            this.metroTile1.Text = "Access Control";
-            this.metroTile1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroTile1.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.metroTile1.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.metroTile1.UseSelectable = true;
+            this.accessControlTile.ActiveControl = null;
+            this.accessControlTile.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.accessControlTile.ContextMenuStrip = this.AdminMenu;
+            this.accessControlTile.Location = new System.Drawing.Point(37, 1);
+            this.accessControlTile.Name = "accessControlTile";
+            this.accessControlTile.Size = new System.Drawing.Size(170, 27);
+            this.accessControlTile.Style = MetroFramework.MetroColorStyle.Purple;
+            this.accessControlTile.TabIndex = 2;
+            this.accessControlTile.Text = "Admin Control";
+            this.accessControlTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.accessControlTile.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.accessControlTile.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.accessControlTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.accessControlTile.UseSelectable = true;
             // 
-            // AccessMenu
+            // AdminMenu
             // 
-            this.AccessMenu.BackColor = System.Drawing.Color.Purple;
-            this.AccessMenu.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.AccessMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AdminMenu.BackColor = System.Drawing.Color.Purple;
+            this.AdminMenu.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.AdminMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addUserToolStripMenuItem,
             this.loginToolStripMenuItem,
             this.logoutToolStripMenuItem,
-            this.changePwordStripMenuItem});
-            this.AccessMenu.Name = "AccessMenu";
-            this.AccessMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.AccessMenu.ShowImageMargin = false;
-            this.AccessMenu.Size = new System.Drawing.Size(190, 108);
-            this.AccessMenu.Style = MetroFramework.MetroColorStyle.Purple;
-            this.AccessMenu.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.AccessMenu.UseStyleColors = true;
+            this.changePwordStripMenuItem,
+            this.addCentreToolStripMenuItem});
+            this.AdminMenu.Name = "AccessMenu";
+            this.AdminMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.AdminMenu.ShowImageMargin = false;
+            this.AdminMenu.Size = new System.Drawing.Size(190, 134);
+            this.AdminMenu.Style = MetroFramework.MetroColorStyle.Purple;
+            this.AdminMenu.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.AdminMenu.UseStyleColors = true;
             // 
             // addUserToolStripMenuItem
             // 
@@ -563,6 +565,13 @@
             this.clearAllControlsToolStripMenuItem.Text = "Clear All Controls";
             this.clearAllControlsToolStripMenuItem.Click += new System.EventHandler(this.clearAllControlsToolStripMenuItem_Click);
             // 
+            // addCentreToolStripMenuItem
+            // 
+            this.addCentreToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addCentreToolStripMenuItem.Name = "addCentreToolStripMenuItem";
+            this.addCentreToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.addCentreToolStripMenuItem.Text = "Add Centre";
+            // 
             // ParentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -582,7 +591,7 @@
             this.Load += new System.EventHandler(this.ParentForm_Load);
             this.ParentButtonPanel.ResumeLayout(false);
             this.StudentMenu.ResumeLayout(false);
-            this.AccessMenu.ResumeLayout(false);
+            this.AdminMenu.ResumeLayout(false);
             this.EmployeeMenu.ResumeLayout(false);
             this.AccountsMenu.ResumeLayout(false);
             this.mainPanelContextMenu.ResumeLayout(false);
@@ -598,14 +607,14 @@
         private MetroFramework.Controls.MetroTile metroTile2;
         private MetroFramework.Controls.MetroTile aboutTile;
         private MetroFramework.Controls.MetroTile LearnerModuleTile;
-        private MetroFramework.Controls.MetroTile metroTile1;
+        private MetroFramework.Controls.MetroTile accessControlTile;
         private MetroFramework.Controls.MetroContextMenu StudentMenu;
         private System.Windows.Forms.ToolStripMenuItem addNewLearnerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem browseLearnerDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem assignLearnerToClassToolStripMenuItem;
         private MetroFramework.Controls.MetroTile helpTile;
         private MetroFramework.Controls.MetroPanel MainPanel;
-        private MetroFramework.Controls.MetroContextMenu AccessMenu;
+        private MetroFramework.Controls.MetroContextMenu AdminMenu;
         private System.Windows.Forms.ToolStripMenuItem addUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
@@ -634,6 +643,7 @@
         private System.Windows.Forms.ToolStripMenuItem changeGradeToolStripMenuItem;
         private MetroFramework.Controls.MetroContextMenu mainPanelContextMenu;
         private System.Windows.Forms.ToolStripMenuItem clearAllControlsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addCentreToolStripMenuItem;
     }
 }
 
