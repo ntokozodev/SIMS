@@ -17,17 +17,54 @@ using MetroFramework.Interfaces;
 
 using Oracle.ManagedDataAccess.Client;
 using Oracle.ManagedDataAccess.Types;
+
 using SIMS.LearnerModule;
+using SIMS.AccountModule;
+using SIMS.EmployeeModule;
+using SIMS.AccessControl;
 
 namespace SIMS
 {
     public partial class ParentForm : MetroForm
     {
         LoginForm log = new LoginForm();
+        AboutSIMS about = null;
 
+        #region "Properties Learner Module"
         private AddLearner learner = null;
         private BrowseDetails details = null;
         private AsignLearner asign = null;
+        #endregion
+
+        #region "Properties Acounts Module"
+        private AddExpenseType expenseT = null;
+        private RecordExpensePayment expensePay = null;
+        private ViewExpenses viewExp = null;
+        private RecordStudentPayment studentPay = null;
+        private RecordStaffSalaryPayment salaryPay = null;
+        private BrowseStaffPayments staffPay = null;
+        private AddFeeStructure feeStruct = null;
+        private BrowseDueFees dueFee = null;
+        private StudentProfiles studentPro = null;
+        private StaffHours staffHr = null;
+        #endregion
+
+        #region "Properties Employee Module"
+        private AddStaffMember staff = null;
+        private BrowseStaffDetails staffD = null;
+        private AsignEducatorClass asignEdu = null;
+        private RemoveEducatorClass removeEdu = null;
+        private RecordStaffAttendance staffAt = null;
+        private AddNewStaffGrade staffGr = null;
+        private ChangeStaffGrade changeGr = null;
+        #endregion
+
+        #region "Properties AccessControl"
+        private AddUser addUser = null;
+        private Login logon = null;
+        private Logout logoff = null;
+        private ChangePassword changeP = null;
+        #endregion
 
         public ParentForm()
         {
@@ -83,8 +120,19 @@ namespace SIMS
         }
 
         private void aboutTile_Click(object sender, EventArgs e)
-        {}
+        {
+            if (about != null)
+                about.Close();
+            about = new AboutSIMS();
+            about.ShowDialog();
+        } 
 
+
+        /*
+         * Best candidates for refactoring...
+         */
+
+        #region Learner Module
         private void addNewLearnerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (learner != null)
@@ -107,6 +155,186 @@ namespace SIMS
                 asign.Close();
             asign = new AsignLearner();
             FormSetUp(asign);
+        }
+        #endregion
+
+        #region Accounts Module
+        private void addExpenseTypeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (expenseT != null)
+                expenseT.Close();
+            expenseT = new AddExpenseType();
+            FormSetUp(expenseT);
+        }
+
+        private void recordExpensePaymentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (expensePay != null)
+                expensePay.Close();
+            expensePay = new RecordExpensePayment();
+            FormSetUp(expensePay);
+        }
+
+        private void viewExpensesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (viewExp != null)
+                viewExp.Close();
+            viewExp = new ViewExpenses();
+            FormSetUp(viewExp);
+        }
+
+        private void recordStudentPaymentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (studentPay != null)
+                studentPay.Close();
+            studentPay = new RecordStudentPayment();
+            FormSetUp(studentPay);
+        }
+
+        private void recordStaffSalaryPaymentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (salaryPay != null)
+                salaryPay.Close();
+            salaryPay = new RecordStaffSalaryPayment();
+            FormSetUp(salaryPay);
+        }
+
+        private void browseStaffPaymentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (staffPay != null)
+                staffPay.Close();
+            staffPay = new BrowseStaffPayments();
+            FormSetUp(staffPay);
+        }
+
+        private void addFeeStructureToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (feeStruct != null)
+                feeStruct.Close();
+            feeStruct = new AddFeeStructure();
+            FormSetUp(feeStruct);
+        }
+
+        private void browseDueFeesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dueFee != null)
+                dueFee.Close();
+            dueFee = new BrowseDueFees();
+            FormSetUp(dueFee);
+        }
+
+        private void studentProfilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (studentPro != null)
+                studentPro.Close();
+            studentPro = new StudentProfiles();
+            FormSetUp(studentPro);
+        }
+
+        private void staffHoursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (staffHr != null)
+                staffHr.Close();
+            staffHr = new StaffHours();
+            FormSetUp(staffHr);
+        }
+        #endregion
+
+        #region Employee Module
+        private void addNewStaffMemberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (staff != null)
+                staff.Close();
+            staff = new AddStaffMember();
+            FormSetUp(staff);
+        }
+
+        private void browseStaffDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (staffD != null)
+                staffD.Close();
+            staffD = new BrowseStaffDetails();
+            FormSetUp(staffD);
+        }
+
+        private void asignEducatorToClassToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (asignEdu != null)
+                asignEdu.Close();
+            asignEdu = new AsignEducatorClass();
+            FormSetUp(asignEdu);
+        }
+
+        private void removeEducatorFromClassToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (removeEdu != null)
+                removeEdu.Close();
+            removeEdu = new RemoveEducatorClass();
+            FormSetUp(removeEdu);
+        }
+
+        private void recordStaffAttendanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (staffAt != null)
+                staffAt.Close();
+            staffAt = new RecordStaffAttendance();
+            FormSetUp(staffAt);
+        }
+
+        private void addNewStaffGradeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (staffGr != null)
+                staffGr.Close();
+            staffGr = new AddNewStaffGrade();
+            FormSetUp(staffGr);
+        }
+
+        private void changeGradeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (changeGr != null)
+                changeGr.Close();
+            changeGr = new ChangeStaffGrade();
+            FormSetUp(changeGr);
+        }
+        #endregion  
+
+        #region Access Control
+        private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (addUser != null)
+                addUser.Close();
+            addUser = new AddUser();
+            FormSetUp(addUser);
+        }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (logon != null)
+                logon.Close();
+            logon = new Login();
+            FormSetUp(logon);
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (logoff != null)
+                logoff.Close();
+            logoff = new Logout();
+            FormSetUp(logoff);
+        }
+
+        private void changePwordStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (changeP != null)
+                changeP.Close();
+            changeP = new ChangePassword();
+            FormSetUp(changeP);
+        }
+        #endregion
+
+        private void clearAllControlsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
         }
     }
 }

@@ -116,9 +116,9 @@
             this.userLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.userLabel.Location = new System.Drawing.Point(23, 79);
             this.userLabel.Name = "userLabel";
-            this.userLabel.Size = new System.Drawing.Size(98, 25);
+            this.userLabel.Size = new System.Drawing.Size(103, 25);
             this.userLabel.TabIndex = 4;
-            this.userLabel.Text = "UserName:";
+            this.userLabel.Text = "User Name:";
             this.userLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // mainLabel

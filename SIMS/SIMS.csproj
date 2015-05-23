@@ -54,6 +54,138 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutSIMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutSIMS.Designer.cs">
+      <DependentUpon>AboutSIMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccessControl\AddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccessControl\AddUser.Designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccessControl\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccessControl\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccessControl\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccessControl\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccessControl\Logout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccessControl\Logout.Designer.cs">
+      <DependentUpon>Logout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountModule\AddExpenseType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountModule\AddExpenseType.Designer.cs">
+      <DependentUpon>AddExpenseType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountModule\AddFeeStructure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountModule\AddFeeStructure.Designer.cs">
+      <DependentUpon>AddFeeStructure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountModule\BrowseDueFees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountModule\BrowseDueFees.Designer.cs">
+      <DependentUpon>BrowseDueFees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountModule\BrowseStaffPayments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountModule\BrowseStaffPayments.Designer.cs">
+      <DependentUpon>BrowseStaffPayments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountModule\RecordExpensePayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountModule\RecordExpensePayment.Designer.cs">
+      <DependentUpon>RecordExpensePayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountModule\RecordStaffSalaryPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountModule\RecordStaffSalaryPayment.Designer.cs">
+      <DependentUpon>RecordStaffSalaryPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountModule\RecordStudentPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountModule\RecordStudentPayment.Designer.cs">
+      <DependentUpon>RecordStudentPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountModule\StaffHours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountModule\StaffHours.Designer.cs">
+      <DependentUpon>StaffHours.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountModule\StudentProfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountModule\StudentProfiles.Designer.cs">
+      <DependentUpon>StudentProfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountModule\ViewExpenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountModule\ViewExpenses.Designer.cs">
+      <DependentUpon>ViewExpenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeModule\AddNewStaffGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeModule\AddNewStaffGrade.Designer.cs">
+      <DependentUpon>AddNewStaffGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeModule\AddStaffMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeModule\AddStaffMember.Designer.cs">
+      <DependentUpon>AddStaffMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeModule\AsignEducatorClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeModule\AsignEducatorClass.Designer.cs">
+      <DependentUpon>AsignEducatorClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeModule\BrowseStaffDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeModule\BrowseStaffDetails.Designer.cs">
+      <DependentUpon>BrowseStaffDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeModule\ChangeStaffGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeModule\ChangeStaffGrade.Designer.cs">
+      <DependentUpon>ChangeStaffGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeModule\RecordStaffAttendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeModule\RecordStaffAttendance.Designer.cs">
+      <DependentUpon>RecordStaffAttendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeModule\RemoveEducatorClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeModule\RemoveEducatorClass.Designer.cs">
+      <DependentUpon>RemoveEducatorClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="LearnerModule\AddLearner.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +223,72 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SimsDS.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AboutSIMS.resx">
+      <DependentUpon>AboutSIMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccessControl\AddUser.resx">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccessControl\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccessControl\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccessControl\Logout.resx">
+      <DependentUpon>Logout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountModule\AddExpenseType.resx">
+      <DependentUpon>AddExpenseType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountModule\AddFeeStructure.resx">
+      <DependentUpon>AddFeeStructure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountModule\BrowseDueFees.resx">
+      <DependentUpon>BrowseDueFees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountModule\BrowseStaffPayments.resx">
+      <DependentUpon>BrowseStaffPayments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountModule\RecordExpensePayment.resx">
+      <DependentUpon>RecordExpensePayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountModule\RecordStaffSalaryPayment.resx">
+      <DependentUpon>RecordStaffSalaryPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountModule\RecordStudentPayment.resx">
+      <DependentUpon>RecordStudentPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountModule\StaffHours.resx">
+      <DependentUpon>StaffHours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountModule\StudentProfiles.resx">
+      <DependentUpon>StudentProfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountModule\ViewExpenses.resx">
+      <DependentUpon>ViewExpenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeModule\AddNewStaffGrade.resx">
+      <DependentUpon>AddNewStaffGrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeModule\AddStaffMember.resx">
+      <DependentUpon>AddStaffMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeModule\AsignEducatorClass.resx">
+      <DependentUpon>AsignEducatorClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeModule\BrowseStaffDetails.resx">
+      <DependentUpon>BrowseStaffDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeModule\ChangeStaffGrade.resx">
+      <DependentUpon>ChangeStaffGrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeModule\RecordStaffAttendance.resx">
+      <DependentUpon>RecordStaffAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeModule\RemoveEducatorClass.resx">
+      <DependentUpon>RemoveEducatorClass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LearnerModule\AddLearner.resx">
       <DependentUpon>AddLearner.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +338,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

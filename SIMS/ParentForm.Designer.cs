@@ -39,18 +39,45 @@
             this.assignLearnerToClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.AccessMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
-            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changePwordStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpTile = new MetroFramework.Controls.MetroTile();
             this.aboutTile = new MetroFramework.Controls.MetroTile();
             this.StaffTile = new MetroFramework.Controls.MetroTile();
+            this.EmployeeMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
+            this.addNewStaffMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.browseStaffDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asignEducatorToClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeEducatorFromClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recordStaffAttendanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewStaffGradeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changeGradeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
+            this.AccountsMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
+            this.expensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addExpenseTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recordExpensePaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewExpensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recordStudentPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recordStaffSalaryPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.browseStaffPaymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.feesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addFeeStructureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.browseDueFeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentProfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.staffHoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainPanel = new MetroFramework.Controls.MetroPanel();
+            this.mainPanelContextMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
+            this.clearAllControlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ParentButtonPanel.SuspendLayout();
             this.StudentMenu.SuspendLayout();
             this.AccessMenu.SuspendLayout();
+            this.EmployeeMenu.SuspendLayout();
+            this.AccountsMenu.SuspendLayout();
+            this.mainPanelContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // exitTile
@@ -122,7 +149,7 @@
             this.StudentMenu.Name = "StudentMenu";
             this.StudentMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.StudentMenu.ShowImageMargin = false;
-            this.StudentMenu.Size = new System.Drawing.Size(226, 104);
+            this.StudentMenu.Size = new System.Drawing.Size(226, 82);
             this.StudentMenu.Style = MetroFramework.MetroColorStyle.Brown;
             this.StudentMenu.Text = "StudentMenu";
             this.StudentMenu.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -131,7 +158,7 @@
             // addNewLearnerToolStripMenuItem
             // 
             this.addNewLearnerToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.addNewLearnerToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.addNewLearnerToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.addNewLearnerToolStripMenuItem.Name = "addNewLearnerToolStripMenuItem";
             this.addNewLearnerToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
             this.addNewLearnerToolStripMenuItem.Text = "Add New Learner";
@@ -140,7 +167,7 @@
             // browseLearnerDetailsToolStripMenuItem
             // 
             this.browseLearnerDetailsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.browseLearnerDetailsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.browseLearnerDetailsToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.browseLearnerDetailsToolStripMenuItem.Name = "browseLearnerDetailsToolStripMenuItem";
             this.browseLearnerDetailsToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
             this.browseLearnerDetailsToolStripMenuItem.Text = "Browse Learner Details";
@@ -149,7 +176,7 @@
             // assignLearnerToClassToolStripMenuItem
             // 
             this.assignLearnerToClassToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.assignLearnerToClassToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.assignLearnerToClassToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.assignLearnerToClassToolStripMenuItem.Name = "assignLearnerToClassToolStripMenuItem";
             this.assignLearnerToClassToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
             this.assignLearnerToClassToolStripMenuItem.Text = "Assign Learner to Class";
@@ -177,10 +204,10 @@
             this.AccessMenu.BackColor = System.Drawing.Color.Purple;
             this.AccessMenu.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.AccessMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.changePasswordToolStripMenuItem,
+            this.addUserToolStripMenuItem,
             this.loginToolStripMenuItem,
             this.logoutToolStripMenuItem,
-            this.exitToolStripMenuItem});
+            this.changePwordStripMenuItem});
             this.AccessMenu.Name = "AccessMenu";
             this.AccessMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.AccessMenu.ShowImageMargin = false;
@@ -189,43 +216,47 @@
             this.AccessMenu.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.AccessMenu.UseStyleColors = true;
             // 
-            // changePasswordToolStripMenuItem
+            // addUserToolStripMenuItem
             // 
-            this.changePasswordToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.changePasswordToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
-            this.changePasswordToolStripMenuItem.Text = "Change Password";
+            this.addUserToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addUserToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
+            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.addUserToolStripMenuItem.Text = "Add User";
+            this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
             // 
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.loginToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.loginToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
             this.loginToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.loginToolStripMenuItem.Text = "Login";
+            this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.logoutToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.logoutToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
-            // exitToolStripMenuItem
+            // changePwordStripMenuItem
             // 
-            this.exitToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
-            this.exitToolStripMenuItem.Text = "E&xit";
+            this.changePwordStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.changePwordStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.changePwordStripMenuItem.Name = "changePwordStripMenuItem";
+            this.changePwordStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.changePwordStripMenuItem.Text = "Change Password";
+            this.changePwordStripMenuItem.Click += new System.EventHandler(this.changePwordStripMenuItem_Click);
             // 
             // helpTile
             // 
             this.helpTile.ActiveControl = null;
             this.helpTile.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.helpTile.Location = new System.Drawing.Point(917, 0);
+            this.helpTile.Location = new System.Drawing.Point(917, 1);
             this.helpTile.Name = "helpTile";
             this.helpTile.Size = new System.Drawing.Size(170, 27);
             this.helpTile.Style = MetroFramework.MetroColorStyle.Orange;
@@ -260,6 +291,7 @@
             // 
             this.StaffTile.ActiveControl = null;
             this.StaffTile.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.StaffTile.ContextMenuStrip = this.EmployeeMenu;
             this.StaffTile.Location = new System.Drawing.Point(389, 1);
             this.StaffTile.Name = "StaffTile";
             this.StaffTile.Size = new System.Drawing.Size(170, 27);
@@ -272,10 +304,91 @@
             this.StaffTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.StaffTile.UseSelectable = true;
             // 
+            // EmployeeMenu
+            // 
+            this.EmployeeMenu.BackColor = System.Drawing.Color.GreenYellow;
+            this.EmployeeMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewStaffMemberToolStripMenuItem,
+            this.browseStaffDetailsToolStripMenuItem,
+            this.asignEducatorToClassToolStripMenuItem,
+            this.removeEducatorFromClassToolStripMenuItem,
+            this.recordStaffAttendanceToolStripMenuItem,
+            this.addNewStaffGradeToolStripMenuItem,
+            this.changeGradeToolStripMenuItem});
+            this.EmployeeMenu.Name = "EmployeeMenu";
+            this.EmployeeMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.EmployeeMenu.ShowImageMargin = false;
+            this.EmployeeMenu.Size = new System.Drawing.Size(270, 186);
+            // 
+            // addNewStaffMemberToolStripMenuItem
+            // 
+            this.addNewStaffMemberToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewStaffMemberToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.addNewStaffMemberToolStripMenuItem.Name = "addNewStaffMemberToolStripMenuItem";
+            this.addNewStaffMemberToolStripMenuItem.Size = new System.Drawing.Size(269, 26);
+            this.addNewStaffMemberToolStripMenuItem.Text = "Add New Staff Member";
+            this.addNewStaffMemberToolStripMenuItem.Click += new System.EventHandler(this.addNewStaffMemberToolStripMenuItem_Click);
+            // 
+            // browseStaffDetailsToolStripMenuItem
+            // 
+            this.browseStaffDetailsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.browseStaffDetailsToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.browseStaffDetailsToolStripMenuItem.Name = "browseStaffDetailsToolStripMenuItem";
+            this.browseStaffDetailsToolStripMenuItem.Size = new System.Drawing.Size(269, 26);
+            this.browseStaffDetailsToolStripMenuItem.Text = "Browse Staff Details";
+            this.browseStaffDetailsToolStripMenuItem.Click += new System.EventHandler(this.browseStaffDetailsToolStripMenuItem_Click);
+            // 
+            // asignEducatorToClassToolStripMenuItem
+            // 
+            this.asignEducatorToClassToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.asignEducatorToClassToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.asignEducatorToClassToolStripMenuItem.Name = "asignEducatorToClassToolStripMenuItem";
+            this.asignEducatorToClassToolStripMenuItem.Size = new System.Drawing.Size(269, 26);
+            this.asignEducatorToClassToolStripMenuItem.Text = "Asign Educator to Class";
+            this.asignEducatorToClassToolStripMenuItem.Click += new System.EventHandler(this.asignEducatorToClassToolStripMenuItem_Click);
+            // 
+            // removeEducatorFromClassToolStripMenuItem
+            // 
+            this.removeEducatorFromClassToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeEducatorFromClassToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.removeEducatorFromClassToolStripMenuItem.Name = "removeEducatorFromClassToolStripMenuItem";
+            this.removeEducatorFromClassToolStripMenuItem.Size = new System.Drawing.Size(269, 26);
+            this.removeEducatorFromClassToolStripMenuItem.Text = "Remove Educator from Class";
+            this.removeEducatorFromClassToolStripMenuItem.Click += new System.EventHandler(this.removeEducatorFromClassToolStripMenuItem_Click);
+            // 
+            // recordStaffAttendanceToolStripMenuItem
+            // 
+            this.recordStaffAttendanceToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recordStaffAttendanceToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.recordStaffAttendanceToolStripMenuItem.Name = "recordStaffAttendanceToolStripMenuItem";
+            this.recordStaffAttendanceToolStripMenuItem.Size = new System.Drawing.Size(269, 26);
+            this.recordStaffAttendanceToolStripMenuItem.Text = "Record Staff Attendance";
+            this.recordStaffAttendanceToolStripMenuItem.Click += new System.EventHandler(this.recordStaffAttendanceToolStripMenuItem_Click);
+            // 
+            // addNewStaffGradeToolStripMenuItem
+            // 
+            this.addNewStaffGradeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewStaffGradeToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.addNewStaffGradeToolStripMenuItem.Name = "addNewStaffGradeToolStripMenuItem";
+            this.addNewStaffGradeToolStripMenuItem.Size = new System.Drawing.Size(269, 26);
+            this.addNewStaffGradeToolStripMenuItem.Text = "Add New Staff Grade";
+            this.addNewStaffGradeToolStripMenuItem.Click += new System.EventHandler(this.addNewStaffGradeToolStripMenuItem_Click);
+            // 
+            // changeGradeToolStripMenuItem
+            // 
+            this.changeGradeToolStripMenuItem.BackColor = System.Drawing.Color.GreenYellow;
+            this.changeGradeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changeGradeToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.changeGradeToolStripMenuItem.Name = "changeGradeToolStripMenuItem";
+            this.changeGradeToolStripMenuItem.Size = new System.Drawing.Size(269, 26);
+            this.changeGradeToolStripMenuItem.Text = "Change Grade";
+            this.changeGradeToolStripMenuItem.Click += new System.EventHandler(this.changeGradeToolStripMenuItem_Click);
+            // 
             // metroTile2
             // 
             this.metroTile2.ActiveControl = null;
             this.metroTile2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.metroTile2.ContextMenuStrip = this.AccountsMenu;
             this.metroTile2.Location = new System.Drawing.Point(213, 1);
             this.metroTile2.Name = "metroTile2";
             this.metroTile2.Size = new System.Drawing.Size(170, 27);
@@ -289,11 +402,134 @@
             this.metroTile2.UseSelectable = true;
             this.metroTile2.UseStyleColors = true;
             // 
+            // AccountsMenu
+            // 
+            this.AccountsMenu.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.AccountsMenu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.AccountsMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.expensesToolStripMenuItem,
+            this.paymentsToolStripMenuItem,
+            this.feesToolStripMenuItem,
+            this.studentProfilesToolStripMenuItem,
+            this.staffHoursToolStripMenuItem});
+            this.AccountsMenu.Name = "AccountsMenu";
+            this.AccountsMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.AccountsMenu.ShowImageMargin = false;
+            this.AccountsMenu.Size = new System.Drawing.Size(178, 134);
+            // 
+            // expensesToolStripMenuItem
+            // 
+            this.expensesToolStripMenuItem.CheckOnClick = true;
+            this.expensesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addExpenseTypeToolStripMenuItem,
+            this.recordExpensePaymentToolStripMenuItem,
+            this.viewExpensesToolStripMenuItem});
+            this.expensesToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.expensesToolStripMenuItem.Name = "expensesToolStripMenuItem";
+            this.expensesToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.expensesToolStripMenuItem.Text = "Expenses";
+            // 
+            // addExpenseTypeToolStripMenuItem
+            // 
+            this.addExpenseTypeToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.addExpenseTypeToolStripMenuItem.Name = "addExpenseTypeToolStripMenuItem";
+            this.addExpenseTypeToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
+            this.addExpenseTypeToolStripMenuItem.Text = "Add Expense Type";
+            this.addExpenseTypeToolStripMenuItem.Click += new System.EventHandler(this.addExpenseTypeToolStripMenuItem_Click);
+            // 
+            // recordExpensePaymentToolStripMenuItem
+            // 
+            this.recordExpensePaymentToolStripMenuItem.Name = "recordExpensePaymentToolStripMenuItem";
+            this.recordExpensePaymentToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
+            this.recordExpensePaymentToolStripMenuItem.Text = "Record Expense Payment";
+            this.recordExpensePaymentToolStripMenuItem.Click += new System.EventHandler(this.recordExpensePaymentToolStripMenuItem_Click);
+            // 
+            // viewExpensesToolStripMenuItem
+            // 
+            this.viewExpensesToolStripMenuItem.Name = "viewExpensesToolStripMenuItem";
+            this.viewExpensesToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
+            this.viewExpensesToolStripMenuItem.Text = "View Expenses";
+            this.viewExpensesToolStripMenuItem.Click += new System.EventHandler(this.viewExpensesToolStripMenuItem_Click);
+            // 
+            // paymentsToolStripMenuItem
+            // 
+            this.paymentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.recordStudentPaymentToolStripMenuItem,
+            this.recordStaffSalaryPaymentToolStripMenuItem,
+            this.browseStaffPaymentsToolStripMenuItem});
+            this.paymentsToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.paymentsToolStripMenuItem.Name = "paymentsToolStripMenuItem";
+            this.paymentsToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.paymentsToolStripMenuItem.Text = "Payments";
+            // 
+            // recordStudentPaymentToolStripMenuItem
+            // 
+            this.recordStudentPaymentToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recordStudentPaymentToolStripMenuItem.Name = "recordStudentPaymentToolStripMenuItem";
+            this.recordStudentPaymentToolStripMenuItem.Size = new System.Drawing.Size(297, 26);
+            this.recordStudentPaymentToolStripMenuItem.Text = "Record Student Payment";
+            this.recordStudentPaymentToolStripMenuItem.Click += new System.EventHandler(this.recordStudentPaymentToolStripMenuItem_Click);
+            // 
+            // recordStaffSalaryPaymentToolStripMenuItem
+            // 
+            this.recordStaffSalaryPaymentToolStripMenuItem.Name = "recordStaffSalaryPaymentToolStripMenuItem";
+            this.recordStaffSalaryPaymentToolStripMenuItem.Size = new System.Drawing.Size(297, 26);
+            this.recordStaffSalaryPaymentToolStripMenuItem.Text = "Record Staff Salary Payment";
+            this.recordStaffSalaryPaymentToolStripMenuItem.Click += new System.EventHandler(this.recordStaffSalaryPaymentToolStripMenuItem_Click);
+            // 
+            // browseStaffPaymentsToolStripMenuItem
+            // 
+            this.browseStaffPaymentsToolStripMenuItem.Name = "browseStaffPaymentsToolStripMenuItem";
+            this.browseStaffPaymentsToolStripMenuItem.Size = new System.Drawing.Size(297, 26);
+            this.browseStaffPaymentsToolStripMenuItem.Text = "Browse Staff Payments";
+            this.browseStaffPaymentsToolStripMenuItem.Click += new System.EventHandler(this.browseStaffPaymentsToolStripMenuItem_Click);
+            // 
+            // feesToolStripMenuItem
+            // 
+            this.feesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addFeeStructureToolStripMenuItem,
+            this.browseDueFeesToolStripMenuItem});
+            this.feesToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.feesToolStripMenuItem.Name = "feesToolStripMenuItem";
+            this.feesToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.feesToolStripMenuItem.Text = "Fees";
+            // 
+            // addFeeStructureToolStripMenuItem
+            // 
+            this.addFeeStructureToolStripMenuItem.Name = "addFeeStructureToolStripMenuItem";
+            this.addFeeStructureToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
+            this.addFeeStructureToolStripMenuItem.Text = "Add Fee Structure";
+            this.addFeeStructureToolStripMenuItem.Click += new System.EventHandler(this.addFeeStructureToolStripMenuItem_Click);
+            // 
+            // browseDueFeesToolStripMenuItem
+            // 
+            this.browseDueFeesToolStripMenuItem.Name = "browseDueFeesToolStripMenuItem";
+            this.browseDueFeesToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
+            this.browseDueFeesToolStripMenuItem.Text = "Browse Due Fees";
+            this.browseDueFeesToolStripMenuItem.Click += new System.EventHandler(this.browseDueFeesToolStripMenuItem_Click);
+            // 
+            // studentProfilesToolStripMenuItem
+            // 
+            this.studentProfilesToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.studentProfilesToolStripMenuItem.Name = "studentProfilesToolStripMenuItem";
+            this.studentProfilesToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.studentProfilesToolStripMenuItem.Text = "Student Profiles";
+            this.studentProfilesToolStripMenuItem.Click += new System.EventHandler(this.studentProfilesToolStripMenuItem_Click);
+            // 
+            // staffHoursToolStripMenuItem
+            // 
+            this.staffHoursToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.staffHoursToolStripMenuItem.Name = "staffHoursToolStripMenuItem";
+            this.staffHoursToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.staffHoursToolStripMenuItem.Text = "Staff Hours";
+            this.staffHoursToolStripMenuItem.Click += new System.EventHandler(this.staffHoursToolStripMenuItem_Click);
+            // 
             // MainPanel
             // 
             this.MainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.MainPanel.ContextMenuStrip = this.mainPanelContextMenu;
             this.MainPanel.HorizontalScrollbarBarColor = true;
             this.MainPanel.HorizontalScrollbarHighlightOnWheel = false;
             this.MainPanel.HorizontalScrollbarSize = 10;
@@ -306,6 +542,24 @@
             this.MainPanel.VerticalScrollbarBarColor = true;
             this.MainPanel.VerticalScrollbarHighlightOnWheel = false;
             this.MainPanel.VerticalScrollbarSize = 10;
+            // 
+            // mainPanelContextMenu
+            // 
+            this.mainPanelContextMenu.BackColor = System.Drawing.Color.ForestGreen;
+            this.mainPanelContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clearAllControlsToolStripMenuItem});
+            this.mainPanelContextMenu.Name = "mainPanelContextMenu";
+            this.mainPanelContextMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.mainPanelContextMenu.ShowImageMargin = false;
+            this.mainPanelContextMenu.Size = new System.Drawing.Size(185, 30);
+            // 
+            // clearAllControlsToolStripMenuItem
+            // 
+            this.clearAllControlsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearAllControlsToolStripMenuItem.Name = "clearAllControlsToolStripMenuItem";
+            this.clearAllControlsToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.clearAllControlsToolStripMenuItem.Text = "Clear All Controls";
+            this.clearAllControlsToolStripMenuItem.Click += new System.EventHandler(this.clearAllControlsToolStripMenuItem_Click);
             // 
             // ParentForm
             // 
@@ -327,6 +581,9 @@
             this.ParentButtonPanel.ResumeLayout(false);
             this.StudentMenu.ResumeLayout(false);
             this.AccessMenu.ResumeLayout(false);
+            this.EmployeeMenu.ResumeLayout(false);
+            this.AccountsMenu.ResumeLayout(false);
+            this.mainPanelContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -347,10 +604,34 @@
         private MetroFramework.Controls.MetroTile helpTile;
         private MetroFramework.Controls.MetroPanel MainPanel;
         private MetroFramework.Controls.MetroContextMenu AccessMenu;
-        private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changePwordStripMenuItem;
+        private MetroFramework.Controls.MetroContextMenu AccountsMenu;
+        private System.Windows.Forms.ToolStripMenuItem expensesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addExpenseTypeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem recordExpensePaymentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewExpensesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem paymentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem recordStudentPaymentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem recordStaffSalaryPaymentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem browseStaffPaymentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem feesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addFeeStructureToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem browseDueFeesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem studentProfilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem staffHoursToolStripMenuItem;
+        private MetroFramework.Controls.MetroContextMenu EmployeeMenu;
+        private System.Windows.Forms.ToolStripMenuItem addNewStaffMemberToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem browseStaffDetailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem asignEducatorToClassToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removeEducatorFromClassToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem recordStaffAttendanceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addNewStaffGradeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changeGradeToolStripMenuItem;
+        private MetroFramework.Controls.MetroContextMenu mainPanelContextMenu;
+        private System.Windows.Forms.ToolStripMenuItem clearAllControlsToolStripMenuItem;
     }
 }
 
