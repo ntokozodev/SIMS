@@ -52,18 +52,20 @@ namespace SIMS.LearnerModule
         private string city;
         private string zipCode;
         private string emailAddress;
-        //private string admissionNumber;
+        private string admissionNumber;
+
         //private Centre schoolCentre;
         //private ClassRoom studentClass;
         //private Image picture;
 
         public Student( string fName, string lName, 
-                        string sNumber, string sCitizenID, 
-                        string gCitizenID, string genderValue,
-                        string addr, string cNumber, 
-                        DateTime adDate, string addr1, 
-                        string addr2, string subV, string cityV, 
-                        string zipV, string email) 
+                        string sCitizenID, string gCitizenID, 
+                        string genderValue, string addr, 
+                        string cNumber, DateTime adDate, 
+                        string adminNo, string addr1, 
+                        string addr2, string subV, 
+                        string cityV, string zipV, string email
+                      ) 
         {
             firstName = fName;
             lastName = lName;
@@ -78,7 +80,8 @@ namespace SIMS.LearnerModule
             city = cityV;
             zipCode = zipV;
             emailAddress = email;
-            //admissionNumber = sNumber;
+            admissionNumber = adminNo;
+
             //picture = pic;
             //schoolCentre = sCentre;
             //studentClass = sClass;
@@ -125,6 +128,12 @@ namespace SIMS.LearnerModule
         {
             get { return admittedDate; }
             set { admittedDate = value; }
+        }
+
+        public string AdmissionNumber
+        {
+            get { return admissionNumber; }
+            set { admissionNumber = value; }
         }
 
         public string AddressLine1

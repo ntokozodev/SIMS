@@ -51,8 +51,8 @@ namespace SIMS.LearnerModule
         string EmailAddress { get; }
         string ContactNumber { get; }
         DateTime AdmittedDate { get; }
+        string AdmissionNumber { get; }
 
-        //string AdmissionNumber { get; }
         //Centre SchoolCentre { get; }
         //ClassRoom StudentClass { get; }
         //Image Picture { get; }
