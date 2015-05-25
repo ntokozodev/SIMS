@@ -31,7 +31,6 @@ namespace SIMS.LearnerModule
         private void InitializeComponent()
         {
             this.detailsGroupBox = new System.Windows.Forms.GroupBox();
-            this.DateAdmission = new MetroFramework.Controls.MetroDateTime();
             this.AdminDateLabel = new MetroFramework.Controls.MetroLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
@@ -80,6 +79,7 @@ namespace SIMS.LearnerModule
             this.addDetailsTile = new MetroFramework.Controls.MetroTile();
             this.cancelTile = new MetroFramework.Controls.MetroTile();
             this.clearTile = new MetroFramework.Controls.MetroTile();
+            this.DateAdmission = new System.Windows.Forms.DateTimePicker();
             this.detailsGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.guardianGroupBox.SuspendLayout();
@@ -124,14 +124,6 @@ namespace SIMS.LearnerModule
             this.detailsGroupBox.TabIndex = 0;
             this.detailsGroupBox.TabStop = false;
             this.detailsGroupBox.Text = "Student Details";
-            // 
-            // DateAdmission
-            // 
-            this.DateAdmission.Location = new System.Drawing.Point(150, 237);
-            this.DateAdmission.MinimumSize = new System.Drawing.Size(0, 29);
-            this.DateAdmission.Name = "DateAdmission";
-            this.DateAdmission.Size = new System.Drawing.Size(132, 29);
-            this.DateAdmission.TabIndex = 30;
             // 
             // AdminDateLabel
             // 
@@ -814,6 +806,13 @@ namespace SIMS.LearnerModule
             this.clearTile.UseSelectable = true;
             this.clearTile.Click += new System.EventHandler(this.clearTile_Click);
             // 
+            // DateAdmission
+            // 
+            this.DateAdmission.Location = new System.Drawing.Point(150, 237);
+            this.DateAdmission.Name = "DateAdmission";
+            this.DateAdmission.Size = new System.Drawing.Size(163, 21);
+            this.DateAdmission.TabIndex = 30;
+            // 
             // AddLearner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -873,7 +872,6 @@ namespace SIMS.LearnerModule
         private MetroFramework.Controls.MetroTextBox TextBoxZipCode;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel metroLabel;
-        private MetroFramework.Controls.MetroDateTime DateAdmission;
         private MetroFramework.Controls.MetroLabel AdminDateLabel;
         private MetroFramework.Controls.MetroTile addDetailsTile;
         private MetroFramework.Controls.MetroTile cancelTile;
@@ -895,6 +893,7 @@ namespace SIMS.LearnerModule
         private MetroFramework.Controls.MetroLabel metroLabel13;
         private MetroFramework.Controls.MetroComboBox ComboBoxGGender;
         private MetroFramework.Controls.MetroTile clearTile;
+        private DateTimePicker DateAdmission;
     
         protected override CreateParams CreateParams
         {
