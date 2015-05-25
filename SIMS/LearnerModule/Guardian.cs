@@ -27,7 +27,7 @@ using System.Threading.Tasks;
 
 using Validation;
 
-namespace StudentEnrolment
+namespace SIMS.LearnerModule
 {
     /**
      * <summary>

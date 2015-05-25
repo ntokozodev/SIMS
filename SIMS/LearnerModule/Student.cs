@@ -1,10 +1,10 @@
 ﻿/**
- * Edu-SIMS is (c) 2015 Geek Studio Company. All rights reserved.
+ * Edu-SIMS is (c) 2015 Ntokozo Company. All rights reserved.
  * 
- * http://www.geekstudio.co.za
+ * http://www.ntokozo.co.za
  *
  * COPYRIGHTS:
- * Copyright (c) 2015 Geek Studio Company. All rights reserved.
+ * Copyright (c) 2015 Ntokozo Company. All rights reserved.
  * 
  * --------------------------------------------------------------------------------
  * Redistribution and use in source and binary forms, with or without modification, 
@@ -29,7 +29,7 @@ using System.Drawing;
 using CentreModule;
 using Validation;
 
-namespace StudentEnrolment
+namespace SIMS.LearnerModule
 {
     /**
      * <summary>
@@ -41,51 +41,60 @@ namespace StudentEnrolment
     {
         private string firstName;
         private string lastName;
-        private string admissinNumber;
         private string studentCitizenID;
         private string guardianCitizenID;
         private string gender;
         private string contactNumber;
         private DateTime admittedDate;
-        private Address address;
-        private Centre schoolCentre;
-        private ClassRoom studentClass;
+        private string addressLine1;
+        private string addressLine2;
+        private string suburb;
+        private string city;
+        private string zipCode;
+        private string emailAddress;
+        //private string admissionNumber;
+        //private Centre schoolCentre;
+        //private ClassRoom studentClass;
         //private Image picture;
 
         public Student( string fName, string lName, 
                         string sNumber, string sCitizenID, 
                         string gCitizenID, string genderValue,
-                        Address addr, string cNumber, 
-                        DateTime adDate, Centre sCentre, 
-                        ClassRoom sClass) 
+                        string addr, string cNumber, 
+                        DateTime adDate, string addr1, 
+                        string addr2, string subV, string cityV, 
+                        string zipV, string email) 
         {
             firstName = fName;
             lastName = lName;
-            admissinNumber = sNumber;
             gender = genderValue;
-            address = addr;
             admittedDate = adDate;
-            schoolCentre = sCentre;
-            studentClass = sClass;
+            studentCitizenID = sCitizenID;
+            guardianCitizenID = gCitizenID; 
+            contactNumber = cNumber;
+            addressLine1 = addr;
+            addressLine2 = addr2;
+            suburb = subV;
+            city = cityV;
+            zipCode = zipV;
+            emailAddress = email;
+            //admissionNumber = sNumber;
             //picture = pic;
-            if (Valid.isCitizenIDValid(sCitizenID))
-                studentCitizenID = sCitizenID;
-            if (Valid.isCitizenIDValid(gCitizenID))
-                guardianCitizenID = gCitizenID; 
-            if (Valid.isContactNumberValid(cNumber))
-                contactNumber = cNumber;
+            //schoolCentre = sCentre;
+            //studentClass = sClass;
         }
 
-        public string StudentName
+        #region Properties
+        public string FirstName
         {
-            get { return firstName + " " + lastName; }
-            set { firstName = value; lastName = value; }
+            get { return firstName; }
+            set { firstName = value; }
         }
 
-        public string StudentNumber
+        public string LastName
         {
-            get { return admissinNumber; }
-            set { admissinNumber = value; }
+            get { return lastName; }
+            set { lastName = value; }
         }
 
         public string StudentCitizenID
@@ -94,16 +103,16 @@ namespace StudentEnrolment
             set { studentCitizenID = value; }
         }
 
+        public string GuardianCitizenID
+        {
+            get { return guardianCitizenID; }
+            set { guardianCitizenID = value; }
+        }
+
         public string Gender
         {
             get { return gender; }
             set { gender = value; }
-        }
-
-        public Address HomeAddress
-        {
-            get { return address; }
-            set { address = value; }
         }
 
         public string ContactNumber
@@ -118,29 +127,42 @@ namespace StudentEnrolment
             set { admittedDate = value; }
         }
 
-        public string GuardianCitizenID
+        public string AddressLine1
         {
-            get { return guardianCitizenID; }
-            set { guardianCitizenID = value; }
+            get { return addressLine1; }
+            set { addressLine1 = value; }
         }
 
-        public Centre SchoolCentre
+        public string AddressLine2
         {
-            get { return schoolCentre; }
-            set { schoolCentre = value; }
+            get { return addressLine2; }
+            set { addressLine2 = value; }
         }
 
-        public ClassRoom StudentClass
+        public string Suburb
         {
-            get { return studentClass; }
-            set { studentClass = value; }
+            get { return suburb; }
+            set { suburb = value; }
         }
 
-        //public Image Picture
-        //{
-        //    get { return picture; }
-        //    set { picture = value; }
-        //}
+        public string City
+        {
+            get { return city; }
+            set { city = value; }
+        }
+
+        public string ZipCode
+        {
+            get { return zipCode; }
+            set { zipCode = value; }
+        }
+
+        public string EmailAddress
+        {
+            get { return emailAddress; }
+            set { emailAddress = value; }
+        }
+        #endregion
 
 
         public void addStudentToCentre(Student student)
@@ -158,14 +180,19 @@ namespace StudentEnrolment
             throw new NotImplementedException();
         }
 
-        //public void recordNewPayment(AccountsModule.Payment payment)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
         public string getStudentBalance(Student student)
         {
             throw new NotImplementedException();
         }
+
+        public void addNewStudent(Student student)
+        {
+            throw new NotImplementedException();
+        }
+
+        //public void recordNewPayment(AccountsModule.Payment payment)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

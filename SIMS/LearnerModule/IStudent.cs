@@ -1,10 +1,10 @@
 ﻿/**
- * Edu-SIMS is (c) 2015 Create12. All rights reserved.
+ * Edu-SIMS is (c) 2015 Ntokozo Company. All rights reserved.
  * 
- * https://www.create12.com
+ * http://www.ntokozo.com
  *
  * COPYRIGHTS:
- * Copyright (c) 2015 Create12. All rights reserved.
+ * Copyright (c) 2015 Ntokozo Company. All rights reserved.
  * 
  * --------------------------------------------------------------------------------
  * Redistribution and use in source and binary forms, with or without modification, 
@@ -29,7 +29,7 @@ using System.Drawing;
 using CentreModule;
 
 
-namespace StudentEnrolment
+namespace SIMS.LearnerModule
 {
     /**
      * <summary>
@@ -38,22 +38,31 @@ namespace StudentEnrolment
      */
     interface IStudent
     {
-        string StudentName { get; }
-        string StudentNumber { get; }
+        string FirstName { get; }
+        string LastName { get; }
         string StudentCitizenID { get; }
         string GuardianCitizenID { get; }
         string Gender { get; }
-        Address HomeAddress { get; }
+        string AddressLine1 { get; }
+        string AddressLine2 { get; }
+        string Suburb { get; }
+        string City { get; }
+        string ZipCode { get; }
+        string EmailAddress { get; }
         string ContactNumber { get; }
         DateTime AdmittedDate { get; }
-        Centre SchoolCentre { get; }
-        ClassRoom StudentClass { get; }
+
+        //string AdmissionNumber { get; }
+        //Centre SchoolCentre { get; }
+        //ClassRoom StudentClass { get; }
         //Image Picture { get; }
 
         void addStudentToCentre(Student student);
         void assignStudentToClass(Student student);
         void moveStudent(Student student);
-        //void recordNewPayment(Payment payment);
         string getStudentBalance(Student student);
+        void addNewStudent(Student student);
+
+        //void recordNewPayment(Payment payment);
     }
 }
