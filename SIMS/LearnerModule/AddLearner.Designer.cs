@@ -31,6 +31,7 @@ namespace SIMS.LearnerModule
         private void InitializeComponent()
         {
             this.detailsGroupBox = new System.Windows.Forms.GroupBox();
+            this.DateAdmission = new System.Windows.Forms.DateTimePicker();
             this.AdminDateLabel = new MetroFramework.Controls.MetroLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
@@ -79,10 +80,12 @@ namespace SIMS.LearnerModule
             this.addDetailsTile = new MetroFramework.Controls.MetroTile();
             this.cancelTile = new MetroFramework.Controls.MetroTile();
             this.clearTile = new MetroFramework.Controls.MetroTile();
-            this.DateAdmission = new System.Windows.Forms.DateTimePicker();
+            this.TAStudent = new SIMS.SIMS_DSTableAdapters.STUDENTTableAdapter();
+            this.DSStudent = new SIMS.SIMS_DS();
             this.detailsGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.guardianGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DSStudent)).BeginInit();
             this.SuspendLayout();
             // 
             // detailsGroupBox
@@ -124,6 +127,13 @@ namespace SIMS.LearnerModule
             this.detailsGroupBox.TabIndex = 0;
             this.detailsGroupBox.TabStop = false;
             this.detailsGroupBox.Text = "Student Details";
+            // 
+            // DateAdmission
+            // 
+            this.DateAdmission.Location = new System.Drawing.Point(150, 237);
+            this.DateAdmission.Name = "DateAdmission";
+            this.DateAdmission.Size = new System.Drawing.Size(163, 21);
+            this.DateAdmission.TabIndex = 30;
             // 
             // AdminDateLabel
             // 
@@ -179,7 +189,7 @@ namespace SIMS.LearnerModule
             // TextBoxEmailAddress
             // 
             this.TextBoxEmailAddress.Lines = new string[0];
-            this.TextBoxEmailAddress.Location = new System.Drawing.Point(150, 272);
+            this.TextBoxEmailAddress.Location = new System.Drawing.Point(150, 292);
             this.TextBoxEmailAddress.MaxLength = 32767;
             this.TextBoxEmailAddress.Name = "TextBoxEmailAddress";
             this.TextBoxEmailAddress.PasswordChar = '\0';
@@ -277,7 +287,7 @@ namespace SIMS.LearnerModule
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.BackColor = System.Drawing.Color.White;
             this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel5.Location = new System.Drawing.Point(9, 274);
+            this.metroLabel5.Location = new System.Drawing.Point(9, 296);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(94, 19);
             this.metroLabel5.TabIndex = 26;
@@ -773,6 +783,7 @@ namespace SIMS.LearnerModule
             this.addDetailsTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.addDetailsTile.UseSelectable = true;
             this.addDetailsTile.UseStyleColors = true;
+            this.addDetailsTile.Click += new System.EventHandler(this.addDetailsTile_Click);
             // 
             // cancelTile
             // 
@@ -806,12 +817,14 @@ namespace SIMS.LearnerModule
             this.clearTile.UseSelectable = true;
             this.clearTile.Click += new System.EventHandler(this.clearTile_Click);
             // 
-            // DateAdmission
+            // TAStudent
             // 
-            this.DateAdmission.Location = new System.Drawing.Point(150, 237);
-            this.DateAdmission.Name = "DateAdmission";
-            this.DateAdmission.Size = new System.Drawing.Size(163, 21);
-            this.DateAdmission.TabIndex = 30;
+            this.TAStudent.ClearBeforeFill = true;
+            // 
+            // DSStudent
+            // 
+            this.DSStudent.DataSetName = "SIMS_DS";
+            this.DSStudent.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // AddLearner
             // 
@@ -834,6 +847,7 @@ namespace SIMS.LearnerModule
             this.groupBox1.PerformLayout();
             this.guardianGroupBox.ResumeLayout(false);
             this.guardianGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DSStudent)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -894,6 +908,8 @@ namespace SIMS.LearnerModule
         private MetroFramework.Controls.MetroComboBox ComboBoxGGender;
         private MetroFramework.Controls.MetroTile clearTile;
         private DateTimePicker DateAdmission;
+        private SIMS_DSTableAdapters.STUDENTTableAdapter TAStudent;
+        private SIMS_DS DSStudent;
     
         protected override CreateParams CreateParams
         {

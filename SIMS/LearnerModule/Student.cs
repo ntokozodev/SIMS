@@ -28,6 +28,7 @@ using System.Drawing;
 
 using CentreModule;
 using Validation;
+using SIMS.SIMS_DSTableAdapters;
 
 namespace SIMS.LearnerModule
 {
@@ -60,11 +61,11 @@ namespace SIMS.LearnerModule
 
         public Student( string fName, string lName, 
                         string sCitizenID, string gCitizenID, 
-                        string genderValue, string addr, 
-                        string cNumber, DateTime adDate, 
-                        string adminNo, string addr1, 
-                        string addr2, string subV, 
-                        string cityV, string zipV, string email
+                        string genderValue, string cNumber, 
+                        DateTime adDate, string adminNo, 
+                        string addr1, string addr2, 
+                        string subV, string cityV, 
+                        string zipV, string email
                       ) 
         {
             firstName = fName;
@@ -74,7 +75,7 @@ namespace SIMS.LearnerModule
             studentCitizenID = sCitizenID;
             guardianCitizenID = gCitizenID; 
             contactNumber = cNumber;
-            addressLine1 = addr;
+            addressLine1 = addr1;
             addressLine2 = addr2;
             suburb = subV;
             city = cityV;
@@ -194,9 +195,14 @@ namespace SIMS.LearnerModule
             throw new NotImplementedException();
         }
 
-        public void addNewStudent(Student student)
+        public void addNewStudent(Student stu, STUDENTTableAdapter adapter)
         {
-            throw new NotImplementedException();
+            adapter.InsertStudent( 2015, stu.firstName, 
+                                   stu.studentCitizenID, stu.gender, stu.contactNumber, 
+                                   stu.admittedDate, stu.guardianCitizenID, 
+                                   stu.lastName, stu.addressLine1, stu.addressLine2, 
+                                   stu.suburb, stu.city, stu.zipCode, stu.emailAddress
+                                  );
         }
 
         //public void recordNewPayment(AccountsModule.Payment payment)

@@ -5912,7 +5912,7 @@ namespace SIMS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public STUDENTRow AddSTUDENTRow(
-                        decimal STUDENT_NO, 
+                        string STUDENT_NO, 
                         string FIRST_NAME, 
                         string STUDENT_CITIZEN_ID, 
                         string STUDENT_GENDER, 
@@ -6005,7 +6005,7 @@ namespace SIMS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnSTUDENT_NO = new global::System.Data.DataColumn("STUDENT_NO", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this.columnSTUDENT_NO = new global::System.Data.DataColumn("STUDENT_NO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSTUDENT_NO);
                 this.columnFIRST_NAME = new global::System.Data.DataColumn("FIRST_NAME", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFIRST_NAME);
@@ -9797,10 +9797,10 @@ namespace SIMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal STUDENT_NO {
+            public string STUDENT_NO {
                 get {
                     try {
-                        return ((decimal)(this[this.tableSTUDENT.STUDENT_NOColumn]));
+                        return ((string)(this[this.tableSTUDENT.STUDENT_NOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'STUDENT_NO\' in table \'STUDENT\' is DBNull.", e);
@@ -21924,7 +21924,7 @@ namespace SIMS.SIMS_DSTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[2];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT STUDENT_NO, FIRST_NAME, STUDENT_CITIZEN_ID, STUDENT_GENDER, PHONE_NUMBER, " +
@@ -21932,6 +21932,112 @@ namespace SIMS.SIMS_DSTableAdapters {
                 "ESS_LINE1, ADDRESS_LINE2, SUBURB, CITY, ZIP_CODE, EMAIL_ADDRESS FROM EDU_SCHEMA." +
                 "STUDENT";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"INSERT INTO ""EDU_SCHEMA"".""STUDENT"" 
+(""STUDENT_NO"", ""FIRST_NAME"", ""STUDENT_CITIZEN_ID"", ""STUDENT_GENDER"", ""PHONE_NUMBER"", ""ADMITTED_DATE"", ""G_CITIZEN_ID"", ""LAST_NAME"", ""ADDRESS_LINE1"", ""ADDRESS_LINE2"", ""SUBURB"", ""CITY"", ""ZIP_CODE"", ""EMAIL_ADDRESS"") 
+VALUES (:STUDENT_NO, :FIRST_NAME, :STUDENT_CITIZEN_ID, :STUDENT_GENDER, :PHONE_NUMBER, :ADMITTED_DATE, :G_CITIZEN_ID, :LAST_NAME, :ADDRESS_LINE1, :ADDRESS_LINE2, :SUBURB, :CITY, :ZIP_CODE, :EMAIL_ADDRESS)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":STUDENT_NO";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "STUDENT_NO";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":FIRST_NAME";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "FIRST_NAME";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":STUDENT_CITIZEN_ID";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "STUDENT_CITIZEN_ID";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":STUDENT_GENDER";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "STUDENT_GENDER";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":PHONE_NUMBER";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "PHONE_NUMBER";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":ADMITTED_DATE";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
+            param.Size = 7;
+            param.IsNullable = true;
+            param.SourceColumn = "ADMITTED_DATE";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":G_CITIZEN_ID";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "G_CITIZEN_ID";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":LAST_NAME";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "LAST_NAME";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":ADDRESS_LINE1";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "ADDRESS_LINE1";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":ADDRESS_LINE2";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "ADDRESS_LINE2";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":SUBURB";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "SUBURB";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":CITY";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "CITY";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":ZIP_CODE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "ZIP_CODE";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":EMAIL_ADDRESS";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 2000;
+            param.IsNullable = true;
+            param.SourceColumn = "EMAIL_ADDRESS";
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22610,6 +22716,113 @@ namespace SIMS.SIMS_DSTableAdapters {
                     string Original_ZIP_CODE, 
                     string Original_EMAIL_ADDRESS) {
             return this.Update(STUDENT_NO, FIRST_NAME, Original_STUDENT_CITIZEN_ID, STUDENT_GENDER, PHONE_NUMBER, ADMITTED_DATE, SUBJECT_STREAM, G_CITIZEN_ID, CENTRE_ID, PICTURE, LAST_NAME, ADDRESS_LINE1, ADDRESS_LINE2, SUBURB, CITY, ZIP_CODE, EMAIL_ADDRESS, Original_STUDENT_NO, Original_FIRST_NAME, Original_STUDENT_CITIZEN_ID, Original_STUDENT_GENDER, Original_PHONE_NUMBER, Original_ADMITTED_DATE, Original_SUBJECT_STREAM, Original_G_CITIZEN_ID, Original_CENTRE_ID, Original_LAST_NAME, Original_ADDRESS_LINE1, Original_ADDRESS_LINE2, Original_SUBURB, Original_CITY, Original_ZIP_CODE, Original_EMAIL_ADDRESS);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertStudent(global::System.Nullable<decimal> STUDENT_NO, string FIRST_NAME, string STUDENT_CITIZEN_ID, string STUDENT_GENDER, string PHONE_NUMBER, global::System.Nullable<global::System.DateTime> ADMITTED_DATE, string G_CITIZEN_ID, string LAST_NAME, string ADDRESS_LINE1, string ADDRESS_LINE2, string SUBURB, string CITY, string ZIP_CODE, string EMAIL_ADDRESS) {
+            global::Oracle.ManagedDataAccess.Client.OracleCommand command = this.CommandCollection[1];
+            if ((STUDENT_NO.HasValue == true)) {
+                command.Parameters[0].Value = ((decimal)(STUDENT_NO.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((FIRST_NAME == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(FIRST_NAME));
+            }
+            if ((STUDENT_CITIZEN_ID == null)) {
+                throw new global::System.ArgumentNullException("STUDENT_CITIZEN_ID");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(STUDENT_CITIZEN_ID));
+            }
+            if ((STUDENT_GENDER == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(STUDENT_GENDER));
+            }
+            if ((PHONE_NUMBER == null)) {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[4].Value = ((string)(PHONE_NUMBER));
+            }
+            if ((ADMITTED_DATE.HasValue == true)) {
+                command.Parameters[5].Value = ((System.DateTime)(ADMITTED_DATE.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((G_CITIZEN_ID == null)) {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[6].Value = ((string)(G_CITIZEN_ID));
+            }
+            if ((LAST_NAME == null)) {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[7].Value = ((string)(LAST_NAME));
+            }
+            if ((ADDRESS_LINE1 == null)) {
+                command.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[8].Value = ((string)(ADDRESS_LINE1));
+            }
+            if ((ADDRESS_LINE2 == null)) {
+                command.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[9].Value = ((string)(ADDRESS_LINE2));
+            }
+            if ((SUBURB == null)) {
+                command.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[10].Value = ((string)(SUBURB));
+            }
+            if ((CITY == null)) {
+                command.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[11].Value = ((string)(CITY));
+            }
+            if ((ZIP_CODE == null)) {
+                command.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[12].Value = ((string)(ZIP_CODE));
+            }
+            if ((EMAIL_ADDRESS == null)) {
+                command.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[13].Value = ((string)(EMAIL_ADDRESS));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

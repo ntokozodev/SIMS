@@ -21,7 +21,8 @@ using Oracle.ManagedDataAccess.Types;
 namespace SIMS.LearnerModule
 {
     public partial class AddLearner : MetroForm
-    { 
+    {
+        private Student student;
         public AddLearner()
         {
             InitializeComponent();
@@ -54,6 +55,25 @@ namespace SIMS.LearnerModule
             ComboBoxCentre.ResetText();
             ComboBoxGender.ResetText();
             ComboBoxGGender.ResetText();
+        }
+
+        private void addDetailsTile_Click(object sender, EventArgs e)
+        {
+            try 
+            {
+                student = new Student(TextBoxFirstName.Text, TextBoxLastName.Text, 
+                                      TextBoxIDNumber.Text, TextBoxGIdNumber.Text, 
+                                      ComboBoxGender.Text, TextBoxContactNumber.Text, 
+                                      Convert.ToDateTime(DateAdmission), TextBoxAdminNumber.Text, 
+                                      TextBoxAddressLine1.Text, TextBoxAddressLine2.Text, 
+                                      TextBoxSuburb.Text, TextBoxCity.Text, 
+                                      TextBoxZipCode.Text, TextBoxEmailAddress.Text);
+                student.addNewStudent(student, TAStudent);
+            }
+            catch (Exception ex)
+            {
+                MetroMessageBox.Show(ParentForm, ex.Message.ToString());
+            }
         }
     }
 }

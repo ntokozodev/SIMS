@@ -27,6 +27,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 
 using CentreModule;
+using SIMS.SIMS_DSTableAdapters;
 
 
 namespace SIMS.LearnerModule
@@ -61,7 +62,7 @@ namespace SIMS.LearnerModule
         void assignStudentToClass(Student student);
         void moveStudent(Student student);
         string getStudentBalance(Student student);
-        void addNewStudent(Student student);
+        void addNewStudent(Student student, STUDENTTableAdapter adapt);
 
         //void recordNewPayment(Payment payment);
     }
