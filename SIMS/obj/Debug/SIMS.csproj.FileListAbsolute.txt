@@ -48,3 +48,4 @@ C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccessControl.AddUs
 C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccessControl.ChangePassword.resources
 C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccessControl.Login.resources
 C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccessControl.Logout.resources
+C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.csprojResolveAssemblyReference.cache

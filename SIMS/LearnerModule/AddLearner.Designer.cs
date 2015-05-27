@@ -80,12 +80,9 @@ namespace SIMS.LearnerModule
             this.addDetailsTile = new MetroFramework.Controls.MetroTile();
             this.cancelTile = new MetroFramework.Controls.MetroTile();
             this.clearTile = new MetroFramework.Controls.MetroTile();
-            this.TAStudent = new SIMS.SIMS_DSTableAdapters.STUDENTTableAdapter();
-            this.DSStudent = new SIMS.SIMS_DS();
             this.detailsGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.guardianGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DSStudent)).BeginInit();
             this.SuspendLayout();
             // 
             // detailsGroupBox
@@ -817,15 +814,6 @@ namespace SIMS.LearnerModule
             this.clearTile.UseSelectable = true;
             this.clearTile.Click += new System.EventHandler(this.clearTile_Click);
             // 
-            // TAStudent
-            // 
-            this.TAStudent.ClearBeforeFill = true;
-            // 
-            // DSStudent
-            // 
-            this.DSStudent.DataSetName = "SIMS_DS";
-            this.DSStudent.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // AddLearner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -847,7 +835,6 @@ namespace SIMS.LearnerModule
             this.groupBox1.PerformLayout();
             this.guardianGroupBox.ResumeLayout(false);
             this.guardianGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DSStudent)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -908,8 +895,6 @@ namespace SIMS.LearnerModule
         private MetroFramework.Controls.MetroComboBox ComboBoxGGender;
         private MetroFramework.Controls.MetroTile clearTile;
         private DateTimePicker DateAdmission;
-        private SIMS_DSTableAdapters.STUDENTTableAdapter TAStudent;
-        private SIMS_DS DSStudent;
     
         protected override CreateParams CreateParams
         {

@@ -23,6 +23,7 @@ namespace SIMS.LearnerModule
     public partial class AddLearner : MetroForm
     {
         private Student student;
+
         public AddLearner()
         {
             InitializeComponent();
@@ -34,6 +35,33 @@ namespace SIMS.LearnerModule
         }
 
         private void clearTile_Click(object sender, EventArgs e)
+        {
+            clearAll();
+        }
+
+        private void addDetailsTile_Click(object sender, EventArgs e)
+        {
+            student = new Student(TextBoxFirstName.Text.ToString(), TextBoxLastName.Text.ToString(), 
+                                  TextBoxIDNumber.Text.ToString(), TextBoxGIdNumber.Text.ToString(), 
+                                  ComboBoxGender.Text.ToString(), TextBoxContactNumber.Text.ToString(), 
+                                  DateAdmission, TextBoxAdminNumber.Text.ToString(), 
+                                  TextBoxAddressLine1.Text.ToString(), TextBoxAddressLine2.Text.ToString(), 
+                                  TextBoxSuburb.Text.ToString(), TextBoxCity.Text.ToString(), 
+                                  TextBoxZipCode.Text.ToString(), TextBoxEmailAddress.Text.ToString()
+                                 );
+
+            int rowsUpdated = student.addNewStudent(student);
+
+            if (rowsUpdated > 0)
+            {
+                MetroMessageBox.Show(ParentForm, "Student details entered successful");
+                clearAll();
+            }
+            else
+                MetroMessageBox.Show(ParentForm, "Details not successful entered!");
+        }
+
+        internal void clearAll()
         {
             TextBoxFirstName.Clear();
             TextBoxLastName.Clear();
@@ -55,25 +83,6 @@ namespace SIMS.LearnerModule
             ComboBoxCentre.ResetText();
             ComboBoxGender.ResetText();
             ComboBoxGGender.ResetText();
-        }
-
-        private void addDetailsTile_Click(object sender, EventArgs e)
-        {
-            try 
-            {
-                student = new Student(TextBoxFirstName.Text, TextBoxLastName.Text, 
-                                      TextBoxIDNumber.Text, TextBoxGIdNumber.Text, 
-                                      ComboBoxGender.Text, TextBoxContactNumber.Text, 
-                                      Convert.ToDateTime(DateAdmission), TextBoxAdminNumber.Text, 
-                                      TextBoxAddressLine1.Text, TextBoxAddressLine2.Text, 
-                                      TextBoxSuburb.Text, TextBoxCity.Text, 
-                                      TextBoxZipCode.Text, TextBoxEmailAddress.Text);
-                student.addNewStudent(student, TAStudent);
-            }
-            catch (Exception ex)
-            {
-                MetroMessageBox.Show(ParentForm, ex.Message.ToString());
-            }
         }
     }
 }

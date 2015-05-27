@@ -147,6 +147,7 @@
     <Compile Include="CentreModule\Address.cs" />
     <Compile Include="CentreModule\Centre.cs" />
     <Compile Include="CentreModule\ClassRoom.cs" />
+    <Compile Include="OracleDB\SimsOracle.cs" />
     <Compile Include="EmployeeModule\AddNewStaffGrade.cs">
       <SubType>Form</SubType>
     </Compile>

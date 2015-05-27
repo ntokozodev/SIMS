@@ -25,6 +25,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Windows.Forms;
 
 using CentreModule;
 using SIMS.SIMS_DSTableAdapters;
@@ -34,7 +35,7 @@ namespace SIMS.LearnerModule
 {
     /**
      * <summary>
-     *      Interface for students 
+     *      Interface for creating students 
      * </summary>
      */
     interface IStudent
@@ -51,7 +52,7 @@ namespace SIMS.LearnerModule
         string ZipCode { get; }
         string EmailAddress { get; }
         string ContactNumber { get; }
-        DateTime AdmittedDate { get; }
+        DateTimePicker AdmittedDate { get; }
         string AdmissionNumber { get; }
 
         //Centre SchoolCentre { get; }
@@ -62,7 +63,7 @@ namespace SIMS.LearnerModule
         void assignStudentToClass(Student student);
         void moveStudent(Student student);
         string getStudentBalance(Student student);
-        void addNewStudent(Student student, STUDENTTableAdapter adapt);
+        int addNewStudent(Student student);
 
         //void recordNewPayment(Payment payment);
     }

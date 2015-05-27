@@ -29,6 +29,11 @@ using System.Drawing;
 using CentreModule;
 using Validation;
 using SIMS.SIMS_DSTableAdapters;
+using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
+using System.Windows.Forms;
+using System.Data;
+using MetroFramework;
 
 namespace SIMS.LearnerModule
 {
@@ -46,7 +51,7 @@ namespace SIMS.LearnerModule
         private string guardianCitizenID;
         private string gender;
         private string contactNumber;
-        private DateTime admittedDate;
+        private DateTimePicker admittedDate;
         private string addressLine1;
         private string addressLine2;
         private string suburb;
@@ -61,8 +66,8 @@ namespace SIMS.LearnerModule
 
         public Student( string fName, string lName, 
                         string sCitizenID, string gCitizenID, 
-                        string genderValue, string cNumber, 
-                        DateTime adDate, string adminNo, 
+                        string genderValue, string cNumber,
+                        DateTimePicker adDate, string adminNo, 
                         string addr1, string addr2, 
                         string subV, string cityV, 
                         string zipV, string email
@@ -125,7 +130,7 @@ namespace SIMS.LearnerModule
             set { contactNumber = value; }
         }
 
-        public DateTime AdmittedDate
+        public DateTimePicker AdmittedDate
         {
             get { return admittedDate; }
             set { admittedDate = value; }
@@ -195,14 +200,27 @@ namespace SIMS.LearnerModule
             throw new NotImplementedException();
         }
 
-        public void addNewStudent(Student stu, STUDENTTableAdapter adapter)
+        public int addNewStudent(Student stu)
         {
-            adapter.InsertStudent( 2015, stu.firstName, 
-                                   stu.studentCitizenID, stu.gender, stu.contactNumber, 
-                                   stu.admittedDate, stu.guardianCitizenID, 
-                                   stu.lastName, stu.addressLine1, stu.addressLine2, 
-                                   stu.suburb, stu.city, stu.zipCode, stu.emailAddress
-                                  );
+            SimsOracle db = new SimsOracle();
+            int rows = 0;
+            try
+            {
+                string query = "INSERT INTO EDU_SCHEMA.STUDENT (ADMISION_NO, FIRST_NAME, STUDENT_CITIZEN_ID, STUDENT_GENDER, PHONE_NUMBER, G_CITIZEN_ID, LAST_NAME, ADDRESS_LINE1, ADDRESS_LINE2, SUBURB, CITY, ZIP_CODE, EMAIL_ADDRESS) VALUES ('"+stu.admissionNumber+"', '"+stu.firstName+"', '"+stu.studentCitizenID+"', '"+stu.gender+"', '"+stu.contactNumber+"', '"+stu.guardianCitizenID+"', '"+stu.lastName+"', '"+stu.addressLine1+"', '"+stu.addressLine2+"', '"+stu.suburb+"', '"+stu.city+"', '"+stu.zipCode+"', '"+stu.emailAddress+"')";
+ 
+                rows = db.InsertRecord(query);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database error!\n" + ex.Message.ToString());
+            }
+            finally
+            {
+                db.CloseDatabase();
+            }
+
+            db.CloseDatabase();
+            return rows;
         }
 
         //public void recordNewPayment(AccountsModule.Payment payment)
