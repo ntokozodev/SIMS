@@ -42,7 +42,7 @@ namespace SIMS.LearnerModule
         private void addDetailsTile_Click(object sender, EventArgs e)
         {
             student = new Student(TextBoxFirstName.Text.ToString(), TextBoxLastName.Text.ToString(), 
-                                  TextBoxIDNumber.Text.ToString(), TextBoxGIdNumber.Text.ToString(), 
+                                  TextBoxIDNumber.Text.ToString(), TextBoxAddressLine2.Text.ToString(), 
                                   ComboBoxGender.Text.ToString(), TextBoxContactNumber.Text.ToString(), 
                                   DateAdmission, TextBoxAdminNumber.Text.ToString(), 
                                   TextBoxAddressLine1.Text.ToString(), TextBoxAddressLine2.Text.ToString(), 
@@ -72,17 +72,16 @@ namespace SIMS.LearnerModule
             TextBoxCity.Clear();
             TextBoxContactNumber.Clear();
             TextBoxEmailAddress.Clear();
-            TextBoxGEmailAddress.Clear();
-            TextBoxGFirstName.Clear();
-            TextBoxGIdNumber.Clear();
-            TextBoxGLastName.Clear();
-            TextBoxGContactNumber.Clear();
+            TextBoxZipCode.Clear();
+            TextBoxEmailAddress.Clear();
+            TextBoxAddressLine2.Clear();
+            TextBoxAddressLine1.Clear();
+            TextBoxSuburb.Clear();
             TextBoxSuburb.Clear();
             TextBoxZipCode.Clear();
             DateAdmission.ResetText();
             ComboBoxCentre.ResetText();
             ComboBoxGender.ResetText();
-            ComboBoxGGender.ResetText();
         }
     }
 }

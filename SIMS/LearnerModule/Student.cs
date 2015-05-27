@@ -180,6 +180,29 @@ namespace SIMS.LearnerModule
         #endregion
 
 
+        public int addNewStudent(Student stu)
+        {
+            SimsOracle db = new SimsOracle();
+            int rows = 0;
+            try
+            {
+                string query = "INSERT INTO EDU_SCHEMA.STUDENT (ADMISION_NO, FIRST_NAME, STUDENT_CITIZEN_ID, STUDENT_GENDER, PHONE_NUMBER, LAST_NAME, ADDRESS_LINE1, ADDRESS_LINE2, SUBURB, CITY, ZIP_CODE, EMAIL_ADDRESS) VALUES ('"+stu.admissionNumber+"', '"+stu.firstName+"', '"+stu.studentCitizenID+"', '"+stu.gender+"', '"+stu.contactNumber+"', '"+stu.lastName+"', '"+stu.addressLine1+"', '"+stu.addressLine2+"', '"+stu.suburb+"', '"+stu.city+"', '"+stu.zipCode+"', '"+stu.emailAddress+"')";
+ 
+                rows = db.InsertRecord(query);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database error!\n" + ex.Message.ToString());
+            }
+            finally
+            {
+                db.CloseDatabase();
+            }
+
+            db.CloseDatabase();
+            return rows;
+        }
+
         public void addStudentToCentre(Student student)
         {
             throw new NotImplementedException();
@@ -198,29 +221,6 @@ namespace SIMS.LearnerModule
         public string getStudentBalance(Student student)
         {
             throw new NotImplementedException();
-        }
-
-        public int addNewStudent(Student stu)
-        {
-            SimsOracle db = new SimsOracle();
-            int rows = 0;
-            try
-            {
-                string query = "INSERT INTO EDU_SCHEMA.STUDENT (ADMISION_NO, FIRST_NAME, STUDENT_CITIZEN_ID, STUDENT_GENDER, PHONE_NUMBER, G_CITIZEN_ID, LAST_NAME, ADDRESS_LINE1, ADDRESS_LINE2, SUBURB, CITY, ZIP_CODE, EMAIL_ADDRESS) VALUES ('"+stu.admissionNumber+"', '"+stu.firstName+"', '"+stu.studentCitizenID+"', '"+stu.gender+"', '"+stu.contactNumber+"', '"+stu.guardianCitizenID+"', '"+stu.lastName+"', '"+stu.addressLine1+"', '"+stu.addressLine2+"', '"+stu.suburb+"', '"+stu.city+"', '"+stu.zipCode+"', '"+stu.emailAddress+"')";
- 
-                rows = db.InsertRecord(query);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Database error!\n" + ex.Message.ToString());
-            }
-            finally
-            {
-                db.CloseDatabase();
-            }
-
-            db.CloseDatabase();
-            return rows;
         }
 
         //public void recordNewPayment(AccountsModule.Payment payment)

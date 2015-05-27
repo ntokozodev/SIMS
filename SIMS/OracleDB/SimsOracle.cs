@@ -16,8 +16,8 @@ namespace SIMS
 
         public SimsOracle()
         {
-            string p_conn_db = "DATA SOURCE=XE_DB;PASSWORD=Nng#8089;USER ID=EDU_SCHEMA;";
-            connOracle = new OracleConnection(p_conn_db);
+            string conn_db = "DATA SOURCE=XE_DB;PASSWORD=Nng#8089;USER ID=EDU_SCHEMA;";
+            connOracle = new OracleConnection(conn_db);
             connOracle.Open();
         }
 
