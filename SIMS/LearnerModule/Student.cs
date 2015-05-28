@@ -28,7 +28,7 @@ using System.Drawing;
 
 using CentreModule;
 using Validation;
-using SIMS.SIMS_DSTableAdapters;
+using SIMS.DSTableAdapters;
 using Oracle.ManagedDataAccess.Client;
 using Oracle.ManagedDataAccess.Types;
 using System.Windows.Forms;

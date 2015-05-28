@@ -34,8 +34,8 @@
             this.pwordTextBox = new MetroFramework.Controls.MetroTextBox();
             this.userLabel = new MetroFramework.Controls.MetroLabel();
             this.mainLabel = new MetroFramework.Controls.MetroLabel();
-            this.loginDS = new SIMS.SIMS_DS();
-            this.usersTA = new SIMS.SIMS_DSTableAdapters.USERSTableAdapter();
+            this.loginDS = new SIMS.DS();
+            this.usersTA = new SIMS.DSTableAdapters.USERSTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.loginDS)).BeginInit();
             this.SuspendLayout();
             // 
@@ -174,7 +174,7 @@
         private MetroFramework.Controls.MetroTextBox pwordTextBox;
         private MetroFramework.Controls.MetroLabel userLabel;
         private MetroFramework.Controls.MetroLabel mainLabel;
-        private SIMS_DS loginDS;
-        private SIMS_DSTableAdapters.USERSTableAdapter usersTA;
+        private DS loginDS;
+        private DSTableAdapters.USERSTableAdapter usersTA;
     }
 }
