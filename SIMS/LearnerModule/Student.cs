@@ -51,7 +51,6 @@ namespace SIMS.LearnerModule
         private string guardianCitizenID;
         private string gender;
         private string contactNumber;
-        private DateTimePicker admittedDate;
         private string addressLine1;
         private string addressLine2;
         private string suburb;
@@ -59,6 +58,8 @@ namespace SIMS.LearnerModule
         private string zipCode;
         private string emailAddress;
         private string admissionNumber;
+        private DateTimePicker admittedDate;
+        private SimsOracle db;
 
         //private Centre schoolCentre;
         //private ClassRoom studentClass;
@@ -182,17 +183,18 @@ namespace SIMS.LearnerModule
 
         public int addNewStudent(Student stu)
         {
-            SimsOracle db = new SimsOracle();
+            db = new SimsOracle();
             int rows = 0;
             try
             {
-                string query = "INSERT INTO EDU_SCHEMA.STUDENT (ADMISION_NO, FIRST_NAME, STUDENT_CITIZEN_ID, STUDENT_GENDER, PHONE_NUMBER, LAST_NAME, ADDRESS_LINE1, ADDRESS_LINE2, SUBURB, CITY, ZIP_CODE, EMAIL_ADDRESS) VALUES ('"+stu.admissionNumber+"', '"+stu.firstName+"', '"+stu.studentCitizenID+"', '"+stu.gender+"', '"+stu.contactNumber+"', '"+stu.lastName+"', '"+stu.addressLine1+"', '"+stu.addressLine2+"', '"+stu.suburb+"', '"+stu.city+"', '"+stu.zipCode+"', '"+stu.emailAddress+"')";
- 
+                string query = "INSERT INTO EDU_SCHEMA.STUDENT "+
+                               "(ADMISION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER, PHONE_NUMBER, STUDENT_CITIZEN_ID, ADDRESS_LINE1, ADDRESS_LINE2, SUBURB, CITY, ZIP_CODE, EMAIL_ADDRESS) "+
+                               "VALUES ('" + stu.admissionNumber + "', '" + stu.firstName + "', '" + stu.lastName + "', '" + stu.gender + "', '" + stu.contactNumber + "', '" + stu.studentCitizenID + "', '" + stu.addressLine1 + "', '" + stu.addressLine2 + "', '" + stu.suburb + "', '" + stu.city + "', '" + stu.zipCode + "', '" + stu.emailAddress + "')";
                 rows = db.InsertRecord(query);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Database error!\n" + ex.Message.ToString());
+                MessageBox.Show("Couldn't connect to database!\n" + ex.Message.ToString());
             }
             finally
             {
