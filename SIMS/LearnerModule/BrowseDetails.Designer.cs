@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 382);
+            this.ClientSize = new System.Drawing.Size(1049, 583);
             this.Name = "BrowseDetails";
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Browse Learner Details";

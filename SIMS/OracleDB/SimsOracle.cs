@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 
 using Oracle.ManagedDataAccess.Client;
 using Oracle.ManagedDataAccess.Types;
@@ -11,14 +12,14 @@ namespace SIMS
 {
     public class SimsOracle
     {
-        private OracleConnection connOracle;
-        private OracleCommand sqlCommandOracle;
+        private OracleConnection conn;
+        private OracleCommand sqlCmd;
 
         public SimsOracle()
         {
             string conn_db = "DATA SOURCE=XE_DB;PASSWORD=Nng#8089;USER ID=EDU_SCHEMA;";
-            connOracle = new OracleConnection(conn_db);
-            connOracle.Open();
+            conn = new OracleConnection(conn_db);
+            conn.Open();
         }
 
         public int InsertRecord(string SQLStatement)
@@ -26,10 +27,10 @@ namespace SIMS
             int n = 0;
             if (SQLStatement.Length > 0)
             {
-                if (connOracle.State.ToString().Equals("Open"))
+                if (conn.State.ToString().Equals("Open"))
                 {
-                    sqlCommandOracle = new OracleCommand(SQLStatement, connOracle);
-                    n = sqlCommandOracle.ExecuteNonQuery();
+                    sqlCmd = new OracleCommand(SQLStatement, conn);
+                    n = sqlCmd.ExecuteNonQuery();
                 }
             }
             return n;
@@ -37,8 +38,13 @@ namespace SIMS
 
         public void CloseDatabase()
         {
-            connOracle.Close();
-            connOracle.Dispose();
+            conn.Close();
+            conn.Dispose();
+        }
+
+        public OracleConnection Connection
+        {
+            get { return conn; }
         }
     }
 }

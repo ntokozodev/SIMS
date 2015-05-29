@@ -187,10 +187,31 @@ namespace SIMS.LearnerModule
             int rows = 0;
             try
             {
-                string query = "INSERT INTO EDU_SCHEMA.STUDENT "+
-                               "(ADMISION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER, PHONE_NUMBER, STUDENT_CITIZEN_ID, ADDRESS_LINE1, ADDRESS_LINE2, SUBURB, CITY, ZIP_CODE, EMAIL_ADDRESS) "+
-                               "VALUES ('" + stu.admissionNumber + "', '" + stu.firstName + "', '" + stu.lastName + "', '" + stu.gender + "', '" + stu.contactNumber + "', '" + stu.studentCitizenID + "', '" + stu.addressLine1 + "', '" + stu.addressLine2 + "', '" + stu.suburb + "', '" + stu.city + "', '" + stu.zipCode + "', '" + stu.emailAddress + "')";
-                rows = db.InsertRecord(query);
+                string query = "INSERT INTO EDU_SCHEMA.STUDENT " +
+                                      "(ADMISION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER," +
+                                      "PHONE_NUMBER, ADMITTED_DATE, STUDENT_CITIZEN_ID, ADDRESS_LINE1," +
+                                      "ADDRESS_LINE2, SUBURB, CITY, ZIP_CODE, EMAIL_ADDRESS) " +
+                               "VALUES (:ADMISION_NO, :FIRST_NAME, :LAST_NAME, :STUDENT_GENDER," +
+                                       ":PHONE_NUMBER, :ADMITTED_DATE, :STUDENT_CITIZEN_ID, :ADDRESS_LINE1," +
+                                       ":ADDRESS_LINE2, :SUBURB, :CITY, :ZIP_CODE, :EMAIL_ADDRESS)";
+                OracleCommand cmd = new OracleCommand(query, db.Connection);
+                cmd.Parameters.Add("ADMISION_NO", stu.admissionNumber);
+                cmd.Parameters.Add("FIRST_NAME", stu.firstName);
+                cmd.Parameters.Add("LAST_NAME", stu.lastName);
+                cmd.Parameters.Add("STUDENT_GENDER", stu.gender);
+                cmd.Parameters.Add("PHONE_NUMBER", stu.contactNumber);
+                cmd.Parameters.Add("ADMITTED_DATE", OracleDbType.Date).Value = DateTime.Now;
+                cmd.Parameters.Add("STUDENT_CITIZEN_ID", stu.studentCitizenID);
+                cmd.Parameters.Add("ADDRESS_LINE1", stu.addressLine1);
+                cmd.Parameters.Add("ADDRESS_LINE2", stu.addressLine2);
+                cmd.Parameters.Add("SUBURB", stu.suburb);
+                cmd.Parameters.Add("CITY", stu.city);
+                cmd.Parameters.Add("ZIP_CODE", stu.zipCode);
+                cmd.Parameters.Add("EMAIL_ADDRESS", stu.emailAddress);
+                
+                rows = cmd.ExecuteNonQuery(); 
+
+                //rows = db.InsertRecord(query);
             }
             catch (Exception ex)
             {

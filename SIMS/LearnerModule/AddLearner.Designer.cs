@@ -105,6 +105,7 @@ namespace SIMS.LearnerModule
             this.DateAdmission.Name = "DateAdmission";
             this.DateAdmission.Size = new System.Drawing.Size(163, 21);
             this.DateAdmission.TabIndex = 30;
+            this.DateAdmission.Value = new System.DateTime(2015, 5, 28, 23, 53, 38, 0);
             // 
             // AdminDateLabel
             // 

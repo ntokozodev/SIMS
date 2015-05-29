@@ -64,7 +64,7 @@ namespace SIMS
                     Authenticated = false;
                     //Username or password is incorrect
                     DialogResult reply = default(DialogResult);
-                    reply = MetroMessageBox.Show(this, "Username or Password is not recognised", "Error!", MessageBoxButtons.RetryCancel, MessageBoxIcon.Question);
+                    reply = MetroMessageBox.Show(this, "Username or Password is not recognised", "Error!", MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
                     if (reply == DialogResult.Cancel)
                         Application.Exit();
                     userIDTextBox.Clear();
