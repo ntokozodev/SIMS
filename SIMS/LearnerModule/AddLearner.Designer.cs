@@ -51,11 +51,10 @@ namespace SIMS.LearnerModule
             this.lastNameLabel = new MetroFramework.Controls.MetroLabel();
             this.firstNameLabel = new MetroFramework.Controls.MetroLabel();
             this.guardianGroupBox = new System.Windows.Forms.GroupBox();
-            this.TextBoxCity = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.TextBoxEmailAddress = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
-            this.TextBoxZipCode = new MetroFramework.Controls.MetroTextBox();
+            this.TextBoxCity = new MetroFramework.Controls.MetroTextBox();
             this.TextBoxAddressLine1 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.TextBoxAddressLine2 = new MetroFramework.Controls.MetroTextBox();
@@ -66,6 +65,7 @@ namespace SIMS.LearnerModule
             this.addDetailsTile = new MetroFramework.Controls.MetroTile();
             this.cancelTile = new MetroFramework.Controls.MetroTile();
             this.clearTile = new MetroFramework.Controls.MetroTile();
+            this.TextBoxZipCode = new MetroFramework.Controls.MetroTextBox();
             this.detailsGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.guardianGroupBox.SuspendLayout();
@@ -357,11 +357,11 @@ namespace SIMS.LearnerModule
             // guardianGroupBox
             // 
             this.guardianGroupBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.guardianGroupBox.Controls.Add(this.TextBoxCity);
+            this.guardianGroupBox.Controls.Add(this.TextBoxZipCode);
             this.guardianGroupBox.Controls.Add(this.metroLabel6);
             this.guardianGroupBox.Controls.Add(this.TextBoxEmailAddress);
             this.guardianGroupBox.Controls.Add(this.metroLabel12);
-            this.guardianGroupBox.Controls.Add(this.TextBoxZipCode);
+            this.guardianGroupBox.Controls.Add(this.TextBoxCity);
             this.guardianGroupBox.Controls.Add(this.TextBoxAddressLine1);
             this.guardianGroupBox.Controls.Add(this.metroLabel11);
             this.guardianGroupBox.Controls.Add(this.TextBoxAddressLine2);
@@ -376,22 +376,6 @@ namespace SIMS.LearnerModule
             this.guardianGroupBox.TabIndex = 1;
             this.guardianGroupBox.TabStop = false;
             this.guardianGroupBox.Text = "Address Details";
-            // 
-            // TextBoxCity
-            // 
-            this.TextBoxCity.Lines = new string[0];
-            this.TextBoxCity.Location = new System.Drawing.Point(164, 207);
-            this.TextBoxCity.MaxLength = 32767;
-            this.TextBoxCity.Name = "TextBoxCity";
-            this.TextBoxCity.PasswordChar = '\0';
-            this.TextBoxCity.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TextBoxCity.SelectedText = "";
-            this.TextBoxCity.Size = new System.Drawing.Size(329, 23);
-            this.TextBoxCity.Style = MetroFramework.MetroColorStyle.Green;
-            this.TextBoxCity.TabIndex = 28;
-            this.TextBoxCity.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextBoxCity.UseSelectable = true;
-            this.TextBoxCity.UseStyleColors = true;
             // 
             // metroLabel6
             // 
@@ -433,21 +417,21 @@ namespace SIMS.LearnerModule
             this.metroLabel12.Text = "Address Line 1:";
             this.metroLabel12.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
-            // TextBoxZipCode
+            // TextBoxCity
             // 
-            this.TextBoxZipCode.Lines = new string[0];
-            this.TextBoxZipCode.Location = new System.Drawing.Point(164, 262);
-            this.TextBoxZipCode.MaxLength = 32767;
-            this.TextBoxZipCode.Name = "TextBoxZipCode";
-            this.TextBoxZipCode.PasswordChar = '\0';
-            this.TextBoxZipCode.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TextBoxZipCode.SelectedText = "";
-            this.TextBoxZipCode.Size = new System.Drawing.Size(132, 23);
-            this.TextBoxZipCode.Style = MetroFramework.MetroColorStyle.Green;
-            this.TextBoxZipCode.TabIndex = 27;
-            this.TextBoxZipCode.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextBoxZipCode.UseSelectable = true;
-            this.TextBoxZipCode.UseStyleColors = true;
+            this.TextBoxCity.Lines = new string[0];
+            this.TextBoxCity.Location = new System.Drawing.Point(164, 207);
+            this.TextBoxCity.MaxLength = 32767;
+            this.TextBoxCity.Name = "TextBoxCity";
+            this.TextBoxCity.PasswordChar = '\0';
+            this.TextBoxCity.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TextBoxCity.SelectedText = "";
+            this.TextBoxCity.Size = new System.Drawing.Size(329, 23);
+            this.TextBoxCity.Style = MetroFramework.MetroColorStyle.Green;
+            this.TextBoxCity.TabIndex = 27;
+            this.TextBoxCity.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextBoxCity.UseSelectable = true;
+            this.TextBoxCity.UseStyleColors = true;
             // 
             // TextBoxAddressLine1
             // 
@@ -594,6 +578,22 @@ namespace SIMS.LearnerModule
             this.clearTile.UseSelectable = true;
             this.clearTile.Click += new System.EventHandler(this.clearTile_Click);
             // 
+            // TextBoxZipCode
+            // 
+            this.TextBoxZipCode.Lines = new string[0];
+            this.TextBoxZipCode.Location = new System.Drawing.Point(164, 262);
+            this.TextBoxZipCode.MaxLength = 32767;
+            this.TextBoxZipCode.Name = "TextBoxZipCode";
+            this.TextBoxZipCode.PasswordChar = '\0';
+            this.TextBoxZipCode.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TextBoxZipCode.SelectedText = "";
+            this.TextBoxZipCode.Size = new System.Drawing.Size(132, 23);
+            this.TextBoxZipCode.Style = MetroFramework.MetroColorStyle.Green;
+            this.TextBoxZipCode.TabIndex = 28;
+            this.TextBoxZipCode.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextBoxZipCode.UseSelectable = true;
+            this.TextBoxZipCode.UseStyleColors = true;
+            // 
             // AddLearner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -650,7 +650,7 @@ namespace SIMS.LearnerModule
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroTextBox TextBoxEmailAddress;
         private MetroFramework.Controls.MetroLabel metroLabel12;
-        private MetroFramework.Controls.MetroTextBox TextBoxZipCode;
+        private MetroFramework.Controls.MetroTextBox TextBoxCity;
         private MetroFramework.Controls.MetroTextBox TextBoxAddressLine1;
         private MetroFramework.Controls.MetroLabel metroLabel11;
         private MetroFramework.Controls.MetroTextBox TextBoxAddressLine2;
@@ -660,7 +660,7 @@ namespace SIMS.LearnerModule
         private MetroFramework.Controls.MetroLabel metroLabel13;
         private MetroFramework.Controls.MetroTile clearTile;
         private DateTimePicker DateAdmission;
-        private MetroFramework.Controls.MetroTextBox TextBoxCity;
+        private MetroFramework.Controls.MetroTextBox TextBoxZipCode;
     
         protected override CreateParams CreateParams
         {

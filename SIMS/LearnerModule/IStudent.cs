@@ -54,6 +54,7 @@ namespace SIMS.LearnerModule
         string ContactNumber { get; }
         DateTimePicker AdmittedDate { get; }
         string AdmissionNumber { get; }
+        string Centre { get; }
 
         //Centre SchoolCentre { get; }
         //ClassRoom StudentClass { get; }

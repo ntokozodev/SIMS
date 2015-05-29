@@ -58,6 +58,7 @@ namespace SIMS.LearnerModule
         private string zipCode;
         private string emailAddress;
         private string admissionNumber;
+        private string centre;
         private DateTimePicker admittedDate;
         private SimsOracle db;
 
@@ -71,7 +72,7 @@ namespace SIMS.LearnerModule
                         DateTimePicker adDate, string adminNo, 
                         string addr1, string addr2, 
                         string subV, string cityV, 
-                        string zipV, string email
+                        string zipV, string email, string cent
                       ) 
         {
             firstName = fName;
@@ -88,6 +89,7 @@ namespace SIMS.LearnerModule
             zipCode = zipV;
             emailAddress = email;
             admissionNumber = adminNo;
+            centre = cent;
 
             //picture = pic;
             //schoolCentre = sCentre;
@@ -178,6 +180,12 @@ namespace SIMS.LearnerModule
             get { return emailAddress; }
             set { emailAddress = value; }
         }
+
+        public string Centre
+        {
+            get { return centre; }
+            set { centre = value; }
+        }
         #endregion
 
 
@@ -190,10 +198,10 @@ namespace SIMS.LearnerModule
                 string query = "INSERT INTO EDU_SCHEMA.STUDENT " +
                                       "(ADMISION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER," +
                                       "PHONE_NUMBER, ADMITTED_DATE, STUDENT_CITIZEN_ID, ADDRESS_LINE1," +
-                                      "ADDRESS_LINE2, SUBURB, CITY, ZIP_CODE, EMAIL_ADDRESS) " +
+                                      "ADDRESS_LINE2, SUBURB, CITY, ZIP_CODE, EMAIL_ADDRESS, CENTRE) " +
                                "VALUES (:ADMISION_NO, :FIRST_NAME, :LAST_NAME, :STUDENT_GENDER," +
                                        ":PHONE_NUMBER, :ADMITTED_DATE, :STUDENT_CITIZEN_ID, :ADDRESS_LINE1," +
-                                       ":ADDRESS_LINE2, :SUBURB, :CITY, :ZIP_CODE, :EMAIL_ADDRESS)";
+                                       ":ADDRESS_LINE2, :SUBURB, :CITY, :ZIP_CODE, :EMAIL_ADDRESS, :CENTRE)";
                 OracleCommand cmd = new OracleCommand(query, db.Connection);
                 cmd.Parameters.Add("ADMISION_NO", stu.admissionNumber);
                 cmd.Parameters.Add("FIRST_NAME", stu.firstName);
@@ -208,10 +216,9 @@ namespace SIMS.LearnerModule
                 cmd.Parameters.Add("CITY", stu.city);
                 cmd.Parameters.Add("ZIP_CODE", stu.zipCode);
                 cmd.Parameters.Add("EMAIL_ADDRESS", stu.emailAddress);
+                cmd.Parameters.Add("CENTRE", stu.centre);
                 
                 rows = cmd.ExecuteNonQuery(); 
-
-                //rows = db.InsertRecord(query);
             }
             catch (Exception ex)
             {

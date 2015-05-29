@@ -46,19 +46,20 @@ namespace SIMS.LearnerModule
                                   ComboBoxGender.Text.ToString(), TextBoxContactNumber.Text.ToString(), 
                                   DateAdmission, TextBoxAdminNumber.Text.ToString(), 
                                   TextBoxAddressLine1.Text.ToString(), TextBoxAddressLine2.Text.ToString(), 
-                                  TextBoxSuburb.Text.ToString(), TextBoxCity.Text.ToString(), 
-                                  TextBoxZipCode.Text.ToString(), TextBoxEmailAddress.Text.ToString()
+                                  TextBoxSuburb.Text.ToString(), TextBoxZipCode.Text.ToString(), 
+                                  TextBoxCity.Text.ToString(), TextBoxEmailAddress.Text.ToString(),
+                                  ComboBoxCentre.Text.ToString()
                                  );
 
             int rowsUpdated = student.addNewStudent(student);
 
             if (rowsUpdated > 0)
             {
-                MetroMessageBox.Show(ParentForm, "Student details entered successful");
+                MetroMessageBox.Show(ParentForm, "", "Student Details Captured Successful", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 clearAll();
             }
             else
-                MetroMessageBox.Show(ParentForm, "Details not successful entered!");
+                MetroMessageBox.Show(ParentForm, " ","Details not successful captured!",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         internal void clearAll()
@@ -69,16 +70,16 @@ namespace SIMS.LearnerModule
             TextBoxAddressLine1.Clear();
             TextBoxAddressLine2.Clear();
             TextBoxAdminNumber.Clear();
-            TextBoxCity.Clear();
+            TextBoxZipCode.Clear();
             TextBoxContactNumber.Clear();
             TextBoxEmailAddress.Clear();
-            TextBoxZipCode.Clear();
+            TextBoxCity.Clear();
             TextBoxEmailAddress.Clear();
             TextBoxAddressLine2.Clear();
             TextBoxAddressLine1.Clear();
             TextBoxSuburb.Clear();
             TextBoxSuburb.Clear();
-            TextBoxZipCode.Clear();
+            TextBoxCity.Clear();
             DateAdmission.ResetText();
             ComboBoxCentre.ResetText();
             ComboBoxGender.ResetText();
