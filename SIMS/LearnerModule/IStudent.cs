@@ -43,10 +43,8 @@ namespace SIMS.LearnerModule
         string FirstName { get; }
         string LastName { get; }
         string StudentCitizenID { get; }
-        string GuardianCitizenID { get; }
         string Gender { get; }
         string AddressLine1 { get; }
-        string AddressLine2 { get; }
         string Suburb { get; }
         string City { get; }
         string ZipCode { get; }

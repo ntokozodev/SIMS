@@ -51,13 +51,12 @@ namespace SIMS.LearnerModule
             this.lastNameLabel = new MetroFramework.Controls.MetroLabel();
             this.firstNameLabel = new MetroFramework.Controls.MetroLabel();
             this.guardianGroupBox = new System.Windows.Forms.GroupBox();
+            this.TextBoxZipCode = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.TextBoxEmailAddress = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.TextBoxCity = new MetroFramework.Controls.MetroTextBox();
             this.TextBoxAddressLine1 = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
-            this.TextBoxAddressLine2 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
             this.TextBoxSuburb = new MetroFramework.Controls.MetroTextBox();
@@ -65,7 +64,6 @@ namespace SIMS.LearnerModule
             this.addDetailsTile = new MetroFramework.Controls.MetroTile();
             this.cancelTile = new MetroFramework.Controls.MetroTile();
             this.clearTile = new MetroFramework.Controls.MetroTile();
-            this.TextBoxZipCode = new MetroFramework.Controls.MetroTextBox();
             this.detailsGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.guardianGroupBox.SuspendLayout();
@@ -363,8 +361,6 @@ namespace SIMS.LearnerModule
             this.guardianGroupBox.Controls.Add(this.metroLabel12);
             this.guardianGroupBox.Controls.Add(this.TextBoxCity);
             this.guardianGroupBox.Controls.Add(this.TextBoxAddressLine1);
-            this.guardianGroupBox.Controls.Add(this.metroLabel11);
-            this.guardianGroupBox.Controls.Add(this.TextBoxAddressLine2);
             this.guardianGroupBox.Controls.Add(this.metroLabel10);
             this.guardianGroupBox.Controls.Add(this.metroLabel14);
             this.guardianGroupBox.Controls.Add(this.TextBoxSuburb);
@@ -372,10 +368,26 @@ namespace SIMS.LearnerModule
             this.guardianGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guardianGroupBox.Location = new System.Drawing.Point(550, 84);
             this.guardianGroupBox.Name = "guardianGroupBox";
-            this.guardianGroupBox.Size = new System.Drawing.Size(521, 332);
+            this.guardianGroupBox.Size = new System.Drawing.Size(521, 285);
             this.guardianGroupBox.TabIndex = 1;
             this.guardianGroupBox.TabStop = false;
             this.guardianGroupBox.Text = "Address Details";
+            // 
+            // TextBoxZipCode
+            // 
+            this.TextBoxZipCode.Lines = new string[0];
+            this.TextBoxZipCode.Location = new System.Drawing.Point(164, 207);
+            this.TextBoxZipCode.MaxLength = 32767;
+            this.TextBoxZipCode.Name = "TextBoxZipCode";
+            this.TextBoxZipCode.PasswordChar = '\0';
+            this.TextBoxZipCode.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TextBoxZipCode.SelectedText = "";
+            this.TextBoxZipCode.Size = new System.Drawing.Size(115, 23);
+            this.TextBoxZipCode.Style = MetroFramework.MetroColorStyle.Green;
+            this.TextBoxZipCode.TabIndex = 28;
+            this.TextBoxZipCode.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextBoxZipCode.UseSelectable = true;
+            this.TextBoxZipCode.UseStyleColors = true;
             // 
             // metroLabel6
             // 
@@ -420,7 +432,7 @@ namespace SIMS.LearnerModule
             // TextBoxCity
             // 
             this.TextBoxCity.Lines = new string[0];
-            this.TextBoxCity.Location = new System.Drawing.Point(164, 207);
+            this.TextBoxCity.Location = new System.Drawing.Point(164, 157);
             this.TextBoxCity.MaxLength = 32767;
             this.TextBoxCity.Name = "TextBoxCity";
             this.TextBoxCity.PasswordChar = '\0';
@@ -449,40 +461,12 @@ namespace SIMS.LearnerModule
             this.TextBoxAddressLine1.UseSelectable = true;
             this.TextBoxAddressLine1.UseStyleColors = true;
             // 
-            // metroLabel11
-            // 
-            this.metroLabel11.AutoSize = true;
-            this.metroLabel11.BackColor = System.Drawing.Color.White;
-            this.metroLabel11.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel11.Location = new System.Drawing.Point(6, 112);
-            this.metroLabel11.Name = "metroLabel11";
-            this.metroLabel11.Size = new System.Drawing.Size(102, 19);
-            this.metroLabel11.TabIndex = 10;
-            this.metroLabel11.Text = "Address Line 2:";
-            this.metroLabel11.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
-            // TextBoxAddressLine2
-            // 
-            this.TextBoxAddressLine2.Lines = new string[0];
-            this.TextBoxAddressLine2.Location = new System.Drawing.Point(164, 108);
-            this.TextBoxAddressLine2.MaxLength = 32767;
-            this.TextBoxAddressLine2.Name = "TextBoxAddressLine2";
-            this.TextBoxAddressLine2.PasswordChar = '\0';
-            this.TextBoxAddressLine2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TextBoxAddressLine2.SelectedText = "";
-            this.TextBoxAddressLine2.Size = new System.Drawing.Size(329, 23);
-            this.TextBoxAddressLine2.Style = MetroFramework.MetroColorStyle.Green;
-            this.TextBoxAddressLine2.TabIndex = 23;
-            this.TextBoxAddressLine2.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextBoxAddressLine2.UseSelectable = true;
-            this.TextBoxAddressLine2.UseStyleColors = true;
-            // 
             // metroLabel10
             // 
             this.metroLabel10.AutoSize = true;
             this.metroLabel10.BackColor = System.Drawing.Color.White;
             this.metroLabel10.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel10.Location = new System.Drawing.Point(6, 161);
+            this.metroLabel10.Location = new System.Drawing.Point(6, 112);
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.Size = new System.Drawing.Size(56, 19);
             this.metroLabel10.TabIndex = 12;
@@ -494,17 +478,17 @@ namespace SIMS.LearnerModule
             this.metroLabel14.AutoSize = true;
             this.metroLabel14.BackColor = System.Drawing.Color.White;
             this.metroLabel14.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel14.Location = new System.Drawing.Point(6, 266);
+            this.metroLabel14.Location = new System.Drawing.Point(6, 211);
             this.metroLabel14.Name = "metroLabel14";
-            this.metroLabel14.Size = new System.Drawing.Size(67, 19);
+            this.metroLabel14.Size = new System.Drawing.Size(85, 19);
             this.metroLabel14.TabIndex = 26;
-            this.metroLabel14.Text = "Zip Code:";
+            this.metroLabel14.Text = "Postal Code:";
             this.metroLabel14.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // TextBoxSuburb
             // 
             this.TextBoxSuburb.Lines = new string[0];
-            this.TextBoxSuburb.Location = new System.Drawing.Point(164, 157);
+            this.TextBoxSuburb.Location = new System.Drawing.Point(164, 108);
             this.TextBoxSuburb.MaxLength = 32767;
             this.TextBoxSuburb.Name = "TextBoxSuburb";
             this.TextBoxSuburb.PasswordChar = '\0';
@@ -522,7 +506,7 @@ namespace SIMS.LearnerModule
             this.metroLabel13.AutoSize = true;
             this.metroLabel13.BackColor = System.Drawing.Color.White;
             this.metroLabel13.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel13.Location = new System.Drawing.Point(6, 211);
+            this.metroLabel13.Location = new System.Drawing.Point(6, 161);
             this.metroLabel13.Name = "metroLabel13";
             this.metroLabel13.Size = new System.Drawing.Size(36, 19);
             this.metroLabel13.TabIndex = 14;
@@ -533,9 +517,9 @@ namespace SIMS.LearnerModule
             // 
             this.addDetailsTile.ActiveControl = null;
             this.addDetailsTile.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.addDetailsTile.Location = new System.Drawing.Point(550, 461);
+            this.addDetailsTile.Location = new System.Drawing.Point(550, 423);
             this.addDetailsTile.Name = "addDetailsTile";
-            this.addDetailsTile.Size = new System.Drawing.Size(159, 32);
+            this.addDetailsTile.Size = new System.Drawing.Size(159, 70);
             this.addDetailsTile.Style = MetroFramework.MetroColorStyle.Green;
             this.addDetailsTile.TabIndex = 2;
             this.addDetailsTile.Text = "Add Details";
@@ -550,9 +534,9 @@ namespace SIMS.LearnerModule
             // 
             this.cancelTile.ActiveControl = null;
             this.cancelTile.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cancelTile.Location = new System.Drawing.Point(912, 461);
+            this.cancelTile.Location = new System.Drawing.Point(906, 423);
             this.cancelTile.Name = "cancelTile";
-            this.cancelTile.Size = new System.Drawing.Size(159, 32);
+            this.cancelTile.Size = new System.Drawing.Size(159, 70);
             this.cancelTile.Style = MetroFramework.MetroColorStyle.Green;
             this.cancelTile.TabIndex = 3;
             this.cancelTile.Text = "Cancel";
@@ -567,9 +551,9 @@ namespace SIMS.LearnerModule
             // 
             this.clearTile.ActiveControl = null;
             this.clearTile.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.clearTile.Location = new System.Drawing.Point(731, 461);
+            this.clearTile.Location = new System.Drawing.Point(730, 423);
             this.clearTile.Name = "clearTile";
-            this.clearTile.Size = new System.Drawing.Size(159, 32);
+            this.clearTile.Size = new System.Drawing.Size(159, 70);
             this.clearTile.TabIndex = 4;
             this.clearTile.Text = "Clear";
             this.clearTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -577,22 +561,6 @@ namespace SIMS.LearnerModule
             this.clearTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.clearTile.UseSelectable = true;
             this.clearTile.Click += new System.EventHandler(this.clearTile_Click);
-            // 
-            // TextBoxZipCode
-            // 
-            this.TextBoxZipCode.Lines = new string[0];
-            this.TextBoxZipCode.Location = new System.Drawing.Point(164, 262);
-            this.TextBoxZipCode.MaxLength = 32767;
-            this.TextBoxZipCode.Name = "TextBoxZipCode";
-            this.TextBoxZipCode.PasswordChar = '\0';
-            this.TextBoxZipCode.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TextBoxZipCode.SelectedText = "";
-            this.TextBoxZipCode.Size = new System.Drawing.Size(132, 23);
-            this.TextBoxZipCode.Style = MetroFramework.MetroColorStyle.Green;
-            this.TextBoxZipCode.TabIndex = 28;
-            this.TextBoxZipCode.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextBoxZipCode.UseSelectable = true;
-            this.TextBoxZipCode.UseStyleColors = true;
             // 
             // AddLearner
             // 
@@ -652,8 +620,6 @@ namespace SIMS.LearnerModule
         private MetroFramework.Controls.MetroLabel metroLabel12;
         private MetroFramework.Controls.MetroTextBox TextBoxCity;
         private MetroFramework.Controls.MetroTextBox TextBoxAddressLine1;
-        private MetroFramework.Controls.MetroLabel metroLabel11;
-        private MetroFramework.Controls.MetroTextBox TextBoxAddressLine2;
         private MetroFramework.Controls.MetroLabel metroLabel10;
         private MetroFramework.Controls.MetroLabel metroLabel14;
         private MetroFramework.Controls.MetroTextBox TextBoxSuburb;

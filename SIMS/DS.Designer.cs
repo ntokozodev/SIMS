@@ -5638,8 +5638,6 @@ namespace SIMS {
             
             private global::System.Data.DataColumn columnADDRESS_LINE1;
             
-            private global::System.Data.DataColumn columnADDRESS_LINE2;
-            
             private global::System.Data.DataColumn columnSUBURB;
             
             private global::System.Data.DataColumn columnCITY;
@@ -5649,6 +5647,8 @@ namespace SIMS {
             private global::System.Data.DataColumn columnEMAIL_ADDRESS;
             
             private global::System.Data.DataColumn columnSUBJECT_STREAM;
+            
+            private global::System.Data.DataColumn columnCENTRE;
             
             private global::System.Data.DataColumn columnPICTURE;
             
@@ -5751,14 +5751,6 @@ namespace SIMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ADDRESS_LINE2Column {
-                get {
-                    return this.columnADDRESS_LINE2;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn SUBURBColumn {
                 get {
                     return this.columnSUBURB;
@@ -5794,6 +5786,14 @@ namespace SIMS {
             public global::System.Data.DataColumn SUBJECT_STREAMColumn {
                 get {
                     return this.columnSUBJECT_STREAM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CENTREColumn {
+                get {
+                    return this.columnCENTRE;
                 }
             }
             
@@ -5842,7 +5842,7 @@ namespace SIMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STUDENTRow AddSTUDENTRow(string ADMISION_NO, string FIRST_NAME, string LAST_NAME, string STUDENT_GENDER, string PHONE_NUMBER, System.DateTime ADMITTED_DATE, string STUDENT_CITIZEN_ID, string ADDRESS_LINE1, string ADDRESS_LINE2, string SUBURB, string CITY, string ZIP_CODE, string EMAIL_ADDRESS, string SUBJECT_STREAM, byte[] PICTURE) {
+            public STUDENTRow AddSTUDENTRow(string ADMISION_NO, string FIRST_NAME, string LAST_NAME, string STUDENT_GENDER, string PHONE_NUMBER, System.DateTime ADMITTED_DATE, string STUDENT_CITIZEN_ID, string ADDRESS_LINE1, string SUBURB, string CITY, string ZIP_CODE, string EMAIL_ADDRESS, string SUBJECT_STREAM, string CENTRE, byte[] PICTURE) {
                 STUDENTRow rowSTUDENTRow = ((STUDENTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ADMISION_NO,
@@ -5853,12 +5853,12 @@ namespace SIMS {
                         ADMITTED_DATE,
                         STUDENT_CITIZEN_ID,
                         ADDRESS_LINE1,
-                        ADDRESS_LINE2,
                         SUBURB,
                         CITY,
                         ZIP_CODE,
                         EMAIL_ADDRESS,
                         SUBJECT_STREAM,
+                        CENTRE,
                         PICTURE};
                 rowSTUDENTRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSTUDENTRow);
@@ -5897,12 +5897,12 @@ namespace SIMS {
                 this.columnADMITTED_DATE = base.Columns["ADMITTED_DATE"];
                 this.columnSTUDENT_CITIZEN_ID = base.Columns["STUDENT_CITIZEN_ID"];
                 this.columnADDRESS_LINE1 = base.Columns["ADDRESS_LINE1"];
-                this.columnADDRESS_LINE2 = base.Columns["ADDRESS_LINE2"];
                 this.columnSUBURB = base.Columns["SUBURB"];
                 this.columnCITY = base.Columns["CITY"];
                 this.columnZIP_CODE = base.Columns["ZIP_CODE"];
                 this.columnEMAIL_ADDRESS = base.Columns["EMAIL_ADDRESS"];
                 this.columnSUBJECT_STREAM = base.Columns["SUBJECT_STREAM"];
+                this.columnCENTRE = base.Columns["CENTRE"];
                 this.columnPICTURE = base.Columns["PICTURE"];
             }
             
@@ -5925,8 +5925,6 @@ namespace SIMS {
                 base.Columns.Add(this.columnSTUDENT_CITIZEN_ID);
                 this.columnADDRESS_LINE1 = new global::System.Data.DataColumn("ADDRESS_LINE1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnADDRESS_LINE1);
-                this.columnADDRESS_LINE2 = new global::System.Data.DataColumn("ADDRESS_LINE2", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnADDRESS_LINE2);
                 this.columnSUBURB = new global::System.Data.DataColumn("SUBURB", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSUBURB);
                 this.columnCITY = new global::System.Data.DataColumn("CITY", typeof(string), null, global::System.Data.MappingType.Element);
@@ -5937,6 +5935,8 @@ namespace SIMS {
                 base.Columns.Add(this.columnEMAIL_ADDRESS);
                 this.columnSUBJECT_STREAM = new global::System.Data.DataColumn("SUBJECT_STREAM", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSUBJECT_STREAM);
+                this.columnCENTRE = new global::System.Data.DataColumn("CENTRE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCENTRE);
                 this.columnPICTURE = new global::System.Data.DataColumn("PICTURE", typeof(byte[]), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPICTURE);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -5950,12 +5950,12 @@ namespace SIMS {
                 this.columnSTUDENT_CITIZEN_ID.Unique = true;
                 this.columnSTUDENT_CITIZEN_ID.MaxLength = 1000;
                 this.columnADDRESS_LINE1.MaxLength = 255;
-                this.columnADDRESS_LINE2.MaxLength = 255;
                 this.columnSUBURB.MaxLength = 25;
                 this.columnCITY.MaxLength = 25;
                 this.columnZIP_CODE.MaxLength = 25;
                 this.columnEMAIL_ADDRESS.MaxLength = 255;
                 this.columnSUBJECT_STREAM.MaxLength = 25;
+                this.columnCENTRE.MaxLength = 25;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6197,6 +6197,14 @@ namespace SIMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public STUDENT_CLASSRow FindBySTUDENT_CITIZEN_IDCLASS_ID(string STUDENT_CITIZEN_ID, decimal CLASS_ID) {
+                return ((STUDENT_CLASSRow)(this.Rows.Find(new object[] {
+                            STUDENT_CITIZEN_ID,
+                            CLASS_ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 STUDENT_CLASSDataTable cln = ((STUDENT_CLASSDataTable)(base.Clone()));
                 cln.InitVars();
@@ -6223,7 +6231,12 @@ namespace SIMS {
                 base.Columns.Add(this.columnSTUDENT_CITIZEN_ID);
                 this.columnCLASS_ID = new global::System.Data.DataColumn("CLASS_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCLASS_ID);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnSTUDENT_CITIZEN_ID,
+                                this.columnCLASS_ID}, true));
+                this.columnSTUDENT_CITIZEN_ID.AllowDBNull = false;
                 this.columnSTUDENT_CITIZEN_ID.MaxLength = 1000;
+                this.columnCLASS_ID.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6476,6 +6489,14 @@ namespace SIMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public STUDENT_FEERow FindBySTUDENT_CITIZEN_IDFEE_ID(string STUDENT_CITIZEN_ID, decimal FEE_ID) {
+                return ((STUDENT_FEERow)(this.Rows.Find(new object[] {
+                            STUDENT_CITIZEN_ID,
+                            FEE_ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 STUDENT_FEEDataTable cln = ((STUDENT_FEEDataTable)(base.Clone()));
                 cln.InitVars();
@@ -6505,7 +6526,12 @@ namespace SIMS {
                 base.Columns.Add(this.columnFEE_ID);
                 this.columnFEE_BALANCE = new global::System.Data.DataColumn("FEE_BALANCE", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFEE_BALANCE);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnSTUDENT_CITIZEN_ID,
+                                this.columnFEE_ID}, true));
+                this.columnSTUDENT_CITIZEN_ID.AllowDBNull = false;
                 this.columnSTUDENT_CITIZEN_ID.MaxLength = 1000;
+                this.columnFEE_ID.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6758,6 +6784,14 @@ namespace SIMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public STUDENT_PAYMENTRow FindBySTUDENT_CITIZEN_IDPAYMENT_ID(string STUDENT_CITIZEN_ID, decimal PAYMENT_ID) {
+                return ((STUDENT_PAYMENTRow)(this.Rows.Find(new object[] {
+                            STUDENT_CITIZEN_ID,
+                            PAYMENT_ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 STUDENT_PAYMENTDataTable cln = ((STUDENT_PAYMENTDataTable)(base.Clone()));
                 cln.InitVars();
@@ -6787,7 +6821,12 @@ namespace SIMS {
                 base.Columns.Add(this.columnPAYMENT_ID);
                 this.columnPAYMENT_DATE = new global::System.Data.DataColumn("PAYMENT_DATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPAYMENT_DATE);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnSTUDENT_CITIZEN_ID,
+                                this.columnPAYMENT_ID}, true));
+                this.columnSTUDENT_CITIZEN_ID.AllowDBNull = false;
                 this.columnSTUDENT_CITIZEN_ID.MaxLength = 1000;
+                this.columnPAYMENT_ID.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9591,22 +9630,6 @@ namespace SIMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ADDRESS_LINE2 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSTUDENT.ADDRESS_LINE2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ADDRESS_LINE2\' in table \'STUDENT\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSTUDENT.ADDRESS_LINE2Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string SUBURB {
                 get {
                     try {
@@ -9682,6 +9705,22 @@ namespace SIMS {
                 }
                 set {
                     this[this.tableSTUDENT.SUBJECT_STREAMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CENTRE {
+                get {
+                    try {
+                        return ((string)(this[this.tableSTUDENT.CENTREColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CENTRE\' in table \'STUDENT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSTUDENT.CENTREColumn] = value;
                 }
             }
             
@@ -9787,18 +9826,6 @@ namespace SIMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsADDRESS_LINE2Null() {
-                return this.IsNull(this.tableSTUDENT.ADDRESS_LINE2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetADDRESS_LINE2Null() {
-                this[this.tableSTUDENT.ADDRESS_LINE2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsSUBURBNull() {
                 return this.IsNull(this.tableSTUDENT.SUBURBColumn);
             }
@@ -9855,6 +9882,18 @@ namespace SIMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetSUBJECT_STREAMNull() {
                 this[this.tableSTUDENT.SUBJECT_STREAMColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCENTRENull() {
+                return this.IsNull(this.tableSTUDENT.CENTREColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCENTRENull() {
+                this[this.tableSTUDENT.CENTREColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9932,12 +9971,7 @@ namespace SIMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string STUDENT_CITIZEN_ID {
                 get {
-                    try {
-                        return ((string)(this[this.tableSTUDENT_CLASS.STUDENT_CITIZEN_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'STUDENT_CITIZEN_ID\' in table \'STUDENT_CLASS\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableSTUDENT_CLASS.STUDENT_CITIZEN_IDColumn]));
                 }
                 set {
                     this[this.tableSTUDENT_CLASS.STUDENT_CITIZEN_IDColumn] = value;
@@ -9948,12 +9982,7 @@ namespace SIMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal CLASS_ID {
                 get {
-                    try {
-                        return ((decimal)(this[this.tableSTUDENT_CLASS.CLASS_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CLASS_ID\' in table \'STUDENT_CLASS\' is DBNull.", e);
-                    }
+                    return ((decimal)(this[this.tableSTUDENT_CLASS.CLASS_IDColumn]));
                 }
                 set {
                     this[this.tableSTUDENT_CLASS.CLASS_IDColumn] = value;
@@ -9981,30 +10010,6 @@ namespace SIMS {
                     this.SetParentRow(value, this.Table.ParentRelations["STUDENT_CLASS__ID_FK"]);
                 }
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSTUDENT_CITIZEN_IDNull() {
-                return this.IsNull(this.tableSTUDENT_CLASS.STUDENT_CITIZEN_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSTUDENT_CITIZEN_IDNull() {
-                this[this.tableSTUDENT_CLASS.STUDENT_CITIZEN_IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCLASS_IDNull() {
-                return this.IsNull(this.tableSTUDENT_CLASS.CLASS_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCLASS_IDNull() {
-                this[this.tableSTUDENT_CLASS.CLASS_IDColumn] = global::System.Convert.DBNull;
-            }
         }
         
         /// <summary>
@@ -10025,12 +10030,7 @@ namespace SIMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string STUDENT_CITIZEN_ID {
                 get {
-                    try {
-                        return ((string)(this[this.tableSTUDENT_FEE.STUDENT_CITIZEN_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'STUDENT_CITIZEN_ID\' in table \'STUDENT_FEE\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableSTUDENT_FEE.STUDENT_CITIZEN_IDColumn]));
                 }
                 set {
                     this[this.tableSTUDENT_FEE.STUDENT_CITIZEN_IDColumn] = value;
@@ -10041,12 +10041,7 @@ namespace SIMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal FEE_ID {
                 get {
-                    try {
-                        return ((decimal)(this[this.tableSTUDENT_FEE.FEE_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FEE_ID\' in table \'STUDENT_FEE\' is DBNull.", e);
-                    }
+                    return ((decimal)(this[this.tableSTUDENT_FEE.FEE_IDColumn]));
                 }
                 set {
                     this[this.tableSTUDENT_FEE.FEE_IDColumn] = value;
@@ -10093,30 +10088,6 @@ namespace SIMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSTUDENT_CITIZEN_IDNull() {
-                return this.IsNull(this.tableSTUDENT_FEE.STUDENT_CITIZEN_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSTUDENT_CITIZEN_IDNull() {
-                this[this.tableSTUDENT_FEE.STUDENT_CITIZEN_IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFEE_IDNull() {
-                return this.IsNull(this.tableSTUDENT_FEE.FEE_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFEE_IDNull() {
-                this[this.tableSTUDENT_FEE.FEE_IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsFEE_BALANCENull() {
                 return this.IsNull(this.tableSTUDENT_FEE.FEE_BALANCEColumn);
             }
@@ -10146,12 +10117,7 @@ namespace SIMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string STUDENT_CITIZEN_ID {
                 get {
-                    try {
-                        return ((string)(this[this.tableSTUDENT_PAYMENT.STUDENT_CITIZEN_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'STUDENT_CITIZEN_ID\' in table \'STUDENT_PAYMENT\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableSTUDENT_PAYMENT.STUDENT_CITIZEN_IDColumn]));
                 }
                 set {
                     this[this.tableSTUDENT_PAYMENT.STUDENT_CITIZEN_IDColumn] = value;
@@ -10162,12 +10128,7 @@ namespace SIMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal PAYMENT_ID {
                 get {
-                    try {
-                        return ((decimal)(this[this.tableSTUDENT_PAYMENT.PAYMENT_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PAYMENT_ID\' in table \'STUDENT_PAYMENT\' is DBNull.", e);
-                    }
+                    return ((decimal)(this[this.tableSTUDENT_PAYMENT.PAYMENT_IDColumn]));
                 }
                 set {
                     this[this.tableSTUDENT_PAYMENT.PAYMENT_IDColumn] = value;
@@ -10210,30 +10171,6 @@ namespace SIMS {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["STUDENT_PAYMENT_CITIZEN_ID_FK"]);
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSTUDENT_CITIZEN_IDNull() {
-                return this.IsNull(this.tableSTUDENT_PAYMENT.STUDENT_CITIZEN_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSTUDENT_CITIZEN_IDNull() {
-                this[this.tableSTUDENT_PAYMENT.STUDENT_CITIZEN_IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPAYMENT_IDNull() {
-                return this.IsNull(this.tableSTUDENT_PAYMENT.PAYMENT_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPAYMENT_IDNull() {
-                this[this.tableSTUDENT_PAYMENT.PAYMENT_IDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20498,17 +20435,17 @@ namespace SIMS.DSTableAdapters {
             tableMapping.ColumnMappings.Add("ADMITTED_DATE", "ADMITTED_DATE");
             tableMapping.ColumnMappings.Add("STUDENT_CITIZEN_ID", "STUDENT_CITIZEN_ID");
             tableMapping.ColumnMappings.Add("ADDRESS_LINE1", "ADDRESS_LINE1");
-            tableMapping.ColumnMappings.Add("ADDRESS_LINE2", "ADDRESS_LINE2");
             tableMapping.ColumnMappings.Add("SUBURB", "SUBURB");
             tableMapping.ColumnMappings.Add("CITY", "CITY");
             tableMapping.ColumnMappings.Add("ZIP_CODE", "ZIP_CODE");
             tableMapping.ColumnMappings.Add("EMAIL_ADDRESS", "EMAIL_ADDRESS");
             tableMapping.ColumnMappings.Add("SUBJECT_STREAM", "SUBJECT_STREAM");
+            tableMapping.ColumnMappings.Add("CENTRE", "CENTRE");
             tableMapping.ColumnMappings.Add("PICTURE", "PICTURE");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""EDU_SCHEMA"".""STUDENT"" WHERE (((:IsNull_ADMISION_NO = 1 AND ""ADMISION_NO"" IS NULL) OR (""ADMISION_NO"" = :Original_ADMISION_NO)) AND ((:IsNull_FIRST_NAME = 1 AND ""FIRST_NAME"" IS NULL) OR (""FIRST_NAME"" = :Original_FIRST_NAME)) AND ((:IsNull_LAST_NAME = 1 AND ""LAST_NAME"" IS NULL) OR (""LAST_NAME"" = :Original_LAST_NAME)) AND ((:IsNull_STUDENT_GENDER = 1 AND ""STUDENT_GENDER"" IS NULL) OR (""STUDENT_GENDER"" = :Original_STUDENT_GENDER)) AND ((:IsNull_PHONE_NUMBER = 1 AND ""PHONE_NUMBER"" IS NULL) OR (""PHONE_NUMBER"" = :Original_PHONE_NUMBER)) AND ((:IsNull_ADMITTED_DATE = 1 AND ""ADMITTED_DATE"" IS NULL) OR (""ADMITTED_DATE"" = :Original_ADMITTED_DATE)) AND (""STUDENT_CITIZEN_ID"" = :Original_STUDENT_CITIZEN_ID) AND ((:IsNull_ADDRESS_LINE1 = 1 AND ""ADDRESS_LINE1"" IS NULL) OR (""ADDRESS_LINE1"" = :Original_ADDRESS_LINE1)) AND ((:IsNull_ADDRESS_LINE2 = 1 AND ""ADDRESS_LINE2"" IS NULL) OR (""ADDRESS_LINE2"" = :Original_ADDRESS_LINE2)) AND ((:IsNull_SUBURB = 1 AND ""SUBURB"" IS NULL) OR (""SUBURB"" = :Original_SUBURB)) AND ((:IsNull_CITY = 1 AND ""CITY"" IS NULL) OR (""CITY"" = :Original_CITY)) AND ((:IsNull_ZIP_CODE = 1 AND ""ZIP_CODE"" IS NULL) OR (""ZIP_CODE"" = :Original_ZIP_CODE)) AND ((:IsNull_EMAIL_ADDRESS = 1 AND ""EMAIL_ADDRESS"" IS NULL) OR (""EMAIL_ADDRESS"" = :Original_EMAIL_ADDRESS)) AND ((:IsNull_SUBJECT_STREAM = 1 AND ""SUBJECT_STREAM"" IS NULL) OR (""SUBJECT_STREAM"" = :Original_SUBJECT_STREAM)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""EDU_SCHEMA"".""STUDENT"" WHERE (((:IsNull_ADMISION_NO = 1 AND ""ADMISION_NO"" IS NULL) OR (""ADMISION_NO"" = :Original_ADMISION_NO)) AND ((:IsNull_FIRST_NAME = 1 AND ""FIRST_NAME"" IS NULL) OR (""FIRST_NAME"" = :Original_FIRST_NAME)) AND ((:IsNull_LAST_NAME = 1 AND ""LAST_NAME"" IS NULL) OR (""LAST_NAME"" = :Original_LAST_NAME)) AND ((:IsNull_STUDENT_GENDER = 1 AND ""STUDENT_GENDER"" IS NULL) OR (""STUDENT_GENDER"" = :Original_STUDENT_GENDER)) AND ((:IsNull_PHONE_NUMBER = 1 AND ""PHONE_NUMBER"" IS NULL) OR (""PHONE_NUMBER"" = :Original_PHONE_NUMBER)) AND ((:IsNull_ADMITTED_DATE = 1 AND ""ADMITTED_DATE"" IS NULL) OR (""ADMITTED_DATE"" = :Original_ADMITTED_DATE)) AND (""STUDENT_CITIZEN_ID"" = :Original_STUDENT_CITIZEN_ID) AND ((:IsNull_ADDRESS_LINE1 = 1 AND ""ADDRESS_LINE1"" IS NULL) OR (""ADDRESS_LINE1"" = :Original_ADDRESS_LINE1)) AND ((:IsNull_SUBURB = 1 AND ""SUBURB"" IS NULL) OR (""SUBURB"" = :Original_SUBURB)) AND ((:IsNull_CITY = 1 AND ""CITY"" IS NULL) OR (""CITY"" = :Original_CITY)) AND ((:IsNull_ZIP_CODE = 1 AND ""ZIP_CODE"" IS NULL) OR (""ZIP_CODE"" = :Original_ZIP_CODE)) AND ((:IsNull_EMAIL_ADDRESS = 1 AND ""EMAIL_ADDRESS"" IS NULL) OR (""EMAIL_ADDRESS"" = :Original_EMAIL_ADDRESS)) AND ((:IsNull_SUBJECT_STREAM = 1 AND ""SUBJECT_STREAM"" IS NULL) OR (""SUBJECT_STREAM"" = :Original_SUBJECT_STREAM)) AND ((:IsNull_CENTRE = 1 AND ""CENTRE"" IS NULL) OR (""CENTRE"" = :Original_CENTRE)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "IsNull_ADMISION_NO";
@@ -20646,24 +20583,6 @@ namespace SIMS.DSTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ADDRESS_LINE2";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "ADDRESS_LINE2";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ADDRESS_LINE2";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "ADDRESS_LINE2";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "IsNull_SUBURB";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
@@ -20753,9 +20672,27 @@ namespace SIMS.DSTableAdapters {
             param.SourceColumn = "SUBJECT_STREAM";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_CENTRE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "CENTRE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_CENTRE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "CENTRE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO ""EDU_SCHEMA"".""STUDENT"" (""ADMISION_NO"", ""FIRST_NAME"", ""LAST_NAME"", ""STUDENT_GENDER"", ""PHONE_NUMBER"", ""ADMITTED_DATE"", ""STUDENT_CITIZEN_ID"", ""ADDRESS_LINE1"", ""ADDRESS_LINE2"", ""SUBURB"", ""CITY"", ""ZIP_CODE"", ""EMAIL_ADDRESS"", ""SUBJECT_STREAM"", ""PICTURE"") VALUES (:ADMISION_NO, :FIRST_NAME, :LAST_NAME, :STUDENT_GENDER, :PHONE_NUMBER, :ADMITTED_DATE, :STUDENT_CITIZEN_ID, :ADDRESS_LINE1, :ADDRESS_LINE2, :SUBURB, :CITY, :ZIP_CODE, :EMAIL_ADDRESS, :SUBJECT_STREAM, :PICTURE)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO ""EDU_SCHEMA"".""STUDENT"" (""ADMISION_NO"", ""FIRST_NAME"", ""LAST_NAME"", ""STUDENT_GENDER"", ""PHONE_NUMBER"", ""ADMITTED_DATE"", ""STUDENT_CITIZEN_ID"", ""ADDRESS_LINE1"", ""SUBURB"", ""CITY"", ""ZIP_CODE"", ""EMAIL_ADDRESS"", ""SUBJECT_STREAM"", ""CENTRE"", ""PICTURE"") VALUES (:ADMISION_NO, :FIRST_NAME, :LAST_NAME, :STUDENT_GENDER, :PHONE_NUMBER, :ADMITTED_DATE, :STUDENT_CITIZEN_ID, :ADDRESS_LINE1, :SUBURB, :CITY, :ZIP_CODE, :EMAIL_ADDRESS, :SUBJECT_STREAM, :CENTRE, :PICTURE)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "ADMISION_NO";
@@ -20815,13 +20752,6 @@ namespace SIMS.DSTableAdapters {
             param.SourceColumn = "ADDRESS_LINE1";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ADDRESS_LINE2";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "ADDRESS_LINE2";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "SUBURB";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 25;
@@ -20857,6 +20787,13 @@ namespace SIMS.DSTableAdapters {
             param.SourceColumn = "SUBJECT_STREAM";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "CENTRE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "CENTRE";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "PICTURE";
             param.DbType = global::System.Data.DbType.Object;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.BFile;
@@ -20869,27 +20806,26 @@ namespace SIMS.DSTableAdapters {
             this._adapter.UpdateCommand.CommandText = "UPDATE \"EDU_SCHEMA\".\"STUDENT\" SET \"ADMISION_NO\" = :ADMISION_NO, \"FIRST_NAME\" = :F" +
                 "IRST_NAME, \"LAST_NAME\" = :LAST_NAME, \"STUDENT_GENDER\" = :STUDENT_GENDER, \"PHONE_" +
                 "NUMBER\" = :PHONE_NUMBER, \"ADMITTED_DATE\" = :ADMITTED_DATE, \"STUDENT_CITIZEN_ID\" " +
-                "= :STUDENT_CITIZEN_ID, \"ADDRESS_LINE1\" = :ADDRESS_LINE1, \"ADDRESS_LINE2\" = :ADDR" +
-                "ESS_LINE2, \"SUBURB\" = :SUBURB, \"CITY\" = :CITY, \"ZIP_CODE\" = :ZIP_CODE, \"EMAIL_AD" +
-                "DRESS\" = :EMAIL_ADDRESS, \"SUBJECT_STREAM\" = :SUBJECT_STREAM, \"PICTURE\" = :PICTUR" +
-                "E WHERE (((:IsNull_ADMISION_NO = 1 AND \"ADMISION_NO\" IS NULL) OR (\"ADMISION_NO\" " +
-                "= :Original_ADMISION_NO)) AND ((:IsNull_FIRST_NAME = 1 AND \"FIRST_NAME\" IS NULL)" +
-                " OR (\"FIRST_NAME\" = :Original_FIRST_NAME)) AND ((:IsNull_LAST_NAME = 1 AND \"LAST" +
-                "_NAME\" IS NULL) OR (\"LAST_NAME\" = :Original_LAST_NAME)) AND ((:IsNull_STUDENT_GE" +
-                "NDER = 1 AND \"STUDENT_GENDER\" IS NULL) OR (\"STUDENT_GENDER\" = :Original_STUDENT_" +
-                "GENDER)) AND ((:IsNull_PHONE_NUMBER = 1 AND \"PHONE_NUMBER\" IS NULL) OR (\"PHONE_N" +
-                "UMBER\" = :Original_PHONE_NUMBER)) AND ((:IsNull_ADMITTED_DATE = 1 AND \"ADMITTED_" +
-                "DATE\" IS NULL) OR (\"ADMITTED_DATE\" = :Original_ADMITTED_DATE)) AND (\"STUDENT_CIT" +
-                "IZEN_ID\" = :Original_STUDENT_CITIZEN_ID) AND ((:IsNull_ADDRESS_LINE1 = 1 AND \"AD" +
-                "DRESS_LINE1\" IS NULL) OR (\"ADDRESS_LINE1\" = :Original_ADDRESS_LINE1)) AND ((:IsN" +
-                "ull_ADDRESS_LINE2 = 1 AND \"ADDRESS_LINE2\" IS NULL) OR (\"ADDRESS_LINE2\" = :Origin" +
-                "al_ADDRESS_LINE2)) AND ((:IsNull_SUBURB = 1 AND \"SUBURB\" IS NULL) OR (\"SUBURB\" =" +
-                " :Original_SUBURB)) AND ((:IsNull_CITY = 1 AND \"CITY\" IS NULL) OR (\"CITY\" = :Ori" +
-                "ginal_CITY)) AND ((:IsNull_ZIP_CODE = 1 AND \"ZIP_CODE\" IS NULL) OR (\"ZIP_CODE\" =" +
-                " :Original_ZIP_CODE)) AND ((:IsNull_EMAIL_ADDRESS = 1 AND \"EMAIL_ADDRESS\" IS NUL" +
-                "L) OR (\"EMAIL_ADDRESS\" = :Original_EMAIL_ADDRESS)) AND ((:IsNull_SUBJECT_STREAM " +
-                "= 1 AND \"SUBJECT_STREAM\" IS NULL) OR (\"SUBJECT_STREAM\" = :Original_SUBJECT_STREA" +
-                "M)))";
+                "= :STUDENT_CITIZEN_ID, \"ADDRESS_LINE1\" = :ADDRESS_LINE1, \"SUBURB\" = :SUBURB, \"CI" +
+                "TY\" = :CITY, \"ZIP_CODE\" = :ZIP_CODE, \"EMAIL_ADDRESS\" = :EMAIL_ADDRESS, \"SUBJECT_" +
+                "STREAM\" = :SUBJECT_STREAM, \"CENTRE\" = :CENTRE, \"PICTURE\" = :PICTURE WHERE (((:Is" +
+                "Null_ADMISION_NO = 1 AND \"ADMISION_NO\" IS NULL) OR (\"ADMISION_NO\" = :Original_AD" +
+                "MISION_NO)) AND ((:IsNull_FIRST_NAME = 1 AND \"FIRST_NAME\" IS NULL) OR (\"FIRST_NA" +
+                "ME\" = :Original_FIRST_NAME)) AND ((:IsNull_LAST_NAME = 1 AND \"LAST_NAME\" IS NULL" +
+                ") OR (\"LAST_NAME\" = :Original_LAST_NAME)) AND ((:IsNull_STUDENT_GENDER = 1 AND \"" +
+                "STUDENT_GENDER\" IS NULL) OR (\"STUDENT_GENDER\" = :Original_STUDENT_GENDER)) AND (" +
+                "(:IsNull_PHONE_NUMBER = 1 AND \"PHONE_NUMBER\" IS NULL) OR (\"PHONE_NUMBER\" = :Orig" +
+                "inal_PHONE_NUMBER)) AND ((:IsNull_ADMITTED_DATE = 1 AND \"ADMITTED_DATE\" IS NULL)" +
+                " OR (\"ADMITTED_DATE\" = :Original_ADMITTED_DATE)) AND (\"STUDENT_CITIZEN_ID\" = :Or" +
+                "iginal_STUDENT_CITIZEN_ID) AND ((:IsNull_ADDRESS_LINE1 = 1 AND \"ADDRESS_LINE1\" I" +
+                "S NULL) OR (\"ADDRESS_LINE1\" = :Original_ADDRESS_LINE1)) AND ((:IsNull_SUBURB = 1" +
+                " AND \"SUBURB\" IS NULL) OR (\"SUBURB\" = :Original_SUBURB)) AND ((:IsNull_CITY = 1 " +
+                "AND \"CITY\" IS NULL) OR (\"CITY\" = :Original_CITY)) AND ((:IsNull_ZIP_CODE = 1 AND" +
+                " \"ZIP_CODE\" IS NULL) OR (\"ZIP_CODE\" = :Original_ZIP_CODE)) AND ((:IsNull_EMAIL_A" +
+                "DDRESS = 1 AND \"EMAIL_ADDRESS\" IS NULL) OR (\"EMAIL_ADDRESS\" = :Original_EMAIL_AD" +
+                "DRESS)) AND ((:IsNull_SUBJECT_STREAM = 1 AND \"SUBJECT_STREAM\" IS NULL) OR (\"SUBJ" +
+                "ECT_STREAM\" = :Original_SUBJECT_STREAM)) AND ((:IsNull_CENTRE = 1 AND \"CENTRE\" I" +
+                "S NULL) OR (\"CENTRE\" = :Original_CENTRE)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "ADMISION_NO";
@@ -20949,13 +20885,6 @@ namespace SIMS.DSTableAdapters {
             param.SourceColumn = "ADDRESS_LINE1";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ADDRESS_LINE2";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "ADDRESS_LINE2";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "SUBURB";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 25;
@@ -20989,6 +20918,13 @@ namespace SIMS.DSTableAdapters {
             param.Size = 25;
             param.IsNullable = true;
             param.SourceColumn = "SUBJECT_STREAM";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "CENTRE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "CENTRE";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "PICTURE";
@@ -21134,24 +21070,6 @@ namespace SIMS.DSTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ADDRESS_LINE2";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "ADDRESS_LINE2";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ADDRESS_LINE2";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "ADDRESS_LINE2";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "IsNull_SUBURB";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
@@ -21241,6 +21159,24 @@ namespace SIMS.DSTableAdapters {
             param.SourceColumn = "SUBJECT_STREAM";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_CENTRE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "CENTRE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_CENTRE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "CENTRE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21253,13 +21189,26 @@ namespace SIMS.DSTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[2];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ADMISION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER, PHONE_NUMBER, ADMITTED" +
-                "_DATE, STUDENT_CITIZEN_ID, ADDRESS_LINE1, ADDRESS_LINE2, SUBURB, CITY, ZIP_CODE," +
-                " EMAIL_ADDRESS, SUBJECT_STREAM, PICTURE FROM EDU_SCHEMA.STUDENT";
+                "_DATE, STUDENT_CITIZEN_ID, ADDRESS_LINE1, SUBURB, CITY, ZIP_CODE, EMAIL_ADDRESS," +
+                " SUBJECT_STREAM, CENTRE, PICTURE FROM EDU_SCHEMA.STUDENT";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT ADMISION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER, PHONE_NUMBER, ADMITTED" +
+                "_DATE, STUDENT_CITIZEN_ID, CITY, CENTRE\r\nFROM EDU_SCHEMA.STUDENT\r\nWHERE (LAST_NA" +
+                "ME LIKE \'%\'+:LAST_NAME+\'%\')";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":LAST_NAME";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "LAST_NAME";
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21281,6 +21230,42 @@ namespace SIMS.DSTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DS.STUDENTDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DS.STUDENTDataTable dataTable = new DS.STUDENTDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByLearnerSearch(DS.STUDENTDataTable dataTable, string LAST_NAME) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((LAST_NAME == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(LAST_NAME));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DS.STUDENTDataTable GetDataByLearnerSearch(string LAST_NAME) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((LAST_NAME == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(LAST_NAME));
+            }
             DS.STUDENTDataTable dataTable = new DS.STUDENTDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -21319,7 +21304,7 @@ namespace SIMS.DSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_ADMISION_NO, string Original_FIRST_NAME, string Original_LAST_NAME, string Original_STUDENT_GENDER, string Original_PHONE_NUMBER, global::System.Nullable<global::System.DateTime> Original_ADMITTED_DATE, string Original_STUDENT_CITIZEN_ID, string Original_ADDRESS_LINE1, string Original_ADDRESS_LINE2, string Original_SUBURB, string Original_CITY, string Original_ZIP_CODE, string Original_EMAIL_ADDRESS, string Original_SUBJECT_STREAM) {
+        public virtual int Delete(string Original_ADMISION_NO, string Original_FIRST_NAME, string Original_LAST_NAME, string Original_STUDENT_GENDER, string Original_PHONE_NUMBER, global::System.Nullable<global::System.DateTime> Original_ADMITTED_DATE, string Original_STUDENT_CITIZEN_ID, string Original_ADDRESS_LINE1, string Original_SUBURB, string Original_CITY, string Original_ZIP_CODE, string Original_EMAIL_ADDRESS, string Original_SUBJECT_STREAM, string Original_CENTRE) {
             if ((Original_ADMISION_NO == null)) {
                 this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -21382,53 +21367,53 @@ namespace SIMS.DSTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_ADDRESS_LINE1));
             }
-            if ((Original_ADDRESS_LINE2 == null)) {
+            if ((Original_SUBURB == null)) {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_ADDRESS_LINE2));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_SUBURB));
             }
-            if ((Original_SUBURB == null)) {
+            if ((Original_CITY == null)) {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_SUBURB));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_CITY));
             }
-            if ((Original_CITY == null)) {
+            if ((Original_ZIP_CODE == null)) {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_CITY));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_ZIP_CODE));
             }
-            if ((Original_ZIP_CODE == null)) {
+            if ((Original_EMAIL_ADDRESS == null)) {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_ZIP_CODE));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_EMAIL_ADDRESS));
             }
-            if ((Original_EMAIL_ADDRESS == null)) {
+            if ((Original_SUBJECT_STREAM == null)) {
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_EMAIL_ADDRESS));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_SUBJECT_STREAM));
             }
-            if ((Original_SUBJECT_STREAM == null)) {
+            if ((Original_CENTRE == null)) {
                 this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_SUBJECT_STREAM));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_CENTRE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -21450,7 +21435,7 @@ namespace SIMS.DSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string ADMISION_NO, string FIRST_NAME, string LAST_NAME, string STUDENT_GENDER, string PHONE_NUMBER, global::System.Nullable<global::System.DateTime> ADMITTED_DATE, string STUDENT_CITIZEN_ID, string ADDRESS_LINE1, string ADDRESS_LINE2, string SUBURB, string CITY, string ZIP_CODE, string EMAIL_ADDRESS, string SUBJECT_STREAM, object PICTURE) {
+        public virtual int Insert(string ADMISION_NO, string FIRST_NAME, string LAST_NAME, string STUDENT_GENDER, string PHONE_NUMBER, global::System.Nullable<global::System.DateTime> ADMITTED_DATE, string STUDENT_CITIZEN_ID, string ADDRESS_LINE1, string SUBURB, string CITY, string ZIP_CODE, string EMAIL_ADDRESS, string SUBJECT_STREAM, string CENTRE, object PICTURE) {
             if ((ADMISION_NO == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -21499,41 +21484,41 @@ namespace SIMS.DSTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = ((string)(ADDRESS_LINE1));
             }
-            if ((ADDRESS_LINE2 == null)) {
+            if ((SUBURB == null)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(ADDRESS_LINE2));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(SUBURB));
             }
-            if ((SUBURB == null)) {
+            if ((CITY == null)) {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(SUBURB));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(CITY));
             }
-            if ((CITY == null)) {
+            if ((ZIP_CODE == null)) {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(CITY));
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(ZIP_CODE));
             }
-            if ((ZIP_CODE == null)) {
+            if ((EMAIL_ADDRESS == null)) {
                 this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(ZIP_CODE));
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(EMAIL_ADDRESS));
             }
-            if ((EMAIL_ADDRESS == null)) {
+            if ((SUBJECT_STREAM == null)) {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(EMAIL_ADDRESS));
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(SUBJECT_STREAM));
             }
-            if ((SUBJECT_STREAM == null)) {
+            if ((CENTRE == null)) {
                 this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(SUBJECT_STREAM));
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(CENTRE));
             }
             if ((PICTURE == null)) {
                 this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
@@ -21570,12 +21555,12 @@ namespace SIMS.DSTableAdapters {
                     global::System.Nullable<global::System.DateTime> ADMITTED_DATE, 
                     string STUDENT_CITIZEN_ID, 
                     string ADDRESS_LINE1, 
-                    string ADDRESS_LINE2, 
                     string SUBURB, 
                     string CITY, 
                     string ZIP_CODE, 
                     string EMAIL_ADDRESS, 
                     string SUBJECT_STREAM, 
+                    string CENTRE, 
                     object PICTURE, 
                     string Original_ADMISION_NO, 
                     string Original_FIRST_NAME, 
@@ -21585,12 +21570,12 @@ namespace SIMS.DSTableAdapters {
                     global::System.Nullable<global::System.DateTime> Original_ADMITTED_DATE, 
                     string Original_STUDENT_CITIZEN_ID, 
                     string Original_ADDRESS_LINE1, 
-                    string Original_ADDRESS_LINE2, 
                     string Original_SUBURB, 
                     string Original_CITY, 
                     string Original_ZIP_CODE, 
                     string Original_EMAIL_ADDRESS, 
-                    string Original_SUBJECT_STREAM) {
+                    string Original_SUBJECT_STREAM, 
+                    string Original_CENTRE) {
             if ((ADMISION_NO == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -21639,41 +21624,41 @@ namespace SIMS.DSTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(ADDRESS_LINE1));
             }
-            if ((ADDRESS_LINE2 == null)) {
+            if ((SUBURB == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(ADDRESS_LINE2));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(SUBURB));
             }
-            if ((SUBURB == null)) {
+            if ((CITY == null)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(SUBURB));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(CITY));
             }
-            if ((CITY == null)) {
+            if ((ZIP_CODE == null)) {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(CITY));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(ZIP_CODE));
             }
-            if ((ZIP_CODE == null)) {
+            if ((EMAIL_ADDRESS == null)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(ZIP_CODE));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(EMAIL_ADDRESS));
             }
-            if ((EMAIL_ADDRESS == null)) {
+            if ((SUBJECT_STREAM == null)) {
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(EMAIL_ADDRESS));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(SUBJECT_STREAM));
             }
-            if ((SUBJECT_STREAM == null)) {
+            if ((CENTRE == null)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(SUBJECT_STREAM));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(CENTRE));
             }
             if ((PICTURE == null)) {
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
@@ -21743,53 +21728,53 @@ namespace SIMS.DSTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_ADDRESS_LINE1));
             }
-            if ((Original_ADDRESS_LINE2 == null)) {
+            if ((Original_SUBURB == null)) {
                 this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_ADDRESS_LINE2));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_SUBURB));
             }
-            if ((Original_SUBURB == null)) {
+            if ((Original_CITY == null)) {
                 this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_SUBURB));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_CITY));
             }
-            if ((Original_CITY == null)) {
+            if ((Original_ZIP_CODE == null)) {
                 this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_CITY));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_ZIP_CODE));
             }
-            if ((Original_ZIP_CODE == null)) {
+            if ((Original_EMAIL_ADDRESS == null)) {
                 this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(Original_ZIP_CODE));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(Original_EMAIL_ADDRESS));
             }
-            if ((Original_EMAIL_ADDRESS == null)) {
+            if ((Original_SUBJECT_STREAM == null)) {
                 this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_EMAIL_ADDRESS));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_SUBJECT_STREAM));
             }
-            if ((Original_SUBJECT_STREAM == null)) {
+            if ((Original_CENTRE == null)) {
                 this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_SUBJECT_STREAM));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_CENTRE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -21819,12 +21804,12 @@ namespace SIMS.DSTableAdapters {
                     string PHONE_NUMBER, 
                     global::System.Nullable<global::System.DateTime> ADMITTED_DATE, 
                     string ADDRESS_LINE1, 
-                    string ADDRESS_LINE2, 
                     string SUBURB, 
                     string CITY, 
                     string ZIP_CODE, 
                     string EMAIL_ADDRESS, 
                     string SUBJECT_STREAM, 
+                    string CENTRE, 
                     object PICTURE, 
                     string Original_ADMISION_NO, 
                     string Original_FIRST_NAME, 
@@ -21834,13 +21819,13 @@ namespace SIMS.DSTableAdapters {
                     global::System.Nullable<global::System.DateTime> Original_ADMITTED_DATE, 
                     string Original_STUDENT_CITIZEN_ID, 
                     string Original_ADDRESS_LINE1, 
-                    string Original_ADDRESS_LINE2, 
                     string Original_SUBURB, 
                     string Original_CITY, 
                     string Original_ZIP_CODE, 
                     string Original_EMAIL_ADDRESS, 
-                    string Original_SUBJECT_STREAM) {
-            return this.Update(ADMISION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER, PHONE_NUMBER, ADMITTED_DATE, Original_STUDENT_CITIZEN_ID, ADDRESS_LINE1, ADDRESS_LINE2, SUBURB, CITY, ZIP_CODE, EMAIL_ADDRESS, SUBJECT_STREAM, PICTURE, Original_ADMISION_NO, Original_FIRST_NAME, Original_LAST_NAME, Original_STUDENT_GENDER, Original_PHONE_NUMBER, Original_ADMITTED_DATE, Original_STUDENT_CITIZEN_ID, Original_ADDRESS_LINE1, Original_ADDRESS_LINE2, Original_SUBURB, Original_CITY, Original_ZIP_CODE, Original_EMAIL_ADDRESS, Original_SUBJECT_STREAM);
+                    string Original_SUBJECT_STREAM, 
+                    string Original_CENTRE) {
+            return this.Update(ADMISION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER, PHONE_NUMBER, ADMITTED_DATE, Original_STUDENT_CITIZEN_ID, ADDRESS_LINE1, SUBURB, CITY, ZIP_CODE, EMAIL_ADDRESS, SUBJECT_STREAM, CENTRE, PICTURE, Original_ADMISION_NO, Original_FIRST_NAME, Original_LAST_NAME, Original_STUDENT_GENDER, Original_PHONE_NUMBER, Original_ADMITTED_DATE, Original_STUDENT_CITIZEN_ID, Original_ADDRESS_LINE1, Original_SUBURB, Original_CITY, Original_ZIP_CODE, Original_EMAIL_ADDRESS, Original_SUBJECT_STREAM, Original_CENTRE);
         }
     }
     
@@ -21968,12 +21953,34 @@ namespace SIMS.DSTableAdapters {
             tableMapping.ColumnMappings.Add("STUDENT_CITIZEN_ID", "STUDENT_CITIZEN_ID");
             tableMapping.ColumnMappings.Add("CLASS_ID", "CLASS_ID");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"EDU_SCHEMA\".\"STUDENT_CLASS\" WHERE ((\"STUDENT_CITIZEN_ID\" = :Original" +
+                "_STUDENT_CITIZEN_ID) AND (\"CLASS_ID\" = :Original_CLASS_ID))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_STUDENT_CITIZEN_ID";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "STUDENT_CITIZEN_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_CLASS_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "CLASS_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO \"EDU_SCHEMA\".\"STUDENT_CLASS\" (\"STUDENT_CITIZEN_ID\", \"CLASS_ID\") VALUE" +
                 "S (:STUDENT_CITIZEN_ID, :CLASS_ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "STUDENT_CITIZEN_ID";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 1000;
@@ -21988,6 +21995,44 @@ namespace SIMS.DSTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "CLASS_ID";
             this._adapter.InsertCommand.Parameters.Add(param);
+            this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE \"EDU_SCHEMA\".\"STUDENT_CLASS\" SET \"STUDENT_CITIZEN_ID\" = :STUDENT_CITIZEN_I" +
+                "D, \"CLASS_ID\" = :CLASS_ID WHERE ((\"STUDENT_CITIZEN_ID\" = :Original_STUDENT_CITIZ" +
+                "EN_ID) AND (\"CLASS_ID\" = :Original_CLASS_ID))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "STUDENT_CITIZEN_ID";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "STUDENT_CITIZEN_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "CLASS_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "CLASS_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_STUDENT_CITIZEN_ID";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "STUDENT_CITIZEN_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_CLASS_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "CLASS_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22063,20 +22108,43 @@ namespace SIMS.DSTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(string Original_STUDENT_CITIZEN_ID, decimal Original_CLASS_ID) {
+            if ((Original_STUDENT_CITIZEN_ID == null)) {
+                throw new global::System.ArgumentNullException("Original_STUDENT_CITIZEN_ID");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_STUDENT_CITIZEN_ID));
+            }
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((decimal)(Original_CLASS_ID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string STUDENT_CITIZEN_ID, global::System.Nullable<decimal> CLASS_ID) {
+        public virtual int Insert(string STUDENT_CITIZEN_ID, decimal CLASS_ID) {
             if ((STUDENT_CITIZEN_ID == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("STUDENT_CITIZEN_ID");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(STUDENT_CITIZEN_ID));
             }
-            if ((CLASS_ID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(CLASS_ID.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(CLASS_ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -22091,6 +22159,49 @@ namespace SIMS.DSTableAdapters {
                     this.Adapter.InsertCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string STUDENT_CITIZEN_ID, decimal CLASS_ID, string Original_STUDENT_CITIZEN_ID, decimal Original_CLASS_ID) {
+            if ((STUDENT_CITIZEN_ID == null)) {
+                throw new global::System.ArgumentNullException("STUDENT_CITIZEN_ID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(STUDENT_CITIZEN_ID));
+            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(CLASS_ID));
+            if ((Original_STUDENT_CITIZEN_ID == null)) {
+                throw new global::System.ArgumentNullException("Original_STUDENT_CITIZEN_ID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_STUDENT_CITIZEN_ID));
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(Original_CLASS_ID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string Original_STUDENT_CITIZEN_ID, decimal Original_CLASS_ID) {
+            return this.Update(Original_STUDENT_CITIZEN_ID, Original_CLASS_ID, Original_STUDENT_CITIZEN_ID, Original_CLASS_ID);
         }
     }
     
@@ -22219,12 +22330,54 @@ namespace SIMS.DSTableAdapters {
             tableMapping.ColumnMappings.Add("FEE_ID", "FEE_ID");
             tableMapping.ColumnMappings.Add("FEE_BALANCE", "FEE_BALANCE");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"EDU_SCHEMA\".\"STUDENT_FEE\" WHERE ((\"STUDENT_CITIZEN_ID\" = :Original_S" +
+                "TUDENT_CITIZEN_ID) AND (\"FEE_ID\" = :Original_FEE_ID) AND ((:IsNull_FEE_BALANCE =" +
+                " 1 AND \"FEE_BALANCE\" IS NULL) OR (\"FEE_BALANCE\" = :Original_FEE_BALANCE)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_STUDENT_CITIZEN_ID";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "STUDENT_CITIZEN_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_FEE_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "FEE_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_FEE_BALANCE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "FEE_BALANCE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_FEE_BALANCE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "FEE_BALANCE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO \"EDU_SCHEMA\".\"STUDENT_FEE\" (\"STUDENT_CITIZEN_ID\", \"FEE_ID\", \"FEE_BALA" +
                 "NCE\") VALUES (:STUDENT_CITIZEN_ID, :FEE_ID, :FEE_BALANCE)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "STUDENT_CITIZEN_ID";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 1000;
@@ -22247,6 +22400,69 @@ namespace SIMS.DSTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "FEE_BALANCE";
             this._adapter.InsertCommand.Parameters.Add(param);
+            this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""EDU_SCHEMA"".""STUDENT_FEE"" SET ""STUDENT_CITIZEN_ID"" = :STUDENT_CITIZEN_ID, ""FEE_ID"" = :FEE_ID, ""FEE_BALANCE"" = :FEE_BALANCE WHERE ((""STUDENT_CITIZEN_ID"" = :Original_STUDENT_CITIZEN_ID) AND (""FEE_ID"" = :Original_FEE_ID) AND ((:IsNull_FEE_BALANCE = 1 AND ""FEE_BALANCE"" IS NULL) OR (""FEE_BALANCE"" = :Original_FEE_BALANCE)))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "STUDENT_CITIZEN_ID";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "STUDENT_CITIZEN_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "FEE_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "FEE_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "FEE_BALANCE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "FEE_BALANCE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_STUDENT_CITIZEN_ID";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "STUDENT_CITIZEN_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_FEE_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "FEE_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_FEE_BALANCE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "FEE_BALANCE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_FEE_BALANCE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "FEE_BALANCE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22322,20 +22538,51 @@ namespace SIMS.DSTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(string Original_STUDENT_CITIZEN_ID, decimal Original_FEE_ID, global::System.Nullable<decimal> Original_FEE_BALANCE) {
+            if ((Original_STUDENT_CITIZEN_ID == null)) {
+                throw new global::System.ArgumentNullException("Original_STUDENT_CITIZEN_ID");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_STUDENT_CITIZEN_ID));
+            }
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((decimal)(Original_FEE_ID));
+            if ((Original_FEE_BALANCE.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((decimal)(Original_FEE_BALANCE.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string STUDENT_CITIZEN_ID, global::System.Nullable<decimal> FEE_ID, global::System.Nullable<decimal> FEE_BALANCE) {
+        public virtual int Insert(string STUDENT_CITIZEN_ID, decimal FEE_ID, global::System.Nullable<decimal> FEE_BALANCE) {
             if ((STUDENT_CITIZEN_ID == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("STUDENT_CITIZEN_ID");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(STUDENT_CITIZEN_ID));
             }
-            if ((FEE_ID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(FEE_ID.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(FEE_ID));
             if ((FEE_BALANCE.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(FEE_BALANCE.Value));
             }
@@ -22356,6 +22603,63 @@ namespace SIMS.DSTableAdapters {
                     this.Adapter.InsertCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string STUDENT_CITIZEN_ID, decimal FEE_ID, global::System.Nullable<decimal> FEE_BALANCE, string Original_STUDENT_CITIZEN_ID, decimal Original_FEE_ID, global::System.Nullable<decimal> Original_FEE_BALANCE) {
+            if ((STUDENT_CITIZEN_ID == null)) {
+                throw new global::System.ArgumentNullException("STUDENT_CITIZEN_ID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(STUDENT_CITIZEN_ID));
+            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(FEE_ID));
+            if ((FEE_BALANCE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(FEE_BALANCE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Original_STUDENT_CITIZEN_ID == null)) {
+                throw new global::System.ArgumentNullException("Original_STUDENT_CITIZEN_ID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_STUDENT_CITIZEN_ID));
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(Original_FEE_ID));
+            if ((Original_FEE_BALANCE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(Original_FEE_BALANCE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<decimal> FEE_BALANCE, string Original_STUDENT_CITIZEN_ID, decimal Original_FEE_ID, global::System.Nullable<decimal> Original_FEE_BALANCE) {
+            return this.Update(Original_STUDENT_CITIZEN_ID, Original_FEE_ID, FEE_BALANCE, Original_STUDENT_CITIZEN_ID, Original_FEE_ID, Original_FEE_BALANCE);
         }
     }
     
@@ -22484,12 +22788,55 @@ namespace SIMS.DSTableAdapters {
             tableMapping.ColumnMappings.Add("PAYMENT_ID", "PAYMENT_ID");
             tableMapping.ColumnMappings.Add("PAYMENT_DATE", "PAYMENT_DATE");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"EDU_SCHEMA\".\"STUDENT_PAYMENT\" WHERE ((\"STUDENT_CITIZEN_ID\" = :Origin" +
+                "al_STUDENT_CITIZEN_ID) AND (\"PAYMENT_ID\" = :Original_PAYMENT_ID) AND ((:IsNull_P" +
+                "AYMENT_DATE = 1 AND \"PAYMENT_DATE\" IS NULL) OR (\"PAYMENT_DATE\" = :Original_PAYME" +
+                "NT_DATE)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_STUDENT_CITIZEN_ID";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "STUDENT_CITIZEN_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PAYMENT_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PAYMENT_DATE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 7;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_DATE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PAYMENT_DATE";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
+            param.Size = 7;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_DATE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO \"EDU_SCHEMA\".\"STUDENT_PAYMENT\" (\"STUDENT_CITIZEN_ID\", \"PAYMENT_ID\", \"" +
                 "PAYMENT_DATE\") VALUES (:STUDENT_CITIZEN_ID, :PAYMENT_ID, :PAYMENT_DATE)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "STUDENT_CITIZEN_ID";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 1000;
@@ -22512,6 +22859,69 @@ namespace SIMS.DSTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "PAYMENT_DATE";
             this._adapter.InsertCommand.Parameters.Add(param);
+            this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""EDU_SCHEMA"".""STUDENT_PAYMENT"" SET ""STUDENT_CITIZEN_ID"" = :STUDENT_CITIZEN_ID, ""PAYMENT_ID"" = :PAYMENT_ID, ""PAYMENT_DATE"" = :PAYMENT_DATE WHERE ((""STUDENT_CITIZEN_ID"" = :Original_STUDENT_CITIZEN_ID) AND (""PAYMENT_ID"" = :Original_PAYMENT_ID) AND ((:IsNull_PAYMENT_DATE = 1 AND ""PAYMENT_DATE"" IS NULL) OR (""PAYMENT_DATE"" = :Original_PAYMENT_DATE)))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "STUDENT_CITIZEN_ID";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "STUDENT_CITIZEN_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PAYMENT_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PAYMENT_DATE";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
+            param.Size = 7;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_DATE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_STUDENT_CITIZEN_ID";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "STUDENT_CITIZEN_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PAYMENT_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PAYMENT_DATE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 7;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_DATE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PAYMENT_DATE";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
+            param.Size = 7;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_DATE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22588,20 +22998,51 @@ namespace SIMS.DSTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(string Original_STUDENT_CITIZEN_ID, decimal Original_PAYMENT_ID, global::System.Nullable<global::System.DateTime> Original_PAYMENT_DATE) {
+            if ((Original_STUDENT_CITIZEN_ID == null)) {
+                throw new global::System.ArgumentNullException("Original_STUDENT_CITIZEN_ID");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_STUDENT_CITIZEN_ID));
+            }
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((decimal)(Original_PAYMENT_ID));
+            if ((Original_PAYMENT_DATE.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_PAYMENT_DATE.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string STUDENT_CITIZEN_ID, global::System.Nullable<decimal> PAYMENT_ID, global::System.Nullable<global::System.DateTime> PAYMENT_DATE) {
+        public virtual int Insert(string STUDENT_CITIZEN_ID, decimal PAYMENT_ID, global::System.Nullable<global::System.DateTime> PAYMENT_DATE) {
             if ((STUDENT_CITIZEN_ID == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("STUDENT_CITIZEN_ID");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(STUDENT_CITIZEN_ID));
             }
-            if ((PAYMENT_ID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(PAYMENT_ID.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(PAYMENT_ID));
             if ((PAYMENT_DATE.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(PAYMENT_DATE.Value));
             }
@@ -22622,6 +23063,63 @@ namespace SIMS.DSTableAdapters {
                     this.Adapter.InsertCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string STUDENT_CITIZEN_ID, decimal PAYMENT_ID, global::System.Nullable<global::System.DateTime> PAYMENT_DATE, string Original_STUDENT_CITIZEN_ID, decimal Original_PAYMENT_ID, global::System.Nullable<global::System.DateTime> Original_PAYMENT_DATE) {
+            if ((STUDENT_CITIZEN_ID == null)) {
+                throw new global::System.ArgumentNullException("STUDENT_CITIZEN_ID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(STUDENT_CITIZEN_ID));
+            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(PAYMENT_ID));
+            if ((PAYMENT_DATE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(PAYMENT_DATE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Original_STUDENT_CITIZEN_ID == null)) {
+                throw new global::System.ArgumentNullException("Original_STUDENT_CITIZEN_ID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_STUDENT_CITIZEN_ID));
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(Original_PAYMENT_ID));
+            if ((Original_PAYMENT_DATE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_PAYMENT_DATE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<global::System.DateTime> PAYMENT_DATE, string Original_STUDENT_CITIZEN_ID, decimal Original_PAYMENT_ID, global::System.Nullable<global::System.DateTime> Original_PAYMENT_DATE) {
+            return this.Update(Original_STUDENT_CITIZEN_ID, Original_PAYMENT_ID, PAYMENT_DATE, Original_STUDENT_CITIZEN_ID, Original_PAYMENT_ID, Original_PAYMENT_DATE);
         }
     }
     
@@ -22971,8 +23469,8 @@ namespace SIMS.DSTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT USER_ID, USER_NAME, PASSWORD, EMPLOYEE_NO \r\nFROM EDU_SCHEMA.USERS\r\nWHERE (" +
-                "USER_NAME=:USER_NAME) AND (PASSWORD=:PASSWORD)";
+            this._commandCollection[1].CommandText = "SELECT USER_ID, USER_NAME, PASSWORD, EMPLOYEE_NO FROM EDU_SCHEMA.USERS\r\nWHERE (US" +
+                "ER_NAME=:USER_NAME) AND (PASSWORD=:PASSWORD)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":USER_NAME";

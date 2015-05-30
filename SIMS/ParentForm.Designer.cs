@@ -43,6 +43,7 @@
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePwordStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addCentreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpTile = new MetroFramework.Controls.MetroTile();
             this.aboutTile = new MetroFramework.Controls.MetroTile();
             this.StaffTile = new MetroFramework.Controls.MetroTile();
@@ -72,7 +73,6 @@
             this.MainPanel = new MetroFramework.Controls.MetroPanel();
             this.mainPanelContextMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.clearAllControlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addCentreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ParentButtonPanel.SuspendLayout();
             this.StudentMenu.SuspendLayout();
             this.AdminMenu.SuspendLayout();
@@ -150,7 +150,7 @@
             this.StudentMenu.Name = "StudentMenu";
             this.StudentMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.StudentMenu.ShowImageMargin = false;
-            this.StudentMenu.Size = new System.Drawing.Size(226, 82);
+            this.StudentMenu.Size = new System.Drawing.Size(226, 104);
             this.StudentMenu.Style = MetroFramework.MetroColorStyle.Brown;
             this.StudentMenu.Text = "StudentMenu";
             this.StudentMenu.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -171,7 +171,7 @@
             this.browseLearnerDetailsToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.browseLearnerDetailsToolStripMenuItem.Name = "browseLearnerDetailsToolStripMenuItem";
             this.browseLearnerDetailsToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
-            this.browseLearnerDetailsToolStripMenuItem.Text = "Browse Learner Details";
+            this.browseLearnerDetailsToolStripMenuItem.Text = "View Learner Details";
             this.browseLearnerDetailsToolStripMenuItem.Click += new System.EventHandler(this.browseLearnerDetailsToolStripMenuItem_Click);
             // 
             // assignLearnerToClassToolStripMenuItem
@@ -253,6 +253,13 @@
             this.changePwordStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.changePwordStripMenuItem.Text = "Change Password";
             this.changePwordStripMenuItem.Click += new System.EventHandler(this.changePwordStripMenuItem_Click);
+            // 
+            // addCentreToolStripMenuItem
+            // 
+            this.addCentreToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addCentreToolStripMenuItem.Name = "addCentreToolStripMenuItem";
+            this.addCentreToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.addCentreToolStripMenuItem.Text = "Add Centre";
             // 
             // helpTile
             // 
@@ -564,13 +571,6 @@
             this.clearAllControlsToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.clearAllControlsToolStripMenuItem.Text = "Clear All Controls";
             this.clearAllControlsToolStripMenuItem.Click += new System.EventHandler(this.clearAllControlsToolStripMenuItem_Click);
-            // 
-            // addCentreToolStripMenuItem
-            // 
-            this.addCentreToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addCentreToolStripMenuItem.Name = "addCentreToolStripMenuItem";
-            this.addCentreToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
-            this.addCentreToolStripMenuItem.Text = "Add Centre";
             // 
             // ParentForm
             // 

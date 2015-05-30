@@ -48,11 +48,9 @@ namespace SIMS.LearnerModule
         private string firstName;
         private string lastName;
         private string studentCitizenID;
-        private string guardianCitizenID;
         private string gender;
         private string contactNumber;
         private string addressLine1;
-        private string addressLine2;
         private string suburb;
         private string city;
         private string zipCode;
@@ -67,10 +65,9 @@ namespace SIMS.LearnerModule
         //private Image picture;
 
         public Student( string fName, string lName, 
-                        string sCitizenID, string gCitizenID, 
-                        string genderValue, string cNumber,
-                        DateTimePicker adDate, string adminNo, 
-                        string addr1, string addr2, 
+                        string sCitizenID, string genderValue, 
+                        string cNumber, DateTimePicker adDate, 
+                        string admitNo, string addr1, 
                         string subV, string cityV, 
                         string zipV, string email, string cent
                       ) 
@@ -80,15 +77,13 @@ namespace SIMS.LearnerModule
             gender = genderValue;
             admittedDate = adDate;
             studentCitizenID = sCitizenID;
-            guardianCitizenID = gCitizenID; 
             contactNumber = cNumber;
             addressLine1 = addr1;
-            addressLine2 = addr2;
             suburb = subV;
             city = cityV;
             zipCode = zipV;
             emailAddress = email;
-            admissionNumber = adminNo;
+            admissionNumber = admitNo;
             centre = cent;
 
             //picture = pic;
@@ -113,12 +108,6 @@ namespace SIMS.LearnerModule
         {
             get { return studentCitizenID; }
             set { studentCitizenID = value; }
-        }
-
-        public string GuardianCitizenID
-        {
-            get { return guardianCitizenID; }
-            set { guardianCitizenID = value; }
         }
 
         public string Gender
@@ -149,12 +138,6 @@ namespace SIMS.LearnerModule
         {
             get { return addressLine1; }
             set { addressLine1 = value; }
-        }
-
-        public string AddressLine2
-        {
-            get { return addressLine2; }
-            set { addressLine2 = value; }
         }
 
         public string Suburb
@@ -198,10 +181,10 @@ namespace SIMS.LearnerModule
                 string query = "INSERT INTO EDU_SCHEMA.STUDENT " +
                                       "(ADMISION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER," +
                                       "PHONE_NUMBER, ADMITTED_DATE, STUDENT_CITIZEN_ID, ADDRESS_LINE1," +
-                                      "ADDRESS_LINE2, SUBURB, CITY, ZIP_CODE, EMAIL_ADDRESS, CENTRE) " +
+                                      "SUBURB, CITY, ZIP_CODE, EMAIL_ADDRESS, CENTRE) " +
                                "VALUES (:ADMISION_NO, :FIRST_NAME, :LAST_NAME, :STUDENT_GENDER," +
                                        ":PHONE_NUMBER, :ADMITTED_DATE, :STUDENT_CITIZEN_ID, :ADDRESS_LINE1," +
-                                       ":ADDRESS_LINE2, :SUBURB, :CITY, :ZIP_CODE, :EMAIL_ADDRESS, :CENTRE)";
+                                       ":SUBURB, :CITY, :ZIP_CODE, :EMAIL_ADDRESS, :CENTRE)";
                 OracleCommand cmd = new OracleCommand(query, db.Connection);
                 cmd.Parameters.Add("ADMISION_NO", stu.admissionNumber);
                 cmd.Parameters.Add("FIRST_NAME", stu.firstName);
@@ -211,7 +194,6 @@ namespace SIMS.LearnerModule
                 cmd.Parameters.Add("ADMITTED_DATE", OracleDbType.Date).Value = DateTime.Now;
                 cmd.Parameters.Add("STUDENT_CITIZEN_ID", stu.studentCitizenID);
                 cmd.Parameters.Add("ADDRESS_LINE1", stu.addressLine1);
-                cmd.Parameters.Add("ADDRESS_LINE2", stu.addressLine2);
                 cmd.Parameters.Add("SUBURB", stu.suburb);
                 cmd.Parameters.Add("CITY", stu.city);
                 cmd.Parameters.Add("ZIP_CODE", stu.zipCode);

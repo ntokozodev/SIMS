@@ -42,12 +42,11 @@ namespace SIMS.LearnerModule
         private void addDetailsTile_Click(object sender, EventArgs e)
         {
             student = new Student(TextBoxFirstName.Text.ToString(), TextBoxLastName.Text.ToString(), 
-                                  TextBoxIDNumber.Text.ToString(), TextBoxAddressLine2.Text.ToString(), 
-                                  ComboBoxGender.Text.ToString(), TextBoxContactNumber.Text.ToString(), 
-                                  DateAdmission, TextBoxAdminNumber.Text.ToString(), 
-                                  TextBoxAddressLine1.Text.ToString(), TextBoxAddressLine2.Text.ToString(), 
-                                  TextBoxSuburb.Text.ToString(), TextBoxZipCode.Text.ToString(), 
-                                  TextBoxCity.Text.ToString(), TextBoxEmailAddress.Text.ToString(),
+                                  TextBoxIDNumber.Text.ToString(), ComboBoxGender.Text.ToString(), 
+                                  TextBoxContactNumber.Text.ToString(), DateAdmission, 
+                                  TextBoxAdminNumber.Text.ToString(), TextBoxAddressLine1.Text.ToString(), 
+                                  TextBoxSuburb.Text.ToString(), TextBoxCity.Text.ToString(), 
+                                  TextBoxZipCode.Text.ToString(), TextBoxEmailAddress.Text.ToString(),
                                   ComboBoxCentre.Text.ToString()
                                  );
 
@@ -68,14 +67,12 @@ namespace SIMS.LearnerModule
             TextBoxLastName.Clear();
             TextBoxIDNumber.Clear();
             TextBoxAddressLine1.Clear();
-            TextBoxAddressLine2.Clear();
             TextBoxAdminNumber.Clear();
             TextBoxZipCode.Clear();
             TextBoxContactNumber.Clear();
             TextBoxEmailAddress.Clear();
             TextBoxCity.Clear();
             TextBoxEmailAddress.Clear();
-            TextBoxAddressLine2.Clear();
             TextBoxAddressLine1.Clear();
             TextBoxSuburb.Clear();
             TextBoxSuburb.Clear();
