@@ -21199,8 +21199,8 @@ namespace SIMS.DSTableAdapters {
             this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT ADMISION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER, PHONE_NUMBER, ADMITTED" +
-                "_DATE, STUDENT_CITIZEN_ID, CITY, CENTRE\r\nFROM EDU_SCHEMA.STUDENT\r\nWHERE (LAST_NA" +
-                "ME LIKE  :LAST_NAME || \'%\')";
+                "_DATE, STUDENT_CITIZEN_ID, SUBURB, CENTRE\r\nFROM EDU_SCHEMA.STUDENT\r\nWHERE (LAST_" +
+                "NAME LIKE  :LAST_NAME || \'%\')";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":LAST_NAME";

@@ -14,9 +14,16 @@ namespace SIMS
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ParentForm());
+            try 
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new ParentForm());
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show("Unexpected Error!", ex.Message.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

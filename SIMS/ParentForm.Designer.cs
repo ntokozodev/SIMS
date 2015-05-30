@@ -150,7 +150,7 @@
             this.StudentMenu.Name = "StudentMenu";
             this.StudentMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.StudentMenu.ShowImageMargin = false;
-            this.StudentMenu.Size = new System.Drawing.Size(226, 104);
+            this.StudentMenu.Size = new System.Drawing.Size(226, 82);
             this.StudentMenu.Style = MetroFramework.MetroColorStyle.Brown;
             this.StudentMenu.Text = "StudentMenu";
             this.StudentMenu.Theme = MetroFramework.MetroThemeStyle.Dark;

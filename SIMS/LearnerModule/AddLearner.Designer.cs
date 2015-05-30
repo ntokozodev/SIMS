@@ -517,9 +517,9 @@ namespace SIMS.LearnerModule
             // 
             this.addDetailsTile.ActiveControl = null;
             this.addDetailsTile.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.addDetailsTile.Location = new System.Drawing.Point(550, 423);
+            this.addDetailsTile.Location = new System.Drawing.Point(550, 444);
             this.addDetailsTile.Name = "addDetailsTile";
-            this.addDetailsTile.Size = new System.Drawing.Size(159, 70);
+            this.addDetailsTile.Size = new System.Drawing.Size(159, 49);
             this.addDetailsTile.Style = MetroFramework.MetroColorStyle.Green;
             this.addDetailsTile.TabIndex = 2;
             this.addDetailsTile.Text = "Add Details";
@@ -534,9 +534,9 @@ namespace SIMS.LearnerModule
             // 
             this.cancelTile.ActiveControl = null;
             this.cancelTile.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cancelTile.Location = new System.Drawing.Point(906, 423);
+            this.cancelTile.Location = new System.Drawing.Point(906, 444);
             this.cancelTile.Name = "cancelTile";
-            this.cancelTile.Size = new System.Drawing.Size(159, 70);
+            this.cancelTile.Size = new System.Drawing.Size(159, 49);
             this.cancelTile.Style = MetroFramework.MetroColorStyle.Green;
             this.cancelTile.TabIndex = 3;
             this.cancelTile.Text = "Cancel";
@@ -551,9 +551,9 @@ namespace SIMS.LearnerModule
             // 
             this.clearTile.ActiveControl = null;
             this.clearTile.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.clearTile.Location = new System.Drawing.Point(730, 423);
+            this.clearTile.Location = new System.Drawing.Point(730, 444);
             this.clearTile.Name = "clearTile";
-            this.clearTile.Size = new System.Drawing.Size(159, 70);
+            this.clearTile.Size = new System.Drawing.Size(159, 49);
             this.clearTile.TabIndex = 4;
             this.clearTile.Text = "Clear";
             this.clearTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
