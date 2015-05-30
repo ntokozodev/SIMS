@@ -42,9 +42,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroGridViewLearner = new MetroFramework.Controls.MetroGrid();
-            this.dS = new SIMS.DS();
-            this.sTUDENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.TAStudent = new SIMS.DSTableAdapters.STUDENTTableAdapter();
             this.aDMISIONNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fIRSTNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lASTNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,12 +51,15 @@
             this.sTUDENTCITIZENIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cITYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cENTREDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTUDENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dS = new SIMS.DS();
+            this.TAStudent = new SIMS.DSTableAdapters.STUDENTTableAdapter();
             this.metroTileUpdateLearner = new MetroFramework.Controls.MetroTile();
             this.metroTileSearchLearner = new MetroFramework.Controls.MetroTile();
             this.metroTextBoxSearchLearner = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridViewLearner)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTUDENTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             this.SuspendLayout();
             // 
             // metroGridViewLearner
@@ -122,20 +122,6 @@
             this.metroGridViewLearner.Style = MetroFramework.MetroColorStyle.Green;
             this.metroGridViewLearner.TabIndex = 0;
             this.metroGridViewLearner.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
-            // dS
-            // 
-            this.dS.DataSetName = "DS";
-            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sTUDENTBindingSource
-            // 
-            this.sTUDENTBindingSource.DataMember = "STUDENT";
-            this.sTUDENTBindingSource.DataSource = this.dS;
-            // 
-            // TAStudent
-            // 
-            this.TAStudent.ClearBeforeFill = true;
             // 
             // aDMISIONNODataGridViewTextBoxColumn
             // 
@@ -209,13 +195,27 @@
             this.cENTREDataGridViewTextBoxColumn.HeaderText = "Centre";
             this.cENTREDataGridViewTextBoxColumn.Name = "cENTREDataGridViewTextBoxColumn";
             // 
+            // sTUDENTBindingSource
+            // 
+            this.sTUDENTBindingSource.DataMember = "STUDENT";
+            this.sTUDENTBindingSource.DataSource = this.dS;
+            // 
+            // dS
+            // 
+            this.dS.DataSetName = "DS";
+            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // TAStudent
+            // 
+            this.TAStudent.ClearBeforeFill = true;
+            // 
             // metroTileUpdateLearner
             // 
             this.metroTileUpdateLearner.ActiveControl = null;
             this.metroTileUpdateLearner.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.metroTileUpdateLearner.Location = new System.Drawing.Point(852, 549);
+            this.metroTileUpdateLearner.Location = new System.Drawing.Point(852, 540);
             this.metroTileUpdateLearner.Name = "metroTileUpdateLearner";
-            this.metroTileUpdateLearner.Size = new System.Drawing.Size(158, 27);
+            this.metroTileUpdateLearner.Size = new System.Drawing.Size(158, 33);
             this.metroTileUpdateLearner.TabIndex = 1;
             this.metroTileUpdateLearner.Text = "Save Changes";
             this.metroTileUpdateLearner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -272,8 +272,8 @@
             this.Text = "Learner Details";
             this.Load += new System.EventHandler(this.BrowseDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroGridViewLearner)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTUDENTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
             this.ResumeLayout(false);
 
         }
