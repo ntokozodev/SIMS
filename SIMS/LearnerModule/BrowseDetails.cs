@@ -57,5 +57,10 @@ namespace SIMS.LearnerModule
                 MessageBox.Show("Couldn't connect to database\n" + ex.Message.ToString());
             }
         }
+
+        private void metroTileClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

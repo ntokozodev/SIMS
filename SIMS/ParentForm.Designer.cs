@@ -36,7 +36,6 @@
             this.StudentMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.addNewLearnerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.browseLearnerDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.assignLearnerToClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accessControlTile = new MetroFramework.Controls.MetroTile();
             this.AdminMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -145,12 +144,11 @@
             this.StudentMenu.BackColor = System.Drawing.Color.Chocolate;
             this.StudentMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addNewLearnerToolStripMenuItem,
-            this.browseLearnerDetailsToolStripMenuItem,
-            this.assignLearnerToClassToolStripMenuItem});
+            this.browseLearnerDetailsToolStripMenuItem});
             this.StudentMenu.Name = "StudentMenu";
             this.StudentMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.StudentMenu.ShowImageMargin = false;
-            this.StudentMenu.Size = new System.Drawing.Size(226, 82);
+            this.StudentMenu.Size = new System.Drawing.Size(209, 78);
             this.StudentMenu.Style = MetroFramework.MetroColorStyle.Brown;
             this.StudentMenu.Text = "StudentMenu";
             this.StudentMenu.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -161,7 +159,7 @@
             this.addNewLearnerToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.addNewLearnerToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.addNewLearnerToolStripMenuItem.Name = "addNewLearnerToolStripMenuItem";
-            this.addNewLearnerToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
+            this.addNewLearnerToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.addNewLearnerToolStripMenuItem.Text = "Add New Learner";
             this.addNewLearnerToolStripMenuItem.Click += new System.EventHandler(this.addNewLearnerToolStripMenuItem_Click);
             // 
@@ -170,18 +168,9 @@
             this.browseLearnerDetailsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.browseLearnerDetailsToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.browseLearnerDetailsToolStripMenuItem.Name = "browseLearnerDetailsToolStripMenuItem";
-            this.browseLearnerDetailsToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
+            this.browseLearnerDetailsToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.browseLearnerDetailsToolStripMenuItem.Text = "View Learner Details";
             this.browseLearnerDetailsToolStripMenuItem.Click += new System.EventHandler(this.browseLearnerDetailsToolStripMenuItem_Click);
-            // 
-            // assignLearnerToClassToolStripMenuItem
-            // 
-            this.assignLearnerToClassToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.assignLearnerToClassToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.assignLearnerToClassToolStripMenuItem.Name = "assignLearnerToClassToolStripMenuItem";
-            this.assignLearnerToClassToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
-            this.assignLearnerToClassToolStripMenuItem.Text = "Assign Learner to Class";
-            this.assignLearnerToClassToolStripMenuItem.Click += new System.EventHandler(this.assignLearnerToClassToolStripMenuItem_Click);
             // 
             // accessControlTile
             // 
@@ -611,7 +600,6 @@
         private MetroFramework.Controls.MetroContextMenu StudentMenu;
         private System.Windows.Forms.ToolStripMenuItem addNewLearnerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem browseLearnerDetailsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem assignLearnerToClassToolStripMenuItem;
         private MetroFramework.Controls.MetroTile helpTile;
         private MetroFramework.Controls.MetroPanel MainPanel;
         private MetroFramework.Controls.MetroContextMenu AdminMenu;

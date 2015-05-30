@@ -20,7 +20,7 @@ namespace SIMS
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new ParentForm());
             }
-            catch (ArgumentOutOfRangeException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Unexpected Error!", ex.Message.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
