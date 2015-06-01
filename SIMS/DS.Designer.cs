@@ -21189,7 +21189,7 @@ namespace SIMS.DSTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[3];
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[5];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ADMISION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER, PHONE_NUMBER, ADMITTED" +
@@ -21212,10 +21212,21 @@ namespace SIMS.DSTableAdapters {
             this._commandCollection[2] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT ADMISION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER, PHONE_NUMBER, ADMITTED" +
-                "_DATE, STUDENT_CITIZEN_ID, ADDRESS_LINE1, SUBURB, CITY, ZIP_CODE, EMAIL_ADDRESS," +
-                " SUBJECT_STREAM, CENTRE, PICTURE FROM EDU_SCHEMA.STUDENT\r\nWHERE (LAST_NAME LIKE " +
-                "\'%DTN%\')";
+                "_DATE, STUDENT_CITIZEN_ID, SUBURB, CENTRE\r\nFROM EDU_SCHEMA.STUDENT\r\nORDER BY ADM" +
+                "ISION_NO";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT ADMISION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER, PHONE_NUMBER, ADMITTED" +
+                "_DATE, STUDENT_CITIZEN_ID, SUBURB, CENTRE\r\nFROM EDU_SCHEMA.STUDENT\r\nORDER BY ADM" +
+                "ITTED_DATE";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT ADMISION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER, PHONE_NUMBER, ADMITTED" +
+                "_DATE, STUDENT_CITIZEN_ID, SUBURB, CENTRE\r\nFROM EDU_SCHEMA.STUDENT\r\nORDER BY LAS" +
+                "T_NAME";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21282,7 +21293,7 @@ namespace SIMS.DSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByStuSearch(DS.STUDENTDataTable dataTable) {
+        public virtual int OrderByAdmissionNo(DS.STUDENTDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -21295,8 +21306,56 @@ namespace SIMS.DSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DS.STUDENTDataTable GetDataByStuSearch() {
+        public virtual DS.STUDENTDataTable GetDataByAdmissionNo() {
             this.Adapter.SelectCommand = this.CommandCollection[2];
+            DS.STUDENTDataTable dataTable = new DS.STUDENTDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int OrderByDate(DS.STUDENTDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DS.STUDENTDataTable GetDataByDate() {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            DS.STUDENTDataTable dataTable = new DS.STUDENTDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int OrderByName(DS.STUDENTDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DS.STUDENTDataTable GetDataByName() {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             DS.STUDENTDataTable dataTable = new DS.STUDENTDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

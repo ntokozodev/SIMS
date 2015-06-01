@@ -1,5 +1,5 @@
 ﻿/**
- * Edu-SIMS is (c) 2015 Ntokozo Company. All rights reserved.
+ * SIMS is (c) 2015 Ntokozo Company. All rights reserved.
  * 
  * http://www.ntokozo.com
  *

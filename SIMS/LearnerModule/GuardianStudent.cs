@@ -1,10 +1,10 @@
 ﻿/**
- * Edu-SIMS is (c) 2015 Create12. All rights reserved.
+ * SIMS is (c) 2015 Ntokozo Company. All rights reserved.
  * 
- * https://www.create12.com
+ * http://www.ntokozo.com
  *
  * COPYRIGHTS:
- * Copyright (c) 2015 Create12. All rights reserved.
+ * Copyright (c) 2015 Ntokozo Company. All rights reserved.
  * 
  * --------------------------------------------------------------------------------
  * Redistribution and use in source and binary forms, with or without modification, 

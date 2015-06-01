@@ -31,8 +31,6 @@ namespace SIMS.LearnerModule
         private void InitializeComponent()
         {
             this.detailsGroupBox = new System.Windows.Forms.GroupBox();
-            this.DateAdmission = new System.Windows.Forms.DateTimePicker();
-            this.AdminDateLabel = new MetroFramework.Controls.MetroLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
@@ -64,6 +62,7 @@ namespace SIMS.LearnerModule
             this.addDetailsTile = new MetroFramework.Controls.MetroTile();
             this.cancelTile = new MetroFramework.Controls.MetroTile();
             this.clearTile = new MetroFramework.Controls.MetroTile();
+            this.DateAdmission = new System.Windows.Forms.DateTimePicker();
             this.detailsGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.guardianGroupBox.SuspendLayout();
@@ -73,7 +72,6 @@ namespace SIMS.LearnerModule
             // 
             this.detailsGroupBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.detailsGroupBox.Controls.Add(this.DateAdmission);
-            this.detailsGroupBox.Controls.Add(this.AdminDateLabel);
             this.detailsGroupBox.Controls.Add(this.groupBox1);
             this.detailsGroupBox.Controls.Add(this.TextBoxAdminNumber);
             this.detailsGroupBox.Controls.Add(this.TextBoxContactNumber);
@@ -96,24 +94,6 @@ namespace SIMS.LearnerModule
             this.detailsGroupBox.TabIndex = 0;
             this.detailsGroupBox.TabStop = false;
             this.detailsGroupBox.Text = "Student Details";
-            // 
-            // DateAdmission
-            // 
-            this.DateAdmission.Location = new System.Drawing.Point(150, 264);
-            this.DateAdmission.Name = "DateAdmission";
-            this.DateAdmission.Size = new System.Drawing.Size(163, 21);
-            this.DateAdmission.TabIndex = 30;
-            this.DateAdmission.Value = new System.DateTime(2015, 5, 28, 23, 53, 38, 0);
-            // 
-            // AdminDateLabel
-            // 
-            this.AdminDateLabel.AutoSize = true;
-            this.AdminDateLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.AdminDateLabel.Location = new System.Drawing.Point(6, 266);
-            this.AdminDateLabel.Name = "AdminDateLabel";
-            this.AdminDateLabel.Size = new System.Drawing.Size(116, 19);
-            this.AdminDateLabel.TabIndex = 29;
-            this.AdminDateLabel.Text = "Adminssion Date:";
             // 
             // groupBox1
             // 
@@ -242,7 +222,7 @@ namespace SIMS.LearnerModule
             this.ComboBoxCentre.ItemHeight = 23;
             this.ComboBoxCentre.Items.AddRange(new object[] {
             "Durban"});
-            this.ComboBoxCentre.Location = new System.Drawing.Point(150, 360);
+            this.ComboBoxCentre.Location = new System.Drawing.Point(150, 310);
             this.ComboBoxCentre.Name = "ComboBoxCentre";
             this.ComboBoxCentre.Size = new System.Drawing.Size(132, 29);
             this.ComboBoxCentre.Style = MetroFramework.MetroColorStyle.Green;
@@ -256,7 +236,7 @@ namespace SIMS.LearnerModule
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.BackColor = System.Drawing.Color.White;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.Location = new System.Drawing.Point(6, 370);
+            this.metroLabel2.Location = new System.Drawing.Point(6, 320);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(53, 19);
             this.metroLabel2.TabIndex = 19;
@@ -283,7 +263,7 @@ namespace SIMS.LearnerModule
             this.ComboBoxGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.ComboBoxGender.Location = new System.Drawing.Point(150, 313);
+            this.ComboBoxGender.Location = new System.Drawing.Point(150, 256);
             this.ComboBoxGender.Name = "ComboBoxGender";
             this.ComboBoxGender.Size = new System.Drawing.Size(132, 29);
             this.ComboBoxGender.Style = MetroFramework.MetroColorStyle.Green;
@@ -297,7 +277,7 @@ namespace SIMS.LearnerModule
             this.genderLabel.AutoSize = true;
             this.genderLabel.BackColor = System.Drawing.Color.White;
             this.genderLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.genderLabel.Location = new System.Drawing.Point(6, 323);
+            this.genderLabel.Location = new System.Drawing.Point(6, 266);
             this.genderLabel.Name = "genderLabel";
             this.genderLabel.Size = new System.Drawing.Size(57, 19);
             this.genderLabel.TabIndex = 14;
@@ -562,6 +542,15 @@ namespace SIMS.LearnerModule
             this.clearTile.UseSelectable = true;
             this.clearTile.Click += new System.EventHandler(this.clearTile_Click);
             // 
+            // DateAdmission
+            // 
+            this.DateAdmission.Location = new System.Drawing.Point(316, 318);
+            this.DateAdmission.Name = "DateAdmission";
+            this.DateAdmission.Size = new System.Drawing.Size(163, 21);
+            this.DateAdmission.TabIndex = 30;
+            this.DateAdmission.Value = new System.DateTime(2015, 5, 28, 23, 53, 38, 0);
+            this.DateAdmission.Visible = false;
+            // 
             // AddLearner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -609,7 +598,6 @@ namespace SIMS.LearnerModule
         private MetroFramework.Controls.MetroTextBox TextBoxAdminNumber;
         private MetroFramework.Controls.MetroTextBox TextBoxContactNumber;
         private MetroFramework.Controls.MetroTextBox TextBoxIDNumber;
-        private MetroFramework.Controls.MetroLabel AdminDateLabel;
         private MetroFramework.Controls.MetroTile addDetailsTile;
         private MetroFramework.Controls.MetroTile cancelTile;
         private GroupBox groupBox1;
@@ -625,8 +613,8 @@ namespace SIMS.LearnerModule
         private MetroFramework.Controls.MetroTextBox TextBoxSuburb;
         private MetroFramework.Controls.MetroLabel metroLabel13;
         private MetroFramework.Controls.MetroTile clearTile;
-        private DateTimePicker DateAdmission;
         private MetroFramework.Controls.MetroTextBox TextBoxZipCode;
+        private DateTimePicker DateAdmission;
     
         protected override CreateParams CreateParams
         {

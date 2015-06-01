@@ -1,5 +1,5 @@
 ﻿/**
- * Edu-SIMS is (c) 2015 Ntokozo Company. All rights reserved.
+ * SIMS is (c) 2015 Ntokozo Company. All rights reserved.
  * 
  * http://www.ntokozo.co.za
  *
@@ -40,7 +40,7 @@ namespace SIMS.LearnerModule
     /**
      * <summary>
      *      Implementation to IStudent. This class stores information 
-     *      about students and their guardians
+     *      about students details
      * </summary>
      */
     public class Student : IStudent
