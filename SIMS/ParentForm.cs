@@ -63,8 +63,7 @@ namespace SIMS
         #endregion
 
         #region "Properties Acounts Module"
-        private AddExpenseType expenseT = null;
-        private RecordExpensePayment expensePay = null;
+        private Expenses expenseT = null;
         private ViewExpenses viewExp = null;
         private RecordStudentPayment studentPay = null;
         private RecordStaffSalaryPayment salaryPay = null;
@@ -162,9 +161,8 @@ namespace SIMS
 
 
         /*
-         * Best candidates for refactoring...
+         * Candidates for refactoring...
          */
-
         #region Learner Module
         private void addNewLearnerToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -187,6 +185,7 @@ namespace SIMS
         private void assignLearnerToClassToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainPanel.Controls.Clear();
+            MainPanel.Controls.Clear();
             if (asign != null)
                 asign.Close();
             asign = new AsignLearner();
@@ -197,22 +196,16 @@ namespace SIMS
         #region Accounts Module
         private void addExpenseTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MainPanel.Controls.Clear();
             if (expenseT != null)
                 expenseT.Close();
-            expenseT = new AddExpenseType();
+            expenseT = new Expenses();
             FormSetUp(expenseT);
-        }
-
-        private void recordExpensePaymentToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (expensePay != null)
-                expensePay.Close();
-            expensePay = new RecordExpensePayment();
-            FormSetUp(expensePay);
         }
 
         private void viewExpensesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MainPanel.Controls.Clear();
             if (viewExp != null)
                 viewExp.Close();
             viewExp = new ViewExpenses();
@@ -221,6 +214,7 @@ namespace SIMS
 
         private void recordStudentPaymentToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MainPanel.Controls.Clear();
             if (studentPay != null)
                 studentPay.Close();
             studentPay = new RecordStudentPayment();
@@ -229,6 +223,7 @@ namespace SIMS
 
         private void recordStaffSalaryPaymentToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MainPanel.Controls.Clear();
             if (salaryPay != null)
                 salaryPay.Close();
             salaryPay = new RecordStaffSalaryPayment();
@@ -237,6 +232,7 @@ namespace SIMS
 
         private void browseStaffPaymentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MainPanel.Controls.Clear();
             if (staffPay != null)
                 staffPay.Close();
             staffPay = new BrowseStaffPayments();
@@ -245,6 +241,7 @@ namespace SIMS
 
         private void addFeeStructureToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MainPanel.Controls.Clear();
             if (feeStruct != null)
                 feeStruct.Close();
             feeStruct = new AddFeeStructure();
@@ -253,6 +250,7 @@ namespace SIMS
 
         private void browseDueFeesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MainPanel.Controls.Clear();
             if (dueFee != null)
                 dueFee.Close();
             dueFee = new BrowseDueFees();
@@ -261,6 +259,7 @@ namespace SIMS
 
         private void studentProfilesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MainPanel.Controls.Clear();
             if (studentPro != null)
                 studentPro.Close();
             studentPro = new StudentProfiles();

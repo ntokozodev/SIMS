@@ -58,7 +58,7 @@ namespace SIMS.LearnerModule
                 clearAll();
             }
             else
-                MetroMessageBox.Show(ParentForm, " ","Details not successful captured!",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MetroMessageBox.Show(ParentForm, " ","Details not captured!",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         internal void clearAll()

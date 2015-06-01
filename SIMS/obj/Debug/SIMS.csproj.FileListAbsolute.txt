@@ -26,8 +26,6 @@ C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.csproj.GenerateReso
 C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.LearnerModule.BrowseDetails.resources
 C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.LearnerModule.AddLearner.resources
 C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.LearnerModule.AsignLearner.resources
-C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.AddExpenseType.resources
-C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.RecordExpensePayment.resources
 C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.AddFeeStructure.resources
 C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.BrowseDueFees.resources
 C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.BrowseStaffPayments.resources
@@ -49,3 +47,4 @@ C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccessControl.Chang
 C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccessControl.Login.resources
 C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccessControl.Logout.resources
 C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.csprojResolveAssemblyReference.cache
+C:\Users\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.Expenses.resources

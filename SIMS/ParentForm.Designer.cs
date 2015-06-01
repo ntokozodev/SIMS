@@ -58,7 +58,6 @@
             this.AccountsMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.expensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addExpenseTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.recordExpensePaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewExpensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recordStudentPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -148,7 +147,7 @@
             this.StudentMenu.Name = "StudentMenu";
             this.StudentMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.StudentMenu.ShowImageMargin = false;
-            this.StudentMenu.Size = new System.Drawing.Size(209, 78);
+            this.StudentMenu.Size = new System.Drawing.Size(209, 56);
             this.StudentMenu.Style = MetroFramework.MetroColorStyle.Brown;
             this.StudentMenu.Text = "StudentMenu";
             this.StudentMenu.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -413,14 +412,13 @@
             this.AccountsMenu.Name = "AccountsMenu";
             this.AccountsMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.AccountsMenu.ShowImageMargin = false;
-            this.AccountsMenu.Size = new System.Drawing.Size(178, 134);
+            this.AccountsMenu.Size = new System.Drawing.Size(178, 156);
             // 
             // expensesToolStripMenuItem
             // 
             this.expensesToolStripMenuItem.CheckOnClick = true;
             this.expensesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addExpenseTypeToolStripMenuItem,
-            this.recordExpensePaymentToolStripMenuItem,
             this.viewExpensesToolStripMenuItem});
             this.expensesToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.expensesToolStripMenuItem.Name = "expensesToolStripMenuItem";
@@ -431,21 +429,14 @@
             // 
             this.addExpenseTypeToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.addExpenseTypeToolStripMenuItem.Name = "addExpenseTypeToolStripMenuItem";
-            this.addExpenseTypeToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
-            this.addExpenseTypeToolStripMenuItem.Text = "Add Expense Type";
+            this.addExpenseTypeToolStripMenuItem.Size = new System.Drawing.Size(262, 26);
+            this.addExpenseTypeToolStripMenuItem.Text = "Expenses and Payments";
             this.addExpenseTypeToolStripMenuItem.Click += new System.EventHandler(this.addExpenseTypeToolStripMenuItem_Click);
-            // 
-            // recordExpensePaymentToolStripMenuItem
-            // 
-            this.recordExpensePaymentToolStripMenuItem.Name = "recordExpensePaymentToolStripMenuItem";
-            this.recordExpensePaymentToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
-            this.recordExpensePaymentToolStripMenuItem.Text = "Record Expense Payment";
-            this.recordExpensePaymentToolStripMenuItem.Click += new System.EventHandler(this.recordExpensePaymentToolStripMenuItem_Click);
             // 
             // viewExpensesToolStripMenuItem
             // 
             this.viewExpensesToolStripMenuItem.Name = "viewExpensesToolStripMenuItem";
-            this.viewExpensesToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
+            this.viewExpensesToolStripMenuItem.Size = new System.Drawing.Size(262, 26);
             this.viewExpensesToolStripMenuItem.Text = "View Expenses";
             this.viewExpensesToolStripMenuItem.Click += new System.EventHandler(this.viewExpensesToolStripMenuItem_Click);
             // 
@@ -610,7 +601,6 @@
         private MetroFramework.Controls.MetroContextMenu AccountsMenu;
         private System.Windows.Forms.ToolStripMenuItem expensesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addExpenseTypeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem recordExpensePaymentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewExpensesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem paymentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem recordStudentPaymentToolStripMenuItem;
