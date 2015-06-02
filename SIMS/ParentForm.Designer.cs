@@ -412,7 +412,7 @@
             this.AccountsMenu.Name = "AccountsMenu";
             this.AccountsMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.AccountsMenu.ShowImageMargin = false;
-            this.AccountsMenu.Size = new System.Drawing.Size(178, 156);
+            this.AccountsMenu.Size = new System.Drawing.Size(178, 134);
             // 
             // expensesToolStripMenuItem
             // 
@@ -592,7 +592,6 @@
         private System.Windows.Forms.ToolStripMenuItem addNewLearnerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem browseLearnerDetailsToolStripMenuItem;
         private MetroFramework.Controls.MetroTile helpTile;
-        private MetroFramework.Controls.MetroPanel MainPanel;
         private MetroFramework.Controls.MetroContextMenu AdminMenu;
         private System.Windows.Forms.ToolStripMenuItem addUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
@@ -622,6 +621,7 @@
         private MetroFramework.Controls.MetroContextMenu mainPanelContextMenu;
         private System.Windows.Forms.ToolStripMenuItem clearAllControlsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addCentreToolStripMenuItem;
+        private MetroFramework.Controls.MetroPanel MainPanel;
     }
 }
 

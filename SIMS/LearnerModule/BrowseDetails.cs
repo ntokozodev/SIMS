@@ -63,7 +63,7 @@ namespace SIMS.LearnerModule
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Unexpected error\n", ex.Message.ToString(), MessageBoxButtons.OK);
+                MessageBox.Show("Unexpected error:\n", ex.Message.ToString(), MessageBoxButtons.OK);
             }
         }
 
@@ -78,7 +78,7 @@ namespace SIMS.LearnerModule
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Database error!\n" + ex.Message.ToString());
+                MessageBox.Show("Database error:\n" + ex.Message.ToString());
             }
         }
 
@@ -93,7 +93,7 @@ namespace SIMS.LearnerModule
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Couldn't connect to database\n" + ex.Message.ToString());
+                MessageBox.Show("Database error:\n" + ex.Message.ToString());
             }
         }
 

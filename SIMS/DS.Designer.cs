@@ -52,8 +52,6 @@ namespace SIMS {
         
         private SALARYDataTable tableSALARY;
         
-        private STUDENTDataTable tableSTUDENT;
-        
         private STUDENT_CLASSDataTable tableSTUDENT_CLASS;
         
         private STUDENT_FEEDataTable tableSTUDENT_FEE;
@@ -61,6 +59,8 @@ namespace SIMS {
         private STUDENT_PAYMENTDataTable tableSTUDENT_PAYMENT;
         
         private USERSDataTable tableUSERS;
+        
+        private STUDENTDataTable tableSTUDENT;
         
         private global::System.Data.DataRelation relationCLASS_CENTRE_ID_FK;
         
@@ -80,23 +80,23 @@ namespace SIMS {
         
         private global::System.Data.DataRelation relationGUARDIAN_CITIZEN_ID_FK;
         
-        private global::System.Data.DataRelation relationGUARDIAN_STUDENT_ID_FK;
-        
         private global::System.Data.DataRelation relationEMPLOYEE_ID_SALARY_FK;
         
-        private global::System.Data.DataRelation relationSTUDENT_CITIZEN_ID_FK;
-        
         private global::System.Data.DataRelation relationSTUDENT_CLASS__ID_FK;
-        
-        private global::System.Data.DataRelation relationSTUDENT_FEE_CITIZEN_ID_FK;
         
         private global::System.Data.DataRelation relationSTUDENT_FEE_ID_FK;
         
         private global::System.Data.DataRelation relationSTUDENT_PAYMENT__ID_FK;
         
-        private global::System.Data.DataRelation relationSTUDENT_PAYMENT_CITIZEN_ID_FK;
+        private global::System.Data.DataRelation relationEMPLOYEE_ID_USERS_FK1;
         
-        private global::System.Data.DataRelation relationEMPLOYEE_ID_USERS_FK;
+        private global::System.Data.DataRelation relationGUARDIAN_STUDENT_ID_FK1;
+        
+        private global::System.Data.DataRelation relationSTUDENT_CITIZEN_ID_FK1;
+        
+        private global::System.Data.DataRelation relationSTUDENT_FEE_CITIZEN_ID_FK1;
+        
+        private global::System.Data.DataRelation relationSTUDENT_PAYMENT_CITIZEN_ID_FK1;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -168,9 +168,6 @@ namespace SIMS {
                 if ((ds.Tables["SALARY"] != null)) {
                     base.Tables.Add(new SALARYDataTable(ds.Tables["SALARY"]));
                 }
-                if ((ds.Tables["STUDENT"] != null)) {
-                    base.Tables.Add(new STUDENTDataTable(ds.Tables["STUDENT"]));
-                }
                 if ((ds.Tables["STUDENT_CLASS"] != null)) {
                     base.Tables.Add(new STUDENT_CLASSDataTable(ds.Tables["STUDENT_CLASS"]));
                 }
@@ -182,6 +179,9 @@ namespace SIMS {
                 }
                 if ((ds.Tables["USERS"] != null)) {
                     base.Tables.Add(new USERSDataTable(ds.Tables["USERS"]));
+                }
+                if ((ds.Tables["STUDENT"] != null)) {
+                    base.Tables.Add(new STUDENTDataTable(ds.Tables["STUDENT"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -345,16 +345,6 @@ namespace SIMS {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public STUDENTDataTable STUDENT {
-            get {
-                return this.tableSTUDENT;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public STUDENT_CLASSDataTable STUDENT_CLASS {
             get {
                 return this.tableSTUDENT_CLASS;
@@ -388,6 +378,16 @@ namespace SIMS {
         public USERSDataTable USERS {
             get {
                 return this.tableUSERS;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public STUDENTDataTable STUDENT {
+            get {
+                return this.tableSTUDENT;
             }
         }
         
@@ -500,9 +500,6 @@ namespace SIMS {
                 if ((ds.Tables["SALARY"] != null)) {
                     base.Tables.Add(new SALARYDataTable(ds.Tables["SALARY"]));
                 }
-                if ((ds.Tables["STUDENT"] != null)) {
-                    base.Tables.Add(new STUDENTDataTable(ds.Tables["STUDENT"]));
-                }
                 if ((ds.Tables["STUDENT_CLASS"] != null)) {
                     base.Tables.Add(new STUDENT_CLASSDataTable(ds.Tables["STUDENT_CLASS"]));
                 }
@@ -514,6 +511,9 @@ namespace SIMS {
                 }
                 if ((ds.Tables["USERS"] != null)) {
                     base.Tables.Add(new USERSDataTable(ds.Tables["USERS"]));
+                }
+                if ((ds.Tables["STUDENT"] != null)) {
+                    base.Tables.Add(new STUDENTDataTable(ds.Tables["STUDENT"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -632,12 +632,6 @@ namespace SIMS {
                     this.tableSALARY.InitVars();
                 }
             }
-            this.tableSTUDENT = ((STUDENTDataTable)(base.Tables["STUDENT"]));
-            if ((initTable == true)) {
-                if ((this.tableSTUDENT != null)) {
-                    this.tableSTUDENT.InitVars();
-                }
-            }
             this.tableSTUDENT_CLASS = ((STUDENT_CLASSDataTable)(base.Tables["STUDENT_CLASS"]));
             if ((initTable == true)) {
                 if ((this.tableSTUDENT_CLASS != null)) {
@@ -662,6 +656,12 @@ namespace SIMS {
                     this.tableUSERS.InitVars();
                 }
             }
+            this.tableSTUDENT = ((STUDENTDataTable)(base.Tables["STUDENT"]));
+            if ((initTable == true)) {
+                if ((this.tableSTUDENT != null)) {
+                    this.tableSTUDENT.InitVars();
+                }
+            }
             this.relationCLASS_CENTRE_ID_FK = this.Relations["CLASS_CENTRE_ID_FK"];
             this.relationGRADE_ID_EMPLOYEE_FK = this.Relations["GRADE_ID_EMPLOYEE_FK"];
             this.relationCENTRE_ID_EMP_CENTRE_FK = this.Relations["CENTRE_ID_EMP_CENTRE_FK"];
@@ -671,15 +671,15 @@ namespace SIMS {
             this.relationEXPENSE_PAYMENT_EXPENSE_ID_FK = this.Relations["EXPENSE_PAYMENT_EXPENSE_ID_FK"];
             this.relationEXPENSE_PAYMENT_ID_FK = this.Relations["EXPENSE_PAYMENT_ID_FK"];
             this.relationGUARDIAN_CITIZEN_ID_FK = this.Relations["GUARDIAN_CITIZEN_ID_FK"];
-            this.relationGUARDIAN_STUDENT_ID_FK = this.Relations["GUARDIAN_STUDENT_ID_FK"];
             this.relationEMPLOYEE_ID_SALARY_FK = this.Relations["EMPLOYEE_ID_SALARY_FK"];
-            this.relationSTUDENT_CITIZEN_ID_FK = this.Relations["STUDENT_CITIZEN_ID_FK"];
             this.relationSTUDENT_CLASS__ID_FK = this.Relations["STUDENT_CLASS__ID_FK"];
-            this.relationSTUDENT_FEE_CITIZEN_ID_FK = this.Relations["STUDENT_FEE_CITIZEN_ID_FK"];
             this.relationSTUDENT_FEE_ID_FK = this.Relations["STUDENT_FEE_ID_FK"];
             this.relationSTUDENT_PAYMENT__ID_FK = this.Relations["STUDENT_PAYMENT__ID_FK"];
-            this.relationSTUDENT_PAYMENT_CITIZEN_ID_FK = this.Relations["STUDENT_PAYMENT_CITIZEN_ID_FK"];
-            this.relationEMPLOYEE_ID_USERS_FK = this.Relations["EMPLOYEE_ID_USERS_FK"];
+            this.relationEMPLOYEE_ID_USERS_FK1 = this.Relations["EMPLOYEE_ID_USERS_FK1"];
+            this.relationGUARDIAN_STUDENT_ID_FK1 = this.Relations["GUARDIAN_STUDENT_ID_FK1"];
+            this.relationSTUDENT_CITIZEN_ID_FK1 = this.Relations["STUDENT_CITIZEN_ID_FK1"];
+            this.relationSTUDENT_FEE_CITIZEN_ID_FK1 = this.Relations["STUDENT_FEE_CITIZEN_ID_FK1"];
+            this.relationSTUDENT_PAYMENT_CITIZEN_ID_FK1 = this.Relations["STUDENT_PAYMENT_CITIZEN_ID_FK1"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -718,8 +718,6 @@ namespace SIMS {
             base.Tables.Add(this.tablePAYMENT);
             this.tableSALARY = new SALARYDataTable();
             base.Tables.Add(this.tableSALARY);
-            this.tableSTUDENT = new STUDENTDataTable();
-            base.Tables.Add(this.tableSTUDENT);
             this.tableSTUDENT_CLASS = new STUDENT_CLASSDataTable();
             base.Tables.Add(this.tableSTUDENT_CLASS);
             this.tableSTUDENT_FEE = new STUDENT_FEEDataTable();
@@ -728,6 +726,8 @@ namespace SIMS {
             base.Tables.Add(this.tableSTUDENT_PAYMENT);
             this.tableUSERS = new USERSDataTable();
             base.Tables.Add(this.tableUSERS);
+            this.tableSTUDENT = new STUDENTDataTable();
+            base.Tables.Add(this.tableSTUDENT);
             this.relationCLASS_CENTRE_ID_FK = new global::System.Data.DataRelation("CLASS_CENTRE_ID_FK", new global::System.Data.DataColumn[] {
                         this.tableCENTRE.CENTRE_IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableCLASS.CENTRE_IDColumn}, false);
@@ -764,26 +764,14 @@ namespace SIMS {
                         this.tableGUARDIAN.G_CITIZEN_IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableGUARDIAN_STUDENT.GUARDIAN_CITIZEN_IDColumn}, false);
             this.Relations.Add(this.relationGUARDIAN_CITIZEN_ID_FK);
-            this.relationGUARDIAN_STUDENT_ID_FK = new global::System.Data.DataRelation("GUARDIAN_STUDENT_ID_FK", new global::System.Data.DataColumn[] {
-                        this.tableSTUDENT.STUDENT_CITIZEN_IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableGUARDIAN_STUDENT.STUDENT_CITIZEN_IDColumn}, false);
-            this.Relations.Add(this.relationGUARDIAN_STUDENT_ID_FK);
             this.relationEMPLOYEE_ID_SALARY_FK = new global::System.Data.DataRelation("EMPLOYEE_ID_SALARY_FK", new global::System.Data.DataColumn[] {
                         this.tableEMPLOYEE.EMPLOYEE_NOColumn}, new global::System.Data.DataColumn[] {
                         this.tableSALARY.EMPLOYEE_NOColumn}, false);
             this.Relations.Add(this.relationEMPLOYEE_ID_SALARY_FK);
-            this.relationSTUDENT_CITIZEN_ID_FK = new global::System.Data.DataRelation("STUDENT_CITIZEN_ID_FK", new global::System.Data.DataColumn[] {
-                        this.tableSTUDENT.STUDENT_CITIZEN_IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableSTUDENT_CLASS.STUDENT_CITIZEN_IDColumn}, false);
-            this.Relations.Add(this.relationSTUDENT_CITIZEN_ID_FK);
             this.relationSTUDENT_CLASS__ID_FK = new global::System.Data.DataRelation("STUDENT_CLASS__ID_FK", new global::System.Data.DataColumn[] {
                         this.tableCLASS.CLASS_IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableSTUDENT_CLASS.CLASS_IDColumn}, false);
             this.Relations.Add(this.relationSTUDENT_CLASS__ID_FK);
-            this.relationSTUDENT_FEE_CITIZEN_ID_FK = new global::System.Data.DataRelation("STUDENT_FEE_CITIZEN_ID_FK", new global::System.Data.DataColumn[] {
-                        this.tableSTUDENT.STUDENT_CITIZEN_IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableSTUDENT_FEE.STUDENT_CITIZEN_IDColumn}, false);
-            this.Relations.Add(this.relationSTUDENT_FEE_CITIZEN_ID_FK);
             this.relationSTUDENT_FEE_ID_FK = new global::System.Data.DataRelation("STUDENT_FEE_ID_FK", new global::System.Data.DataColumn[] {
                         this.tableFEE.FEE_IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableSTUDENT_FEE.FEE_IDColumn}, false);
@@ -792,14 +780,26 @@ namespace SIMS {
                         this.tablePAYMENT.PAYMENT_IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableSTUDENT_PAYMENT.PAYMENT_IDColumn}, false);
             this.Relations.Add(this.relationSTUDENT_PAYMENT__ID_FK);
-            this.relationSTUDENT_PAYMENT_CITIZEN_ID_FK = new global::System.Data.DataRelation("STUDENT_PAYMENT_CITIZEN_ID_FK", new global::System.Data.DataColumn[] {
-                        this.tableSTUDENT.STUDENT_CITIZEN_IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableSTUDENT_PAYMENT.STUDENT_CITIZEN_IDColumn}, false);
-            this.Relations.Add(this.relationSTUDENT_PAYMENT_CITIZEN_ID_FK);
-            this.relationEMPLOYEE_ID_USERS_FK = new global::System.Data.DataRelation("EMPLOYEE_ID_USERS_FK", new global::System.Data.DataColumn[] {
+            this.relationEMPLOYEE_ID_USERS_FK1 = new global::System.Data.DataRelation("EMPLOYEE_ID_USERS_FK1", new global::System.Data.DataColumn[] {
                         this.tableEMPLOYEE.EMPLOYEE_NOColumn}, new global::System.Data.DataColumn[] {
                         this.tableUSERS.EMPLOYEE_NOColumn}, false);
-            this.Relations.Add(this.relationEMPLOYEE_ID_USERS_FK);
+            this.Relations.Add(this.relationEMPLOYEE_ID_USERS_FK1);
+            this.relationGUARDIAN_STUDENT_ID_FK1 = new global::System.Data.DataRelation("GUARDIAN_STUDENT_ID_FK1", new global::System.Data.DataColumn[] {
+                        this.tableSTUDENT.STUDENT_CITIZEN_IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableGUARDIAN_STUDENT.STUDENT_CITIZEN_IDColumn}, false);
+            this.Relations.Add(this.relationGUARDIAN_STUDENT_ID_FK1);
+            this.relationSTUDENT_CITIZEN_ID_FK1 = new global::System.Data.DataRelation("STUDENT_CITIZEN_ID_FK1", new global::System.Data.DataColumn[] {
+                        this.tableSTUDENT.STUDENT_CITIZEN_IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableSTUDENT_CLASS.STUDENT_CITIZEN_IDColumn}, false);
+            this.Relations.Add(this.relationSTUDENT_CITIZEN_ID_FK1);
+            this.relationSTUDENT_FEE_CITIZEN_ID_FK1 = new global::System.Data.DataRelation("STUDENT_FEE_CITIZEN_ID_FK1", new global::System.Data.DataColumn[] {
+                        this.tableSTUDENT.STUDENT_CITIZEN_IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableSTUDENT_FEE.STUDENT_CITIZEN_IDColumn}, false);
+            this.Relations.Add(this.relationSTUDENT_FEE_CITIZEN_ID_FK1);
+            this.relationSTUDENT_PAYMENT_CITIZEN_ID_FK1 = new global::System.Data.DataRelation("STUDENT_PAYMENT_CITIZEN_ID_FK1", new global::System.Data.DataColumn[] {
+                        this.tableSTUDENT.STUDENT_CITIZEN_IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableSTUDENT_PAYMENT.STUDENT_CITIZEN_IDColumn}, false);
+            this.Relations.Add(this.relationSTUDENT_PAYMENT_CITIZEN_ID_FK1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -888,12 +888,6 @@ namespace SIMS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeSTUDENT() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeSTUDENT_CLASS() {
             return false;
         }
@@ -913,6 +907,12 @@ namespace SIMS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeUSERS() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeSTUDENT() {
             return false;
         }
         
@@ -1014,9 +1014,6 @@ namespace SIMS {
         public delegate void SALARYRowChangeEventHandler(object sender, SALARYRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void STUDENTRowChangeEventHandler(object sender, STUDENTRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void STUDENT_CLASSRowChangeEventHandler(object sender, STUDENT_CLASSRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1027,6 +1024,9 @@ namespace SIMS {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void USERSRowChangeEventHandler(object sender, USERSRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void STUDENTRowChangeEventHandler(object sender, STUDENTRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -3144,15 +3144,9 @@ namespace SIMS {
             
             private global::System.Data.DataColumn columnEXPENSE_ID;
             
-            private global::System.Data.DataColumn columnEXPENSE_NAME;
-            
-            private global::System.Data.DataColumn columnEXPENSE_DATE;
-            
-            private global::System.Data.DataColumn columnEXPENSE_AMOUNT;
+            private global::System.Data.DataColumn columnEXPENSE_TYPE;
             
             private global::System.Data.DataColumn columnDESCRIPTION;
-            
-            private global::System.Data.DataColumn columnEXPENSE_NOTE;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -3197,25 +3191,9 @@ namespace SIMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EXPENSE_NAMEColumn {
+            public global::System.Data.DataColumn EXPENSE_TYPEColumn {
                 get {
-                    return this.columnEXPENSE_NAME;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EXPENSE_DATEColumn {
-                get {
-                    return this.columnEXPENSE_DATE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EXPENSE_AMOUNTColumn {
-                get {
-                    return this.columnEXPENSE_AMOUNT;
+                    return this.columnEXPENSE_TYPE;
                 }
             }
             
@@ -3224,14 +3202,6 @@ namespace SIMS {
             public global::System.Data.DataColumn DESCRIPTIONColumn {
                 get {
                     return this.columnDESCRIPTION;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EXPENSE_NOTEColumn {
-                get {
-                    return this.columnEXPENSE_NOTE;
                 }
             }
             
@@ -3272,15 +3242,12 @@ namespace SIMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EXPENSERow AddEXPENSERow(decimal EXPENSE_ID, string EXPENSE_NAME, System.DateTime EXPENSE_DATE, decimal EXPENSE_AMOUNT, string DESCRIPTION, string EXPENSE_NOTE) {
+            public EXPENSERow AddEXPENSERow(decimal EXPENSE_ID, string EXPENSE_TYPE, string DESCRIPTION) {
                 EXPENSERow rowEXPENSERow = ((EXPENSERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         EXPENSE_ID,
-                        EXPENSE_NAME,
-                        EXPENSE_DATE,
-                        EXPENSE_AMOUNT,
-                        DESCRIPTION,
-                        EXPENSE_NOTE};
+                        EXPENSE_TYPE,
+                        DESCRIPTION};
                 rowEXPENSERow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEXPENSERow);
                 return rowEXPENSERow;
@@ -3311,11 +3278,8 @@ namespace SIMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnEXPENSE_ID = base.Columns["EXPENSE_ID"];
-                this.columnEXPENSE_NAME = base.Columns["EXPENSE_NAME"];
-                this.columnEXPENSE_DATE = base.Columns["EXPENSE_DATE"];
-                this.columnEXPENSE_AMOUNT = base.Columns["EXPENSE_AMOUNT"];
+                this.columnEXPENSE_TYPE = base.Columns["EXPENSE_TYPE"];
                 this.columnDESCRIPTION = base.Columns["DESCRIPTION"];
-                this.columnEXPENSE_NOTE = base.Columns["EXPENSE_NOTE"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3323,23 +3287,16 @@ namespace SIMS {
             private void InitClass() {
                 this.columnEXPENSE_ID = new global::System.Data.DataColumn("EXPENSE_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEXPENSE_ID);
-                this.columnEXPENSE_NAME = new global::System.Data.DataColumn("EXPENSE_NAME", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEXPENSE_NAME);
-                this.columnEXPENSE_DATE = new global::System.Data.DataColumn("EXPENSE_DATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEXPENSE_DATE);
-                this.columnEXPENSE_AMOUNT = new global::System.Data.DataColumn("EXPENSE_AMOUNT", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEXPENSE_AMOUNT);
+                this.columnEXPENSE_TYPE = new global::System.Data.DataColumn("EXPENSE_TYPE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEXPENSE_TYPE);
                 this.columnDESCRIPTION = new global::System.Data.DataColumn("DESCRIPTION", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDESCRIPTION);
-                this.columnEXPENSE_NOTE = new global::System.Data.DataColumn("EXPENSE_NOTE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEXPENSE_NOTE);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnEXPENSE_ID}, true));
                 this.columnEXPENSE_ID.AllowDBNull = false;
                 this.columnEXPENSE_ID.Unique = true;
-                this.columnEXPENSE_NAME.MaxLength = 255;
+                this.columnEXPENSE_TYPE.MaxLength = 25;
                 this.columnDESCRIPTION.MaxLength = 1000;
-                this.columnEXPENSE_NOTE.MaxLength = 1000;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3477,6 +3434,14 @@ namespace SIMS {
             
             private global::System.Data.DataColumn columnPAYMET_ID;
             
+            private global::System.Data.DataColumn columnEXPENSE_AMOUNT;
+            
+            private global::System.Data.DataColumn columnPAYMENT_DATE;
+            
+            private global::System.Data.DataColumn columnCAPTURED_DATE;
+            
+            private global::System.Data.DataColumn columnEXPENSE_NOTE;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public EXPENSE_PAYMENTDataTable() {
@@ -3528,6 +3493,38 @@ namespace SIMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EXPENSE_AMOUNTColumn {
+                get {
+                    return this.columnEXPENSE_AMOUNT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PAYMENT_DATEColumn {
+                get {
+                    return this.columnPAYMENT_DATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CAPTURED_DATEColumn {
+                get {
+                    return this.columnCAPTURED_DATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EXPENSE_NOTEColumn {
+                get {
+                    return this.columnEXPENSE_NOTE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3563,11 +3560,15 @@ namespace SIMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EXPENSE_PAYMENTRow AddEXPENSE_PAYMENTRow(EXPENSERow parentEXPENSERowByEXPENSE_PAYMENT_EXPENSE_ID_FK, PAYMENTRow parentPAYMENTRowByEXPENSE_PAYMENT_ID_FK) {
+            public EXPENSE_PAYMENTRow AddEXPENSE_PAYMENTRow(EXPENSERow parentEXPENSERowByEXPENSE_PAYMENT_EXPENSE_ID_FK, PAYMENTRow parentPAYMENTRowByEXPENSE_PAYMENT_ID_FK, decimal EXPENSE_AMOUNT, System.DateTime PAYMENT_DATE, System.DateTime CAPTURED_DATE, string EXPENSE_NOTE) {
                 EXPENSE_PAYMENTRow rowEXPENSE_PAYMENTRow = ((EXPENSE_PAYMENTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        null};
+                        null,
+                        EXPENSE_AMOUNT,
+                        PAYMENT_DATE,
+                        CAPTURED_DATE,
+                        EXPENSE_NOTE};
                 if ((parentEXPENSERowByEXPENSE_PAYMENT_EXPENSE_ID_FK != null)) {
                     columnValuesArray[0] = parentEXPENSERowByEXPENSE_PAYMENT_EXPENSE_ID_FK[0];
                 }
@@ -3606,6 +3607,10 @@ namespace SIMS {
             internal void InitVars() {
                 this.columnEXPENSE_ID = base.Columns["EXPENSE_ID"];
                 this.columnPAYMET_ID = base.Columns["PAYMET_ID"];
+                this.columnEXPENSE_AMOUNT = base.Columns["EXPENSE_AMOUNT"];
+                this.columnPAYMENT_DATE = base.Columns["PAYMENT_DATE"];
+                this.columnCAPTURED_DATE = base.Columns["CAPTURED_DATE"];
+                this.columnEXPENSE_NOTE = base.Columns["EXPENSE_NOTE"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3615,11 +3620,20 @@ namespace SIMS {
                 base.Columns.Add(this.columnEXPENSE_ID);
                 this.columnPAYMET_ID = new global::System.Data.DataColumn("PAYMET_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPAYMET_ID);
+                this.columnEXPENSE_AMOUNT = new global::System.Data.DataColumn("EXPENSE_AMOUNT", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEXPENSE_AMOUNT);
+                this.columnPAYMENT_DATE = new global::System.Data.DataColumn("PAYMENT_DATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPAYMENT_DATE);
+                this.columnCAPTURED_DATE = new global::System.Data.DataColumn("CAPTURED_DATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCAPTURED_DATE);
+                this.columnEXPENSE_NOTE = new global::System.Data.DataColumn("EXPENSE_NOTE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEXPENSE_NOTE);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnEXPENSE_ID,
                                 this.columnPAYMET_ID}, true));
                 this.columnEXPENSE_ID.AllowDBNull = false;
                 this.columnPAYMET_ID.AllowDBNull = false;
+                this.columnEXPENSE_NOTE.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4791,7 +4805,7 @@ namespace SIMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GUARDIAN_STUDENTRow AddGUARDIAN_STUDENTRow(GUARDIANRow parentGUARDIANRowByGUARDIAN_CITIZEN_ID_FK, STUDENTRow parentSTUDENTRowByGUARDIAN_STUDENT_ID_FK, string GUARDIAN_ROLE) {
+            public GUARDIAN_STUDENTRow AddGUARDIAN_STUDENTRow(GUARDIANRow parentGUARDIANRowByGUARDIAN_CITIZEN_ID_FK, STUDENTRow parentSTUDENTRowByGUARDIAN_STUDENT_ID_FK1, string GUARDIAN_ROLE) {
                 GUARDIAN_STUDENTRow rowGUARDIAN_STUDENTRow = ((GUARDIAN_STUDENTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -4800,8 +4814,8 @@ namespace SIMS {
                 if ((parentGUARDIANRowByGUARDIAN_CITIZEN_ID_FK != null)) {
                     columnValuesArray[0] = parentGUARDIANRowByGUARDIAN_CITIZEN_ID_FK[0];
                 }
-                if ((parentSTUDENTRowByGUARDIAN_STUDENT_ID_FK != null)) {
-                    columnValuesArray[1] = parentSTUDENTRowByGUARDIAN_STUDENT_ID_FK[6];
+                if ((parentSTUDENTRowByGUARDIAN_STUDENT_ID_FK1 != null)) {
+                    columnValuesArray[1] = parentSTUDENTRowByGUARDIAN_STUDENT_ID_FK1[6];
                 }
                 rowGUARDIAN_STUDENTRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowGUARDIAN_STUDENTRow);
@@ -4990,8 +5004,6 @@ namespace SIMS {
             
             private global::System.Data.DataColumn columnPAYMENT_ID;
             
-            private global::System.Data.DataColumn columnAMOUNT;
-            
             private global::System.Data.DataColumn columnOCCURENCE;
             
             private global::System.Data.DataColumn columnTYPE;
@@ -5034,14 +5046,6 @@ namespace SIMS {
             public global::System.Data.DataColumn PAYMENT_IDColumn {
                 get {
                     return this.columnPAYMENT_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AMOUNTColumn {
-                get {
-                    return this.columnAMOUNT;
                 }
             }
             
@@ -5098,11 +5102,10 @@ namespace SIMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PAYMENTRow AddPAYMENTRow(decimal PAYMENT_ID, decimal AMOUNT, string OCCURENCE, string TYPE) {
+            public PAYMENTRow AddPAYMENTRow(decimal PAYMENT_ID, string OCCURENCE, string TYPE) {
                 PAYMENTRow rowPAYMENTRow = ((PAYMENTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         PAYMENT_ID,
-                        AMOUNT,
                         OCCURENCE,
                         TYPE};
                 rowPAYMENTRow.ItemArray = columnValuesArray;
@@ -5135,7 +5138,6 @@ namespace SIMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnPAYMENT_ID = base.Columns["PAYMENT_ID"];
-                this.columnAMOUNT = base.Columns["AMOUNT"];
                 this.columnOCCURENCE = base.Columns["OCCURENCE"];
                 this.columnTYPE = base.Columns["TYPE"];
             }
@@ -5145,8 +5147,6 @@ namespace SIMS {
             private void InitClass() {
                 this.columnPAYMENT_ID = new global::System.Data.DataColumn("PAYMENT_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPAYMENT_ID);
-                this.columnAMOUNT = new global::System.Data.DataColumn("AMOUNT", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAMOUNT);
                 this.columnOCCURENCE = new global::System.Data.DataColumn("OCCURENCE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOCCURENCE);
                 this.columnTYPE = new global::System.Data.DataColumn("TYPE", typeof(string), null, global::System.Data.MappingType.Element);
@@ -5156,7 +5156,7 @@ namespace SIMS {
                 this.columnPAYMENT_ID.AllowDBNull = false;
                 this.columnPAYMENT_ID.Unique = true;
                 this.columnOCCURENCE.MaxLength = 255;
-                this.columnTYPE.MaxLength = 255;
+                this.columnTYPE.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5575,6 +5575,1182 @@ namespace SIMS {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "SALARYDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class STUDENT_CLASSDataTable : global::System.Data.TypedTableBase<STUDENT_CLASSRow> {
+            
+            private global::System.Data.DataColumn columnSTUDENT_CITIZEN_ID;
+            
+            private global::System.Data.DataColumn columnCLASS_ID;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public STUDENT_CLASSDataTable() {
+                this.TableName = "STUDENT_CLASS";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal STUDENT_CLASSDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected STUDENT_CLASSDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn STUDENT_CITIZEN_IDColumn {
+                get {
+                    return this.columnSTUDENT_CITIZEN_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CLASS_IDColumn {
+                get {
+                    return this.columnCLASS_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public STUDENT_CLASSRow this[int index] {
+                get {
+                    return ((STUDENT_CLASSRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event STUDENT_CLASSRowChangeEventHandler STUDENT_CLASSRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event STUDENT_CLASSRowChangeEventHandler STUDENT_CLASSRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event STUDENT_CLASSRowChangeEventHandler STUDENT_CLASSRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event STUDENT_CLASSRowChangeEventHandler STUDENT_CLASSRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddSTUDENT_CLASSRow(STUDENT_CLASSRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public STUDENT_CLASSRow AddSTUDENT_CLASSRow(STUDENTRow parentSTUDENTRowBySTUDENT_CITIZEN_ID_FK1, CLASSRow parentCLASSRowBySTUDENT_CLASS__ID_FK) {
+                STUDENT_CLASSRow rowSTUDENT_CLASSRow = ((STUDENT_CLASSRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null};
+                if ((parentSTUDENTRowBySTUDENT_CITIZEN_ID_FK1 != null)) {
+                    columnValuesArray[0] = parentSTUDENTRowBySTUDENT_CITIZEN_ID_FK1[6];
+                }
+                if ((parentCLASSRowBySTUDENT_CLASS__ID_FK != null)) {
+                    columnValuesArray[1] = parentCLASSRowBySTUDENT_CLASS__ID_FK[0];
+                }
+                rowSTUDENT_CLASSRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSTUDENT_CLASSRow);
+                return rowSTUDENT_CLASSRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public STUDENT_CLASSRow FindBySTUDENT_CITIZEN_IDCLASS_ID(string STUDENT_CITIZEN_ID, decimal CLASS_ID) {
+                return ((STUDENT_CLASSRow)(this.Rows.Find(new object[] {
+                            STUDENT_CITIZEN_ID,
+                            CLASS_ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                STUDENT_CLASSDataTable cln = ((STUDENT_CLASSDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new STUDENT_CLASSDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnSTUDENT_CITIZEN_ID = base.Columns["STUDENT_CITIZEN_ID"];
+                this.columnCLASS_ID = base.Columns["CLASS_ID"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnSTUDENT_CITIZEN_ID = new global::System.Data.DataColumn("STUDENT_CITIZEN_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSTUDENT_CITIZEN_ID);
+                this.columnCLASS_ID = new global::System.Data.DataColumn("CLASS_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCLASS_ID);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnSTUDENT_CITIZEN_ID,
+                                this.columnCLASS_ID}, true));
+                this.columnSTUDENT_CITIZEN_ID.AllowDBNull = false;
+                this.columnSTUDENT_CITIZEN_ID.MaxLength = 1000;
+                this.columnCLASS_ID.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public STUDENT_CLASSRow NewSTUDENT_CLASSRow() {
+                return ((STUDENT_CLASSRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new STUDENT_CLASSRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(STUDENT_CLASSRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.STUDENT_CLASSRowChanged != null)) {
+                    this.STUDENT_CLASSRowChanged(this, new STUDENT_CLASSRowChangeEvent(((STUDENT_CLASSRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.STUDENT_CLASSRowChanging != null)) {
+                    this.STUDENT_CLASSRowChanging(this, new STUDENT_CLASSRowChangeEvent(((STUDENT_CLASSRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.STUDENT_CLASSRowDeleted != null)) {
+                    this.STUDENT_CLASSRowDeleted(this, new STUDENT_CLASSRowChangeEvent(((STUDENT_CLASSRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.STUDENT_CLASSRowDeleting != null)) {
+                    this.STUDENT_CLASSRowDeleting(this, new STUDENT_CLASSRowChangeEvent(((STUDENT_CLASSRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveSTUDENT_CLASSRow(STUDENT_CLASSRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DS ds = new DS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "STUDENT_CLASSDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class STUDENT_FEEDataTable : global::System.Data.TypedTableBase<STUDENT_FEERow> {
+            
+            private global::System.Data.DataColumn columnSTUDENT_CITIZEN_ID;
+            
+            private global::System.Data.DataColumn columnFEE_ID;
+            
+            private global::System.Data.DataColumn columnFEE_BALANCE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public STUDENT_FEEDataTable() {
+                this.TableName = "STUDENT_FEE";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal STUDENT_FEEDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected STUDENT_FEEDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn STUDENT_CITIZEN_IDColumn {
+                get {
+                    return this.columnSTUDENT_CITIZEN_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FEE_IDColumn {
+                get {
+                    return this.columnFEE_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FEE_BALANCEColumn {
+                get {
+                    return this.columnFEE_BALANCE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public STUDENT_FEERow this[int index] {
+                get {
+                    return ((STUDENT_FEERow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event STUDENT_FEERowChangeEventHandler STUDENT_FEERowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event STUDENT_FEERowChangeEventHandler STUDENT_FEERowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event STUDENT_FEERowChangeEventHandler STUDENT_FEERowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event STUDENT_FEERowChangeEventHandler STUDENT_FEERowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddSTUDENT_FEERow(STUDENT_FEERow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public STUDENT_FEERow AddSTUDENT_FEERow(STUDENTRow parentSTUDENTRowBySTUDENT_FEE_CITIZEN_ID_FK1, FEERow parentFEERowBySTUDENT_FEE_ID_FK, decimal FEE_BALANCE) {
+                STUDENT_FEERow rowSTUDENT_FEERow = ((STUDENT_FEERow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null,
+                        FEE_BALANCE};
+                if ((parentSTUDENTRowBySTUDENT_FEE_CITIZEN_ID_FK1 != null)) {
+                    columnValuesArray[0] = parentSTUDENTRowBySTUDENT_FEE_CITIZEN_ID_FK1[6];
+                }
+                if ((parentFEERowBySTUDENT_FEE_ID_FK != null)) {
+                    columnValuesArray[1] = parentFEERowBySTUDENT_FEE_ID_FK[0];
+                }
+                rowSTUDENT_FEERow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSTUDENT_FEERow);
+                return rowSTUDENT_FEERow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public STUDENT_FEERow FindBySTUDENT_CITIZEN_IDFEE_ID(string STUDENT_CITIZEN_ID, decimal FEE_ID) {
+                return ((STUDENT_FEERow)(this.Rows.Find(new object[] {
+                            STUDENT_CITIZEN_ID,
+                            FEE_ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                STUDENT_FEEDataTable cln = ((STUDENT_FEEDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new STUDENT_FEEDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnSTUDENT_CITIZEN_ID = base.Columns["STUDENT_CITIZEN_ID"];
+                this.columnFEE_ID = base.Columns["FEE_ID"];
+                this.columnFEE_BALANCE = base.Columns["FEE_BALANCE"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnSTUDENT_CITIZEN_ID = new global::System.Data.DataColumn("STUDENT_CITIZEN_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSTUDENT_CITIZEN_ID);
+                this.columnFEE_ID = new global::System.Data.DataColumn("FEE_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFEE_ID);
+                this.columnFEE_BALANCE = new global::System.Data.DataColumn("FEE_BALANCE", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFEE_BALANCE);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnSTUDENT_CITIZEN_ID,
+                                this.columnFEE_ID}, true));
+                this.columnSTUDENT_CITIZEN_ID.AllowDBNull = false;
+                this.columnSTUDENT_CITIZEN_ID.MaxLength = 1000;
+                this.columnFEE_ID.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public STUDENT_FEERow NewSTUDENT_FEERow() {
+                return ((STUDENT_FEERow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new STUDENT_FEERow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(STUDENT_FEERow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.STUDENT_FEERowChanged != null)) {
+                    this.STUDENT_FEERowChanged(this, new STUDENT_FEERowChangeEvent(((STUDENT_FEERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.STUDENT_FEERowChanging != null)) {
+                    this.STUDENT_FEERowChanging(this, new STUDENT_FEERowChangeEvent(((STUDENT_FEERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.STUDENT_FEERowDeleted != null)) {
+                    this.STUDENT_FEERowDeleted(this, new STUDENT_FEERowChangeEvent(((STUDENT_FEERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.STUDENT_FEERowDeleting != null)) {
+                    this.STUDENT_FEERowDeleting(this, new STUDENT_FEERowChangeEvent(((STUDENT_FEERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveSTUDENT_FEERow(STUDENT_FEERow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DS ds = new DS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "STUDENT_FEEDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class STUDENT_PAYMENTDataTable : global::System.Data.TypedTableBase<STUDENT_PAYMENTRow> {
+            
+            private global::System.Data.DataColumn columnSTUDENT_CITIZEN_ID;
+            
+            private global::System.Data.DataColumn columnPAYMENT_ID;
+            
+            private global::System.Data.DataColumn columnPAYMENT_DATE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public STUDENT_PAYMENTDataTable() {
+                this.TableName = "STUDENT_PAYMENT";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal STUDENT_PAYMENTDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected STUDENT_PAYMENTDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn STUDENT_CITIZEN_IDColumn {
+                get {
+                    return this.columnSTUDENT_CITIZEN_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PAYMENT_IDColumn {
+                get {
+                    return this.columnPAYMENT_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PAYMENT_DATEColumn {
+                get {
+                    return this.columnPAYMENT_DATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public STUDENT_PAYMENTRow this[int index] {
+                get {
+                    return ((STUDENT_PAYMENTRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event STUDENT_PAYMENTRowChangeEventHandler STUDENT_PAYMENTRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event STUDENT_PAYMENTRowChangeEventHandler STUDENT_PAYMENTRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event STUDENT_PAYMENTRowChangeEventHandler STUDENT_PAYMENTRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event STUDENT_PAYMENTRowChangeEventHandler STUDENT_PAYMENTRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddSTUDENT_PAYMENTRow(STUDENT_PAYMENTRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public STUDENT_PAYMENTRow AddSTUDENT_PAYMENTRow(STUDENTRow parentSTUDENTRowBySTUDENT_PAYMENT_CITIZEN_ID_FK1, PAYMENTRow parentPAYMENTRowBySTUDENT_PAYMENT__ID_FK, System.DateTime PAYMENT_DATE) {
+                STUDENT_PAYMENTRow rowSTUDENT_PAYMENTRow = ((STUDENT_PAYMENTRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null,
+                        PAYMENT_DATE};
+                if ((parentSTUDENTRowBySTUDENT_PAYMENT_CITIZEN_ID_FK1 != null)) {
+                    columnValuesArray[0] = parentSTUDENTRowBySTUDENT_PAYMENT_CITIZEN_ID_FK1[6];
+                }
+                if ((parentPAYMENTRowBySTUDENT_PAYMENT__ID_FK != null)) {
+                    columnValuesArray[1] = parentPAYMENTRowBySTUDENT_PAYMENT__ID_FK[0];
+                }
+                rowSTUDENT_PAYMENTRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSTUDENT_PAYMENTRow);
+                return rowSTUDENT_PAYMENTRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public STUDENT_PAYMENTRow FindBySTUDENT_CITIZEN_IDPAYMENT_ID(string STUDENT_CITIZEN_ID, decimal PAYMENT_ID) {
+                return ((STUDENT_PAYMENTRow)(this.Rows.Find(new object[] {
+                            STUDENT_CITIZEN_ID,
+                            PAYMENT_ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                STUDENT_PAYMENTDataTable cln = ((STUDENT_PAYMENTDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new STUDENT_PAYMENTDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnSTUDENT_CITIZEN_ID = base.Columns["STUDENT_CITIZEN_ID"];
+                this.columnPAYMENT_ID = base.Columns["PAYMENT_ID"];
+                this.columnPAYMENT_DATE = base.Columns["PAYMENT_DATE"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnSTUDENT_CITIZEN_ID = new global::System.Data.DataColumn("STUDENT_CITIZEN_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSTUDENT_CITIZEN_ID);
+                this.columnPAYMENT_ID = new global::System.Data.DataColumn("PAYMENT_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPAYMENT_ID);
+                this.columnPAYMENT_DATE = new global::System.Data.DataColumn("PAYMENT_DATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPAYMENT_DATE);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnSTUDENT_CITIZEN_ID,
+                                this.columnPAYMENT_ID}, true));
+                this.columnSTUDENT_CITIZEN_ID.AllowDBNull = false;
+                this.columnSTUDENT_CITIZEN_ID.MaxLength = 1000;
+                this.columnPAYMENT_ID.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public STUDENT_PAYMENTRow NewSTUDENT_PAYMENTRow() {
+                return ((STUDENT_PAYMENTRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new STUDENT_PAYMENTRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(STUDENT_PAYMENTRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.STUDENT_PAYMENTRowChanged != null)) {
+                    this.STUDENT_PAYMENTRowChanged(this, new STUDENT_PAYMENTRowChangeEvent(((STUDENT_PAYMENTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.STUDENT_PAYMENTRowChanging != null)) {
+                    this.STUDENT_PAYMENTRowChanging(this, new STUDENT_PAYMENTRowChangeEvent(((STUDENT_PAYMENTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.STUDENT_PAYMENTRowDeleted != null)) {
+                    this.STUDENT_PAYMENTRowDeleted(this, new STUDENT_PAYMENTRowChangeEvent(((STUDENT_PAYMENTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.STUDENT_PAYMENTRowDeleting != null)) {
+                    this.STUDENT_PAYMENTRowDeleting(this, new STUDENT_PAYMENTRowChangeEvent(((STUDENT_PAYMENTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveSTUDENT_PAYMENTRow(STUDENT_PAYMENTRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DS ds = new DS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "STUDENT_PAYMENTDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class USERSDataTable : global::System.Data.TypedTableBase<USERSRow> {
+            
+            private global::System.Data.DataColumn columnUSER_ID;
+            
+            private global::System.Data.DataColumn columnUSER_NAME;
+            
+            private global::System.Data.DataColumn columnPASSWORD;
+            
+            private global::System.Data.DataColumn columnEMPLOYEE_NO;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public USERSDataTable() {
+                this.TableName = "USERS";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal USERSDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected USERSDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn USER_IDColumn {
+                get {
+                    return this.columnUSER_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn USER_NAMEColumn {
+                get {
+                    return this.columnUSER_NAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PASSWORDColumn {
+                get {
+                    return this.columnPASSWORD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EMPLOYEE_NOColumn {
+                get {
+                    return this.columnEMPLOYEE_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public USERSRow this[int index] {
+                get {
+                    return ((USERSRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event USERSRowChangeEventHandler USERSRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event USERSRowChangeEventHandler USERSRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event USERSRowChangeEventHandler USERSRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event USERSRowChangeEventHandler USERSRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddUSERSRow(USERSRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public USERSRow AddUSERSRow(decimal USER_ID, string USER_NAME, string PASSWORD, EMPLOYEERow parentEMPLOYEERowByEMPLOYEE_ID_USERS_FK1) {
+                USERSRow rowUSERSRow = ((USERSRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        USER_ID,
+                        USER_NAME,
+                        PASSWORD,
+                        null};
+                if ((parentEMPLOYEERowByEMPLOYEE_ID_USERS_FK1 != null)) {
+                    columnValuesArray[3] = parentEMPLOYEERowByEMPLOYEE_ID_USERS_FK1[0];
+                }
+                rowUSERSRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowUSERSRow);
+                return rowUSERSRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public USERSRow FindByUSER_ID(decimal USER_ID) {
+                return ((USERSRow)(this.Rows.Find(new object[] {
+                            USER_ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                USERSDataTable cln = ((USERSDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new USERSDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnUSER_ID = base.Columns["USER_ID"];
+                this.columnUSER_NAME = base.Columns["USER_NAME"];
+                this.columnPASSWORD = base.Columns["PASSWORD"];
+                this.columnEMPLOYEE_NO = base.Columns["EMPLOYEE_NO"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnUSER_ID = new global::System.Data.DataColumn("USER_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUSER_ID);
+                this.columnUSER_NAME = new global::System.Data.DataColumn("USER_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUSER_NAME);
+                this.columnPASSWORD = new global::System.Data.DataColumn("PASSWORD", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPASSWORD);
+                this.columnEMPLOYEE_NO = new global::System.Data.DataColumn("EMPLOYEE_NO", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEMPLOYEE_NO);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnUSER_ID}, true));
+                this.columnUSER_ID.AllowDBNull = false;
+                this.columnUSER_ID.Unique = true;
+                this.columnUSER_NAME.MaxLength = 1000;
+                this.columnPASSWORD.MaxLength = 4000;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public USERSRow NewUSERSRow() {
+                return ((USERSRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new USERSRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(USERSRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.USERSRowChanged != null)) {
+                    this.USERSRowChanged(this, new USERSRowChangeEvent(((USERSRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.USERSRowChanging != null)) {
+                    this.USERSRowChanging(this, new USERSRowChangeEvent(((USERSRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.USERSRowDeleted != null)) {
+                    this.USERSRowDeleted(this, new USERSRowChangeEvent(((USERSRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.USERSRowDeleting != null)) {
+                    this.USERSRowDeleting(this, new USERSRowChangeEvent(((USERSRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveUSERSRow(USERSRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DS ds = new DS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "USERSDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -6042,1182 +7218,6 @@ namespace SIMS {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "STUDENTDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class STUDENT_CLASSDataTable : global::System.Data.TypedTableBase<STUDENT_CLASSRow> {
-            
-            private global::System.Data.DataColumn columnSTUDENT_CITIZEN_ID;
-            
-            private global::System.Data.DataColumn columnCLASS_ID;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STUDENT_CLASSDataTable() {
-                this.TableName = "STUDENT_CLASS";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal STUDENT_CLASSDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected STUDENT_CLASSDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn STUDENT_CITIZEN_IDColumn {
-                get {
-                    return this.columnSTUDENT_CITIZEN_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CLASS_IDColumn {
-                get {
-                    return this.columnCLASS_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STUDENT_CLASSRow this[int index] {
-                get {
-                    return ((STUDENT_CLASSRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event STUDENT_CLASSRowChangeEventHandler STUDENT_CLASSRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event STUDENT_CLASSRowChangeEventHandler STUDENT_CLASSRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event STUDENT_CLASSRowChangeEventHandler STUDENT_CLASSRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event STUDENT_CLASSRowChangeEventHandler STUDENT_CLASSRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddSTUDENT_CLASSRow(STUDENT_CLASSRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STUDENT_CLASSRow AddSTUDENT_CLASSRow(STUDENTRow parentSTUDENTRowBySTUDENT_CITIZEN_ID_FK, CLASSRow parentCLASSRowBySTUDENT_CLASS__ID_FK) {
-                STUDENT_CLASSRow rowSTUDENT_CLASSRow = ((STUDENT_CLASSRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        null};
-                if ((parentSTUDENTRowBySTUDENT_CITIZEN_ID_FK != null)) {
-                    columnValuesArray[0] = parentSTUDENTRowBySTUDENT_CITIZEN_ID_FK[6];
-                }
-                if ((parentCLASSRowBySTUDENT_CLASS__ID_FK != null)) {
-                    columnValuesArray[1] = parentCLASSRowBySTUDENT_CLASS__ID_FK[0];
-                }
-                rowSTUDENT_CLASSRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSTUDENT_CLASSRow);
-                return rowSTUDENT_CLASSRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STUDENT_CLASSRow FindBySTUDENT_CITIZEN_IDCLASS_ID(string STUDENT_CITIZEN_ID, decimal CLASS_ID) {
-                return ((STUDENT_CLASSRow)(this.Rows.Find(new object[] {
-                            STUDENT_CITIZEN_ID,
-                            CLASS_ID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                STUDENT_CLASSDataTable cln = ((STUDENT_CLASSDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new STUDENT_CLASSDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnSTUDENT_CITIZEN_ID = base.Columns["STUDENT_CITIZEN_ID"];
-                this.columnCLASS_ID = base.Columns["CLASS_ID"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnSTUDENT_CITIZEN_ID = new global::System.Data.DataColumn("STUDENT_CITIZEN_ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSTUDENT_CITIZEN_ID);
-                this.columnCLASS_ID = new global::System.Data.DataColumn("CLASS_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCLASS_ID);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnSTUDENT_CITIZEN_ID,
-                                this.columnCLASS_ID}, true));
-                this.columnSTUDENT_CITIZEN_ID.AllowDBNull = false;
-                this.columnSTUDENT_CITIZEN_ID.MaxLength = 1000;
-                this.columnCLASS_ID.AllowDBNull = false;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STUDENT_CLASSRow NewSTUDENT_CLASSRow() {
-                return ((STUDENT_CLASSRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new STUDENT_CLASSRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(STUDENT_CLASSRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.STUDENT_CLASSRowChanged != null)) {
-                    this.STUDENT_CLASSRowChanged(this, new STUDENT_CLASSRowChangeEvent(((STUDENT_CLASSRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.STUDENT_CLASSRowChanging != null)) {
-                    this.STUDENT_CLASSRowChanging(this, new STUDENT_CLASSRowChangeEvent(((STUDENT_CLASSRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.STUDENT_CLASSRowDeleted != null)) {
-                    this.STUDENT_CLASSRowDeleted(this, new STUDENT_CLASSRowChangeEvent(((STUDENT_CLASSRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.STUDENT_CLASSRowDeleting != null)) {
-                    this.STUDENT_CLASSRowDeleting(this, new STUDENT_CLASSRowChangeEvent(((STUDENT_CLASSRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveSTUDENT_CLASSRow(STUDENT_CLASSRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DS ds = new DS();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "STUDENT_CLASSDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class STUDENT_FEEDataTable : global::System.Data.TypedTableBase<STUDENT_FEERow> {
-            
-            private global::System.Data.DataColumn columnSTUDENT_CITIZEN_ID;
-            
-            private global::System.Data.DataColumn columnFEE_ID;
-            
-            private global::System.Data.DataColumn columnFEE_BALANCE;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STUDENT_FEEDataTable() {
-                this.TableName = "STUDENT_FEE";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal STUDENT_FEEDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected STUDENT_FEEDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn STUDENT_CITIZEN_IDColumn {
-                get {
-                    return this.columnSTUDENT_CITIZEN_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FEE_IDColumn {
-                get {
-                    return this.columnFEE_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FEE_BALANCEColumn {
-                get {
-                    return this.columnFEE_BALANCE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STUDENT_FEERow this[int index] {
-                get {
-                    return ((STUDENT_FEERow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event STUDENT_FEERowChangeEventHandler STUDENT_FEERowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event STUDENT_FEERowChangeEventHandler STUDENT_FEERowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event STUDENT_FEERowChangeEventHandler STUDENT_FEERowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event STUDENT_FEERowChangeEventHandler STUDENT_FEERowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddSTUDENT_FEERow(STUDENT_FEERow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STUDENT_FEERow AddSTUDENT_FEERow(STUDENTRow parentSTUDENTRowBySTUDENT_FEE_CITIZEN_ID_FK, FEERow parentFEERowBySTUDENT_FEE_ID_FK, decimal FEE_BALANCE) {
-                STUDENT_FEERow rowSTUDENT_FEERow = ((STUDENT_FEERow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        null,
-                        FEE_BALANCE};
-                if ((parentSTUDENTRowBySTUDENT_FEE_CITIZEN_ID_FK != null)) {
-                    columnValuesArray[0] = parentSTUDENTRowBySTUDENT_FEE_CITIZEN_ID_FK[6];
-                }
-                if ((parentFEERowBySTUDENT_FEE_ID_FK != null)) {
-                    columnValuesArray[1] = parentFEERowBySTUDENT_FEE_ID_FK[0];
-                }
-                rowSTUDENT_FEERow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSTUDENT_FEERow);
-                return rowSTUDENT_FEERow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STUDENT_FEERow FindBySTUDENT_CITIZEN_IDFEE_ID(string STUDENT_CITIZEN_ID, decimal FEE_ID) {
-                return ((STUDENT_FEERow)(this.Rows.Find(new object[] {
-                            STUDENT_CITIZEN_ID,
-                            FEE_ID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                STUDENT_FEEDataTable cln = ((STUDENT_FEEDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new STUDENT_FEEDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnSTUDENT_CITIZEN_ID = base.Columns["STUDENT_CITIZEN_ID"];
-                this.columnFEE_ID = base.Columns["FEE_ID"];
-                this.columnFEE_BALANCE = base.Columns["FEE_BALANCE"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnSTUDENT_CITIZEN_ID = new global::System.Data.DataColumn("STUDENT_CITIZEN_ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSTUDENT_CITIZEN_ID);
-                this.columnFEE_ID = new global::System.Data.DataColumn("FEE_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFEE_ID);
-                this.columnFEE_BALANCE = new global::System.Data.DataColumn("FEE_BALANCE", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFEE_BALANCE);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnSTUDENT_CITIZEN_ID,
-                                this.columnFEE_ID}, true));
-                this.columnSTUDENT_CITIZEN_ID.AllowDBNull = false;
-                this.columnSTUDENT_CITIZEN_ID.MaxLength = 1000;
-                this.columnFEE_ID.AllowDBNull = false;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STUDENT_FEERow NewSTUDENT_FEERow() {
-                return ((STUDENT_FEERow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new STUDENT_FEERow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(STUDENT_FEERow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.STUDENT_FEERowChanged != null)) {
-                    this.STUDENT_FEERowChanged(this, new STUDENT_FEERowChangeEvent(((STUDENT_FEERow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.STUDENT_FEERowChanging != null)) {
-                    this.STUDENT_FEERowChanging(this, new STUDENT_FEERowChangeEvent(((STUDENT_FEERow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.STUDENT_FEERowDeleted != null)) {
-                    this.STUDENT_FEERowDeleted(this, new STUDENT_FEERowChangeEvent(((STUDENT_FEERow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.STUDENT_FEERowDeleting != null)) {
-                    this.STUDENT_FEERowDeleting(this, new STUDENT_FEERowChangeEvent(((STUDENT_FEERow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveSTUDENT_FEERow(STUDENT_FEERow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DS ds = new DS();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "STUDENT_FEEDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class STUDENT_PAYMENTDataTable : global::System.Data.TypedTableBase<STUDENT_PAYMENTRow> {
-            
-            private global::System.Data.DataColumn columnSTUDENT_CITIZEN_ID;
-            
-            private global::System.Data.DataColumn columnPAYMENT_ID;
-            
-            private global::System.Data.DataColumn columnPAYMENT_DATE;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STUDENT_PAYMENTDataTable() {
-                this.TableName = "STUDENT_PAYMENT";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal STUDENT_PAYMENTDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected STUDENT_PAYMENTDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn STUDENT_CITIZEN_IDColumn {
-                get {
-                    return this.columnSTUDENT_CITIZEN_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PAYMENT_IDColumn {
-                get {
-                    return this.columnPAYMENT_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PAYMENT_DATEColumn {
-                get {
-                    return this.columnPAYMENT_DATE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STUDENT_PAYMENTRow this[int index] {
-                get {
-                    return ((STUDENT_PAYMENTRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event STUDENT_PAYMENTRowChangeEventHandler STUDENT_PAYMENTRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event STUDENT_PAYMENTRowChangeEventHandler STUDENT_PAYMENTRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event STUDENT_PAYMENTRowChangeEventHandler STUDENT_PAYMENTRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event STUDENT_PAYMENTRowChangeEventHandler STUDENT_PAYMENTRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddSTUDENT_PAYMENTRow(STUDENT_PAYMENTRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STUDENT_PAYMENTRow AddSTUDENT_PAYMENTRow(STUDENTRow parentSTUDENTRowBySTUDENT_PAYMENT_CITIZEN_ID_FK, PAYMENTRow parentPAYMENTRowBySTUDENT_PAYMENT__ID_FK, System.DateTime PAYMENT_DATE) {
-                STUDENT_PAYMENTRow rowSTUDENT_PAYMENTRow = ((STUDENT_PAYMENTRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        null,
-                        PAYMENT_DATE};
-                if ((parentSTUDENTRowBySTUDENT_PAYMENT_CITIZEN_ID_FK != null)) {
-                    columnValuesArray[0] = parentSTUDENTRowBySTUDENT_PAYMENT_CITIZEN_ID_FK[6];
-                }
-                if ((parentPAYMENTRowBySTUDENT_PAYMENT__ID_FK != null)) {
-                    columnValuesArray[1] = parentPAYMENTRowBySTUDENT_PAYMENT__ID_FK[0];
-                }
-                rowSTUDENT_PAYMENTRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSTUDENT_PAYMENTRow);
-                return rowSTUDENT_PAYMENTRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STUDENT_PAYMENTRow FindBySTUDENT_CITIZEN_IDPAYMENT_ID(string STUDENT_CITIZEN_ID, decimal PAYMENT_ID) {
-                return ((STUDENT_PAYMENTRow)(this.Rows.Find(new object[] {
-                            STUDENT_CITIZEN_ID,
-                            PAYMENT_ID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                STUDENT_PAYMENTDataTable cln = ((STUDENT_PAYMENTDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new STUDENT_PAYMENTDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnSTUDENT_CITIZEN_ID = base.Columns["STUDENT_CITIZEN_ID"];
-                this.columnPAYMENT_ID = base.Columns["PAYMENT_ID"];
-                this.columnPAYMENT_DATE = base.Columns["PAYMENT_DATE"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnSTUDENT_CITIZEN_ID = new global::System.Data.DataColumn("STUDENT_CITIZEN_ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSTUDENT_CITIZEN_ID);
-                this.columnPAYMENT_ID = new global::System.Data.DataColumn("PAYMENT_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPAYMENT_ID);
-                this.columnPAYMENT_DATE = new global::System.Data.DataColumn("PAYMENT_DATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPAYMENT_DATE);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnSTUDENT_CITIZEN_ID,
-                                this.columnPAYMENT_ID}, true));
-                this.columnSTUDENT_CITIZEN_ID.AllowDBNull = false;
-                this.columnSTUDENT_CITIZEN_ID.MaxLength = 1000;
-                this.columnPAYMENT_ID.AllowDBNull = false;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STUDENT_PAYMENTRow NewSTUDENT_PAYMENTRow() {
-                return ((STUDENT_PAYMENTRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new STUDENT_PAYMENTRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(STUDENT_PAYMENTRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.STUDENT_PAYMENTRowChanged != null)) {
-                    this.STUDENT_PAYMENTRowChanged(this, new STUDENT_PAYMENTRowChangeEvent(((STUDENT_PAYMENTRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.STUDENT_PAYMENTRowChanging != null)) {
-                    this.STUDENT_PAYMENTRowChanging(this, new STUDENT_PAYMENTRowChangeEvent(((STUDENT_PAYMENTRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.STUDENT_PAYMENTRowDeleted != null)) {
-                    this.STUDENT_PAYMENTRowDeleted(this, new STUDENT_PAYMENTRowChangeEvent(((STUDENT_PAYMENTRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.STUDENT_PAYMENTRowDeleting != null)) {
-                    this.STUDENT_PAYMENTRowDeleting(this, new STUDENT_PAYMENTRowChangeEvent(((STUDENT_PAYMENTRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveSTUDENT_PAYMENTRow(STUDENT_PAYMENTRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DS ds = new DS();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "STUDENT_PAYMENTDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class USERSDataTable : global::System.Data.TypedTableBase<USERSRow> {
-            
-            private global::System.Data.DataColumn columnUSER_ID;
-            
-            private global::System.Data.DataColumn columnUSER_NAME;
-            
-            private global::System.Data.DataColumn columnPASSWORD;
-            
-            private global::System.Data.DataColumn columnEMPLOYEE_NO;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public USERSDataTable() {
-                this.TableName = "USERS";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal USERSDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected USERSDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn USER_IDColumn {
-                get {
-                    return this.columnUSER_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn USER_NAMEColumn {
-                get {
-                    return this.columnUSER_NAME;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PASSWORDColumn {
-                get {
-                    return this.columnPASSWORD;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EMPLOYEE_NOColumn {
-                get {
-                    return this.columnEMPLOYEE_NO;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public USERSRow this[int index] {
-                get {
-                    return ((USERSRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event USERSRowChangeEventHandler USERSRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event USERSRowChangeEventHandler USERSRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event USERSRowChangeEventHandler USERSRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event USERSRowChangeEventHandler USERSRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddUSERSRow(USERSRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public USERSRow AddUSERSRow(decimal USER_ID, string USER_NAME, string PASSWORD, EMPLOYEERow parentEMPLOYEERowByEMPLOYEE_ID_USERS_FK) {
-                USERSRow rowUSERSRow = ((USERSRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        USER_ID,
-                        USER_NAME,
-                        PASSWORD,
-                        null};
-                if ((parentEMPLOYEERowByEMPLOYEE_ID_USERS_FK != null)) {
-                    columnValuesArray[3] = parentEMPLOYEERowByEMPLOYEE_ID_USERS_FK[0];
-                }
-                rowUSERSRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowUSERSRow);
-                return rowUSERSRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public USERSRow FindByUSER_ID(decimal USER_ID) {
-                return ((USERSRow)(this.Rows.Find(new object[] {
-                            USER_ID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                USERSDataTable cln = ((USERSDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new USERSDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnUSER_ID = base.Columns["USER_ID"];
-                this.columnUSER_NAME = base.Columns["USER_NAME"];
-                this.columnPASSWORD = base.Columns["PASSWORD"];
-                this.columnEMPLOYEE_NO = base.Columns["EMPLOYEE_NO"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnUSER_ID = new global::System.Data.DataColumn("USER_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUSER_ID);
-                this.columnUSER_NAME = new global::System.Data.DataColumn("USER_NAME", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUSER_NAME);
-                this.columnPASSWORD = new global::System.Data.DataColumn("PASSWORD", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPASSWORD);
-                this.columnEMPLOYEE_NO = new global::System.Data.DataColumn("EMPLOYEE_NO", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEMPLOYEE_NO);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnUSER_ID}, true));
-                this.columnUSER_ID.AllowDBNull = false;
-                this.columnUSER_ID.Unique = true;
-                this.columnUSER_NAME.MaxLength = 1000;
-                this.columnPASSWORD.MaxLength = 4000;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public USERSRow NewUSERSRow() {
-                return ((USERSRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new USERSRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(USERSRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.USERSRowChanged != null)) {
-                    this.USERSRowChanged(this, new USERSRowChangeEvent(((USERSRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.USERSRowChanging != null)) {
-                    this.USERSRowChanging(this, new USERSRowChangeEvent(((USERSRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.USERSRowDeleted != null)) {
-                    this.USERSRowDeleted(this, new USERSRowChangeEvent(((USERSRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.USERSRowDeleting != null)) {
-                    this.USERSRowDeleting(this, new USERSRowChangeEvent(((USERSRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveUSERSRow(USERSRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DS ds = new DS();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "USERSDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -8313,11 +8313,11 @@ namespace SIMS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public USERSRow[] GetUSERSRows() {
-                if ((this.Table.ChildRelations["EMPLOYEE_ID_USERS_FK"] == null)) {
+                if ((this.Table.ChildRelations["EMPLOYEE_ID_USERS_FK1"] == null)) {
                     return new USERSRow[0];
                 }
                 else {
-                    return ((USERSRow[])(base.GetChildRows(this.Table.ChildRelations["EMPLOYEE_ID_USERS_FK"])));
+                    return ((USERSRow[])(base.GetChildRows(this.Table.ChildRelations["EMPLOYEE_ID_USERS_FK1"])));
                 }
             }
         }
@@ -8467,49 +8467,17 @@ namespace SIMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string EXPENSE_NAME {
+            public string EXPENSE_TYPE {
                 get {
                     try {
-                        return ((string)(this[this.tableEXPENSE.EXPENSE_NAMEColumn]));
+                        return ((string)(this[this.tableEXPENSE.EXPENSE_TYPEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EXPENSE_NAME\' in table \'EXPENSE\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'EXPENSE_TYPE\' in table \'EXPENSE\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableEXPENSE.EXPENSE_NAMEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime EXPENSE_DATE {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableEXPENSE.EXPENSE_DATEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EXPENSE_DATE\' in table \'EXPENSE\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEXPENSE.EXPENSE_DATEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal EXPENSE_AMOUNT {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableEXPENSE.EXPENSE_AMOUNTColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EXPENSE_AMOUNT\' in table \'EXPENSE\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEXPENSE.EXPENSE_AMOUNTColumn] = value;
+                    this[this.tableEXPENSE.EXPENSE_TYPEColumn] = value;
                 }
             }
             
@@ -8531,54 +8499,14 @@ namespace SIMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string EXPENSE_NOTE {
-                get {
-                    try {
-                        return ((string)(this[this.tableEXPENSE.EXPENSE_NOTEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EXPENSE_NOTE\' in table \'EXPENSE\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEXPENSE.EXPENSE_NOTEColumn] = value;
-                }
+            public bool IsEXPENSE_TYPENull() {
+                return this.IsNull(this.tableEXPENSE.EXPENSE_TYPEColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsEXPENSE_NAMENull() {
-                return this.IsNull(this.tableEXPENSE.EXPENSE_NAMEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetEXPENSE_NAMENull() {
-                this[this.tableEXPENSE.EXPENSE_NAMEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsEXPENSE_DATENull() {
-                return this.IsNull(this.tableEXPENSE.EXPENSE_DATEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetEXPENSE_DATENull() {
-                this[this.tableEXPENSE.EXPENSE_DATEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsEXPENSE_AMOUNTNull() {
-                return this.IsNull(this.tableEXPENSE.EXPENSE_AMOUNTColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetEXPENSE_AMOUNTNull() {
-                this[this.tableEXPENSE.EXPENSE_AMOUNTColumn] = global::System.Convert.DBNull;
+            public void SetEXPENSE_TYPENull() {
+                this[this.tableEXPENSE.EXPENSE_TYPEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8591,18 +8519,6 @@ namespace SIMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDESCRIPTIONNull() {
                 this[this.tableEXPENSE.DESCRIPTIONColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsEXPENSE_NOTENull() {
-                return this.IsNull(this.tableEXPENSE.EXPENSE_NOTEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetEXPENSE_NOTENull() {
-                this[this.tableEXPENSE.EXPENSE_NOTEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8655,6 +8571,70 @@ namespace SIMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal EXPENSE_AMOUNT {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableEXPENSE_PAYMENT.EXPENSE_AMOUNTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EXPENSE_AMOUNT\' in table \'EXPENSE_PAYMENT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEXPENSE_PAYMENT.EXPENSE_AMOUNTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime PAYMENT_DATE {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableEXPENSE_PAYMENT.PAYMENT_DATEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PAYMENT_DATE\' in table \'EXPENSE_PAYMENT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEXPENSE_PAYMENT.PAYMENT_DATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime CAPTURED_DATE {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableEXPENSE_PAYMENT.CAPTURED_DATEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CAPTURED_DATE\' in table \'EXPENSE_PAYMENT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEXPENSE_PAYMENT.CAPTURED_DATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string EXPENSE_NOTE {
+                get {
+                    try {
+                        return ((string)(this[this.tableEXPENSE_PAYMENT.EXPENSE_NOTEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EXPENSE_NOTE\' in table \'EXPENSE_PAYMENT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEXPENSE_PAYMENT.EXPENSE_NOTEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public EXPENSERow EXPENSERow {
                 get {
                     return ((EXPENSERow)(this.GetParentRow(this.Table.ParentRelations["EXPENSE_PAYMENT_EXPENSE_ID_FK"])));
@@ -8673,6 +8653,54 @@ namespace SIMS {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["EXPENSE_PAYMENT_ID_FK"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEXPENSE_AMOUNTNull() {
+                return this.IsNull(this.tableEXPENSE_PAYMENT.EXPENSE_AMOUNTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEXPENSE_AMOUNTNull() {
+                this[this.tableEXPENSE_PAYMENT.EXPENSE_AMOUNTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPAYMENT_DATENull() {
+                return this.IsNull(this.tableEXPENSE_PAYMENT.PAYMENT_DATEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPAYMENT_DATENull() {
+                this[this.tableEXPENSE_PAYMENT.PAYMENT_DATEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCAPTURED_DATENull() {
+                return this.IsNull(this.tableEXPENSE_PAYMENT.CAPTURED_DATEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCAPTURED_DATENull() {
+                this[this.tableEXPENSE_PAYMENT.CAPTURED_DATEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEXPENSE_NOTENull() {
+                return this.IsNull(this.tableEXPENSE_PAYMENT.EXPENSE_NOTEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEXPENSE_NOTENull() {
+                this[this.tableEXPENSE_PAYMENT.EXPENSE_NOTEColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9162,10 +9190,10 @@ namespace SIMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public STUDENTRow STUDENTRow {
                 get {
-                    return ((STUDENTRow)(this.GetParentRow(this.Table.ParentRelations["GUARDIAN_STUDENT_ID_FK"])));
+                    return ((STUDENTRow)(this.GetParentRow(this.Table.ParentRelations["GUARDIAN_STUDENT_ID_FK1"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["GUARDIAN_STUDENT_ID_FK"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["GUARDIAN_STUDENT_ID_FK1"]);
                 }
             }
             
@@ -9209,22 +9237,6 @@ namespace SIMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal AMOUNT {
-                get {
-                    try {
-                        return ((decimal)(this[this.tablePAYMENT.AMOUNTColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AMOUNT\' in table \'PAYMENT\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePAYMENT.AMOUNTColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string OCCURENCE {
                 get {
                     try {
@@ -9253,18 +9265,6 @@ namespace SIMS {
                 set {
                     this[this.tablePAYMENT.TYPEColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAMOUNTNull() {
-                return this.IsNull(this.tablePAYMENT.AMOUNTColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAMOUNTNull() {
-                this[this.tablePAYMENT.AMOUNTColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9488,6 +9488,360 @@ namespace SIMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetEMPLOYEE_NONull() {
                 this[this.tableSALARY.EMPLOYEE_NOColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class STUDENT_CLASSRow : global::System.Data.DataRow {
+            
+            private STUDENT_CLASSDataTable tableSTUDENT_CLASS;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal STUDENT_CLASSRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableSTUDENT_CLASS = ((STUDENT_CLASSDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string STUDENT_CITIZEN_ID {
+                get {
+                    return ((string)(this[this.tableSTUDENT_CLASS.STUDENT_CITIZEN_IDColumn]));
+                }
+                set {
+                    this[this.tableSTUDENT_CLASS.STUDENT_CITIZEN_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal CLASS_ID {
+                get {
+                    return ((decimal)(this[this.tableSTUDENT_CLASS.CLASS_IDColumn]));
+                }
+                set {
+                    this[this.tableSTUDENT_CLASS.CLASS_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CLASSRow CLASSRow {
+                get {
+                    return ((CLASSRow)(this.GetParentRow(this.Table.ParentRelations["STUDENT_CLASS__ID_FK"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["STUDENT_CLASS__ID_FK"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public STUDENTRow STUDENTRow {
+                get {
+                    return ((STUDENTRow)(this.GetParentRow(this.Table.ParentRelations["STUDENT_CITIZEN_ID_FK1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["STUDENT_CITIZEN_ID_FK1"]);
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class STUDENT_FEERow : global::System.Data.DataRow {
+            
+            private STUDENT_FEEDataTable tableSTUDENT_FEE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal STUDENT_FEERow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableSTUDENT_FEE = ((STUDENT_FEEDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string STUDENT_CITIZEN_ID {
+                get {
+                    return ((string)(this[this.tableSTUDENT_FEE.STUDENT_CITIZEN_IDColumn]));
+                }
+                set {
+                    this[this.tableSTUDENT_FEE.STUDENT_CITIZEN_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal FEE_ID {
+                get {
+                    return ((decimal)(this[this.tableSTUDENT_FEE.FEE_IDColumn]));
+                }
+                set {
+                    this[this.tableSTUDENT_FEE.FEE_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal FEE_BALANCE {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableSTUDENT_FEE.FEE_BALANCEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FEE_BALANCE\' in table \'STUDENT_FEE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSTUDENT_FEE.FEE_BALANCEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FEERow FEERow {
+                get {
+                    return ((FEERow)(this.GetParentRow(this.Table.ParentRelations["STUDENT_FEE_ID_FK"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["STUDENT_FEE_ID_FK"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public STUDENTRow STUDENTRow {
+                get {
+                    return ((STUDENTRow)(this.GetParentRow(this.Table.ParentRelations["STUDENT_FEE_CITIZEN_ID_FK1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["STUDENT_FEE_CITIZEN_ID_FK1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFEE_BALANCENull() {
+                return this.IsNull(this.tableSTUDENT_FEE.FEE_BALANCEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFEE_BALANCENull() {
+                this[this.tableSTUDENT_FEE.FEE_BALANCEColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class STUDENT_PAYMENTRow : global::System.Data.DataRow {
+            
+            private STUDENT_PAYMENTDataTable tableSTUDENT_PAYMENT;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal STUDENT_PAYMENTRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableSTUDENT_PAYMENT = ((STUDENT_PAYMENTDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string STUDENT_CITIZEN_ID {
+                get {
+                    return ((string)(this[this.tableSTUDENT_PAYMENT.STUDENT_CITIZEN_IDColumn]));
+                }
+                set {
+                    this[this.tableSTUDENT_PAYMENT.STUDENT_CITIZEN_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal PAYMENT_ID {
+                get {
+                    return ((decimal)(this[this.tableSTUDENT_PAYMENT.PAYMENT_IDColumn]));
+                }
+                set {
+                    this[this.tableSTUDENT_PAYMENT.PAYMENT_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime PAYMENT_DATE {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSTUDENT_PAYMENT.PAYMENT_DATEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PAYMENT_DATE\' in table \'STUDENT_PAYMENT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSTUDENT_PAYMENT.PAYMENT_DATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PAYMENTRow PAYMENTRow {
+                get {
+                    return ((PAYMENTRow)(this.GetParentRow(this.Table.ParentRelations["STUDENT_PAYMENT__ID_FK"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["STUDENT_PAYMENT__ID_FK"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public STUDENTRow STUDENTRow {
+                get {
+                    return ((STUDENTRow)(this.GetParentRow(this.Table.ParentRelations["STUDENT_PAYMENT_CITIZEN_ID_FK1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["STUDENT_PAYMENT_CITIZEN_ID_FK1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPAYMENT_DATENull() {
+                return this.IsNull(this.tableSTUDENT_PAYMENT.PAYMENT_DATEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPAYMENT_DATENull() {
+                this[this.tableSTUDENT_PAYMENT.PAYMENT_DATEColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class USERSRow : global::System.Data.DataRow {
+            
+            private USERSDataTable tableUSERS;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal USERSRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableUSERS = ((USERSDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal USER_ID {
+                get {
+                    return ((decimal)(this[this.tableUSERS.USER_IDColumn]));
+                }
+                set {
+                    this[this.tableUSERS.USER_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string USER_NAME {
+                get {
+                    try {
+                        return ((string)(this[this.tableUSERS.USER_NAMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'USER_NAME\' in table \'USERS\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUSERS.USER_NAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PASSWORD {
+                get {
+                    try {
+                        return ((string)(this[this.tableUSERS.PASSWORDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PASSWORD\' in table \'USERS\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUSERS.PASSWORDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal EMPLOYEE_NO {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableUSERS.EMPLOYEE_NOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EMPLOYEE_NO\' in table \'USERS\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUSERS.EMPLOYEE_NOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EMPLOYEERow EMPLOYEERow {
+                get {
+                    return ((EMPLOYEERow)(this.GetParentRow(this.Table.ParentRelations["EMPLOYEE_ID_USERS_FK1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["EMPLOYEE_ID_USERS_FK1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUSER_NAMENull() {
+                return this.IsNull(this.tableUSERS.USER_NAMEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUSER_NAMENull() {
+                this[this.tableUSERS.USER_NAMEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPASSWORDNull() {
+                return this.IsNull(this.tableUSERS.PASSWORDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPASSWORDNull() {
+                this[this.tableUSERS.PASSWORDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEMPLOYEE_NONull() {
+                return this.IsNull(this.tableUSERS.EMPLOYEE_NOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEMPLOYEE_NONull() {
+                this[this.tableUSERS.EMPLOYEE_NOColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9911,399 +10265,45 @@ namespace SIMS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public GUARDIAN_STUDENTRow[] GetGUARDIAN_STUDENTRows() {
-                if ((this.Table.ChildRelations["GUARDIAN_STUDENT_ID_FK"] == null)) {
+                if ((this.Table.ChildRelations["GUARDIAN_STUDENT_ID_FK1"] == null)) {
                     return new GUARDIAN_STUDENTRow[0];
                 }
                 else {
-                    return ((GUARDIAN_STUDENTRow[])(base.GetChildRows(this.Table.ChildRelations["GUARDIAN_STUDENT_ID_FK"])));
+                    return ((GUARDIAN_STUDENTRow[])(base.GetChildRows(this.Table.ChildRelations["GUARDIAN_STUDENT_ID_FK1"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public STUDENT_CLASSRow[] GetSTUDENT_CLASSRows() {
-                if ((this.Table.ChildRelations["STUDENT_CITIZEN_ID_FK"] == null)) {
+                if ((this.Table.ChildRelations["STUDENT_CITIZEN_ID_FK1"] == null)) {
                     return new STUDENT_CLASSRow[0];
                 }
                 else {
-                    return ((STUDENT_CLASSRow[])(base.GetChildRows(this.Table.ChildRelations["STUDENT_CITIZEN_ID_FK"])));
+                    return ((STUDENT_CLASSRow[])(base.GetChildRows(this.Table.ChildRelations["STUDENT_CITIZEN_ID_FK1"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public STUDENT_FEERow[] GetSTUDENT_FEERows() {
-                if ((this.Table.ChildRelations["STUDENT_FEE_CITIZEN_ID_FK"] == null)) {
+                if ((this.Table.ChildRelations["STUDENT_FEE_CITIZEN_ID_FK1"] == null)) {
                     return new STUDENT_FEERow[0];
                 }
                 else {
-                    return ((STUDENT_FEERow[])(base.GetChildRows(this.Table.ChildRelations["STUDENT_FEE_CITIZEN_ID_FK"])));
+                    return ((STUDENT_FEERow[])(base.GetChildRows(this.Table.ChildRelations["STUDENT_FEE_CITIZEN_ID_FK1"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public STUDENT_PAYMENTRow[] GetSTUDENT_PAYMENTRows() {
-                if ((this.Table.ChildRelations["STUDENT_PAYMENT_CITIZEN_ID_FK"] == null)) {
+                if ((this.Table.ChildRelations["STUDENT_PAYMENT_CITIZEN_ID_FK1"] == null)) {
                     return new STUDENT_PAYMENTRow[0];
                 }
                 else {
-                    return ((STUDENT_PAYMENTRow[])(base.GetChildRows(this.Table.ChildRelations["STUDENT_PAYMENT_CITIZEN_ID_FK"])));
+                    return ((STUDENT_PAYMENTRow[])(base.GetChildRows(this.Table.ChildRelations["STUDENT_PAYMENT_CITIZEN_ID_FK1"])));
                 }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class STUDENT_CLASSRow : global::System.Data.DataRow {
-            
-            private STUDENT_CLASSDataTable tableSTUDENT_CLASS;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal STUDENT_CLASSRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableSTUDENT_CLASS = ((STUDENT_CLASSDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string STUDENT_CITIZEN_ID {
-                get {
-                    return ((string)(this[this.tableSTUDENT_CLASS.STUDENT_CITIZEN_IDColumn]));
-                }
-                set {
-                    this[this.tableSTUDENT_CLASS.STUDENT_CITIZEN_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal CLASS_ID {
-                get {
-                    return ((decimal)(this[this.tableSTUDENT_CLASS.CLASS_IDColumn]));
-                }
-                set {
-                    this[this.tableSTUDENT_CLASS.CLASS_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STUDENTRow STUDENTRow {
-                get {
-                    return ((STUDENTRow)(this.GetParentRow(this.Table.ParentRelations["STUDENT_CITIZEN_ID_FK"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["STUDENT_CITIZEN_ID_FK"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CLASSRow CLASSRow {
-                get {
-                    return ((CLASSRow)(this.GetParentRow(this.Table.ParentRelations["STUDENT_CLASS__ID_FK"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["STUDENT_CLASS__ID_FK"]);
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class STUDENT_FEERow : global::System.Data.DataRow {
-            
-            private STUDENT_FEEDataTable tableSTUDENT_FEE;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal STUDENT_FEERow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableSTUDENT_FEE = ((STUDENT_FEEDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string STUDENT_CITIZEN_ID {
-                get {
-                    return ((string)(this[this.tableSTUDENT_FEE.STUDENT_CITIZEN_IDColumn]));
-                }
-                set {
-                    this[this.tableSTUDENT_FEE.STUDENT_CITIZEN_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal FEE_ID {
-                get {
-                    return ((decimal)(this[this.tableSTUDENT_FEE.FEE_IDColumn]));
-                }
-                set {
-                    this[this.tableSTUDENT_FEE.FEE_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal FEE_BALANCE {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableSTUDENT_FEE.FEE_BALANCEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FEE_BALANCE\' in table \'STUDENT_FEE\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSTUDENT_FEE.FEE_BALANCEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STUDENTRow STUDENTRow {
-                get {
-                    return ((STUDENTRow)(this.GetParentRow(this.Table.ParentRelations["STUDENT_FEE_CITIZEN_ID_FK"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["STUDENT_FEE_CITIZEN_ID_FK"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FEERow FEERow {
-                get {
-                    return ((FEERow)(this.GetParentRow(this.Table.ParentRelations["STUDENT_FEE_ID_FK"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["STUDENT_FEE_ID_FK"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFEE_BALANCENull() {
-                return this.IsNull(this.tableSTUDENT_FEE.FEE_BALANCEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFEE_BALANCENull() {
-                this[this.tableSTUDENT_FEE.FEE_BALANCEColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class STUDENT_PAYMENTRow : global::System.Data.DataRow {
-            
-            private STUDENT_PAYMENTDataTable tableSTUDENT_PAYMENT;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal STUDENT_PAYMENTRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableSTUDENT_PAYMENT = ((STUDENT_PAYMENTDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string STUDENT_CITIZEN_ID {
-                get {
-                    return ((string)(this[this.tableSTUDENT_PAYMENT.STUDENT_CITIZEN_IDColumn]));
-                }
-                set {
-                    this[this.tableSTUDENT_PAYMENT.STUDENT_CITIZEN_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal PAYMENT_ID {
-                get {
-                    return ((decimal)(this[this.tableSTUDENT_PAYMENT.PAYMENT_IDColumn]));
-                }
-                set {
-                    this[this.tableSTUDENT_PAYMENT.PAYMENT_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime PAYMENT_DATE {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableSTUDENT_PAYMENT.PAYMENT_DATEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PAYMENT_DATE\' in table \'STUDENT_PAYMENT\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSTUDENT_PAYMENT.PAYMENT_DATEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PAYMENTRow PAYMENTRow {
-                get {
-                    return ((PAYMENTRow)(this.GetParentRow(this.Table.ParentRelations["STUDENT_PAYMENT__ID_FK"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["STUDENT_PAYMENT__ID_FK"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STUDENTRow STUDENTRow {
-                get {
-                    return ((STUDENTRow)(this.GetParentRow(this.Table.ParentRelations["STUDENT_PAYMENT_CITIZEN_ID_FK"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["STUDENT_PAYMENT_CITIZEN_ID_FK"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPAYMENT_DATENull() {
-                return this.IsNull(this.tableSTUDENT_PAYMENT.PAYMENT_DATEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPAYMENT_DATENull() {
-                this[this.tableSTUDENT_PAYMENT.PAYMENT_DATEColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class USERSRow : global::System.Data.DataRow {
-            
-            private USERSDataTable tableUSERS;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal USERSRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableUSERS = ((USERSDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal USER_ID {
-                get {
-                    return ((decimal)(this[this.tableUSERS.USER_IDColumn]));
-                }
-                set {
-                    this[this.tableUSERS.USER_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string USER_NAME {
-                get {
-                    try {
-                        return ((string)(this[this.tableUSERS.USER_NAMEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'USER_NAME\' in table \'USERS\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableUSERS.USER_NAMEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string PASSWORD {
-                get {
-                    try {
-                        return ((string)(this[this.tableUSERS.PASSWORDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PASSWORD\' in table \'USERS\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableUSERS.PASSWORDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal EMPLOYEE_NO {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableUSERS.EMPLOYEE_NOColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EMPLOYEE_NO\' in table \'USERS\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableUSERS.EMPLOYEE_NOColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EMPLOYEERow EMPLOYEERow {
-                get {
-                    return ((EMPLOYEERow)(this.GetParentRow(this.Table.ParentRelations["EMPLOYEE_ID_USERS_FK"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["EMPLOYEE_ID_USERS_FK"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsUSER_NAMENull() {
-                return this.IsNull(this.tableUSERS.USER_NAMEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetUSER_NAMENull() {
-                this[this.tableUSERS.USER_NAMEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPASSWORDNull() {
-                return this.IsNull(this.tableUSERS.PASSWORDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPASSWORDNull() {
-                this[this.tableUSERS.PASSWORDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsEMPLOYEE_NONull() {
-                return this.IsNull(this.tableUSERS.EMPLOYEE_NOColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetEMPLOYEE_NONull() {
-                this[this.tableUSERS.EMPLOYEE_NOColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -10787,40 +10787,6 @@ namespace SIMS {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class STUDENTRowChangeEvent : global::System.EventArgs {
-            
-            private STUDENTRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STUDENTRowChangeEvent(STUDENTRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STUDENTRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public class STUDENT_CLASSRowChangeEvent : global::System.EventArgs {
             
             private STUDENT_CLASSRow eventRow;
@@ -10939,6 +10905,40 @@ namespace SIMS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public USERSRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class STUDENTRowChangeEvent : global::System.EventArgs {
+            
+            private STUDENTRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public STUDENTRowChangeEvent(STUDENTRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public STUDENTRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -15736,15 +15736,12 @@ namespace SIMS.DSTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "EXPENSE";
             tableMapping.ColumnMappings.Add("EXPENSE_ID", "EXPENSE_ID");
-            tableMapping.ColumnMappings.Add("EXPENSE_NAME", "EXPENSE_NAME");
-            tableMapping.ColumnMappings.Add("EXPENSE_DATE", "EXPENSE_DATE");
-            tableMapping.ColumnMappings.Add("EXPENSE_AMOUNT", "EXPENSE_AMOUNT");
+            tableMapping.ColumnMappings.Add("EXPENSE_TYPE", "EXPENSE_TYPE");
             tableMapping.ColumnMappings.Add("DESCRIPTION", "DESCRIPTION");
-            tableMapping.ColumnMappings.Add("EXPENSE_NOTE", "EXPENSE_NOTE");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""EDU_SCHEMA"".""EXPENSE"" WHERE ((""EXPENSE_ID"" = :Original_EXPENSE_ID) AND ((:IsNull_EXPENSE_NAME = 1 AND ""EXPENSE_NAME"" IS NULL) OR (""EXPENSE_NAME"" = :Original_EXPENSE_NAME)) AND ((:IsNull_EXPENSE_DATE = 1 AND ""EXPENSE_DATE"" IS NULL) OR (""EXPENSE_DATE"" = :Original_EXPENSE_DATE)) AND ((:IsNull_EXPENSE_AMOUNT = 1 AND ""EXPENSE_AMOUNT"" IS NULL) OR (""EXPENSE_AMOUNT"" = :Original_EXPENSE_AMOUNT)) AND ((:IsNull_DESCRIPTION = 1 AND ""DESCRIPTION"" IS NULL) OR (""DESCRIPTION"" = :Original_DESCRIPTION)) AND ((:IsNull_EXPENSE_NOTE = 1 AND ""EXPENSE_NOTE"" IS NULL) OR (""EXPENSE_NOTE"" = :Original_EXPENSE_NOTE)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""EDU_SCHEMA"".""EXPENSE"" WHERE ((""EXPENSE_ID"" = :Original_EXPENSE_ID) AND ((:IsNull_EXPENSE_TYPE = 1 AND ""EXPENSE_TYPE"" IS NULL) OR (""EXPENSE_TYPE"" = :Original_EXPENSE_TYPE)) AND ((:IsNull_DESCRIPTION = 1 AND ""DESCRIPTION"" IS NULL) OR (""DESCRIPTION"" = :Original_DESCRIPTION)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_EXPENSE_ID";
@@ -15756,59 +15753,21 @@ namespace SIMS.DSTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_EXPENSE_NAME";
+            param.ParameterName = "IsNull_EXPENSE_TYPE";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 255;
+            param.Size = 25;
             param.IsNullable = true;
-            param.SourceColumn = "EXPENSE_NAME";
+            param.SourceColumn = "EXPENSE_TYPE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_EXPENSE_NAME";
+            param.ParameterName = "Original_EXPENSE_TYPE";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
+            param.Size = 25;
             param.IsNullable = true;
-            param.SourceColumn = "EXPENSE_NAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_EXPENSE_DATE";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 7;
-            param.IsNullable = true;
-            param.SourceColumn = "EXPENSE_DATE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_EXPENSE_DATE";
-            param.DbType = global::System.Data.DbType.Date;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
-            param.Size = 7;
-            param.IsNullable = true;
-            param.SourceColumn = "EXPENSE_DATE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_EXPENSE_AMOUNT";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "EXPENSE_AMOUNT";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_EXPENSE_AMOUNT";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "EXPENSE_AMOUNT";
+            param.SourceColumn = "EXPENSE_TYPE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
@@ -15829,29 +15788,10 @@ namespace SIMS.DSTableAdapters {
             param.SourceColumn = "DESCRIPTION";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_EXPENSE_NOTE";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 1000;
-            param.IsNullable = true;
-            param.SourceColumn = "EXPENSE_NOTE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_EXPENSE_NOTE";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 1000;
-            param.IsNullable = true;
-            param.SourceColumn = "EXPENSE_NOTE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"EDU_SCHEMA\".\"EXPENSE\" (\"EXPENSE_ID\", \"EXPENSE_NAME\", \"EXPENSE_DATE\"," +
-                " \"EXPENSE_AMOUNT\", \"DESCRIPTION\", \"EXPENSE_NOTE\") VALUES (:EXPENSE_ID, :EXPENSE_" +
-                "NAME, :EXPENSE_DATE, :EXPENSE_AMOUNT, :DESCRIPTION, :EXPENSE_NOTE)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"EDU_SCHEMA\".\"EXPENSE\" (\"EXPENSE_ID\", \"EXPENSE_TYPE\", \"DESCRIPTION\") " +
+                "VALUES (:EXPENSE_ID, :EXPENSE_TYPE, :DESCRIPTION)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "EXPENSE_ID";
@@ -15862,27 +15802,11 @@ namespace SIMS.DSTableAdapters {
             param.SourceColumn = "EXPENSE_ID";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "EXPENSE_NAME";
+            param.ParameterName = "EXPENSE_TYPE";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
+            param.Size = 25;
             param.IsNullable = true;
-            param.SourceColumn = "EXPENSE_NAME";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "EXPENSE_DATE";
-            param.DbType = global::System.Data.DbType.Date;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
-            param.Size = 7;
-            param.IsNullable = true;
-            param.SourceColumn = "EXPENSE_DATE";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "EXPENSE_AMOUNT";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "EXPENSE_AMOUNT";
+            param.SourceColumn = "EXPENSE_TYPE";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "DESCRIPTION";
@@ -15891,16 +15815,9 @@ namespace SIMS.DSTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "DESCRIPTION";
             this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "EXPENSE_NOTE";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 1000;
-            param.IsNullable = true;
-            param.SourceColumn = "EXPENSE_NOTE";
-            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""EDU_SCHEMA"".""EXPENSE"" SET ""EXPENSE_ID"" = :EXPENSE_ID, ""EXPENSE_NAME"" = :EXPENSE_NAME, ""EXPENSE_DATE"" = :EXPENSE_DATE, ""EXPENSE_AMOUNT"" = :EXPENSE_AMOUNT, ""DESCRIPTION"" = :DESCRIPTION, ""EXPENSE_NOTE"" = :EXPENSE_NOTE WHERE ((""EXPENSE_ID"" = :Original_EXPENSE_ID) AND ((:IsNull_EXPENSE_NAME = 1 AND ""EXPENSE_NAME"" IS NULL) OR (""EXPENSE_NAME"" = :Original_EXPENSE_NAME)) AND ((:IsNull_EXPENSE_DATE = 1 AND ""EXPENSE_DATE"" IS NULL) OR (""EXPENSE_DATE"" = :Original_EXPENSE_DATE)) AND ((:IsNull_EXPENSE_AMOUNT = 1 AND ""EXPENSE_AMOUNT"" IS NULL) OR (""EXPENSE_AMOUNT"" = :Original_EXPENSE_AMOUNT)) AND ((:IsNull_DESCRIPTION = 1 AND ""DESCRIPTION"" IS NULL) OR (""DESCRIPTION"" = :Original_DESCRIPTION)) AND ((:IsNull_EXPENSE_NOTE = 1 AND ""EXPENSE_NOTE"" IS NULL) OR (""EXPENSE_NOTE"" = :Original_EXPENSE_NOTE)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""EDU_SCHEMA"".""EXPENSE"" SET ""EXPENSE_ID"" = :EXPENSE_ID, ""EXPENSE_TYPE"" = :EXPENSE_TYPE, ""DESCRIPTION"" = :DESCRIPTION WHERE ((""EXPENSE_ID"" = :Original_EXPENSE_ID) AND ((:IsNull_EXPENSE_TYPE = 1 AND ""EXPENSE_TYPE"" IS NULL) OR (""EXPENSE_TYPE"" = :Original_EXPENSE_TYPE)) AND ((:IsNull_DESCRIPTION = 1 AND ""DESCRIPTION"" IS NULL) OR (""DESCRIPTION"" = :Original_DESCRIPTION)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "EXPENSE_ID";
@@ -15911,27 +15828,11 @@ namespace SIMS.DSTableAdapters {
             param.SourceColumn = "EXPENSE_ID";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "EXPENSE_NAME";
+            param.ParameterName = "EXPENSE_TYPE";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
+            param.Size = 25;
             param.IsNullable = true;
-            param.SourceColumn = "EXPENSE_NAME";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "EXPENSE_DATE";
-            param.DbType = global::System.Data.DbType.Date;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
-            param.Size = 7;
-            param.IsNullable = true;
-            param.SourceColumn = "EXPENSE_DATE";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "EXPENSE_AMOUNT";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "EXPENSE_AMOUNT";
+            param.SourceColumn = "EXPENSE_TYPE";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "DESCRIPTION";
@@ -15939,13 +15840,6 @@ namespace SIMS.DSTableAdapters {
             param.Size = 1000;
             param.IsNullable = true;
             param.SourceColumn = "DESCRIPTION";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "EXPENSE_NOTE";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 1000;
-            param.IsNullable = true;
-            param.SourceColumn = "EXPENSE_NOTE";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_EXPENSE_ID";
@@ -15957,59 +15851,21 @@ namespace SIMS.DSTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_EXPENSE_NAME";
+            param.ParameterName = "IsNull_EXPENSE_TYPE";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 255;
+            param.Size = 25;
             param.IsNullable = true;
-            param.SourceColumn = "EXPENSE_NAME";
+            param.SourceColumn = "EXPENSE_TYPE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_EXPENSE_NAME";
+            param.ParameterName = "Original_EXPENSE_TYPE";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
+            param.Size = 25;
             param.IsNullable = true;
-            param.SourceColumn = "EXPENSE_NAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_EXPENSE_DATE";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 7;
-            param.IsNullable = true;
-            param.SourceColumn = "EXPENSE_DATE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_EXPENSE_DATE";
-            param.DbType = global::System.Data.DbType.Date;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
-            param.Size = 7;
-            param.IsNullable = true;
-            param.SourceColumn = "EXPENSE_DATE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_EXPENSE_AMOUNT";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "EXPENSE_AMOUNT";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_EXPENSE_AMOUNT";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "EXPENSE_AMOUNT";
+            param.SourceColumn = "EXPENSE_TYPE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
@@ -16028,24 +15884,6 @@ namespace SIMS.DSTableAdapters {
             param.Size = 1000;
             param.IsNullable = true;
             param.SourceColumn = "DESCRIPTION";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_EXPENSE_NOTE";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 1000;
-            param.IsNullable = true;
-            param.SourceColumn = "EXPENSE_NOTE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_EXPENSE_NOTE";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 1000;
-            param.IsNullable = true;
-            param.SourceColumn = "EXPENSE_NOTE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -16063,8 +15901,7 @@ namespace SIMS.DSTableAdapters {
             this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT EXPENSE_ID, EXPENSE_NAME, EXPENSE_DATE, EXPENSE_AMOUNT, DESCRIPTION, EXPEN" +
-                "SE_NOTE FROM EDU_SCHEMA.EXPENSE";
+            this._commandCollection[0].CommandText = "SELECT EXPENSE_ID, EXPENSE_TYPE, DESCRIPTION FROM EDU_SCHEMA.EXPENSE";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -16125,47 +15962,23 @@ namespace SIMS.DSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(decimal Original_EXPENSE_ID, string Original_EXPENSE_NAME, global::System.Nullable<global::System.DateTime> Original_EXPENSE_DATE, global::System.Nullable<decimal> Original_EXPENSE_AMOUNT, string Original_DESCRIPTION, string Original_EXPENSE_NOTE) {
+        public virtual int Delete(decimal Original_EXPENSE_ID, string Original_EXPENSE_TYPE, string Original_DESCRIPTION) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_EXPENSE_ID));
-            if ((Original_EXPENSE_NAME == null)) {
+            if ((Original_EXPENSE_TYPE == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_EXPENSE_NAME));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_EXPENSE_TYPE));
             }
-            if ((Original_EXPENSE_DATE.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_EXPENSE_DATE.Value));
-            }
-            else {
+            if ((Original_DESCRIPTION == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Original_EXPENSE_AMOUNT.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((decimal)(Original_EXPENSE_AMOUNT.Value));
-            }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((Original_DESCRIPTION == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_DESCRIPTION));
-            }
-            if ((Original_EXPENSE_NOTE == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_EXPENSE_NOTE));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_DESCRIPTION));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -16187,37 +16000,19 @@ namespace SIMS.DSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(decimal EXPENSE_ID, string EXPENSE_NAME, global::System.Nullable<global::System.DateTime> EXPENSE_DATE, global::System.Nullable<decimal> EXPENSE_AMOUNT, string DESCRIPTION, string EXPENSE_NOTE) {
+        public virtual int Insert(decimal EXPENSE_ID, string EXPENSE_TYPE, string DESCRIPTION) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(EXPENSE_ID));
-            if ((EXPENSE_NAME == null)) {
+            if ((EXPENSE_TYPE == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(EXPENSE_NAME));
-            }
-            if ((EXPENSE_DATE.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(EXPENSE_DATE.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((EXPENSE_AMOUNT.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((decimal)(EXPENSE_AMOUNT.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(EXPENSE_TYPE));
             }
             if ((DESCRIPTION == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(DESCRIPTION));
-            }
-            if ((EXPENSE_NOTE == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(EXPENSE_NOTE));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(DESCRIPTION));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -16239,78 +16034,36 @@ namespace SIMS.DSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(decimal EXPENSE_ID, string EXPENSE_NAME, global::System.Nullable<global::System.DateTime> EXPENSE_DATE, global::System.Nullable<decimal> EXPENSE_AMOUNT, string DESCRIPTION, string EXPENSE_NOTE, decimal Original_EXPENSE_ID, string Original_EXPENSE_NAME, global::System.Nullable<global::System.DateTime> Original_EXPENSE_DATE, global::System.Nullable<decimal> Original_EXPENSE_AMOUNT, string Original_DESCRIPTION, string Original_EXPENSE_NOTE) {
+        public virtual int Update(decimal EXPENSE_ID, string EXPENSE_TYPE, string DESCRIPTION, decimal Original_EXPENSE_ID, string Original_EXPENSE_TYPE, string Original_DESCRIPTION) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(EXPENSE_ID));
-            if ((EXPENSE_NAME == null)) {
+            if ((EXPENSE_TYPE == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(EXPENSE_NAME));
-            }
-            if ((EXPENSE_DATE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(EXPENSE_DATE.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((EXPENSE_AMOUNT.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(EXPENSE_AMOUNT.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(EXPENSE_TYPE));
             }
             if ((DESCRIPTION == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(DESCRIPTION));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(DESCRIPTION));
             }
-            if ((EXPENSE_NOTE == null)) {
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(Original_EXPENSE_ID));
+            if ((Original_EXPENSE_TYPE == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(EXPENSE_NOTE));
-            }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(Original_EXPENSE_ID));
-            if ((Original_EXPENSE_NAME == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_EXPENSE_NAME));
-            }
-            if ((Original_EXPENSE_DATE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_EXPENSE_DATE.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Original_EXPENSE_AMOUNT.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(Original_EXPENSE_AMOUNT.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_EXPENSE_TYPE));
             }
             if ((Original_DESCRIPTION == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_DESCRIPTION));
-            }
-            if ((Original_EXPENSE_NOTE == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_EXPENSE_NOTE));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_DESCRIPTION));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -16332,8 +16085,8 @@ namespace SIMS.DSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string EXPENSE_NAME, global::System.Nullable<global::System.DateTime> EXPENSE_DATE, global::System.Nullable<decimal> EXPENSE_AMOUNT, string DESCRIPTION, string EXPENSE_NOTE, decimal Original_EXPENSE_ID, string Original_EXPENSE_NAME, global::System.Nullable<global::System.DateTime> Original_EXPENSE_DATE, global::System.Nullable<decimal> Original_EXPENSE_AMOUNT, string Original_DESCRIPTION, string Original_EXPENSE_NOTE) {
-            return this.Update(Original_EXPENSE_ID, EXPENSE_NAME, EXPENSE_DATE, EXPENSE_AMOUNT, DESCRIPTION, EXPENSE_NOTE, Original_EXPENSE_ID, Original_EXPENSE_NAME, Original_EXPENSE_DATE, Original_EXPENSE_AMOUNT, Original_DESCRIPTION, Original_EXPENSE_NOTE);
+        public virtual int Update(string EXPENSE_TYPE, string DESCRIPTION, decimal Original_EXPENSE_ID, string Original_EXPENSE_TYPE, string Original_DESCRIPTION) {
+            return this.Update(Original_EXPENSE_ID, EXPENSE_TYPE, DESCRIPTION, Original_EXPENSE_ID, Original_EXPENSE_TYPE, Original_DESCRIPTION);
         }
     }
     
@@ -16460,11 +16213,14 @@ namespace SIMS.DSTableAdapters {
             tableMapping.DataSetTable = "EXPENSE_PAYMENT";
             tableMapping.ColumnMappings.Add("EXPENSE_ID", "EXPENSE_ID");
             tableMapping.ColumnMappings.Add("PAYMET_ID", "PAYMET_ID");
+            tableMapping.ColumnMappings.Add("EXPENSE_AMOUNT", "EXPENSE_AMOUNT");
+            tableMapping.ColumnMappings.Add("PAYMENT_DATE", "PAYMENT_DATE");
+            tableMapping.ColumnMappings.Add("CAPTURED_DATE", "CAPTURED_DATE");
+            tableMapping.ColumnMappings.Add("EXPENSE_NOTE", "EXPENSE_NOTE");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"EDU_SCHEMA\".\"EXPENSE_PAYMENT\" WHERE ((\"EXPENSE_ID\" = :Original_EXPEN" +
-                "SE_ID) AND (\"PAYMET_ID\" = :Original_PAYMET_ID))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""EDU_SCHEMA"".""EXPENSE_PAYMENT"" WHERE ((""EXPENSE_ID"" = :Original_EXPENSE_ID) AND (""PAYMET_ID"" = :Original_PAYMET_ID) AND ((:IsNull_EXPENSE_AMOUNT = 1 AND ""EXPENSE_AMOUNT"" IS NULL) OR (""EXPENSE_AMOUNT"" = :Original_EXPENSE_AMOUNT)) AND ((:IsNull_PAYMENT_DATE = 1 AND ""PAYMENT_DATE"" IS NULL) OR (""PAYMENT_DATE"" = :Original_PAYMENT_DATE)) AND ((:IsNull_CAPTURED_DATE = 1 AND ""CAPTURED_DATE"" IS NULL) OR (""CAPTURED_DATE"" = :Original_CAPTURED_DATE)) AND ((:IsNull_EXPENSE_NOTE = 1 AND ""EXPENSE_NOTE"" IS NULL) OR (""EXPENSE_NOTE"" = :Original_EXPENSE_NOTE)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_EXPENSE_ID";
@@ -16484,10 +16240,86 @@ namespace SIMS.DSTableAdapters {
             param.SourceColumn = "PAYMET_ID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_EXPENSE_AMOUNT";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "EXPENSE_AMOUNT";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_EXPENSE_AMOUNT";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "EXPENSE_AMOUNT";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PAYMENT_DATE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 7;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_DATE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PAYMENT_DATE";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
+            param.Size = 7;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_DATE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_CAPTURED_DATE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 7;
+            param.IsNullable = true;
+            param.SourceColumn = "CAPTURED_DATE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_CAPTURED_DATE";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
+            param.Size = 7;
+            param.IsNullable = true;
+            param.SourceColumn = "CAPTURED_DATE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_EXPENSE_NOTE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "EXPENSE_NOTE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_EXPENSE_NOTE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "EXPENSE_NOTE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"EDU_SCHEMA\".\"EXPENSE_PAYMENT\" (\"EXPENSE_ID\", \"PAYMET_ID\") VALUES (:E" +
-                "XPENSE_ID, :PAYMET_ID)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"EDU_SCHEMA\".\"EXPENSE_PAYMENT\" (\"EXPENSE_ID\", \"PAYMET_ID\", \"EXPENSE_A" +
+                "MOUNT\", \"PAYMENT_DATE\", \"CAPTURED_DATE\", \"EXPENSE_NOTE\") VALUES (:EXPENSE_ID, :P" +
+                "AYMET_ID, :EXPENSE_AMOUNT, :PAYMENT_DATE, :CAPTURED_DATE, :EXPENSE_NOTE)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "EXPENSE_ID";
@@ -16505,11 +16337,40 @@ namespace SIMS.DSTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "PAYMET_ID";
             this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "EXPENSE_AMOUNT";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "EXPENSE_AMOUNT";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PAYMENT_DATE";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
+            param.Size = 7;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_DATE";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "CAPTURED_DATE";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
+            param.Size = 7;
+            param.IsNullable = true;
+            param.SourceColumn = "CAPTURED_DATE";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "EXPENSE_NOTE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "EXPENSE_NOTE";
+            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE \"EDU_SCHEMA\".\"EXPENSE_PAYMENT\" SET \"EXPENSE_ID\" = :EXPENSE_ID, \"PAYMET_ID\"" +
-                " = :PAYMET_ID WHERE ((\"EXPENSE_ID\" = :Original_EXPENSE_ID) AND (\"PAYMET_ID\" = :O" +
-                "riginal_PAYMET_ID))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""EDU_SCHEMA"".""EXPENSE_PAYMENT"" SET ""EXPENSE_ID"" = :EXPENSE_ID, ""PAYMET_ID"" = :PAYMET_ID, ""EXPENSE_AMOUNT"" = :EXPENSE_AMOUNT, ""PAYMENT_DATE"" = :PAYMENT_DATE, ""CAPTURED_DATE"" = :CAPTURED_DATE, ""EXPENSE_NOTE"" = :EXPENSE_NOTE WHERE ((""EXPENSE_ID"" = :Original_EXPENSE_ID) AND (""PAYMET_ID"" = :Original_PAYMET_ID) AND ((:IsNull_EXPENSE_AMOUNT = 1 AND ""EXPENSE_AMOUNT"" IS NULL) OR (""EXPENSE_AMOUNT"" = :Original_EXPENSE_AMOUNT)) AND ((:IsNull_PAYMENT_DATE = 1 AND ""PAYMENT_DATE"" IS NULL) OR (""PAYMENT_DATE"" = :Original_PAYMENT_DATE)) AND ((:IsNull_CAPTURED_DATE = 1 AND ""CAPTURED_DATE"" IS NULL) OR (""CAPTURED_DATE"" = :Original_CAPTURED_DATE)) AND ((:IsNull_EXPENSE_NOTE = 1 AND ""EXPENSE_NOTE"" IS NULL) OR (""EXPENSE_NOTE"" = :Original_EXPENSE_NOTE)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "EXPENSE_ID";
@@ -16526,6 +16387,37 @@ namespace SIMS.DSTableAdapters {
             param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "PAYMET_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "EXPENSE_AMOUNT";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "EXPENSE_AMOUNT";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PAYMENT_DATE";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
+            param.Size = 7;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_DATE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "CAPTURED_DATE";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
+            param.Size = 7;
+            param.IsNullable = true;
+            param.SourceColumn = "CAPTURED_DATE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "EXPENSE_NOTE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "EXPENSE_NOTE";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_EXPENSE_ID";
@@ -16545,6 +16437,81 @@ namespace SIMS.DSTableAdapters {
             param.SourceColumn = "PAYMET_ID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_EXPENSE_AMOUNT";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "EXPENSE_AMOUNT";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_EXPENSE_AMOUNT";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "EXPENSE_AMOUNT";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PAYMENT_DATE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 7;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_DATE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PAYMENT_DATE";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
+            param.Size = 7;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_DATE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_CAPTURED_DATE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 7;
+            param.IsNullable = true;
+            param.SourceColumn = "CAPTURED_DATE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_CAPTURED_DATE";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
+            param.Size = 7;
+            param.IsNullable = true;
+            param.SourceColumn = "CAPTURED_DATE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_EXPENSE_NOTE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "EXPENSE_NOTE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_EXPENSE_NOTE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "EXPENSE_NOTE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16560,7 +16527,8 @@ namespace SIMS.DSTableAdapters {
             this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT EXPENSE_ID, PAYMET_ID FROM EDU_SCHEMA.EXPENSE_PAYMENT";
+            this._commandCollection[0].CommandText = "SELECT EXPENSE_ID, PAYMET_ID, EXPENSE_AMOUNT, PAYMENT_DATE, CAPTURED_DATE, EXPENS" +
+                "E_NOTE FROM EDU_SCHEMA.EXPENSE_PAYMENT";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -16621,9 +16589,41 @@ namespace SIMS.DSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(decimal Original_EXPENSE_ID, decimal Original_PAYMET_ID) {
+        public virtual int Delete(decimal Original_EXPENSE_ID, decimal Original_PAYMET_ID, global::System.Nullable<decimal> Original_EXPENSE_AMOUNT, global::System.Nullable<global::System.DateTime> Original_PAYMENT_DATE, global::System.Nullable<global::System.DateTime> Original_CAPTURED_DATE, string Original_EXPENSE_NOTE) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_EXPENSE_ID));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((decimal)(Original_PAYMET_ID));
+            if ((Original_EXPENSE_AMOUNT.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((decimal)(Original_EXPENSE_AMOUNT.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PAYMENT_DATE.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_PAYMENT_DATE.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CAPTURED_DATE.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((System.DateTime)(Original_CAPTURED_DATE.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Original_EXPENSE_NOTE == null)) {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_EXPENSE_NOTE));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16644,9 +16644,33 @@ namespace SIMS.DSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(decimal EXPENSE_ID, decimal PAYMET_ID) {
+        public virtual int Insert(decimal EXPENSE_ID, decimal PAYMET_ID, global::System.Nullable<decimal> EXPENSE_AMOUNT, global::System.Nullable<global::System.DateTime> PAYMENT_DATE, global::System.Nullable<global::System.DateTime> CAPTURED_DATE, string EXPENSE_NOTE) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(EXPENSE_ID));
             this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(PAYMET_ID));
+            if ((EXPENSE_AMOUNT.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(EXPENSE_AMOUNT.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((PAYMENT_DATE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(PAYMENT_DATE.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((CAPTURED_DATE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(CAPTURED_DATE.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((EXPENSE_NOTE == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(EXPENSE_NOTE));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16667,11 +16691,67 @@ namespace SIMS.DSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(decimal EXPENSE_ID, decimal PAYMET_ID, decimal Original_EXPENSE_ID, decimal Original_PAYMET_ID) {
+        public virtual int Update(decimal EXPENSE_ID, decimal PAYMET_ID, global::System.Nullable<decimal> EXPENSE_AMOUNT, global::System.Nullable<global::System.DateTime> PAYMENT_DATE, global::System.Nullable<global::System.DateTime> CAPTURED_DATE, string EXPENSE_NOTE, decimal Original_EXPENSE_ID, decimal Original_PAYMET_ID, global::System.Nullable<decimal> Original_EXPENSE_AMOUNT, global::System.Nullable<global::System.DateTime> Original_PAYMENT_DATE, global::System.Nullable<global::System.DateTime> Original_CAPTURED_DATE, string Original_EXPENSE_NOTE) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(EXPENSE_ID));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(PAYMET_ID));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(Original_EXPENSE_ID));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(Original_PAYMET_ID));
+            if ((EXPENSE_AMOUNT.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(EXPENSE_AMOUNT.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((PAYMENT_DATE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(PAYMENT_DATE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((CAPTURED_DATE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(CAPTURED_DATE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((EXPENSE_NOTE == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(EXPENSE_NOTE));
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(Original_EXPENSE_ID));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(Original_PAYMET_ID));
+            if ((Original_EXPENSE_AMOUNT.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(Original_EXPENSE_AMOUNT.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PAYMENT_DATE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_PAYMENT_DATE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CAPTURED_DATE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_CAPTURED_DATE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((Original_EXPENSE_NOTE == null)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_EXPENSE_NOTE));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16692,8 +16772,8 @@ namespace SIMS.DSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(decimal Original_EXPENSE_ID, decimal Original_PAYMET_ID) {
-            return this.Update(Original_EXPENSE_ID, Original_PAYMET_ID, Original_EXPENSE_ID, Original_PAYMET_ID);
+        public virtual int Update(global::System.Nullable<decimal> EXPENSE_AMOUNT, global::System.Nullable<global::System.DateTime> PAYMENT_DATE, global::System.Nullable<global::System.DateTime> CAPTURED_DATE, string EXPENSE_NOTE, decimal Original_EXPENSE_ID, decimal Original_PAYMET_ID, global::System.Nullable<decimal> Original_EXPENSE_AMOUNT, global::System.Nullable<global::System.DateTime> Original_PAYMENT_DATE, global::System.Nullable<global::System.DateTime> Original_CAPTURED_DATE, string Original_EXPENSE_NOTE) {
+            return this.Update(Original_EXPENSE_ID, Original_PAYMET_ID, EXPENSE_AMOUNT, PAYMENT_DATE, CAPTURED_DATE, EXPENSE_NOTE, Original_EXPENSE_ID, Original_PAYMET_ID, Original_EXPENSE_AMOUNT, Original_PAYMENT_DATE, Original_CAPTURED_DATE, Original_EXPENSE_NOTE);
         }
     }
     
@@ -19138,13 +19218,15 @@ namespace SIMS.DSTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "PAYMENT";
             tableMapping.ColumnMappings.Add("PAYMENT_ID", "PAYMENT_ID");
-            tableMapping.ColumnMappings.Add("AMOUNT", "AMOUNT");
             tableMapping.ColumnMappings.Add("OCCURENCE", "OCCURENCE");
             tableMapping.ColumnMappings.Add("TYPE", "TYPE");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""EDU_SCHEMA"".""PAYMENT"" WHERE ((""PAYMENT_ID"" = :Original_PAYMENT_ID) AND ((:IsNull_AMOUNT = 1 AND ""AMOUNT"" IS NULL) OR (""AMOUNT"" = :Original_AMOUNT)) AND ((:IsNull_OCCURENCE = 1 AND ""OCCURENCE"" IS NULL) OR (""OCCURENCE"" = :Original_OCCURENCE)) AND ((:IsNull_TYPE = 1 AND ""TYPE"" IS NULL) OR (""TYPE"" = :Original_TYPE)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"EDU_SCHEMA\".\"PAYMENT\" WHERE ((\"PAYMENT_ID\" = :Original_PAYMENT_ID) A" +
+                "ND ((:IsNull_OCCURENCE = 1 AND \"OCCURENCE\" IS NULL) OR (\"OCCURENCE\" = :Original_" +
+                "OCCURENCE)) AND ((:IsNull_TYPE = 1 AND \"TYPE\" IS NULL) OR (\"TYPE\" = :Original_TY" +
+                "PE)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_PAYMENT_ID";
@@ -19156,25 +19238,6 @@ namespace SIMS.DSTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_AMOUNT";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "AMOUNT";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_AMOUNT";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "AMOUNT";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "IsNull_OCCURENCE";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
@@ -19196,7 +19259,7 @@ namespace SIMS.DSTableAdapters {
             param.ParameterName = "IsNull_TYPE";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 255;
+            param.Size = 20;
             param.IsNullable = true;
             param.SourceColumn = "TYPE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -19204,16 +19267,16 @@ namespace SIMS.DSTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_TYPE";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.NVarchar2;
-            param.Size = 255;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
             param.IsNullable = true;
             param.SourceColumn = "TYPE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"EDU_SCHEMA\".\"PAYMENT\" (\"PAYMENT_ID\", \"AMOUNT\", \"OCCURENCE\", \"TYPE\") " +
-                "VALUES (:PAYMENT_ID, :AMOUNT, :OCCURENCE, :TYPE)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"EDU_SCHEMA\".\"PAYMENT\" (\"PAYMENT_ID\", \"OCCURENCE\", \"TYPE\") VALUES (:P" +
+                "AYMENT_ID, :OCCURENCE, :TYPE)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "PAYMENT_ID";
@@ -19224,14 +19287,6 @@ namespace SIMS.DSTableAdapters {
             param.SourceColumn = "PAYMENT_ID";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "AMOUNT";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "AMOUNT";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "OCCURENCE";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 255;
@@ -19240,14 +19295,14 @@ namespace SIMS.DSTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "TYPE";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.NVarchar2;
-            param.Size = 255;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
             param.IsNullable = true;
             param.SourceColumn = "TYPE";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""EDU_SCHEMA"".""PAYMENT"" SET ""PAYMENT_ID"" = :PAYMENT_ID, ""AMOUNT"" = :AMOUNT, ""OCCURENCE"" = :OCCURENCE, ""TYPE"" = :TYPE WHERE ((""PAYMENT_ID"" = :Original_PAYMENT_ID) AND ((:IsNull_AMOUNT = 1 AND ""AMOUNT"" IS NULL) OR (""AMOUNT"" = :Original_AMOUNT)) AND ((:IsNull_OCCURENCE = 1 AND ""OCCURENCE"" IS NULL) OR (""OCCURENCE"" = :Original_OCCURENCE)) AND ((:IsNull_TYPE = 1 AND ""TYPE"" IS NULL) OR (""TYPE"" = :Original_TYPE)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""EDU_SCHEMA"".""PAYMENT"" SET ""PAYMENT_ID"" = :PAYMENT_ID, ""OCCURENCE"" = :OCCURENCE, ""TYPE"" = :TYPE WHERE ((""PAYMENT_ID"" = :Original_PAYMENT_ID) AND ((:IsNull_OCCURENCE = 1 AND ""OCCURENCE"" IS NULL) OR (""OCCURENCE"" = :Original_OCCURENCE)) AND ((:IsNull_TYPE = 1 AND ""TYPE"" IS NULL) OR (""TYPE"" = :Original_TYPE)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "PAYMENT_ID";
@@ -19258,14 +19313,6 @@ namespace SIMS.DSTableAdapters {
             param.SourceColumn = "PAYMENT_ID";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "AMOUNT";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "AMOUNT";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "OCCURENCE";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 255;
@@ -19274,8 +19321,8 @@ namespace SIMS.DSTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "TYPE";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.NVarchar2;
-            param.Size = 255;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
             param.IsNullable = true;
             param.SourceColumn = "TYPE";
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -19289,25 +19336,6 @@ namespace SIMS.DSTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_AMOUNT";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "AMOUNT";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_AMOUNT";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "AMOUNT";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "IsNull_OCCURENCE";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
@@ -19329,7 +19357,7 @@ namespace SIMS.DSTableAdapters {
             param.ParameterName = "IsNull_TYPE";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 255;
+            param.Size = 20;
             param.IsNullable = true;
             param.SourceColumn = "TYPE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -19337,8 +19365,8 @@ namespace SIMS.DSTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_TYPE";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.NVarchar2;
-            param.Size = 255;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
             param.IsNullable = true;
             param.SourceColumn = "TYPE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -19358,7 +19386,7 @@ namespace SIMS.DSTableAdapters {
             this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT PAYMENT_ID, AMOUNT, OCCURENCE, \"TYPE\" FROM EDU_SCHEMA.PAYMENT";
+            this._commandCollection[0].CommandText = "SELECT PAYMENT_ID, OCCURENCE, \"TYPE\" FROM EDU_SCHEMA.PAYMENT";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -19419,31 +19447,23 @@ namespace SIMS.DSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(decimal Original_PAYMENT_ID, global::System.Nullable<decimal> Original_AMOUNT, string Original_OCCURENCE, string Original_TYPE) {
+        public virtual int Delete(decimal Original_PAYMENT_ID, string Original_OCCURENCE, string Original_TYPE) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_PAYMENT_ID));
-            if ((Original_AMOUNT.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((decimal)(Original_AMOUNT.Value));
-            }
-            else {
+            if ((Original_OCCURENCE == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Original_OCCURENCE == null)) {
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_OCCURENCE));
+            }
+            if ((Original_TYPE == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_OCCURENCE));
-            }
-            if ((Original_TYPE == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_TYPE));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_TYPE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -19465,25 +19485,19 @@ namespace SIMS.DSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(decimal PAYMENT_ID, global::System.Nullable<decimal> AMOUNT, string OCCURENCE, string TYPE) {
+        public virtual int Insert(decimal PAYMENT_ID, string OCCURENCE, string TYPE) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(PAYMENT_ID));
-            if ((AMOUNT.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(AMOUNT.Value));
-            }
-            else {
+            if ((OCCURENCE == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((OCCURENCE == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(OCCURENCE));
+            }
+            if ((TYPE == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(OCCURENCE));
-            }
-            if ((TYPE == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(TYPE));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(TYPE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -19505,50 +19519,36 @@ namespace SIMS.DSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(decimal PAYMENT_ID, global::System.Nullable<decimal> AMOUNT, string OCCURENCE, string TYPE, decimal Original_PAYMENT_ID, global::System.Nullable<decimal> Original_AMOUNT, string Original_OCCURENCE, string Original_TYPE) {
+        public virtual int Update(decimal PAYMENT_ID, string OCCURENCE, string TYPE, decimal Original_PAYMENT_ID, string Original_OCCURENCE, string Original_TYPE) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(PAYMENT_ID));
-            if ((AMOUNT.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(AMOUNT.Value));
-            }
-            else {
+            if ((OCCURENCE == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((OCCURENCE == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(OCCURENCE));
+            }
+            if ((TYPE == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(OCCURENCE));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(TYPE));
             }
-            if ((TYPE == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(TYPE));
-            }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(Original_PAYMENT_ID));
-            if ((Original_AMOUNT.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(Original_AMOUNT.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(Original_PAYMENT_ID));
             if ((Original_OCCURENCE == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_OCCURENCE));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_OCCURENCE));
             }
             if ((Original_TYPE == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_TYPE));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_TYPE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -19570,8 +19570,8 @@ namespace SIMS.DSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<decimal> AMOUNT, string OCCURENCE, string TYPE, decimal Original_PAYMENT_ID, global::System.Nullable<decimal> Original_AMOUNT, string Original_OCCURENCE, string Original_TYPE) {
-            return this.Update(Original_PAYMENT_ID, AMOUNT, OCCURENCE, TYPE, Original_PAYMENT_ID, Original_AMOUNT, Original_OCCURENCE, Original_TYPE);
+        public virtual int Update(string OCCURENCE, string TYPE, decimal Original_PAYMENT_ID, string Original_OCCURENCE, string Original_TYPE) {
+            return this.Update(Original_PAYMENT_ID, OCCURENCE, TYPE, Original_PAYMENT_ID, Original_OCCURENCE, Original_TYPE);
         }
     }
     
@@ -20303,1619 +20303,6 @@ namespace SIMS.DSTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(global::System.Nullable<long> HOURS, object PERIOD, string GRADE, global::System.Nullable<decimal> SALARY_VALUE, global::System.Nullable<decimal> EMPLOYEE_NO, decimal Original_SALARY_ID, global::System.Nullable<long> Original_HOURS, object Original_PERIOD, string Original_GRADE, global::System.Nullable<decimal> Original_SALARY_VALUE, global::System.Nullable<decimal> Original_EMPLOYEE_NO) {
             return this.Update(Original_SALARY_ID, HOURS, PERIOD, GRADE, SALARY_VALUE, EMPLOYEE_NO, Original_SALARY_ID, Original_HOURS, Original_PERIOD, Original_GRADE, Original_SALARY_VALUE, Original_EMPLOYEE_NO);
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class STUDENTTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::Oracle.ManagedDataAccess.Client.OracleDataAdapter _adapter;
-        
-        private global::Oracle.ManagedDataAccess.Client.OracleConnection _connection;
-        
-        private global::Oracle.ManagedDataAccess.Client.OracleTransaction _transaction;
-        
-        private global::Oracle.ManagedDataAccess.Client.OracleCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public STUDENTTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::Oracle.ManagedDataAccess.Client.OracleDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::Oracle.ManagedDataAccess.Client.OracleConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::Oracle.ManagedDataAccess.Client.OracleCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::Oracle.ManagedDataAccess.Client.OracleTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::Oracle.ManagedDataAccess.Client.OracleCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::Oracle.ManagedDataAccess.Client.OracleDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "STUDENT";
-            tableMapping.ColumnMappings.Add("ADMISION_NO", "ADMISION_NO");
-            tableMapping.ColumnMappings.Add("FIRST_NAME", "FIRST_NAME");
-            tableMapping.ColumnMappings.Add("LAST_NAME", "LAST_NAME");
-            tableMapping.ColumnMappings.Add("STUDENT_GENDER", "STUDENT_GENDER");
-            tableMapping.ColumnMappings.Add("PHONE_NUMBER", "PHONE_NUMBER");
-            tableMapping.ColumnMappings.Add("ADMITTED_DATE", "ADMITTED_DATE");
-            tableMapping.ColumnMappings.Add("STUDENT_CITIZEN_ID", "STUDENT_CITIZEN_ID");
-            tableMapping.ColumnMappings.Add("ADDRESS_LINE1", "ADDRESS_LINE1");
-            tableMapping.ColumnMappings.Add("SUBURB", "SUBURB");
-            tableMapping.ColumnMappings.Add("CITY", "CITY");
-            tableMapping.ColumnMappings.Add("ZIP_CODE", "ZIP_CODE");
-            tableMapping.ColumnMappings.Add("EMAIL_ADDRESS", "EMAIL_ADDRESS");
-            tableMapping.ColumnMappings.Add("SUBJECT_STREAM", "SUBJECT_STREAM");
-            tableMapping.ColumnMappings.Add("CENTRE", "CENTRE");
-            tableMapping.ColumnMappings.Add("PICTURE", "PICTURE");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""EDU_SCHEMA"".""STUDENT"" WHERE (((:IsNull_ADMISION_NO = 1 AND ""ADMISION_NO"" IS NULL) OR (""ADMISION_NO"" = :Original_ADMISION_NO)) AND ((:IsNull_FIRST_NAME = 1 AND ""FIRST_NAME"" IS NULL) OR (""FIRST_NAME"" = :Original_FIRST_NAME)) AND ((:IsNull_LAST_NAME = 1 AND ""LAST_NAME"" IS NULL) OR (""LAST_NAME"" = :Original_LAST_NAME)) AND ((:IsNull_STUDENT_GENDER = 1 AND ""STUDENT_GENDER"" IS NULL) OR (""STUDENT_GENDER"" = :Original_STUDENT_GENDER)) AND ((:IsNull_PHONE_NUMBER = 1 AND ""PHONE_NUMBER"" IS NULL) OR (""PHONE_NUMBER"" = :Original_PHONE_NUMBER)) AND ((:IsNull_ADMITTED_DATE = 1 AND ""ADMITTED_DATE"" IS NULL) OR (""ADMITTED_DATE"" = :Original_ADMITTED_DATE)) AND (""STUDENT_CITIZEN_ID"" = :Original_STUDENT_CITIZEN_ID) AND ((:IsNull_ADDRESS_LINE1 = 1 AND ""ADDRESS_LINE1"" IS NULL) OR (""ADDRESS_LINE1"" = :Original_ADDRESS_LINE1)) AND ((:IsNull_SUBURB = 1 AND ""SUBURB"" IS NULL) OR (""SUBURB"" = :Original_SUBURB)) AND ((:IsNull_CITY = 1 AND ""CITY"" IS NULL) OR (""CITY"" = :Original_CITY)) AND ((:IsNull_ZIP_CODE = 1 AND ""ZIP_CODE"" IS NULL) OR (""ZIP_CODE"" = :Original_ZIP_CODE)) AND ((:IsNull_EMAIL_ADDRESS = 1 AND ""EMAIL_ADDRESS"" IS NULL) OR (""EMAIL_ADDRESS"" = :Original_EMAIL_ADDRESS)) AND ((:IsNull_SUBJECT_STREAM = 1 AND ""SUBJECT_STREAM"" IS NULL) OR (""SUBJECT_STREAM"" = :Original_SUBJECT_STREAM)) AND ((:IsNull_CENTRE = 1 AND ""CENTRE"" IS NULL) OR (""CENTRE"" = :Original_CENTRE)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ADMISION_NO";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "ADMISION_NO";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ADMISION_NO";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "ADMISION_NO";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_FIRST_NAME";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "FIRST_NAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_FIRST_NAME";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "FIRST_NAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_LAST_NAME";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "LAST_NAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_LAST_NAME";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "LAST_NAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_STUDENT_GENDER";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 20;
-            param.IsNullable = true;
-            param.SourceColumn = "STUDENT_GENDER";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_STUDENT_GENDER";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
-            param.IsNullable = true;
-            param.SourceColumn = "STUDENT_GENDER";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PHONE_NUMBER";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 1000;
-            param.IsNullable = true;
-            param.SourceColumn = "PHONE_NUMBER";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PHONE_NUMBER";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 1000;
-            param.IsNullable = true;
-            param.SourceColumn = "PHONE_NUMBER";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ADMITTED_DATE";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 7;
-            param.IsNullable = true;
-            param.SourceColumn = "ADMITTED_DATE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ADMITTED_DATE";
-            param.DbType = global::System.Data.DbType.Date;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
-            param.Size = 7;
-            param.IsNullable = true;
-            param.SourceColumn = "ADMITTED_DATE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_STUDENT_CITIZEN_ID";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 1000;
-            param.IsNullable = true;
-            param.SourceColumn = "STUDENT_CITIZEN_ID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ADDRESS_LINE1";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "ADDRESS_LINE1";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ADDRESS_LINE1";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "ADDRESS_LINE1";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_SUBURB";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "SUBURB";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_SUBURB";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "SUBURB";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_CITY";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "CITY";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_CITY";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "CITY";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ZIP_CODE";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "ZIP_CODE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ZIP_CODE";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "ZIP_CODE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_EMAIL_ADDRESS";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "EMAIL_ADDRESS";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_EMAIL_ADDRESS";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "EMAIL_ADDRESS";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_SUBJECT_STREAM";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "SUBJECT_STREAM";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_SUBJECT_STREAM";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "SUBJECT_STREAM";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_CENTRE";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "CENTRE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_CENTRE";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "CENTRE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO ""EDU_SCHEMA"".""STUDENT"" (""ADMISION_NO"", ""FIRST_NAME"", ""LAST_NAME"", ""STUDENT_GENDER"", ""PHONE_NUMBER"", ""ADMITTED_DATE"", ""STUDENT_CITIZEN_ID"", ""ADDRESS_LINE1"", ""SUBURB"", ""CITY"", ""ZIP_CODE"", ""EMAIL_ADDRESS"", ""SUBJECT_STREAM"", ""CENTRE"", ""PICTURE"") VALUES (:ADMISION_NO, :FIRST_NAME, :LAST_NAME, :STUDENT_GENDER, :PHONE_NUMBER, :ADMITTED_DATE, :STUDENT_CITIZEN_ID, :ADDRESS_LINE1, :SUBURB, :CITY, :ZIP_CODE, :EMAIL_ADDRESS, :SUBJECT_STREAM, :CENTRE, :PICTURE)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ADMISION_NO";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "ADMISION_NO";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "FIRST_NAME";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "FIRST_NAME";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "LAST_NAME";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "LAST_NAME";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "STUDENT_GENDER";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
-            param.IsNullable = true;
-            param.SourceColumn = "STUDENT_GENDER";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PHONE_NUMBER";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 1000;
-            param.IsNullable = true;
-            param.SourceColumn = "PHONE_NUMBER";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ADMITTED_DATE";
-            param.DbType = global::System.Data.DbType.Date;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
-            param.Size = 7;
-            param.IsNullable = true;
-            param.SourceColumn = "ADMITTED_DATE";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "STUDENT_CITIZEN_ID";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 1000;
-            param.IsNullable = true;
-            param.SourceColumn = "STUDENT_CITIZEN_ID";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ADDRESS_LINE1";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "ADDRESS_LINE1";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "SUBURB";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "SUBURB";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "CITY";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "CITY";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ZIP_CODE";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "ZIP_CODE";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "EMAIL_ADDRESS";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "EMAIL_ADDRESS";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "SUBJECT_STREAM";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "SUBJECT_STREAM";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "CENTRE";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "CENTRE";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PICTURE";
-            param.DbType = global::System.Data.DbType.Object;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.BFile;
-            param.Size = 2147483647;
-            param.IsNullable = true;
-            param.SourceColumn = "PICTURE";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE \"EDU_SCHEMA\".\"STUDENT\" SET \"ADMISION_NO\" = :ADMISION_NO, \"FIRST_NAME\" = :F" +
-                "IRST_NAME, \"LAST_NAME\" = :LAST_NAME, \"STUDENT_GENDER\" = :STUDENT_GENDER, \"PHONE_" +
-                "NUMBER\" = :PHONE_NUMBER, \"ADMITTED_DATE\" = :ADMITTED_DATE, \"STUDENT_CITIZEN_ID\" " +
-                "= :STUDENT_CITIZEN_ID, \"ADDRESS_LINE1\" = :ADDRESS_LINE1, \"SUBURB\" = :SUBURB, \"CI" +
-                "TY\" = :CITY, \"ZIP_CODE\" = :ZIP_CODE, \"EMAIL_ADDRESS\" = :EMAIL_ADDRESS, \"SUBJECT_" +
-                "STREAM\" = :SUBJECT_STREAM, \"CENTRE\" = :CENTRE, \"PICTURE\" = :PICTURE WHERE (((:Is" +
-                "Null_ADMISION_NO = 1 AND \"ADMISION_NO\" IS NULL) OR (\"ADMISION_NO\" = :Original_AD" +
-                "MISION_NO)) AND ((:IsNull_FIRST_NAME = 1 AND \"FIRST_NAME\" IS NULL) OR (\"FIRST_NA" +
-                "ME\" = :Original_FIRST_NAME)) AND ((:IsNull_LAST_NAME = 1 AND \"LAST_NAME\" IS NULL" +
-                ") OR (\"LAST_NAME\" = :Original_LAST_NAME)) AND ((:IsNull_STUDENT_GENDER = 1 AND \"" +
-                "STUDENT_GENDER\" IS NULL) OR (\"STUDENT_GENDER\" = :Original_STUDENT_GENDER)) AND (" +
-                "(:IsNull_PHONE_NUMBER = 1 AND \"PHONE_NUMBER\" IS NULL) OR (\"PHONE_NUMBER\" = :Orig" +
-                "inal_PHONE_NUMBER)) AND ((:IsNull_ADMITTED_DATE = 1 AND \"ADMITTED_DATE\" IS NULL)" +
-                " OR (\"ADMITTED_DATE\" = :Original_ADMITTED_DATE)) AND (\"STUDENT_CITIZEN_ID\" = :Or" +
-                "iginal_STUDENT_CITIZEN_ID) AND ((:IsNull_ADDRESS_LINE1 = 1 AND \"ADDRESS_LINE1\" I" +
-                "S NULL) OR (\"ADDRESS_LINE1\" = :Original_ADDRESS_LINE1)) AND ((:IsNull_SUBURB = 1" +
-                " AND \"SUBURB\" IS NULL) OR (\"SUBURB\" = :Original_SUBURB)) AND ((:IsNull_CITY = 1 " +
-                "AND \"CITY\" IS NULL) OR (\"CITY\" = :Original_CITY)) AND ((:IsNull_ZIP_CODE = 1 AND" +
-                " \"ZIP_CODE\" IS NULL) OR (\"ZIP_CODE\" = :Original_ZIP_CODE)) AND ((:IsNull_EMAIL_A" +
-                "DDRESS = 1 AND \"EMAIL_ADDRESS\" IS NULL) OR (\"EMAIL_ADDRESS\" = :Original_EMAIL_AD" +
-                "DRESS)) AND ((:IsNull_SUBJECT_STREAM = 1 AND \"SUBJECT_STREAM\" IS NULL) OR (\"SUBJ" +
-                "ECT_STREAM\" = :Original_SUBJECT_STREAM)) AND ((:IsNull_CENTRE = 1 AND \"CENTRE\" I" +
-                "S NULL) OR (\"CENTRE\" = :Original_CENTRE)))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ADMISION_NO";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "ADMISION_NO";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "FIRST_NAME";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "FIRST_NAME";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "LAST_NAME";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "LAST_NAME";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "STUDENT_GENDER";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
-            param.IsNullable = true;
-            param.SourceColumn = "STUDENT_GENDER";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PHONE_NUMBER";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 1000;
-            param.IsNullable = true;
-            param.SourceColumn = "PHONE_NUMBER";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ADMITTED_DATE";
-            param.DbType = global::System.Data.DbType.Date;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
-            param.Size = 7;
-            param.IsNullable = true;
-            param.SourceColumn = "ADMITTED_DATE";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "STUDENT_CITIZEN_ID";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 1000;
-            param.IsNullable = true;
-            param.SourceColumn = "STUDENT_CITIZEN_ID";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ADDRESS_LINE1";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "ADDRESS_LINE1";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "SUBURB";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "SUBURB";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "CITY";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "CITY";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ZIP_CODE";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "ZIP_CODE";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "EMAIL_ADDRESS";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "EMAIL_ADDRESS";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "SUBJECT_STREAM";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "SUBJECT_STREAM";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "CENTRE";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "CENTRE";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PICTURE";
-            param.DbType = global::System.Data.DbType.Object;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.BFile;
-            param.Size = 2147483647;
-            param.IsNullable = true;
-            param.SourceColumn = "PICTURE";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ADMISION_NO";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "ADMISION_NO";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ADMISION_NO";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "ADMISION_NO";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_FIRST_NAME";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "FIRST_NAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_FIRST_NAME";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "FIRST_NAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_LAST_NAME";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "LAST_NAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_LAST_NAME";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "LAST_NAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_STUDENT_GENDER";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 20;
-            param.IsNullable = true;
-            param.SourceColumn = "STUDENT_GENDER";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_STUDENT_GENDER";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
-            param.IsNullable = true;
-            param.SourceColumn = "STUDENT_GENDER";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PHONE_NUMBER";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 1000;
-            param.IsNullable = true;
-            param.SourceColumn = "PHONE_NUMBER";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PHONE_NUMBER";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 1000;
-            param.IsNullable = true;
-            param.SourceColumn = "PHONE_NUMBER";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ADMITTED_DATE";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 7;
-            param.IsNullable = true;
-            param.SourceColumn = "ADMITTED_DATE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ADMITTED_DATE";
-            param.DbType = global::System.Data.DbType.Date;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
-            param.Size = 7;
-            param.IsNullable = true;
-            param.SourceColumn = "ADMITTED_DATE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_STUDENT_CITIZEN_ID";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 1000;
-            param.IsNullable = true;
-            param.SourceColumn = "STUDENT_CITIZEN_ID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ADDRESS_LINE1";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "ADDRESS_LINE1";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ADDRESS_LINE1";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "ADDRESS_LINE1";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_SUBURB";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "SUBURB";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_SUBURB";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "SUBURB";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_CITY";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "CITY";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_CITY";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "CITY";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ZIP_CODE";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "ZIP_CODE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ZIP_CODE";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "ZIP_CODE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_EMAIL_ADDRESS";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "EMAIL_ADDRESS";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_EMAIL_ADDRESS";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = "EMAIL_ADDRESS";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_SUBJECT_STREAM";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "SUBJECT_STREAM";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_SUBJECT_STREAM";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "SUBJECT_STREAM";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_CENTRE";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "CENTRE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_CENTRE";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "CENTRE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::Oracle.ManagedDataAccess.Client.OracleConnection();
-            this._connection.ConnectionString = global::SIMS.Properties.Settings.Default.SIMSConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[5];
-            this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ADMISION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER, PHONE_NUMBER, ADMITTED" +
-                "_DATE, STUDENT_CITIZEN_ID, ADDRESS_LINE1, SUBURB, CITY, ZIP_CODE, EMAIL_ADDRESS," +
-                " SUBJECT_STREAM, CENTRE, PICTURE FROM EDU_SCHEMA.STUDENT";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT ADMISION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER, PHONE_NUMBER, ADMITTED" +
-                "_DATE, STUDENT_CITIZEN_ID, SUBURB, CENTRE\r\nFROM EDU_SCHEMA.STUDENT\r\nWHERE (LAST_" +
-                "NAME LIKE  :LAST_NAME || \'%\')";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = ":LAST_NAME";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 25;
-            param.IsNullable = true;
-            param.SourceColumn = "LAST_NAME";
-            this._commandCollection[1].Parameters.Add(param);
-            this._commandCollection[2] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT ADMISION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER, PHONE_NUMBER, ADMITTED" +
-                "_DATE, STUDENT_CITIZEN_ID, SUBURB, CENTRE\r\nFROM EDU_SCHEMA.STUDENT\r\nORDER BY ADM" +
-                "ISION_NO";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT ADMISION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER, PHONE_NUMBER, ADMITTED" +
-                "_DATE, STUDENT_CITIZEN_ID, SUBURB, CENTRE\r\nFROM EDU_SCHEMA.STUDENT\r\nORDER BY ADM" +
-                "ITTED_DATE";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
-            this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT ADMISION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER, PHONE_NUMBER, ADMITTED" +
-                "_DATE, STUDENT_CITIZEN_ID, SUBURB, CENTRE\r\nFROM EDU_SCHEMA.STUDENT\r\nORDER BY LAS" +
-                "T_NAME";
-            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS.STUDENTDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS.STUDENTDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            DS.STUDENTDataTable dataTable = new DS.STUDENTDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByLearnerSearch(DS.STUDENTDataTable dataTable, string LAST_NAME) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((LAST_NAME == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(LAST_NAME));
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DS.STUDENTDataTable GetDataByLearnerSearch(string LAST_NAME) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((LAST_NAME == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(LAST_NAME));
-            }
-            DS.STUDENTDataTable dataTable = new DS.STUDENTDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int OrderByAdmissionNo(DS.STUDENTDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DS.STUDENTDataTable GetDataByAdmissionNo() {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            DS.STUDENTDataTable dataTable = new DS.STUDENTDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int OrderByDate(DS.STUDENTDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DS.STUDENTDataTable GetDataByDate() {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
-            DS.STUDENTDataTable dataTable = new DS.STUDENTDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int OrderByName(DS.STUDENTDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DS.STUDENTDataTable GetDataByName() {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
-            DS.STUDENTDataTable dataTable = new DS.STUDENTDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS.STUDENTDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS dataSet) {
-            return this.Adapter.Update(dataSet, "STUDENT");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_ADMISION_NO, string Original_FIRST_NAME, string Original_LAST_NAME, string Original_STUDENT_GENDER, string Original_PHONE_NUMBER, global::System.Nullable<global::System.DateTime> Original_ADMITTED_DATE, string Original_STUDENT_CITIZEN_ID, string Original_ADDRESS_LINE1, string Original_SUBURB, string Original_CITY, string Original_ZIP_CODE, string Original_EMAIL_ADDRESS, string Original_SUBJECT_STREAM, string Original_CENTRE) {
-            if ((Original_ADMISION_NO == null)) {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_ADMISION_NO));
-            }
-            if ((Original_FIRST_NAME == null)) {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_FIRST_NAME));
-            }
-            if ((Original_LAST_NAME == null)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_LAST_NAME));
-            }
-            if ((Original_STUDENT_GENDER == null)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_STUDENT_GENDER));
-            }
-            if ((Original_PHONE_NUMBER == null)) {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_PHONE_NUMBER));
-            }
-            if ((Original_ADMITTED_DATE.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((System.DateTime)(Original_ADMITTED_DATE.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            if ((Original_STUDENT_CITIZEN_ID == null)) {
-                throw new global::System.ArgumentNullException("Original_STUDENT_CITIZEN_ID");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_STUDENT_CITIZEN_ID));
-            }
-            if ((Original_ADDRESS_LINE1 == null)) {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_ADDRESS_LINE1));
-            }
-            if ((Original_SUBURB == null)) {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_SUBURB));
-            }
-            if ((Original_CITY == null)) {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_CITY));
-            }
-            if ((Original_ZIP_CODE == null)) {
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_ZIP_CODE));
-            }
-            if ((Original_EMAIL_ADDRESS == null)) {
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_EMAIL_ADDRESS));
-            }
-            if ((Original_SUBJECT_STREAM == null)) {
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_SUBJECT_STREAM));
-            }
-            if ((Original_CENTRE == null)) {
-                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_CENTRE));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string ADMISION_NO, string FIRST_NAME, string LAST_NAME, string STUDENT_GENDER, string PHONE_NUMBER, global::System.Nullable<global::System.DateTime> ADMITTED_DATE, string STUDENT_CITIZEN_ID, string ADDRESS_LINE1, string SUBURB, string CITY, string ZIP_CODE, string EMAIL_ADDRESS, string SUBJECT_STREAM, string CENTRE, object PICTURE) {
-            if ((ADMISION_NO == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(ADMISION_NO));
-            }
-            if ((FIRST_NAME == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(FIRST_NAME));
-            }
-            if ((LAST_NAME == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(LAST_NAME));
-            }
-            if ((STUDENT_GENDER == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(STUDENT_GENDER));
-            }
-            if ((PHONE_NUMBER == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(PHONE_NUMBER));
-            }
-            if ((ADMITTED_DATE.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(ADMITTED_DATE.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((STUDENT_CITIZEN_ID == null)) {
-                throw new global::System.ArgumentNullException("STUDENT_CITIZEN_ID");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(STUDENT_CITIZEN_ID));
-            }
-            if ((ADDRESS_LINE1 == null)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(ADDRESS_LINE1));
-            }
-            if ((SUBURB == null)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(SUBURB));
-            }
-            if ((CITY == null)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(CITY));
-            }
-            if ((ZIP_CODE == null)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(ZIP_CODE));
-            }
-            if ((EMAIL_ADDRESS == null)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(EMAIL_ADDRESS));
-            }
-            if ((SUBJECT_STREAM == null)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(SUBJECT_STREAM));
-            }
-            if ((CENTRE == null)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(CENTRE));
-            }
-            if ((PICTURE == null)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((object)(PICTURE));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string ADMISION_NO, 
-                    string FIRST_NAME, 
-                    string LAST_NAME, 
-                    string STUDENT_GENDER, 
-                    string PHONE_NUMBER, 
-                    global::System.Nullable<global::System.DateTime> ADMITTED_DATE, 
-                    string STUDENT_CITIZEN_ID, 
-                    string ADDRESS_LINE1, 
-                    string SUBURB, 
-                    string CITY, 
-                    string ZIP_CODE, 
-                    string EMAIL_ADDRESS, 
-                    string SUBJECT_STREAM, 
-                    string CENTRE, 
-                    object PICTURE, 
-                    string Original_ADMISION_NO, 
-                    string Original_FIRST_NAME, 
-                    string Original_LAST_NAME, 
-                    string Original_STUDENT_GENDER, 
-                    string Original_PHONE_NUMBER, 
-                    global::System.Nullable<global::System.DateTime> Original_ADMITTED_DATE, 
-                    string Original_STUDENT_CITIZEN_ID, 
-                    string Original_ADDRESS_LINE1, 
-                    string Original_SUBURB, 
-                    string Original_CITY, 
-                    string Original_ZIP_CODE, 
-                    string Original_EMAIL_ADDRESS, 
-                    string Original_SUBJECT_STREAM, 
-                    string Original_CENTRE) {
-            if ((ADMISION_NO == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(ADMISION_NO));
-            }
-            if ((FIRST_NAME == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(FIRST_NAME));
-            }
-            if ((LAST_NAME == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(LAST_NAME));
-            }
-            if ((STUDENT_GENDER == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(STUDENT_GENDER));
-            }
-            if ((PHONE_NUMBER == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(PHONE_NUMBER));
-            }
-            if ((ADMITTED_DATE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(ADMITTED_DATE.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((STUDENT_CITIZEN_ID == null)) {
-                throw new global::System.ArgumentNullException("STUDENT_CITIZEN_ID");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(STUDENT_CITIZEN_ID));
-            }
-            if ((ADDRESS_LINE1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(ADDRESS_LINE1));
-            }
-            if ((SUBURB == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(SUBURB));
-            }
-            if ((CITY == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(CITY));
-            }
-            if ((ZIP_CODE == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(ZIP_CODE));
-            }
-            if ((EMAIL_ADDRESS == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(EMAIL_ADDRESS));
-            }
-            if ((SUBJECT_STREAM == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(SUBJECT_STREAM));
-            }
-            if ((CENTRE == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(CENTRE));
-            }
-            if ((PICTURE == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(PICTURE));
-            }
-            if ((Original_ADMISION_NO == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_ADMISION_NO));
-            }
-            if ((Original_FIRST_NAME == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_FIRST_NAME));
-            }
-            if ((Original_LAST_NAME == null)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_LAST_NAME));
-            }
-            if ((Original_STUDENT_GENDER == null)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_STUDENT_GENDER));
-            }
-            if ((Original_PHONE_NUMBER == null)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_PHONE_NUMBER));
-            }
-            if ((Original_ADMITTED_DATE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((System.DateTime)(Original_ADMITTED_DATE.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
-            }
-            if ((Original_STUDENT_CITIZEN_ID == null)) {
-                throw new global::System.ArgumentNullException("Original_STUDENT_CITIZEN_ID");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_STUDENT_CITIZEN_ID));
-            }
-            if ((Original_ADDRESS_LINE1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_ADDRESS_LINE1));
-            }
-            if ((Original_SUBURB == null)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_SUBURB));
-            }
-            if ((Original_CITY == null)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_CITY));
-            }
-            if ((Original_ZIP_CODE == null)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_ZIP_CODE));
-            }
-            if ((Original_EMAIL_ADDRESS == null)) {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(Original_EMAIL_ADDRESS));
-            }
-            if ((Original_SUBJECT_STREAM == null)) {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_SUBJECT_STREAM));
-            }
-            if ((Original_CENTRE == null)) {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_CENTRE));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string ADMISION_NO, 
-                    string FIRST_NAME, 
-                    string LAST_NAME, 
-                    string STUDENT_GENDER, 
-                    string PHONE_NUMBER, 
-                    global::System.Nullable<global::System.DateTime> ADMITTED_DATE, 
-                    string ADDRESS_LINE1, 
-                    string SUBURB, 
-                    string CITY, 
-                    string ZIP_CODE, 
-                    string EMAIL_ADDRESS, 
-                    string SUBJECT_STREAM, 
-                    string CENTRE, 
-                    object PICTURE, 
-                    string Original_ADMISION_NO, 
-                    string Original_FIRST_NAME, 
-                    string Original_LAST_NAME, 
-                    string Original_STUDENT_GENDER, 
-                    string Original_PHONE_NUMBER, 
-                    global::System.Nullable<global::System.DateTime> Original_ADMITTED_DATE, 
-                    string Original_STUDENT_CITIZEN_ID, 
-                    string Original_ADDRESS_LINE1, 
-                    string Original_SUBURB, 
-                    string Original_CITY, 
-                    string Original_ZIP_CODE, 
-                    string Original_EMAIL_ADDRESS, 
-                    string Original_SUBJECT_STREAM, 
-                    string Original_CENTRE) {
-            return this.Update(ADMISION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER, PHONE_NUMBER, ADMITTED_DATE, Original_STUDENT_CITIZEN_ID, ADDRESS_LINE1, SUBURB, CITY, ZIP_CODE, EMAIL_ADDRESS, SUBJECT_STREAM, CENTRE, PICTURE, Original_ADMISION_NO, Original_FIRST_NAME, Original_LAST_NAME, Original_STUDENT_GENDER, Original_PHONE_NUMBER, Original_ADMITTED_DATE, Original_STUDENT_CITIZEN_ID, Original_ADDRESS_LINE1, Original_SUBURB, Original_CITY, Original_ZIP_CODE, Original_EMAIL_ADDRESS, Original_SUBJECT_STREAM, Original_CENTRE);
         }
     }
     
@@ -23559,8 +21946,8 @@ namespace SIMS.DSTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT USER_ID, USER_NAME, PASSWORD, EMPLOYEE_NO FROM EDU_SCHEMA.USERS\r\nWHERE (US" +
-                "ER_NAME=:USER_NAME) AND (PASSWORD=:PASSWORD)";
+            this._commandCollection[1].CommandText = "SELECT EMPLOYEE_NO, PASSWORD, USER_ID, USER_NAME FROM EDU_SCHEMA.USERS WHERE (USE" +
+                "R_NAME = :USER_NAME) AND (PASSWORD = :PASSWORD)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":USER_NAME";
@@ -23840,6 +22227,1619 @@ namespace SIMS.DSTableAdapters {
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class STUDENTTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::Oracle.ManagedDataAccess.Client.OracleDataAdapter _adapter;
+        
+        private global::Oracle.ManagedDataAccess.Client.OracleConnection _connection;
+        
+        private global::Oracle.ManagedDataAccess.Client.OracleTransaction _transaction;
+        
+        private global::Oracle.ManagedDataAccess.Client.OracleCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public STUDENTTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::Oracle.ManagedDataAccess.Client.OracleDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::Oracle.ManagedDataAccess.Client.OracleConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::Oracle.ManagedDataAccess.Client.OracleCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::Oracle.ManagedDataAccess.Client.OracleTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::Oracle.ManagedDataAccess.Client.OracleCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::Oracle.ManagedDataAccess.Client.OracleDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "STUDENT";
+            tableMapping.ColumnMappings.Add("ADMISION_NO", "ADMISION_NO");
+            tableMapping.ColumnMappings.Add("FIRST_NAME", "FIRST_NAME");
+            tableMapping.ColumnMappings.Add("LAST_NAME", "LAST_NAME");
+            tableMapping.ColumnMappings.Add("STUDENT_GENDER", "STUDENT_GENDER");
+            tableMapping.ColumnMappings.Add("PHONE_NUMBER", "PHONE_NUMBER");
+            tableMapping.ColumnMappings.Add("ADMITTED_DATE", "ADMITTED_DATE");
+            tableMapping.ColumnMappings.Add("STUDENT_CITIZEN_ID", "STUDENT_CITIZEN_ID");
+            tableMapping.ColumnMappings.Add("ADDRESS_LINE1", "ADDRESS_LINE1");
+            tableMapping.ColumnMappings.Add("SUBURB", "SUBURB");
+            tableMapping.ColumnMappings.Add("CITY", "CITY");
+            tableMapping.ColumnMappings.Add("ZIP_CODE", "ZIP_CODE");
+            tableMapping.ColumnMappings.Add("EMAIL_ADDRESS", "EMAIL_ADDRESS");
+            tableMapping.ColumnMappings.Add("SUBJECT_STREAM", "SUBJECT_STREAM");
+            tableMapping.ColumnMappings.Add("CENTRE", "CENTRE");
+            tableMapping.ColumnMappings.Add("PICTURE", "PICTURE");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""EDU_SCHEMA"".""STUDENT"" WHERE (((:IsNull_ADMISION_NO = 1 AND ""ADMISION_NO"" IS NULL) OR (""ADMISION_NO"" = :Original_ADMISION_NO)) AND ((:IsNull_FIRST_NAME = 1 AND ""FIRST_NAME"" IS NULL) OR (""FIRST_NAME"" = :Original_FIRST_NAME)) AND ((:IsNull_LAST_NAME = 1 AND ""LAST_NAME"" IS NULL) OR (""LAST_NAME"" = :Original_LAST_NAME)) AND ((:IsNull_STUDENT_GENDER = 1 AND ""STUDENT_GENDER"" IS NULL) OR (""STUDENT_GENDER"" = :Original_STUDENT_GENDER)) AND ((:IsNull_PHONE_NUMBER = 1 AND ""PHONE_NUMBER"" IS NULL) OR (""PHONE_NUMBER"" = :Original_PHONE_NUMBER)) AND ((:IsNull_ADMITTED_DATE = 1 AND ""ADMITTED_DATE"" IS NULL) OR (""ADMITTED_DATE"" = :Original_ADMITTED_DATE)) AND (""STUDENT_CITIZEN_ID"" = :Original_STUDENT_CITIZEN_ID) AND ((:IsNull_ADDRESS_LINE1 = 1 AND ""ADDRESS_LINE1"" IS NULL) OR (""ADDRESS_LINE1"" = :Original_ADDRESS_LINE1)) AND ((:IsNull_SUBURB = 1 AND ""SUBURB"" IS NULL) OR (""SUBURB"" = :Original_SUBURB)) AND ((:IsNull_CITY = 1 AND ""CITY"" IS NULL) OR (""CITY"" = :Original_CITY)) AND ((:IsNull_ZIP_CODE = 1 AND ""ZIP_CODE"" IS NULL) OR (""ZIP_CODE"" = :Original_ZIP_CODE)) AND ((:IsNull_EMAIL_ADDRESS = 1 AND ""EMAIL_ADDRESS"" IS NULL) OR (""EMAIL_ADDRESS"" = :Original_EMAIL_ADDRESS)) AND ((:IsNull_SUBJECT_STREAM = 1 AND ""SUBJECT_STREAM"" IS NULL) OR (""SUBJECT_STREAM"" = :Original_SUBJECT_STREAM)) AND ((:IsNull_CENTRE = 1 AND ""CENTRE"" IS NULL) OR (""CENTRE"" = :Original_CENTRE)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_ADMISION_NO";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "ADMISION_NO";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_ADMISION_NO";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "ADMISION_NO";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_FIRST_NAME";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "FIRST_NAME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_FIRST_NAME";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "FIRST_NAME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_LAST_NAME";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "LAST_NAME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_LAST_NAME";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "LAST_NAME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_STUDENT_GENDER";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "STUDENT_GENDER";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_STUDENT_GENDER";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "STUDENT_GENDER";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PHONE_NUMBER";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "PHONE_NUMBER";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PHONE_NUMBER";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "PHONE_NUMBER";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_ADMITTED_DATE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 7;
+            param.IsNullable = true;
+            param.SourceColumn = "ADMITTED_DATE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_ADMITTED_DATE";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
+            param.Size = 7;
+            param.IsNullable = true;
+            param.SourceColumn = "ADMITTED_DATE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_STUDENT_CITIZEN_ID";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "STUDENT_CITIZEN_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_ADDRESS_LINE1";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "ADDRESS_LINE1";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_ADDRESS_LINE1";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "ADDRESS_LINE1";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_SUBURB";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "SUBURB";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_SUBURB";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "SUBURB";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_CITY";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "CITY";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_CITY";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "CITY";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_ZIP_CODE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "ZIP_CODE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_ZIP_CODE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "ZIP_CODE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_EMAIL_ADDRESS";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "EMAIL_ADDRESS";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_EMAIL_ADDRESS";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "EMAIL_ADDRESS";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_SUBJECT_STREAM";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "SUBJECT_STREAM";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_SUBJECT_STREAM";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "SUBJECT_STREAM";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_CENTRE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "CENTRE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_CENTRE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "CENTRE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO ""EDU_SCHEMA"".""STUDENT"" (""ADMISION_NO"", ""FIRST_NAME"", ""LAST_NAME"", ""STUDENT_GENDER"", ""PHONE_NUMBER"", ""ADMITTED_DATE"", ""STUDENT_CITIZEN_ID"", ""ADDRESS_LINE1"", ""SUBURB"", ""CITY"", ""ZIP_CODE"", ""EMAIL_ADDRESS"", ""SUBJECT_STREAM"", ""CENTRE"", ""PICTURE"") VALUES (:ADMISION_NO, :FIRST_NAME, :LAST_NAME, :STUDENT_GENDER, :PHONE_NUMBER, :ADMITTED_DATE, :STUDENT_CITIZEN_ID, :ADDRESS_LINE1, :SUBURB, :CITY, :ZIP_CODE, :EMAIL_ADDRESS, :SUBJECT_STREAM, :CENTRE, :PICTURE)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "ADMISION_NO";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "ADMISION_NO";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "FIRST_NAME";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "FIRST_NAME";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "LAST_NAME";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "LAST_NAME";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "STUDENT_GENDER";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "STUDENT_GENDER";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PHONE_NUMBER";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "PHONE_NUMBER";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "ADMITTED_DATE";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
+            param.Size = 7;
+            param.IsNullable = true;
+            param.SourceColumn = "ADMITTED_DATE";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "STUDENT_CITIZEN_ID";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "STUDENT_CITIZEN_ID";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "ADDRESS_LINE1";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "ADDRESS_LINE1";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "SUBURB";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "SUBURB";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "CITY";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "CITY";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "ZIP_CODE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "ZIP_CODE";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "EMAIL_ADDRESS";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "EMAIL_ADDRESS";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "SUBJECT_STREAM";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "SUBJECT_STREAM";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "CENTRE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "CENTRE";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PICTURE";
+            param.DbType = global::System.Data.DbType.Object;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.BFile;
+            param.Size = 2147483647;
+            param.IsNullable = true;
+            param.SourceColumn = "PICTURE";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE \"EDU_SCHEMA\".\"STUDENT\" SET \"ADMISION_NO\" = :ADMISION_NO, \"FIRST_NAME\" = :F" +
+                "IRST_NAME, \"LAST_NAME\" = :LAST_NAME, \"STUDENT_GENDER\" = :STUDENT_GENDER, \"PHONE_" +
+                "NUMBER\" = :PHONE_NUMBER, \"ADMITTED_DATE\" = :ADMITTED_DATE, \"STUDENT_CITIZEN_ID\" " +
+                "= :STUDENT_CITIZEN_ID, \"ADDRESS_LINE1\" = :ADDRESS_LINE1, \"SUBURB\" = :SUBURB, \"CI" +
+                "TY\" = :CITY, \"ZIP_CODE\" = :ZIP_CODE, \"EMAIL_ADDRESS\" = :EMAIL_ADDRESS, \"SUBJECT_" +
+                "STREAM\" = :SUBJECT_STREAM, \"CENTRE\" = :CENTRE, \"PICTURE\" = :PICTURE WHERE (((:Is" +
+                "Null_ADMISION_NO = 1 AND \"ADMISION_NO\" IS NULL) OR (\"ADMISION_NO\" = :Original_AD" +
+                "MISION_NO)) AND ((:IsNull_FIRST_NAME = 1 AND \"FIRST_NAME\" IS NULL) OR (\"FIRST_NA" +
+                "ME\" = :Original_FIRST_NAME)) AND ((:IsNull_LAST_NAME = 1 AND \"LAST_NAME\" IS NULL" +
+                ") OR (\"LAST_NAME\" = :Original_LAST_NAME)) AND ((:IsNull_STUDENT_GENDER = 1 AND \"" +
+                "STUDENT_GENDER\" IS NULL) OR (\"STUDENT_GENDER\" = :Original_STUDENT_GENDER)) AND (" +
+                "(:IsNull_PHONE_NUMBER = 1 AND \"PHONE_NUMBER\" IS NULL) OR (\"PHONE_NUMBER\" = :Orig" +
+                "inal_PHONE_NUMBER)) AND ((:IsNull_ADMITTED_DATE = 1 AND \"ADMITTED_DATE\" IS NULL)" +
+                " OR (\"ADMITTED_DATE\" = :Original_ADMITTED_DATE)) AND (\"STUDENT_CITIZEN_ID\" = :Or" +
+                "iginal_STUDENT_CITIZEN_ID) AND ((:IsNull_ADDRESS_LINE1 = 1 AND \"ADDRESS_LINE1\" I" +
+                "S NULL) OR (\"ADDRESS_LINE1\" = :Original_ADDRESS_LINE1)) AND ((:IsNull_SUBURB = 1" +
+                " AND \"SUBURB\" IS NULL) OR (\"SUBURB\" = :Original_SUBURB)) AND ((:IsNull_CITY = 1 " +
+                "AND \"CITY\" IS NULL) OR (\"CITY\" = :Original_CITY)) AND ((:IsNull_ZIP_CODE = 1 AND" +
+                " \"ZIP_CODE\" IS NULL) OR (\"ZIP_CODE\" = :Original_ZIP_CODE)) AND ((:IsNull_EMAIL_A" +
+                "DDRESS = 1 AND \"EMAIL_ADDRESS\" IS NULL) OR (\"EMAIL_ADDRESS\" = :Original_EMAIL_AD" +
+                "DRESS)) AND ((:IsNull_SUBJECT_STREAM = 1 AND \"SUBJECT_STREAM\" IS NULL) OR (\"SUBJ" +
+                "ECT_STREAM\" = :Original_SUBJECT_STREAM)) AND ((:IsNull_CENTRE = 1 AND \"CENTRE\" I" +
+                "S NULL) OR (\"CENTRE\" = :Original_CENTRE)))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "ADMISION_NO";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "ADMISION_NO";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "FIRST_NAME";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "FIRST_NAME";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "LAST_NAME";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "LAST_NAME";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "STUDENT_GENDER";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "STUDENT_GENDER";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PHONE_NUMBER";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "PHONE_NUMBER";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "ADMITTED_DATE";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
+            param.Size = 7;
+            param.IsNullable = true;
+            param.SourceColumn = "ADMITTED_DATE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "STUDENT_CITIZEN_ID";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "STUDENT_CITIZEN_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "ADDRESS_LINE1";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "ADDRESS_LINE1";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "SUBURB";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "SUBURB";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "CITY";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "CITY";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "ZIP_CODE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "ZIP_CODE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "EMAIL_ADDRESS";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "EMAIL_ADDRESS";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "SUBJECT_STREAM";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "SUBJECT_STREAM";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "CENTRE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "CENTRE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PICTURE";
+            param.DbType = global::System.Data.DbType.Object;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.BFile;
+            param.Size = 2147483647;
+            param.IsNullable = true;
+            param.SourceColumn = "PICTURE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_ADMISION_NO";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "ADMISION_NO";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_ADMISION_NO";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "ADMISION_NO";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_FIRST_NAME";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "FIRST_NAME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_FIRST_NAME";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "FIRST_NAME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_LAST_NAME";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "LAST_NAME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_LAST_NAME";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "LAST_NAME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_STUDENT_GENDER";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "STUDENT_GENDER";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_STUDENT_GENDER";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "STUDENT_GENDER";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PHONE_NUMBER";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "PHONE_NUMBER";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PHONE_NUMBER";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "PHONE_NUMBER";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_ADMITTED_DATE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 7;
+            param.IsNullable = true;
+            param.SourceColumn = "ADMITTED_DATE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_ADMITTED_DATE";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
+            param.Size = 7;
+            param.IsNullable = true;
+            param.SourceColumn = "ADMITTED_DATE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_STUDENT_CITIZEN_ID";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "STUDENT_CITIZEN_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_ADDRESS_LINE1";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "ADDRESS_LINE1";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_ADDRESS_LINE1";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "ADDRESS_LINE1";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_SUBURB";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "SUBURB";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_SUBURB";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "SUBURB";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_CITY";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "CITY";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_CITY";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "CITY";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_ZIP_CODE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "ZIP_CODE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_ZIP_CODE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "ZIP_CODE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_EMAIL_ADDRESS";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "EMAIL_ADDRESS";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_EMAIL_ADDRESS";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "EMAIL_ADDRESS";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_SUBJECT_STREAM";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "SUBJECT_STREAM";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_SUBJECT_STREAM";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "SUBJECT_STREAM";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_CENTRE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "CENTRE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_CENTRE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "CENTRE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::Oracle.ManagedDataAccess.Client.OracleConnection();
+            this._connection.ConnectionString = global::SIMS.Properties.Settings.Default.SIMSConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[5];
+            this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT ADMISION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER, PHONE_NUMBER, ADMITTED" +
+                "_DATE, STUDENT_CITIZEN_ID, ADDRESS_LINE1, SUBURB, CITY, ZIP_CODE, EMAIL_ADDRESS," +
+                " SUBJECT_STREAM, CENTRE, PICTURE FROM EDU_SCHEMA.STUDENT";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT ADMISION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER, PHONE_NUMBER, ADMITTED" +
+                "_DATE, STUDENT_CITIZEN_ID, SUBURB, CENTRE\r\nFROM EDU_SCHEMA.STUDENT\r\nWHERE (lower" +
+                "(LAST_NAME) LIKE  :LAST_NAME || \'%\')";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":LAST_NAME";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 25;
+            param.IsNullable = true;
+            param.SourceColumn = "LAST_NAME";
+            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT ADDRESS_LINE1, ADMISION_NO, ADMITTED_DATE, CENTRE, CITY, EMAIL_ADDRESS, FI" +
+                "RST_NAME, LAST_NAME, PHONE_NUMBER, PICTURE, STUDENT_CITIZEN_ID, STUDENT_GENDER, " +
+                "SUBJECT_STREAM, SUBURB, ZIP_CODE FROM EDU_SCHEMA.STUDENT ORDER BY ADMISION_NO";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT ADDRESS_LINE1, ADMISION_NO, ADMITTED_DATE, CENTRE, CITY, EMAIL_ADDRESS, FI" +
+                "RST_NAME, LAST_NAME, PHONE_NUMBER, PICTURE, STUDENT_CITIZEN_ID, STUDENT_GENDER, " +
+                "SUBJECT_STREAM, SUBURB, ZIP_CODE FROM EDU_SCHEMA.STUDENT ORDER BY ADMITTED_DATE";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT ADDRESS_LINE1, ADMISION_NO, ADMITTED_DATE, CENTRE, CITY, EMAIL_ADDRESS, FI" +
+                "RST_NAME, LAST_NAME, PHONE_NUMBER, PICTURE, STUDENT_CITIZEN_ID, STUDENT_GENDER, " +
+                "SUBJECT_STREAM, SUBURB, ZIP_CODE FROM EDU_SCHEMA.STUDENT ORDER BY LAST_NAME";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DS.STUDENTDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DS.STUDENTDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DS.STUDENTDataTable dataTable = new DS.STUDENTDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByLearnerSearch(DS.STUDENTDataTable dataTable, string LAST_NAME) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((LAST_NAME == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(LAST_NAME));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DS.STUDENTDataTable GetDataByLearnerSearch(string LAST_NAME) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((LAST_NAME == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(LAST_NAME));
+            }
+            DS.STUDENTDataTable dataTable = new DS.STUDENTDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int OrderByAdmissionNo(DS.STUDENTDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DS.STUDENTDataTable GetDataByAdmissionNo() {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            DS.STUDENTDataTable dataTable = new DS.STUDENTDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int OrderByDate(DS.STUDENTDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DS.STUDENTDataTable GetDataByDate() {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            DS.STUDENTDataTable dataTable = new DS.STUDENTDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int OrderByName(DS.STUDENTDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DS.STUDENTDataTable GetDataByName() {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            DS.STUDENTDataTable dataTable = new DS.STUDENTDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DS.STUDENTDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DS dataSet) {
+            return this.Adapter.Update(dataSet, "STUDENT");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(string Original_ADMISION_NO, string Original_FIRST_NAME, string Original_LAST_NAME, string Original_STUDENT_GENDER, string Original_PHONE_NUMBER, global::System.Nullable<global::System.DateTime> Original_ADMITTED_DATE, string Original_STUDENT_CITIZEN_ID, string Original_ADDRESS_LINE1, string Original_SUBURB, string Original_CITY, string Original_ZIP_CODE, string Original_EMAIL_ADDRESS, string Original_SUBJECT_STREAM, string Original_CENTRE) {
+            if ((Original_ADMISION_NO == null)) {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_ADMISION_NO));
+            }
+            if ((Original_FIRST_NAME == null)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_FIRST_NAME));
+            }
+            if ((Original_LAST_NAME == null)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_LAST_NAME));
+            }
+            if ((Original_STUDENT_GENDER == null)) {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_STUDENT_GENDER));
+            }
+            if ((Original_PHONE_NUMBER == null)) {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_PHONE_NUMBER));
+            }
+            if ((Original_ADMITTED_DATE.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((System.DateTime)(Original_ADMITTED_DATE.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((Original_STUDENT_CITIZEN_ID == null)) {
+                throw new global::System.ArgumentNullException("Original_STUDENT_CITIZEN_ID");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_STUDENT_CITIZEN_ID));
+            }
+            if ((Original_ADDRESS_LINE1 == null)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_ADDRESS_LINE1));
+            }
+            if ((Original_SUBURB == null)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_SUBURB));
+            }
+            if ((Original_CITY == null)) {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_CITY));
+            }
+            if ((Original_ZIP_CODE == null)) {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_ZIP_CODE));
+            }
+            if ((Original_EMAIL_ADDRESS == null)) {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_EMAIL_ADDRESS));
+            }
+            if ((Original_SUBJECT_STREAM == null)) {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_SUBJECT_STREAM));
+            }
+            if ((Original_CENTRE == null)) {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_CENTRE));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string ADMISION_NO, string FIRST_NAME, string LAST_NAME, string STUDENT_GENDER, string PHONE_NUMBER, global::System.Nullable<global::System.DateTime> ADMITTED_DATE, string STUDENT_CITIZEN_ID, string ADDRESS_LINE1, string SUBURB, string CITY, string ZIP_CODE, string EMAIL_ADDRESS, string SUBJECT_STREAM, string CENTRE, object PICTURE) {
+            if ((ADMISION_NO == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(ADMISION_NO));
+            }
+            if ((FIRST_NAME == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(FIRST_NAME));
+            }
+            if ((LAST_NAME == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(LAST_NAME));
+            }
+            if ((STUDENT_GENDER == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(STUDENT_GENDER));
+            }
+            if ((PHONE_NUMBER == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(PHONE_NUMBER));
+            }
+            if ((ADMITTED_DATE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(ADMITTED_DATE.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((STUDENT_CITIZEN_ID == null)) {
+                throw new global::System.ArgumentNullException("STUDENT_CITIZEN_ID");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(STUDENT_CITIZEN_ID));
+            }
+            if ((ADDRESS_LINE1 == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(ADDRESS_LINE1));
+            }
+            if ((SUBURB == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(SUBURB));
+            }
+            if ((CITY == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(CITY));
+            }
+            if ((ZIP_CODE == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(ZIP_CODE));
+            }
+            if ((EMAIL_ADDRESS == null)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(EMAIL_ADDRESS));
+            }
+            if ((SUBJECT_STREAM == null)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(SUBJECT_STREAM));
+            }
+            if ((CENTRE == null)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(CENTRE));
+            }
+            if ((PICTURE == null)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((object)(PICTURE));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    string ADMISION_NO, 
+                    string FIRST_NAME, 
+                    string LAST_NAME, 
+                    string STUDENT_GENDER, 
+                    string PHONE_NUMBER, 
+                    global::System.Nullable<global::System.DateTime> ADMITTED_DATE, 
+                    string STUDENT_CITIZEN_ID, 
+                    string ADDRESS_LINE1, 
+                    string SUBURB, 
+                    string CITY, 
+                    string ZIP_CODE, 
+                    string EMAIL_ADDRESS, 
+                    string SUBJECT_STREAM, 
+                    string CENTRE, 
+                    object PICTURE, 
+                    string Original_ADMISION_NO, 
+                    string Original_FIRST_NAME, 
+                    string Original_LAST_NAME, 
+                    string Original_STUDENT_GENDER, 
+                    string Original_PHONE_NUMBER, 
+                    global::System.Nullable<global::System.DateTime> Original_ADMITTED_DATE, 
+                    string Original_STUDENT_CITIZEN_ID, 
+                    string Original_ADDRESS_LINE1, 
+                    string Original_SUBURB, 
+                    string Original_CITY, 
+                    string Original_ZIP_CODE, 
+                    string Original_EMAIL_ADDRESS, 
+                    string Original_SUBJECT_STREAM, 
+                    string Original_CENTRE) {
+            if ((ADMISION_NO == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(ADMISION_NO));
+            }
+            if ((FIRST_NAME == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(FIRST_NAME));
+            }
+            if ((LAST_NAME == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(LAST_NAME));
+            }
+            if ((STUDENT_GENDER == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(STUDENT_GENDER));
+            }
+            if ((PHONE_NUMBER == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(PHONE_NUMBER));
+            }
+            if ((ADMITTED_DATE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(ADMITTED_DATE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((STUDENT_CITIZEN_ID == null)) {
+                throw new global::System.ArgumentNullException("STUDENT_CITIZEN_ID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(STUDENT_CITIZEN_ID));
+            }
+            if ((ADDRESS_LINE1 == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(ADDRESS_LINE1));
+            }
+            if ((SUBURB == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(SUBURB));
+            }
+            if ((CITY == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(CITY));
+            }
+            if ((ZIP_CODE == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(ZIP_CODE));
+            }
+            if ((EMAIL_ADDRESS == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(EMAIL_ADDRESS));
+            }
+            if ((SUBJECT_STREAM == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(SUBJECT_STREAM));
+            }
+            if ((CENTRE == null)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(CENTRE));
+            }
+            if ((PICTURE == null)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(PICTURE));
+            }
+            if ((Original_ADMISION_NO == null)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_ADMISION_NO));
+            }
+            if ((Original_FIRST_NAME == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_FIRST_NAME));
+            }
+            if ((Original_LAST_NAME == null)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_LAST_NAME));
+            }
+            if ((Original_STUDENT_GENDER == null)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_STUDENT_GENDER));
+            }
+            if ((Original_PHONE_NUMBER == null)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_PHONE_NUMBER));
+            }
+            if ((Original_ADMITTED_DATE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((System.DateTime)(Original_ADMITTED_DATE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            if ((Original_STUDENT_CITIZEN_ID == null)) {
+                throw new global::System.ArgumentNullException("Original_STUDENT_CITIZEN_ID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_STUDENT_CITIZEN_ID));
+            }
+            if ((Original_ADDRESS_LINE1 == null)) {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_ADDRESS_LINE1));
+            }
+            if ((Original_SUBURB == null)) {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_SUBURB));
+            }
+            if ((Original_CITY == null)) {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_CITY));
+            }
+            if ((Original_ZIP_CODE == null)) {
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_ZIP_CODE));
+            }
+            if ((Original_EMAIL_ADDRESS == null)) {
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(Original_EMAIL_ADDRESS));
+            }
+            if ((Original_SUBJECT_STREAM == null)) {
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_SUBJECT_STREAM));
+            }
+            if ((Original_CENTRE == null)) {
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_CENTRE));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    string ADMISION_NO, 
+                    string FIRST_NAME, 
+                    string LAST_NAME, 
+                    string STUDENT_GENDER, 
+                    string PHONE_NUMBER, 
+                    global::System.Nullable<global::System.DateTime> ADMITTED_DATE, 
+                    string ADDRESS_LINE1, 
+                    string SUBURB, 
+                    string CITY, 
+                    string ZIP_CODE, 
+                    string EMAIL_ADDRESS, 
+                    string SUBJECT_STREAM, 
+                    string CENTRE, 
+                    object PICTURE, 
+                    string Original_ADMISION_NO, 
+                    string Original_FIRST_NAME, 
+                    string Original_LAST_NAME, 
+                    string Original_STUDENT_GENDER, 
+                    string Original_PHONE_NUMBER, 
+                    global::System.Nullable<global::System.DateTime> Original_ADMITTED_DATE, 
+                    string Original_STUDENT_CITIZEN_ID, 
+                    string Original_ADDRESS_LINE1, 
+                    string Original_SUBURB, 
+                    string Original_CITY, 
+                    string Original_ZIP_CODE, 
+                    string Original_EMAIL_ADDRESS, 
+                    string Original_SUBJECT_STREAM, 
+                    string Original_CENTRE) {
+            return this.Update(ADMISION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER, PHONE_NUMBER, ADMITTED_DATE, Original_STUDENT_CITIZEN_ID, ADDRESS_LINE1, SUBURB, CITY, ZIP_CODE, EMAIL_ADDRESS, SUBJECT_STREAM, CENTRE, PICTURE, Original_ADMISION_NO, Original_FIRST_NAME, Original_LAST_NAME, Original_STUDENT_GENDER, Original_PHONE_NUMBER, Original_ADMITTED_DATE, Original_STUDENT_CITIZEN_ID, Original_ADDRESS_LINE1, Original_SUBURB, Original_CITY, Original_ZIP_CODE, Original_EMAIL_ADDRESS, Original_SUBJECT_STREAM, Original_CENTRE);
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23879,8 +23879,6 @@ namespace SIMS.DSTableAdapters {
         
         private SALARYTableAdapter _sALARYTableAdapter;
         
-        private STUDENTTableAdapter _sTUDENTTableAdapter;
-        
         private STUDENT_CLASSTableAdapter _sTUDENT_CLASSTableAdapter;
         
         private STUDENT_FEETableAdapter _sTUDENT_FEETableAdapter;
@@ -23888,6 +23886,8 @@ namespace SIMS.DSTableAdapters {
         private STUDENT_PAYMENTTableAdapter _sTUDENT_PAYMENTTableAdapter;
         
         private USERSTableAdapter _uSERSTableAdapter;
+        
+        private STUDENTTableAdapter _sTUDENTTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -24105,20 +24105,6 @@ namespace SIMS.DSTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public STUDENTTableAdapter STUDENTTableAdapter {
-            get {
-                return this._sTUDENTTableAdapter;
-            }
-            set {
-                this._sTUDENTTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
         public STUDENT_CLASSTableAdapter STUDENT_CLASSTableAdapter {
             get {
                 return this._sTUDENT_CLASSTableAdapter;
@@ -24167,6 +24153,20 @@ namespace SIMS.DSTableAdapters {
             }
             set {
                 this._uSERSTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public STUDENTTableAdapter STUDENTTableAdapter {
+            get {
+                return this._sTUDENTTableAdapter;
+            }
+            set {
+                this._sTUDENTTableAdapter = value;
             }
         }
         
@@ -24245,10 +24245,6 @@ namespace SIMS.DSTableAdapters {
                             && (this._sALARYTableAdapter.Connection != null))) {
                     return this._sALARYTableAdapter.Connection;
                 }
-                if (((this._sTUDENTTableAdapter != null) 
-                            && (this._sTUDENTTableAdapter.Connection != null))) {
-                    return this._sTUDENTTableAdapter.Connection;
-                }
                 if (((this._sTUDENT_CLASSTableAdapter != null) 
                             && (this._sTUDENT_CLASSTableAdapter.Connection != null))) {
                     return this._sTUDENT_CLASSTableAdapter.Connection;
@@ -24264,6 +24260,10 @@ namespace SIMS.DSTableAdapters {
                 if (((this._uSERSTableAdapter != null) 
                             && (this._uSERSTableAdapter.Connection != null))) {
                     return this._uSERSTableAdapter.Connection;
+                }
+                if (((this._sTUDENTTableAdapter != null) 
+                            && (this._sTUDENTTableAdapter.Connection != null))) {
+                    return this._sTUDENTTableAdapter.Connection;
                 }
                 return null;
             }
@@ -24320,9 +24320,6 @@ namespace SIMS.DSTableAdapters {
                 if ((this._sALARYTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._sTUDENTTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 if ((this._sTUDENT_CLASSTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -24333,6 +24330,9 @@ namespace SIMS.DSTableAdapters {
                     count = (count + 1);
                 }
                 if ((this._uSERSTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._sTUDENTTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -24364,21 +24364,30 @@ namespace SIMS.DSTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._cLASSTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.CLASS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._pAYMENTTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.PAYMENT.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._cLASSTableAdapter.Update(updatedRows));
+                    result = (result + this._pAYMENTTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._eMPLOYEETableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.EMPLOYEE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._gUARDIANTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.GUARDIAN.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._eMPLOYEETableAdapter.Update(updatedRows));
+                    result = (result + this._gUARDIANTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._fEETableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.FEE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._fEETableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -24400,75 +24409,21 @@ namespace SIMS.DSTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._fEETableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.FEE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._eMPLOYEETableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.EMPLOYEE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._fEETableAdapter.Update(updatedRows));
+                    result = (result + this._eMPLOYEETableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._gUARDIANTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.GUARDIAN.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._cLASSTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.CLASS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._gUARDIANTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._pAYMENTTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.PAYMENT.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._pAYMENTTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._sTUDENT_FEETableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.STUDENT_FEE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._sTUDENT_FEETableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._sTUDENT_CLASSTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.STUDENT_CLASS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._sTUDENT_CLASSTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._sALARYTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.SALARY.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._sALARYTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._aPPLICATIONTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.APPLICATION.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._aPPLICATIONTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._sTUDENT_PAYMENTTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.STUDENT_PAYMENT.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._sTUDENT_PAYMENTTableAdapter.Update(updatedRows));
+                    result = (result + this._cLASSTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -24481,21 +24436,21 @@ namespace SIMS.DSTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._eMPLOYEE_CLASSTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.EMPLOYEE_CLASS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._eMPLOYEE_CLASSTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._eMPLOYEE_CENTRETableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.EMPLOYEE_CENTRE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._eMPLOYEE_CENTRETableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._uSERSTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.USERS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._uSERSTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -24508,12 +24463,57 @@ namespace SIMS.DSTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._uSERSTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.USERS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._sALARYTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.SALARY.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._uSERSTableAdapter.Update(updatedRows));
+                    result = (result + this._sALARYTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._sTUDENT_CLASSTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.STUDENT_CLASS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._sTUDENT_CLASSTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._sTUDENT_FEETableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.STUDENT_FEE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._sTUDENT_FEETableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._sTUDENT_PAYMENTTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.STUDENT_PAYMENT.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._sTUDENT_PAYMENTTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._eMPLOYEE_CLASSTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.EMPLOYEE_CLASS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._eMPLOYEE_CLASSTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._aPPLICATIONTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.APPLICATION.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._aPPLICATIONTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -24543,19 +24543,27 @@ namespace SIMS.DSTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._cLASSTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.CLASS.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._pAYMENTTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.PAYMENT.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._cLASSTableAdapter.Update(addedRows));
+                    result = (result + this._pAYMENTTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._eMPLOYEETableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.EMPLOYEE.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._gUARDIANTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.GUARDIAN.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._eMPLOYEETableAdapter.Update(addedRows));
+                    result = (result + this._gUARDIANTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._fEETableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.FEE.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._fEETableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -24575,67 +24583,19 @@ namespace SIMS.DSTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._fEETableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.FEE.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._eMPLOYEETableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.EMPLOYEE.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._fEETableAdapter.Update(addedRows));
+                    result = (result + this._eMPLOYEETableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._gUARDIANTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.GUARDIAN.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._cLASSTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.CLASS.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._gUARDIANTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._pAYMENTTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.PAYMENT.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._pAYMENTTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._sTUDENT_FEETableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.STUDENT_FEE.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._sTUDENT_FEETableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._sTUDENT_CLASSTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.STUDENT_CLASS.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._sTUDENT_CLASSTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._sALARYTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.SALARY.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._sALARYTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._aPPLICATIONTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.APPLICATION.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._aPPLICATIONTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._sTUDENT_PAYMENTTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.STUDENT_PAYMENT.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._sTUDENT_PAYMENTTableAdapter.Update(addedRows));
+                    result = (result + this._cLASSTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -24647,19 +24607,19 @@ namespace SIMS.DSTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._eMPLOYEE_CLASSTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.EMPLOYEE_CLASS.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._eMPLOYEE_CLASSTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._eMPLOYEE_CENTRETableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.EMPLOYEE_CENTRE.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._eMPLOYEE_CENTRETableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._uSERSTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.USERS.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._uSERSTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -24671,11 +24631,51 @@ namespace SIMS.DSTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._uSERSTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.USERS.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._sALARYTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.SALARY.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._uSERSTableAdapter.Update(addedRows));
+                    result = (result + this._sALARYTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._sTUDENT_CLASSTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.STUDENT_CLASS.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._sTUDENT_CLASSTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._sTUDENT_FEETableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.STUDENT_FEE.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._sTUDENT_FEETableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._sTUDENT_PAYMENTTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.STUDENT_PAYMENT.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._sTUDENT_PAYMENTTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._eMPLOYEE_CLASSTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.EMPLOYEE_CLASS.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._eMPLOYEE_CLASSTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._aPPLICATIONTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.APPLICATION.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._aPPLICATIONTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -24689,27 +24689,11 @@ namespace SIMS.DSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(DS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._uSERSTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.USERS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._aPPLICATIONTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.APPLICATION.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._uSERSTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._gUARDIAN_STUDENTTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.GUARDIAN_STUDENT.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._gUARDIAN_STUDENTTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._eMPLOYEE_CENTRETableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.EMPLOYEE_CENTRE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._eMPLOYEE_CENTRETableAdapter.Update(deletedRows));
+                    result = (result + this._aPPLICATIONTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -24721,43 +24705,11 @@ namespace SIMS.DSTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._eXPENSE_PAYMENTTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.EXPENSE_PAYMENT.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._eXPENSE_PAYMENTTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._sTUDENT_PAYMENTTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.STUDENT_PAYMENT.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._sTUDENT_PAYMENTTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._aPPLICATIONTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.APPLICATION.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._aPPLICATIONTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._sALARYTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.SALARY.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._sALARYTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._sTUDENT_CLASSTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.STUDENT_CLASS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._sTUDENT_CLASSTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -24769,27 +24721,67 @@ namespace SIMS.DSTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._pAYMENTTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.PAYMENT.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._sTUDENT_CLASSTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.STUDENT_CLASS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._pAYMENTTableAdapter.Update(deletedRows));
+                    result = (result + this._sTUDENT_CLASSTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._gUARDIANTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.GUARDIAN.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._sALARYTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.SALARY.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._gUARDIANTableAdapter.Update(deletedRows));
+                    result = (result + this._sALARYTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._fEETableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.FEE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._gUARDIAN_STUDENTTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.GUARDIAN_STUDENT.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._fEETableAdapter.Update(deletedRows));
+                    result = (result + this._gUARDIAN_STUDENTTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._uSERSTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.USERS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._uSERSTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._eMPLOYEE_CENTRETableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.EMPLOYEE_CENTRE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._eMPLOYEE_CENTRETableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._eXPENSE_PAYMENTTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.EXPENSE_PAYMENT.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._eXPENSE_PAYMENTTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._cLASSTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.CLASS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._cLASSTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._eMPLOYEETableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.EMPLOYEE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._eMPLOYEETableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -24809,19 +24801,27 @@ namespace SIMS.DSTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._eMPLOYEETableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.EMPLOYEE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._fEETableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.FEE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._eMPLOYEETableAdapter.Update(deletedRows));
+                    result = (result + this._fEETableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._cLASSTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.CLASS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._gUARDIANTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.GUARDIAN.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._cLASSTableAdapter.Update(deletedRows));
+                    result = (result + this._gUARDIANTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._pAYMENTTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.PAYMENT.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._pAYMENTTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -24950,11 +24950,6 @@ namespace SIMS.DSTableAdapters {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._sTUDENTTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._sTUDENTTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             if (((this._sTUDENT_CLASSTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._sTUDENT_CLASSTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
@@ -24972,6 +24967,11 @@ namespace SIMS.DSTableAdapters {
             }
             if (((this._uSERSTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._uSERSTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._sTUDENTTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._sTUDENTTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -25133,15 +25133,6 @@ namespace SIMS.DSTableAdapters {
                         adaptersWithAcceptChangesDuringUpdate.Add(this._sALARYTableAdapter.Adapter);
                     }
                 }
-                if ((this._sTUDENTTableAdapter != null)) {
-                    revertConnections.Add(this._sTUDENTTableAdapter, this._sTUDENTTableAdapter.Connection);
-                    this._sTUDENTTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(workConnection));
-                    this._sTUDENTTableAdapter.Transaction = ((global::Oracle.ManagedDataAccess.Client.OracleTransaction)(workTransaction));
-                    if (this._sTUDENTTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._sTUDENTTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._sTUDENTTableAdapter.Adapter);
-                    }
-                }
                 if ((this._sTUDENT_CLASSTableAdapter != null)) {
                     revertConnections.Add(this._sTUDENT_CLASSTableAdapter, this._sTUDENT_CLASSTableAdapter.Connection);
                     this._sTUDENT_CLASSTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(workConnection));
@@ -25176,6 +25167,15 @@ namespace SIMS.DSTableAdapters {
                     if (this._uSERSTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._uSERSTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._uSERSTableAdapter.Adapter);
+                    }
+                }
+                if ((this._sTUDENTTableAdapter != null)) {
+                    revertConnections.Add(this._sTUDENTTableAdapter, this._sTUDENTTableAdapter.Connection);
+                    this._sTUDENTTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(workConnection));
+                    this._sTUDENTTableAdapter.Transaction = ((global::Oracle.ManagedDataAccess.Client.OracleTransaction)(workTransaction));
+                    if (this._sTUDENTTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._sTUDENTTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._sTUDENTTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -25292,10 +25292,6 @@ namespace SIMS.DSTableAdapters {
                     this._sALARYTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._sALARYTableAdapter]));
                     this._sALARYTableAdapter.Transaction = null;
                 }
-                if ((this._sTUDENTTableAdapter != null)) {
-                    this._sTUDENTTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._sTUDENTTableAdapter]));
-                    this._sTUDENTTableAdapter.Transaction = null;
-                }
                 if ((this._sTUDENT_CLASSTableAdapter != null)) {
                     this._sTUDENT_CLASSTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._sTUDENT_CLASSTableAdapter]));
                     this._sTUDENT_CLASSTableAdapter.Transaction = null;
@@ -25311,6 +25307,10 @@ namespace SIMS.DSTableAdapters {
                 if ((this._uSERSTableAdapter != null)) {
                     this._uSERSTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._uSERSTableAdapter]));
                     this._uSERSTableAdapter.Transaction = null;
+                }
+                if ((this._sTUDENTTableAdapter != null)) {
+                    this._sTUDENTTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._sTUDENTTableAdapter]));
+                    this._sTUDENTTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

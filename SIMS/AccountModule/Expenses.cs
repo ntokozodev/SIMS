@@ -103,6 +103,7 @@ namespace SIMS.AccountModule
                 MetroMessageBox.Show(ParentForm, "", "Expense Details Captured Successful", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 metroTextBoxExpType.Clear();
                 metroTextBoxDescription.Clear();
+                this.Refresh();
             }
             else
                 MetroMessageBox.Show(ParentForm, " ", "Details not captured!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -111,6 +112,74 @@ namespace SIMS.AccountModule
         }
 
         private void Expenses_Load(object sender, EventArgs e)
-        {}
+        {// TODO: This line of code loads data into the 'dS.EXPENSE' table. You can move, or remove it, as needed.
+            this.eXPENSETableAdapter.Fill(this.dS.EXPENSE);
+        }
+
+        private void metroTileClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+        private void metroTileAddExpPayment_Click(object sender, EventArgs e)
+        {
+            db = new SimsOracle();
+            int rows = 0;
+
+            if (metroTextBoxExpAmount.Text == "")
+            {
+                MetroMessageBox.Show(ParentForm, "", "You need to enter expense amount", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
+            else if (metroComboBoxExpenseType.Text == "")
+            {
+                MetroMessageBox.Show(ParentForm, "", "Select one of the expense type options", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
+            else
+            {
+                try
+                {
+                    string query = "INSERT INTO " +
+                                        "expense_payment(EXPENSE_AMOUNT, EXPENSE_NOTE, payment_date, captured_date, expense_id)" +
+                                   "VALUES (" +
+                                        ":EXPENSE_AMOUNT, " +
+                                        ":EXPENSE_NOTE, " +
+                                        ":PAYMENT_DATE, " +
+                                        ":CAPTURED_DATE, " +
+                                        "(SELECT EXPENSE.EXPENSE_ID FROM EXPENSE WHERE EXPENSE.EXPENSE_TYPE = 'metroComboBoxExpenseType.Text') " +
+                                    ")";
+
+                    OracleCommand cmd = new OracleCommand(query, db.Connection);
+                    cmd.Parameters.Add("EXPENSE_AMOUNT", metroTextBoxExpAmount.Text);
+                    cmd.Parameters.Add("EXPENSE_NOTE", metroTextBoxExpNote.Text);
+                    cmd.Parameters.Add("PAYMENT_DATE", OracleDbType.Date).Value = DateTime.Today;
+                    cmd.Parameters.Add("CAPTURED_DATE", OracleDbType.Date).Value = DateTime.Now;
+
+                    rows = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Database error!\n" + ex.Message.ToString());
+                }
+                finally
+                {
+                    db.CloseDatabase();
+                }
+            }
+
+            if (rows > 0)
+            {
+                MetroMessageBox.Show(ParentForm, "", "Expense Payment Captured Successful", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                metroTextBoxExpAmount.Clear();
+                metroTextBoxExpNote.Clear();
+                metroDateTimeExpense.ResetText();
+                metroComboBoxExpenseType.ResetText();
+                this.Refresh();
+            }
+            else
+                MetroMessageBox.Show(ParentForm, " ", "Expense Payment not captured!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            db.CloseDatabase();
+        }
     }
 }
