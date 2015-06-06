@@ -46,9 +46,9 @@ namespace SIMS.LearnerModule
      *      This class displays student details in a DataGridView and the data can also be update within the DGV.
      * </summary>
      */
-    public partial class BrowseDetails : MetroForm
+    public partial class BrowseLearners : MetroForm
     {
-        public BrowseDetails()
+        public BrowseLearners()
         {
             InitializeComponent();
         }
@@ -89,7 +89,7 @@ namespace SIMS.LearnerModule
         {
             try
             {
-                TAStudent.FillByLearnerSearch(this.dS.STUDENT, metroTextBoxSearchLearner.Text);
+                TAStudent.FillByLearnerSearch(this.dS.STUDENT, metroTextBoxSearchLearner.Text.ToLower());
             }
             catch (Exception ex)
             {

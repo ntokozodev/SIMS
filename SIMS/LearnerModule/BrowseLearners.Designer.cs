@@ -1,6 +1,6 @@
 ﻿namespace SIMS.LearnerModule
 {
-    partial class BrowseDetails
+    partial class BrowseLearners
     {
         /// <summary>
         /// Required designer variable.

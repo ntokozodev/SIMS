@@ -116,9 +116,9 @@
             this.userLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.userLabel.Location = new System.Drawing.Point(23, 79);
             this.userLabel.Name = "userLabel";
-            this.userLabel.Size = new System.Drawing.Size(103, 25);
+            this.userLabel.Size = new System.Drawing.Size(95, 25);
             this.userLabel.TabIndex = 4;
-            this.userLabel.Text = "User Name:";
+            this.userLabel.Text = "Username:";
             this.userLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // mainLabel
@@ -157,7 +157,7 @@
             this.Controls.Add(this.loginTile);
             this.Name = "LoginForm";
             this.Style = MetroFramework.MetroColorStyle.Green;
-            this.Text = "Enter Login Details";
+            this.Text = "Enter login details";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.loginDS)).EndInit();

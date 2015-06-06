@@ -58,7 +58,7 @@ namespace SIMS
 
         #region "Properties Learner Module"
         private AddLearner learner = null;
-        private BrowseDetails details = null;
+        private BrowseLearners details = null;
         private AsignLearner asign = null;
         #endregion
 
@@ -178,7 +178,7 @@ namespace SIMS
             MainPanel.Controls.Clear();
             if (details != null)
                 details.Close();
-            details = new BrowseDetails();
+            details = new BrowseLearners();
             FormSetUp(details);
         }
 

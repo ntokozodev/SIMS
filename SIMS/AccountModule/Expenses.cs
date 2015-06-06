@@ -78,7 +78,7 @@ namespace SIMS.AccountModule
             {
                 try
                 {
-                    string sql = "INSERT INTO EDU_SCHEMA.EXPENSE " +
+                    string sql = "INSERT INTO SIMS.EXPENSE " +
                                         "(EXPENSE_TYPE, DESCRIPTION) " +
                                  "VALUES (:EXPENSE_TYPE, :DESCRIPTION)";
 
@@ -112,8 +112,17 @@ namespace SIMS.AccountModule
         }
 
         private void Expenses_Load(object sender, EventArgs e)
-        {// TODO: This line of code loads data into the 'dS.EXPENSE' table. You can move, or remove it, as needed.
-            this.eXPENSETableAdapter.Fill(this.dS.EXPENSE);
+        {
+            try
+            {
+                // TODO: This line of code loads data into the 'dS.EXPENSE' table. You can move, or remove it, as needed.
+                this.eXPENSETableAdapter.Fill(this.dS.EXPENSE);
+            }
+            catch (Exception ex)
+            {
+                MetroMessageBox.Show(ParentForm, "Database error!\n" + ex.Message.ToString());
+                this.Close();
+            }
         }
 
         private void metroTileClose_Click(object sender, EventArgs e)
@@ -139,15 +148,14 @@ namespace SIMS.AccountModule
             {
                 try
                 {
-                    string query = "INSERT INTO " +
-                                        "expense_payment(EXPENSE_AMOUNT, EXPENSE_NOTE, payment_date, captured_date, expense_id)" +
+                    string query = "INSERT INTO SIMS.EXPENSE_PAYMENT " +
+                                        "(EXPENSE_AMOUNT, EXPENSE_NOTE, payment_date, captured_date, expense_id)" +
                                    "VALUES (" +
                                         ":EXPENSE_AMOUNT, " +
                                         ":EXPENSE_NOTE, " +
                                         ":PAYMENT_DATE, " +
                                         ":CAPTURED_DATE, " +
-                                        "(SELECT EXPENSE.EXPENSE_ID FROM EXPENSE WHERE EXPENSE.EXPENSE_TYPE = 'metroComboBoxExpenseType.Text') " +
-                                    ")";
+                                        "(SELECT EXPENSE.EXPENSE_ID FROM EXPENSE WHERE EXPENSE.EXPENSE_TYPE = '" + metroComboBoxExpenseType.Text + "'))";
 
                     OracleCommand cmd = new OracleCommand(query, db.Connection);
                     cmd.Parameters.Add("EXPENSE_AMOUNT", metroTextBoxExpAmount.Text);
