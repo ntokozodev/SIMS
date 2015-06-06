@@ -90,7 +90,7 @@ namespace SIMS.AccountModule
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Couldn't connect to database!\n" + ex.Message.ToString());
+                    MessageBox.Show("Database error!\n" + ex.Message.ToString());
                 }
                 finally
                 {
