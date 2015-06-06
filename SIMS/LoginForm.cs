@@ -109,9 +109,5 @@ namespace SIMS
             // exit the program if user do not want to login
             Application.Exit();
         }
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-        }
     }
 }

@@ -159,7 +159,6 @@
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Enter login details";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.loginDS)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

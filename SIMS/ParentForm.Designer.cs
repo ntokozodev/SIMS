@@ -59,6 +59,7 @@
             this.expensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addExpenseTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewExpensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printExpensePaymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recordStudentPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recordStaffSalaryPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,7 +72,6 @@
             this.MainPanel = new MetroFramework.Controls.MetroPanel();
             this.mainPanelContextMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.clearAllControlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printExpensePaymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ParentButtonPanel.SuspendLayout();
             this.StudentMenu.SuspendLayout();
             this.AdminMenu.SuspendLayout();
@@ -444,6 +444,13 @@
             this.viewExpensesToolStripMenuItem.Text = "View Expenses";
             this.viewExpensesToolStripMenuItem.Click += new System.EventHandler(this.viewExpensesToolStripMenuItem_Click);
             // 
+            // printExpensePaymentsToolStripMenuItem
+            // 
+            this.printExpensePaymentsToolStripMenuItem.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.printExpensePaymentsToolStripMenuItem.Name = "printExpensePaymentsToolStripMenuItem";
+            this.printExpensePaymentsToolStripMenuItem.Size = new System.Drawing.Size(263, 26);
+            this.printExpensePaymentsToolStripMenuItem.Text = "Print Expense Payments";
+            // 
             // paymentsToolStripMenuItem
             // 
             this.paymentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -461,7 +468,7 @@
             this.recordStudentPaymentToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recordStudentPaymentToolStripMenuItem.Name = "recordStudentPaymentToolStripMenuItem";
             this.recordStudentPaymentToolStripMenuItem.Size = new System.Drawing.Size(297, 26);
-            this.recordStudentPaymentToolStripMenuItem.Text = "Record Student Payment";
+            this.recordStudentPaymentToolStripMenuItem.Text = "Student Fees";
             this.recordStudentPaymentToolStripMenuItem.Click += new System.EventHandler(this.recordStudentPaymentToolStripMenuItem_Click);
             // 
             // recordStaffSalaryPaymentToolStripMenuItem
@@ -560,13 +567,6 @@
             this.clearAllControlsToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.clearAllControlsToolStripMenuItem.Text = "Clear All Controls";
             this.clearAllControlsToolStripMenuItem.Click += new System.EventHandler(this.clearAllControlsToolStripMenuItem_Click);
-            // 
-            // printExpensePaymentsToolStripMenuItem
-            // 
-            this.printExpensePaymentsToolStripMenuItem.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.printExpensePaymentsToolStripMenuItem.Name = "printExpensePaymentsToolStripMenuItem";
-            this.printExpensePaymentsToolStripMenuItem.Size = new System.Drawing.Size(263, 26);
-            this.printExpensePaymentsToolStripMenuItem.Text = "Print Expense Payments";
             // 
             // ParentForm
             // 

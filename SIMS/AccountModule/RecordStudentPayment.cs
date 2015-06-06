@@ -27,5 +27,17 @@ namespace SIMS.AccountModule
         {
             InitializeComponent();
         }
+
+        private void metroTileClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void RecordStudentPayment_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dS.FEE' table. You can move, or remove it, as needed.
+            this.fEETableAdapter.Fill(this.dS.FEE);
+
+        }
     }
 }
