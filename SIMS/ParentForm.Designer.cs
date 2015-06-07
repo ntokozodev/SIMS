@@ -468,7 +468,7 @@
             this.recordStudentPaymentToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recordStudentPaymentToolStripMenuItem.Name = "recordStudentPaymentToolStripMenuItem";
             this.recordStudentPaymentToolStripMenuItem.Size = new System.Drawing.Size(297, 26);
-            this.recordStudentPaymentToolStripMenuItem.Text = "Student Fees";
+            this.recordStudentPaymentToolStripMenuItem.Text = "Student Fee Payment";
             this.recordStudentPaymentToolStripMenuItem.Click += new System.EventHandler(this.recordStudentPaymentToolStripMenuItem_Click);
             // 
             // recordStaffSalaryPaymentToolStripMenuItem
