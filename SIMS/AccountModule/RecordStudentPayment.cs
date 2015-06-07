@@ -36,7 +36,9 @@ namespace SIMS.AccountModule
         }
 
         private void RecordStudentPayment_Load(object sender, EventArgs e)
-        { }
+        {// TODO: This line of code loads data into the 'dS.FEE' table. You can move, or remove it, as needed.
+            this.fEETableAdapter.Fill(this.dS.FEE);
+ }
 
         private void metroTileAddPay_Click(object sender, EventArgs e)
         {
@@ -57,8 +59,8 @@ namespace SIMS.AccountModule
                 {
                     string sql = "INSERT INTO STUDENT_PAYMENT " +
                                         "(STUDENT_ID, FEE_ID, FEE_BALANCE, PAYMENT_AMOUNT, PAYMENT_DATE, PAYMENT_TYPE)" +
-                                 "VALUES" +
-                                        "((SELECT STUDENT_ID FROM SIMS.STUDENT WHERE ADMISSION_NO = '"+metroTextBoxAdminNo.Text+"'),"+
+                                 "VALUES (" +
+                                         "(SELECT STUDENT_CITIZEN_ID FROM SIMS.STUDENT WHERE ADMISSION_NO = '"+metroTextBoxAdminNo.Text+"'),"+
                                          "(SELECT FEE_ID FROM SIMS.FEE WHERE FEE_CATEGORY = '"+metroComboBoxCategory.Text+"')," +
                                          "(SELECT FEE_AMOUNT FROM SIMS.FEE WHERE FEE_CATEGORY = '" + metroComboBoxCategory.Text + "') - '"+ metroTextBoxPayAmount.Text +"'," +
                                          ":PAYMENT_AMOUNT, :PAYMENT_DATE, :PAYMENT_TYPE" +

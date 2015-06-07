@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.metroComboBoxCategory = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroTileClear = new MetroFramework.Controls.MetroTile();
             this.metroTextBoxPayAmount = new MetroFramework.Controls.MetroTextBox();
@@ -41,8 +43,12 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTileClose = new MetroFramework.Controls.MetroTile();
-            this.metroComboBoxCategory = new MetroFramework.Controls.MetroComboBox();
+            this.dS = new SIMS.DS();
+            this.fEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fEETableAdapter = new SIMS.DSTableAdapters.FEETableAdapter();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fEEBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -65,6 +71,18 @@
             this.groupBox1.Size = new System.Drawing.Size(476, 420);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // metroComboBoxCategory
+            // 
+            this.metroComboBoxCategory.DataSource = this.fEEBindingSource;
+            this.metroComboBoxCategory.DisplayMember = "FEE_CATEGORY";
+            this.metroComboBoxCategory.FormattingEnabled = true;
+            this.metroComboBoxCategory.ItemHeight = 23;
+            this.metroComboBoxCategory.Location = new System.Drawing.Point(241, 166);
+            this.metroComboBoxCategory.Name = "metroComboBoxCategory";
+            this.metroComboBoxCategory.Size = new System.Drawing.Size(143, 29);
+            this.metroComboBoxCategory.TabIndex = 15;
+            this.metroComboBoxCategory.UseSelectable = true;
             // 
             // metroLabel4
             // 
@@ -228,15 +246,19 @@
             this.metroTileClose.UseStyleColors = true;
             this.metroTileClose.Click += new System.EventHandler(this.metroTileClose_Click);
             // 
-            // metroComboBoxCategory
+            // dS
             // 
-            this.metroComboBoxCategory.FormattingEnabled = true;
-            this.metroComboBoxCategory.ItemHeight = 23;
-            this.metroComboBoxCategory.Location = new System.Drawing.Point(241, 166);
-            this.metroComboBoxCategory.Name = "metroComboBoxCategory";
-            this.metroComboBoxCategory.Size = new System.Drawing.Size(143, 29);
-            this.metroComboBoxCategory.TabIndex = 15;
-            this.metroComboBoxCategory.UseSelectable = true;
+            this.dS.DataSetName = "DS";
+            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // fEEBindingSource
+            // 
+            this.fEEBindingSource.DataMember = "FEE";
+            this.fEEBindingSource.DataSource = this.dS;
+            // 
+            // fEETableAdapter
+            // 
+            this.fEETableAdapter.ClearBeforeFill = true;
             // 
             // RecordStudentPayment
             // 
@@ -253,6 +275,8 @@
             this.Load += new System.EventHandler(this.RecordStudentPayment_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fEEBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -273,5 +297,8 @@
         private MetroFramework.Controls.MetroTile metroTileClear;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroComboBox metroComboBoxCategory;
+        private DS dS;
+        private System.Windows.Forms.BindingSource fEEBindingSource;
+        private DSTableAdapters.FEETableAdapter fEETableAdapter;
     }
 }
