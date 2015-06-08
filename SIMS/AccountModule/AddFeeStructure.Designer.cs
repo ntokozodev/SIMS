@@ -36,12 +36,9 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroComboBoxOccurences = new MetroFramework.Controls.MetroComboBox();
             this.metroTileClose = new MetroFramework.Controls.MetroTile();
-            this.TAFee = new SIMS.DSTableAdapters.STUDENT_FEETableAdapter();
-            this.ds1 = new SIMS.DS();
             this.metroTextBoxFeeName = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBoxFeeAmount = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ds1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -165,15 +162,6 @@
             this.metroTileClose.UseStyleColors = true;
             this.metroTileClose.Click += new System.EventHandler(this.metroTileClose_Click);
             // 
-            // TAFee
-            // 
-            this.TAFee.ClearBeforeFill = true;
-            // 
-            // ds1
-            // 
-            this.ds1.DataSetName = "DS";
-            this.ds1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // metroTextBoxFeeName
             // 
             this.metroTextBoxFeeName.FontSize = MetroFramework.MetroTextBoxSize.Medium;
@@ -222,7 +210,6 @@
             this.Text = "Add Fee Structure";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ds1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -237,8 +224,6 @@
         private MetroFramework.Controls.MetroTile metroTileClear;
         private MetroFramework.Controls.MetroTile metroTileAddFeeStructure;
         private MetroFramework.Controls.MetroTile metroTileClose;
-        private DSTableAdapters.STUDENT_FEETableAdapter TAFee;
-        private DS ds1;
         private MetroFramework.Controls.MetroTextBox metroTextBoxFeeAmount;
         private MetroFramework.Controls.MetroTextBox metroTextBoxFeeName;
     }

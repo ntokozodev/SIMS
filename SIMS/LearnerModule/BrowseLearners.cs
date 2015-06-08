@@ -125,5 +125,17 @@ namespace SIMS.LearnerModule
             else
                 MessageBox.Show("Please select one of the filter options first");
         }
+
+        private void metroTileSearchByAdminNo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //TAStudent.SearchByAdmissionNo()
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database error:\n" + ex.Message.ToString());
+            }
+        }
     }
 }

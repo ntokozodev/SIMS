@@ -42,7 +42,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroGridViewLearner = new MetroFramework.Controls.MetroGrid();
-            this.aDMISIONNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.metroTileUpdateLearner = new MetroFramework.Controls.MetroTile();
+            this.metroTileSearchLearner = new MetroFramework.Controls.MetroTile();
+            this.metroTextBoxSearchLearner = new MetroFramework.Controls.MetroTextBox();
+            this.metroTileClose = new MetroFramework.Controls.MetroTile();
+            this.metroTilePrint = new MetroFramework.Controls.MetroTile();
+            this.metroComboBoxFilter = new MetroFramework.Controls.MetroComboBox();
+            this.metroTileFilter = new MetroFramework.Controls.MetroTile();
+            this.sTUDENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dS = new SIMS.DS();
+            this.TAStudent = new SIMS.DSTableAdapters.STUDENTTableAdapter();
+            this.AdmissionNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fIRSTNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lASTNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sTUDENTGENDERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,16 +61,6 @@
             this.sTUDENTCITIZENIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SUBURB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cENTREDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sTUDENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dS = new SIMS.DS();
-            this.metroTileUpdateLearner = new MetroFramework.Controls.MetroTile();
-            this.metroTileSearchLearner = new MetroFramework.Controls.MetroTile();
-            this.metroTextBoxSearchLearner = new MetroFramework.Controls.MetroTextBox();
-            this.metroTileClose = new MetroFramework.Controls.MetroTile();
-            this.metroTilePrint = new MetroFramework.Controls.MetroTile();
-            this.metroComboBoxFilter = new MetroFramework.Controls.MetroComboBox();
-            this.metroTileFilter = new MetroFramework.Controls.MetroTile();
-            this.TAStudent = new SIMS.DSTableAdapters.STUDENTTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridViewLearner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTUDENTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
@@ -88,7 +88,7 @@
             this.metroGridViewLearner.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.metroGridViewLearner.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.metroGridViewLearner.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.aDMISIONNODataGridViewTextBoxColumn,
+            this.AdmissionNo,
             this.fIRSTNAMEDataGridViewTextBoxColumn,
             this.lASTNAMEDataGridViewTextBoxColumn,
             this.sTUDENTGENDERDataGridViewTextBoxColumn,
@@ -127,13 +127,147 @@
             this.metroGridViewLearner.TabIndex = 0;
             this.metroGridViewLearner.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // aDMISIONNODataGridViewTextBoxColumn
+            // metroTileUpdateLearner
             // 
-            this.aDMISIONNODataGridViewTextBoxColumn.DataPropertyName = "ADMISION_NO";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aDMISIONNODataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.aDMISIONNODataGridViewTextBoxColumn.HeaderText = "Admission No";
-            this.aDMISIONNODataGridViewTextBoxColumn.Name = "aDMISIONNODataGridViewTextBoxColumn";
+            this.metroTileUpdateLearner.ActiveControl = null;
+            this.metroTileUpdateLearner.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.metroTileUpdateLearner.Location = new System.Drawing.Point(664, 549);
+            this.metroTileUpdateLearner.Name = "metroTileUpdateLearner";
+            this.metroTileUpdateLearner.Size = new System.Drawing.Size(158, 33);
+            this.metroTileUpdateLearner.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroTileUpdateLearner.TabIndex = 1;
+            this.metroTileUpdateLearner.Text = "Save Changes";
+            this.metroTileUpdateLearner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTileUpdateLearner.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroTileUpdateLearner.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.metroTileUpdateLearner.UseSelectable = true;
+            this.metroTileUpdateLearner.UseStyleColors = true;
+            this.metroTileUpdateLearner.Click += new System.EventHandler(this.metroTileUpdateLearner_Click);
+            // 
+            // metroTileSearchLearner
+            // 
+            this.metroTileSearchLearner.ActiveControl = null;
+            this.metroTileSearchLearner.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.metroTileSearchLearner.Location = new System.Drawing.Point(71, 63);
+            this.metroTileSearchLearner.Name = "metroTileSearchLearner";
+            this.metroTileSearchLearner.Size = new System.Drawing.Size(136, 31);
+            this.metroTileSearchLearner.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroTileSearchLearner.TabIndex = 2;
+            this.metroTileSearchLearner.Text = "Search by Surname";
+            this.metroTileSearchLearner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTileSearchLearner.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.metroTileSearchLearner.UseSelectable = true;
+            this.metroTileSearchLearner.UseStyleColors = true;
+            this.metroTileSearchLearner.Click += new System.EventHandler(this.metroTileSearchLearner_Click);
+            // 
+            // metroTextBoxSearchLearner
+            // 
+            this.metroTextBoxSearchLearner.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.metroTextBoxSearchLearner.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.metroTextBoxSearchLearner.Lines = new string[0];
+            this.metroTextBoxSearchLearner.Location = new System.Drawing.Point(213, 63);
+            this.metroTextBoxSearchLearner.MaxLength = 32767;
+            this.metroTextBoxSearchLearner.Name = "metroTextBoxSearchLearner";
+            this.metroTextBoxSearchLearner.PasswordChar = '\0';
+            this.metroTextBoxSearchLearner.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBoxSearchLearner.SelectedText = "";
+            this.metroTextBoxSearchLearner.Size = new System.Drawing.Size(169, 31);
+            this.metroTextBoxSearchLearner.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroTextBoxSearchLearner.TabIndex = 3;
+            this.metroTextBoxSearchLearner.UseSelectable = true;
+            this.metroTextBoxSearchLearner.UseStyleColors = true;
+            // 
+            // metroTileClose
+            // 
+            this.metroTileClose.ActiveControl = null;
+            this.metroTileClose.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.metroTileClose.Location = new System.Drawing.Point(852, 549);
+            this.metroTileClose.Name = "metroTileClose";
+            this.metroTileClose.Size = new System.Drawing.Size(158, 33);
+            this.metroTileClose.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroTileClose.TabIndex = 4;
+            this.metroTileClose.Text = "Close";
+            this.metroTileClose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTileClose.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroTileClose.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.metroTileClose.UseSelectable = true;
+            this.metroTileClose.UseStyleColors = true;
+            this.metroTileClose.Click += new System.EventHandler(this.metroTileClose_Click);
+            // 
+            // metroTilePrint
+            // 
+            this.metroTilePrint.ActiveControl = null;
+            this.metroTilePrint.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.metroTilePrint.Location = new System.Drawing.Point(477, 549);
+            this.metroTilePrint.Name = "metroTilePrint";
+            this.metroTilePrint.Size = new System.Drawing.Size(158, 32);
+            this.metroTilePrint.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroTilePrint.TabIndex = 5;
+            this.metroTilePrint.Text = "Print";
+            this.metroTilePrint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTilePrint.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroTilePrint.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.metroTilePrint.UseSelectable = true;
+            this.metroTilePrint.UseStyleColors = true;
+            // 
+            // metroComboBoxFilter
+            // 
+            this.metroComboBoxFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.metroComboBoxFilter.FormattingEnabled = true;
+            this.metroComboBoxFilter.ItemHeight = 23;
+            this.metroComboBoxFilter.Items.AddRange(new object[] {
+            "Admission No",
+            "Admitted Date",
+            "Last Name"});
+            this.metroComboBoxFilter.Location = new System.Drawing.Point(786, 63);
+            this.metroComboBoxFilter.Name = "metroComboBoxFilter";
+            this.metroComboBoxFilter.Size = new System.Drawing.Size(123, 29);
+            this.metroComboBoxFilter.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroComboBoxFilter.TabIndex = 7;
+            this.metroComboBoxFilter.UseSelectable = true;
+            this.metroComboBoxFilter.UseStyleColors = true;
+            // 
+            // metroTileFilter
+            // 
+            this.metroTileFilter.ActiveControl = null;
+            this.metroTileFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.metroTileFilter.Location = new System.Drawing.Point(920, 63);
+            this.metroTileFilter.Name = "metroTileFilter";
+            this.metroTileFilter.Size = new System.Drawing.Size(90, 29);
+            this.metroTileFilter.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroTileFilter.TabIndex = 8;
+            this.metroTileFilter.Text = "Filter";
+            this.metroTileFilter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTileFilter.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroTileFilter.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.metroTileFilter.UseSelectable = true;
+            this.metroTileFilter.UseStyleColors = true;
+            this.metroTileFilter.Click += new System.EventHandler(this.metroTileFilter_Click);
+            // 
+            // sTUDENTBindingSource
+            // 
+            this.sTUDENTBindingSource.DataMember = "STUDENT";
+            this.sTUDENTBindingSource.DataSource = this.dS;
+            this.sTUDENTBindingSource.Filter = "";
+            // 
+            // dS
+            // 
+            this.dS.DataSetName = "DS";
+            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // TAStudent
+            // 
+            this.TAStudent.ClearBeforeFill = true;
+            // 
+            // AdmissionNo
+            // 
+            this.AdmissionNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.AdmissionNo.DataPropertyName = "ADMISSION_NO";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AdmissionNo.DefaultCellStyle = dataGridViewCellStyle2;
+            this.AdmissionNo.HeaderText = "Admission No";
+            this.AdmissionNo.Name = "AdmissionNo";
+            this.AdmissionNo.Width = 93;
             // 
             // fIRSTNAMEDataGridViewTextBoxColumn
             // 
@@ -199,139 +333,7 @@
             this.cENTREDataGridViewTextBoxColumn.HeaderText = "Centre";
             this.cENTREDataGridViewTextBoxColumn.Name = "cENTREDataGridViewTextBoxColumn";
             // 
-            // sTUDENTBindingSource
-            // 
-            this.sTUDENTBindingSource.DataMember = "STUDENT";
-            this.sTUDENTBindingSource.DataSource = this.dS;
-            this.sTUDENTBindingSource.Filter = "";
-            // 
-            // dS
-            // 
-            this.dS.DataSetName = "DS";
-            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // metroTileUpdateLearner
-            // 
-            this.metroTileUpdateLearner.ActiveControl = null;
-            this.metroTileUpdateLearner.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroTileUpdateLearner.Location = new System.Drawing.Point(664, 549);
-            this.metroTileUpdateLearner.Name = "metroTileUpdateLearner";
-            this.metroTileUpdateLearner.Size = new System.Drawing.Size(158, 33);
-            this.metroTileUpdateLearner.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroTileUpdateLearner.TabIndex = 1;
-            this.metroTileUpdateLearner.Text = "Save Changes";
-            this.metroTileUpdateLearner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTileUpdateLearner.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.metroTileUpdateLearner.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.metroTileUpdateLearner.UseSelectable = true;
-            this.metroTileUpdateLearner.UseStyleColors = true;
-            this.metroTileUpdateLearner.Click += new System.EventHandler(this.metroTileUpdateLearner_Click);
-            // 
-            // metroTileSearchLearner
-            // 
-            this.metroTileSearchLearner.ActiveControl = null;
-            this.metroTileSearchLearner.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroTileSearchLearner.Location = new System.Drawing.Point(71, 63);
-            this.metroTileSearchLearner.Name = "metroTileSearchLearner";
-            this.metroTileSearchLearner.Size = new System.Drawing.Size(191, 31);
-            this.metroTileSearchLearner.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroTileSearchLearner.TabIndex = 2;
-            this.metroTileSearchLearner.Text = "Search Learner by Surname";
-            this.metroTileSearchLearner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTileSearchLearner.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.metroTileSearchLearner.UseSelectable = true;
-            this.metroTileSearchLearner.UseStyleColors = true;
-            this.metroTileSearchLearner.Click += new System.EventHandler(this.metroTileSearchLearner_Click);
-            // 
-            // metroTextBoxSearchLearner
-            // 
-            this.metroTextBoxSearchLearner.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroTextBoxSearchLearner.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.metroTextBoxSearchLearner.Lines = new string[0];
-            this.metroTextBoxSearchLearner.Location = new System.Drawing.Point(281, 63);
-            this.metroTextBoxSearchLearner.MaxLength = 32767;
-            this.metroTextBoxSearchLearner.Name = "metroTextBoxSearchLearner";
-            this.metroTextBoxSearchLearner.PasswordChar = '\0';
-            this.metroTextBoxSearchLearner.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBoxSearchLearner.SelectedText = "";
-            this.metroTextBoxSearchLearner.Size = new System.Drawing.Size(191, 31);
-            this.metroTextBoxSearchLearner.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroTextBoxSearchLearner.TabIndex = 3;
-            this.metroTextBoxSearchLearner.UseSelectable = true;
-            this.metroTextBoxSearchLearner.UseStyleColors = true;
-            // 
-            // metroTileClose
-            // 
-            this.metroTileClose.ActiveControl = null;
-            this.metroTileClose.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroTileClose.Location = new System.Drawing.Point(852, 549);
-            this.metroTileClose.Name = "metroTileClose";
-            this.metroTileClose.Size = new System.Drawing.Size(158, 33);
-            this.metroTileClose.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroTileClose.TabIndex = 4;
-            this.metroTileClose.Text = "Close";
-            this.metroTileClose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTileClose.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.metroTileClose.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.metroTileClose.UseSelectable = true;
-            this.metroTileClose.UseStyleColors = true;
-            this.metroTileClose.Click += new System.EventHandler(this.metroTileClose_Click);
-            // 
-            // metroTilePrint
-            // 
-            this.metroTilePrint.ActiveControl = null;
-            this.metroTilePrint.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroTilePrint.Location = new System.Drawing.Point(477, 549);
-            this.metroTilePrint.Name = "metroTilePrint";
-            this.metroTilePrint.Size = new System.Drawing.Size(158, 32);
-            this.metroTilePrint.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroTilePrint.TabIndex = 5;
-            this.metroTilePrint.Text = "Print";
-            this.metroTilePrint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTilePrint.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.metroTilePrint.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.metroTilePrint.UseSelectable = true;
-            this.metroTilePrint.UseStyleColors = true;
-            // 
-            // metroComboBoxFilter
-            // 
-            this.metroComboBoxFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroComboBoxFilter.FormattingEnabled = true;
-            this.metroComboBoxFilter.ItemHeight = 23;
-            this.metroComboBoxFilter.Items.AddRange(new object[] {
-            "Admission No",
-            "Admitted Date",
-            "Last Name"});
-            this.metroComboBoxFilter.Location = new System.Drawing.Point(887, 63);
-            this.metroComboBoxFilter.Name = "metroComboBoxFilter";
-            this.metroComboBoxFilter.Size = new System.Drawing.Size(123, 29);
-            this.metroComboBoxFilter.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroComboBoxFilter.TabIndex = 7;
-            this.metroComboBoxFilter.UseSelectable = true;
-            this.metroComboBoxFilter.UseStyleColors = true;
-            // 
-            // metroTileFilter
-            // 
-            this.metroTileFilter.ActiveControl = null;
-            this.metroTileFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroTileFilter.Location = new System.Drawing.Point(758, 63);
-            this.metroTileFilter.Name = "metroTileFilter";
-            this.metroTileFilter.Size = new System.Drawing.Size(123, 29);
-            this.metroTileFilter.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroTileFilter.TabIndex = 8;
-            this.metroTileFilter.Text = "Filter By:";
-            this.metroTileFilter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTileFilter.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.metroTileFilter.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.metroTileFilter.UseSelectable = true;
-            this.metroTileFilter.UseStyleColors = true;
-            this.metroTileFilter.Click += new System.EventHandler(this.metroTileFilter_Click);
-            // 
-            // TAStudent
-            // 
-            this.TAStudent.ClearBeforeFill = true;
-            // 
-            // BrowseDetails
+            // BrowseLearners
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -346,7 +348,7 @@
             this.Controls.Add(this.metroGridViewLearner);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "BrowseDetails";
+            this.Name = "BrowseLearners";
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Learner Details";
             this.Load += new System.EventHandler(this.BrowseDetails_Load);
@@ -367,6 +369,11 @@
         private MetroFramework.Controls.MetroTile metroTileSearchLearner;
         private MetroFramework.Controls.MetroTextBox metroTextBoxSearchLearner;
         private System.Windows.Forms.DataGridViewTextBoxColumn aDMISIONNODataGridViewTextBoxColumn;
+        private MetroFramework.Controls.MetroTile metroTileClose;
+        private MetroFramework.Controls.MetroTile metroTilePrint;
+        private MetroFramework.Controls.MetroComboBox metroComboBoxFilter;
+        private MetroFramework.Controls.MetroTile metroTileFilter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdmissionNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn fIRSTNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lASTNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sTUDENTGENDERDataGridViewTextBoxColumn;
@@ -375,10 +382,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sTUDENTCITIZENIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn SUBURB;
         private System.Windows.Forms.DataGridViewTextBoxColumn cENTREDataGridViewTextBoxColumn;
-        private MetroFramework.Controls.MetroTile metroTileClose;
-        private MetroFramework.Controls.MetroTile metroTilePrint;
-        private MetroFramework.Controls.MetroComboBox metroComboBoxFilter;
-        private MetroFramework.Controls.MetroTile metroTileFilter;
 
     }
 }

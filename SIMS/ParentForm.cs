@@ -69,7 +69,7 @@ namespace SIMS
         private RecordStaffSalaryPayment salaryPay = null;
         private BrowseStaffPayments staffPay = null;
         private AddFeeStructure feeStruct = null;
-        private BrowseDueFees dueFee = null;
+        private DueFees dueFee = null;
         private StudentProfiles studentPro = null;
         private StaffHours staffHr = null;
         #endregion
@@ -253,7 +253,7 @@ namespace SIMS
             MainPanel.Controls.Clear();
             if (dueFee != null)
                 dueFee.Close();
-            dueFee = new BrowseDueFees();
+            dueFee = new DueFees();
             FormSetUp(dueFee);
         }
 

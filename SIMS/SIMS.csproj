@@ -97,11 +97,11 @@
     <Compile Include="AccountModule\AddFeeStructure.Designer.cs">
       <DependentUpon>AddFeeStructure.cs</DependentUpon>
     </Compile>
-    <Compile Include="AccountModule\BrowseDueFees.cs">
+    <Compile Include="AccountModule\DueFees.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccountModule\BrowseDueFees.Designer.cs">
-      <DependentUpon>BrowseDueFees.cs</DependentUpon>
+    <Compile Include="AccountModule\DueFees.Designer.cs">
+      <DependentUpon>DueFees.cs</DependentUpon>
     </Compile>
     <Compile Include="AccountModule\BrowseStaffPayments.cs">
       <SubType>Form</SubType>
@@ -142,6 +142,10 @@
     <Compile Include="CentreModule\Address.cs" />
     <Compile Include="CentreModule\Centre.cs" />
     <Compile Include="CentreModule\ClassRoom.cs" />
+    <Compile Include="DS.cs">
+      <DependentUpon>DS.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -248,8 +252,8 @@
     <EmbeddedResource Include="AccountModule\AddFeeStructure.resx">
       <DependentUpon>AddFeeStructure.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AccountModule\BrowseDueFees.resx">
-      <DependentUpon>BrowseDueFees.cs</DependentUpon>
+    <EmbeddedResource Include="AccountModule\DueFees.resx">
+      <DependentUpon>DueFees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AccountModule\BrowseStaffPayments.resx">
       <DependentUpon>BrowseStaffPayments.cs</DependentUpon>

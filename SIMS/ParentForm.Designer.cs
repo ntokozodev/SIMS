@@ -501,7 +501,7 @@
             // 
             this.addFeeStructureToolStripMenuItem.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.addFeeStructureToolStripMenuItem.Name = "addFeeStructureToolStripMenuItem";
-            this.addFeeStructureToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
+            this.addFeeStructureToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
             this.addFeeStructureToolStripMenuItem.Text = "Add Fee Structure";
             this.addFeeStructureToolStripMenuItem.Click += new System.EventHandler(this.addFeeStructureToolStripMenuItem_Click);
             // 
@@ -509,8 +509,8 @@
             // 
             this.browseDueFeesToolStripMenuItem.BackColor = System.Drawing.Color.SkyBlue;
             this.browseDueFeesToolStripMenuItem.Name = "browseDueFeesToolStripMenuItem";
-            this.browseDueFeesToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
-            this.browseDueFeesToolStripMenuItem.Text = "Browse Due Fees";
+            this.browseDueFeesToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
+            this.browseDueFeesToolStripMenuItem.Text = "Browse Transactions";
             this.browseDueFeesToolStripMenuItem.Click += new System.EventHandler(this.browseDueFeesToolStripMenuItem_Click);
             // 
             // studentProfilesToolStripMenuItem

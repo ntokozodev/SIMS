@@ -64,7 +64,6 @@ D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccessControl.Login.resou
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccessControl.Logout.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.Expenses.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.AddFeeStructure.resources
-D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.BrowseDueFees.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.BrowseStaffPayments.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.RecordStaffSalaryPayment.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.RecordStudentPayment.resources
@@ -85,3 +84,4 @@ D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.ParentForm.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.Properties.Resources.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.csproj.GenerateResource.Cache
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.LearnerModule.BrowseLearners.resources
+D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.DueFees.resources

@@ -1,6 +1,6 @@
 ﻿namespace SIMS.AccountModule
 {
-    partial class BrowseDueFees
+    partial class DueFees
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // BrowseDueFees
+            // DueFees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(405, 375);
-            this.Name = "BrowseDueFees";
+            this.ClientSize = new System.Drawing.Size(966, 576);
+            this.Name = "DueFees";
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Due Fees";
             this.ResumeLayout(false);

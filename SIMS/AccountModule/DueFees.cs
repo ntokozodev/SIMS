@@ -21,9 +21,9 @@ using SIMS.LearnerModule;
 
 namespace SIMS.AccountModule
 {
-    public partial class BrowseDueFees : MetroForm
+    public partial class DueFees : MetroForm
     {
-        public BrowseDueFees()
+        public DueFees()
         {
             InitializeComponent();
         }
