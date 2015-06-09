@@ -27,5 +27,29 @@ namespace SIMS.EmployeeModule
         {
             InitializeComponent();
         }
+
+        private void ChangeStaffGrade_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dS.GRADE' table. You can move, or remove it, as needed.
+            this.TAGrade.Fill(this.dS.GRADE);
+
+        }
+
+        private void metroTileClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void metroTileUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                TAGrade.Update(this.dS.GRADE);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error!\n" + ex.Message.ToString());
+            }
+        }
     }
 }

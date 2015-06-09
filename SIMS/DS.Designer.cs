@@ -14449,7 +14449,8 @@ namespace SIMS.DSTableAdapters {
             this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT GRADE_ID, DESCRIPTION, GRADE_NAME, GRADE_RATE FROM SIMS.GRADE";
+            this._commandCollection[0].CommandText = "SELECT GRADE_ID, DESCRIPTION, GRADE_NAME, GRADE_RATE \r\nFROM SIMS.GRADE\r\nORDER BY " +
+                "GRADE_NAME DESC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

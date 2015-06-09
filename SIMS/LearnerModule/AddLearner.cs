@@ -81,5 +81,12 @@ namespace SIMS.LearnerModule
             ComboBoxCentre.ResetText();
             ComboBoxGender.ResetText();
         }
+
+        private void AddLearner_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dS.CENTRE' table. You can move, or remove it, as needed.
+            this.cENTRETableAdapter.Fill(this.dS.CENTRE);
+
+        }
     }
 }

@@ -56,7 +56,7 @@ namespace SIMS.AccountModule
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Database error!\n" + ex.Message.ToString());
+                MessageBox.Show("Error!\n" + ex.Message.ToString());
             }
             
         }
@@ -69,7 +69,7 @@ namespace SIMS.AccountModule
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Database error!\n" + ex.Message.ToString());
+                MessageBox.Show("Error!\n" + ex.Message.ToString());
             }
         }
     }

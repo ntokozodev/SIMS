@@ -66,7 +66,7 @@
             this.groupBox1.Controls.Add(this.metroLabel3);
             this.groupBox1.Controls.Add(this.metroLabel2);
             this.groupBox1.Controls.Add(this.metroLabel1);
-            this.groupBox1.Location = new System.Drawing.Point(237, 63);
+            this.groupBox1.Location = new System.Drawing.Point(256, 63);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(476, 420);
             this.groupBox1.TabIndex = 0;
@@ -232,7 +232,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.Location = new System.Drawing.Point(65, 16);
+            this.metroLabel1.Location = new System.Drawing.Point(75, 16);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(129, 25);
             this.metroLabel1.TabIndex = 0;
@@ -243,7 +243,7 @@
             // 
             this.metroTileClose.ActiveControl = null;
             this.metroTileClose.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroTileClose.Location = new System.Drawing.Point(563, 496);
+            this.metroTileClose.Location = new System.Drawing.Point(582, 496);
             this.metroTileClose.Name = "metroTileClose";
             this.metroTileClose.Size = new System.Drawing.Size(150, 35);
             this.metroTileClose.Style = MetroFramework.MetroColorStyle.Green;
@@ -264,7 +264,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(937, 554);
+            this.ClientSize = new System.Drawing.Size(975, 554);
             this.Controls.Add(this.metroTileClose);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;

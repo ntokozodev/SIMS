@@ -179,7 +179,7 @@ namespace SIMS.LearnerModule
             try
             {
                 string query = "INSERT INTO SIMS.STUDENT " +
-                                      "(ADMISION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER," +
+                                      "(ADMISSION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER," +
                                       "PHONE_NUMBER, ADMITTED_DATE, STUDENT_CITIZEN_ID, ADDRESS_LINE1," +
                                       "SUBURB, CITY, ZIP_CODE, EMAIL_ADDRESS, CENTRE) " +
                                "VALUES (:ADMISION_NO, :FIRST_NAME, :LAST_NAME, :STUDENT_GENDER," +

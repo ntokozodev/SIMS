@@ -572,8 +572,10 @@ ORDER BY EXPENSE_PAYMENT_ID</CommandText>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT GRADE_ID, DESCRIPTION, GRADE_NAME, GRADE_RATE FROM SIMS.GRADE</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT GRADE_ID, DESCRIPTION, GRADE_NAME, GRADE_RATE 
+FROM SIMS.GRADE
+ORDER BY GRADE_NAME DESC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>

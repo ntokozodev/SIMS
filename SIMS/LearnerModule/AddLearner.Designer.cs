@@ -30,7 +30,9 @@ namespace SIMS.LearnerModule
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.detailsGroupBox = new System.Windows.Forms.GroupBox();
+            this.DateAdmission = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
@@ -62,10 +64,14 @@ namespace SIMS.LearnerModule
             this.addDetailsTile = new MetroFramework.Controls.MetroTile();
             this.cancelTile = new MetroFramework.Controls.MetroTile();
             this.clearTile = new MetroFramework.Controls.MetroTile();
-            this.DateAdmission = new System.Windows.Forms.DateTimePicker();
+            this.dS = new SIMS.DS();
+            this.cENTREBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cENTRETableAdapter = new SIMS.DSTableAdapters.CENTRETableAdapter();
             this.detailsGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.guardianGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cENTREBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // detailsGroupBox
@@ -94,6 +100,15 @@ namespace SIMS.LearnerModule
             this.detailsGroupBox.TabIndex = 0;
             this.detailsGroupBox.TabStop = false;
             this.detailsGroupBox.Text = "Student Details";
+            // 
+            // DateAdmission
+            // 
+            this.DateAdmission.Location = new System.Drawing.Point(337, 381);
+            this.DateAdmission.Name = "DateAdmission";
+            this.DateAdmission.Size = new System.Drawing.Size(163, 21);
+            this.DateAdmission.TabIndex = 30;
+            this.DateAdmission.Value = new System.DateTime(2015, 5, 28, 23, 53, 38, 0);
+            this.DateAdmission.Visible = false;
             // 
             // groupBox1
             // 
@@ -139,7 +154,7 @@ namespace SIMS.LearnerModule
             // TextBoxAdminNumber
             // 
             this.TextBoxAdminNumber.Lines = new string[0];
-            this.TextBoxAdminNumber.Location = new System.Drawing.Point(150, 207);
+            this.TextBoxAdminNumber.Location = new System.Drawing.Point(171, 207);
             this.TextBoxAdminNumber.MaxLength = 32767;
             this.TextBoxAdminNumber.Name = "TextBoxAdminNumber";
             this.TextBoxAdminNumber.PasswordChar = '\0';
@@ -154,7 +169,7 @@ namespace SIMS.LearnerModule
             // TextBoxContactNumber
             // 
             this.TextBoxContactNumber.Lines = new string[0];
-            this.TextBoxContactNumber.Location = new System.Drawing.Point(150, 157);
+            this.TextBoxContactNumber.Location = new System.Drawing.Point(171, 157);
             this.TextBoxContactNumber.MaxLength = 32767;
             this.TextBoxContactNumber.Name = "TextBoxContactNumber";
             this.TextBoxContactNumber.PasswordChar = '\0';
@@ -170,7 +185,7 @@ namespace SIMS.LearnerModule
             // TextBoxIDNumber
             // 
             this.TextBoxIDNumber.Lines = new string[0];
-            this.TextBoxIDNumber.Location = new System.Drawing.Point(150, 108);
+            this.TextBoxIDNumber.Location = new System.Drawing.Point(171, 108);
             this.TextBoxIDNumber.MaxLength = 32767;
             this.TextBoxIDNumber.Name = "TextBoxIDNumber";
             this.TextBoxIDNumber.PasswordChar = '\0';
@@ -186,7 +201,7 @@ namespace SIMS.LearnerModule
             // TextBoxLastName
             // 
             this.TextBoxLastName.Lines = new string[0];
-            this.TextBoxLastName.Location = new System.Drawing.Point(150, 63);
+            this.TextBoxLastName.Location = new System.Drawing.Point(171, 63);
             this.TextBoxLastName.MaxLength = 32767;
             this.TextBoxLastName.Name = "TextBoxLastName";
             this.TextBoxLastName.PasswordChar = '\0';
@@ -202,7 +217,7 @@ namespace SIMS.LearnerModule
             // TextBoxFirstName
             // 
             this.TextBoxFirstName.Lines = new string[0];
-            this.TextBoxFirstName.Location = new System.Drawing.Point(150, 21);
+            this.TextBoxFirstName.Location = new System.Drawing.Point(171, 21);
             this.TextBoxFirstName.MaxLength = 32767;
             this.TextBoxFirstName.Name = "TextBoxFirstName";
             this.TextBoxFirstName.PasswordChar = '\0';
@@ -217,12 +232,12 @@ namespace SIMS.LearnerModule
             // 
             // ComboBoxCentre
             // 
+            this.ComboBoxCentre.DataSource = this.cENTREBindingSource;
             this.ComboBoxCentre.DisplayFocus = true;
+            this.ComboBoxCentre.DisplayMember = "CENTRE_NAME";
             this.ComboBoxCentre.FormattingEnabled = true;
             this.ComboBoxCentre.ItemHeight = 23;
-            this.ComboBoxCentre.Items.AddRange(new object[] {
-            "Durban"});
-            this.ComboBoxCentre.Location = new System.Drawing.Point(150, 310);
+            this.ComboBoxCentre.Location = new System.Drawing.Point(171, 310);
             this.ComboBoxCentre.Name = "ComboBoxCentre";
             this.ComboBoxCentre.Size = new System.Drawing.Size(132, 29);
             this.ComboBoxCentre.Style = MetroFramework.MetroColorStyle.Green;
@@ -235,25 +250,29 @@ namespace SIMS.LearnerModule
             // 
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.BackColor = System.Drawing.Color.White;
-            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.Location = new System.Drawing.Point(6, 320);
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel2.Location = new System.Drawing.Point(96, 320);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(53, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(57, 19);
+            this.metroLabel2.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel2.TabIndex = 19;
             this.metroLabel2.Text = "Centre:";
             this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroLabel2.UseStyleColors = true;
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.BackColor = System.Drawing.Color.White;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.Location = new System.Drawing.Point(6, 211);
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel1.Location = new System.Drawing.Point(11, 211);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(129, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(142, 19);
+            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel1.TabIndex = 17;
             this.metroLabel1.Text = "Admission Number:";
             this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroLabel1.UseStyleColors = true;
             // 
             // ComboBoxGender
             // 
@@ -263,7 +282,7 @@ namespace SIMS.LearnerModule
             this.ComboBoxGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.ComboBoxGender.Location = new System.Drawing.Point(150, 256);
+            this.ComboBoxGender.Location = new System.Drawing.Point(171, 256);
             this.ComboBoxGender.Name = "ComboBoxGender";
             this.ComboBoxGender.Size = new System.Drawing.Size(132, 29);
             this.ComboBoxGender.Style = MetroFramework.MetroColorStyle.Green;
@@ -276,61 +295,71 @@ namespace SIMS.LearnerModule
             // 
             this.genderLabel.AutoSize = true;
             this.genderLabel.BackColor = System.Drawing.Color.White;
-            this.genderLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.genderLabel.Location = new System.Drawing.Point(6, 266);
+            this.genderLabel.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.genderLabel.Location = new System.Drawing.Point(90, 266);
             this.genderLabel.Name = "genderLabel";
-            this.genderLabel.Size = new System.Drawing.Size(57, 19);
+            this.genderLabel.Size = new System.Drawing.Size(63, 19);
+            this.genderLabel.Style = MetroFramework.MetroColorStyle.Green;
             this.genderLabel.TabIndex = 14;
             this.genderLabel.Text = "Gender:";
             this.genderLabel.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.genderLabel.UseStyleColors = true;
             // 
             // contactNumberLabel
             // 
             this.contactNumberLabel.AutoSize = true;
             this.contactNumberLabel.BackColor = System.Drawing.Color.White;
-            this.contactNumberLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.contactNumberLabel.Location = new System.Drawing.Point(6, 161);
+            this.contactNumberLabel.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.contactNumberLabel.Location = new System.Drawing.Point(29, 161);
             this.contactNumberLabel.Name = "contactNumberLabel";
-            this.contactNumberLabel.Size = new System.Drawing.Size(114, 19);
+            this.contactNumberLabel.Size = new System.Drawing.Size(124, 19);
+            this.contactNumberLabel.Style = MetroFramework.MetroColorStyle.Green;
             this.contactNumberLabel.TabIndex = 12;
             this.contactNumberLabel.Text = "Contact Number:";
             this.contactNumberLabel.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.contactNumberLabel.UseStyleColors = true;
             // 
             // idNumberLabel
             // 
             this.idNumberLabel.AutoSize = true;
             this.idNumberLabel.BackColor = System.Drawing.Color.White;
-            this.idNumberLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.idNumberLabel.Location = new System.Drawing.Point(6, 112);
+            this.idNumberLabel.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.idNumberLabel.Location = new System.Drawing.Point(66, 112);
             this.idNumberLabel.Name = "idNumberLabel";
-            this.idNumberLabel.Size = new System.Drawing.Size(80, 19);
+            this.idNumberLabel.Size = new System.Drawing.Size(87, 19);
+            this.idNumberLabel.Style = MetroFramework.MetroColorStyle.Green;
             this.idNumberLabel.TabIndex = 10;
             this.idNumberLabel.Text = "ID Number:";
             this.idNumberLabel.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.idNumberLabel.UseStyleColors = true;
             // 
             // lastNameLabel
             // 
             this.lastNameLabel.AutoSize = true;
             this.lastNameLabel.BackColor = System.Drawing.Color.White;
-            this.lastNameLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lastNameLabel.Location = new System.Drawing.Point(6, 67);
+            this.lastNameLabel.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lastNameLabel.Location = new System.Drawing.Point(70, 67);
             this.lastNameLabel.Name = "lastNameLabel";
-            this.lastNameLabel.Size = new System.Drawing.Size(77, 19);
+            this.lastNameLabel.Size = new System.Drawing.Size(83, 19);
+            this.lastNameLabel.Style = MetroFramework.MetroColorStyle.Green;
             this.lastNameLabel.TabIndex = 8;
             this.lastNameLabel.Text = "Last Name:";
             this.lastNameLabel.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.lastNameLabel.UseStyleColors = true;
             // 
             // firstNameLabel
             // 
             this.firstNameLabel.AutoSize = true;
             this.firstNameLabel.BackColor = System.Drawing.Color.White;
-            this.firstNameLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.firstNameLabel.Location = new System.Drawing.Point(6, 26);
+            this.firstNameLabel.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.firstNameLabel.Location = new System.Drawing.Point(68, 25);
             this.firstNameLabel.Name = "firstNameLabel";
-            this.firstNameLabel.Size = new System.Drawing.Size(78, 19);
+            this.firstNameLabel.Size = new System.Drawing.Size(85, 19);
+            this.firstNameLabel.Style = MetroFramework.MetroColorStyle.Green;
             this.firstNameLabel.TabIndex = 6;
             this.firstNameLabel.Text = "First Name:";
             this.firstNameLabel.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.firstNameLabel.UseStyleColors = true;
             // 
             // guardianGroupBox
             // 
@@ -348,7 +377,7 @@ namespace SIMS.LearnerModule
             this.guardianGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guardianGroupBox.Location = new System.Drawing.Point(550, 84);
             this.guardianGroupBox.Name = "guardianGroupBox";
-            this.guardianGroupBox.Size = new System.Drawing.Size(521, 285);
+            this.guardianGroupBox.Size = new System.Drawing.Size(521, 339);
             this.guardianGroupBox.TabIndex = 1;
             this.guardianGroupBox.TabStop = false;
             this.guardianGroupBox.Text = "Address Details";
@@ -373,13 +402,15 @@ namespace SIMS.LearnerModule
             // 
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.BackColor = System.Drawing.Color.White;
-            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel6.Location = new System.Drawing.Point(6, 26);
+            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel6.Location = new System.Drawing.Point(21, 26);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(97, 19);
+            this.metroLabel6.Size = new System.Drawing.Size(107, 19);
+            this.metroLabel6.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel6.TabIndex = 6;
             this.metroLabel6.Text = "Email Address:";
             this.metroLabel6.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroLabel6.UseStyleColors = true;
             // 
             // TextBoxEmailAddress
             // 
@@ -401,13 +432,15 @@ namespace SIMS.LearnerModule
             // 
             this.metroLabel12.AutoSize = true;
             this.metroLabel12.BackColor = System.Drawing.Color.White;
-            this.metroLabel12.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel12.Location = new System.Drawing.Point(6, 67);
+            this.metroLabel12.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel12.Location = new System.Drawing.Point(18, 67);
             this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(102, 19);
+            this.metroLabel12.Size = new System.Drawing.Size(110, 19);
+            this.metroLabel12.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel12.TabIndex = 8;
             this.metroLabel12.Text = "Address Line 1:";
             this.metroLabel12.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroLabel12.UseStyleColors = true;
             // 
             // TextBoxCity
             // 
@@ -445,25 +478,29 @@ namespace SIMS.LearnerModule
             // 
             this.metroLabel10.AutoSize = true;
             this.metroLabel10.BackColor = System.Drawing.Color.White;
-            this.metroLabel10.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel10.Location = new System.Drawing.Point(6, 112);
+            this.metroLabel10.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel10.Location = new System.Drawing.Point(67, 112);
             this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(56, 19);
+            this.metroLabel10.Size = new System.Drawing.Size(61, 19);
+            this.metroLabel10.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel10.TabIndex = 12;
             this.metroLabel10.Text = "Suburb:";
             this.metroLabel10.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroLabel10.UseStyleColors = true;
             // 
             // metroLabel14
             // 
             this.metroLabel14.AutoSize = true;
             this.metroLabel14.BackColor = System.Drawing.Color.White;
-            this.metroLabel14.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel14.Location = new System.Drawing.Point(6, 211);
+            this.metroLabel14.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel14.Location = new System.Drawing.Point(35, 211);
             this.metroLabel14.Name = "metroLabel14";
-            this.metroLabel14.Size = new System.Drawing.Size(85, 19);
+            this.metroLabel14.Size = new System.Drawing.Size(93, 19);
+            this.metroLabel14.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel14.TabIndex = 26;
             this.metroLabel14.Text = "Postal Code:";
             this.metroLabel14.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroLabel14.UseStyleColors = true;
             // 
             // TextBoxSuburb
             // 
@@ -485,21 +522,23 @@ namespace SIMS.LearnerModule
             // 
             this.metroLabel13.AutoSize = true;
             this.metroLabel13.BackColor = System.Drawing.Color.White;
-            this.metroLabel13.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel13.Location = new System.Drawing.Point(6, 161);
+            this.metroLabel13.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel13.Location = new System.Drawing.Point(89, 161);
             this.metroLabel13.Name = "metroLabel13";
-            this.metroLabel13.Size = new System.Drawing.Size(36, 19);
+            this.metroLabel13.Size = new System.Drawing.Size(39, 19);
+            this.metroLabel13.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel13.TabIndex = 14;
             this.metroLabel13.Text = "City:";
             this.metroLabel13.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroLabel13.UseStyleColors = true;
             // 
             // addDetailsTile
             // 
             this.addDetailsTile.ActiveControl = null;
             this.addDetailsTile.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.addDetailsTile.Location = new System.Drawing.Point(550, 444);
+            this.addDetailsTile.Location = new System.Drawing.Point(550, 457);
             this.addDetailsTile.Name = "addDetailsTile";
-            this.addDetailsTile.Size = new System.Drawing.Size(159, 49);
+            this.addDetailsTile.Size = new System.Drawing.Size(159, 36);
             this.addDetailsTile.Style = MetroFramework.MetroColorStyle.Green;
             this.addDetailsTile.TabIndex = 2;
             this.addDetailsTile.Text = "Add Details";
@@ -514,12 +553,12 @@ namespace SIMS.LearnerModule
             // 
             this.cancelTile.ActiveControl = null;
             this.cancelTile.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cancelTile.Location = new System.Drawing.Point(906, 444);
+            this.cancelTile.Location = new System.Drawing.Point(906, 457);
             this.cancelTile.Name = "cancelTile";
-            this.cancelTile.Size = new System.Drawing.Size(159, 49);
+            this.cancelTile.Size = new System.Drawing.Size(159, 36);
             this.cancelTile.Style = MetroFramework.MetroColorStyle.Green;
             this.cancelTile.TabIndex = 3;
-            this.cancelTile.Text = "Cancel";
+            this.cancelTile.Text = "Close Window";
             this.cancelTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.cancelTile.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.cancelTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
@@ -531,9 +570,9 @@ namespace SIMS.LearnerModule
             // 
             this.clearTile.ActiveControl = null;
             this.clearTile.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.clearTile.Location = new System.Drawing.Point(730, 444);
+            this.clearTile.Location = new System.Drawing.Point(730, 457);
             this.clearTile.Name = "clearTile";
-            this.clearTile.Size = new System.Drawing.Size(159, 49);
+            this.clearTile.Size = new System.Drawing.Size(159, 36);
             this.clearTile.TabIndex = 4;
             this.clearTile.Text = "Clear";
             this.clearTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -542,14 +581,19 @@ namespace SIMS.LearnerModule
             this.clearTile.UseSelectable = true;
             this.clearTile.Click += new System.EventHandler(this.clearTile_Click);
             // 
-            // DateAdmission
+            // dS
             // 
-            this.DateAdmission.Location = new System.Drawing.Point(316, 318);
-            this.DateAdmission.Name = "DateAdmission";
-            this.DateAdmission.Size = new System.Drawing.Size(163, 21);
-            this.DateAdmission.TabIndex = 30;
-            this.DateAdmission.Value = new System.DateTime(2015, 5, 28, 23, 53, 38, 0);
-            this.DateAdmission.Visible = false;
+            this.dS.DataSetName = "DS";
+            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cENTREBindingSource
+            // 
+            this.cENTREBindingSource.DataMember = "CENTRE";
+            this.cENTREBindingSource.DataSource = this.dS;
+            // 
+            // cENTRETableAdapter
+            // 
+            this.cENTRETableAdapter.ClearBeforeFill = true;
             // 
             // AddLearner
             // 
@@ -566,12 +610,15 @@ namespace SIMS.LearnerModule
             this.Name = "AddLearner";
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Add New Learner";
+            this.Load += new System.EventHandler(this.AddLearner_Load);
             this.detailsGroupBox.ResumeLayout(false);
             this.detailsGroupBox.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.guardianGroupBox.ResumeLayout(false);
             this.guardianGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cENTREBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -615,6 +662,9 @@ namespace SIMS.LearnerModule
         private MetroFramework.Controls.MetroTile clearTile;
         private MetroFramework.Controls.MetroTextBox TextBoxZipCode;
         private DateTimePicker DateAdmission;
+        private DS dS;
+        private BindingSource cENTREBindingSource;
+        private DSTableAdapters.CENTRETableAdapter cENTRETableAdapter;
     
         protected override CreateParams CreateParams
         {
