@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroComboBoxCategory = new MetroFramework.Controls.MetroComboBox();
+            this.fEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dS = new SIMS.DS();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroTileClear = new MetroFramework.Controls.MetroTile();
             this.metroTextBoxPayAmount = new MetroFramework.Controls.MetroTextBox();
@@ -43,12 +45,10 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTileClose = new MetroFramework.Controls.MetroTile();
-            this.dS = new SIMS.DS();
-            this.fEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fEETableAdapter = new SIMS.DSTableAdapters.FEETableAdapter();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fEEBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -83,6 +83,16 @@
             this.metroComboBoxCategory.Size = new System.Drawing.Size(143, 29);
             this.metroComboBoxCategory.TabIndex = 15;
             this.metroComboBoxCategory.UseSelectable = true;
+            // 
+            // fEEBindingSource
+            // 
+            this.fEEBindingSource.DataMember = "FEE";
+            this.fEEBindingSource.DataSource = this.dS;
+            // 
+            // dS
+            // 
+            this.dS.DataSetName = "DS";
+            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // metroLabel4
             // 
@@ -224,9 +234,9 @@
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel1.Location = new System.Drawing.Point(65, 16);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(139, 25);
+            this.metroLabel1.Size = new System.Drawing.Size(129, 25);
             this.metroLabel1.TabIndex = 0;
-            this.metroLabel1.Text = "Adminssion No:";
+            this.metroLabel1.Text = "Admission No:";
             this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // metroTileClose
@@ -245,16 +255,6 @@
             this.metroTileClose.UseSelectable = true;
             this.metroTileClose.UseStyleColors = true;
             this.metroTileClose.Click += new System.EventHandler(this.metroTileClose_Click);
-            // 
-            // dS
-            // 
-            this.dS.DataSetName = "DS";
-            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // fEEBindingSource
-            // 
-            this.fEEBindingSource.DataMember = "FEE";
-            this.fEEBindingSource.DataSource = this.dS;
             // 
             // fEETableAdapter
             // 
@@ -275,8 +275,8 @@
             this.Load += new System.EventHandler(this.RecordStudentPayment_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fEEBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
             this.ResumeLayout(false);
 
         }
