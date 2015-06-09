@@ -13303,7 +13303,7 @@ namespace SIMS.DSTableAdapters {
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT EXPENSE_PAYMENT_ID, EXPENSE_AMOUNT, EXPENSE_NOTE, PAYMENT_DATE, CAPTURED_D" +
-                "ATE, EXPENSE_ID FROM SIMS.EXPENSE_PAYMENT";
+                "ATE, EXPENSE_ID FROM SIMS.EXPENSE_PAYMENT\r\nORDER BY EXPENSE_PAYMENT_ID";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

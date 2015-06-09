@@ -151,7 +151,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS.xsd</DependentUpon>
     </Compile>
-    <Compile Include="OracleDB\SimsOracle.cs" />
+    <Compile Include="OracleDB\OracleDatabase.cs" />
     <Compile Include="EmployeeModule\AddNewStaffGrade.cs">
       <SubType>Form</SubType>
     </Compile>

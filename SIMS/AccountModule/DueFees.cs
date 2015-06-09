@@ -26,6 +26,8 @@ namespace SIMS.AccountModule
         private SimsOracle db;
         private OracleDataAdapter da;
         private DataTable dt;
+        private OracleDataReader dr;
+        private OracleCommand cmd;
 
         public DueFees()
         {
@@ -39,6 +41,7 @@ namespace SIMS.AccountModule
         private void metroTileLoadDueFee_Click(object sender, EventArgs e)
         {
             db = new SimsOracle();
+            int total = 0;
             try
             {
                 string sql = "SELECT admission_no, first_name, last_name, phone_number, fee_occurence, fee_category, fee_amount, fee_balance" +
@@ -52,9 +55,13 @@ namespace SIMS.AccountModule
                 dt = new DataTable();
                 da.Fill(dt);
                 metroGridDueFees.DataSource = dt;
+
+                metroTextBoxTotalDue.Text = "R" + CellSum().ToString();
+
                 metroTilePrintDueFees.Visible = true;
-                metroLabelDueAmount.Visible = true;
                 metroLabelTotalDue.Visible = true;
+                metroTextBoxTotalDue.Visible = true;
+
                 db.CloseDatabase();
             }
             catch (Exception ex)
@@ -65,6 +72,23 @@ namespace SIMS.AccountModule
             {
                 db.CloseDatabase();
             }
+        }
+
+        private double CellSum()
+        {
+            double sum = 0;
+            for (int i = 0; i < metroGridDueFees.Rows.Count; ++i)
+            {
+                double d = 0;
+                Double.TryParse(metroGridDueFees.Rows[i].Cells[7].Value.ToString(), out d);
+                sum += d;
+            }
+            return sum;
+        }
+
+        private void metroTileClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
