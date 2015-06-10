@@ -41,7 +41,6 @@ namespace SIMS.AccountModule
         private void metroTileLoadDueFee_Click(object sender, EventArgs e)
         {
             db = new SimsOracle();
-            int total = 0;
             try
             {
                 string sql = "SELECT admission_no, first_name, last_name, phone_number, fee_occurence, fee_category, fee_amount, fee_balance" +

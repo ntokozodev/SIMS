@@ -541,7 +541,7 @@ namespace SIMS.LearnerModule
             this.addDetailsTile.Size = new System.Drawing.Size(159, 36);
             this.addDetailsTile.Style = MetroFramework.MetroColorStyle.Green;
             this.addDetailsTile.TabIndex = 2;
-            this.addDetailsTile.Text = "Add Details";
+            this.addDetailsTile.Text = "Enter Details";
             this.addDetailsTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.addDetailsTile.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.addDetailsTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
@@ -573,6 +573,7 @@ namespace SIMS.LearnerModule
             this.clearTile.Location = new System.Drawing.Point(730, 457);
             this.clearTile.Name = "clearTile";
             this.clearTile.Size = new System.Drawing.Size(159, 36);
+            this.clearTile.Style = MetroFramework.MetroColorStyle.Green;
             this.clearTile.TabIndex = 4;
             this.clearTile.Text = "Clear";
             this.clearTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -609,7 +610,7 @@ namespace SIMS.LearnerModule
             this.MinimizeBox = false;
             this.Name = "AddLearner";
             this.Style = MetroFramework.MetroColorStyle.Green;
-            this.Text = "Add New Learner";
+            this.Text = "Register New Learner";
             this.Load += new System.EventHandler(this.AddLearner_Load);
             this.detailsGroupBox.ResumeLayout(false);
             this.detailsGroupBox.PerformLayout();

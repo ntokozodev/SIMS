@@ -65,6 +65,7 @@ namespace SIMS.EmployeeModule
                     cmd.Parameters.Add("GRADE_RATE", metroTextBoxRate.Text);
 
                     rows = cmd.ExecuteNonQuery();
+                    
                 }
                 catch (Exception ex)
                 {
@@ -86,7 +87,7 @@ namespace SIMS.EmployeeModule
                     MetroMessageBox.Show(ParentForm, " ", "Staff Grade not captured!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 db.CloseDatabase();
-            }     
+            }  
         }
     }
 }

@@ -268,6 +268,7 @@ namespace SIMS
 
         private void staffHoursToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MainPanel.Controls.Clear();
             if (staffHr != null)
                 staffHr.Close();
             staffHr = new StaffHours();
@@ -278,6 +279,7 @@ namespace SIMS
         #region Employee Module
         private void addNewStaffMemberToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MainPanel.Controls.Clear();
             if (staff != null)
                 staff.Close();
             staff = new AddStaffMember();
@@ -286,6 +288,7 @@ namespace SIMS
 
         private void browseStaffDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MainPanel.Controls.Clear();
             if (staffD != null)
                 staffD.Close();
             staffD = new BrowseStaffDetails();
@@ -294,6 +297,7 @@ namespace SIMS
 
         private void asignEducatorToClassToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MainPanel.Controls.Clear();
             if (asignEdu != null)
                 asignEdu.Close();
             asignEdu = new AsignEducatorClass();
@@ -302,6 +306,7 @@ namespace SIMS
 
         private void removeEducatorFromClassToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MainPanel.Controls.Clear();
             if (removeEdu != null)
                 removeEdu.Close();
             removeEdu = new RemoveEducatorClass();
@@ -310,6 +315,7 @@ namespace SIMS
 
         private void recordStaffAttendanceToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MainPanel.Controls.Clear();
             if (staffAt != null)
                 staffAt.Close();
             staffAt = new RecordStaffAttendance();
@@ -318,6 +324,7 @@ namespace SIMS
 
         private void addNewStaffGradeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MainPanel.Controls.Clear();
             if (staffGr != null)
                 staffGr.Close();
             staffGr = new AddNewStaffGrade();
@@ -326,6 +333,7 @@ namespace SIMS
 
         private void changeGradeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MainPanel.Controls.Clear();
             if (changeGr != null)
                 changeGr.Close();
             changeGr = new ChangeStaffGrade();
@@ -336,6 +344,7 @@ namespace SIMS
         #region Access Control
         private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MainPanel.Controls.Clear();
             if (addUser != null)
                 addUser.Close();
             addUser = new AddUser();
@@ -344,6 +353,7 @@ namespace SIMS
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MainPanel.Controls.Clear();
             if (logon != null)
                 logon.Close();
             logon = new Login();
@@ -352,6 +362,7 @@ namespace SIMS
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MainPanel.Controls.Clear();
             if (logoff != null)
                 logoff.Close();
             logoff = new Logout();
@@ -360,6 +371,7 @@ namespace SIMS
 
         private void changePwordStripMenuItem_Click(object sender, EventArgs e)
         {
+            MainPanel.Controls.Clear();
             if (changeP != null)
                 changeP.Close();
             changeP = new ChangePassword();
