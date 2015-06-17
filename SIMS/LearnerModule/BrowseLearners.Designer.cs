@@ -29,176 +29,33 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.metroGridViewLearner = new MetroFramework.Controls.MetroGrid();
-            this.AdmissionNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fIRSTNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lASTNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sTUDENTGENDERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pHONENUMBERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aDMITTEDDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sTUDENTCITIZENIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SUBURB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cENTREDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sTUDENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dS = new SIMS.DS();
+            this.dS = new SIMS.DSS();
             this.metroTileUpdateLearner = new MetroFramework.Controls.MetroTile();
             this.metroTileSearchLearner = new MetroFramework.Controls.MetroTile();
             this.metroTextBoxSearchLearner = new MetroFramework.Controls.MetroTextBox();
             this.metroTileClose = new MetroFramework.Controls.MetroTile();
             this.metroComboBoxFilter = new MetroFramework.Controls.MetroComboBox();
             this.metroTileFilter = new MetroFramework.Controls.MetroTile();
-            this.TAStudent = new SIMS.DSTableAdapters.STUDENTTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.metroGridViewLearner)).BeginInit();
+            this.TAStudent = new SIMS.DSSTableAdapters.STUDENTTableAdapter();
+            this.metroGridViewLearner = new System.Windows.Forms.DataGridView();
+            this.aDMISSIONNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sURNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gENDERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pHONEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eNROLLEDDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cITIZENIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cITYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTUDENTBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.metroTileSearchByAdminNo = new MetroFramework.Controls.MetroTile();
+            this.metroTextBoxSearchByAdminNo = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.sTUDENTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.metroGridViewLearner)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTUDENTBindingSource1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // metroGridViewLearner
-            // 
-            this.metroGridViewLearner.AllowUserToAddRows = false;
-            this.metroGridViewLearner.AllowUserToDeleteRows = false;
-            this.metroGridViewLearner.AllowUserToOrderColumns = true;
-            this.metroGridViewLearner.AllowUserToResizeRows = false;
-            this.metroGridViewLearner.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroGridViewLearner.AutoGenerateColumns = false;
-            this.metroGridViewLearner.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGridViewLearner.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.metroGridViewLearner.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.metroGridViewLearner.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGridViewLearner.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.metroGridViewLearner.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.metroGridViewLearner.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.AdmissionNo,
-            this.fIRSTNAMEDataGridViewTextBoxColumn,
-            this.lASTNAMEDataGridViewTextBoxColumn,
-            this.sTUDENTGENDERDataGridViewTextBoxColumn,
-            this.pHONENUMBERDataGridViewTextBoxColumn,
-            this.aDMITTEDDATEDataGridViewTextBoxColumn,
-            this.sTUDENTCITIZENIDDataGridViewTextBoxColumn,
-            this.SUBURB,
-            this.cENTREDataGridViewTextBoxColumn});
-            this.metroGridViewLearner.DataSource = this.sTUDENTBindingSource;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGridViewLearner.DefaultCellStyle = dataGridViewCellStyle11;
-            this.metroGridViewLearner.EnableHeadersVisualStyles = false;
-            this.metroGridViewLearner.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.metroGridViewLearner.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGridViewLearner.Location = new System.Drawing.Point(51, 101);
-            this.metroGridViewLearner.Name = "metroGridViewLearner";
-            this.metroGridViewLearner.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGridViewLearner.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.metroGridViewLearner.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.metroGridViewLearner.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGridViewLearner.Size = new System.Drawing.Size(980, 442);
-            this.metroGridViewLearner.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroGridViewLearner.TabIndex = 0;
-            this.metroGridViewLearner.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
-            // AdmissionNo
-            // 
-            this.AdmissionNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.AdmissionNo.DataPropertyName = "ADMISSION_NO";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdmissionNo.DefaultCellStyle = dataGridViewCellStyle2;
-            this.AdmissionNo.HeaderText = "Admission No";
-            this.AdmissionNo.Name = "AdmissionNo";
-            // 
-            // fIRSTNAMEDataGridViewTextBoxColumn
-            // 
-            this.fIRSTNAMEDataGridViewTextBoxColumn.DataPropertyName = "FIRST_NAME";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fIRSTNAMEDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.fIRSTNAMEDataGridViewTextBoxColumn.HeaderText = "First Name";
-            this.fIRSTNAMEDataGridViewTextBoxColumn.Name = "fIRSTNAMEDataGridViewTextBoxColumn";
-            // 
-            // lASTNAMEDataGridViewTextBoxColumn
-            // 
-            this.lASTNAMEDataGridViewTextBoxColumn.DataPropertyName = "LAST_NAME";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lASTNAMEDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.lASTNAMEDataGridViewTextBoxColumn.HeaderText = "Last Name";
-            this.lASTNAMEDataGridViewTextBoxColumn.Name = "lASTNAMEDataGridViewTextBoxColumn";
-            // 
-            // sTUDENTGENDERDataGridViewTextBoxColumn
-            // 
-            this.sTUDENTGENDERDataGridViewTextBoxColumn.DataPropertyName = "STUDENT_GENDER";
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sTUDENTGENDERDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.sTUDENTGENDERDataGridViewTextBoxColumn.HeaderText = "Gender";
-            this.sTUDENTGENDERDataGridViewTextBoxColumn.Name = "sTUDENTGENDERDataGridViewTextBoxColumn";
-            // 
-            // pHONENUMBERDataGridViewTextBoxColumn
-            // 
-            this.pHONENUMBERDataGridViewTextBoxColumn.DataPropertyName = "PHONE_NUMBER";
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pHONENUMBERDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.pHONENUMBERDataGridViewTextBoxColumn.HeaderText = "Contact Number";
-            this.pHONENUMBERDataGridViewTextBoxColumn.Name = "pHONENUMBERDataGridViewTextBoxColumn";
-            // 
-            // aDMITTEDDATEDataGridViewTextBoxColumn
-            // 
-            this.aDMITTEDDATEDataGridViewTextBoxColumn.DataPropertyName = "ADMITTED_DATE";
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aDMITTEDDATEDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.aDMITTEDDATEDataGridViewTextBoxColumn.HeaderText = "Admitted Date";
-            this.aDMITTEDDATEDataGridViewTextBoxColumn.Name = "aDMITTEDDATEDataGridViewTextBoxColumn";
-            // 
-            // sTUDENTCITIZENIDDataGridViewTextBoxColumn
-            // 
-            this.sTUDENTCITIZENIDDataGridViewTextBoxColumn.DataPropertyName = "STUDENT_CITIZEN_ID";
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sTUDENTCITIZENIDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
-            this.sTUDENTCITIZENIDDataGridViewTextBoxColumn.HeaderText = "Citizen ID";
-            this.sTUDENTCITIZENIDDataGridViewTextBoxColumn.Name = "sTUDENTCITIZENIDDataGridViewTextBoxColumn";
-            // 
-            // SUBURB
-            // 
-            this.SUBURB.DataPropertyName = "SUBURB";
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SUBURB.DefaultCellStyle = dataGridViewCellStyle9;
-            this.SUBURB.HeaderText = "Home";
-            this.SUBURB.Name = "SUBURB";
-            // 
-            // cENTREDataGridViewTextBoxColumn
-            // 
-            this.cENTREDataGridViewTextBoxColumn.DataPropertyName = "CENTRE";
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cENTREDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
-            this.cENTREDataGridViewTextBoxColumn.HeaderText = "Centre";
-            this.cENTREDataGridViewTextBoxColumn.Name = "cENTREDataGridViewTextBoxColumn";
             // 
             // sTUDENTBindingSource
             // 
@@ -215,9 +72,9 @@
             // 
             this.metroTileUpdateLearner.ActiveControl = null;
             this.metroTileUpdateLearner.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroTileUpdateLearner.Location = new System.Drawing.Point(788, 558);
+            this.metroTileUpdateLearner.Location = new System.Drawing.Point(788, 539);
             this.metroTileUpdateLearner.Name = "metroTileUpdateLearner";
-            this.metroTileUpdateLearner.Size = new System.Drawing.Size(108, 23);
+            this.metroTileUpdateLearner.Size = new System.Drawing.Size(108, 30);
             this.metroTileUpdateLearner.Style = MetroFramework.MetroColorStyle.Green;
             this.metroTileUpdateLearner.TabIndex = 1;
             this.metroTileUpdateLearner.Text = "Save Changes";
@@ -264,12 +121,12 @@
             // 
             this.metroTileClose.ActiveControl = null;
             this.metroTileClose.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroTileClose.Location = new System.Drawing.Point(902, 558);
+            this.metroTileClose.Location = new System.Drawing.Point(902, 539);
             this.metroTileClose.Name = "metroTileClose";
-            this.metroTileClose.Size = new System.Drawing.Size(108, 23);
+            this.metroTileClose.Size = new System.Drawing.Size(108, 30);
             this.metroTileClose.Style = MetroFramework.MetroColorStyle.Green;
             this.metroTileClose.TabIndex = 4;
-            this.metroTileClose.Text = "Close";
+            this.metroTileClose.Text = "Close Window";
             this.metroTileClose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTileClose.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.metroTileClose.UseSelectable = true;
@@ -283,9 +140,8 @@
             this.metroComboBoxFilter.ItemHeight = 23;
             this.metroComboBoxFilter.Items.AddRange(new object[] {
             "Admission No",
-            "Admitted Date",
             "Last Name"});
-            this.metroComboBoxFilter.Location = new System.Drawing.Point(812, 66);
+            this.metroComboBoxFilter.Location = new System.Drawing.Point(887, 66);
             this.metroComboBoxFilter.Name = "metroComboBoxFilter";
             this.metroComboBoxFilter.Size = new System.Drawing.Size(123, 29);
             this.metroComboBoxFilter.Style = MetroFramework.MetroColorStyle.Green;
@@ -297,12 +153,12 @@
             // 
             this.metroTileFilter.ActiveControl = null;
             this.metroTileFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroTileFilter.Location = new System.Drawing.Point(941, 66);
+            this.metroTileFilter.Location = new System.Drawing.Point(791, 66);
             this.metroTileFilter.Name = "metroTileFilter";
             this.metroTileFilter.Size = new System.Drawing.Size(90, 29);
             this.metroTileFilter.Style = MetroFramework.MetroColorStyle.Green;
             this.metroTileFilter.TabIndex = 8;
-            this.metroTileFilter.Text = "Filter";
+            this.metroTileFilter.Text = "Filter by";
             this.metroTileFilter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTileFilter.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTileFilter.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
@@ -314,37 +170,158 @@
             // 
             this.TAStudent.ClearBeforeFill = true;
             // 
+            // metroGridViewLearner
+            // 
+            this.metroGridViewLearner.AllowUserToAddRows = false;
+            this.metroGridViewLearner.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.metroGridViewLearner.AutoGenerateColumns = false;
+            this.metroGridViewLearner.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.metroGridViewLearner.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.aDMISSIONNODataGridViewTextBoxColumn,
+            this.nAMEDataGridViewTextBoxColumn,
+            this.sURNAMEDataGridViewTextBoxColumn,
+            this.gENDERDataGridViewTextBoxColumn,
+            this.pHONEDataGridViewTextBoxColumn,
+            this.eNROLLEDDATEDataGridViewTextBoxColumn,
+            this.cITIZENIDDataGridViewTextBoxColumn,
+            this.cITYDataGridViewTextBoxColumn,
+            this.eMAILDataGridViewTextBoxColumn});
+            this.metroGridViewLearner.DataSource = this.sTUDENTBindingSource1;
+            this.metroGridViewLearner.Location = new System.Drawing.Point(51, 124);
+            this.metroGridViewLearner.Name = "metroGridViewLearner";
+            this.metroGridViewLearner.Size = new System.Drawing.Size(959, 409);
+            this.metroGridViewLearner.TabIndex = 9;
+            // 
+            // aDMISSIONNODataGridViewTextBoxColumn
+            // 
+            this.aDMISSIONNODataGridViewTextBoxColumn.DataPropertyName = "ADMISSION_NO";
+            this.aDMISSIONNODataGridViewTextBoxColumn.HeaderText = "Admission No";
+            this.aDMISSIONNODataGridViewTextBoxColumn.Name = "aDMISSIONNODataGridViewTextBoxColumn";
+            this.aDMISSIONNODataGridViewTextBoxColumn.Width = 115;
+            // 
+            // nAMEDataGridViewTextBoxColumn
+            // 
+            this.nAMEDataGridViewTextBoxColumn.DataPropertyName = "NAME";
+            this.nAMEDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nAMEDataGridViewTextBoxColumn.Name = "nAMEDataGridViewTextBoxColumn";
+            // 
+            // sURNAMEDataGridViewTextBoxColumn
+            // 
+            this.sURNAMEDataGridViewTextBoxColumn.DataPropertyName = "SURNAME";
+            this.sURNAMEDataGridViewTextBoxColumn.HeaderText = "Surname";
+            this.sURNAMEDataGridViewTextBoxColumn.Name = "sURNAMEDataGridViewTextBoxColumn";
+            this.sURNAMEDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // gENDERDataGridViewTextBoxColumn
+            // 
+            this.gENDERDataGridViewTextBoxColumn.DataPropertyName = "GENDER";
+            this.gENDERDataGridViewTextBoxColumn.HeaderText = "Gender";
+            this.gENDERDataGridViewTextBoxColumn.Name = "gENDERDataGridViewTextBoxColumn";
+            this.gENDERDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // pHONEDataGridViewTextBoxColumn
+            // 
+            this.pHONEDataGridViewTextBoxColumn.DataPropertyName = "PHONE";
+            this.pHONEDataGridViewTextBoxColumn.HeaderText = "Phone";
+            this.pHONEDataGridViewTextBoxColumn.Name = "pHONEDataGridViewTextBoxColumn";
+            // 
+            // eNROLLEDDATEDataGridViewTextBoxColumn
+            // 
+            this.eNROLLEDDATEDataGridViewTextBoxColumn.DataPropertyName = "ENROLLED_DATE";
+            this.eNROLLEDDATEDataGridViewTextBoxColumn.HeaderText = "Enrolled Date";
+            this.eNROLLEDDATEDataGridViewTextBoxColumn.Name = "eNROLLEDDATEDataGridViewTextBoxColumn";
+            this.eNROLLEDDATEDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // cITIZENIDDataGridViewTextBoxColumn
+            // 
+            this.cITIZENIDDataGridViewTextBoxColumn.DataPropertyName = "CITIZEN_ID";
+            this.cITIZENIDDataGridViewTextBoxColumn.HeaderText = "ID Number";
+            this.cITIZENIDDataGridViewTextBoxColumn.Name = "cITIZENIDDataGridViewTextBoxColumn";
+            // 
+            // cITYDataGridViewTextBoxColumn
+            // 
+            this.cITYDataGridViewTextBoxColumn.DataPropertyName = "CITY";
+            this.cITYDataGridViewTextBoxColumn.HeaderText = "City";
+            this.cITYDataGridViewTextBoxColumn.Name = "cITYDataGridViewTextBoxColumn";
+            // 
+            // eMAILDataGridViewTextBoxColumn
+            // 
+            this.eMAILDataGridViewTextBoxColumn.DataPropertyName = "EMAIL";
+            this.eMAILDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.eMAILDataGridViewTextBoxColumn.Name = "eMAILDataGridViewTextBoxColumn";
+            this.eMAILDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // sTUDENTBindingSource1
+            // 
+            this.sTUDENTBindingSource1.DataMember = "STUDENT";
+            this.sTUDENTBindingSource1.DataSource = this.dS;
+            // 
+            // metroTileSearchByAdminNo
+            // 
+            this.metroTileSearchByAdminNo.ActiveControl = null;
+            this.metroTileSearchByAdminNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.metroTileSearchByAdminNo.Location = new System.Drawing.Point(402, 63);
+            this.metroTileSearchByAdminNo.Name = "metroTileSearchByAdminNo";
+            this.metroTileSearchByAdminNo.Size = new System.Drawing.Size(166, 31);
+            this.metroTileSearchByAdminNo.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroTileSearchByAdminNo.TabIndex = 10;
+            this.metroTileSearchByAdminNo.Text = "Search by Admission No";
+            this.metroTileSearchByAdminNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTileSearchByAdminNo.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.metroTileSearchByAdminNo.UseSelectable = true;
+            this.metroTileSearchByAdminNo.UseStyleColors = true;
+            this.metroTileSearchByAdminNo.Click += new System.EventHandler(this.metroTileSearchByAdminNo_Click_1);
+            // 
+            // metroTextBoxSearchByAdminNo
+            // 
+            this.metroTextBoxSearchByAdminNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.metroTextBoxSearchByAdminNo.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.metroTextBoxSearchByAdminNo.Lines = new string[0];
+            this.metroTextBoxSearchByAdminNo.Location = new System.Drawing.Point(574, 64);
+            this.metroTextBoxSearchByAdminNo.MaxLength = 32767;
+            this.metroTextBoxSearchByAdminNo.Name = "metroTextBoxSearchByAdminNo";
+            this.metroTextBoxSearchByAdminNo.PasswordChar = '\0';
+            this.metroTextBoxSearchByAdminNo.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBoxSearchByAdminNo.SelectedText = "";
+            this.metroTextBoxSearchByAdminNo.Size = new System.Drawing.Size(169, 31);
+            this.metroTextBoxSearchByAdminNo.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroTextBoxSearchByAdminNo.TabIndex = 11;
+            this.metroTextBoxSearchByAdminNo.UseSelectable = true;
+            this.metroTextBoxSearchByAdminNo.UseStyleColors = true;
+            // 
             // BrowseLearners
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1097, 583);
+            this.Controls.Add(this.metroTextBoxSearchByAdminNo);
+            this.Controls.Add(this.metroTileSearchByAdminNo);
+            this.Controls.Add(this.metroGridViewLearner);
             this.Controls.Add(this.metroTileFilter);
             this.Controls.Add(this.metroComboBoxFilter);
             this.Controls.Add(this.metroTileClose);
             this.Controls.Add(this.metroTextBoxSearchLearner);
             this.Controls.Add(this.metroTileSearchLearner);
             this.Controls.Add(this.metroTileUpdateLearner);
-            this.Controls.Add(this.metroGridViewLearner);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BrowseLearners";
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Learner Details";
             this.Load += new System.EventHandler(this.BrowseDetails_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.metroGridViewLearner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTUDENTBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.metroGridViewLearner)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTUDENTBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private MetroFramework.Controls.MetroGrid metroGridViewLearner;
-        private DS dS;
+        private DSS dS;
         private System.Windows.Forms.BindingSource sTUDENTBindingSource;
-        private DSTableAdapters.STUDENTTableAdapter TAStudent;
+        private DSSTableAdapters.STUDENTTableAdapter TAStudent;
         private MetroFramework.Controls.MetroTile metroTileUpdateLearner;
         private MetroFramework.Controls.MetroTile metroTileSearchLearner;
         private MetroFramework.Controls.MetroTextBox metroTextBoxSearchLearner;
@@ -352,15 +329,26 @@
         private MetroFramework.Controls.MetroTile metroTileClose;
         private MetroFramework.Controls.MetroComboBox metroComboBoxFilter;
         private MetroFramework.Controls.MetroTile metroTileFilter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdmissionNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn fIRSTNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lASTNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sTUDENTGENDERDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pHONENUMBERDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn aDMITTEDDATEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sTUDENTCITIZENIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SUBURB;
         private System.Windows.Forms.DataGridViewTextBoxColumn cENTREDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView metroGridViewLearner;
+        private System.Windows.Forms.BindingSource sTUDENTBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aDMISSIONNODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sURNAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gENDERDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pHONEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eNROLLEDDATEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cITIZENIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cITYDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eMAILDataGridViewTextBoxColumn;
+        private MetroFramework.Controls.MetroTile metroTileSearchByAdminNo;
+        private MetroFramework.Controls.MetroTextBox metroTextBoxSearchByAdminNo;
 
     }
 }

@@ -32,7 +32,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroComboBoxGrade = new MetroFramework.Controls.MetroComboBox();
             this.gRADEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dS = new SIMS.DS();
+            this.dS = new SIMS.DSS();
             this.metroDateTimeAddStaff = new MetroFramework.Controls.MetroDateTime();
             this.metroTextBoxJob = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBoxContact = new MetroFramework.Controls.MetroTextBox();
@@ -62,7 +62,6 @@
             this.metroTileClose = new MetroFramework.Controls.MetroTile();
             this.metroTileClear = new MetroFramework.Controls.MetroTile();
             this.metroTileAdd = new MetroFramework.Controls.MetroTile();
-            this.gRADETableAdapter = new SIMS.DSTableAdapters.GRADETableAdapter();
             this.metroComboBoxGender = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
             this.groupBox1.SuspendLayout();
@@ -531,10 +530,6 @@
             this.metroTileAdd.UseStyleColors = true;
             this.metroTileAdd.Click += new System.EventHandler(this.metroTileAdd_Click);
             // 
-            // gRADETableAdapter
-            // 
-            this.gRADETableAdapter.ClearBeforeFill = true;
-            // 
             // metroComboBoxGender
             // 
             this.metroComboBoxGender.FormattingEnabled = true;
@@ -607,9 +602,8 @@
         private MetroFramework.Controls.MetroTextBox metroTextBoxCitizenID;
         private MetroFramework.Controls.MetroTextBox metroTextBoxLastName;
         private MetroFramework.Controls.MetroTextBox metroTextBoxFirstName;
-        private DS dS;
+        private DSS dS;
         private System.Windows.Forms.BindingSource gRADEBindingSource;
-        private DSTableAdapters.GRADETableAdapter gRADETableAdapter;
         private MetroFramework.Controls.MetroTextBox metroTextBoxEAddress;
         private MetroFramework.Controls.MetroTextBox metroTextBoxZipCode;
         private MetroFramework.Controls.MetroTextBox metroTextBoxCity;

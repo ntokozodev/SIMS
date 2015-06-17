@@ -89,8 +89,8 @@ namespace SIMS
         {
             try
             {
-                usersTA.FillByUserPass(loginDS.USERS, user, pword);
-                if (loginDS.USERS.Rows.Count > 0)
+                usersTA.FillByUserPass(loginDS.SIMS_USERS, user, pword);
+                if (loginDS.SIMS_USERS.Rows.Count > 0)
                     return true;
                 else
                     return false;

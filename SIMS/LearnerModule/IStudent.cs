@@ -28,7 +28,7 @@ using System.Drawing;
 using System.Windows.Forms;
 
 using CentreModule;
-using SIMS.DSTableAdapters;
+using SIMS.DSSTableAdapters;
 
 
 namespace SIMS.LearnerModule
@@ -51,7 +51,6 @@ namespace SIMS.LearnerModule
         string EmailAddress { get; }
         string ContactNumber { get; }
         DateTimePicker AdmittedDate { get; }
-        string AdmissionNumber { get; }
         string Centre { get; }
 
         //Centre SchoolCentre { get; }

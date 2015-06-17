@@ -32,18 +32,17 @@ namespace SIMS.LearnerModule
         {
             this.components = new System.ComponentModel.Container();
             this.detailsGroupBox = new System.Windows.Forms.GroupBox();
-            this.DateAdmission = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.TextBoxAdminNumber = new MetroFramework.Controls.MetroTextBox();
             this.TextBoxContactNumber = new MetroFramework.Controls.MetroTextBox();
             this.TextBoxIDNumber = new MetroFramework.Controls.MetroTextBox();
             this.TextBoxLastName = new MetroFramework.Controls.MetroTextBox();
             this.TextBoxFirstName = new MetroFramework.Controls.MetroTextBox();
             this.ComboBoxCentre = new MetroFramework.Controls.MetroComboBox();
+            this.cENTREBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSS = new SIMS.DSS();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.ComboBoxGender = new MetroFramework.Controls.MetroComboBox();
             this.genderLabel = new MetroFramework.Controls.MetroLabel();
             this.contactNumberLabel = new MetroFramework.Controls.MetroLabel();
@@ -64,14 +63,14 @@ namespace SIMS.LearnerModule
             this.addDetailsTile = new MetroFramework.Controls.MetroTile();
             this.cancelTile = new MetroFramework.Controls.MetroTile();
             this.clearTile = new MetroFramework.Controls.MetroTile();
-            this.dS = new SIMS.DS();
-            this.cENTREBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cENTRETableAdapter = new SIMS.DSTableAdapters.CENTRETableAdapter();
+            this.cENTRETableAdapter = new SIMS.DSSTableAdapters.CENTRETableAdapter();
+            this.DateAdmission = new MetroFramework.Controls.MetroDateTime();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.detailsGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.guardianGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cENTREBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSS)).BeginInit();
+            this.guardianGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // detailsGroupBox
@@ -79,14 +78,13 @@ namespace SIMS.LearnerModule
             this.detailsGroupBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.detailsGroupBox.Controls.Add(this.DateAdmission);
             this.detailsGroupBox.Controls.Add(this.groupBox1);
-            this.detailsGroupBox.Controls.Add(this.TextBoxAdminNumber);
             this.detailsGroupBox.Controls.Add(this.TextBoxContactNumber);
             this.detailsGroupBox.Controls.Add(this.TextBoxIDNumber);
             this.detailsGroupBox.Controls.Add(this.TextBoxLastName);
             this.detailsGroupBox.Controls.Add(this.TextBoxFirstName);
             this.detailsGroupBox.Controls.Add(this.ComboBoxCentre);
-            this.detailsGroupBox.Controls.Add(this.metroLabel2);
             this.detailsGroupBox.Controls.Add(this.metroLabel1);
+            this.detailsGroupBox.Controls.Add(this.metroLabel2);
             this.detailsGroupBox.Controls.Add(this.ComboBoxGender);
             this.detailsGroupBox.Controls.Add(this.genderLabel);
             this.detailsGroupBox.Controls.Add(this.contactNumberLabel);
@@ -96,19 +94,10 @@ namespace SIMS.LearnerModule
             this.detailsGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.detailsGroupBox.Location = new System.Drawing.Point(17, 84);
             this.detailsGroupBox.Name = "detailsGroupBox";
-            this.detailsGroupBox.Size = new System.Drawing.Size(521, 409);
+            this.detailsGroupBox.Size = new System.Drawing.Size(521, 360);
             this.detailsGroupBox.TabIndex = 0;
             this.detailsGroupBox.TabStop = false;
             this.detailsGroupBox.Text = "Student Details";
-            // 
-            // DateAdmission
-            // 
-            this.DateAdmission.Location = new System.Drawing.Point(337, 381);
-            this.DateAdmission.Name = "DateAdmission";
-            this.DateAdmission.Size = new System.Drawing.Size(163, 21);
-            this.DateAdmission.TabIndex = 30;
-            this.DateAdmission.Value = new System.DateTime(2015, 5, 28, 23, 53, 38, 0);
-            this.DateAdmission.Visible = false;
             // 
             // groupBox1
             // 
@@ -150,21 +139,6 @@ namespace SIMS.LearnerModule
             this.metroTextBox1.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBox1.UseSelectable = true;
             this.metroTextBox1.UseStyleColors = true;
-            // 
-            // TextBoxAdminNumber
-            // 
-            this.TextBoxAdminNumber.Lines = new string[0];
-            this.TextBoxAdminNumber.Location = new System.Drawing.Point(171, 207);
-            this.TextBoxAdminNumber.MaxLength = 32767;
-            this.TextBoxAdminNumber.Name = "TextBoxAdminNumber";
-            this.TextBoxAdminNumber.PasswordChar = '\0';
-            this.TextBoxAdminNumber.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TextBoxAdminNumber.SelectedText = "";
-            this.TextBoxAdminNumber.Size = new System.Drawing.Size(329, 23);
-            this.TextBoxAdminNumber.Style = MetroFramework.MetroColorStyle.Green;
-            this.TextBoxAdminNumber.TabIndex = 25;
-            this.TextBoxAdminNumber.UseSelectable = true;
-            this.TextBoxAdminNumber.UseStyleColors = true;
             // 
             // TextBoxContactNumber
             // 
@@ -234,10 +208,10 @@ namespace SIMS.LearnerModule
             // 
             this.ComboBoxCentre.DataSource = this.cENTREBindingSource;
             this.ComboBoxCentre.DisplayFocus = true;
-            this.ComboBoxCentre.DisplayMember = "CENTRE_NAME";
+            this.ComboBoxCentre.DisplayMember = "NAME";
             this.ComboBoxCentre.FormattingEnabled = true;
             this.ComboBoxCentre.ItemHeight = 23;
-            this.ComboBoxCentre.Location = new System.Drawing.Point(171, 310);
+            this.ComboBoxCentre.Location = new System.Drawing.Point(171, 312);
             this.ComboBoxCentre.Name = "ComboBoxCentre";
             this.ComboBoxCentre.Size = new System.Drawing.Size(132, 29);
             this.ComboBoxCentre.Style = MetroFramework.MetroColorStyle.Green;
@@ -246,12 +220,22 @@ namespace SIMS.LearnerModule
             this.ComboBoxCentre.UseSelectable = true;
             this.ComboBoxCentre.UseStyleColors = true;
             // 
+            // cENTREBindingSource
+            // 
+            this.cENTREBindingSource.DataMember = "CENTRE";
+            this.cENTREBindingSource.DataSource = this.dSS;
+            // 
+            // dSS
+            // 
+            this.dSS.DataSetName = "DSS";
+            this.dSS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.BackColor = System.Drawing.Color.White;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel2.Location = new System.Drawing.Point(96, 320);
+            this.metroLabel2.Location = new System.Drawing.Point(90, 322);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(57, 19);
             this.metroLabel2.Style = MetroFramework.MetroColorStyle.Green;
@@ -259,20 +243,6 @@ namespace SIMS.LearnerModule
             this.metroLabel2.Text = "Centre:";
             this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroLabel2.UseStyleColors = true;
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.BackColor = System.Drawing.Color.White;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(11, 211);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(142, 19);
-            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroLabel1.TabIndex = 17;
-            this.metroLabel1.Text = "Admission Number:";
-            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel1.UseStyleColors = true;
             // 
             // ComboBoxGender
             // 
@@ -296,7 +266,7 @@ namespace SIMS.LearnerModule
             this.genderLabel.AutoSize = true;
             this.genderLabel.BackColor = System.Drawing.Color.White;
             this.genderLabel.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.genderLabel.Location = new System.Drawing.Point(90, 266);
+            this.genderLabel.Location = new System.Drawing.Point(84, 266);
             this.genderLabel.Name = "genderLabel";
             this.genderLabel.Size = new System.Drawing.Size(63, 19);
             this.genderLabel.Style = MetroFramework.MetroColorStyle.Green;
@@ -377,7 +347,7 @@ namespace SIMS.LearnerModule
             this.guardianGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guardianGroupBox.Location = new System.Drawing.Point(550, 84);
             this.guardianGroupBox.Name = "guardianGroupBox";
-            this.guardianGroupBox.Size = new System.Drawing.Size(521, 339);
+            this.guardianGroupBox.Size = new System.Drawing.Size(521, 360);
             this.guardianGroupBox.TabIndex = 1;
             this.guardianGroupBox.TabStop = false;
             this.guardianGroupBox.Text = "Address Details";
@@ -433,12 +403,12 @@ namespace SIMS.LearnerModule
             this.metroLabel12.AutoSize = true;
             this.metroLabel12.BackColor = System.Drawing.Color.White;
             this.metroLabel12.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel12.Location = new System.Drawing.Point(18, 67);
+            this.metroLabel12.Location = new System.Drawing.Point(61, 67);
             this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(110, 19);
+            this.metroLabel12.Size = new System.Drawing.Size(67, 19);
             this.metroLabel12.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel12.TabIndex = 8;
-            this.metroLabel12.Text = "Address Line 1:";
+            this.metroLabel12.Text = "Address:";
             this.metroLabel12.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroLabel12.UseStyleColors = true;
             // 
@@ -582,19 +552,31 @@ namespace SIMS.LearnerModule
             this.clearTile.UseSelectable = true;
             this.clearTile.Click += new System.EventHandler(this.clearTile_Click);
             // 
-            // dS
-            // 
-            this.dS.DataSetName = "DS";
-            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cENTREBindingSource
-            // 
-            this.cENTREBindingSource.DataMember = "CENTRE";
-            this.cENTREBindingSource.DataSource = this.dS;
-            // 
             // cENTRETableAdapter
             // 
             this.cENTRETableAdapter.ClearBeforeFill = true;
+            // 
+            // DateAdmission
+            // 
+            this.DateAdmission.Location = new System.Drawing.Point(171, 201);
+            this.DateAdmission.MinimumSize = new System.Drawing.Size(0, 29);
+            this.DateAdmission.Name = "DateAdmission";
+            this.DateAdmission.Size = new System.Drawing.Size(132, 29);
+            this.DateAdmission.TabIndex = 25;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.BackColor = System.Drawing.Color.White;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel1.Location = new System.Drawing.Point(44, 211);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(103, 19);
+            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroLabel1.TabIndex = 19;
+            this.metroLabel1.Text = "Enrolled Date:";
+            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroLabel1.UseStyleColors = true;
             // 
             // AddLearner
             // 
@@ -610,16 +592,16 @@ namespace SIMS.LearnerModule
             this.MinimizeBox = false;
             this.Name = "AddLearner";
             this.Style = MetroFramework.MetroColorStyle.Green;
-            this.Text = "Register New Learner";
+            this.Text = "Add New Learner";
             this.Load += new System.EventHandler(this.AddLearner_Load);
             this.detailsGroupBox.ResumeLayout(false);
             this.detailsGroupBox.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cENTREBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSS)).EndInit();
             this.guardianGroupBox.ResumeLayout(false);
             this.guardianGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cENTREBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -640,10 +622,8 @@ namespace SIMS.LearnerModule
         private MetroFramework.Controls.MetroLabel firstNameLabel;
         private MetroFramework.Controls.MetroComboBox ComboBoxCentre;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroTextBox TextBoxFirstName;
         private MetroFramework.Controls.MetroTextBox TextBoxLastName;
-        private MetroFramework.Controls.MetroTextBox TextBoxAdminNumber;
         private MetroFramework.Controls.MetroTextBox TextBoxContactNumber;
         private MetroFramework.Controls.MetroTextBox TextBoxIDNumber;
         private MetroFramework.Controls.MetroTile addDetailsTile;
@@ -662,10 +642,12 @@ namespace SIMS.LearnerModule
         private MetroFramework.Controls.MetroLabel metroLabel13;
         private MetroFramework.Controls.MetroTile clearTile;
         private MetroFramework.Controls.MetroTextBox TextBoxZipCode;
-        private DateTimePicker DateAdmission;
-        private DS dS;
+        private DSS dS;
+        private DSS dSS;
         private BindingSource cENTREBindingSource;
-        private DSTableAdapters.CENTRETableAdapter cENTRETableAdapter;
+        private DSSTableAdapters.CENTRETableAdapter cENTRETableAdapter;
+        private MetroFramework.Controls.MetroDateTime DateAdmission;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
     
         protected override CreateParams CreateParams
         {

@@ -33,9 +33,6 @@ namespace SIMS.EmployeeModule
 
         private void AddStaffMember_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dS.GRADE' table. You can move, or remove it, as needed.
-            this.gRADETableAdapter.Fill(this.dS.GRADE);
-
         }
 
         private void metroTileClose_Click(object sender, EventArgs e)

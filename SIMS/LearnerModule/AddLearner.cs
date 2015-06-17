@@ -44,10 +44,9 @@ namespace SIMS.LearnerModule
             student = new Student(TextBoxFirstName.Text.ToString(), TextBoxLastName.Text.ToString(), 
                                   TextBoxIDNumber.Text.ToString(), ComboBoxGender.Text.ToString(), 
                                   TextBoxContactNumber.Text.ToString(), DateAdmission, 
-                                  TextBoxAdminNumber.Text.ToString(), TextBoxAddressLine1.Text.ToString(), 
-                                  TextBoxSuburb.Text.ToString(), TextBoxCity.Text.ToString(), 
-                                  TextBoxZipCode.Text.ToString(), TextBoxEmailAddress.Text.ToString(),
-                                  ComboBoxCentre.Text.ToString()
+                                  TextBoxAddressLine1.Text.ToString(), TextBoxSuburb.Text.ToString(), 
+                                  TextBoxCity.Text.ToString(), TextBoxZipCode.Text.ToString(), 
+                                  TextBoxEmailAddress.Text.ToString(), ComboBoxCentre.Text.ToString()
                                  );
 
             int rowsUpdated = student.addNewStudent(student);
@@ -67,7 +66,6 @@ namespace SIMS.LearnerModule
             TextBoxLastName.Clear();
             TextBoxIDNumber.Clear();
             TextBoxAddressLine1.Clear();
-            TextBoxAdminNumber.Clear();
             TextBoxZipCode.Clear();
             TextBoxContactNumber.Clear();
             TextBoxEmailAddress.Clear();
@@ -84,9 +82,15 @@ namespace SIMS.LearnerModule
 
         private void AddLearner_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dS.CENTRE' table. You can move, or remove it, as needed.
-            this.cENTRETableAdapter.Fill(this.dS.CENTRE);
-
+            try
+            {
+                // TODO: This line of code loads data into the 'dSS.CENTRE' table. You can move, or remove it, as needed.
+                this.cENTRETableAdapter.Fill(this.dSS.CENTRE);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unexpected error!\n" + ex.Message.ToString());
+            }
         }
     }
 }

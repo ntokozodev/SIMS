@@ -49,12 +49,9 @@ namespace SIMS.LearnerModule
                         string haddress, string eaddress, 
                         string gnd) 
         {
-            if (Valid.isCitizenIDValid(gCitizenID))
-                guardianCitizenID = gCitizenID;
-            if (Valid.isEmailValid(eaddress))
-                emailAddress = eaddress;
-            if (Valid.isContactNumberValid(cnumber))
-                contactNumber = cnumber;
+            guardianCitizenID = gCitizenID;
+            emailAddress = eaddress;
+            contactNumber = cnumber;
             firstName = fname;
             lastName = lname;
             homeAddress = haddress;

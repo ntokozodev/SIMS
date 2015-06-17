@@ -87,9 +87,38 @@ namespace SIMS.LearnerModule
          */ 
         private void metroTileSearchLearner_Click(object sender, EventArgs e)
         {
+            int rows = 0;
             try
             {
-                TAStudent.FillByLearnerSearch(this.dS.STUDENT, metroTextBoxSearchLearner.Text.ToLower());
+                rows = TAStudent.FillByLearnerSearch(this.dS.STUDENT, metroTextBoxSearchLearner.Text.ToLower());
+                if (rows == 0)
+                {
+                    MessageBox.Show("The surname: " + metroTextBoxSearchLearner.Text + " does not exist in our database records.");
+                    metroTextBoxSearchLearner.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:\n" + ex.Message.ToString());
+            }
+        }
+
+        private void metroTileSearchByAdminNo_Click_1(object sender, EventArgs e)
+        {
+            int rows = 0;
+            try
+            {
+                if (metroTextBoxSearchByAdminNo.Text == "")
+                    MessageBox.Show("Please enter admission no. in search box");
+                else
+                {
+                    rows = TAStudent.SearchByAdminNo(this.dS.STUDENT, metroTextBoxSearchByAdminNo.Text);
+                    if (rows == 0)
+                    {
+                        MessageBox.Show("Admission No: " + metroTextBoxSearchByAdminNo.Text + " does not exist in our database records.");
+                        metroTextBoxSearchByAdminNo.Clear();
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -116,26 +145,11 @@ namespace SIMS.LearnerModule
                 if (metroComboBoxFilter.Text == "Admission No")
                     TAStudent.OrderByAdmissionNo(this.dS.STUDENT);
 
-                if (metroComboBoxFilter.Text == "Admitted Date")
-                    TAStudent.OrderByDate(this.dS.STUDENT);
-
                 if (metroComboBoxFilter.Text == "Last Name")
-                    TAStudent.OrderByName(this.dS.STUDENT);
+                    TAStudent.OrderBySurname(this.dS.STUDENT);
             }
             else
                 MessageBox.Show("Please select one of the filter options first");
-        }
-
-        private void metroTileSearchByAdminNo_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //TAStudent.SearchByAdmissionNo()
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Database error:\n" + ex.Message.ToString());
-            }
         }
     }
 }

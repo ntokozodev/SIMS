@@ -1,10 +1,10 @@
 ﻿/**
- * SIMS is (c) 2015 Ntokozo Company. All rights reserved.
+ * SIMS is (c) 2015 Geek Studio Company. All rights reserved.
  * 
- * http://www.ntokozo.co.za
+ * http://www.gstudioc.co.za
  *
  * COPYRIGHTS:
- * Copyright (c) 2015 Ntokozo Company. All rights reserved.
+ * Copyright (c) 2015 Geek Studio Company. All rights reserved.
  * 
  * --------------------------------------------------------------------------------
  * Redistribution and use in source and binary forms, with or without modification, 
@@ -28,12 +28,13 @@ using System.Drawing;
 
 using CentreModule;
 using Validation;
-using SIMS.DSTableAdapters;
+using SIMS.DSSTableAdapters;
 using Oracle.ManagedDataAccess.Client;
 using Oracle.ManagedDataAccess.Types;
 using System.Windows.Forms;
 using System.Data;
 using MetroFramework;
+using System.Globalization;
 
 namespace SIMS.LearnerModule
 {
@@ -55,7 +56,6 @@ namespace SIMS.LearnerModule
         private string city;
         private string zipCode;
         private string emailAddress;
-        private string admissionNumber;
         private string centre;
         private DateTimePicker admittedDate;
         private SimsOracle db;
@@ -67,8 +67,7 @@ namespace SIMS.LearnerModule
         public Student( string fName, string lName, 
                         string sCitizenID, string genderValue, 
                         string cNumber, DateTimePicker adDate, 
-                        string admitNo, string addr1, 
-                        string subV, string cityV, 
+                        string addr1, string subV, string cityV, 
                         string zipV, string email, string cent
                       ) 
         {
@@ -83,7 +82,6 @@ namespace SIMS.LearnerModule
             city = cityV;
             zipCode = zipV;
             emailAddress = email;
-            admissionNumber = admitNo;
             centre = cent;
 
             //picture = pic;
@@ -91,7 +89,7 @@ namespace SIMS.LearnerModule
             //studentClass = sClass;
         }
 
-        #region Properties
+        #region "Properties"
         public string FirstName
         {
             get { return firstName; }
@@ -126,12 +124,6 @@ namespace SIMS.LearnerModule
         {
             get { return admittedDate; }
             set { admittedDate = value; }
-        }
-
-        public string AdmissionNumber
-        {
-            get { return admissionNumber; }
-            set { admissionNumber = value; }
         }
 
         public string AddressLine1
@@ -176,29 +168,29 @@ namespace SIMS.LearnerModule
         {
             db = new SimsOracle();
             int rows = 0;
+            var datestring = stu.admittedDate.Value.ToShortDateString();
             try
             {
                 string query = "INSERT INTO SIMS.STUDENT " +
-                                      "(ADMISSION_NO, FIRST_NAME, LAST_NAME, STUDENT_GENDER," +
-                                      "PHONE_NUMBER, ADMITTED_DATE, STUDENT_CITIZEN_ID, ADDRESS_LINE1," +
-                                      "SUBURB, CITY, ZIP_CODE, EMAIL_ADDRESS, CENTRE) " +
-                               "VALUES (:ADMISION_NO, :FIRST_NAME, :LAST_NAME, :STUDENT_GENDER," +
-                                       ":PHONE_NUMBER, :ADMITTED_DATE, :STUDENT_CITIZEN_ID, :ADDRESS_LINE1," +
-                                       ":SUBURB, :CITY, :ZIP_CODE, :EMAIL_ADDRESS, :CENTRE)";
+                                      "(NAME, SURNAME, GENDER," +
+                                      "PHONE, ENROLLED_DATE, CITIZEN_ID, ADDRESS," +
+                                      "SUBURB, CITY, ZIPCODE, EMAIL, CENTRE_ID) " +
+                               "VALUES (:NAME, :SURNAME, :GENDER," +
+                                       ":PHONE, :ENROLLED_DATE, :CITIZEN_ID, :ADDRESS," +
+                                       ":SUBURB, :CITY, :ZIPCODE, :EMAIL, " +
+                                       "(SELECT CENTRE_ID FROM SIMS.CENTRE WHERE NAME = '"+ stu.centre +"'))";
                 OracleCommand cmd = new OracleCommand(query, db.Connection);
-                cmd.Parameters.Add("ADMISION_NO", stu.admissionNumber);
                 cmd.Parameters.Add("FIRST_NAME", stu.firstName);
                 cmd.Parameters.Add("LAST_NAME", stu.lastName);
                 cmd.Parameters.Add("STUDENT_GENDER", stu.gender);
                 cmd.Parameters.Add("PHONE_NUMBER", stu.contactNumber);
-                cmd.Parameters.Add("ADMITTED_DATE", OracleDbType.Date).Value = DateTime.Now;
+                cmd.Parameters.Add("ENROLLED_DATE", OracleDbType.Date).Value = DateTime.Parse(datestring);
                 cmd.Parameters.Add("STUDENT_CITIZEN_ID", stu.studentCitizenID);
                 cmd.Parameters.Add("ADDRESS_LINE1", stu.addressLine1);
                 cmd.Parameters.Add("SUBURB", stu.suburb);
                 cmd.Parameters.Add("CITY", stu.city);
                 cmd.Parameters.Add("ZIP_CODE", stu.zipCode);
                 cmd.Parameters.Add("EMAIL_ADDRESS", stu.emailAddress);
-                cmd.Parameters.Add("CENTRE", stu.centre);
                 
                 rows = cmd.ExecuteNonQuery(); 
             }

@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SIMS.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MetroFramework">
       <HintPath>..\packages\MetroModernUI.1.3.0.0\lib\net\MetroFramework.dll</HintPath>
@@ -142,22 +145,22 @@
     <Compile Include="CentreModule\Address.cs" />
     <Compile Include="CentreModule\Centre.cs" />
     <Compile Include="CentreModule\ClassRoom.cs" />
-    <Compile Include="DS.cs">
-      <DependentUpon>DS.xsd</DependentUpon>
+    <Compile Include="DSS.cs">
+      <DependentUpon>DSS.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DS.Designer.cs">
+    <Compile Include="DSS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DS.xsd</DependentUpon>
+      <DependentUpon>DSS.xsd</DependentUpon>
     </Compile>
-    <Compile Include="OracleDB\OracleDatabase.cs" />
-    <Compile Include="EmployeeModule\AddNewStaffGrade.cs">
+    <Compile Include="LearnerModule\RegisterStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmployeeModule\AddNewStaffGrade.Designer.cs">
-      <DependentUpon>AddNewStaffGrade.cs</DependentUpon>
+    <Compile Include="LearnerModule\RegisterStudent.Designer.cs">
+      <DependentUpon>RegisterStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="OracleDB\OracleDatabase.cs" />
     <Compile Include="EmployeeModule\AddStaffMember.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,12 +178,6 @@
     </Compile>
     <Compile Include="EmployeeModule\BrowseStaffDetails.Designer.cs">
       <DependentUpon>BrowseStaffDetails.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EmployeeModule\ChangeStaffGrade.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EmployeeModule\ChangeStaffGrade.Designer.cs">
-      <DependentUpon>ChangeStaffGrade.cs</DependentUpon>
     </Compile>
     <Compile Include="EmployeeModule\RecordStaffAttendance.cs">
       <SubType>Form</SubType>
@@ -273,9 +270,6 @@
     <EmbeddedResource Include="AccountModule\ViewExpenses.resx">
       <DependentUpon>ViewExpenses.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeModule\AddNewStaffGrade.resx">
-      <DependentUpon>AddNewStaffGrade.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeModule\AddStaffMember.resx">
       <DependentUpon>AddStaffMember.cs</DependentUpon>
     </EmbeddedResource>
@@ -284,9 +278,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeModule\BrowseStaffDetails.resx">
       <DependentUpon>BrowseStaffDetails.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeModule\ChangeStaffGrade.resx">
-      <DependentUpon>ChangeStaffGrade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeModule\RecordStaffAttendance.resx">
       <DependentUpon>RecordStaffAttendance.cs</DependentUpon>
@@ -303,6 +294,9 @@
     <EmbeddedResource Include="LearnerModule\BrowseLearners.resx">
       <DependentUpon>BrowseLearners.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LearnerModule\RegisterStudent.resx">
+      <DependentUpon>RegisterStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -318,16 +312,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="DS.xsc">
-      <DependentUpon>DS.xsd</DependentUpon>
+    <None Include="DSS.xsc">
+      <DependentUpon>DSS.xsd</DependentUpon>
     </None>
-    <None Include="DS.xsd">
+    <None Include="DSS.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS.Designer.cs</LastGenOutput>
+      <LastGenOutput>DSS.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DS.xss">
-      <DependentUpon>DS.xsd</DependentUpon>
+    <None Include="DSS.xss">
+      <DependentUpon>DSS.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

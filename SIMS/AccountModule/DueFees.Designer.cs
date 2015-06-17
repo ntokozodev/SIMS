@@ -35,12 +35,9 @@
             this.metroTileLoadDueFee = new MetroFramework.Controls.MetroTile();
             this.metroTilePrintDueFees = new MetroFramework.Controls.MetroTile();
             this.metroLabelTotalDue = new MetroFramework.Controls.MetroLabel();
-            this.TAFee = new SIMS.DSTableAdapters.FEETableAdapter();
-            this.dSFee = new SIMS.DS();
             this.metroTileClose = new MetroFramework.Controls.MetroTile();
             this.metroTextBoxTotalDue = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridDueFees)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSFee)).BeginInit();
             this.SuspendLayout();
             // 
             // metroGridDueFees
@@ -138,15 +135,6 @@
             this.metroLabelTotalDue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabelTotalDue.Visible = false;
             // 
-            // TAFee
-            // 
-            this.TAFee.ClearBeforeFill = true;
-            // 
-            // dSFee
-            // 
-            this.dSFee.DataSetName = "DS";
-            this.dSFee.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // metroTileClose
             // 
             this.metroTileClose.ActiveControl = null;
@@ -200,7 +188,6 @@
             this.Text = "Due Fees";
             this.Load += new System.EventHandler(this.DueFees_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroGridDueFees)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSFee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,8 +199,6 @@
         private MetroFramework.Controls.MetroTile metroTileLoadDueFee;
         private MetroFramework.Controls.MetroTile metroTilePrintDueFees;
         private MetroFramework.Controls.MetroLabel metroLabelTotalDue;
-        private DSTableAdapters.FEETableAdapter TAFee;
-        private DS dSFee;
         private MetroFramework.Controls.MetroTile metroTileClose;
         private MetroFramework.Controls.MetroTextBox metroTextBoxTotalDue;
     }

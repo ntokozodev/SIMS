@@ -60,6 +60,7 @@ namespace SIMS
         private AddLearner learner = null;
         private BrowseLearners details = null;
         private AsignLearner asign = null;
+        private RegisterStudent register = null;
         #endregion
 
         #region "Properties Acounts Module"
@@ -80,8 +81,6 @@ namespace SIMS
         private AsignEducatorClass asignEdu = null;
         private RemoveEducatorClass removeEdu = null;
         private RecordStaffAttendance staffAt = null;
-        private AddNewStaffGrade staffGr = null;
-        private ChangeStaffGrade changeGr = null;
         #endregion
 
         #region "Properties AccessControl"
@@ -163,7 +162,7 @@ namespace SIMS
         /*
          * Candidates for refactoring...
          */
-        #region Learner Module
+        #region "Learner Module"
         private void addNewLearnerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainPanel.Controls.Clear();
@@ -185,15 +184,24 @@ namespace SIMS
         private void assignLearnerToClassToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainPanel.Controls.Clear();
-            MainPanel.Controls.Clear();
             if (asign != null)
                 asign.Close();
             asign = new AsignLearner();
             FormSetUp(asign);
         }
+
+        private void registerStudentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            if (register != null)
+                register.Close();
+            register = new RegisterStudent();
+            FormSetUp(register);
+        }
         #endregion
 
-        #region Accounts Module
+        #region "Accounts Module"
+
         private void addExpenseTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainPanel.Controls.Clear();
@@ -239,16 +247,7 @@ namespace SIMS
             FormSetUp(staffPay);
         }
 
-        private void addFeeStructureToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainPanel.Controls.Clear();
-            if (feeStruct != null)
-                feeStruct.Close();
-            feeStruct = new AddFeeStructure();
-            FormSetUp(feeStruct);
-        }
-
-        private void browseDueFeesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void feesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainPanel.Controls.Clear();
             if (dueFee != null)
@@ -276,7 +275,7 @@ namespace SIMS
         }
         #endregion
 
-        #region Employee Module
+        #region "Employee Module"
         private void addNewStaffMemberToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainPanel.Controls.Clear();
@@ -321,27 +320,9 @@ namespace SIMS
             staffAt = new RecordStaffAttendance();
             FormSetUp(staffAt);
         }
-
-        private void addNewStaffGradeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainPanel.Controls.Clear();
-            if (staffGr != null)
-                staffGr.Close();
-            staffGr = new AddNewStaffGrade();
-            FormSetUp(staffGr);
-        }
-
-        private void changeGradeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainPanel.Controls.Clear();
-            if (changeGr != null)
-                changeGr.Close();
-            changeGr = new ChangeStaffGrade();
-            FormSetUp(changeGr);
-        }
         #endregion  
 
-        #region Access Control
+        #region "Access Control"
         private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainPanel.Controls.Clear();
