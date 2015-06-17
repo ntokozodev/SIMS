@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterStudent));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.metroTileRegister = new MetroFramework.Controls.MetroTile();
             this.metroTileClear = new MetroFramework.Controls.MetroTile();
@@ -38,8 +38,6 @@
             this.RadioButtonAccept = new MetroFramework.Controls.MetroRadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.metroTileClose = new MetroFramework.Controls.MetroTile();
-            this.metroTextBoxRegCost = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.subjectsDGV = new System.Windows.Forms.DataGridView();
             this.metroTextBoxGrade = new MetroFramework.Controls.MetroTextBox();
@@ -94,7 +92,7 @@
             // 
             this.metroTileClear.ActiveControl = null;
             this.metroTileClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroTileClear.Location = new System.Drawing.Point(258, 258);
+            this.metroTileClear.Location = new System.Drawing.Point(258, 187);
             this.metroTileClear.Name = "metroTileClear";
             this.metroTileClear.Size = new System.Drawing.Size(75, 23);
             this.metroTileClear.Style = MetroFramework.MetroColorStyle.Green;
@@ -137,8 +135,6 @@
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox2.Controls.Add(this.metroTileClose);
-            this.groupBox2.Controls.Add(this.metroTextBoxRegCost);
-            this.groupBox2.Controls.Add(this.metroLabel4);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.metroTextBoxGrade);
             this.groupBox2.Controls.Add(this.metroTileRegister);
@@ -169,38 +165,6 @@
             this.metroTileClose.UseSelectable = true;
             this.metroTileClose.UseStyleColors = true;
             this.metroTileClose.Click += new System.EventHandler(this.metroTileClose_Click);
-            // 
-            // metroTextBoxRegCost
-            // 
-            this.metroTextBoxRegCost.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroTextBoxRegCost.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.metroTextBoxRegCost.Lines = new string[0];
-            this.metroTextBoxRegCost.Location = new System.Drawing.Point(189, 194);
-            this.metroTextBoxRegCost.MaxLength = 32767;
-            this.metroTextBoxRegCost.Name = "metroTextBoxRegCost";
-            this.metroTextBoxRegCost.PasswordChar = '\0';
-            this.metroTextBoxRegCost.ReadOnly = true;
-            this.metroTextBoxRegCost.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBoxRegCost.SelectedText = "";
-            this.metroTextBoxRegCost.Size = new System.Drawing.Size(144, 23);
-            this.metroTextBoxRegCost.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroTextBoxRegCost.TabIndex = 8;
-            this.metroTextBoxRegCost.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.metroTextBoxRegCost.UseSelectable = true;
-            this.metroTextBoxRegCost.UseStyleColors = true;
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel4.Location = new System.Drawing.Point(56, 198);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(127, 19);
-            this.metroLabel4.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroLabel4.TabIndex = 7;
-            this.metroLabel4.Text = "Registration Cost:";
-            this.metroLabel4.UseStyleColors = true;
             // 
             // groupBox3
             // 
@@ -234,7 +198,7 @@
             this.metroTextBoxGrade.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.metroTextBoxGrade.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.metroTextBoxGrade.Lines = new string[0];
-            this.metroTextBoxGrade.Location = new System.Drawing.Point(189, 131);
+            this.metroTextBoxGrade.Location = new System.Drawing.Point(189, 135);
             this.metroTextBoxGrade.MaxLength = 32767;
             this.metroTextBoxGrade.Name = "metroTextBoxGrade";
             this.metroTextBoxGrade.PasswordChar = '\0';
@@ -264,7 +228,7 @@
             this.metroTextBoxYear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.metroTextBoxYear.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.metroTextBoxYear.Lines = new string[0];
-            this.metroTextBoxYear.Location = new System.Drawing.Point(189, 73);
+            this.metroTextBoxYear.Location = new System.Drawing.Point(189, 77);
             this.metroTextBoxYear.MaxLength = 32767;
             this.metroTextBoxYear.Name = "metroTextBoxYear";
             this.metroTextBoxYear.PasswordChar = '\0';
@@ -294,7 +258,7 @@
             this.metroTextBoxAdminNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.metroTextBoxAdminNo.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.metroTextBoxAdminNo.Lines = new string[0];
-            this.metroTextBoxAdminNo.Location = new System.Drawing.Point(189, 19);
+            this.metroTextBoxAdminNo.Location = new System.Drawing.Point(189, 23);
             this.metroTextBoxAdminNo.MaxLength = 32767;
             this.metroTextBoxAdminNo.Name = "metroTextBoxAdminNo";
             this.metroTextBoxAdminNo.PasswordChar = '\0';
@@ -335,8 +299,8 @@
             // sUBJECTCOSTDataGridViewTextBoxColumn
             // 
             this.sUBJECTCOSTDataGridViewTextBoxColumn.DataPropertyName = "SUBJECT_COST";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.sUBJECTCOSTDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.sUBJECTCOSTDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.sUBJECTCOSTDataGridViewTextBoxColumn.HeaderText = "Subject Cost";
             this.sUBJECTCOSTDataGridViewTextBoxColumn.Name = "sUBJECTCOSTDataGridViewTextBoxColumn";
             // 
@@ -412,8 +376,6 @@
         private System.Windows.Forms.BindingSource subjectBS;
         private DSSTableAdapters.SUBJECTTableAdapter subjectTA;
         private System.Windows.Forms.DataGridView subjectsDGV;
-        private MetroFramework.Controls.MetroTextBox metroTextBoxRegCost;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroTile metroTileClose;
         private DSSTableAdapters.STUDENTTableAdapter studentTA;
         private MetroFramework.Controls.MetroRadioButton RadioButtonAccept;

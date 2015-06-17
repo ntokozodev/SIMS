@@ -226,6 +226,24 @@ namespace SIMS.LearnerModule
         }
 
         /**
+         * Calculate registration total amount for current selected subjects
+         * @return total for all subject selected for registration
+         */
+        internal int CalculateTotalRegistrationFee() 
+        {
+            int total = 0;
+            for (int i = 0; i < subjectsDGV.Rows.Count; i++)
+            {
+                if (subjectsDGV.Rows[i].Selected)
+                {
+                    int amount = Convert.ToInt32(subjectsDGV.Rows[i].Cells[2].Value);
+                    total += amount;
+                }
+            }
+            return total;
+        }
+
+        /**
          * This method checks all pre-conditions for registration
          */
         internal bool checkAllConditions()
@@ -268,7 +286,6 @@ namespace SIMS.LearnerModule
         internal void ClearControls()
         {
             metroTextBoxYear.Clear();
-            metroTextBoxRegCost.Clear();
             metroTextBoxAdminNo.Clear();
             metroTextBoxGrade.Clear();
         }
