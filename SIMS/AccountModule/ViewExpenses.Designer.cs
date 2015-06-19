@@ -52,8 +52,6 @@
             this.metroTileExpPayChanges = new MetroFramework.Controls.MetroTile();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
             this.eXPENSEPAYMENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.TAExpenses = new SIMS.DSTableAdapters.EXPENSETableAdapter();
-            this.TAExpensePayement = new SIMS.DSTableAdapters.EXPENSE_PAYMENTTableAdapter();
             this.metroTileClose = new MetroFramework.Controls.MetroTile();
             this.eXPENSEIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eXPENSETYPEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -253,14 +251,6 @@
             this.eXPENSEPAYMENTBindingSource.DataMember = "EXPENSE_PAYMENT";
             this.eXPENSEPAYMENTBindingSource.DataSource = this.dS;
             // 
-            // TAExpenses
-            // 
-            this.TAExpenses.ClearBeforeFill = true;
-            // 
-            // TAExpensePayement
-            // 
-            this.TAExpensePayement.ClearBeforeFill = true;
-            // 
             // metroTileClose
             // 
             this.metroTileClose.ActiveControl = null;
@@ -388,10 +378,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private DS dS;
         private System.Windows.Forms.BindingSource eXPENSEBindingSource;
-        private DSTableAdapters.EXPENSETableAdapter TAExpenses;
         private MetroFramework.Controls.MetroGrid metroGrid1;
         private System.Windows.Forms.BindingSource eXPENSEPAYMENTBindingSource;
-        private DSTableAdapters.EXPENSE_PAYMENTTableAdapter TAExpensePayement;
         private MetroFramework.Controls.MetroTile metroTileExpChanges;
         private MetroFramework.Controls.MetroTile metroTileExpPayChanges;
         private MetroFramework.Controls.MetroTile metroTileClose;

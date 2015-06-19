@@ -66,18 +66,19 @@ namespace SIMS.AccountModule
             else 
             {
                 var datestring = DateTimePayment.Value.ToShortDateString();
+                int feeAmount = Convert.ToInt32(student_feeTA.FeeAmount(TextBoxAdminNo.Text, TextBoxYear.Text));
+                int newBalance = feeAmount - Convert.ToInt32(TextBoxPayAmount.Text);
                 try
                 {
                     string sql = "INSERT INTO STUDENT_PAYMENT " +
                                         "(PAYMENT_AMOUNT, PAYMENT_TYPE, BALANCE, PAYMENT_DATE, CAPTURED_DATE, ADMISSION_NO, ACADEMIC_YEAR)" +
                                  "VALUES (" +
-                                         ":PAYMENT_AMOUNT, :PAYMENT_TYPE," +
-                                         "(SELECT SUM(COST) AS SUMCOST FROM STUDENT_ENROLLMENT WHERE ADMISSION_NO = '"+TextBoxAdminNo.Text+"' AND ACADEMIC_YEAR = '"+TextBoxYear.Text+"') - '"+TextBoxPayAmount.Text+"'," +
-                                         ":PAYMENT_DATE, :CAPTURED_DATE, :ADMISSION_NO, :ACADEMIC_YEAR )";
+                                         ":PAYMENT_AMOUNT, :PAYMENT_TYPE, :BALANCE, :PAYMENT_DATE, :CAPTURED_DATE, :ADMISSION_NO, :ACADEMIC_YEAR )";
 
                     OracleCommand cmd = new OracleCommand(sql, db.Connection);
                     cmd.Parameters.Add("PAYMENT_AMOUNT", TextBoxPayAmount.Text);
                     cmd.Parameters.Add("PAYMENT_TYPE", ComboBoxPayType.Text);
+                    cmd.Parameters.Add("BALANCE", newBalance);
                     cmd.Parameters.Add("PAYMENT_DATE", OracleDbType.Date).Value = DateTime.Parse(datestring);
                     cmd.Parameters.Add("CAPTURED_DATE", OracleDbType.Date).Value = DateTime.Now;
                     cmd.Parameters.Add("ADMISSION_NO", TextBoxAdminNo.Text);
@@ -99,6 +100,7 @@ namespace SIMS.AccountModule
                 if (rows > 0)
                 {
                     MetroMessageBox.Show(ParentForm, "", "Student Payment Captured Successful", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                    student_feeTA.UpdateBalance(newBalance, TextBoxAdminNo.Text, TextBoxYear.Text);
                     ClearControls();
                 }
                 else

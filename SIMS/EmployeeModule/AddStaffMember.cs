@@ -1,4 +1,25 @@
-﻿using System;
+﻿/**
+ * SIMS is (c) 2015 Geek Studio Company. All rights reserved.
+ * 
+ * http://www.gstudioc.co.za
+ *
+ * COPYRIGHTS:
+ * Copyright (c) 2015 Geek Studio Company (Pty) Ltd. All rights reserved.
+ * 
+ * --------------------------------------------------------------------------------
+ * Redistribution and use in source and binary forms, with or without modification, 
+ * are permitted provided that the following conditions are met: 
+ *
+ * 1) Redistributions of source code must retain the above copyright notice. 
+ * 2) Redistributions in binary form must reproduce the above copyright notice 
+ *    in the documentation and/or other materials provided with the distribution. 
+ *
+ * --------------------------------------------------------------------------------
+ * Contributers to the code:
+ *		- Ntokozo Nicholas Shagala [NNS]
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +38,7 @@ using MetroFramework.Interfaces;
 
 using Oracle.ManagedDataAccess.Client;
 using Oracle.ManagedDataAccess.Types;
-using SIMS.LearnerModule;
+using Validation;
 
 namespace SIMS.EmployeeModule
 {
@@ -25,14 +46,11 @@ namespace SIMS.EmployeeModule
     {
         private SimsOracle db;
         private OracleCommand cmd;
-
+        ValidationClass checkIf = new ValidationClass();
+        
         public AddStaffMember()
         {
             InitializeComponent();
-        }
-
-        private void AddStaffMember_Load(object sender, EventArgs e)
-        {
         }
 
         private void metroTileClose_Click(object sender, EventArgs e)
@@ -42,7 +60,7 @@ namespace SIMS.EmployeeModule
 
         private void metroTileClear_Click(object sender, EventArgs e)
         {
-            Clear();
+            ClearControls();
         }
 
         private void metroTileAdd_Click(object sender, EventArgs e)
@@ -50,80 +68,81 @@ namespace SIMS.EmployeeModule
             db = new SimsOracle();
             int rows = 0;
 
-            try
+            if (TextBoxFirstName.Text == "")
+                MessageBox.Show("You must enter employee first name");
+            else if (TextBoxLastName.Text == "")
+                MessageBox.Show("You must enter employee last name");
+            else if (!checkIf.isValidIDNumber(TextBoxCitizenID.Text))
+                MessageBox.Show("ID number format is not valid");
+            else if (!checkIf.isValidPhoneNumber(TextBoxContact.Text))
+                MessageBox.Show("Contact number format is not valid");
+            else if (ComboBoxRole.Text == "")
+                MessageBox.Show("You must select a job role");
+            else if (ComboBoxGender.Text == "")
+                MessageBox.Show("You must select a gender");
+            else if (TextBoxAddress.Text == "")
+                MessageBox.Show("Enter employee address");
+            else if (TextBoxCity.Text == "")
+                MessageBox.Show("Enter employee city");
+            else if (TextBoxZipCode.Text == "" || TextBoxZipCode.Text.Length > 4 || TextBoxZipCode.Text.Length < 0)
+                MessageBox.Show("Employee postal code is not valid");
+            else
             {
-                string sql = "INSERT INTO SIMS.EMPLOYEE" +
-                             " (FIRST_NAME, LAST_NAME, CITIZEN_ID, PHONE_NO, JOB, HIRE_DATE, GRADE_ID, EMAIL_ADDRESS," + 
-                             " ADDRESS_LINE1, ADDRESS_LINE2, SUBURB, CITY, ZIP_CODE, GENDER)" +
-                             " VALUES" +
-                             " (:FIRST_NAME, "+
-                             "  :LAST_NAME, " +
-                             "  :CITIZEN_ID, " +
-                             "  :PHONE_N0, " +
-                             "  :JOB, " +
-                             "  :HIRE_DATE, " +
-                             "  (SELECT GRADE_ID FROM SIMS.GRADE WHERE GRADE_NAME = '"+ metroComboBoxGrade.Text +"'), " +
-                             "  :EMAIL_ADDRESS, "+
-                             "  :ADDRESS_LINE1, "+
-                             "  :ADDRESS_LINE2, "+
-                             "  :SUBURB, "+
-                             "  :CITY, "+
-                             "  :ZIP_CODE, "+
-                             "  :GENDER)";
+                var dateString = DateTimeHireStaff.Value.ToShortDateString();
+                try
+                {
+                    string sql = "INSERT INTO SIMS.EMPLOYEE" +
+                                 "(NAME, SURNAME, GENDER, CITIZEN_ID, PHONE, ROLE, HIRE_DATE, EMAIL, ADDRESS, CITY, ZIPCODE)" +
+                                 " VALUES " +
+                                 "(:NAME, :SURNAME, :GENDER, :CITIZEN_ID, :PHONE, :ROLE, :HIRE_DATE, :EMAIL, :ADDRESS, :CITY, :ZIPCODE)";
 
-                cmd = new OracleCommand(sql, db.Connection);
+                    cmd = new OracleCommand(sql, db.Connection);
+                    cmd.Parameters.Add("NAME", TextBoxFirstName.Text);
+                    cmd.Parameters.Add("SURNAME", TextBoxLastName.Text);
+                    cmd.Parameters.Add("GENDER", ComboBoxGender.Text);
+                    cmd.Parameters.Add("CITIZEN_ID", TextBoxCitizenID.Text);
+                    cmd.Parameters.Add("PHONE", TextBoxContact.Text);
+                    cmd.Parameters.Add("ROLE", ComboBoxRole.Text);
+                    cmd.Parameters.Add("HIRE_DATE", OracleDbType.Date).Value = DateTime.Parse(dateString);
+                    cmd.Parameters.Add("EMAIL", TextBoxEmail.Text);
+                    cmd.Parameters.Add("ADDRESS", TextBoxAddress.Text);
+                    cmd.Parameters.Add("CITY", TextBoxCity.Text);
+                    cmd.Parameters.Add("ZIPCODE", TextBoxZipCode.Text);
 
-                cmd.Parameters.Add("FIRST_NAME", metroTextBoxFirstName.Text);
-                cmd.Parameters.Add("LAST_NAME", metroTextBoxLastName.Text);
-                cmd.Parameters.Add("CITIZEN_ID", metroTextBoxCitizenID.Text);
-                cmd.Parameters.Add("PHONE_NO", metroTextBoxContact.Text);
-                cmd.Parameters.Add("JOB", metroTextBoxJob.Text);
-                cmd.Parameters.Add("HIRE_DATE", OracleDbType.Date).Value = DateTime.Now;
-                cmd.Parameters.Add("EMAIL_ADDRESS", metroTextBoxEAddress.Text);
-                cmd.Parameters.Add("ADDRESS_LINE1", metroTextBoxAddressLine1.Text);
-                cmd.Parameters.Add("ADDRESS_LINE2", metroTextBoxAddressLine2.Text);
-                cmd.Parameters.Add("SUBURB", metroTextBoxSuburb.Text);
-                cmd.Parameters.Add("CITY", metroTextBoxCity.Text);
-                cmd.Parameters.Add("ZIP_CODE", metroTextBoxZipCode.Text);
-                cmd.Parameters.Add("GENDER", metroComboBoxGender.Text);
+                    rows = cmd.ExecuteNonQuery();
 
-                rows = cmd.ExecuteNonQuery();
+                    if (rows > 0)
+                    {
+                        MetroMessageBox.Show(ParentForm, "", "Staff Details Captured Successful", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                        ClearControls();
+                    }
+                    else
+                        MetroMessageBox.Show(ParentForm, " ", "Staff Details not captured!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error!\n" + ex.Message.ToString());
+                }
+                finally
+                {
+                    db.CloseDatabase();
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error!\n" + ex.Message.ToString());
-            }
-            finally
-            {
-                db.CloseDatabase();
-            }
-            if (rows > 0)
-            {
-                MetroMessageBox.Show(ParentForm, "", "Staff Details Captured Successful", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                Clear();
-                
-             }
-             else
-                 MetroMessageBox.Show(ParentForm, " ", "Staff Details not captured!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
              db.CloseDatabase();
         }
 
-        internal void Clear()
+        internal void ClearControls()
         {
-            metroTextBoxFirstName.Clear();
-            metroTextBoxLastName.Clear();
-            metroTextBoxCitizenID.Clear();
-            metroTextBoxContact.Clear();
-            metroTextBoxJob.Clear();
-            metroDateTimeAddStaff.ResetText();
-            metroComboBoxGrade.ResetText();
-            metroTextBoxAddressLine1.Clear();
-            metroTextBoxAddressLine2.Clear();
-            metroTextBoxSuburb.Clear();
-            metroTextBoxCity.Clear();
-            metroTextBoxZipCode.Clear();
-            metroTextBoxEAddress.Clear();
+            TextBoxFirstName.Clear();
+            TextBoxLastName.Clear();
+            TextBoxCitizenID.Clear();
+            TextBoxContact.Clear();
+            DateTimeHireStaff.ResetText();
+            TextBoxAddress.Clear();
+            TextBoxCity.Clear();
+            TextBoxZipCode.Clear();
+            TextBoxEmail.Clear();
         }
     }
 }

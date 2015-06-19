@@ -1,10 +1,10 @@
 ﻿/**
- * SIMS is (c) 2015 Ntokozo Company. All rights reserved.
+ * SIMS is (c) 2015 Geek Studio Company. All rights reserved.
  * 
- * http://www.ntokozo.co.za
+ * http://www.gstudioc.co.za
  *
  * COPYRIGHTS:
- * Copyright (c) 2015 Ntokozo Company. All rights reserved.
+ * Copyright (c) 2015 Geek Studio Company (Pty) Ltd. All rights reserved.
  * 
  * --------------------------------------------------------------------------------
  * Redistribution and use in source and binary forms, with or without modification, 

@@ -227,7 +227,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Validation\Valid.cs" />
+    <Compile Include="Validation\Validation.cs" />
     <EmbeddedResource Include="AboutSIMS.resx">
       <DependentUpon>AboutSIMS.cs</DependentUpon>
     </EmbeddedResource>

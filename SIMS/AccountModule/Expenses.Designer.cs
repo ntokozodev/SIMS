@@ -50,7 +50,6 @@
             this.eXPENSEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS = new SIMS.DS();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.eXPENSETableAdapter = new SIMS.DSTableAdapters.EXPENSETableAdapter();
             this.metroTileClose = new MetroFramework.Controls.MetroTile();
             this.groupBoxAddExpense.SuspendLayout();
             this.groupBoxRecordExpense.SuspendLayout();
@@ -337,10 +336,6 @@
             this.metroLabel3.Text = "Expense Type:";
             this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // eXPENSETableAdapter
-            // 
-            this.eXPENSETableAdapter.ClearBeforeFill = true;
-            // 
             // metroTileClose
             // 
             this.metroTileClose.ActiveControl = null;
@@ -403,7 +398,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private DS dS;
         private System.Windows.Forms.BindingSource eXPENSEBindingSource;
-        private DSTableAdapters.EXPENSETableAdapter eXPENSETableAdapter;
         private MetroFramework.Controls.MetroTile metroTileClose;
         private MetroFramework.Controls.MetroComboBox metroComboBoxExpenseType;
         private MetroFramework.Controls.MetroDateTime metroDateTimeCaptureDate;

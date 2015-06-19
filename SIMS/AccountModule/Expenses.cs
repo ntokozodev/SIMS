@@ -113,16 +113,16 @@ namespace SIMS.AccountModule
 
         private void Expenses_Load(object sender, EventArgs e)
         {
-            try
-            {
-                // TODO: This line of code loads data into the 'dS.EXPENSE' table. You can move, or remove it, as needed.
-                this.eXPENSETableAdapter.Fill(this.dS.EXPENSE);
-            }
-            catch (Exception ex)
-            {
-                MetroMessageBox.Show(ParentForm, "Database error!\n" + ex.Message.ToString());
-                this.Close();
-            }
+            //try
+            //{
+            //    // TODO: This line of code loads data into the 'dS.EXPENSE' table. You can move, or remove it, as needed.
+            //    this.eXPENSETableAdapter.Fill(this.dS.EXPENSE);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MetroMessageBox.Show(ParentForm, "Database error!\n" + ex.Message.ToString());
+            //    this.Close();
+            //}
         }
 
         private void metroTileClose_Click(object sender, EventArgs e)
