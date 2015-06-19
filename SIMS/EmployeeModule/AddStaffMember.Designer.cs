@@ -32,7 +32,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroComboBoxGrade = new MetroFramework.Controls.MetroComboBox();
             this.gRADEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dS = new SIMS.DSS();
+            this.dS = new SIMS.DS();
             this.metroDateTimeAddStaff = new MetroFramework.Controls.MetroDateTime();
             this.metroTextBoxJob = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBoxContact = new MetroFramework.Controls.MetroTextBox();
@@ -602,7 +602,7 @@
         private MetroFramework.Controls.MetroTextBox metroTextBoxCitizenID;
         private MetroFramework.Controls.MetroTextBox metroTextBoxLastName;
         private MetroFramework.Controls.MetroTextBox metroTextBoxFirstName;
-        private DSS dS;
+        private DS dS;
         private System.Windows.Forms.BindingSource gRADEBindingSource;
         private MetroFramework.Controls.MetroTextBox metroTextBoxEAddress;
         private MetroFramework.Controls.MetroTextBox metroTextBoxZipCode;

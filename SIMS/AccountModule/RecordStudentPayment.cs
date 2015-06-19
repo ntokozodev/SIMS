@@ -36,39 +36,55 @@ namespace SIMS.AccountModule
         }
 
         private void RecordStudentPayment_Load(object sender, EventArgs e)
-        {}
+        {
+            try
+            {
+                // TODO: This line of code loads data into the 'dSS.STUDENT' table. You can move, or remove it, as needed.
+                this.studentTA.Fill(this.stupDS.STUDENT);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unexpected error!\n" + ex.Message.ToString());
+            }
+        }
 
         private void metroTileAddPay_Click(object sender, EventArgs e)
         {
             db = new SimsOracle();
             int rows = 0;
 
-            if (metroTextBoxAdminNo.Text == "")
-                MessageBox.Show("Enter student admission no");
-            else if (metroTextBoxPayAmount.Text == "")
+            if (TextBoxAdminNo.Text == "" || !isAdmissionNoValid(TextBoxAdminNo.Text))
+                MessageBox.Show("Admission No. is not valid");
+            else if (TextBoxYear.Text == "" || TextBoxYear.Text.Length > 4 || TextBoxYear.Text.Length != 4 || TextBoxYear.Text.Length < 0)
+                MessageBox.Show("Academic year is not valid");
+            else if (!isYearRegistered(TextBoxYear.Text))
+                MessageBox.Show("Student: " + TextBoxAdminNo.Text + " is not registered for academic year: " + TextBoxYear.Text);
+            else if (TextBoxPayAmount.Text == "")
                 MessageBox.Show("Enter payment amount");
-            else if (metroComboBoxCategory.Text == "")
-                MessageBox.Show("Select fee category");
-            else if (metroComboBoxPayType.Text == "")
+            else if (ComboBoxPayType.Text == "")
                 MessageBox.Show("Select type of payment");
             else 
             {
+                var datestring = DateTimePayment.Value.ToShortDateString();
                 try
                 {
                     string sql = "INSERT INTO STUDENT_PAYMENT " +
-                                        "(STUDENT_ID, FEE_ID, FEE_BALANCE, PAYMENT_AMOUNT, PAYMENT_DATE, PAYMENT_TYPE)" +
+                                        "(PAYMENT_AMOUNT, PAYMENT_TYPE, BALANCE, PAYMENT_DATE, CAPTURED_DATE, ADMISSION_NO, ACADEMIC_YEAR)" +
                                  "VALUES (" +
-                                         "(SELECT STUDENT_CITIZEN_ID FROM SIMS.STUDENT WHERE ADMISSION_NO = '"+metroTextBoxAdminNo.Text+"'),"+
-                                         "(SELECT FEE_ID FROM SIMS.FEE WHERE FEE_CATEGORY = '"+metroComboBoxCategory.Text+"')," +
-                                         "(SELECT FEE_AMOUNT FROM SIMS.FEE WHERE FEE_CATEGORY = '" + metroComboBoxCategory.Text + "') - '"+ metroTextBoxPayAmount.Text +"'," +
-                                         ":PAYMENT_AMOUNT, :PAYMENT_DATE, :PAYMENT_TYPE" +
-                                         ")";
+                                         ":PAYMENT_AMOUNT, :PAYMENT_TYPE," +
+                                         "(SELECT SUM(COST) AS SUMCOST FROM STUDENT_ENROLLMENT WHERE ADMISSION_NO = '"+TextBoxAdminNo.Text+"' AND ACADEMIC_YEAR = '"+TextBoxYear.Text+"') - '"+TextBoxPayAmount.Text+"'," +
+                                         ":PAYMENT_DATE, :CAPTURED_DATE, :ADMISSION_NO, :ACADEMIC_YEAR )";
+
                     OracleCommand cmd = new OracleCommand(sql, db.Connection);
-                    cmd.Parameters.Add("PAYMENT_AMOUNT", metroTextBoxPayAmount.Text);
-                    cmd.Parameters.Add("PAYMENT_DATE", OracleDbType.Date).Value = DateTime.Now;
-                    cmd.Parameters.Add("PAYMENT_TYPE", metroComboBoxPayType.Text);
+                    cmd.Parameters.Add("PAYMENT_AMOUNT", TextBoxPayAmount.Text);
+                    cmd.Parameters.Add("PAYMENT_TYPE", ComboBoxPayType.Text);
+                    cmd.Parameters.Add("PAYMENT_DATE", OracleDbType.Date).Value = DateTime.Parse(datestring);
+                    cmd.Parameters.Add("CAPTURED_DATE", OracleDbType.Date).Value = DateTime.Now;
+                    cmd.Parameters.Add("ADMISSION_NO", TextBoxAdminNo.Text);
+                    cmd.Parameters.Add("ACADEMIC_YEAR", TextBoxYear.Text);
 
                     rows = cmd.ExecuteNonQuery();
+
                     db.CloseDatabase();
                 }
                 catch (Exception ex)
@@ -83,12 +99,7 @@ namespace SIMS.AccountModule
                 if (rows > 0)
                 {
                     MetroMessageBox.Show(ParentForm, "", "Student Payment Captured Successful", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                    metroTextBoxAdminNo.Clear();
-                    metroTextBoxPayAmount.Clear();
-                    metroComboBoxCategory.ResetText();
-                    metroComboBoxPayType.ResetText();
-                    metroDateTimePayment.ResetText();
-                    this.Refresh();
+                    ClearControls();
                 }
                 else
                     MetroMessageBox.Show(ParentForm, " ", "Student Payment not captured!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -97,13 +108,57 @@ namespace SIMS.AccountModule
             }
         }
 
+        /**
+         * @param adminNo, takes student admission number as input
+         * @return true if adminNo is valid by finding student associated with it in database, otherwise false
+         */
+        internal bool isAdmissionNoValid(string adminNo)
+        {
+            try
+            {
+                studentTA.FillByEnrolmentNo(stupDS.STUDENT, adminNo);
+                if (stupDS.STUDENT.Rows.Count > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database error:\n" + ex.Message.ToString());
+            }
+            return false;
+        }
+
+        internal bool isYearRegistered(string year) 
+        {
+            try
+            {
+                student_enrollmentTA.FillByAcademicYear(stupDS.STUDENT_ENROLLMENT, year);
+                if (stupDS.STUDENT_ENROLLMENT.Rows.Count > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database error:\n" + ex.Message.ToString());
+            }
+            return false;
+        }
+
         private void metroTileClear_Click(object sender, EventArgs e)
         {
-            metroTextBoxAdminNo.Clear();
-            metroTextBoxPayAmount.Clear();
-            metroComboBoxCategory.ResetText();
-            metroComboBoxPayType.ResetText();
-            metroDateTimePayment.ResetText();
+            ClearControls();
+        }
+
+        internal void ClearControls()
+        {
+            TextBoxAdminNo.Clear();
+            TextBoxPayAmount.Clear();
+            ComboBoxPayType.ResetText();
+            DateTimePayment.ResetText();
+            TextBoxYear.Clear();
+            this.Refresh();
         }
     }
 }

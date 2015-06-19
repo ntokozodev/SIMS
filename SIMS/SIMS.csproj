@@ -145,14 +145,14 @@
     <Compile Include="CentreModule\Address.cs" />
     <Compile Include="CentreModule\Centre.cs" />
     <Compile Include="CentreModule\ClassRoom.cs" />
-    <Compile Include="DSS.cs">
-      <DependentUpon>DSS.xsd</DependentUpon>
+    <Compile Include="DS.cs">
+      <DependentUpon>DS.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DSS.Designer.cs">
+    <Compile Include="DS1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DSS.xsd</DependentUpon>
+      <DependentUpon>DS.xsd</DependentUpon>
     </Compile>
     <Compile Include="LearnerModule\RegisterStudent.cs">
       <SubType>Form</SubType>
@@ -312,16 +312,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="DSS.xsc">
-      <DependentUpon>DSS.xsd</DependentUpon>
+    <None Include="DS.xsc">
+      <DependentUpon>DS.xsd</DependentUpon>
     </None>
-    <None Include="DSS.xsd">
+    <None Include="DS.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSS.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>DS1.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DSS.xss">
-      <DependentUpon>DSS.xsd</DependentUpon>
+    <None Include="DS.xss">
+      <DependentUpon>DS.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

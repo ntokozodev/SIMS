@@ -28,7 +28,7 @@ using System.Drawing;
 using System.Windows.Forms;
 
 using CentreModule;
-using SIMS.DSSTableAdapters;
+using SIMS.DSTableAdapters;
 
 
 namespace SIMS.LearnerModule

@@ -146,6 +146,7 @@ namespace SIMS.AccountModule
             }
             else
             {
+                var datestring = metroDateTimeExpense.Value.ToShortDateString();
                 try
                 {
                     string query = "INSERT INTO SIMS.EXPENSE_PAYMENT " +
@@ -160,7 +161,7 @@ namespace SIMS.AccountModule
                     OracleCommand cmd = new OracleCommand(query, db.Connection);
                     cmd.Parameters.Add("EXPENSE_AMOUNT", metroTextBoxExpAmount.Text);
                     cmd.Parameters.Add("EXPENSE_NOTE", metroTextBoxExpNote.Text);
-                    cmd.Parameters.Add("PAYMENT_DATE", OracleDbType.Date).Value = DateTime.Today;
+                    cmd.Parameters.Add("PAYMENT_DATE", OracleDbType.Date).Value = DateTime.Parse(datestring);
                     cmd.Parameters.Add("CAPTURED_DATE", OracleDbType.Date).Value = DateTime.Now;
 
                     rows = cmd.ExecuteNonQuery();

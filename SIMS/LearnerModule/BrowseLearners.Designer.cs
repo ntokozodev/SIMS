@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.sTUDENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dS = new SIMS.DSS();
+            this.dS = new SIMS.DS();
             this.metroTileUpdateLearner = new MetroFramework.Controls.MetroTile();
             this.metroTileSearchLearner = new MetroFramework.Controls.MetroTile();
             this.metroTextBoxSearchLearner = new MetroFramework.Controls.MetroTextBox();
             this.metroTileClose = new MetroFramework.Controls.MetroTile();
             this.metroComboBoxFilter = new MetroFramework.Controls.MetroComboBox();
             this.metroTileFilter = new MetroFramework.Controls.MetroTile();
-            this.TAStudent = new SIMS.DSSTableAdapters.STUDENTTableAdapter();
+            this.TAStudent = new SIMS.DSTableAdapters.STUDENTTableAdapter();
             this.metroGridViewLearner = new System.Windows.Forms.DataGridView();
             this.aDMISSIONNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -319,9 +319,9 @@
 
         #endregion
 
-        private DSS dS;
+        private DS dS;
         private System.Windows.Forms.BindingSource sTUDENTBindingSource;
-        private DSSTableAdapters.STUDENTTableAdapter TAStudent;
+        private DSTableAdapters.STUDENTTableAdapter TAStudent;
         private MetroFramework.Controls.MetroTile metroTileUpdateLearner;
         private MetroFramework.Controls.MetroTile metroTileSearchLearner;
         private MetroFramework.Controls.MetroTextBox metroTextBoxSearchLearner;

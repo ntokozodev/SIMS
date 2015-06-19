@@ -37,6 +37,8 @@ namespace SIMS.LearnerModule
 {
     public partial class RegisterStudent : MetroForm
     {
+        private SimsOracle db;
+
         public RegisterStudent()
         {
             InitializeComponent();
@@ -65,9 +67,10 @@ namespace SIMS.LearnerModule
          */
         private void metroTileRegister_Click(object sender, EventArgs e)
         {
-            SimsOracle db = new SimsOracle();
+            db = new SimsOracle();
             int rows = 0;
             int count = 0;
+            int fee = 0;
 
             if (checkAllConditions()) // check all pre-conditions
             {
@@ -95,14 +98,14 @@ namespace SIMS.LearnerModule
                                 cmd.Parameters.Add("ACADEMIC_YEAR", metroTextBoxYear.Text);
                                 cmd.Parameters.Add("GRADE", metroTextBoxGrade.Text);
 
-                                /* The first subject will cost R500 extra than the subsequent subject */
+                                /* The first subject will cost R500 extra than the subsequent subject plus R500 registration fee*/
                                 count = Convert.ToInt32(student_enrollmentTA.CountRegisterdSubjects(metroTextBoxAdminNo.Text, metroTextBoxYear.Text));
                                 if (count > 0)
                                     cmd.Parameters.Add("COST", subjectsDGV.Rows[i].Cells[2].Value);
                                 else
                                 {
                                     double cost = Convert.ToDouble(subjectsDGV.Rows[i].Cells[2].Value);
-                                    cmd.Parameters.Add("COST", cost + 500);
+                                    cmd.Parameters.Add("COST", cost + 1000);
                                 }
   
                                 rows = cmd.ExecuteNonQuery();
@@ -124,7 +127,82 @@ namespace SIMS.LearnerModule
             if (rows > 0)
             {
                 MetroMessageBox.Show(ParentForm, "", "Registration captured successful", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                if (isLearnerRegistered())
+                    UpdateStudentFee(); // update tuition fee for already registered student
+                else
+                    InsertStudentFee(); // new registration fee captured
                 ClearControls();
+            }
+        }
+
+        private bool isLearnerRegistered()
+        {
+            try
+            {
+                student_feeTA.FillByAdminNoYear(this.regDS.STUDENT_FEE, metroTextBoxAdminNo.Text, metroTextBoxYear.Text);
+                if (regDS.STUDENT_FEE.Rows.Count > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error!\n" + ex.Message.ToString());
+            }
+            return false;
+        }
+
+        /**
+         * Method to update the student fee amount and balance of registered student after adding another subject
+         */
+        private void UpdateStudentFee()
+        {
+            db = new SimsOracle();
+
+            int enrolCost = Convert.ToInt32(student_enrollmentTA.FeeCostSum(metroTextBoxAdminNo.Text, metroTextBoxYear.Text)); // updated cost of all registered subjects so far
+            int feeCost = Convert.ToInt32(student_feeTA.FeeAmount(metroTextBoxAdminNo.Text, metroTextBoxYear.Text)); // fee cost of all initial registered subjects exclusive of newly added subjects
+            int addedCost = enrolCost - feeCost; // additional cost after registering or adding another subject
+            int preBalance = Convert.ToInt32(student_feeTA.Balance(metroTextBoxAdminNo.Text, metroTextBoxYear.Text)); // previous balance before adding another subject for registration
+            int newBalance = preBalance + addedCost; // current balance after registration of another subject
+            try
+            {
+                string sql = "UPDATE SIMS.STUDENT_FEE "+
+                             "SET AMOUNT = '" + enrolCost + "', " +
+                             "BALANCE = '" + newBalance + "' ";
+                OracleCommand cmd = new OracleCommand(sql, db.Connection);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("Error!\n" + ex.Message.ToString());
+            }
+        }
+
+        /**
+         * Method to insert the student fee amount and balance of registered student
+         */
+        private void InsertStudentFee()
+        {
+            int rows = 0;
+            db = new SimsOracle();
+            int feeCost = Convert.ToInt32(student_enrollmentTA.FeeCostSum(metroTextBoxAdminNo.Text, metroTextBoxYear.Text));
+            try
+            {
+                string sql = "INSERT INTO SIMS.STUDENT_FEE " +
+                             "(ADMISSION_NO, AMOUNT, BALANCE, ACADEMIC_YEAR) " +
+                             " VALUES " +
+                             "(:ADMISSION_NO, :AMOUNT, :BALANCE, :ACADEMIC_YEAR)";
+
+                OracleCommand cmd = new OracleCommand(sql, db.Connection);
+                cmd.Parameters.Add("ADMISSION_NO", metroTextBoxAdminNo.Text);
+                cmd.Parameters.Add("AMOUNT", feeCost);
+                cmd.Parameters.Add("BALANCE", feeCost);
+                cmd.Parameters.Add("ACADEMIC_YEAR", metroTextBoxYear.Text);
+                rows = cmd.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error!\n" + ex.Message.ToString());
             }
         }
 
@@ -145,7 +223,7 @@ namespace SIMS.LearnerModule
             }
             catch (Exception ex)
             {
-                MetroMessageBox.Show(this, "Database rror:\n" + ex.Message.ToString());
+                MessageBox.Show("Database error:\n" + ex.Message.ToString());
             }
             return false;
         }
@@ -195,7 +273,8 @@ namespace SIMS.LearnerModule
         }
 
         /**
-         * Method determines whether one or more major subject(s) has been selected as per requirements
+         * Method that determines whether one or more major subject(s) has been selected as per requirements
+         * @return true if major subject is selected
          */
         private bool isMajorSelected()
         {
@@ -259,9 +338,9 @@ namespace SIMS.LearnerModule
                 metroTextBoxAdminNo.Clear();
                 return false;
             }
-            else if (metroTextBoxYear.Text == "")
+            else if (metroTextBoxYear.Text == "" || metroTextBoxYear.Text.Length > 4 || metroTextBoxYear.Text.Length != 4 || metroTextBoxYear.Text.Length < 0)
             {
-                MessageBox.Show("Enter academic year for this registration");
+                MessageBox.Show("Academic year is not valid");
                 return false;
             }
             else if (!isSubjectSelected())
@@ -281,7 +360,7 @@ namespace SIMS.LearnerModule
             }
             else
                 return true;
-        }
+        } // end checkAllConditions
 
         internal void ClearControls()
         {

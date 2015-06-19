@@ -67,6 +67,7 @@
             this.MainPanel = new MetroFramework.Controls.MetroPanel();
             this.mainPanelContextMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.clearAllControlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ParentButtonPanel.SuspendLayout();
             this.StudentMenu.SuspendLayout();
             this.AdminMenu.SuspendLayout();
@@ -140,11 +141,12 @@
             this.StudentMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addNewLearnerToolStripMenuItem,
             this.browseLearnerDetailsToolStripMenuItem,
-            this.registerStudentToolStripMenuItem});
+            this.registerStudentToolStripMenuItem,
+            this.studentProfileToolStripMenuItem});
             this.StudentMenu.Name = "StudentMenu";
             this.StudentMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.StudentMenu.ShowImageMargin = false;
-            this.StudentMenu.Size = new System.Drawing.Size(209, 82);
+            this.StudentMenu.Size = new System.Drawing.Size(209, 108);
             this.StudentMenu.Style = MetroFramework.MetroColorStyle.Brown;
             this.StudentMenu.Text = "StudentMenu";
             this.StudentMenu.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -504,6 +506,13 @@
             this.clearAllControlsToolStripMenuItem.Text = "Clear All Controls";
             this.clearAllControlsToolStripMenuItem.Click += new System.EventHandler(this.clearAllControlsToolStripMenuItem_Click);
             // 
+            // studentProfileToolStripMenuItem
+            // 
+            this.studentProfileToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentProfileToolStripMenuItem.Name = "studentProfileToolStripMenuItem";
+            this.studentProfileToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
+            this.studentProfileToolStripMenuItem.Text = "Student Profile";
+            // 
             // ParentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -570,6 +579,7 @@
         private System.Windows.Forms.ToolStripMenuItem printExpensePaymentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registerStudentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewSubjectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem studentProfileToolStripMenuItem;
     }
 }
 

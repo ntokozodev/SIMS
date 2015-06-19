@@ -41,7 +41,7 @@ namespace SIMS.LearnerModule
             this.TextBoxFirstName = new MetroFramework.Controls.MetroTextBox();
             this.ComboBoxCentre = new MetroFramework.Controls.MetroComboBox();
             this.cENTREBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dSS = new SIMS.DSS();
+            this.dSS = new SIMS.DS();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.ComboBoxGender = new MetroFramework.Controls.MetroComboBox();
             this.genderLabel = new MetroFramework.Controls.MetroLabel();
@@ -63,7 +63,7 @@ namespace SIMS.LearnerModule
             this.addDetailsTile = new MetroFramework.Controls.MetroTile();
             this.cancelTile = new MetroFramework.Controls.MetroTile();
             this.clearTile = new MetroFramework.Controls.MetroTile();
-            this.cENTRETableAdapter = new SIMS.DSSTableAdapters.CENTRETableAdapter();
+            this.cENTRETableAdapter = new SIMS.DSTableAdapters.CENTRETableAdapter();
             this.DateAdmission = new MetroFramework.Controls.MetroDateTime();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.detailsGroupBox.SuspendLayout();
@@ -642,10 +642,10 @@ namespace SIMS.LearnerModule
         private MetroFramework.Controls.MetroLabel metroLabel13;
         private MetroFramework.Controls.MetroTile clearTile;
         private MetroFramework.Controls.MetroTextBox TextBoxZipCode;
-        private DSS dS;
-        private DSS dSS;
+        private DS dS;
+        private DS dSS;
         private BindingSource cENTREBindingSource;
-        private DSSTableAdapters.CENTRETableAdapter cENTRETableAdapter;
+        private DSTableAdapters.CENTRETableAdapter cENTRETableAdapter;
         private MetroFramework.Controls.MetroDateTime DateAdmission;
         private MetroFramework.Controls.MetroLabel metroLabel1;
     
