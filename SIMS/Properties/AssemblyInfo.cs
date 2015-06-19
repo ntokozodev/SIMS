@@ -11,7 +11,7 @@ using System.Resources;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Geek Studio Company")]
 [assembly: AssemblyProduct("School Management Software")]
-[assembly: AssemblyCopyright("Copyright © 2015, Geek Studio Company, (Pty) Ltd.")]
+[assembly: AssemblyCopyright("Copyright © 2015, Geek Studio Company, (Pty) Ltd. All Rights Reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -33,6 +33,6 @@ using System.Resources;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.0.41")]
+[assembly: AssemblyFileVersion("1.0.0.42")]
 [assembly: NeutralResourcesLanguageAttribute("en-ZA")]

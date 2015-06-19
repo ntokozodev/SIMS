@@ -4,7 +4,7 @@
  * http://www.gstudioc.co.za
  *
  * COPYRIGHTS:
- * Copyright (c) 2015 Geek Studio Company. All rights reserved.
+ * Copyright (c) 2015 Geek Studio Company (Pty) Ltd. All rights reserved.
  * 
  * --------------------------------------------------------------------------------
  * Redistribution and use in source and binary forms, with or without modification, 
@@ -53,13 +53,8 @@ namespace SIMS.LearnerModule
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Unexpected error!\n" + ex.Message.ToString());
+                MessageBox.Show("Error!\n" + ex.Message.ToString());
             }
-        }
-
-        private void metroTileClear_Click(object sender, EventArgs e)
-        {
-            ClearControls();
         }
 
         /**
@@ -70,7 +65,6 @@ namespace SIMS.LearnerModule
             db = new SimsOracle();
             int rows = 0;
             int count = 0;
-            int fee = 0;
 
             if (checkAllConditions()) // check all pre-conditions
             {
@@ -135,6 +129,9 @@ namespace SIMS.LearnerModule
             }
         }
 
+        /**
+         * The method checks whether a learner is already registered some subject for a particular year
+         */
         private bool isLearnerRegistered()
         {
             try
@@ -164,6 +161,7 @@ namespace SIMS.LearnerModule
             int addedCost = enrolCost - feeCost; // additional cost after registering or adding another subject
             int preBalance = Convert.ToInt32(student_feeTA.Balance(metroTextBoxAdminNo.Text, metroTextBoxYear.Text)); // previous balance before adding another subject for registration
             int newBalance = preBalance + addedCost; // current balance after registration of another subject
+
             try
             {
                 string sql = "UPDATE SIMS.STUDENT_FEE "+
@@ -369,9 +367,16 @@ namespace SIMS.LearnerModule
             metroTextBoxGrade.Clear();
         }
 
+        /* Close student registration form */
         private void metroTileClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        /* Clear form controls button click */
+        private void metroTileClear_Click(object sender, EventArgs e)
+        {
+            ClearControls();
         }
     }
 }
