@@ -84,3 +84,5 @@ D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.csproj.GenerateResource.C
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.LearnerModule.BrowseLearners.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.DueFees.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.LearnerModule.RegisterStudent.resources
+D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AdminControl.AddSchoolSubject.resources
+D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AdminControl.ViewSubject.resources

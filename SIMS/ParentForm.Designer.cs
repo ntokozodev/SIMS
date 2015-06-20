@@ -46,6 +46,8 @@
             this.changePwordStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addCentreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewSubjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addSubjectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewSubjectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutTile = new MetroFramework.Controls.MetroTile();
             this.StaffTile = new MetroFramework.Controls.MetroTile();
             this.EmployeeMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
@@ -135,7 +137,7 @@
             this.metroLabelLogon.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabelLogon.Location = new System.Drawing.Point(883, 1);
             this.metroLabelLogon.Name = "metroLabelLogon";
-            this.metroLabelLogon.Size = new System.Drawing.Size(114, 25);
+            this.metroLabelLogon.Size = new System.Drawing.Size(107, 25);
             this.metroLabelLogon.Style = MetroFramework.MetroColorStyle.White;
             this.metroLabelLogon.TabIndex = 6;
             this.metroLabelLogon.Text = "Logon User:";
@@ -240,7 +242,7 @@
             this.AdminMenu.Name = "AccessMenu";
             this.AdminMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.AdminMenu.ShowImageMargin = false;
-            this.AdminMenu.Size = new System.Drawing.Size(190, 108);
+            this.AdminMenu.Size = new System.Drawing.Size(190, 130);
             this.AdminMenu.Style = MetroFramework.MetroColorStyle.Purple;
             this.AdminMenu.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.AdminMenu.UseStyleColors = true;
@@ -272,10 +274,29 @@
             // 
             // addNewSubjectToolStripMenuItem
             // 
+            this.addNewSubjectToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addSubjectsToolStripMenuItem,
+            this.viewSubjectsToolStripMenuItem});
             this.addNewSubjectToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addNewSubjectToolStripMenuItem.Name = "addNewSubjectToolStripMenuItem";
             this.addNewSubjectToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
-            this.addNewSubjectToolStripMenuItem.Text = "Add New Subject";
+            this.addNewSubjectToolStripMenuItem.Text = "School Subjects";
+            // 
+            // addSubjectsToolStripMenuItem
+            // 
+            this.addSubjectsToolStripMenuItem.BackColor = System.Drawing.Color.Purple;
+            this.addSubjectsToolStripMenuItem.Name = "addSubjectsToolStripMenuItem";
+            this.addSubjectsToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.addSubjectsToolStripMenuItem.Text = "Add Subjects";
+            this.addSubjectsToolStripMenuItem.Click += new System.EventHandler(this.addSubjectsToolStripMenuItem_Click);
+            // 
+            // viewSubjectsToolStripMenuItem
+            // 
+            this.viewSubjectsToolStripMenuItem.BackColor = System.Drawing.Color.Violet;
+            this.viewSubjectsToolStripMenuItem.Name = "viewSubjectsToolStripMenuItem";
+            this.viewSubjectsToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.viewSubjectsToolStripMenuItem.Text = "View Subjects";
+            this.viewSubjectsToolStripMenuItem.Click += new System.EventHandler(this.viewSubjectsToolStripMenuItem_Click);
             // 
             // aboutTile
             // 
@@ -536,6 +557,8 @@
         private System.Windows.Forms.ToolStripMenuItem studentProfileToolStripMenuItem;
         private MetroFramework.Controls.MetroLabel metroLabelLogon;
         private MetroFramework.Controls.MetroLabel LabelUser;
+        private System.Windows.Forms.ToolStripMenuItem addSubjectsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewSubjectsToolStripMenuItem;
     }
 }
 

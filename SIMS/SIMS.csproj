@@ -64,6 +64,12 @@
     <Compile Include="AboutSIMS.Designer.cs">
       <DependentUpon>AboutSIMS.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminControl\AddSchoolSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminControl\AddSchoolSubject.Designer.cs">
+      <DependentUpon>AddSchoolSubject.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminControl\AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,12 @@
     </Compile>
     <Compile Include="AccountModule\ViewExpenses.Designer.cs">
       <DependentUpon>ViewExpenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminControl\ViewSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminControl\ViewSubject.Designer.cs">
+      <DependentUpon>ViewSubject.cs</DependentUpon>
     </Compile>
     <Compile Include="CentreModule\Address.cs" />
     <Compile Include="CentreModule\Centre.cs" />
@@ -231,6 +243,9 @@
     <EmbeddedResource Include="AboutSIMS.resx">
       <DependentUpon>AboutSIMS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminControl\AddSchoolSubject.resx">
+      <DependentUpon>AddSchoolSubject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminControl\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AccountModule\ViewExpenses.resx">
       <DependentUpon>ViewExpenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminControl\ViewSubject.resx">
+      <DependentUpon>ViewSubject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeModule\AddStaffMember.resx">
       <DependentUpon>AddStaffMember.cs</DependentUpon>

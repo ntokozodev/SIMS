@@ -82,7 +82,7 @@ namespace SIMS.AccessControl
             SimsOracle db = new SimsOracle();
             int rows = 0;
 
-            usersTA.FillByUserPass(this.employeeDS.SIMS_USERS, userName, password);
+            usersTA.FillByUser(this.employeeDS.SIMS_USERS, id);
             if (employeeDS.SIMS_USERS.Rows.Count > 0)
                 MessageBox.Show("Username: " + userName + " is already added");
 

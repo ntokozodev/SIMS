@@ -43,6 +43,7 @@ using SIMS.LearnerModule;
 using SIMS.AccountModule;
 using SIMS.EmployeeModule;
 using SIMS.AccessControl;
+using SIMS.AdminControl;
 
 namespace SIMS
 {
@@ -55,6 +56,8 @@ namespace SIMS
     {
         LoginForm log = new LoginForm();
         AboutSIMS about;
+        AddSchoolSubject subjects;
+        ViewSubject viewSubj;
 
         #region "Properties Learner Module"
         private AddLearner learner = null;
@@ -365,5 +368,25 @@ namespace SIMS
         {
             MainPanel.Controls.Clear();
         }
+
+        #region "Admin Control
+        private void addSubjectsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            if (subjects != null)
+                subjects.Close();
+            subjects = new AddSchoolSubject();
+            FormSetUp(subjects);
+        }
+
+        private void viewSubjectsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            if (viewSubj != null)
+                viewSubj.Close();
+            viewSubj = new ViewSubject();
+            FormSetUp(viewSubj);
+        }
+        #endregion 
     }
 }
