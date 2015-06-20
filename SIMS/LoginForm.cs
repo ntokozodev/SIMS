@@ -103,7 +103,7 @@ namespace SIMS
             }
             catch (Exception ex)
             {
-                MetroMessageBox.Show(this, "Database error:\n" + ex.Message.ToString());
+                MetroMessageBox.Show(this, "Login error:\n" + ex.Message.ToString());
                 Application.Exit();
             }
             Authenticated = false;

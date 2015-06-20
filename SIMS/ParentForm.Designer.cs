@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ParentForm));
             this.exitTile = new MetroFramework.Controls.MetroTile();
             this.ParentButtonPanel = new MetroFramework.Controls.MetroPanel();
+            this.LabelUser = new MetroFramework.Controls.MetroLabel();
+            this.metroLabelLogon = new MetroFramework.Controls.MetroLabel();
             this.LearnerModuleTile = new MetroFramework.Controls.MetroTile();
             this.StudentMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.addNewLearnerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,8 +63,6 @@
             this.MainPanel = new MetroFramework.Controls.MetroPanel();
             this.mainPanelContextMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.clearAllControlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.metroLabelLogon = new MetroFramework.Controls.MetroLabel();
-            this.LabelUser = new MetroFramework.Controls.MetroLabel();
             this.ParentButtonPanel.SuspendLayout();
             this.StudentMenu.SuspendLayout();
             this.AdminMenu.SuspendLayout();
@@ -112,6 +112,36 @@
             this.ParentButtonPanel.VerticalScrollbarBarColor = true;
             this.ParentButtonPanel.VerticalScrollbarHighlightOnWheel = false;
             this.ParentButtonPanel.VerticalScrollbarSize = 10;
+            // 
+            // LabelUser
+            // 
+            this.LabelUser.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.LabelUser.AutoSize = true;
+            this.LabelUser.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.LabelUser.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.LabelUser.Location = new System.Drawing.Point(1003, 2);
+            this.LabelUser.Name = "LabelUser";
+            this.LabelUser.Size = new System.Drawing.Size(47, 25);
+            this.LabelUser.Style = MetroFramework.MetroColorStyle.White;
+            this.LabelUser.TabIndex = 7;
+            this.LabelUser.Text = "User";
+            this.LabelUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // metroLabelLogon
+            // 
+            this.metroLabelLogon.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.metroLabelLogon.AutoSize = true;
+            this.metroLabelLogon.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabelLogon.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabelLogon.Location = new System.Drawing.Point(883, 1);
+            this.metroLabelLogon.Name = "metroLabelLogon";
+            this.metroLabelLogon.Size = new System.Drawing.Size(114, 25);
+            this.metroLabelLogon.Style = MetroFramework.MetroColorStyle.White;
+            this.metroLabelLogon.TabIndex = 6;
+            this.metroLabelLogon.Text = "Logon User:";
+            this.metroLabelLogon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroLabelLogon.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroLabelLogon.UseStyleColors = true;
             // 
             // LearnerModuleTile
             // 
@@ -442,36 +472,6 @@
             this.clearAllControlsToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.clearAllControlsToolStripMenuItem.Text = "Clear All Controls";
             this.clearAllControlsToolStripMenuItem.Click += new System.EventHandler(this.clearAllControlsToolStripMenuItem_Click);
-            // 
-            // metroLabelLogon
-            // 
-            this.metroLabelLogon.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroLabelLogon.AutoSize = true;
-            this.metroLabelLogon.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabelLogon.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabelLogon.Location = new System.Drawing.Point(883, 1);
-            this.metroLabelLogon.Name = "metroLabelLogon";
-            this.metroLabelLogon.Size = new System.Drawing.Size(114, 25);
-            this.metroLabelLogon.Style = MetroFramework.MetroColorStyle.White;
-            this.metroLabelLogon.TabIndex = 6;
-            this.metroLabelLogon.Text = "Logon User:";
-            this.metroLabelLogon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroLabelLogon.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroLabelLogon.UseStyleColors = true;
-            // 
-            // LabelUser
-            // 
-            this.LabelUser.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.LabelUser.AutoSize = true;
-            this.LabelUser.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.LabelUser.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.LabelUser.Location = new System.Drawing.Point(1003, 2);
-            this.LabelUser.Name = "LabelUser";
-            this.LabelUser.Size = new System.Drawing.Size(47, 25);
-            this.LabelUser.Style = MetroFramework.MetroColorStyle.White;
-            this.LabelUser.TabIndex = 7;
-            this.LabelUser.Text = "User";
-            this.LabelUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ParentForm
             // 
