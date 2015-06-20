@@ -55,9 +55,13 @@ namespace SIMS
     public partial class ParentForm : MetroForm
     {
         LoginForm log = new LoginForm();
-        AboutSIMS about;
-        AddSchoolSubject subjects;
-        ViewSubject viewSubj;
+
+        #region "Properties Admin Control"
+        private AboutSIMS about;
+        private AddSchoolSubject subjects;
+        private ViewSubject viewSubj;
+        private AddCentre center;
+        #endregion
 
         #region "Properties Learner Module"
         private AddLearner learner = null;
@@ -364,12 +368,7 @@ namespace SIMS
         }
         #endregion
 
-        private void clearAllControlsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainPanel.Controls.Clear();
-        }
-
-        #region "Admin Control
+        #region "Admin Control"
         private void addSubjectsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainPanel.Controls.Clear();
@@ -387,6 +386,20 @@ namespace SIMS
             viewSubj = new ViewSubject();
             FormSetUp(viewSubj);
         }
+
+        private void addCentreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            if (center != null)
+                center.Close();
+            center = new AddCentre();
+            FormSetUp(center);
+        }
         #endregion 
+
+        private void clearAllControlsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+        }
     }
 }

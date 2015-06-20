@@ -271,6 +271,7 @@
             this.addCentreToolStripMenuItem.Name = "addCentreToolStripMenuItem";
             this.addCentreToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.addCentreToolStripMenuItem.Text = "Add Centre";
+            this.addCentreToolStripMenuItem.Click += new System.EventHandler(this.addCentreToolStripMenuItem_Click);
             // 
             // addNewSubjectToolStripMenuItem
             // 

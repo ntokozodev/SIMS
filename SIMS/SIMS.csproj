@@ -64,6 +64,12 @@
     <Compile Include="AboutSIMS.Designer.cs">
       <DependentUpon>AboutSIMS.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminControl\AddCentre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminControl\AddCentre.Designer.cs">
+      <DependentUpon>AddCentre.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminControl\AddSchoolSubject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,9 @@
     <Compile Include="Validation\Validation.cs" />
     <EmbeddedResource Include="AboutSIMS.resx">
       <DependentUpon>AboutSIMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminControl\AddCentre.resx">
+      <DependentUpon>AddCentre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminControl\AddSchoolSubject.resx">
       <DependentUpon>AddSchoolSubject.cs</DependentUpon>
