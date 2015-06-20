@@ -140,8 +140,9 @@
             this.ComboBoxPayType.ItemHeight = 23;
             this.ComboBoxPayType.Items.AddRange(new object[] {
             "Cash",
-            "Cheque"});
-            this.ComboBoxPayType.Location = new System.Drawing.Point(241, 323);
+            "Cheque",
+            "Debit"});
+            this.ComboBoxPayType.Location = new System.Drawing.Point(241, 319);
             this.ComboBoxPayType.Name = "ComboBoxPayType";
             this.ComboBoxPayType.Size = new System.Drawing.Size(143, 29);
             this.ComboBoxPayType.TabIndex = 4;

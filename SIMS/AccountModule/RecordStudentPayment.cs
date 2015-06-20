@@ -54,7 +54,7 @@ namespace SIMS.AccountModule
             int rows = 0;
 
             if (TextBoxAdminNo.Text == "" || !isAdmissionNoValid(TextBoxAdminNo.Text))
-                MessageBox.Show("Admission No. is not valid");
+                MessageBox.Show("Admission No. " + TextBoxAdminNo.Text + " is not valid");
             else if (TextBoxYear.Text == "" || TextBoxYear.Text.Length > 4 || TextBoxYear.Text.Length != 4 || TextBoxYear.Text.Length < 0)
                 MessageBox.Show("Academic year is not valid");
             else if (!isYearRegistered(TextBoxYear.Text))

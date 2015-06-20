@@ -242,7 +242,7 @@
             this.AdminMenu.Name = "AccessMenu";
             this.AdminMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.AdminMenu.ShowImageMargin = false;
-            this.AdminMenu.Size = new System.Drawing.Size(190, 130);
+            this.AdminMenu.Size = new System.Drawing.Size(190, 108);
             this.AdminMenu.Style = MetroFramework.MetroColorStyle.Purple;
             this.AdminMenu.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.AdminMenu.UseStyleColors = true;
@@ -402,7 +402,7 @@
             this.AccountsMenu.Name = "AccountsMenu";
             this.AccountsMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.AccountsMenu.ShowImageMargin = false;
-            this.AccountsMenu.Size = new System.Drawing.Size(141, 82);
+            this.AccountsMenu.Size = new System.Drawing.Size(153, 104);
             // 
             // paymentsToolStripMenuItem
             // 
@@ -444,8 +444,8 @@
             // 
             this.feesToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.feesToolStripMenuItem.Name = "feesToolStripMenuItem";
-            this.feesToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
-            this.feesToolStripMenuItem.Text = "Due Fees";
+            this.feesToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.feesToolStripMenuItem.Text = "Student Fees";
             this.feesToolStripMenuItem.Click += new System.EventHandler(this.feesToolStripMenuItem_Click);
             // 
             // staffHoursToolStripMenuItem

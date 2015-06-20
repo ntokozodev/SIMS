@@ -28,98 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.metroGridDueFees = new MetroFramework.Controls.MetroGrid();
-            this.metroTileLoadDueFee = new MetroFramework.Controls.MetroTile();
-            this.metroTilePrintDueFees = new MetroFramework.Controls.MetroTile();
+            this.components = new System.ComponentModel.Container();
             this.metroLabelTotalDue = new MetroFramework.Controls.MetroLabel();
             this.metroTileClose = new MetroFramework.Controls.MetroTile();
             this.metroTextBoxTotalDue = new MetroFramework.Controls.MetroTextBox();
+            this.dS = new SIMS.DS();
+            this.sTUDENTPAYMENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sTUDENT_PAYMENTTableAdapter = new SIMS.DSTableAdapters.STUDENT_PAYMENTTableAdapter();
+            this.metroGridDueFees = new System.Windows.Forms.DataGridView();
+            this.sTUDENTPAYMENTBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.aDMISSIONNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pAYMENTAMOUNTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pAYMENTTYPEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bALANCEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pAYMENTDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cAPTUREDDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aCADEMICYEARDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTUDENTPAYMENTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridDueFees)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTUDENTPAYMENTBindingSource1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // metroGridDueFees
-            // 
-            this.metroGridDueFees.AllowUserToAddRows = false;
-            this.metroGridDueFees.AllowUserToResizeRows = false;
-            this.metroGridDueFees.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroGridDueFees.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.metroGridDueFees.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.metroGridDueFees.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.metroGridDueFees.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGridDueFees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.metroGridDueFees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGridDueFees.DefaultCellStyle = dataGridViewCellStyle5;
-            this.metroGridDueFees.EnableHeadersVisualStyles = false;
-            this.metroGridDueFees.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.metroGridDueFees.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.metroGridDueFees.Location = new System.Drawing.Point(65, 127);
-            this.metroGridDueFees.Name = "metroGridDueFees";
-            this.metroGridDueFees.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGridDueFees.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.metroGridDueFees.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.metroGridDueFees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGridDueFees.Size = new System.Drawing.Size(837, 376);
-            this.metroGridDueFees.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroGridDueFees.TabIndex = 2;
-            this.metroGridDueFees.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroGridDueFees.UseStyleColors = true;
-            // 
-            // metroTileLoadDueFee
-            // 
-            this.metroTileLoadDueFee.ActiveControl = null;
-            this.metroTileLoadDueFee.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroTileLoadDueFee.Location = new System.Drawing.Point(65, 80);
-            this.metroTileLoadDueFee.Name = "metroTileLoadDueFee";
-            this.metroTileLoadDueFee.Size = new System.Drawing.Size(135, 32);
-            this.metroTileLoadDueFee.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroTileLoadDueFee.TabIndex = 3;
-            this.metroTileLoadDueFee.Text = "Load";
-            this.metroTileLoadDueFee.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTileLoadDueFee.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.metroTileLoadDueFee.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.metroTileLoadDueFee.UseSelectable = true;
-            this.metroTileLoadDueFee.Click += new System.EventHandler(this.metroTileLoadDueFee_Click);
-            // 
-            // metroTilePrintDueFees
-            // 
-            this.metroTilePrintDueFees.ActiveControl = null;
-            this.metroTilePrintDueFees.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroTilePrintDueFees.Location = new System.Drawing.Point(768, 80);
-            this.metroTilePrintDueFees.Name = "metroTilePrintDueFees";
-            this.metroTilePrintDueFees.Size = new System.Drawing.Size(134, 32);
-            this.metroTilePrintDueFees.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroTilePrintDueFees.TabIndex = 4;
-            this.metroTilePrintDueFees.Text = "Print";
-            this.metroTilePrintDueFees.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTilePrintDueFees.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.metroTilePrintDueFees.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.metroTilePrintDueFees.UseSelectable = true;
-            this.metroTilePrintDueFees.UseStyleColors = true;
-            this.metroTilePrintDueFees.Visible = false;
             // 
             // metroLabelTotalDue
             // 
@@ -127,22 +56,21 @@
             this.metroLabelTotalDue.AutoSize = true;
             this.metroLabelTotalDue.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabelTotalDue.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabelTotalDue.Location = new System.Drawing.Point(65, 533);
+            this.metroLabelTotalDue.Location = new System.Drawing.Point(23, 528);
             this.metroLabelTotalDue.Name = "metroLabelTotalDue";
-            this.metroLabelTotalDue.Size = new System.Drawing.Size(113, 25);
+            this.metroLabelTotalDue.Size = new System.Drawing.Size(169, 25);
             this.metroLabelTotalDue.TabIndex = 6;
-            this.metroLabelTotalDue.Text = "TOTAL DUE:";
+            this.metroLabelTotalDue.Text = "TOTAL BALANCES:";
             this.metroLabelTotalDue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroLabelTotalDue.Visible = false;
             // 
             // metroTileClose
             // 
             this.metroTileClose.ActiveControl = null;
             this.metroTileClose.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroTileClose.Location = new System.Drawing.Point(754, 521);
+            this.metroTileClose.Location = new System.Drawing.Point(795, 522);
             this.metroTileClose.Name = "metroTileClose";
-            this.metroTileClose.Size = new System.Drawing.Size(148, 37);
-            this.metroTileClose.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroTileClose.Size = new System.Drawing.Size(148, 31);
+            this.metroTileClose.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTileClose.TabIndex = 7;
             this.metroTileClose.Text = "Close Window";
             this.metroTileClose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -157,7 +85,7 @@
             this.metroTextBoxTotalDue.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.metroTextBoxTotalDue.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.metroTextBoxTotalDue.Lines = new string[0];
-            this.metroTextBoxTotalDue.Location = new System.Drawing.Point(184, 527);
+            this.metroTextBoxTotalDue.Location = new System.Drawing.Point(198, 522);
             this.metroTextBoxTotalDue.MaxLength = 32767;
             this.metroTextBoxTotalDue.Name = "metroTextBoxTotalDue";
             this.metroTextBoxTotalDue.PasswordChar = '\0';
@@ -165,29 +93,127 @@
             this.metroTextBoxTotalDue.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBoxTotalDue.SelectedText = "";
             this.metroTextBoxTotalDue.Size = new System.Drawing.Size(135, 31);
-            this.metroTextBoxTotalDue.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroTextBoxTotalDue.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBoxTotalDue.TabIndex = 8;
             this.metroTextBoxTotalDue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.metroTextBoxTotalDue.UseSelectable = true;
             this.metroTextBoxTotalDue.UseStyleColors = true;
-            this.metroTextBoxTotalDue.Visible = false;
+            // 
+            // dS
+            // 
+            this.dS.DataSetName = "DS";
+            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sTUDENTPAYMENTBindingSource
+            // 
+            this.sTUDENTPAYMENTBindingSource.DataMember = "STUDENT_PAYMENT";
+            this.sTUDENTPAYMENTBindingSource.DataSource = this.dS;
+            // 
+            // sTUDENT_PAYMENTTableAdapter
+            // 
+            this.sTUDENT_PAYMENTTableAdapter.ClearBeforeFill = true;
+            // 
+            // metroGridDueFees
+            // 
+            this.metroGridDueFees.AllowUserToAddRows = false;
+            this.metroGridDueFees.AllowUserToDeleteRows = false;
+            this.metroGridDueFees.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.metroGridDueFees.AutoGenerateColumns = false;
+            this.metroGridDueFees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.metroGridDueFees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.aDMISSIONNODataGridViewTextBoxColumn,
+            this.pAYMENTAMOUNTDataGridViewTextBoxColumn,
+            this.pAYMENTTYPEDataGridViewTextBoxColumn,
+            this.bALANCEDataGridViewTextBoxColumn,
+            this.pAYMENTDATEDataGridViewTextBoxColumn,
+            this.cAPTUREDDATEDataGridViewTextBoxColumn,
+            this.aCADEMICYEARDataGridViewTextBoxColumn});
+            this.metroGridDueFees.DataSource = this.sTUDENTPAYMENTBindingSource1;
+            this.metroGridDueFees.Location = new System.Drawing.Point(23, 119);
+            this.metroGridDueFees.Name = "metroGridDueFees";
+            this.metroGridDueFees.ReadOnly = true;
+            this.metroGridDueFees.Size = new System.Drawing.Size(920, 369);
+            this.metroGridDueFees.TabIndex = 9;
+            // 
+            // sTUDENTPAYMENTBindingSource1
+            // 
+            this.sTUDENTPAYMENTBindingSource1.DataMember = "STUDENT_PAYMENT";
+            this.sTUDENTPAYMENTBindingSource1.DataSource = this.dS;
+            // 
+            // aDMISSIONNODataGridViewTextBoxColumn
+            // 
+            this.aDMISSIONNODataGridViewTextBoxColumn.DataPropertyName = "ADMISSION_NO";
+            this.aDMISSIONNODataGridViewTextBoxColumn.HeaderText = "ADMISSION NO";
+            this.aDMISSIONNODataGridViewTextBoxColumn.Name = "aDMISSIONNODataGridViewTextBoxColumn";
+            this.aDMISSIONNODataGridViewTextBoxColumn.ReadOnly = true;
+            this.aDMISSIONNODataGridViewTextBoxColumn.Width = 115;
+            // 
+            // pAYMENTAMOUNTDataGridViewTextBoxColumn
+            // 
+            this.pAYMENTAMOUNTDataGridViewTextBoxColumn.DataPropertyName = "PAYMENT_AMOUNT";
+            this.pAYMENTAMOUNTDataGridViewTextBoxColumn.HeaderText = "PAYMENT AMOUNT";
+            this.pAYMENTAMOUNTDataGridViewTextBoxColumn.Name = "pAYMENTAMOUNTDataGridViewTextBoxColumn";
+            this.pAYMENTAMOUNTDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pAYMENTAMOUNTDataGridViewTextBoxColumn.Width = 140;
+            // 
+            // pAYMENTTYPEDataGridViewTextBoxColumn
+            // 
+            this.pAYMENTTYPEDataGridViewTextBoxColumn.DataPropertyName = "PAYMENT_TYPE";
+            this.pAYMENTTYPEDataGridViewTextBoxColumn.HeaderText = "PAYMENT TYPE";
+            this.pAYMENTTYPEDataGridViewTextBoxColumn.Name = "pAYMENTTYPEDataGridViewTextBoxColumn";
+            this.pAYMENTTYPEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pAYMENTTYPEDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // bALANCEDataGridViewTextBoxColumn
+            // 
+            this.bALANCEDataGridViewTextBoxColumn.DataPropertyName = "BALANCE";
+            this.bALANCEDataGridViewTextBoxColumn.HeaderText = "BALANCE";
+            this.bALANCEDataGridViewTextBoxColumn.Name = "bALANCEDataGridViewTextBoxColumn";
+            this.bALANCEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pAYMENTDATEDataGridViewTextBoxColumn
+            // 
+            this.pAYMENTDATEDataGridViewTextBoxColumn.DataPropertyName = "PAYMENT_DATE";
+            this.pAYMENTDATEDataGridViewTextBoxColumn.HeaderText = "PAYMENT DATE";
+            this.pAYMENTDATEDataGridViewTextBoxColumn.Name = "pAYMENTDATEDataGridViewTextBoxColumn";
+            this.pAYMENTDATEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pAYMENTDATEDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // cAPTUREDDATEDataGridViewTextBoxColumn
+            // 
+            this.cAPTUREDDATEDataGridViewTextBoxColumn.DataPropertyName = "CAPTURED_DATE";
+            this.cAPTUREDDATEDataGridViewTextBoxColumn.HeaderText = "CAPTURED DATE";
+            this.cAPTUREDDATEDataGridViewTextBoxColumn.Name = "cAPTUREDDATEDataGridViewTextBoxColumn";
+            this.cAPTUREDDATEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cAPTUREDDATEDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // aCADEMICYEARDataGridViewTextBoxColumn
+            // 
+            this.aCADEMICYEARDataGridViewTextBoxColumn.DataPropertyName = "ACADEMIC_YEAR";
+            this.aCADEMICYEARDataGridViewTextBoxColumn.HeaderText = "ACADEMIC YEAR";
+            this.aCADEMICYEARDataGridViewTextBoxColumn.Name = "aCADEMICYEARDataGridViewTextBoxColumn";
+            this.aCADEMICYEARDataGridViewTextBoxColumn.ReadOnly = true;
+            this.aCADEMICYEARDataGridViewTextBoxColumn.Width = 132;
             // 
             // DueFees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 576);
+            this.Controls.Add(this.metroGridDueFees);
             this.Controls.Add(this.metroTextBoxTotalDue);
             this.Controls.Add(this.metroTileClose);
             this.Controls.Add(this.metroLabelTotalDue);
-            this.Controls.Add(this.metroTilePrintDueFees);
-            this.Controls.Add(this.metroTileLoadDueFee);
-            this.Controls.Add(this.metroGridDueFees);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "DueFees";
             this.Style = MetroFramework.MetroColorStyle.Green;
-            this.Text = "Due Fees";
+            this.Text = "Student Transactions";
             this.Load += new System.EventHandler(this.DueFees_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTUDENTPAYMENTBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridDueFees)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTUDENTPAYMENTBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,11 +221,20 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroGrid metroGridDueFees;
-        private MetroFramework.Controls.MetroTile metroTileLoadDueFee;
-        private MetroFramework.Controls.MetroTile metroTilePrintDueFees;
         private MetroFramework.Controls.MetroLabel metroLabelTotalDue;
         private MetroFramework.Controls.MetroTile metroTileClose;
         private MetroFramework.Controls.MetroTextBox metroTextBoxTotalDue;
+        private DS dS;
+        private System.Windows.Forms.BindingSource sTUDENTPAYMENTBindingSource;
+        private DSTableAdapters.STUDENT_PAYMENTTableAdapter sTUDENT_PAYMENTTableAdapter;
+        private System.Windows.Forms.DataGridView metroGridDueFees;
+        private System.Windows.Forms.BindingSource sTUDENTPAYMENTBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aDMISSIONNODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pAYMENTAMOUNTDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pAYMENTTYPEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bALANCEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pAYMENTDATEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cAPTUREDDATEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aCADEMICYEARDataGridViewTextBoxColumn;
     }
 }
