@@ -22,6 +22,8 @@ namespace SIMS
 {
     public partial class LoginForm : MetroForm
     {
+        private string userID;
+
         public LoginForm()
         {
             InitializeComponent();
@@ -91,7 +93,11 @@ namespace SIMS
             {
                 usersTA.FillByUserPass(loginDS.SIMS_USERS, user, pword);
                 if (loginDS.SIMS_USERS.Rows.Count > 0)
+                {
+                    for (int i = 0; i < loginDS.SIMS_USERS.Rows.Count; i++)
+                        userID = Convert.ToString(loginDS.SIMS_USERS.Rows[i][1]);
                     return true;
+                }    
                 else
                     return false;
             }
@@ -102,6 +108,11 @@ namespace SIMS
             }
             Authenticated = false;
             return false;
+        }
+
+        public string UserID
+        {
+            get { return userID; }
         }
 
         private void cancelTile_Click(object sender, EventArgs e)

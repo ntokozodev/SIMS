@@ -8517,12 +8517,24 @@ namespace SIMS.DSTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[2];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT EMPLOYEE_ID, \"NAME\", SURNAME, GENDER, CITIZEN_ID, PHONE, ROLE, HIRE_DATE, " +
                 "EMAIL, ADDRESS, CITY, ZIPCODE FROM SIMS.EMPLOYEE";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT EMPLOYEE_ID, \"NAME\", SURNAME, GENDER, CITIZEN_ID, PHONE, ROLE, HIRE_DATE, " +
+                "EMAIL, ADDRESS, CITY, ZIPCODE \r\nFROM SIMS.EMPLOYEE\r\nWHERE (lower(SURNAME) LIKE :" +
+                "SURNAME || \'%\')";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":SURNAME";
+            param.DbType = global::System.Data.DbType.AnsiString;
+            param.Size = 1024;
+            param.IsNullable = true;
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8547,6 +8559,25 @@ namespace SIMS.DSTableAdapters {
             DS.EMPLOYEEDataTable dataTable = new DS.EMPLOYEEDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int SearchBySurname(DS.EMPLOYEEDataTable dataTable, string SURNAME) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((SURNAME == null)) {
+                throw new global::System.ArgumentNullException("SURNAME");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(SURNAME));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
