@@ -15323,43 +15323,87 @@ namespace SIMS.DSTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[3];
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[6];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT USER_ID, USER_NAME, PASSWORD, EMPLOYEE_ID FROM SIMS.SIMS_USERS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT USER_ID, USER_NAME, PASSWORD, EMPLOYEE_ID \r\nFROM SIMS.SIMS_USERS\r\nWHERE (E" +
-                "MPLOYEE_ID= :EMPLOYEE_ID)";
+            this._commandCollection[1].CommandText = "SELECT USER_ID, USER_NAME, PASSWORD, EMPLOYEE_ID \r\nFROM SIMS.SIMS_USERS\r\nWHERE (P" +
+                "ASSWORD = :PASSWORD)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":PASSWORD";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 4000;
+            param.IsNullable = true;
+            param.SourceColumn = "PASSWORD";
+            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT USER_ID, USER_NAME, PASSWORD, EMPLOYEE_ID \r\nFROM SIMS.SIMS_USERS\r\nWHERE (E" +
+                "MPLOYEE_ID= :EMPLOYEE_ID)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":EMPLOYEE_ID";
             param.DbType = global::System.Data.DbType.Decimal;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
             param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "EMPLOYEE_ID";
-            this._commandCollection[1].Parameters.Add(param);
-            this._commandCollection[2] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT USER_ID, USER_NAME, PASSWORD, EMPLOYEE_ID \r\nFROM SIMS.SIMS_USERS\r\nWHERE (U" +
-                "SER_NAME = :USER_NAME) AND (PASSWORD = :PASSWORD)";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(param);
+            this._commandCollection[3] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT USER_ID, USER_NAME, PASSWORD, EMPLOYEE_ID \r\nFROM SIMS.SIMS_USERS\r\nWHERE (U" +
+                "SER_NAME = :USER_NAME)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":USER_NAME";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 1000;
             param.IsNullable = true;
             param.SourceColumn = "USER_NAME";
-            this._commandCollection[2].Parameters.Add(param);
+            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[4] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT USER_ID, USER_NAME, PASSWORD, EMPLOYEE_ID \r\nFROM SIMS.SIMS_USERS\r\nWHERE (U" +
+                "SER_NAME = :USER_NAME) AND (PASSWORD = :PASSWORD)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":USER_NAME";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "USER_NAME";
+            this._commandCollection[4].Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":PASSWORD";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 4000;
             param.IsNullable = true;
             param.SourceColumn = "PASSWORD";
-            this._commandCollection[2].Parameters.Add(param);
+            this._commandCollection[4].Parameters.Add(param);
+            this._commandCollection[5] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "UPDATE \"SIMS\".\"SIMS_USERS\"\r\n SET \"PASSWORD\" = :PASSWORD\r\nWHERE (USER_NAME = :USER" +
+                "_NAME) ";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":PASSWORD";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 4000;
+            param.IsNullable = true;
+            param.SourceColumn = "PASSWORD";
+            this._commandCollection[5].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":USER_NAME";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 1000;
+            param.IsNullable = true;
+            param.SourceColumn = "USER_NAME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[5].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15390,8 +15434,27 @@ namespace SIMS.DSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByUser(DS.SIMS_USERSDataTable dataTable, global::System.Nullable<decimal> EMPLOYEE_ID) {
+        public virtual int FillByPassword(DS.SIMS_USERSDataTable dataTable, string PASSWORD) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((PASSWORD == null)) {
+                throw new global::System.ArgumentNullException("PASSWORD");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(PASSWORD));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByUser(DS.SIMS_USERSDataTable dataTable, global::System.Nullable<decimal> EMPLOYEE_ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((EMPLOYEE_ID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(EMPLOYEE_ID.Value));
             }
@@ -15409,8 +15472,27 @@ namespace SIMS.DSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByUserName(DS.SIMS_USERSDataTable dataTable, string USER_NAME) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((USER_NAME == null)) {
+                throw new global::System.ArgumentNullException("USER_NAME");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(USER_NAME));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByUserPass(DS.SIMS_USERSDataTable dataTable, string USER_NAME, string PASSWORD) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((USER_NAME == null)) {
                 throw new global::System.ArgumentNullException("USER_NAME");
             }
@@ -15608,6 +15690,41 @@ namespace SIMS.DSTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string USER_NAME, string PASSWORD, global::System.Nullable<decimal> EMPLOYEE_ID, decimal Original_USER_ID, string Original_USER_NAME, string Original_PASSWORD, global::System.Nullable<decimal> Original_EMPLOYEE_ID) {
             return this.Update(Original_USER_ID, USER_NAME, PASSWORD, EMPLOYEE_ID, Original_USER_ID, Original_USER_NAME, Original_PASSWORD, Original_EMPLOYEE_ID);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdatePassword(string PASSWORD, string USER_NAME) {
+            global::Oracle.ManagedDataAccess.Client.OracleCommand command = this.CommandCollection[5];
+            if ((PASSWORD == null)) {
+                throw new global::System.ArgumentNullException("PASSWORD");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(PASSWORD));
+            }
+            if ((USER_NAME == null)) {
+                throw new global::System.ArgumentNullException("USER_NAME");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(USER_NAME));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

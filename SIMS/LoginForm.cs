@@ -22,7 +22,7 @@ namespace SIMS
 {
     public partial class LoginForm : MetroForm
     {
-        private string userID;
+        private static string userID;
 
         public LoginForm()
         {
@@ -110,7 +110,7 @@ namespace SIMS
             return false;
         }
 
-        public string UserID
+        public static string UserName
         {
             get { return userID; }
         }

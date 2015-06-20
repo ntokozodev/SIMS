@@ -97,7 +97,7 @@ namespace SIMS
         {
             InitializeComponent();
             log.ShowDialog();
-            LabelUser.Text = log.UserID;
+            LabelUser.Text = LoginForm.UserName;
         }
 
         private void ParentForm_Load(object sender, EventArgs e)
