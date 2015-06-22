@@ -42,7 +42,7 @@ namespace SIMS.AdminControl
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading subjects");
+                MessageBox.Show("Error loading subjects"+ex.Message.ToString());
             }
         }
     }

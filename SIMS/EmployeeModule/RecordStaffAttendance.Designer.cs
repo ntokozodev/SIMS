@@ -34,7 +34,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 384);
+            this.ClientSize = new System.Drawing.Size(1045, 577);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "RecordStaffAttendance";
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Record Staff Attendance";

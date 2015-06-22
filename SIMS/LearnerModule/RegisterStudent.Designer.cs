@@ -56,6 +56,7 @@
             this.studentTA = new SIMS.DSTableAdapters.STUDENTTableAdapter();
             this.student_enrollmentTA = new SIMS.DSTableAdapters.STUDENT_ENROLLMENTTableAdapter();
             this.student_feeTA = new SIMS.DSTableAdapters.STUDENT_FEETableAdapter();
+            this.student_paymentTA = new SIMS.DSTableAdapters.STUDENT_PAYMENTTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -337,6 +338,10 @@
             // 
             this.student_feeTA.ClearBeforeFill = true;
             // 
+            // student_paymentTA
+            // 
+            this.student_paymentTA.ClearBeforeFill = true;
+            // 
             // RegisterStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -390,5 +395,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cATEGORYDataGridViewTextBoxColumn;
         private DSTableAdapters.STUDENT_ENROLLMENTTableAdapter student_enrollmentTA;
         private DSTableAdapters.STUDENT_FEETableAdapter student_feeTA;
+        private DSTableAdapters.STUDENT_PAYMENTTableAdapter student_paymentTA;
     }
 }

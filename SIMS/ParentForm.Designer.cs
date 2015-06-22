@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ParentForm));
-            this.exitTile = new MetroFramework.Controls.MetroTile();
             this.ParentButtonPanel = new MetroFramework.Controls.MetroPanel();
             this.LabelUser = new MetroFramework.Controls.MetroLabel();
             this.metroLabelLogon = new MetroFramework.Controls.MetroLabel();
@@ -40,6 +39,7 @@
             this.browseLearnerDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registerStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.studentProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registeredStudentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accessControlTile = new MetroFramework.Controls.MetroTile();
             this.AdminMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,6 +48,7 @@
             this.addNewSubjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addSubjectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewSubjectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutTile = new MetroFramework.Controls.MetroTile();
             this.StaffTile = new MetroFramework.Controls.MetroTile();
             this.EmployeeMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
@@ -59,9 +60,8 @@
             this.paymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recordStudentPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recordStaffSalaryPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.browseStaffPaymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.feesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.staffHoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.browseStaffPaymentsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.MainPanel = new MetroFramework.Controls.MetroPanel();
             this.mainPanelContextMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.clearAllControlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,24 +72,6 @@
             this.AccountsMenu.SuspendLayout();
             this.mainPanelContextMenu.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // exitTile
-            // 
-            this.exitTile.ActiveControl = null;
-            this.exitTile.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.exitTile.Location = new System.Drawing.Point(20, 684);
-            this.exitTile.Name = "exitTile";
-            this.exitTile.Size = new System.Drawing.Size(1134, 42);
-            this.exitTile.Style = MetroFramework.MetroColorStyle.Green;
-            this.exitTile.TabIndex = 1;
-            this.exitTile.Text = "Close Application";
-            this.exitTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.exitTile.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.exitTile.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.exitTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.exitTile.UseSelectable = true;
-            this.exitTile.UseStyleColors = true;
-            this.exitTile.Click += new System.EventHandler(this.exitTile_Click);
             // 
             // ParentButtonPanel
             // 
@@ -107,7 +89,7 @@
             this.ParentButtonPanel.HorizontalScrollbarSize = 10;
             this.ParentButtonPanel.Location = new System.Drawing.Point(20, 54);
             this.ParentButtonPanel.Name = "ParentButtonPanel";
-            this.ParentButtonPanel.Size = new System.Drawing.Size(1134, 38);
+            this.ParentButtonPanel.Size = new System.Drawing.Size(1222, 38);
             this.ParentButtonPanel.Style = MetroFramework.MetroColorStyle.Black;
             this.ParentButtonPanel.TabIndex = 4;
             this.ParentButtonPanel.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -121,7 +103,7 @@
             this.LabelUser.AutoSize = true;
             this.LabelUser.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.LabelUser.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.LabelUser.Location = new System.Drawing.Point(1003, 2);
+            this.LabelUser.Location = new System.Drawing.Point(1047, 2);
             this.LabelUser.Name = "LabelUser";
             this.LabelUser.Size = new System.Drawing.Size(47, 25);
             this.LabelUser.Style = MetroFramework.MetroColorStyle.White;
@@ -135,7 +117,7 @@
             this.metroLabelLogon.AutoSize = true;
             this.metroLabelLogon.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabelLogon.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabelLogon.Location = new System.Drawing.Point(883, 1);
+            this.metroLabelLogon.Location = new System.Drawing.Point(927, 1);
             this.metroLabelLogon.Name = "metroLabelLogon";
             this.metroLabelLogon.Size = new System.Drawing.Size(107, 25);
             this.metroLabelLogon.Style = MetroFramework.MetroColorStyle.White;
@@ -150,7 +132,7 @@
             this.LearnerModuleTile.ActiveControl = null;
             this.LearnerModuleTile.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LearnerModuleTile.ContextMenuStrip = this.StudentMenu;
-            this.LearnerModuleTile.Location = new System.Drawing.Point(531, 1);
+            this.LearnerModuleTile.Location = new System.Drawing.Point(575, 1);
             this.LearnerModuleTile.Name = "LearnerModuleTile";
             this.LearnerModuleTile.Size = new System.Drawing.Size(170, 27);
             this.LearnerModuleTile.Style = MetroFramework.MetroColorStyle.Brown;
@@ -170,11 +152,12 @@
             this.addNewLearnerToolStripMenuItem,
             this.browseLearnerDetailsToolStripMenuItem,
             this.registerStudentToolStripMenuItem,
-            this.studentProfileToolStripMenuItem});
+            this.studentProfileToolStripMenuItem,
+            this.registeredStudentsToolStripMenuItem});
             this.StudentMenu.Name = "StudentMenu";
             this.StudentMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.StudentMenu.ShowImageMargin = false;
-            this.StudentMenu.Size = new System.Drawing.Size(209, 108);
+            this.StudentMenu.Size = new System.Drawing.Size(209, 134);
             this.StudentMenu.Style = MetroFramework.MetroColorStyle.Brown;
             this.StudentMenu.Text = "StudentMenu";
             this.StudentMenu.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -212,13 +195,22 @@
             this.studentProfileToolStripMenuItem.Name = "studentProfileToolStripMenuItem";
             this.studentProfileToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.studentProfileToolStripMenuItem.Text = "Student Profile";
+            this.studentProfileToolStripMenuItem.Click += new System.EventHandler(this.studentProfileToolStripMenuItem_Click);
+            // 
+            // registeredStudentsToolStripMenuItem
+            // 
+            this.registeredStudentsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registeredStudentsToolStripMenuItem.Name = "registeredStudentsToolStripMenuItem";
+            this.registeredStudentsToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
+            this.registeredStudentsToolStripMenuItem.Text = "Registered Students";
+            this.registeredStudentsToolStripMenuItem.Click += new System.EventHandler(this.registeredStudentsToolStripMenuItem_Click);
             // 
             // accessControlTile
             // 
             this.accessControlTile.ActiveControl = null;
             this.accessControlTile.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.accessControlTile.ContextMenuStrip = this.AdminMenu;
-            this.accessControlTile.Location = new System.Drawing.Point(3, 1);
+            this.accessControlTile.Location = new System.Drawing.Point(47, 1);
             this.accessControlTile.Name = "accessControlTile";
             this.accessControlTile.Size = new System.Drawing.Size(170, 27);
             this.accessControlTile.Style = MetroFramework.MetroColorStyle.Purple;
@@ -238,11 +230,12 @@
             this.addUserToolStripMenuItem,
             this.changePwordStripMenuItem,
             this.addCentreToolStripMenuItem,
-            this.addNewSubjectToolStripMenuItem});
+            this.addNewSubjectToolStripMenuItem,
+            this.exitToolStripMenuItem});
             this.AdminMenu.Name = "AccessMenu";
             this.AdminMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.AdminMenu.ShowImageMargin = false;
-            this.AdminMenu.Size = new System.Drawing.Size(190, 108);
+            this.AdminMenu.Size = new System.Drawing.Size(190, 134);
             this.AdminMenu.Style = MetroFramework.MetroColorStyle.Purple;
             this.AdminMenu.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.AdminMenu.UseStyleColors = true;
@@ -299,11 +292,19 @@
             this.viewSubjectsToolStripMenuItem.Text = "View Subjects";
             this.viewSubjectsToolStripMenuItem.Click += new System.EventHandler(this.viewSubjectsToolStripMenuItem_Click);
             // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // aboutTile
             // 
             this.aboutTile.ActiveControl = null;
             this.aboutTile.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.aboutTile.Location = new System.Drawing.Point(707, 1);
+            this.aboutTile.Location = new System.Drawing.Point(751, 1);
             this.aboutTile.Name = "aboutTile";
             this.aboutTile.Size = new System.Drawing.Size(170, 27);
             this.aboutTile.Style = MetroFramework.MetroColorStyle.Red;
@@ -322,7 +323,7 @@
             this.StaffTile.ActiveControl = null;
             this.StaffTile.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.StaffTile.ContextMenuStrip = this.EmployeeMenu;
-            this.StaffTile.Location = new System.Drawing.Point(355, 1);
+            this.StaffTile.Location = new System.Drawing.Point(399, 1);
             this.StaffTile.Name = "StaffTile";
             this.StaffTile.Size = new System.Drawing.Size(170, 27);
             this.StaffTile.Style = MetroFramework.MetroColorStyle.Lime;
@@ -378,7 +379,7 @@
             this.metroTile2.ActiveControl = null;
             this.metroTile2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.metroTile2.ContextMenuStrip = this.AccountsMenu;
-            this.metroTile2.Location = new System.Drawing.Point(179, 0);
+            this.metroTile2.Location = new System.Drawing.Point(223, 0);
             this.metroTile2.Name = "metroTile2";
             this.metroTile2.Size = new System.Drawing.Size(170, 27);
             this.metroTile2.Style = MetroFramework.MetroColorStyle.Blue;
@@ -398,21 +399,20 @@
             this.AccountsMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.paymentsToolStripMenuItem,
             this.feesToolStripMenuItem,
-            this.staffHoursToolStripMenuItem});
+            this.browseStaffPaymentsToolStripMenuItem1});
             this.AccountsMenu.Name = "AccountsMenu";
             this.AccountsMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.AccountsMenu.ShowImageMargin = false;
-            this.AccountsMenu.Size = new System.Drawing.Size(153, 104);
+            this.AccountsMenu.Size = new System.Drawing.Size(155, 82);
             // 
             // paymentsToolStripMenuItem
             // 
             this.paymentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.recordStudentPaymentToolStripMenuItem,
-            this.recordStaffSalaryPaymentToolStripMenuItem,
-            this.browseStaffPaymentsToolStripMenuItem});
+            this.recordStaffSalaryPaymentToolStripMenuItem});
             this.paymentsToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.paymentsToolStripMenuItem.Name = "paymentsToolStripMenuItem";
-            this.paymentsToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
+            this.paymentsToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.paymentsToolStripMenuItem.Text = "Payments";
             // 
             // recordStudentPaymentToolStripMenuItem
@@ -432,29 +432,19 @@
             this.recordStaffSalaryPaymentToolStripMenuItem.Text = "Record Staff Salary Payment";
             this.recordStaffSalaryPaymentToolStripMenuItem.Click += new System.EventHandler(this.recordStaffSalaryPaymentToolStripMenuItem_Click);
             // 
-            // browseStaffPaymentsToolStripMenuItem
-            // 
-            this.browseStaffPaymentsToolStripMenuItem.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.browseStaffPaymentsToolStripMenuItem.Name = "browseStaffPaymentsToolStripMenuItem";
-            this.browseStaffPaymentsToolStripMenuItem.Size = new System.Drawing.Size(297, 26);
-            this.browseStaffPaymentsToolStripMenuItem.Text = "Browse Staff Payments";
-            this.browseStaffPaymentsToolStripMenuItem.Click += new System.EventHandler(this.browseStaffPaymentsToolStripMenuItem_Click);
-            // 
             // feesToolStripMenuItem
             // 
             this.feesToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.feesToolStripMenuItem.Name = "feesToolStripMenuItem";
-            this.feesToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.feesToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.feesToolStripMenuItem.Text = "Student Fees";
             this.feesToolStripMenuItem.Click += new System.EventHandler(this.feesToolStripMenuItem_Click);
             // 
-            // staffHoursToolStripMenuItem
+            // browseStaffPaymentsToolStripMenuItem1
             // 
-            this.staffHoursToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.staffHoursToolStripMenuItem.Name = "staffHoursToolStripMenuItem";
-            this.staffHoursToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
-            this.staffHoursToolStripMenuItem.Text = "Staff Hours";
-            this.staffHoursToolStripMenuItem.Click += new System.EventHandler(this.staffHoursToolStripMenuItem_Click);
+            this.browseStaffPaymentsToolStripMenuItem1.Name = "browseStaffPaymentsToolStripMenuItem1";
+            this.browseStaffPaymentsToolStripMenuItem1.Size = new System.Drawing.Size(154, 26);
+            this.browseStaffPaymentsToolStripMenuItem1.Text = "Staff Salaries";
             // 
             // MainPanel
             // 
@@ -469,7 +459,7 @@
             this.MainPanel.HorizontalScrollbarSize = 10;
             this.MainPanel.Location = new System.Drawing.Point(20, 88);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1134, 599);
+            this.MainPanel.Size = new System.Drawing.Size(1222, 667);
             this.MainPanel.Style = MetroFramework.MetroColorStyle.Green;
             this.MainPanel.TabIndex = 2;
             this.MainPanel.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -499,14 +489,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1174, 746);
+            this.ClientSize = new System.Drawing.Size(1262, 767);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.ParentButtonPanel);
-            this.Controls.Add(this.exitTile);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "ParentForm";
-            this.Opacity = 0.95D;
+            this.Opacity = 0.98D;
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "School Information Management System";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -525,7 +514,6 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroTile exitTile;
         private MetroFramework.Controls.MetroPanel ParentButtonPanel;
         private MetroFramework.Controls.MetroTile StaffTile;
         private MetroFramework.Controls.MetroTile metroTile2;
@@ -542,9 +530,7 @@
         private System.Windows.Forms.ToolStripMenuItem paymentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem recordStudentPaymentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem recordStaffSalaryPaymentToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem browseStaffPaymentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem feesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem staffHoursToolStripMenuItem;
         private MetroFramework.Controls.MetroContextMenu EmployeeMenu;
         private System.Windows.Forms.ToolStripMenuItem addNewStaffMemberToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem browseStaffDetailsToolStripMenuItem;
@@ -560,6 +546,9 @@
         private MetroFramework.Controls.MetroLabel LabelUser;
         private System.Windows.Forms.ToolStripMenuItem addSubjectsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewSubjectsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem browseStaffPaymentsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem registeredStudentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }
 

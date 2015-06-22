@@ -87,3 +87,9 @@ D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.LearnerModule.RegisterStu
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AdminControl.AddSchoolSubject.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AdminControl.ViewSubject.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AdminControl.AddCentre.resources
+D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.LearnerModule.RegisteredStudents.resources
+D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\bin\Debug\SIMS.exe.manifest
+D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\bin\Debug\SIMS.application
+D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.exe.manifest
+D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.application
+D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.LearnerModule.StudentProfile.resources

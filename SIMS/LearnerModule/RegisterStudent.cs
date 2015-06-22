@@ -62,6 +62,11 @@ namespace SIMS.LearnerModule
          */
         private void metroTileRegister_Click(object sender, EventArgs e)
         {
+            registerStudent();
+        }
+
+        internal void registerStudent()
+        {
             db = new SimsOracle();
             int rows = 0;
             int count = 0;
@@ -101,7 +106,7 @@ namespace SIMS.LearnerModule
                                     double cost = Convert.ToDouble(subjectsDGV.Rows[i].Cells[2].Value);
                                     cmd.Parameters.Add("COST", cost + 1000);
                                 }
-  
+
                                 rows = cmd.ExecuteNonQuery();
                             }
                         }
@@ -122,9 +127,9 @@ namespace SIMS.LearnerModule
             {
                 MetroMessageBox.Show(ParentForm, "", "Registration captured successful", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 if (isLearnerRegistered())
-                    UpdateStudentFee(); // update tuition fee for already registered student
+                    updateStudentFee(); // update tuition fee for already registered student
                 else
-                    InsertStudentFee(); // new registration fee captured
+                    insertStudentFee(); // new registration fee captured
                 ClearControls();
             }
         }
@@ -149,10 +154,27 @@ namespace SIMS.LearnerModule
             return false;
         }
 
+        private bool checkLearnerPayment() 
+        {
+            try
+            {
+                student_paymentTA.FillByAdmissionNo(this.regDS.STUDENT_PAYMENT, metroTextBoxAdminNo.Text, metroTextBoxYear.Text);
+                if (regDS.STUDENT_PAYMENT.Rows.Count > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:\n" + ex.Message.ToString());
+            }
+            return false;
+        }
+
         /**
          * Method to update the student fee amount and balance of registered student after adding another subject
          */
-        private void UpdateStudentFee()
+        private void updateStudentFee()
         {
             db = new SimsOracle();
 
@@ -179,11 +201,19 @@ namespace SIMS.LearnerModule
         /**
          * Method to insert the student fee amount and balance of registered student
          */
-        private void InsertStudentFee()
+        private void insertStudentFee()
         {
             int rows = 0;
             db = new SimsOracle();
             int feeCost = Convert.ToInt32(student_enrollmentTA.FeeCostSum(metroTextBoxAdminNo.Text, metroTextBoxYear.Text));
+            int balance = 0;
+            if (checkLearnerPayment())
+            {
+                int preBalance = Convert.ToInt32(student_paymentTA.Balance(metroTextBoxAdminNo.Text, metroTextBoxYear.Text));
+                balance = feeCost - preBalance;
+            }
+            else
+                balance = feeCost;
             try
             {
                 string sql = "INSERT INTO SIMS.STUDENT_FEE " +
@@ -194,7 +224,7 @@ namespace SIMS.LearnerModule
                 OracleCommand cmd = new OracleCommand(sql, db.Connection);
                 cmd.Parameters.Add("ADMISSION_NO", metroTextBoxAdminNo.Text);
                 cmd.Parameters.Add("AMOUNT", feeCost);
-                cmd.Parameters.Add("BALANCE", feeCost);
+                cmd.Parameters.Add("BALANCE", balance);
                 cmd.Parameters.Add("ACADEMIC_YEAR", metroTextBoxYear.Text);
                 rows = cmd.ExecuteNonQuery();
             }

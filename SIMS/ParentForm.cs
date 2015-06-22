@@ -68,6 +68,8 @@ namespace SIMS
         private BrowseLearners details = null;
         private AsignLearner asign = null;
         private RegisterStudent register = null;
+        private RegisteredStudents registered;
+        private StudentProfile profile;
         #endregion
 
         #region "Properties Acounts Module"
@@ -150,14 +152,6 @@ namespace SIMS
             form = new MetroForm();
         }
 
-        private void exitTile_Click(object sender, EventArgs e)
-        {
-            DialogResult reply = default(DialogResult);
-            reply = MetroMessageBox.Show(this, "Do you want to close the application?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (reply == DialogResult.Yes)
-                Application.Exit();
-        }
-
         private void aboutTile_Click(object sender, EventArgs e)
         {
             if (about != null)
@@ -205,6 +199,23 @@ namespace SIMS
                 register.Close();
             register = new RegisterStudent();
             FormSetUp(register);
+        }
+        private void registeredStudentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            if (registered != null)
+                registered.Close();
+            registered = new RegisteredStudents();
+            FormSetUp(registered);
+        }
+
+        private void studentProfileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            if (profile != null)
+                profile.Close();
+            profile = new StudentProfile();
+            FormSetUp(profile);
         }
         #endregion
 
@@ -400,6 +411,14 @@ namespace SIMS
         private void clearAllControlsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainPanel.Controls.Clear();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult reply = default(DialogResult);
+            reply = MetroMessageBox.Show(this, "Do you want to close the application?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (reply == DialogResult.Yes)
+                Application.Exit();
         }
     }
 }

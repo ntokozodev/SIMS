@@ -39,12 +39,12 @@ namespace SIMS.AccountModule
             try
             {
                 // TODO: This line of code loads data into the 'dS.STUDENT_PAYMENT' table. You can move, or remove it, as needed.
-                this.sTUDENT_PAYMENTTableAdapter.Fill(this.dS.STUDENT_PAYMENT);
-                metroTextBoxTotalDue.Text = "R" + CellSum().ToString();
+                this.stu_paymentTA.Fill(this.dS.STUDENT_PAYMENT);
+                metroTextBoxTotalDue.Text = "R" + Convert.ToInt32(stu_feeTA.TotalBalance());
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading student transactions");
+                MessageBox.Show("Error loading student transactions"+ex.Message.ToString());
             }
             
         }

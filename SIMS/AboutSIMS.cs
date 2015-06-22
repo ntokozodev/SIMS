@@ -16,7 +16,7 @@ using MetroFramework.Interfaces;
 
 namespace SIMS
 {
-    partial class AboutSIMS : Form
+    partial class AboutSIMS : MetroForm
     {
         public AboutSIMS()
         {
@@ -108,10 +108,5 @@ namespace SIMS
             }
         }
         #endregion
-
-        private void AboutSIMS_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

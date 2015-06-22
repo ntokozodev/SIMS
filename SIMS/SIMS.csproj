@@ -11,6 +11,22 @@
     <AssemblyName>SIMS</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +49,18 @@
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>SIMS.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>EDB22357FBD62B020BB4BCEF517FB1482D2763EB</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SIMS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MetroFramework">
@@ -172,11 +200,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="LearnerModule\RegisteredStudents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LearnerModule\RegisteredStudents.Designer.cs">
+      <DependentUpon>RegisteredStudents.cs</DependentUpon>
+    </Compile>
     <Compile Include="LearnerModule\RegisterStudent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LearnerModule\RegisterStudent.Designer.cs">
       <DependentUpon>RegisterStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LearnerModule\StudentProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LearnerModule\StudentProfile.Designer.cs">
+      <DependentUpon>StudentProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="OracleDB\OracleDatabase.cs" />
     <Compile Include="EmployeeModule\AddStaffMember.cs">
@@ -321,8 +361,14 @@
     <EmbeddedResource Include="LearnerModule\BrowseLearners.resx">
       <DependentUpon>BrowseLearners.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LearnerModule\RegisteredStudents.resx">
+      <DependentUpon>RegisteredStudents.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LearnerModule\RegisterStudent.resx">
       <DependentUpon>RegisterStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LearnerModule\StudentProfile.resx">
+      <DependentUpon>StudentProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -338,6 +384,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="DS.xsc">
       <DependentUpon>DS.xsd</DependentUpon>
@@ -360,11 +407,31 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SIMS_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GeekLogo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

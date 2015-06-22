@@ -50,6 +50,32 @@ namespace SIMS.AccountModule
 
         private void metroTileAddPay_Click(object sender, EventArgs e)
         {
+            payTuitionFee();
+        }
+
+        /**
+         * @param adminNo, takes student admission number as input
+         * @return true if adminNo is valid by finding student associated with it in database, otherwise false
+         */
+        internal bool isAdmissionNoValid(string adminNo)
+        {
+            try
+            {
+                studentTA.FillByEnrolmentNo(stupDS.STUDENT, adminNo);
+                if (stupDS.STUDENT.Rows.Count > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database error:\n" + ex.Message.ToString());
+            }
+            return false;
+        }
+
+        internal void payTuitionFee() 
+        {
             db = new SimsOracle();
             int rows = 0;
 
@@ -63,11 +89,16 @@ namespace SIMS.AccountModule
                 MessageBox.Show("Enter payment amount");
             else if (ComboBoxPayType.Text == "")
                 MessageBox.Show("Select type of payment");
-            else 
+            else
             {
                 var datestring = DateTimePayment.Value.ToShortDateString();
                 int feeAmount = Convert.ToInt32(student_feeTA.FeeAmount(TextBoxAdminNo.Text, TextBoxYear.Text));
-                int newBalance = feeAmount - Convert.ToInt32(TextBoxPayAmount.Text);
+                int newBalance;
+                if (checkLearnerPayment())
+                    newBalance = Convert.ToInt32(student_feeTA.Balance(TextBoxAdminNo.Text, TextBoxYear.Text)) - Convert.ToInt32(TextBoxPayAmount.Text);
+                else
+                    newBalance = feeAmount - Convert.ToInt32(TextBoxPayAmount.Text);
+                
                 try
                 {
                     string sql = "INSERT INTO STUDENT_PAYMENT " +
@@ -110,23 +141,19 @@ namespace SIMS.AccountModule
             }
         }
 
-        /**
-         * @param adminNo, takes student admission number as input
-         * @return true if adminNo is valid by finding student associated with it in database, otherwise false
-         */
-        internal bool isAdmissionNoValid(string adminNo)
+        private bool checkLearnerPayment()
         {
             try
             {
-                studentTA.FillByEnrolmentNo(stupDS.STUDENT, adminNo);
-                if (stupDS.STUDENT.Rows.Count > 0)
+                student_paymentTA.FillByAdmissionNo(this.stupDS.STUDENT_PAYMENT, TextBoxAdminNo.Text, TextBoxYear.Text);
+                if (stupDS.STUDENT_PAYMENT.Rows.Count > 0)
                     return true;
                 else
                     return false;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Database error:\n" + ex.Message.ToString());
+                MessageBox.Show("Error:\n" + ex.Message.ToString());
             }
             return false;
         }

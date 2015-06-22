@@ -47,6 +47,7 @@
             this.studentTA = new SIMS.DSTableAdapters.STUDENTTableAdapter();
             this.student_enrollmentTA = new SIMS.DSTableAdapters.STUDENT_ENROLLMENTTableAdapter();
             this.student_feeTA = new SIMS.DSTableAdapters.STUDENT_FEETableAdapter();
+            this.student_paymentTA = new SIMS.DSTableAdapters.STUDENT_PAYMENTTableAdapter();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stupDS)).BeginInit();
             this.SuspendLayout();
@@ -277,6 +278,10 @@
             // 
             this.student_feeTA.ClearBeforeFill = true;
             // 
+            // student_paymentTA
+            // 
+            this.student_paymentTA.ClearBeforeFill = true;
+            // 
             // RecordStudentPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,5 +327,6 @@
         private DSTableAdapters.STUDENTTableAdapter studentTA;
         private DSTableAdapters.STUDENT_ENROLLMENTTableAdapter student_enrollmentTA;
         private DSTableAdapters.STUDENT_FEETableAdapter student_feeTA;
+        private DSTableAdapters.STUDENT_PAYMENTTableAdapter student_paymentTA;
     }
 }

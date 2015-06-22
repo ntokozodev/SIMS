@@ -29,14 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.metroLabelTotalDue = new MetroFramework.Controls.MetroLabel();
             this.metroTileClose = new MetroFramework.Controls.MetroTile();
-            this.metroTextBoxTotalDue = new MetroFramework.Controls.MetroTextBox();
-            this.dS = new SIMS.DS();
-            this.sTUDENTPAYMENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sTUDENT_PAYMENTTableAdapter = new SIMS.DSTableAdapters.STUDENT_PAYMENTTableAdapter();
             this.metroGridDueFees = new System.Windows.Forms.DataGridView();
-            this.sTUDENTPAYMENTBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.metroTextBoxTotalDue = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabelTotalDue = new MetroFramework.Controls.MetroLabel();
             this.aDMISSIONNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pAYMENTAMOUNTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pAYMENTTYPEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,24 +40,16 @@
             this.pAYMENTDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cAPTUREDDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aCADEMICYEARDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTUDENTPAYMENTBindingSource)).BeginInit();
+            this.stu_paymentBS = new System.Windows.Forms.BindingSource(this.components);
+            this.dS = new SIMS.DS();
+            this.sTUDENTPAYMENTBS = new System.Windows.Forms.BindingSource(this.components);
+            this.stu_paymentTA = new SIMS.DSTableAdapters.STUDENT_PAYMENTTableAdapter();
+            this.stu_feeTA = new SIMS.DSTableAdapters.STUDENT_FEETableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridDueFees)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTUDENTPAYMENTBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stu_paymentBS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTUDENTPAYMENTBS)).BeginInit();
             this.SuspendLayout();
-            // 
-            // metroLabelTotalDue
-            // 
-            this.metroLabelTotalDue.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroLabelTotalDue.AutoSize = true;
-            this.metroLabelTotalDue.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabelTotalDue.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabelTotalDue.Location = new System.Drawing.Point(23, 528);
-            this.metroLabelTotalDue.Name = "metroLabelTotalDue";
-            this.metroLabelTotalDue.Size = new System.Drawing.Size(169, 25);
-            this.metroLabelTotalDue.TabIndex = 6;
-            this.metroLabelTotalDue.Text = "TOTAL BALANCES:";
-            this.metroLabelTotalDue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // metroTileClose
             // 
@@ -79,6 +67,28 @@
             this.metroTileClose.UseSelectable = true;
             this.metroTileClose.UseStyleColors = true;
             this.metroTileClose.Click += new System.EventHandler(this.metroTileClose_Click);
+            // 
+            // metroGridDueFees
+            // 
+            this.metroGridDueFees.AllowUserToAddRows = false;
+            this.metroGridDueFees.AllowUserToDeleteRows = false;
+            this.metroGridDueFees.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.metroGridDueFees.AutoGenerateColumns = false;
+            this.metroGridDueFees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.metroGridDueFees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.aDMISSIONNODataGridViewTextBoxColumn,
+            this.pAYMENTAMOUNTDataGridViewTextBoxColumn,
+            this.pAYMENTTYPEDataGridViewTextBoxColumn,
+            this.bALANCEDataGridViewTextBoxColumn,
+            this.pAYMENTDATEDataGridViewTextBoxColumn,
+            this.cAPTUREDDATEDataGridViewTextBoxColumn,
+            this.aCADEMICYEARDataGridViewTextBoxColumn});
+            this.metroGridDueFees.DataSource = this.stu_paymentBS;
+            this.metroGridDueFees.Location = new System.Drawing.Point(23, 119);
+            this.metroGridDueFees.Name = "metroGridDueFees";
+            this.metroGridDueFees.ReadOnly = true;
+            this.metroGridDueFees.Size = new System.Drawing.Size(920, 369);
+            this.metroGridDueFees.TabIndex = 9;
             // 
             // metroTextBoxTotalDue
             // 
@@ -99,46 +109,18 @@
             this.metroTextBoxTotalDue.UseSelectable = true;
             this.metroTextBoxTotalDue.UseStyleColors = true;
             // 
-            // dS
+            // metroLabelTotalDue
             // 
-            this.dS.DataSetName = "DS";
-            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sTUDENTPAYMENTBindingSource
-            // 
-            this.sTUDENTPAYMENTBindingSource.DataMember = "STUDENT_PAYMENT";
-            this.sTUDENTPAYMENTBindingSource.DataSource = this.dS;
-            // 
-            // sTUDENT_PAYMENTTableAdapter
-            // 
-            this.sTUDENT_PAYMENTTableAdapter.ClearBeforeFill = true;
-            // 
-            // metroGridDueFees
-            // 
-            this.metroGridDueFees.AllowUserToAddRows = false;
-            this.metroGridDueFees.AllowUserToDeleteRows = false;
-            this.metroGridDueFees.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroGridDueFees.AutoGenerateColumns = false;
-            this.metroGridDueFees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.metroGridDueFees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.aDMISSIONNODataGridViewTextBoxColumn,
-            this.pAYMENTAMOUNTDataGridViewTextBoxColumn,
-            this.pAYMENTTYPEDataGridViewTextBoxColumn,
-            this.bALANCEDataGridViewTextBoxColumn,
-            this.pAYMENTDATEDataGridViewTextBoxColumn,
-            this.cAPTUREDDATEDataGridViewTextBoxColumn,
-            this.aCADEMICYEARDataGridViewTextBoxColumn});
-            this.metroGridDueFees.DataSource = this.sTUDENTPAYMENTBindingSource1;
-            this.metroGridDueFees.Location = new System.Drawing.Point(23, 119);
-            this.metroGridDueFees.Name = "metroGridDueFees";
-            this.metroGridDueFees.ReadOnly = true;
-            this.metroGridDueFees.Size = new System.Drawing.Size(920, 369);
-            this.metroGridDueFees.TabIndex = 9;
-            // 
-            // sTUDENTPAYMENTBindingSource1
-            // 
-            this.sTUDENTPAYMENTBindingSource1.DataMember = "STUDENT_PAYMENT";
-            this.sTUDENTPAYMENTBindingSource1.DataSource = this.dS;
+            this.metroLabelTotalDue.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.metroLabelTotalDue.AutoSize = true;
+            this.metroLabelTotalDue.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabelTotalDue.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabelTotalDue.Location = new System.Drawing.Point(23, 528);
+            this.metroLabelTotalDue.Name = "metroLabelTotalDue";
+            this.metroLabelTotalDue.Size = new System.Drawing.Size(169, 25);
+            this.metroLabelTotalDue.TabIndex = 6;
+            this.metroLabelTotalDue.Text = "TOTAL BALANCES:";
+            this.metroLabelTotalDue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // aDMISSIONNODataGridViewTextBoxColumn
             // 
@@ -195,6 +177,29 @@
             this.aCADEMICYEARDataGridViewTextBoxColumn.ReadOnly = true;
             this.aCADEMICYEARDataGridViewTextBoxColumn.Width = 132;
             // 
+            // stu_paymentBS
+            // 
+            this.stu_paymentBS.DataMember = "STUDENT_PAYMENT";
+            this.stu_paymentBS.DataSource = this.dS;
+            // 
+            // dS
+            // 
+            this.dS.DataSetName = "DS";
+            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sTUDENTPAYMENTBS
+            // 
+            this.sTUDENTPAYMENTBS.DataMember = "STUDENT_PAYMENT";
+            this.sTUDENTPAYMENTBS.DataSource = this.dS;
+            // 
+            // stu_paymentTA
+            // 
+            this.stu_paymentTA.ClearBeforeFill = true;
+            // 
+            // stu_feeTA
+            // 
+            this.stu_feeTA.ClearBeforeFill = true;
+            // 
             // DueFees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,10 +215,10 @@
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Student Transactions";
             this.Load += new System.EventHandler(this.DueFees_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTUDENTPAYMENTBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridDueFees)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTUDENTPAYMENTBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stu_paymentBS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTUDENTPAYMENTBS)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,14 +226,12 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroLabel metroLabelTotalDue;
         private MetroFramework.Controls.MetroTile metroTileClose;
-        private MetroFramework.Controls.MetroTextBox metroTextBoxTotalDue;
         private DS dS;
-        private System.Windows.Forms.BindingSource sTUDENTPAYMENTBindingSource;
-        private DSTableAdapters.STUDENT_PAYMENTTableAdapter sTUDENT_PAYMENTTableAdapter;
+        private System.Windows.Forms.BindingSource sTUDENTPAYMENTBS;
+        private DSTableAdapters.STUDENT_PAYMENTTableAdapter stu_paymentTA;
         private System.Windows.Forms.DataGridView metroGridDueFees;
-        private System.Windows.Forms.BindingSource sTUDENTPAYMENTBindingSource1;
+        private System.Windows.Forms.BindingSource stu_paymentBS;
         private System.Windows.Forms.DataGridViewTextBoxColumn aDMISSIONNODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pAYMENTAMOUNTDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pAYMENTTYPEDataGridViewTextBoxColumn;
@@ -236,5 +239,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pAYMENTDATEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cAPTUREDDATEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn aCADEMICYEARDataGridViewTextBoxColumn;
+        private MetroFramework.Controls.MetroTextBox metroTextBoxTotalDue;
+        private MetroFramework.Controls.MetroLabel metroLabelTotalDue;
+        private DSTableAdapters.STUDENT_FEETableAdapter stu_feeTA;
     }
 }
