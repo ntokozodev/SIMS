@@ -70,12 +70,20 @@ namespace SIMS.LearnerModule
         internal void displaySubjects()
         {
             SimsOracle db = new SimsOracle();
-            string sql = "SELECT SUBJECT_CODE, ACADEMIC_YEAR "+
-                         " FROM STUDENT_ENROLLMENT SE"+
+
+
+
+            string s = "SELECT SIMS.STUDENT_ENROLLMENT.SUBJECT_CODE, SIMS.SUBJECT.SUBJECT_NAME, SIMS.STUDENT_ENROLLMENT.ACADEMIC_YEAR " +
+                       " FROM  SIMS.STUDENT_ENROLLMENT INNER JOIN " +
+                        "SIMS.SUBJECT ON SIMS.STUDENT_ENROLLMENT.SUBJECT_CODE = SIMS.SUBJECT.SUBJECT_CODE " +
+                        "WHERE (ADMISSION_NO = '" + admission_no + "')";
+
+            string sql = "SELECT SUBJECT_CODE, ACADEMIC_YEAR " +
+                         " FROM STUDENT_ENROLLMENT SE" +
                          " WHERE SE.ADMISSION_NO = '" + admission_no + "'";
             try
             {
-                OracleDataAdapter da = new OracleDataAdapter(sql, db.Connection);
+                OracleDataAdapter da = new OracleDataAdapter(s, db.Connection);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 subjectDGV.DataSource = dt;

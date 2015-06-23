@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentProfile));
             this.groupBoxProfile = new System.Windows.Forms.GroupBox();
             this.LabelSuburb = new MetroFramework.Controls.MetroLabel();
+            this.student_profileBS = new System.Windows.Forms.BindingSource(this.components);
+            this.student_profileDS = new SIMS.DS();
             this.LabelID = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.LabelFullName = new MetroFramework.Controls.MetroLabel();
@@ -40,6 +42,11 @@
             this.LabelZipCode = new MetroFramework.Controls.MetroLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBoxSubjects = new System.Windows.Forms.GroupBox();
+            this.subjectDGV = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sUBJECTREGISTEREDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.LabelDue = new MetroFramework.Controls.MetroLabel();
             this.LabelTotal = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
@@ -50,6 +57,8 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.LabelSurname = new MetroFramework.Controls.MetroLabel();
+            this.LabelName = new MetroFramework.Controls.MetroLabel();
             this.student_profileBN = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -62,29 +71,20 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.LabelSurname = new MetroFramework.Controls.MetroLabel();
-            this.LabelName = new MetroFramework.Controls.MetroLabel();
-            this.subjectDGV = new System.Windows.Forms.DataGridView();
-            this.student_profileBS = new System.Windows.Forms.BindingSource(this.components);
-            this.student_profileDS = new SIMS.DS();
             this.student_profileTA = new SIMS.DSTableAdapters.STUDENT_PROFILETableAdapter();
             this.student_enrollmentBS = new System.Windows.Forms.BindingSource(this.components);
             this.student_enrollmentTA = new SIMS.DSTableAdapters.STUDENT_ENROLLMENTTableAdapter();
-            this.sUBJECTREGISTEREDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sUBJECT_REGISTEREDTableAdapter = new SIMS.DSTableAdapters.SUBJECT_REGISTEREDTableAdapter();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxProfile.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBoxSubjects.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.student_profileBN)).BeginInit();
-            this.student_profileBN.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.subjectDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.student_profileBS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.student_profileDS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.student_enrollmentBS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBoxSubjects.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sUBJECTREGISTEREDBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.student_profileBN)).BeginInit();
+            this.student_profileBN.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.student_enrollmentBS)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxProfile
@@ -114,7 +114,7 @@
             this.groupBoxProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxProfile.Location = new System.Drawing.Point(203, 38);
             this.groupBoxProfile.Name = "groupBoxProfile";
-            this.groupBoxProfile.Size = new System.Drawing.Size(614, 593);
+            this.groupBoxProfile.Size = new System.Drawing.Size(614, 617);
             this.groupBoxProfile.TabIndex = 0;
             this.groupBoxProfile.TabStop = false;
             this.groupBoxProfile.Text = "Student Profile";
@@ -129,6 +129,16 @@
             this.LabelSuburb.Size = new System.Drawing.Size(52, 19);
             this.LabelSuburb.TabIndex = 33;
             this.LabelSuburb.Text = "suburb";
+            // 
+            // student_profileBS
+            // 
+            this.student_profileBS.DataMember = "STUDENT_PROFILE";
+            this.student_profileBS.DataSource = this.student_profileDS;
+            // 
+            // student_profileDS
+            // 
+            this.student_profileDS.DataSetName = "DS";
+            this.student_profileDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // LabelID
             // 
@@ -215,6 +225,54 @@
             this.groupBoxSubjects.TabIndex = 25;
             this.groupBoxSubjects.TabStop = false;
             this.groupBoxSubjects.Text = "Registered Subjects";
+            // 
+            // subjectDGV
+            // 
+            this.subjectDGV.AllowUserToAddRows = false;
+            this.subjectDGV.AllowUserToDeleteRows = false;
+            this.subjectDGV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.subjectDGV.AutoGenerateColumns = false;
+            this.subjectDGV.BackgroundColor = System.Drawing.Color.White;
+            this.subjectDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.subjectDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.subjectDGV.DataSource = this.sUBJECTREGISTEREDBindingSource;
+            this.subjectDGV.Location = new System.Drawing.Point(34, 44);
+            this.subjectDGV.Name = "subjectDGV";
+            this.subjectDGV.ReadOnly = true;
+            this.subjectDGV.Size = new System.Drawing.Size(468, 134);
+            this.subjectDGV.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "SUBJECT_CODE";
+            this.dataGridViewTextBoxColumn1.HeaderText = "SUBJECT CODE";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 135;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "SUBJECT_NAME";
+            this.dataGridViewTextBoxColumn2.HeaderText = "SUBJECT NAME";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 160;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "ACADEMIC_YEAR";
+            this.dataGridViewTextBoxColumn3.HeaderText = "ACADEMIC YEAR";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 130;
+            // 
+            // sUBJECTREGISTEREDBindingSource
+            // 
+            this.sUBJECTREGISTEREDBindingSource.DataMember = "SUBJECT_REGISTERED";
+            this.sUBJECTREGISTEREDBindingSource.DataSource = this.student_profileDS;
             // 
             // LabelDue
             // 
@@ -330,6 +388,30 @@
             this.metroLabel1.TabIndex = 6;
             this.metroLabel1.Text = "Gender:";
             this.metroLabel1.UseStyleColors = true;
+            // 
+            // LabelSurname
+            // 
+            this.LabelSurname.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.LabelSurname.AutoSize = true;
+            this.LabelSurname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.student_profileBS, "SURNAME", true));
+            this.LabelSurname.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.LabelSurname.Location = new System.Drawing.Point(314, 441);
+            this.LabelSurname.Name = "LabelSurname";
+            this.LabelSurname.Size = new System.Drawing.Size(43, 19);
+            this.LabelSurname.TabIndex = 33;
+            this.LabelSurname.Text = "name";
+            // 
+            // LabelName
+            // 
+            this.LabelName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.LabelName.AutoSize = true;
+            this.LabelName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.student_profileBS, "NAME", true));
+            this.LabelName.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.LabelName.Location = new System.Drawing.Point(187, 441);
+            this.LabelName.Name = "LabelName";
+            this.LabelName.Size = new System.Drawing.Size(49, 19);
+            this.LabelName.TabIndex = 31;
+            this.LabelName.Text = "sname";
             // 
             // student_profileBN
             // 
@@ -447,59 +529,6 @@
             this.toolStripSeparator.Name = "toolStripSeparator";
             this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
             // 
-            // LabelSurname
-            // 
-            this.LabelSurname.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.LabelSurname.AutoSize = true;
-            this.LabelSurname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.student_profileBS, "SURNAME", true));
-            this.LabelSurname.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.LabelSurname.Location = new System.Drawing.Point(314, 441);
-            this.LabelSurname.Name = "LabelSurname";
-            this.LabelSurname.Size = new System.Drawing.Size(43, 19);
-            this.LabelSurname.TabIndex = 33;
-            this.LabelSurname.Text = "name";
-            // 
-            // LabelName
-            // 
-            this.LabelName.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.LabelName.AutoSize = true;
-            this.LabelName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.student_profileBS, "NAME", true));
-            this.LabelName.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.LabelName.Location = new System.Drawing.Point(187, 441);
-            this.LabelName.Name = "LabelName";
-            this.LabelName.Size = new System.Drawing.Size(49, 19);
-            this.LabelName.TabIndex = 31;
-            this.LabelName.Text = "sname";
-            // 
-            // subjectDGV
-            // 
-            this.subjectDGV.AllowUserToAddRows = false;
-            this.subjectDGV.AllowUserToDeleteRows = false;
-            this.subjectDGV.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.subjectDGV.AutoGenerateColumns = false;
-            this.subjectDGV.BackgroundColor = System.Drawing.Color.White;
-            this.subjectDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.subjectDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
-            this.subjectDGV.DataSource = this.sUBJECTREGISTEREDBindingSource;
-            this.subjectDGV.Location = new System.Drawing.Point(34, 44);
-            this.subjectDGV.Name = "subjectDGV";
-            this.subjectDGV.ReadOnly = true;
-            this.subjectDGV.Size = new System.Drawing.Size(468, 150);
-            this.subjectDGV.TabIndex = 0;
-            // 
-            // student_profileBS
-            // 
-            this.student_profileBS.DataMember = "STUDENT_PROFILE";
-            this.student_profileBS.DataSource = this.student_profileDS;
-            // 
-            // student_profileDS
-            // 
-            this.student_profileDS.DataSetName = "DS";
-            this.student_profileDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // student_profileTA
             // 
             this.student_profileTA.ClearBeforeFill = true;
@@ -513,44 +542,15 @@
             // 
             this.student_enrollmentTA.ClearBeforeFill = true;
             // 
-            // sUBJECTREGISTEREDBindingSource
-            // 
-            this.sUBJECTREGISTEREDBindingSource.DataMember = "SUBJECT_REGISTERED";
-            this.sUBJECTREGISTEREDBindingSource.DataSource = this.student_profileDS;
-            // 
             // sUBJECT_REGISTEREDTableAdapter
             // 
             this.sUBJECT_REGISTEREDTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "SUBJECT_CODE";
-            this.dataGridViewTextBoxColumn1.HeaderText = "SUBJECT CODE";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 135;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "SUBJECT_NAME";
-            this.dataGridViewTextBoxColumn2.HeaderText = "SUBJECT NAME";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 160;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "ACADEMIC_YEAR";
-            this.dataGridViewTextBoxColumn3.HeaderText = "ACADEMIC YEAR";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 130;
             // 
             // StudentProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1021, 650);
+            this.ClientSize = new System.Drawing.Size(1021, 666);
             this.Controls.Add(this.student_profileBN);
             this.Controls.Add(this.groupBoxProfile);
             this.DisplayHeader = false;
@@ -563,16 +563,16 @@
             this.Load += new System.EventHandler(this.StudentProfile_Load);
             this.groupBoxProfile.ResumeLayout(false);
             this.groupBoxProfile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.student_profileBS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.student_profileDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBoxSubjects.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.subjectDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sUBJECTREGISTEREDBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.student_profileBN)).EndInit();
             this.student_profileBN.ResumeLayout(false);
             this.student_profileBN.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.subjectDGV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.student_profileBS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.student_profileDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.student_enrollmentBS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sUBJECTREGISTEREDBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
