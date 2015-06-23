@@ -32,8 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentProfile));
             this.groupBoxProfile = new System.Windows.Forms.GroupBox();
             this.LabelSuburb = new MetroFramework.Controls.MetroLabel();
-            this.student_profileBS = new System.Windows.Forms.BindingSource(this.components);
-            this.student_profileDS = new SIMS.DS();
             this.LabelID = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.LabelFullName = new MetroFramework.Controls.MetroLabel();
@@ -64,15 +62,29 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.student_profileTA = new SIMS.DSTableAdapters.STUDENT_PROFILETableAdapter();
             this.LabelSurname = new MetroFramework.Controls.MetroLabel();
             this.LabelName = new MetroFramework.Controls.MetroLabel();
+            this.subjectDGV = new System.Windows.Forms.DataGridView();
+            this.student_profileBS = new System.Windows.Forms.BindingSource(this.components);
+            this.student_profileDS = new SIMS.DS();
+            this.student_profileTA = new SIMS.DSTableAdapters.STUDENT_PROFILETableAdapter();
+            this.student_enrollmentBS = new System.Windows.Forms.BindingSource(this.components);
+            this.student_enrollmentTA = new SIMS.DSTableAdapters.STUDENT_ENROLLMENTTableAdapter();
+            this.sUBJECTREGISTEREDBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sUBJECT_REGISTEREDTableAdapter = new SIMS.DSTableAdapters.SUBJECT_REGISTEREDTableAdapter();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxProfile.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.student_profileBS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.student_profileDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBoxSubjects.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.student_profileBN)).BeginInit();
             this.student_profileBN.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.student_profileBS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.student_profileDS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.student_enrollmentBS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sUBJECTREGISTEREDBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxProfile
@@ -117,16 +129,6 @@
             this.LabelSuburb.Size = new System.Drawing.Size(52, 19);
             this.LabelSuburb.TabIndex = 33;
             this.LabelSuburb.Text = "suburb";
-            // 
-            // student_profileBS
-            // 
-            this.student_profileBS.DataMember = "STUDENT_PROFILE";
-            this.student_profileBS.DataSource = this.student_profileDS;
-            // 
-            // student_profileDS
-            // 
-            this.student_profileDS.DataSetName = "DS";
-            this.student_profileDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // LabelID
             // 
@@ -205,10 +207,11 @@
             // 
             // groupBoxSubjects
             // 
+            this.groupBoxSubjects.Controls.Add(this.subjectDGV);
             this.groupBoxSubjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxSubjects.Location = new System.Drawing.Point(6, 344);
+            this.groupBoxSubjects.Location = new System.Drawing.Point(27, 344);
             this.groupBoxSubjects.Name = "groupBoxSubjects";
-            this.groupBoxSubjects.Size = new System.Drawing.Size(602, 218);
+            this.groupBoxSubjects.Size = new System.Drawing.Size(541, 218);
             this.groupBoxSubjects.TabIndex = 25;
             this.groupBoxSubjects.TabStop = false;
             this.groupBoxSubjects.Text = "Registered Subjects";
@@ -229,7 +232,7 @@
             this.LabelTotal.AutoSize = true;
             this.LabelTotal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.student_profileBS, "AMOUNT", true));
             this.LabelTotal.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.LabelTotal.Location = new System.Drawing.Point(87, 565);
+            this.LabelTotal.Location = new System.Drawing.Point(112, 565);
             this.LabelTotal.Name = "LabelTotal";
             this.LabelTotal.Size = new System.Drawing.Size(17, 19);
             this.LabelTotal.TabIndex = 23;
@@ -308,7 +311,7 @@
             // 
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel3.Location = new System.Drawing.Point(6, 565);
+            this.metroLabel3.Location = new System.Drawing.Point(27, 565);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(79, 19);
             this.metroLabel3.Style = MetroFramework.MetroColorStyle.Black;
@@ -444,10 +447,6 @@
             this.toolStripSeparator.Name = "toolStripSeparator";
             this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
             // 
-            // student_profileTA
-            // 
-            this.student_profileTA.ClearBeforeFill = true;
-            // 
             // LabelSurname
             // 
             this.LabelSurname.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -472,6 +471,81 @@
             this.LabelName.TabIndex = 31;
             this.LabelName.Text = "sname";
             // 
+            // subjectDGV
+            // 
+            this.subjectDGV.AllowUserToAddRows = false;
+            this.subjectDGV.AllowUserToDeleteRows = false;
+            this.subjectDGV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.subjectDGV.AutoGenerateColumns = false;
+            this.subjectDGV.BackgroundColor = System.Drawing.Color.White;
+            this.subjectDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.subjectDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.subjectDGV.DataSource = this.sUBJECTREGISTEREDBindingSource;
+            this.subjectDGV.Location = new System.Drawing.Point(34, 44);
+            this.subjectDGV.Name = "subjectDGV";
+            this.subjectDGV.ReadOnly = true;
+            this.subjectDGV.Size = new System.Drawing.Size(468, 150);
+            this.subjectDGV.TabIndex = 0;
+            // 
+            // student_profileBS
+            // 
+            this.student_profileBS.DataMember = "STUDENT_PROFILE";
+            this.student_profileBS.DataSource = this.student_profileDS;
+            // 
+            // student_profileDS
+            // 
+            this.student_profileDS.DataSetName = "DS";
+            this.student_profileDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // student_profileTA
+            // 
+            this.student_profileTA.ClearBeforeFill = true;
+            // 
+            // student_enrollmentBS
+            // 
+            this.student_enrollmentBS.DataMember = "STUDENT_ENROLLMENT";
+            this.student_enrollmentBS.DataSource = this.student_profileDS;
+            // 
+            // student_enrollmentTA
+            // 
+            this.student_enrollmentTA.ClearBeforeFill = true;
+            // 
+            // sUBJECTREGISTEREDBindingSource
+            // 
+            this.sUBJECTREGISTEREDBindingSource.DataMember = "SUBJECT_REGISTERED";
+            this.sUBJECTREGISTEREDBindingSource.DataSource = this.student_profileDS;
+            // 
+            // sUBJECT_REGISTEREDTableAdapter
+            // 
+            this.sUBJECT_REGISTEREDTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "SUBJECT_CODE";
+            this.dataGridViewTextBoxColumn1.HeaderText = "SUBJECT CODE";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 135;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "SUBJECT_NAME";
+            this.dataGridViewTextBoxColumn2.HeaderText = "SUBJECT NAME";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 160;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "ACADEMIC_YEAR";
+            this.dataGridViewTextBoxColumn3.HeaderText = "ACADEMIC YEAR";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 130;
+            // 
             // StudentProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -489,12 +563,16 @@
             this.Load += new System.EventHandler(this.StudentProfile_Load);
             this.groupBoxProfile.ResumeLayout(false);
             this.groupBoxProfile.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.student_profileBS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.student_profileDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBoxSubjects.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.student_profileBN)).EndInit();
             this.student_profileBN.ResumeLayout(false);
             this.student_profileBN.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.student_profileBS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.student_profileDS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.student_enrollmentBS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sUBJECTREGISTEREDBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -543,5 +621,13 @@
         private MetroFramework.Controls.MetroLabel LabelSuburb;
         private MetroFramework.Controls.MetroLabel LabelSurname;
         private MetroFramework.Controls.MetroLabel LabelName;
+        private System.Windows.Forms.BindingSource student_enrollmentBS;
+        private DSTableAdapters.STUDENT_ENROLLMENTTableAdapter student_enrollmentTA;
+        private System.Windows.Forms.DataGridView subjectDGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.BindingSource sUBJECTREGISTEREDBindingSource;
+        private DSTableAdapters.SUBJECT_REGISTEREDTableAdapter sUBJECT_REGISTEREDTableAdapter;
     }
 }

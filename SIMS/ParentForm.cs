@@ -239,7 +239,7 @@ namespace SIMS
             FormSetUp(viewExp);
         }
 
-        private void recordStudentPaymentToolStripMenuItem_Click(object sender, EventArgs e)
+        private void paymentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainPanel.Controls.Clear();
             if (studentPay != null)
@@ -248,7 +248,7 @@ namespace SIMS
             FormSetUp(studentPay);
         }
 
-        private void recordStaffSalaryPaymentToolStripMenuItem_Click(object sender, EventArgs e)
+        private void recordStaffSalaryPaymentToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             MainPanel.Controls.Clear();
             if (salaryPay != null)
