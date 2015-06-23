@@ -174,11 +174,11 @@ namespace SIMS.LearnerModule
                 string query = "INSERT INTO SIMS.STUDENT " +
                                       "(NAME, SURNAME, GENDER," +
                                       "PHONE, ENROLLED_DATE, CITIZEN_ID, ADDRESS," +
-                                      "SUBURB, CITY, ZIPCODE, EMAIL, CENTRE_ID) " +
+                                      "SUBURB, CITY, ZIPCODE, EMAIL, CENTRE) " +
                                "VALUES (:NAME, :SURNAME, :GENDER," +
                                        ":PHONE, :ENROLLED_DATE, :CITIZEN_ID, :ADDRESS," +
-                                       ":SUBURB, :CITY, :ZIPCODE, :EMAIL, " +
-                                       "(SELECT CENTRE_ID FROM SIMS.CENTRE WHERE NAME = '"+ stu.centre +"'))";
+                                       ":SUBURB, :CITY, :ZIPCODE, :EMAIL, :CENTRE" +
+                                       ")";
                 OracleCommand cmd = new OracleCommand(query, db.Connection);
                 cmd.Parameters.Add("FIRST_NAME", stu.firstName);
                 cmd.Parameters.Add("LAST_NAME", stu.lastName);
@@ -191,6 +191,7 @@ namespace SIMS.LearnerModule
                 cmd.Parameters.Add("CITY", stu.city);
                 cmd.Parameters.Add("ZIP_CODE", stu.zipCode);
                 cmd.Parameters.Add("EMAIL_ADDRESS", stu.emailAddress);
+                cmd.Parameters.Add("CENTRE", stu.centre);
                 
                 rows = cmd.ExecuteNonQuery(); 
             }

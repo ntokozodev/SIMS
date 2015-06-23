@@ -29,16 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.sTUDENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dS = new SIMS.DS();
             this.metroTileUpdateLearner = new MetroFramework.Controls.MetroTile();
             this.metroTileSearchLearner = new MetroFramework.Controls.MetroTile();
             this.metroTextBoxSearchLearner = new MetroFramework.Controls.MetroTextBox();
             this.metroTileClose = new MetroFramework.Controls.MetroTile();
             this.metroComboBoxFilter = new MetroFramework.Controls.MetroComboBox();
             this.metroTileFilter = new MetroFramework.Controls.MetroTile();
-            this.TAStudent = new SIMS.DSTableAdapters.STUDENTTableAdapter();
             this.metroGridViewLearner = new System.Windows.Forms.DataGridView();
+            this.metroTileSearchByAdminNo = new MetroFramework.Controls.MetroTile();
+            this.metroTextBoxSearchByAdminNo = new MetroFramework.Controls.MetroTextBox();
+            this.sTUDENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.browse_learnerDS = new SIMS.DS();
+            this.studentTA = new SIMS.DSTableAdapters.STUDENTTableAdapter();
             this.aDMISSIONNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sURNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,27 +48,11 @@
             this.pHONEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eNROLLEDDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cITIZENIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cITYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sTUDENTBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.metroTileSearchByAdminNo = new MetroFramework.Controls.MetroTile();
-            this.metroTextBoxSearchByAdminNo = new MetroFramework.Controls.MetroTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.sTUDENTBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridViewLearner)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTUDENTBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTUDENTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.browse_learnerDS)).BeginInit();
             this.SuspendLayout();
-            // 
-            // sTUDENTBindingSource
-            // 
-            this.sTUDENTBindingSource.DataMember = "STUDENT";
-            this.sTUDENTBindingSource.DataSource = this.dS;
-            this.sTUDENTBindingSource.Filter = "";
-            // 
-            // dS
-            // 
-            this.dS.DataSetName = "DS";
-            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // metroTileUpdateLearner
             // 
@@ -166,10 +152,6 @@
             this.metroTileFilter.UseStyleColors = true;
             this.metroTileFilter.Click += new System.EventHandler(this.metroTileFilter_Click);
             // 
-            // TAStudent
-            // 
-            this.TAStudent.ClearBeforeFill = true;
-            // 
             // metroGridViewLearner
             // 
             this.metroGridViewLearner.AllowUserToAddRows = false;
@@ -184,77 +166,12 @@
             this.pHONEDataGridViewTextBoxColumn,
             this.eNROLLEDDATEDataGridViewTextBoxColumn,
             this.cITIZENIDDataGridViewTextBoxColumn,
-            this.cITYDataGridViewTextBoxColumn,
             this.eMAILDataGridViewTextBoxColumn});
-            this.metroGridViewLearner.DataSource = this.sTUDENTBindingSource1;
+            this.metroGridViewLearner.DataSource = this.sTUDENTBindingSource;
             this.metroGridViewLearner.Location = new System.Drawing.Point(51, 124);
             this.metroGridViewLearner.Name = "metroGridViewLearner";
             this.metroGridViewLearner.Size = new System.Drawing.Size(959, 409);
             this.metroGridViewLearner.TabIndex = 9;
-            // 
-            // aDMISSIONNODataGridViewTextBoxColumn
-            // 
-            this.aDMISSIONNODataGridViewTextBoxColumn.DataPropertyName = "ADMISSION_NO";
-            this.aDMISSIONNODataGridViewTextBoxColumn.HeaderText = "Admission No";
-            this.aDMISSIONNODataGridViewTextBoxColumn.Name = "aDMISSIONNODataGridViewTextBoxColumn";
-            this.aDMISSIONNODataGridViewTextBoxColumn.Width = 115;
-            // 
-            // nAMEDataGridViewTextBoxColumn
-            // 
-            this.nAMEDataGridViewTextBoxColumn.DataPropertyName = "NAME";
-            this.nAMEDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nAMEDataGridViewTextBoxColumn.Name = "nAMEDataGridViewTextBoxColumn";
-            // 
-            // sURNAMEDataGridViewTextBoxColumn
-            // 
-            this.sURNAMEDataGridViewTextBoxColumn.DataPropertyName = "SURNAME";
-            this.sURNAMEDataGridViewTextBoxColumn.HeaderText = "Surname";
-            this.sURNAMEDataGridViewTextBoxColumn.Name = "sURNAMEDataGridViewTextBoxColumn";
-            this.sURNAMEDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // gENDERDataGridViewTextBoxColumn
-            // 
-            this.gENDERDataGridViewTextBoxColumn.DataPropertyName = "GENDER";
-            this.gENDERDataGridViewTextBoxColumn.HeaderText = "Gender";
-            this.gENDERDataGridViewTextBoxColumn.Name = "gENDERDataGridViewTextBoxColumn";
-            this.gENDERDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // pHONEDataGridViewTextBoxColumn
-            // 
-            this.pHONEDataGridViewTextBoxColumn.DataPropertyName = "PHONE";
-            this.pHONEDataGridViewTextBoxColumn.HeaderText = "Phone";
-            this.pHONEDataGridViewTextBoxColumn.Name = "pHONEDataGridViewTextBoxColumn";
-            // 
-            // eNROLLEDDATEDataGridViewTextBoxColumn
-            // 
-            this.eNROLLEDDATEDataGridViewTextBoxColumn.DataPropertyName = "ENROLLED_DATE";
-            this.eNROLLEDDATEDataGridViewTextBoxColumn.HeaderText = "Enrolled Date";
-            this.eNROLLEDDATEDataGridViewTextBoxColumn.Name = "eNROLLEDDATEDataGridViewTextBoxColumn";
-            this.eNROLLEDDATEDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // cITIZENIDDataGridViewTextBoxColumn
-            // 
-            this.cITIZENIDDataGridViewTextBoxColumn.DataPropertyName = "CITIZEN_ID";
-            this.cITIZENIDDataGridViewTextBoxColumn.HeaderText = "ID Number";
-            this.cITIZENIDDataGridViewTextBoxColumn.Name = "cITIZENIDDataGridViewTextBoxColumn";
-            // 
-            // cITYDataGridViewTextBoxColumn
-            // 
-            this.cITYDataGridViewTextBoxColumn.DataPropertyName = "CITY";
-            this.cITYDataGridViewTextBoxColumn.HeaderText = "City";
-            this.cITYDataGridViewTextBoxColumn.Name = "cITYDataGridViewTextBoxColumn";
-            // 
-            // eMAILDataGridViewTextBoxColumn
-            // 
-            this.eMAILDataGridViewTextBoxColumn.DataPropertyName = "EMAIL";
-            this.eMAILDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.eMAILDataGridViewTextBoxColumn.Name = "eMAILDataGridViewTextBoxColumn";
-            this.eMAILDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // sTUDENTBindingSource1
-            // 
-            this.sTUDENTBindingSource1.DataMember = "STUDENT";
-            this.sTUDENTBindingSource1.DataSource = this.dS;
             // 
             // metroTileSearchByAdminNo
             // 
@@ -289,6 +206,73 @@
             this.metroTextBoxSearchByAdminNo.UseSelectable = true;
             this.metroTextBoxSearchByAdminNo.UseStyleColors = true;
             // 
+            // sTUDENTBindingSource
+            // 
+            this.sTUDENTBindingSource.DataMember = "STUDENT";
+            this.sTUDENTBindingSource.DataSource = this.browse_learnerDS;
+            // 
+            // browse_learnerDS
+            // 
+            this.browse_learnerDS.DataSetName = "DS";
+            this.browse_learnerDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // studentTA
+            // 
+            this.studentTA.ClearBeforeFill = true;
+            // 
+            // aDMISSIONNODataGridViewTextBoxColumn
+            // 
+            this.aDMISSIONNODataGridViewTextBoxColumn.DataPropertyName = "ADMISSION_NO";
+            this.aDMISSIONNODataGridViewTextBoxColumn.HeaderText = "ADMISSION NO";
+            this.aDMISSIONNODataGridViewTextBoxColumn.Name = "aDMISSIONNODataGridViewTextBoxColumn";
+            this.aDMISSIONNODataGridViewTextBoxColumn.Width = 115;
+            // 
+            // nAMEDataGridViewTextBoxColumn
+            // 
+            this.nAMEDataGridViewTextBoxColumn.DataPropertyName = "NAME";
+            this.nAMEDataGridViewTextBoxColumn.HeaderText = "NAME";
+            this.nAMEDataGridViewTextBoxColumn.Name = "nAMEDataGridViewTextBoxColumn";
+            this.nAMEDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // sURNAMEDataGridViewTextBoxColumn
+            // 
+            this.sURNAMEDataGridViewTextBoxColumn.DataPropertyName = "SURNAME";
+            this.sURNAMEDataGridViewTextBoxColumn.HeaderText = "SURNAME";
+            this.sURNAMEDataGridViewTextBoxColumn.Name = "sURNAMEDataGridViewTextBoxColumn";
+            // 
+            // gENDERDataGridViewTextBoxColumn
+            // 
+            this.gENDERDataGridViewTextBoxColumn.DataPropertyName = "GENDER";
+            this.gENDERDataGridViewTextBoxColumn.HeaderText = "GENDER";
+            this.gENDERDataGridViewTextBoxColumn.Name = "gENDERDataGridViewTextBoxColumn";
+            // 
+            // pHONEDataGridViewTextBoxColumn
+            // 
+            this.pHONEDataGridViewTextBoxColumn.DataPropertyName = "PHONE";
+            this.pHONEDataGridViewTextBoxColumn.HeaderText = "PHONE";
+            this.pHONEDataGridViewTextBoxColumn.Name = "pHONEDataGridViewTextBoxColumn";
+            // 
+            // eNROLLEDDATEDataGridViewTextBoxColumn
+            // 
+            this.eNROLLEDDATEDataGridViewTextBoxColumn.DataPropertyName = "ENROLLED_DATE";
+            this.eNROLLEDDATEDataGridViewTextBoxColumn.HeaderText = "ENROLLED DATE";
+            this.eNROLLEDDATEDataGridViewTextBoxColumn.Name = "eNROLLEDDATEDataGridViewTextBoxColumn";
+            this.eNROLLEDDATEDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // cITIZENIDDataGridViewTextBoxColumn
+            // 
+            this.cITIZENIDDataGridViewTextBoxColumn.DataPropertyName = "CITIZEN_ID";
+            this.cITIZENIDDataGridViewTextBoxColumn.HeaderText = "CITIZEN ID";
+            this.cITIZENIDDataGridViewTextBoxColumn.Name = "cITIZENIDDataGridViewTextBoxColumn";
+            this.cITIZENIDDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // eMAILDataGridViewTextBoxColumn
+            // 
+            this.eMAILDataGridViewTextBoxColumn.DataPropertyName = "EMAIL";
+            this.eMAILDataGridViewTextBoxColumn.HeaderText = "EMAIL";
+            this.eMAILDataGridViewTextBoxColumn.Name = "eMAILDataGridViewTextBoxColumn";
+            this.eMAILDataGridViewTextBoxColumn.Width = 140;
+            // 
             // BrowseLearners
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,19 +293,15 @@
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Learner Details";
             this.Load += new System.EventHandler(this.BrowseDetails_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.sTUDENTBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridViewLearner)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTUDENTBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTUDENTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.browse_learnerDS)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DS dS;
-        private System.Windows.Forms.BindingSource sTUDENTBindingSource;
-        private DSTableAdapters.STUDENTTableAdapter TAStudent;
         private MetroFramework.Controls.MetroTile metroTileUpdateLearner;
         private MetroFramework.Controls.MetroTile metroTileSearchLearner;
         private MetroFramework.Controls.MetroTextBox metroTextBoxSearchLearner;
@@ -337,7 +317,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sTUDENTCITIZENIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cENTREDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView metroGridViewLearner;
-        private System.Windows.Forms.BindingSource sTUDENTBindingSource1;
+        private MetroFramework.Controls.MetroTile metroTileSearchByAdminNo;
+        private MetroFramework.Controls.MetroTextBox metroTextBoxSearchByAdminNo;
+        private DS browse_learnerDS;
+        private DSTableAdapters.STUDENTTableAdapter studentTA;
+        private System.Windows.Forms.BindingSource sTUDENTBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn aDMISSIONNODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sURNAMEDataGridViewTextBoxColumn;
@@ -345,10 +329,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pHONEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn eNROLLEDDATEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cITIZENIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cITYDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn eMAILDataGridViewTextBoxColumn;
-        private MetroFramework.Controls.MetroTile metroTileSearchByAdminNo;
-        private MetroFramework.Controls.MetroTextBox metroTextBoxSearchByAdminNo;
 
     }
 }

@@ -31,35 +31,35 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewSubject));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dS = new SIMS.DS();
-            this.sUBJECTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sUBJECTTableAdapter = new SIMS.DSTableAdapters.SUBJECTTableAdapter();
-            this.tableAdapterManager = new SIMS.DSTableAdapters.TableAdapterManager();
-            this.sUBJECTBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.sUBJECTBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.sUBJECTDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subjectBS = new System.Windows.Forms.BindingSource(this.components);
+            this.veiw_subjectDS = new SIMS.DS();
+            this.subjectTA = new SIMS.DSTableAdapters.SUBJECTTableAdapter();
+            this.tableAM = new SIMS.DSTableAdapters.TableAdapterManager();
+            this.subjectBN = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.sUBJECTBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sUBJECTBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sUBJECTBindingNavigator)).BeginInit();
-            this.sUBJECTBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sUBJECTDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectBS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.veiw_subjectDS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectBN)).BeginInit();
+            this.subjectBN.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -72,43 +72,87 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // dS
+            // sUBJECTDataGridView
             // 
-            this.dS.DataSetName = "DS";
-            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.sUBJECTDataGridView.AllowUserToAddRows = false;
+            this.sUBJECTDataGridView.AutoGenerateColumns = false;
+            this.sUBJECTDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sUBJECTDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.sUBJECTDataGridView.DataSource = this.subjectBS;
+            this.sUBJECTDataGridView.Location = new System.Drawing.Point(125, 62);
+            this.sUBJECTDataGridView.Name = "sUBJECTDataGridView";
+            this.sUBJECTDataGridView.Size = new System.Drawing.Size(568, 324);
+            this.sUBJECTDataGridView.TabIndex = 0;
             // 
-            // sUBJECTBindingSource
+            // dataGridViewTextBoxColumn1
             // 
-            this.sUBJECTBindingSource.DataMember = "SUBJECT";
-            this.sUBJECTBindingSource.DataSource = this.dS;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "SUBJECT_CODE";
+            this.dataGridViewTextBoxColumn1.HeaderText = "SUBJECT CODE";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 115;
             // 
-            // sUBJECTTableAdapter
+            // dataGridViewTextBoxColumn2
             // 
-            this.sUBJECTTableAdapter.ClearBeforeFill = true;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "SUBJECT_NAME";
+            this.dataGridViewTextBoxColumn2.HeaderText = "SUBJECT DESCRIPTION";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 190;
             // 
-            // tableAdapterManager
+            // dataGridViewTextBoxColumn3
             // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CENTRETableAdapter = null;
-            this.tableAdapterManager.CLASSTableAdapter = null;
-            this.tableAdapterManager.EMPLOYEE_CENTRETableAdapter = null;
-            this.tableAdapterManager.EMPLOYEETableAdapter = null;
-            this.tableAdapterManager.SALARYTableAdapter = null;
-            this.tableAdapterManager.SIMS_USERSTableAdapter = null;
-            this.tableAdapterManager.STUDENT_ENROLLMENTTableAdapter = null;
-            this.tableAdapterManager.STUDENT_FEETableAdapter = null;
-            this.tableAdapterManager.STUDENT_PAYMENTTableAdapter = null;
-            this.tableAdapterManager.STUDENTTableAdapter = null;
-            this.tableAdapterManager.SUBJECTTableAdapter = this.sUBJECTTableAdapter;
-            this.tableAdapterManager.UpdateOrder = SIMS.DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "SUBJECT_COST";
+            this.dataGridViewTextBoxColumn3.HeaderText = "SUBJECT COST";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 120;
             // 
-            // sUBJECTBindingNavigator
+            // dataGridViewTextBoxColumn4
             // 
-            this.sUBJECTBindingNavigator.AddNewItem = null;
-            this.sUBJECTBindingNavigator.BindingSource = this.sUBJECTBindingSource;
-            this.sUBJECTBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.sUBJECTBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.sUBJECTBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "CATEGORY";
+            this.dataGridViewTextBoxColumn4.HeaderText = "CATEGORY";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // subjectBS
+            // 
+            this.subjectBS.DataMember = "SUBJECT";
+            this.subjectBS.DataSource = this.veiw_subjectDS;
+            // 
+            // veiw_subjectDS
+            // 
+            this.veiw_subjectDS.DataSetName = "DS";
+            this.veiw_subjectDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // subjectTA
+            // 
+            this.subjectTA.ClearBeforeFill = true;
+            // 
+            // tableAM
+            // 
+            this.tableAM.BackupDataSetBeforeUpdate = false;
+            this.tableAM.CENTRETableAdapter = null;
+            this.tableAM.CLASSTableAdapter = null;
+            this.tableAM.EMPLOYEETableAdapter = null;
+            this.tableAM.EXPENSE_PAYMENTTableAdapter = null;
+            this.tableAM.EXPENSETableAdapter = null;
+            this.tableAM.PAYMENTTableAdapter = null;
+            this.tableAM.SALARYTableAdapter = null;
+            this.tableAM.SIMS_USERSTableAdapter = null;
+            this.tableAM.STUDENT_FEETableAdapter = null;
+            this.tableAM.STUDENT_PAYMENTTableAdapter = null;
+            this.tableAM.STUDENTTableAdapter = null;
+            this.tableAM.SUBJECTTableAdapter = this.subjectTA;
+            this.tableAM.UpdateOrder = SIMS.DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // subjectBN
+            // 
+            this.subjectBN.AddNewItem = null;
+            this.subjectBN.BindingSource = this.subjectBS;
+            this.subjectBN.CountItem = this.bindingNavigatorCountItem;
+            this.subjectBN.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.subjectBN.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -122,16 +166,32 @@
             this.sUBJECTBindingNavigatorSaveItem,
             this.printToolStripButton,
             this.toolStripSeparator});
-            this.sUBJECTBindingNavigator.Location = new System.Drawing.Point(20, 60);
-            this.sUBJECTBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.sUBJECTBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.sUBJECTBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.sUBJECTBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.sUBJECTBindingNavigator.Name = "sUBJECTBindingNavigator";
-            this.sUBJECTBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.sUBJECTBindingNavigator.Size = new System.Drawing.Size(936, 25);
-            this.sUBJECTBindingNavigator.TabIndex = 1;
-            this.sUBJECTBindingNavigator.Text = "bindingNavigator1";
+            this.subjectBN.Location = new System.Drawing.Point(20, 60);
+            this.subjectBN.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.subjectBN.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.subjectBN.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.subjectBN.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.subjectBN.Name = "subjectBN";
+            this.subjectBN.PositionItem = this.bindingNavigatorPositionItem;
+            this.subjectBN.Size = new System.Drawing.Size(936, 25);
+            this.subjectBN.TabIndex = 1;
+            this.subjectBN.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -165,16 +225,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -197,17 +250,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // sUBJECTBindingNavigatorSaveItem
             // 
@@ -217,49 +261,6 @@
             this.sUBJECTBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.sUBJECTBindingNavigatorSaveItem.Text = "Save Data";
             this.sUBJECTBindingNavigatorSaveItem.Click += new System.EventHandler(this.sUBJECTBindingNavigatorSaveItem_Click);
-            // 
-            // sUBJECTDataGridView
-            // 
-            this.sUBJECTDataGridView.AllowUserToAddRows = false;
-            this.sUBJECTDataGridView.AutoGenerateColumns = false;
-            this.sUBJECTDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.sUBJECTDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.sUBJECTDataGridView.DataSource = this.sUBJECTBindingSource;
-            this.sUBJECTDataGridView.Location = new System.Drawing.Point(125, 62);
-            this.sUBJECTDataGridView.Name = "sUBJECTDataGridView";
-            this.sUBJECTDataGridView.Size = new System.Drawing.Size(568, 324);
-            this.sUBJECTDataGridView.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "SUBJECT_CODE";
-            this.dataGridViewTextBoxColumn1.HeaderText = "SUBJECT CODE";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 115;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "SUBJECT_NAME";
-            this.dataGridViewTextBoxColumn2.HeaderText = "SUBJECT DESCRIPTION";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 190;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "SUBJECT_COST";
-            this.dataGridViewTextBoxColumn3.HeaderText = "SUBJECT COST";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "CATEGORY";
-            this.dataGridViewTextBoxColumn4.HeaderText = "CATEGORY";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // printToolStripButton
             // 
@@ -280,7 +281,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(976, 561);
-            this.Controls.Add(this.sUBJECTBindingNavigator);
+            this.Controls.Add(this.subjectBN);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -289,12 +290,12 @@
             this.Text = "View School Subjects";
             this.Load += new System.EventHandler(this.ViewSubject_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sUBJECTBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sUBJECTBindingNavigator)).EndInit();
-            this.sUBJECTBindingNavigator.ResumeLayout(false);
-            this.sUBJECTBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sUBJECTDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectBS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.veiw_subjectDS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectBN)).EndInit();
+            this.subjectBN.ResumeLayout(false);
+            this.subjectBN.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,11 +304,11 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private DS dS;
-        private System.Windows.Forms.BindingSource sUBJECTBindingSource;
-        private DSTableAdapters.SUBJECTTableAdapter sUBJECTTableAdapter;
-        private DSTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator sUBJECTBindingNavigator;
+        private DS veiw_subjectDS;
+        private System.Windows.Forms.BindingSource subjectBS;
+        private DSTableAdapters.SUBJECTTableAdapter subjectTA;
+        private DSTableAdapters.TableAdapterManager tableAM;
+        private System.Windows.Forms.BindingNavigator subjectBN;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;

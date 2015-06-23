@@ -82,10 +82,12 @@ namespace SIMS.LearnerModule
 
         private void AddLearner_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'add_learnerDS.CENTRE' table. You can move, or remove it, as needed.
+            this.centreTA.Fill(this.add_learnerDS.CENTRE);
             try
             {
                 // TODO: This line of code loads data into the 'dSS.CENTRE' table. You can move, or remove it, as needed.
-                this.cENTRETableAdapter.Fill(this.dSS.CENTRE);
+                this.centreTA.Fill(this.add_learnerDS.CENTRE);
             }
             catch (Exception ex)
             {

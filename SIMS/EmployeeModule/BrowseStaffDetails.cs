@@ -33,8 +33,8 @@ namespace SIMS.EmployeeModule
             try
             {
                 this.Validate();
-                this.eMPLOYEEBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.dS);
+                this.employeeBS.EndEdit();
+                this.tableAM.UpdateAll(this.dS);
             }
             catch(Exception ex)
             {
@@ -44,6 +44,8 @@ namespace SIMS.EmployeeModule
 
         private void BrowseStaffDetails_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dS.EMPLOYEE' table. You can move, or remove it, as needed.
+            this.employeeTA.Fill(this.dS.EMPLOYEE);
             try
             {
                 // TODO: This line of code loads data into the 'dS.EMPLOYEE' table. You can move, or remove it, as needed.
@@ -71,6 +73,14 @@ namespace SIMS.EmployeeModule
             {
                 MessageBox.Show("Error searching staff member:\n" + ex.Message.ToString());
             }
+        }
+
+        private void eMPLOYEEBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.employeeBS.EndEdit();
+            this.tableAM.UpdateAll(this.dS);
+
         }
     }
 }

@@ -22,13 +22,34 @@ namespace SIMS.LearnerModule
         {
             try
             {
-                // TODO: This line of code loads data into the 'profileDS.STUDENT_PROFILE' table. You can move, or remove it, as needed.
-                this.stu_profileTA.FillStudentProfile(this.profileDS.STUDENT_PROFILE);
+                // TODO: This line of code loads data into the 'dS.STUDENT_PROFILE' table. You can move, or remove it, as needed.
+                this.student_profileTA.FillStudentProfile(this.student_profileDS.STUDENT_PROFILE);
+                LabelFullName.Text = LabelName.Text + " " + LabelSurname.Text;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error loading profile:\n" + ex.Message.ToString());
             }
+        }
+
+        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
+        {
+            LabelFullName.Text = LabelName.Text + " " + LabelSurname.Text;
+        }
+
+        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
+        {
+            LabelFullName.Text = LabelName.Text + " " + LabelSurname.Text;
+        }
+
+        private void bindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
+        {
+            LabelFullName.Text = LabelName.Text + " " + LabelSurname.Text;
+        }
+
+        private void bindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
+        {
+            LabelFullName.Text = LabelName.Text + " " + LabelSurname.Text;
         }
     }
 }

@@ -2,9 +2,6 @@
     
     
     public partial class DS {
-        partial class STUDENTDataTable
-        {
-        }
     }
 }
 

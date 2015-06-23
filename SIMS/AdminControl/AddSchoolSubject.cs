@@ -39,9 +39,14 @@ namespace SIMS.AdminControl
             int rows = 0;
             subjectTA.FillBySubjectCode(this.subjectDS.SUBJECT, TextBoxCode.Text.ToUpper());
             if (subjectDS.SUBJECT.Rows.Count > 0)
-                MessageBox.Show("Subject with code: " + TextBoxCode.Text + " is already added");
+            { 
+                MessageBox.Show("Subject with code: " + TextBoxCode.Text + " is already added"); 
+                ClearControls(); 
+            }
             else if (TextBoxName.Text == "")
-                MessageBox.Show("Enter subject name or description");
+            { 
+                MessageBox.Show("Enter subject name or description");  
+            }
             else if (TextBoxCode.Text == "")
                 MessageBox.Show("Enter subject code");
             else if (TextBoxCost.Text == "")
@@ -74,7 +79,5 @@ namespace SIMS.AdminControl
                 ClearControls();
             }
         }
-
-
     }
 }

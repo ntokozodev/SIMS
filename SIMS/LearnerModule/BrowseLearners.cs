@@ -59,7 +59,7 @@ namespace SIMS.LearnerModule
             try
             {
                 // TODO: This line of code loads data into the 'dS.STUDENT' table. You can move, or remove it, as needed.
-                this.TAStudent.Fill(this.dS.STUDENT);
+                this.studentTA.Fill(this.browse_learnerDS.STUDENT);
             }
             catch (Exception ex)
             {
@@ -74,7 +74,7 @@ namespace SIMS.LearnerModule
         {
             try
             {
-                TAStudent.Update(this.dS.STUDENT);
+                studentTA.Update(this.browse_learnerDS.STUDENT);
             }
             catch (Exception ex)
             {
@@ -90,7 +90,7 @@ namespace SIMS.LearnerModule
             int rows = 0;
             try
             {
-                rows = TAStudent.FillByLearnerSearch(this.dS.STUDENT, metroTextBoxSearchLearner.Text.ToLower());
+                rows = studentTA.FillByLearnerSearch(this.browse_learnerDS.STUDENT, metroTextBoxSearchLearner.Text.ToLower());
                 if (rows == 0)
                 {
                     MessageBox.Show("The surname: " + metroTextBoxSearchLearner.Text + " does not exist in our database records.");
@@ -112,7 +112,7 @@ namespace SIMS.LearnerModule
                     MessageBox.Show("Please enter admission no. in search box");
                 else
                 {
-                    rows = TAStudent.SearchByAdminNo(this.dS.STUDENT, metroTextBoxSearchByAdminNo.Text);
+                    rows = studentTA.SearchByAdminNo(this.browse_learnerDS.STUDENT, metroTextBoxSearchByAdminNo.Text);
                     if (rows == 0)
                     {
                         MessageBox.Show("Admission No: " + metroTextBoxSearchByAdminNo.Text + " does not exist in our database records.");
@@ -143,10 +143,10 @@ namespace SIMS.LearnerModule
             if (metroComboBoxFilter.Text != "")
             {
                 if (metroComboBoxFilter.Text == "Admission No")
-                    TAStudent.OrderByAdmissionNo(this.dS.STUDENT);
+                    studentTA.OrderByAdmissionNo(this.browse_learnerDS.STUDENT);
 
                 if (metroComboBoxFilter.Text == "Last Name")
-                    TAStudent.OrderBySurname(this.dS.STUDENT);
+                    studentTA.OrderBySurname(this.browse_learnerDS.STUDENT);
             }
             else
                 MessageBox.Show("Please select one of the filter options first");

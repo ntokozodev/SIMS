@@ -41,7 +41,6 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.staffDS = new SIMS.DS();
             this.DateTimeHireStaff = new MetroFramework.Controls.MetroDateTime();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -57,7 +56,6 @@
             this.metroTileClear = new MetroFramework.Controls.MetroTile();
             this.metroTileAdd = new MetroFramework.Controls.MetroTile();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.staffDS)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -243,11 +241,6 @@
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "First Name:";
             this.metroLabel1.UseStyleColors = true;
-            // 
-            // staffDS
-            // 
-            this.staffDS.DataSetName = "DS";
-            this.staffDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // DateTimeHireStaff
             // 
@@ -470,7 +463,6 @@
             this.Text = "Add New Staff Member";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.staffDS)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -495,7 +487,6 @@
         private MetroFramework.Controls.MetroTextBox TextBoxCitizenID;
         private MetroFramework.Controls.MetroTextBox TextBoxLastName;
         private MetroFramework.Controls.MetroTextBox TextBoxFirstName;
-        private DS staffDS;
         private MetroFramework.Controls.MetroTextBox TextBoxEmail;
         private MetroFramework.Controls.MetroTextBox TextBoxZipCode;
         private MetroFramework.Controls.MetroTextBox TextBoxCity;

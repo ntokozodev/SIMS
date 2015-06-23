@@ -32,6 +32,7 @@ namespace SIMS.LearnerModule
         {
             this.components = new System.ComponentModel.Container();
             this.detailsGroupBox = new System.Windows.Forms.GroupBox();
+            this.DateAdmission = new MetroFramework.Controls.MetroDateTime();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
@@ -40,8 +41,7 @@ namespace SIMS.LearnerModule
             this.TextBoxLastName = new MetroFramework.Controls.MetroTextBox();
             this.TextBoxFirstName = new MetroFramework.Controls.MetroTextBox();
             this.ComboBoxCentre = new MetroFramework.Controls.MetroComboBox();
-            this.cENTREBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dSS = new SIMS.DS();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.ComboBoxGender = new MetroFramework.Controls.MetroComboBox();
             this.genderLabel = new MetroFramework.Controls.MetroLabel();
@@ -63,14 +63,14 @@ namespace SIMS.LearnerModule
             this.addDetailsTile = new MetroFramework.Controls.MetroTile();
             this.cancelTile = new MetroFramework.Controls.MetroTile();
             this.clearTile = new MetroFramework.Controls.MetroTile();
-            this.cENTRETableAdapter = new SIMS.DSTableAdapters.CENTRETableAdapter();
-            this.DateAdmission = new MetroFramework.Controls.MetroDateTime();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.add_learnerDS = new SIMS.DS();
+            this.centreBS = new System.Windows.Forms.BindingSource(this.components);
+            this.centreTA = new SIMS.DSTableAdapters.CENTRETableAdapter();
             this.detailsGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cENTREBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSS)).BeginInit();
             this.guardianGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.add_learnerDS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.centreBS)).BeginInit();
             this.SuspendLayout();
             // 
             // detailsGroupBox
@@ -98,6 +98,14 @@ namespace SIMS.LearnerModule
             this.detailsGroupBox.TabIndex = 0;
             this.detailsGroupBox.TabStop = false;
             this.detailsGroupBox.Text = "Student Details";
+            // 
+            // DateAdmission
+            // 
+            this.DateAdmission.Location = new System.Drawing.Point(171, 201);
+            this.DateAdmission.MinimumSize = new System.Drawing.Size(0, 29);
+            this.DateAdmission.Name = "DateAdmission";
+            this.DateAdmission.Size = new System.Drawing.Size(132, 29);
+            this.DateAdmission.TabIndex = 25;
             // 
             // groupBox1
             // 
@@ -206,7 +214,7 @@ namespace SIMS.LearnerModule
             // 
             // ComboBoxCentre
             // 
-            this.ComboBoxCentre.DataSource = this.cENTREBindingSource;
+            this.ComboBoxCentre.DataSource = this.centreBS;
             this.ComboBoxCentre.DisplayFocus = true;
             this.ComboBoxCentre.DisplayMember = "NAME";
             this.ComboBoxCentre.FormattingEnabled = true;
@@ -220,15 +228,19 @@ namespace SIMS.LearnerModule
             this.ComboBoxCentre.UseSelectable = true;
             this.ComboBoxCentre.UseStyleColors = true;
             // 
-            // cENTREBindingSource
+            // metroLabel1
             // 
-            this.cENTREBindingSource.DataMember = "CENTRE";
-            this.cENTREBindingSource.DataSource = this.dSS;
-            // 
-            // dSS
-            // 
-            this.dSS.DataSetName = "DSS";
-            this.dSS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.BackColor = System.Drawing.Color.White;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel1.Location = new System.Drawing.Point(44, 211);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(103, 19);
+            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroLabel1.TabIndex = 19;
+            this.metroLabel1.Text = "Enrolled Date:";
+            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroLabel1.UseStyleColors = true;
             // 
             // metroLabel2
             // 
@@ -552,31 +564,19 @@ namespace SIMS.LearnerModule
             this.clearTile.UseSelectable = true;
             this.clearTile.Click += new System.EventHandler(this.clearTile_Click);
             // 
-            // cENTRETableAdapter
+            // add_learnerDS
             // 
-            this.cENTRETableAdapter.ClearBeforeFill = true;
+            this.add_learnerDS.DataSetName = "DS";
+            this.add_learnerDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // DateAdmission
+            // centreBS
             // 
-            this.DateAdmission.Location = new System.Drawing.Point(171, 201);
-            this.DateAdmission.MinimumSize = new System.Drawing.Size(0, 29);
-            this.DateAdmission.Name = "DateAdmission";
-            this.DateAdmission.Size = new System.Drawing.Size(132, 29);
-            this.DateAdmission.TabIndex = 25;
+            this.centreBS.DataMember = "CENTRE";
+            this.centreBS.DataSource = this.add_learnerDS;
             // 
-            // metroLabel1
+            // centreTA
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.BackColor = System.Drawing.Color.White;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(44, 211);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(103, 19);
-            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroLabel1.TabIndex = 19;
-            this.metroLabel1.Text = "Enrolled Date:";
-            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel1.UseStyleColors = true;
+            this.centreTA.ClearBeforeFill = true;
             // 
             // AddLearner
             // 
@@ -598,10 +598,10 @@ namespace SIMS.LearnerModule
             this.detailsGroupBox.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cENTREBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSS)).EndInit();
             this.guardianGroupBox.ResumeLayout(false);
             this.guardianGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.add_learnerDS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.centreBS)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -642,12 +642,11 @@ namespace SIMS.LearnerModule
         private MetroFramework.Controls.MetroLabel metroLabel13;
         private MetroFramework.Controls.MetroTile clearTile;
         private MetroFramework.Controls.MetroTextBox TextBoxZipCode;
-        private DS dS;
-        private DS dSS;
-        private BindingSource cENTREBindingSource;
-        private DSTableAdapters.CENTRETableAdapter cENTRETableAdapter;
         private MetroFramework.Controls.MetroDateTime DateAdmission;
         private MetroFramework.Controls.MetroLabel metroLabel1;
+        private DS add_learnerDS;
+        private BindingSource centreBS;
+        private DSTableAdapters.CENTRETableAdapter centreTA;
     
         protected override CreateParams CreateParams
         {

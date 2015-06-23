@@ -141,11 +141,9 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CENTRETableAdapter = null;
             this.tableAdapterManager.CLASSTableAdapter = null;
-            this.tableAdapterManager.EMPLOYEE_CENTRETableAdapter = null;
             this.tableAdapterManager.EMPLOYEETableAdapter = null;
             this.tableAdapterManager.SALARYTableAdapter = null;
             this.tableAdapterManager.SIMS_USERSTableAdapter = null;
-            this.tableAdapterManager.STUDENT_ENROLLMENTTableAdapter = this.sTUDENT_ENROLLMENTTableAdapter;
             this.tableAdapterManager.STUDENT_FEETableAdapter = null;
             this.tableAdapterManager.STUDENT_PAYMENTTableAdapter = null;
             this.tableAdapterManager.STUDENTTableAdapter = null;

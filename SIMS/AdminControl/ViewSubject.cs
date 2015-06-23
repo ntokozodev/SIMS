@@ -24,8 +24,8 @@ namespace SIMS.AdminControl
             try
             {
                 this.Validate();
-                this.sUBJECTBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.dS);
+                this.subjectBS.EndEdit();
+                this.tableAM.UpdateAll(this.veiw_subjectDS);
             }
             catch (Exception ex)
             {
@@ -38,7 +38,7 @@ namespace SIMS.AdminControl
             try 
             {
                 // TODO: This line of code loads data into the 'dS.SUBJECT' table. You can move, or remove it, as needed.
-                this.sUBJECTTableAdapter.Fill(this.dS.SUBJECT);
+                this.subjectTA.Fill(this.veiw_subjectDS.SUBJECT);
             }
             catch (Exception ex)
             {
