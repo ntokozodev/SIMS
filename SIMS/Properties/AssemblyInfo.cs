@@ -6,7 +6,7 @@ using System.Resources;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("School Information Management Software")]
+[assembly: AssemblyTitle("School Management Software")]
 [assembly: AssemblyDescription("This is a management software designed for schools to manage student enrolment and teachers.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Geek Studio Company")]

@@ -1,4 +1,25 @@
-﻿using System;
+﻿/**
+ * SIMS is (c) 2015 Ntokozo Company. All rights reserved.
+ * 
+ * http://www.ntokozo.co.za
+ *
+ * COPYRIGHTS:
+ * Copyright (c) 2015 Ntokozo Company. All rights reserved.
+ * 
+ * --------------------------------------------------------------------------------
+ * Redistribution and use in source and binary forms, with or without modification, 
+ * are permitted provided that the following conditions are met: 
+ *
+ * 1) Redistributions of source code must retain the above copyright notice. 
+ * 2) Redistributions in binary form must reproduce the above copyright notice 
+ *    in the documentation and/or other materials provided with the distribution. 
+ *
+ * --------------------------------------------------------------------------------
+ * Contributers to the code:
+ *		- Ntokozo Nicholas Shagala [NNS]
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +37,8 @@ namespace SIMS.LearnerModule
     {
 
         private string admission_no = "";
+        private PrintStudentProfile print;
+
         public StudentProfile()
         {
             InitializeComponent();
@@ -93,6 +116,105 @@ namespace SIMS.LearnerModule
                 MessageBox.Show("Error loading subjects:\n" + ex.Message.ToString());
             }
             db.CloseDatabase();
+        }
+
+        private void printToolStripButton_Click(object sender, EventArgs e)
+        {
+            print = new PrintStudentProfile();
+            passDataToPrintForm(print);
+            print.ShowDialog();
+        }
+
+        private void passDataToPrintForm(PrintStudentProfile print)
+        {
+            print.LabelAdmissionNo.Text = LabelAdmissionNo.Text.ToString();
+            print.LabelID.Text = LabelID.Text.ToString();
+            print.LabelGender.Text = LabelGender.Text.ToString();
+            print.LabelCentre.Text = LabelCentre.Text.ToString();
+            print.LabelFullName.Text = LabelFullName.Text.ToString();
+            print.LabelAddress.Text = LabelAddress.Text.ToString();
+            print.LabelSuburb.Text = LabelSuburb.Text.ToString();
+            print.LabelCity.Text = LabelCity.Text.ToString();
+            print.LabelZipCode.Text = LabelZipCode.Text.ToString();
+            print.LabelTotal.Text = LabelTotal.Text.ToString();
+            print.LabelDue.Text = LabelDue.Text.ToString();
+            registeredSubjects(print);
+        }
+
+        private void registeredSubjects(PrintStudentProfile print)
+        {
+            int rows = getRows();
+            
+            // Populating first column with data
+            if (rows > 0)
+                print.labelCode1.Text = Convert.ToString(subjectDGV.Rows[0].Cells[0].Value);
+            else
+                print.labelCode1.Visible = false;
+
+            if (rows > 1)
+                print.labelCode2.Text = Convert.ToString(subjectDGV.Rows[1].Cells[0].Value);
+            else
+                print.labelCode2.Visible = false;
+
+            if (rows > 2)
+                print.labelCode3.Text = Convert.ToString(subjectDGV.Rows[2].Cells[0].Value);
+            else
+                print.labelCode3.Visible = false;
+
+            if (rows > 3)
+                print.labelCode4.Text = Convert.ToString(subjectDGV.Rows[3].Cells[0].Value);
+            else
+                print.labelCode4.Visible = false;
+
+            // Populating second column with data
+            if (rows > 0)
+                print.labelName1.Text = Convert.ToString(subjectDGV.Rows[0].Cells[1].Value);
+            else
+                print.labelName1.Visible = false;
+
+            if (rows > 1)
+                print.labelName2.Text = Convert.ToString(subjectDGV.Rows[1].Cells[1].Value);
+            else
+                print.labelName2.Visible = false;
+
+            if (rows > 2)
+                print.labelName3.Text = Convert.ToString(subjectDGV.Rows[2].Cells[1].Value);
+            else
+                print.labelName3.Visible = false;
+
+            if (rows > 3)
+                print.labelName4.Text = Convert.ToString(subjectDGV.Rows[3].Cells[1].Value);
+            else
+                print.labelName4.Visible = false;
+
+            // Populating the third column with data
+            if (rows > 0)
+                print.labelYear1.Text = Convert.ToString(subjectDGV.Rows[0].Cells[2].Value);
+            else
+                print.labelYear1.Visible = false;
+
+            if (rows > 1)
+                print.labelYear2.Text = Convert.ToString(subjectDGV.Rows[1].Cells[2].Value);
+            else
+                print.labelYear2.Visible = false;
+
+            if (rows > 2)
+                print.labelYear3.Text = Convert.ToString(subjectDGV.Rows[2].Cells[2].Value);
+            else
+                print.labelYear3.Visible = false;
+
+            if (rows > 3)
+                print.labelYear4.Text = Convert.ToString(subjectDGV.Rows[3].Cells[2].Value);
+            else
+                print.labelYear4.Visible = false;
+        }
+
+        private int getRows()
+        {
+            int r = 0;
+            for (int i = 0; i < subjectDGV.Rows.Count; i++)
+                r++;
+            return r;
         }
     }
 }

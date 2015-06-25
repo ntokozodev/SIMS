@@ -40,13 +40,12 @@
             this.LabelCity = new MetroFramework.Controls.MetroLabel();
             this.LabelAddress = new MetroFramework.Controls.MetroLabel();
             this.LabelZipCode = new MetroFramework.Controls.MetroLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBoxSubjects = new System.Windows.Forms.GroupBox();
             this.subjectDGV = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sUBJECTREGISTEREDBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.subject_registeredBS = new System.Windows.Forms.BindingSource(this.components);
             this.LabelDue = new MetroFramework.Controls.MetroLabel();
             this.LabelTotal = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
@@ -61,35 +60,40 @@
             this.LabelName = new MetroFramework.Controls.MetroLabel();
             this.student_profileBN = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.student_profileTA = new SIMS.DSTableAdapters.STUDENT_PROFILETableAdapter();
             this.student_enrollmentBS = new System.Windows.Forms.BindingSource(this.components);
             this.student_enrollmentTA = new SIMS.DSTableAdapters.STUDENT_ENROLLMENTTableAdapter();
-            this.sUBJECT_REGISTEREDTableAdapter = new SIMS.DSTableAdapters.SUBJECT_REGISTEREDTableAdapter();
+            this.subject_registeredTA = new SIMS.DSTableAdapters.SUBJECT_REGISTEREDTableAdapter();
+            this.printDialogStudentProfile = new System.Windows.Forms.PrintDialog();
+            this.printDocumentStudentProfile = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialogProfile = new System.Windows.Forms.PrintPreviewDialog();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBoxProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.student_profileBS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.student_profileDS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBoxSubjects.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.subjectDGV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sUBJECTREGISTEREDBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subject_registeredBS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.student_profileBN)).BeginInit();
             this.student_profileBN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.student_enrollmentBS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxProfile
             // 
             this.groupBoxProfile.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBoxProfile.Controls.Add(this.pictureBox2);
             this.groupBoxProfile.Controls.Add(this.LabelSuburb);
             this.groupBoxProfile.Controls.Add(this.LabelID);
             this.groupBoxProfile.Controls.Add(this.metroLabel5);
@@ -97,7 +101,6 @@
             this.groupBoxProfile.Controls.Add(this.LabelCity);
             this.groupBoxProfile.Controls.Add(this.LabelAddress);
             this.groupBoxProfile.Controls.Add(this.LabelZipCode);
-            this.groupBoxProfile.Controls.Add(this.pictureBox1);
             this.groupBoxProfile.Controls.Add(this.groupBoxSubjects);
             this.groupBoxProfile.Controls.Add(this.LabelDue);
             this.groupBoxProfile.Controls.Add(this.LabelTotal);
@@ -206,20 +209,11 @@
             this.LabelZipCode.TabIndex = 27;
             this.LabelZipCode.Text = "zipcode";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SIMS.Properties.Resources.GeekLogo;
-            this.pictureBox1.Location = new System.Drawing.Point(187, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(233, 193);
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
-            // 
             // groupBoxSubjects
             // 
             this.groupBoxSubjects.Controls.Add(this.subjectDGV);
             this.groupBoxSubjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxSubjects.Location = new System.Drawing.Point(27, 344);
+            this.groupBoxSubjects.Location = new System.Drawing.Point(18, 344);
             this.groupBoxSubjects.Name = "groupBoxSubjects";
             this.groupBoxSubjects.Size = new System.Drawing.Size(541, 218);
             this.groupBoxSubjects.TabIndex = 25;
@@ -238,10 +232,13 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
-            this.subjectDGV.DataSource = this.sUBJECTREGISTEREDBindingSource;
+            this.subjectDGV.DataSource = this.subject_registeredBS;
             this.subjectDGV.Location = new System.Drawing.Point(34, 44);
+            this.subjectDGV.MultiSelect = false;
             this.subjectDGV.Name = "subjectDGV";
             this.subjectDGV.ReadOnly = true;
+            this.subjectDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.subjectDGV.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.subjectDGV.Size = new System.Drawing.Size(468, 134);
             this.subjectDGV.TabIndex = 0;
             // 
@@ -269,10 +266,10 @@
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 130;
             // 
-            // sUBJECTREGISTEREDBindingSource
+            // subject_registeredBS
             // 
-            this.sUBJECTREGISTEREDBindingSource.DataMember = "SUBJECT_REGISTERED";
-            this.sUBJECTREGISTEREDBindingSource.DataSource = this.student_profileDS;
+            this.subject_registeredBS.DataMember = "SUBJECT_REGISTERED";
+            this.subject_registeredBS.DataSource = this.student_profileDS;
             // 
             // LabelDue
             // 
@@ -397,9 +394,9 @@
             this.LabelSurname.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.LabelSurname.Location = new System.Drawing.Point(314, 441);
             this.LabelSurname.Name = "LabelSurname";
-            this.LabelSurname.Size = new System.Drawing.Size(43, 19);
+            this.LabelSurname.Size = new System.Drawing.Size(17, 19);
             this.LabelSurname.TabIndex = 33;
-            this.LabelSurname.Text = "name";
+            this.LabelSurname.Text = "n";
             // 
             // LabelName
             // 
@@ -409,9 +406,9 @@
             this.LabelName.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.LabelName.Location = new System.Drawing.Point(187, 441);
             this.LabelName.Name = "LabelName";
-            this.LabelName.Size = new System.Drawing.Size(49, 19);
+            this.LabelName.Size = new System.Drawing.Size(15, 19);
             this.LabelName.TabIndex = 31;
-            this.LabelName.Text = "sname";
+            this.LabelName.Text = "s";
             // 
             // student_profileBN
             // 
@@ -451,6 +448,66 @@
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // student_profileTA
+            // 
+            this.student_profileTA.ClearBeforeFill = true;
+            // 
+            // student_enrollmentBS
+            // 
+            this.student_enrollmentBS.DataMember = "STUDENT_ENROLLMENT";
+            this.student_enrollmentBS.DataSource = this.student_profileDS;
+            // 
+            // student_enrollmentTA
+            // 
+            this.student_enrollmentTA.ClearBeforeFill = true;
+            // 
+            // subject_registeredTA
+            // 
+            this.subject_registeredTA.ClearBeforeFill = true;
+            // 
+            // printDialogStudentProfile
+            // 
+            this.printDialogStudentProfile.UseEXDialog = true;
+            // 
+            // printPreviewDialogProfile
+            // 
+            this.printPreviewDialogProfile.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialogProfile.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialogProfile.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialogProfile.Enabled = true;
+            this.printPreviewDialogProfile.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialogProfile.Icon")));
+            this.printPreviewDialogProfile.Name = "printPreviewDialogProfile";
+            this.printPreviewDialogProfile.Visible = false;
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -470,25 +527,6 @@
             this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             this.bindingNavigatorMovePreviousItem.Click += new System.EventHandler(this.bindingNavigatorMovePreviousItem_Click);
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -510,11 +548,6 @@
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             this.bindingNavigatorMoveLastItem.Click += new System.EventHandler(this.bindingNavigatorMoveLastItem_Click);
             // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
             // printToolStripButton
             // 
             this.printToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -523,28 +556,16 @@
             this.printToolStripButton.Name = "printToolStripButton";
             this.printToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.printToolStripButton.Text = "&Print";
+            this.printToolStripButton.Click += new System.EventHandler(this.printToolStripButton_Click);
             // 
-            // toolStripSeparator
+            // pictureBox2
             // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // student_profileTA
-            // 
-            this.student_profileTA.ClearBeforeFill = true;
-            // 
-            // student_enrollmentBS
-            // 
-            this.student_enrollmentBS.DataMember = "STUDENT_ENROLLMENT";
-            this.student_enrollmentBS.DataSource = this.student_profileDS;
-            // 
-            // student_enrollmentTA
-            // 
-            this.student_enrollmentTA.ClearBeforeFill = true;
-            // 
-            // sUBJECT_REGISTEREDTableAdapter
-            // 
-            this.sUBJECT_REGISTEREDTableAdapter.ClearBeforeFill = true;
+            this.pictureBox2.Image = global::SIMS.Properties.Resources.Isibani_Pro_Tutor1;
+            this.pictureBox2.Location = new System.Drawing.Point(18, 25);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(581, 193);
+            this.pictureBox2.TabIndex = 34;
+            this.pictureBox2.TabStop = false;
             // 
             // StudentProfile
             // 
@@ -565,14 +586,14 @@
             this.groupBoxProfile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.student_profileBS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.student_profileDS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBoxSubjects.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.subjectDGV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sUBJECTREGISTEREDBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subject_registeredBS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.student_profileBN)).EndInit();
             this.student_profileBN.ResumeLayout(false);
             this.student_profileBN.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.student_enrollmentBS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -596,7 +617,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sUBJECTNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn gRADEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn aCADEMICYEARDataGridViewTextBoxColumn;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.BindingNavigator student_profileBN;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
@@ -627,7 +647,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.BindingSource sUBJECTREGISTEREDBindingSource;
-        private DSTableAdapters.SUBJECT_REGISTEREDTableAdapter sUBJECT_REGISTEREDTableAdapter;
+        private System.Windows.Forms.BindingSource subject_registeredBS;
+        private DSTableAdapters.SUBJECT_REGISTEREDTableAdapter subject_registeredTA;
+        private System.Windows.Forms.PrintDialog printDialogStudentProfile;
+        private System.Drawing.Printing.PrintDocument printDocumentStudentProfile;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialogProfile;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

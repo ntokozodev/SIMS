@@ -42,9 +42,9 @@
             // loginTile
             // 
             this.loginTile.ActiveControl = null;
-            this.loginTile.Location = new System.Drawing.Point(23, 310);
+            this.loginTile.Location = new System.Drawing.Point(58, 299);
             this.loginTile.Name = "loginTile";
-            this.loginTile.Size = new System.Drawing.Size(148, 30);
+            this.loginTile.Size = new System.Drawing.Size(104, 30);
             this.loginTile.Style = MetroFramework.MetroColorStyle.Green;
             this.loginTile.TabIndex = 0;
             this.loginTile.Text = "Login";
@@ -59,9 +59,9 @@
             // cancelTile
             // 
             this.cancelTile.ActiveControl = null;
-            this.cancelTile.Location = new System.Drawing.Point(193, 310);
+            this.cancelTile.Location = new System.Drawing.Point(193, 299);
             this.cancelTile.Name = "cancelTile";
-            this.cancelTile.Size = new System.Drawing.Size(148, 30);
+            this.cancelTile.Size = new System.Drawing.Size(104, 30);
             this.cancelTile.Style = MetroFramework.MetroColorStyle.Green;
             this.cancelTile.TabIndex = 1;
             this.cancelTile.Text = "Cancel";
@@ -77,14 +77,13 @@
             // 
             this.userIDTextBox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.userIDTextBox.Lines = new string[0];
-            this.userIDTextBox.Location = new System.Drawing.Point(23, 107);
+            this.userIDTextBox.Location = new System.Drawing.Point(58, 100);
             this.userIDTextBox.MaxLength = 32767;
-            this.userIDTextBox.Multiline = true;
             this.userIDTextBox.Name = "userIDTextBox";
             this.userIDTextBox.PasswordChar = '\0';
             this.userIDTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.userIDTextBox.SelectedText = "";
-            this.userIDTextBox.Size = new System.Drawing.Size(318, 35);
+            this.userIDTextBox.Size = new System.Drawing.Size(239, 29);
             this.userIDTextBox.Style = MetroFramework.MetroColorStyle.Green;
             this.userIDTextBox.TabIndex = 2;
             this.userIDTextBox.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -95,14 +94,13 @@
             // 
             this.pwordTextBox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.pwordTextBox.Lines = new string[0];
-            this.pwordTextBox.Location = new System.Drawing.Point(23, 225);
+            this.pwordTextBox.Location = new System.Drawing.Point(58, 216);
             this.pwordTextBox.MaxLength = 32767;
-            this.pwordTextBox.Multiline = true;
             this.pwordTextBox.Name = "pwordTextBox";
             this.pwordTextBox.PasswordChar = '●';
             this.pwordTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.pwordTextBox.SelectedText = "";
-            this.pwordTextBox.Size = new System.Drawing.Size(317, 35);
+            this.pwordTextBox.Size = new System.Drawing.Size(239, 29);
             this.pwordTextBox.Style = MetroFramework.MetroColorStyle.Green;
             this.pwordTextBox.TabIndex = 3;
             this.pwordTextBox.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -114,7 +112,7 @@
             this.userLabel.AutoSize = true;
             this.userLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.userLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.userLabel.Location = new System.Drawing.Point(23, 79);
+            this.userLabel.Location = new System.Drawing.Point(58, 69);
             this.userLabel.Name = "userLabel";
             this.userLabel.Size = new System.Drawing.Size(95, 25);
             this.userLabel.TabIndex = 4;
@@ -126,7 +124,7 @@
             this.mainLabel.AutoSize = true;
             this.mainLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.mainLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.mainLabel.Location = new System.Drawing.Point(23, 197);
+            this.mainLabel.Location = new System.Drawing.Point(58, 188);
             this.mainLabel.Name = "mainLabel";
             this.mainLabel.Size = new System.Drawing.Size(92, 25);
             this.mainLabel.Style = MetroFramework.MetroColorStyle.Green;

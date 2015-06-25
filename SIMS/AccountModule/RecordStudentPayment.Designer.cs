@@ -77,7 +77,6 @@
             this.TextBoxYear.Lines = new string[0];
             this.TextBoxYear.Location = new System.Drawing.Point(241, 86);
             this.TextBoxYear.MaxLength = 32767;
-            this.TextBoxYear.Multiline = true;
             this.TextBoxYear.Name = "TextBoxYear";
             this.TextBoxYear.PasswordChar = '\0';
             this.TextBoxYear.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -105,7 +104,6 @@
             this.TextBoxPayAmount.Lines = new string[0];
             this.TextBoxPayAmount.Location = new System.Drawing.Point(241, 162);
             this.TextBoxPayAmount.MaxLength = 32767;
-            this.TextBoxPayAmount.Multiline = true;
             this.TextBoxPayAmount.Name = "TextBoxPayAmount";
             this.TextBoxPayAmount.PasswordChar = '\0';
             this.TextBoxPayAmount.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -155,7 +153,6 @@
             this.TextBoxAdminNo.Lines = new string[0];
             this.TextBoxAdminNo.Location = new System.Drawing.Point(241, 16);
             this.TextBoxAdminNo.MaxLength = 32767;
-            this.TextBoxAdminNo.Multiline = true;
             this.TextBoxAdminNo.Name = "TextBoxAdminNo";
             this.TextBoxAdminNo.PasswordChar = '\0';
             this.TextBoxAdminNo.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -206,9 +203,9 @@
             // 
             this.metroTileClear.ActiveControl = null;
             this.metroTileClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroTileClear.Location = new System.Drawing.Point(542, 489);
+            this.metroTileClear.Location = new System.Drawing.Point(655, 468);
             this.metroTileClear.Name = "metroTileClear";
-            this.metroTileClear.Size = new System.Drawing.Size(140, 32);
+            this.metroTileClear.Size = new System.Drawing.Size(96, 32);
             this.metroTileClear.Style = MetroFramework.MetroColorStyle.Green;
             this.metroTileClear.TabIndex = 13;
             this.metroTileClear.Text = "Clear";
@@ -222,12 +219,12 @@
             // 
             this.metroTileAddPay.ActiveControl = null;
             this.metroTileAddPay.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroTileAddPay.Location = new System.Drawing.Point(377, 489);
+            this.metroTileAddPay.Location = new System.Drawing.Point(553, 468);
             this.metroTileAddPay.Name = "metroTileAddPay";
-            this.metroTileAddPay.Size = new System.Drawing.Size(140, 32);
+            this.metroTileAddPay.Size = new System.Drawing.Size(96, 32);
             this.metroTileAddPay.Style = MetroFramework.MetroColorStyle.Green;
             this.metroTileAddPay.TabIndex = 6;
-            this.metroTileAddPay.Text = "Add Payment";
+            this.metroTileAddPay.Text = "Submit";
             this.metroTileAddPay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTileAddPay.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTileAddPay.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
@@ -239,12 +236,12 @@
             // 
             this.metroTileClose.ActiveControl = null;
             this.metroTileClose.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroTileClose.Location = new System.Drawing.Point(713, 489);
+            this.metroTileClose.Location = new System.Drawing.Point(757, 468);
             this.metroTileClose.Name = "metroTileClose";
-            this.metroTileClose.Size = new System.Drawing.Size(140, 32);
+            this.metroTileClose.Size = new System.Drawing.Size(96, 32);
             this.metroTileClose.Style = MetroFramework.MetroColorStyle.Green;
             this.metroTileClose.TabIndex = 1;
-            this.metroTileClose.Text = "Close Window";
+            this.metroTileClose.Text = "Close";
             this.metroTileClose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTileClose.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTileClose.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;

@@ -75,6 +75,7 @@
             // 
             this.sTUDENT_ENROLLMENTDataGridView.AllowUserToAddRows = false;
             this.sTUDENT_ENROLLMENTDataGridView.AutoGenerateColumns = false;
+            this.sTUDENT_ENROLLMENTDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.sTUDENT_ENROLLMENTDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sTUDENT_ENROLLMENTDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -141,7 +142,11 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CENTRETableAdapter = null;
             this.tableAdapterManager.CLASSTableAdapter = null;
+            this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.EMPLOYEETableAdapter = null;
+            this.tableAdapterManager.EXPENSE_PAYMENTTableAdapter = null;
+            this.tableAdapterManager.EXPENSETableAdapter = null;
+            this.tableAdapterManager.PAYMENTTableAdapter = null;
             this.tableAdapterManager.SALARYTableAdapter = null;
             this.tableAdapterManager.SIMS_USERSTableAdapter = null;
             this.tableAdapterManager.STUDENT_FEETableAdapter = null;

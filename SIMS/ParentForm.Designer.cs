@@ -61,9 +61,9 @@
             this.feesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.browseStaffPaymentsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.recordStaffSalaryPaymentToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.MainPanel = new MetroFramework.Controls.MetroPanel();
             this.mainPanelContextMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.clearAllControlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MainPanel = new MetroFramework.Controls.MetroPanel();
             this.ParentButtonPanel.SuspendLayout();
             this.StudentMenu.SuspendLayout();
             this.AdminMenu.SuspendLayout();
@@ -403,7 +403,7 @@
             this.AccountsMenu.Name = "AccountsMenu";
             this.AccountsMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.AccountsMenu.ShowImageMargin = false;
-            this.AccountsMenu.Size = new System.Drawing.Size(273, 130);
+            this.AccountsMenu.Size = new System.Drawing.Size(273, 108);
             // 
             // paymentsToolStripMenuItem
             // 
@@ -434,27 +434,6 @@
             this.recordStaffSalaryPaymentToolStripMenuItem1.Text = "Record Staff Salary Payment";
             this.recordStaffSalaryPaymentToolStripMenuItem1.Click += new System.EventHandler(this.recordStaffSalaryPaymentToolStripMenuItem1_Click);
             // 
-            // MainPanel
-            // 
-            this.MainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.MainPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MainPanel.BackgroundImage")));
-            this.MainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.MainPanel.ContextMenuStrip = this.mainPanelContextMenu;
-            this.MainPanel.HorizontalScrollbarBarColor = true;
-            this.MainPanel.HorizontalScrollbarHighlightOnWheel = false;
-            this.MainPanel.HorizontalScrollbarSize = 10;
-            this.MainPanel.Location = new System.Drawing.Point(20, 88);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1222, 667);
-            this.MainPanel.Style = MetroFramework.MetroColorStyle.Green;
-            this.MainPanel.TabIndex = 2;
-            this.MainPanel.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.MainPanel.VerticalScrollbarBarColor = true;
-            this.MainPanel.VerticalScrollbarHighlightOnWheel = false;
-            this.MainPanel.VerticalScrollbarSize = 10;
-            // 
             // mainPanelContextMenu
             // 
             this.mainPanelContextMenu.BackColor = System.Drawing.Color.ForestGreen;
@@ -472,6 +451,27 @@
             this.clearAllControlsToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.clearAllControlsToolStripMenuItem.Text = "Clear All Controls";
             this.clearAllControlsToolStripMenuItem.Click += new System.EventHandler(this.clearAllControlsToolStripMenuItem_Click);
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MainPanel.BackgroundImage = global::SIMS.Properties.Resources.isibani;
+            this.MainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.MainPanel.ContextMenuStrip = this.mainPanelContextMenu;
+            this.MainPanel.HorizontalScrollbarBarColor = true;
+            this.MainPanel.HorizontalScrollbarHighlightOnWheel = false;
+            this.MainPanel.HorizontalScrollbarSize = 10;
+            this.MainPanel.Location = new System.Drawing.Point(20, 88);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(1222, 667);
+            this.MainPanel.Style = MetroFramework.MetroColorStyle.Green;
+            this.MainPanel.TabIndex = 2;
+            this.MainPanel.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.MainPanel.VerticalScrollbarBarColor = true;
+            this.MainPanel.VerticalScrollbarHighlightOnWheel = false;
+            this.MainPanel.VerticalScrollbarSize = 10;
             // 
             // ParentForm
             // 
