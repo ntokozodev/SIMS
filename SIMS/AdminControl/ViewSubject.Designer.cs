@@ -135,9 +135,6 @@
             this.tableAM.CENTRETableAdapter = null;
             this.tableAM.CLASSTableAdapter = null;
             this.tableAM.EMPLOYEETableAdapter = null;
-            this.tableAM.EXPENSE_PAYMENTTableAdapter = null;
-            this.tableAM.EXPENSETableAdapter = null;
-            this.tableAM.PAYMENTTableAdapter = null;
             this.tableAM.SALARYTableAdapter = null;
             this.tableAM.SIMS_USERSTableAdapter = null;
             this.tableAM.STUDENT_FEETableAdapter = null;

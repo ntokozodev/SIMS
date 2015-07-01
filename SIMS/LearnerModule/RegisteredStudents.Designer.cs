@@ -144,9 +144,6 @@
             this.tableAdapterManager.CLASSTableAdapter = null;
             this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.EMPLOYEETableAdapter = null;
-            this.tableAdapterManager.EXPENSE_PAYMENTTableAdapter = null;
-            this.tableAdapterManager.EXPENSETableAdapter = null;
-            this.tableAdapterManager.PAYMENTTableAdapter = null;
             this.tableAdapterManager.SALARYTableAdapter = null;
             this.tableAdapterManager.SIMS_USERSTableAdapter = null;
             this.tableAdapterManager.STUDENT_FEETableAdapter = null;

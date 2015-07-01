@@ -80,7 +80,7 @@ namespace SIMS
         private BrowseStaffPayments staffPay = null;
         private AddFeeStructure feeStruct = null;
         private DueFees dueFee = null;
-        private StudentProfiles studentPro = null;
+        private StudentProfile studentPro = null;
         private StaffHours staffHr = null;
         #endregion
 
@@ -90,6 +90,8 @@ namespace SIMS
         private AsignEducatorClass asignEdu = null;
         private RemoveEducatorClass removeEdu = null;
         private RecordStaffAttendance staffAt = null;
+        private TeacherAttendance attendance = null;
+        private EditTimes times = null;
         #endregion
 
         #region "Properties AccessControl"
@@ -160,10 +162,6 @@ namespace SIMS
             about.ShowDialog();
         } 
 
-
-        /*
-         * Candidates for refactoring...
-         */
         #region "Learner Module"
         private void addNewLearnerToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -280,7 +278,7 @@ namespace SIMS
             MainPanel.Controls.Clear();
             if (studentPro != null)
                 studentPro.Close();
-            studentPro = new StudentProfiles();
+            studentPro = new StudentProfile();
             FormSetUp(studentPro);
         }
 
@@ -338,6 +336,24 @@ namespace SIMS
                 staffAt.Close();
             staffAt = new RecordStaffAttendance();
             FormSetUp(staffAt);
+        }
+
+        private void viewTeacherAttendanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            if (attendance != null)
+                attendance.Close();
+            attendance = new TeacherAttendance();
+            FormSetUp(attendance);
+        }
+
+        private void editAttendanceTimesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            if (times != null)
+                times.Close();
+            times = new EditTimes();
+            FormSetUp(times);
         }
         #endregion  
 

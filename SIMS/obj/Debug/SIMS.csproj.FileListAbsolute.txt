@@ -62,7 +62,6 @@ D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.BrowseStaff
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.RecordStaffSalaryPayment.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.RecordStudentPayment.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.StaffHours.resources
-D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.StudentProfiles.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.ViewExpenses.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AdminControl.ViewSubject.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.EmployeeModule.AddStaffMember.resources
@@ -95,3 +94,5 @@ D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.pdb
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.csprojResolveAssemblyReference.cache
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.LearnerModule.PrintStudentProfile.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.PrintReciept.resources
+D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.EmployeeModule.TeacherAttendance.resources
+D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.EmployeeModule.EditTimes.resources

@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.metroTileClose = new MetroFramework.Controls.MetroTile();
             this.metroGridDueFees = new System.Windows.Forms.DataGridView();
-            this.metroTextBoxTotalDue = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabelTotalDue = new MetroFramework.Controls.MetroLabel();
             this.aDMISSIONNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pAYMENTAMOUNTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pAYMENTTYPEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +40,8 @@
             this.aCADEMICYEARDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stu_paymentBS = new System.Windows.Forms.BindingSource(this.components);
             this.dS = new SIMS.DS();
+            this.metroTextBoxTotalDue = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabelTotalDue = new MetroFramework.Controls.MetroLabel();
             this.sTUDENTPAYMENTBS = new System.Windows.Forms.BindingSource(this.components);
             this.stu_paymentTA = new SIMS.DSTableAdapters.STUDENT_PAYMENTTableAdapter();
             this.stu_feeTA = new SIMS.DSTableAdapters.STUDENT_FEETableAdapter();
@@ -89,38 +89,6 @@
             this.metroGridDueFees.ReadOnly = true;
             this.metroGridDueFees.Size = new System.Drawing.Size(920, 369);
             this.metroGridDueFees.TabIndex = 9;
-            // 
-            // metroTextBoxTotalDue
-            // 
-            this.metroTextBoxTotalDue.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroTextBoxTotalDue.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.metroTextBoxTotalDue.Lines = new string[0];
-            this.metroTextBoxTotalDue.Location = new System.Drawing.Point(198, 522);
-            this.metroTextBoxTotalDue.MaxLength = 32767;
-            this.metroTextBoxTotalDue.Name = "metroTextBoxTotalDue";
-            this.metroTextBoxTotalDue.PasswordChar = '\0';
-            this.metroTextBoxTotalDue.ReadOnly = true;
-            this.metroTextBoxTotalDue.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBoxTotalDue.SelectedText = "";
-            this.metroTextBoxTotalDue.Size = new System.Drawing.Size(135, 31);
-            this.metroTextBoxTotalDue.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBoxTotalDue.TabIndex = 8;
-            this.metroTextBoxTotalDue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.metroTextBoxTotalDue.UseSelectable = true;
-            this.metroTextBoxTotalDue.UseStyleColors = true;
-            // 
-            // metroLabelTotalDue
-            // 
-            this.metroLabelTotalDue.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroLabelTotalDue.AutoSize = true;
-            this.metroLabelTotalDue.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabelTotalDue.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabelTotalDue.Location = new System.Drawing.Point(23, 528);
-            this.metroLabelTotalDue.Name = "metroLabelTotalDue";
-            this.metroLabelTotalDue.Size = new System.Drawing.Size(169, 25);
-            this.metroLabelTotalDue.TabIndex = 6;
-            this.metroLabelTotalDue.Text = "TOTAL BALANCES:";
-            this.metroLabelTotalDue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // aDMISSIONNODataGridViewTextBoxColumn
             // 
@@ -187,6 +155,38 @@
             this.dS.DataSetName = "DS";
             this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // metroTextBoxTotalDue
+            // 
+            this.metroTextBoxTotalDue.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.metroTextBoxTotalDue.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.metroTextBoxTotalDue.Lines = new string[0];
+            this.metroTextBoxTotalDue.Location = new System.Drawing.Point(198, 522);
+            this.metroTextBoxTotalDue.MaxLength = 32767;
+            this.metroTextBoxTotalDue.Name = "metroTextBoxTotalDue";
+            this.metroTextBoxTotalDue.PasswordChar = '\0';
+            this.metroTextBoxTotalDue.ReadOnly = true;
+            this.metroTextBoxTotalDue.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBoxTotalDue.SelectedText = "";
+            this.metroTextBoxTotalDue.Size = new System.Drawing.Size(135, 31);
+            this.metroTextBoxTotalDue.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBoxTotalDue.TabIndex = 8;
+            this.metroTextBoxTotalDue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.metroTextBoxTotalDue.UseSelectable = true;
+            this.metroTextBoxTotalDue.UseStyleColors = true;
+            // 
+            // metroLabelTotalDue
+            // 
+            this.metroLabelTotalDue.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.metroLabelTotalDue.AutoSize = true;
+            this.metroLabelTotalDue.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabelTotalDue.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabelTotalDue.Location = new System.Drawing.Point(23, 528);
+            this.metroLabelTotalDue.Name = "metroLabelTotalDue";
+            this.metroLabelTotalDue.Size = new System.Drawing.Size(169, 25);
+            this.metroLabelTotalDue.TabIndex = 6;
+            this.metroLabelTotalDue.Text = "TOTAL BALANCES:";
+            this.metroLabelTotalDue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // sTUDENTPAYMENTBS
             // 
             this.sTUDENTPAYMENTBS.DataMember = "STUDENT_PAYMENT";
@@ -214,6 +214,7 @@
             this.Name = "DueFees";
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Student Transactions";
+            this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.Load += new System.EventHandler(this.DueFees_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroGridDueFees)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stu_paymentBS)).EndInit();

@@ -55,11 +55,12 @@
             this.addNewStaffMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.browseStaffDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recordStaffAttendanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewTeacherAttendanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editAttendanceTimesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
             this.AccountsMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.paymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.feesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.browseStaffPaymentsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.recordStaffSalaryPaymentToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mainPanelContextMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.clearAllControlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -156,7 +157,7 @@
             this.StudentMenu.Name = "StudentMenu";
             this.StudentMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.StudentMenu.ShowImageMargin = false;
-            this.StudentMenu.Size = new System.Drawing.Size(209, 134);
+            this.StudentMenu.Size = new System.Drawing.Size(205, 134);
             this.StudentMenu.Style = MetroFramework.MetroColorStyle.Brown;
             this.StudentMenu.Text = "StudentMenu";
             this.StudentMenu.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -167,7 +168,7 @@
             this.addNewLearnerToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.addNewLearnerToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.addNewLearnerToolStripMenuItem.Name = "addNewLearnerToolStripMenuItem";
-            this.addNewLearnerToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
+            this.addNewLearnerToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
             this.addNewLearnerToolStripMenuItem.Text = "Add New Student";
             this.addNewLearnerToolStripMenuItem.Click += new System.EventHandler(this.addNewLearnerToolStripMenuItem_Click);
             // 
@@ -176,15 +177,15 @@
             this.browseLearnerDetailsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.browseLearnerDetailsToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.browseLearnerDetailsToolStripMenuItem.Name = "browseLearnerDetailsToolStripMenuItem";
-            this.browseLearnerDetailsToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
-            this.browseLearnerDetailsToolStripMenuItem.Text = "View Learner Details";
+            this.browseLearnerDetailsToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
+            this.browseLearnerDetailsToolStripMenuItem.Text = "View All Students";
             this.browseLearnerDetailsToolStripMenuItem.Click += new System.EventHandler(this.browseLearnerDetailsToolStripMenuItem_Click);
             // 
             // registerStudentToolStripMenuItem
             // 
             this.registerStudentToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerStudentToolStripMenuItem.Name = "registerStudentToolStripMenuItem";
-            this.registerStudentToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
+            this.registerStudentToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
             this.registerStudentToolStripMenuItem.Text = "Register Student";
             this.registerStudentToolStripMenuItem.Click += new System.EventHandler(this.registerStudentToolStripMenuItem_Click);
             // 
@@ -192,7 +193,7 @@
             // 
             this.studentProfileToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentProfileToolStripMenuItem.Name = "studentProfileToolStripMenuItem";
-            this.studentProfileToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
+            this.studentProfileToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
             this.studentProfileToolStripMenuItem.Text = "Student Profile";
             this.studentProfileToolStripMenuItem.Click += new System.EventHandler(this.studentProfileToolStripMenuItem_Click);
             // 
@@ -200,7 +201,7 @@
             // 
             this.registeredStudentsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registeredStudentsToolStripMenuItem.Name = "registeredStudentsToolStripMenuItem";
-            this.registeredStudentsToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
+            this.registeredStudentsToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
             this.registeredStudentsToolStripMenuItem.Text = "Registered Students";
             this.registeredStudentsToolStripMenuItem.Click += new System.EventHandler(this.registeredStudentsToolStripMenuItem_Click);
             // 
@@ -340,18 +341,20 @@
             this.EmployeeMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addNewStaffMemberToolStripMenuItem,
             this.browseStaffDetailsToolStripMenuItem,
-            this.recordStaffAttendanceToolStripMenuItem});
+            this.recordStaffAttendanceToolStripMenuItem,
+            this.viewTeacherAttendanceToolStripMenuItem,
+            this.editAttendanceTimesToolStripMenuItem});
             this.EmployeeMenu.Name = "EmployeeMenu";
             this.EmployeeMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.EmployeeMenu.ShowImageMargin = false;
-            this.EmployeeMenu.Size = new System.Drawing.Size(238, 82);
+            this.EmployeeMenu.Size = new System.Drawing.Size(261, 134);
             // 
             // addNewStaffMemberToolStripMenuItem
             // 
             this.addNewStaffMemberToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addNewStaffMemberToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.addNewStaffMemberToolStripMenuItem.Name = "addNewStaffMemberToolStripMenuItem";
-            this.addNewStaffMemberToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
+            this.addNewStaffMemberToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
             this.addNewStaffMemberToolStripMenuItem.Text = "Add New Staff Member";
             this.addNewStaffMemberToolStripMenuItem.Click += new System.EventHandler(this.addNewStaffMemberToolStripMenuItem_Click);
             // 
@@ -360,7 +363,7 @@
             this.browseStaffDetailsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.browseStaffDetailsToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.browseStaffDetailsToolStripMenuItem.Name = "browseStaffDetailsToolStripMenuItem";
-            this.browseStaffDetailsToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
+            this.browseStaffDetailsToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
             this.browseStaffDetailsToolStripMenuItem.Text = "Browse Staff Details";
             this.browseStaffDetailsToolStripMenuItem.Click += new System.EventHandler(this.browseStaffDetailsToolStripMenuItem_Click);
             // 
@@ -369,9 +372,25 @@
             this.recordStaffAttendanceToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recordStaffAttendanceToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.recordStaffAttendanceToolStripMenuItem.Name = "recordStaffAttendanceToolStripMenuItem";
-            this.recordStaffAttendanceToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
-            this.recordStaffAttendanceToolStripMenuItem.Text = "Record Staff Attendance";
+            this.recordStaffAttendanceToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            this.recordStaffAttendanceToolStripMenuItem.Text = "Record Teacher Attendance";
             this.recordStaffAttendanceToolStripMenuItem.Click += new System.EventHandler(this.recordStaffAttendanceToolStripMenuItem_Click);
+            // 
+            // viewTeacherAttendanceToolStripMenuItem
+            // 
+            this.viewTeacherAttendanceToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewTeacherAttendanceToolStripMenuItem.Name = "viewTeacherAttendanceToolStripMenuItem";
+            this.viewTeacherAttendanceToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            this.viewTeacherAttendanceToolStripMenuItem.Text = "View Teacher Attendance";
+            this.viewTeacherAttendanceToolStripMenuItem.Click += new System.EventHandler(this.viewTeacherAttendanceToolStripMenuItem_Click);
+            // 
+            // editAttendanceTimesToolStripMenuItem
+            // 
+            this.editAttendanceTimesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editAttendanceTimesToolStripMenuItem.Name = "editAttendanceTimesToolStripMenuItem";
+            this.editAttendanceTimesToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            this.editAttendanceTimesToolStripMenuItem.Text = "Edit Attendance Times";
+            this.editAttendanceTimesToolStripMenuItem.Click += new System.EventHandler(this.editAttendanceTimesToolStripMenuItem_Click);
             // 
             // metroTile2
             // 
@@ -383,7 +402,7 @@
             this.metroTile2.Size = new System.Drawing.Size(170, 27);
             this.metroTile2.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTile2.TabIndex = 3;
-            this.metroTile2.Text = "Accounts Module";
+            this.metroTile2.Text = "Finance Module";
             this.metroTile2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile2.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTile2.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
@@ -398,18 +417,17 @@
             this.AccountsMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.paymentsToolStripMenuItem,
             this.feesToolStripMenuItem,
-            this.browseStaffPaymentsToolStripMenuItem1,
             this.recordStaffSalaryPaymentToolStripMenuItem1});
             this.AccountsMenu.Name = "AccountsMenu";
             this.AccountsMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.AccountsMenu.ShowImageMargin = false;
-            this.AccountsMenu.Size = new System.Drawing.Size(273, 108);
+            this.AccountsMenu.Size = new System.Drawing.Size(245, 104);
             // 
             // paymentsToolStripMenuItem
             // 
             this.paymentsToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.paymentsToolStripMenuItem.Name = "paymentsToolStripMenuItem";
-            this.paymentsToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
+            this.paymentsToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
             this.paymentsToolStripMenuItem.Text = "Record Student Payment";
             this.paymentsToolStripMenuItem.Click += new System.EventHandler(this.paymentsToolStripMenuItem_Click);
             // 
@@ -417,21 +435,15 @@
             // 
             this.feesToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.feesToolStripMenuItem.Name = "feesToolStripMenuItem";
-            this.feesToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
+            this.feesToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
             this.feesToolStripMenuItem.Text = "Student Fees";
             this.feesToolStripMenuItem.Click += new System.EventHandler(this.feesToolStripMenuItem_Click);
-            // 
-            // browseStaffPaymentsToolStripMenuItem1
-            // 
-            this.browseStaffPaymentsToolStripMenuItem1.Name = "browseStaffPaymentsToolStripMenuItem1";
-            this.browseStaffPaymentsToolStripMenuItem1.Size = new System.Drawing.Size(272, 26);
-            this.browseStaffPaymentsToolStripMenuItem1.Text = "Staff Salaries";
             // 
             // recordStaffSalaryPaymentToolStripMenuItem1
             // 
             this.recordStaffSalaryPaymentToolStripMenuItem1.Name = "recordStaffSalaryPaymentToolStripMenuItem1";
-            this.recordStaffSalaryPaymentToolStripMenuItem1.Size = new System.Drawing.Size(272, 26);
-            this.recordStaffSalaryPaymentToolStripMenuItem1.Text = "Record Staff Salary Payment";
+            this.recordStaffSalaryPaymentToolStripMenuItem1.Size = new System.Drawing.Size(244, 26);
+            this.recordStaffSalaryPaymentToolStripMenuItem1.Text = "Generate Staff Salaries";
             this.recordStaffSalaryPaymentToolStripMenuItem1.Click += new System.EventHandler(this.recordStaffSalaryPaymentToolStripMenuItem1_Click);
             // 
             // mainPanelContextMenu
@@ -485,7 +497,8 @@
             this.Name = "ParentForm";
             this.Opacity = 0.98D;
             this.Style = MetroFramework.MetroColorStyle.Green;
-            this.Text = "School Information Management System";
+            this.Text = "GSC School Management Software";
+            this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TransparencyKey = System.Drawing.Color.Empty;
             this.Load += new System.EventHandler(this.ParentForm_Load);
@@ -532,10 +545,11 @@
         private MetroFramework.Controls.MetroLabel LabelUser;
         private System.Windows.Forms.ToolStripMenuItem addSubjectsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewSubjectsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem browseStaffPaymentsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem registeredStudentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem recordStaffSalaryPaymentToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem viewTeacherAttendanceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editAttendanceTimesToolStripMenuItem;
     }
 }
 

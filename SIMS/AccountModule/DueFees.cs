@@ -23,11 +23,11 @@ namespace SIMS.AccountModule
 {
     public partial class DueFees : MetroForm
     {
-        private SimsOracle db;
-        private OracleDataAdapter da;
-        private DataTable dt;
-        private OracleDataReader dr;
-        private OracleCommand cmd;
+        //private SimsOracle db;
+        //private OracleDataAdapter da;
+        //private DataTable dt;
+        //private OracleDataReader dr;
+        //private OracleCommand cmd;
 
         public DueFees()
         {

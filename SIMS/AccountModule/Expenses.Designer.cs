@@ -366,6 +366,7 @@
             this.Name = "Expenses";
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Expenses and Payments";
+            this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.Load += new System.EventHandler(this.Expenses_Load);
             this.groupBoxAddExpense.ResumeLayout(false);
             this.groupBoxAddExpense.PerformLayout();

@@ -50,10 +50,7 @@ namespace SIMS.AccountModule
 
         private void metroTileAddPay_Click(object sender, EventArgs e)
         {
-            PrintReciept receipt = new PrintReciept();
             payTuitionFee();
-            receipt.ShowDialog();
-            ClearControls();
         }
 
         /**
@@ -135,6 +132,7 @@ namespace SIMS.AccountModule
                 {
                     MetroMessageBox.Show(ParentForm, "", "Student Payment Captured Successful", MessageBoxButtons.OK, MessageBoxIcon.Question);
                     student_feeTA.UpdateBalance(newBalance, TextBoxAdminNo.Text, TextBoxYear.Text);
+                    ClearControls();
                 }
                 else
                     MetroMessageBox.Show(ParentForm, " ", "Student Payment not captured!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

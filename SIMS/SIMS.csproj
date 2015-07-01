@@ -179,12 +179,6 @@
     <Compile Include="AccountModule\StaffHours.Designer.cs">
       <DependentUpon>StaffHours.cs</DependentUpon>
     </Compile>
-    <Compile Include="AccountModule\StudentProfiles.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AccountModule\StudentProfiles.Designer.cs">
-      <DependentUpon>StudentProfiles.cs</DependentUpon>
-    </Compile>
     <Compile Include="AccountModule\ViewExpenses.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,10 +198,22 @@
       <DependentUpon>DS.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DS.Designer.cs">
+    <Compile Include="DS2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeModule\EditTimes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeModule\EditTimes.Designer.cs">
+      <DependentUpon>EditTimes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeModule\TeacherAttendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeModule\TeacherAttendance.Designer.cs">
+      <DependentUpon>TeacherAttendance.cs</DependentUpon>
     </Compile>
     <Compile Include="LearnerModule\PrintStudentProfile.cs">
       <SubType>Form</SubType>
@@ -346,9 +352,6 @@
     <EmbeddedResource Include="AccountModule\StaffHours.resx">
       <DependentUpon>StaffHours.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AccountModule\StudentProfiles.resx">
-      <DependentUpon>StudentProfiles.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AccountModule\ViewExpenses.resx">
       <DependentUpon>ViewExpenses.cs</DependentUpon>
     </EmbeddedResource>
@@ -364,11 +367,17 @@
     <EmbeddedResource Include="EmployeeModule\BrowseStaffDetails.resx">
       <DependentUpon>BrowseStaffDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeModule\EditTimes.resx">
+      <DependentUpon>EditTimes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeModule\RecordStaffAttendance.resx">
       <DependentUpon>RecordStaffAttendance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeModule\RemoveEducatorClass.resx">
       <DependentUpon>RemoveEducatorClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeModule\TeacherAttendance.resx">
+      <DependentUpon>TeacherAttendance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LearnerModule\AddLearner.resx">
       <DependentUpon>AddLearner.cs</DependentUpon>
@@ -413,7 +422,7 @@
     <None Include="DS.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>DS.Designer.cs</LastGenOutput>
+      <LastGenOutput>DS2.Designer.cs</LastGenOutput>
     </None>
     <None Include="DS.xss">
       <DependentUpon>DS.xsd</DependentUpon>

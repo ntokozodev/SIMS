@@ -295,6 +295,7 @@
             this.Name = "RecordStudentPayment";
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Record Student Payment";
+            this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.Load += new System.EventHandler(this.RecordStudentPayment_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

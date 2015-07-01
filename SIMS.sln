@@ -5,16 +5,40 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIMS", "SIMS\SIMS.csproj", "{2DFE60F4-D32D-4995-A227-7ED09CF8A8A9}"
 EndProject
+Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "SIMS Setup", "SIMS setup\SIMS Setup.isproj", "{3F6188B9-08CA-4EAB-BA74-A976A33226C7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2DFE60F4-D32D-4995-A227-7ED09CF8A8A9} = {2DFE60F4-D32D-4995-A227-7ED09CF8A8A9}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Any CPU = CD_ROM|Any CPU
 		Debug|Any CPU = Debug|Any CPU
+		DVD-5|Any CPU = DVD-5|Any CPU
 		Release|Any CPU = Release|Any CPU
+		SingleImage|Any CPU = SingleImage|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2DFE60F4-D32D-4995-A227-7ED09CF8A8A9}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{2DFE60F4-D32D-4995-A227-7ED09CF8A8A9}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
 		{2DFE60F4-D32D-4995-A227-7ED09CF8A8A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2DFE60F4-D32D-4995-A227-7ED09CF8A8A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DFE60F4-D32D-4995-A227-7ED09CF8A8A9}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DFE60F4-D32D-4995-A227-7ED09CF8A8A9}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
 		{2DFE60F4-D32D-4995-A227-7ED09CF8A8A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DFE60F4-D32D-4995-A227-7ED09CF8A8A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DFE60F4-D32D-4995-A227-7ED09CF8A8A9}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{2DFE60F4-D32D-4995-A227-7ED09CF8A8A9}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{3F6188B9-08CA-4EAB-BA74-A976A33226C7}.CD_ROM|Any CPU.ActiveCfg = CD_ROM
+		{3F6188B9-08CA-4EAB-BA74-A976A33226C7}.CD_ROM|Any CPU.Build.0 = CD_ROM
+		{3F6188B9-08CA-4EAB-BA74-A976A33226C7}.Debug|Any CPU.ActiveCfg = DVD-5
+		{3F6188B9-08CA-4EAB-BA74-A976A33226C7}.Debug|Any CPU.Build.0 = DVD-5
+		{3F6188B9-08CA-4EAB-BA74-A976A33226C7}.DVD-5|Any CPU.ActiveCfg = DVD-5
+		{3F6188B9-08CA-4EAB-BA74-A976A33226C7}.DVD-5|Any CPU.Build.0 = DVD-5
+		{3F6188B9-08CA-4EAB-BA74-A976A33226C7}.Release|Any CPU.ActiveCfg = SingleImage
+		{3F6188B9-08CA-4EAB-BA74-A976A33226C7}.Release|Any CPU.Build.0 = SingleImage
+		{3F6188B9-08CA-4EAB-BA74-A976A33226C7}.SingleImage|Any CPU.ActiveCfg = SingleImage
+		{3F6188B9-08CA-4EAB-BA74-A976A33226C7}.SingleImage|Any CPU.Build.0 = SingleImage
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
