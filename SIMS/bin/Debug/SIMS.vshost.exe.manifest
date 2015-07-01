@@ -84,14 +84,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIMS.exe" size="862104">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIMS.exe" size="859032">
       <assemblyIdentity name="SIMS" version="1.0.0.76" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KZbaAhrM2Zzb8X7sVUBzRlnKFkQPJlMplST/IQ0Vq7U=</dsig:DigestValue>
+        <dsig:DigestValue>JRY/5TvscbDK6iz67A/fcPrW+GMws35Mo4QxveIxmkk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

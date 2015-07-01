@@ -45,11 +45,11 @@ namespace SIMS.LearnerModule
         }
 
         private void StudentProfile_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'student_profileDS.STUDENT_ENROLLMENT' table. You can move, or remove it, as needed.
-            this.student_enrollmentTA.Fill(this.student_profileDS.STUDENT_ENROLLMENT);
+        {  
             try
             {
+                // TODO: This line of code loads data into the 'student_profileDS.STUDENT_ENROLLMENT' table. You can move, or remove it, as needed.
+                this.student_enrollmentTA.Fill(this.student_profileDS.STUDENT_ENROLLMENT);
                 // TODO: This line of code loads data into the 'dS.STUDENT_PROFILE' table. You can move, or remove it, as needed.
                 this.student_profileTA.FillStudentProfile(this.student_profileDS.STUDENT_PROFILE);
                 LabelFullName.Text = LabelName.Text + " " + LabelSurname.Text;
@@ -94,16 +94,11 @@ namespace SIMS.LearnerModule
         {
             SimsOracle db = new SimsOracle();
 
-
-
             string s = "SELECT SIMS.STUDENT_ENROLLMENT.SUBJECT_CODE, SIMS.SUBJECT.SUBJECT_NAME, SIMS.STUDENT_ENROLLMENT.ACADEMIC_YEAR " +
                        " FROM  SIMS.STUDENT_ENROLLMENT INNER JOIN " +
                         "SIMS.SUBJECT ON SIMS.STUDENT_ENROLLMENT.SUBJECT_CODE = SIMS.SUBJECT.SUBJECT_CODE " +
                         "WHERE (ADMISSION_NO = '" + admission_no + "')";
 
-            string sql = "SELECT SUBJECT_CODE, ACADEMIC_YEAR " +
-                         " FROM STUDENT_ENROLLMENT SE" +
-                         " WHERE SE.ADMISSION_NO = '" + admission_no + "'";
             try
             {
                 OracleDataAdapter da = new OracleDataAdapter(s, db.Connection);
