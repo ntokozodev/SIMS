@@ -101,6 +101,12 @@
     <Compile Include="AccountModule\PrintReciept.Designer.cs">
       <DependentUpon>PrintReciept.cs</DependentUpon>
     </Compile>
+    <Compile Include="AccountModule\ViewStaffSalaries.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountModule\ViewStaffSalaries.Designer.cs">
+      <DependentUpon>ViewStaffSalaries.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminControl\AddCentre.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AccountModule\PrintReciept.resx">
       <DependentUpon>PrintReciept.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountModule\ViewStaffSalaries.resx">
+      <DependentUpon>ViewStaffSalaries.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminControl\AddCentre.resx">
       <DependentUpon>AddCentre.cs</DependentUpon>

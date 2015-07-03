@@ -37,20 +37,20 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabelName = new MetroFramework.Controls.MetroLabel();
-            this.metroLabelEmployeeID = new MetroFramework.Controls.MetroLabel();
-            this.LabelEmployeeID = new MetroFramework.Controls.MetroLabel();
-            this.employeeBS = new System.Windows.Forms.BindingSource(this.components);
-            this.metroLabelLessons = new MetroFramework.Controls.MetroLabel();
-            this.textBoxLessons = new MetroFramework.Controls.MetroTextBox();
-            this.comboBoxSubject = new MetroFramework.Controls.MetroComboBox();
-            this.subjectBS = new System.Windows.Forms.BindingSource(this.components);
-            this.metroLabelSubject = new MetroFramework.Controls.MetroLabel();
             this.LabelTimeOut = new MetroFramework.Controls.MetroLabel();
             this.dateTimeOut = new System.Windows.Forms.DateTimePicker();
+            this.labelName = new System.Windows.Forms.Label();
+            this.employeeBS = new System.Windows.Forms.BindingSource(this.components);
+            this.labelSurname = new System.Windows.Forms.Label();
+            this.LabelEmployeeID = new MetroFramework.Controls.MetroLabel();
+            this.metroLabelEmployeeID = new MetroFramework.Controls.MetroLabel();
+            this.metroLabelLessons = new MetroFramework.Controls.MetroLabel();
+            this.textBoxLessons = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabelSubject = new MetroFramework.Controls.MetroLabel();
+            this.comboBoxSubject = new MetroFramework.Controls.MetroComboBox();
+            this.subjectBS = new System.Windows.Forms.BindingSource(this.components);
             this.LabelTimeIn = new MetroFramework.Controls.MetroLabel();
             this.dateTimeIn = new System.Windows.Forms.DateTimePicker();
-            this.labelName = new System.Windows.Forms.Label();
-            this.labelSurname = new System.Windows.Forms.Label();
             this.metroTileSubmit = new MetroFramework.Controls.MetroTile();
             this.employeeTA = new SIMS.DSTableAdapters.EMPLOYEETableAdapter();
             this.subjectTA = new SIMS.DSTableAdapters.SUBJECTTableAdapter();
@@ -67,6 +67,7 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.staff_attTA = new SIMS.DSTableAdapters.STAFF_ATTENDANCETableAdapter();
             this.dateTimeAttendance = new MetroFramework.Controls.MetroDateTime();
+            this.attendeesTA = new SIMS.DSTableAdapters.ATTENDEESTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -83,6 +84,7 @@
             // 
             // tableM
             // 
+            this.tableM.ATTENDEESTableAdapter = null;
             this.tableM.BackupDataSetBeforeUpdate = false;
             this.tableM.CENTRETableAdapter = null;
             this.tableM.CLASSTableAdapter = null;
@@ -90,7 +92,6 @@
             this.tableM.EMPLOYEETableAdapter = null;
             this.tableM.SALARYTableAdapter = null;
             this.tableM.SIMS_USERSTableAdapter = null;
-            //this.tableM.STAFF_ATTENDANCETableAdapter = null;
             this.tableM.STUDENT_FEETableAdapter = null;
             this.tableM.STUDENT_PAYMENTTableAdapter = null;
             this.tableM.STUDENTTableAdapter = null;
@@ -181,17 +182,52 @@
             this.metroLabelName.Text = "Name:";
             this.metroLabelName.UseStyleColors = true;
             // 
-            // metroLabelEmployeeID
+            // LabelTimeOut
             // 
-            this.metroLabelEmployeeID.AutoSize = true;
-            this.metroLabelEmployeeID.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabelEmployeeID.Location = new System.Drawing.Point(3, 0);
-            this.metroLabelEmployeeID.Name = "metroLabelEmployeeID";
-            this.metroLabelEmployeeID.Size = new System.Drawing.Size(107, 19);
-            this.metroLabelEmployeeID.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroLabelEmployeeID.TabIndex = 10;
-            this.metroLabelEmployeeID.Text = "Employee No.:";
-            this.metroLabelEmployeeID.UseStyleColors = true;
+            this.LabelTimeOut.AutoSize = true;
+            this.LabelTimeOut.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.LabelTimeOut.Location = new System.Drawing.Point(421, 216);
+            this.LabelTimeOut.Name = "LabelTimeOut";
+            this.LabelTimeOut.Size = new System.Drawing.Size(74, 19);
+            this.LabelTimeOut.Style = MetroFramework.MetroColorStyle.Green;
+            this.LabelTimeOut.TabIndex = 17;
+            this.LabelTimeOut.Text = "Time Out:";
+            this.LabelTimeOut.UseStyleColors = true;
+            // 
+            // dateTimeOut
+            // 
+            this.dateTimeOut.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimeOut.Location = new System.Drawing.Point(513, 219);
+            this.dateTimeOut.Name = "dateTimeOut";
+            this.dateTimeOut.Size = new System.Drawing.Size(84, 20);
+            this.dateTimeOut.TabIndex = 20;
+            // 
+            // labelName
+            // 
+            this.labelName.AutoSize = true;
+            this.labelName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBS, "NAME", true));
+            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelName.Location = new System.Drawing.Point(513, 0);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(45, 16);
+            this.labelName.TabIndex = 24;
+            this.labelName.Text = "Name";
+            // 
+            // employeeBS
+            // 
+            this.employeeBS.DataMember = "EMPLOYEE";
+            this.employeeBS.DataSource = this.dS;
+            // 
+            // labelSurname
+            // 
+            this.labelSurname.AutoSize = true;
+            this.labelSurname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBS, "SURNAME", true));
+            this.labelSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSurname.Location = new System.Drawing.Point(513, 72);
+            this.labelSurname.Name = "labelSurname";
+            this.labelSurname.Size = new System.Drawing.Size(62, 16);
+            this.labelSurname.TabIndex = 25;
+            this.labelSurname.Text = "Surname";
             // 
             // LabelEmployeeID
             // 
@@ -204,10 +240,17 @@
             this.LabelEmployeeID.TabIndex = 5;
             this.LabelEmployeeID.Text = "Employee ID";
             // 
-            // employeeBS
+            // metroLabelEmployeeID
             // 
-            this.employeeBS.DataMember = "EMPLOYEE";
-            this.employeeBS.DataSource = this.dS;
+            this.metroLabelEmployeeID.AutoSize = true;
+            this.metroLabelEmployeeID.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabelEmployeeID.Location = new System.Drawing.Point(3, 0);
+            this.metroLabelEmployeeID.Name = "metroLabelEmployeeID";
+            this.metroLabelEmployeeID.Size = new System.Drawing.Size(107, 19);
+            this.metroLabelEmployeeID.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroLabelEmployeeID.TabIndex = 10;
+            this.metroLabelEmployeeID.Text = "Employee No.:";
+            this.metroLabelEmployeeID.UseStyleColors = true;
             // 
             // metroLabelLessons
             // 
@@ -237,6 +280,18 @@
             this.textBoxLessons.UseSelectable = true;
             this.textBoxLessons.UseStyleColors = true;
             // 
+            // metroLabelSubject
+            // 
+            this.metroLabelSubject.AutoSize = true;
+            this.metroLabelSubject.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabelSubject.Location = new System.Drawing.Point(3, 144);
+            this.metroLabelSubject.Name = "metroLabelSubject";
+            this.metroLabelSubject.Size = new System.Drawing.Size(62, 19);
+            this.metroLabelSubject.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroLabelSubject.TabIndex = 12;
+            this.metroLabelSubject.Text = "Subject:";
+            this.metroLabelSubject.UseStyleColors = true;
+            // 
             // comboBoxSubject
             // 
             this.comboBoxSubject.DataSource = this.subjectBS;
@@ -253,38 +308,6 @@
             // 
             this.subjectBS.DataMember = "SUBJECT";
             this.subjectBS.DataSource = this.dS;
-            // 
-            // metroLabelSubject
-            // 
-            this.metroLabelSubject.AutoSize = true;
-            this.metroLabelSubject.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabelSubject.Location = new System.Drawing.Point(3, 144);
-            this.metroLabelSubject.Name = "metroLabelSubject";
-            this.metroLabelSubject.Size = new System.Drawing.Size(62, 19);
-            this.metroLabelSubject.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroLabelSubject.TabIndex = 12;
-            this.metroLabelSubject.Text = "Subject:";
-            this.metroLabelSubject.UseStyleColors = true;
-            // 
-            // LabelTimeOut
-            // 
-            this.LabelTimeOut.AutoSize = true;
-            this.LabelTimeOut.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.LabelTimeOut.Location = new System.Drawing.Point(421, 216);
-            this.LabelTimeOut.Name = "LabelTimeOut";
-            this.LabelTimeOut.Size = new System.Drawing.Size(74, 19);
-            this.LabelTimeOut.Style = MetroFramework.MetroColorStyle.Green;
-            this.LabelTimeOut.TabIndex = 17;
-            this.LabelTimeOut.Text = "Time Out:";
-            this.LabelTimeOut.UseStyleColors = true;
-            // 
-            // dateTimeOut
-            // 
-            this.dateTimeOut.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimeOut.Location = new System.Drawing.Point(513, 219);
-            this.dateTimeOut.Name = "dateTimeOut";
-            this.dateTimeOut.Size = new System.Drawing.Size(84, 20);
-            this.dateTimeOut.TabIndex = 20;
             // 
             // LabelTimeIn
             // 
@@ -305,28 +328,6 @@
             this.dateTimeIn.Name = "dateTimeIn";
             this.dateTimeIn.Size = new System.Drawing.Size(84, 20);
             this.dateTimeIn.TabIndex = 21;
-            // 
-            // labelName
-            // 
-            this.labelName.AutoSize = true;
-            this.labelName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBS, "NAME", true));
-            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(513, 0);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(45, 16);
-            this.labelName.TabIndex = 24;
-            this.labelName.Text = "Name";
-            // 
-            // labelSurname
-            // 
-            this.labelSurname.AutoSize = true;
-            this.labelSurname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBS, "SURNAME", true));
-            this.labelSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSurname.Location = new System.Drawing.Point(513, 72);
-            this.labelSurname.Name = "labelSurname";
-            this.labelSurname.Size = new System.Drawing.Size(62, 16);
-            this.labelSurname.TabIndex = 25;
-            this.labelSurname.Text = "Surname";
             // 
             // metroTileSubmit
             // 
@@ -381,7 +382,7 @@
             this.attendanceBN.Name = "attendanceBN";
             this.attendanceBN.PositionItem = this.bindingNavigatorPositionItem;
             this.attendanceBN.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.attendanceBN.Size = new System.Drawing.Size(240, 25);
+            this.attendanceBN.Size = new System.Drawing.Size(209, 25);
             this.attendanceBN.TabIndex = 2;
             this.attendanceBN.Text = "bindingNavigator1";
             // 
@@ -465,6 +466,10 @@
             this.dateTimeAttendance.TabIndex = 2;
             this.dateTimeAttendance.Visible = false;
             // 
+            // attendeesTA
+            // 
+            this.attendeesTA.ClearBeforeFill = true;
+            // 
             // RecordStaffAttendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -533,5 +538,6 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private DSTableAdapters.STAFF_ATTENDANCETableAdapter staff_attTA;
         private MetroFramework.Controls.MetroDateTime dateTimeAttendance;
+        private DSTableAdapters.ATTENDEESTableAdapter attendeesTA;
     }
 }

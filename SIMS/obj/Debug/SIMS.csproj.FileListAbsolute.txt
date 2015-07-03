@@ -96,3 +96,4 @@ D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.LearnerModule.PrintStuden
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.PrintReciept.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.EmployeeModule.TeacherAttendance.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.EmployeeModule.EditTimes.resources
+D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.ViewStaffSalaries.resources

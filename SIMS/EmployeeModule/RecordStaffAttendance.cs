@@ -90,14 +90,51 @@ namespace SIMS.EmployeeModule
                 if (rows > 0)
                 {
                     MessageBox.Show("Thank you, attendance is recorded successful");
+                    if (isNotPresent())
+                        insertAttendee();
+                    else
+                        updateAttendees();
                 }
-            }
-                
+            }    
         }
+
+        private void insertAttendee()
+        {
+            try
+            {
+                var attendanceDate = dateTimeAttendance.Value.ToShortDateString();
+                attendeesTA.InsertAttendee(Convert.ToDateTime(attendanceDate), Convert.ToDecimal(LabelEmployeeID.Text));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:\n" + ex.Message.ToString());
+            }
+        }
+
+        private bool isNotPresent()
+        {
+            attendeesTA.FillByID(this.dS.ATTENDEES, Convert.ToDecimal(LabelEmployeeID.Text));
+            if (dS.ATTENDEES.Rows.Count > 0)
+                return false;
+            return true;
+        }
+
+        private void updateAttendees()
+        {
+            try
+            {
+                var attendanceDate = dateTimeAttendance.Value.ToShortDateString();
+                attendeesTA.UpdateAttendee(Convert.ToDateTime(attendanceDate), Convert.ToDecimal(LabelEmployeeID.Text));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:\n" + ex.Message.ToString());
+            }  
+        } 
 
         private double getHours()
         {
-            return 2;
+            return 0;
         }
 
         private bool isSignedIn()

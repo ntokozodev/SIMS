@@ -62,6 +62,7 @@
             this.paymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.feesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recordStaffSalaryPaymentToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewSalaryTransactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainPanelContextMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.clearAllControlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainPanel = new MetroFramework.Controls.MetroPanel();
@@ -417,11 +418,12 @@
             this.AccountsMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.paymentsToolStripMenuItem,
             this.feesToolStripMenuItem,
-            this.recordStaffSalaryPaymentToolStripMenuItem1});
+            this.recordStaffSalaryPaymentToolStripMenuItem1,
+            this.viewSalaryTransactionsToolStripMenuItem});
             this.AccountsMenu.Name = "AccountsMenu";
             this.AccountsMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.AccountsMenu.ShowImageMargin = false;
-            this.AccountsMenu.Size = new System.Drawing.Size(245, 104);
+            this.AccountsMenu.Size = new System.Drawing.Size(245, 130);
             // 
             // paymentsToolStripMenuItem
             // 
@@ -445,6 +447,13 @@
             this.recordStaffSalaryPaymentToolStripMenuItem1.Size = new System.Drawing.Size(244, 26);
             this.recordStaffSalaryPaymentToolStripMenuItem1.Text = "Generate Staff Salaries";
             this.recordStaffSalaryPaymentToolStripMenuItem1.Click += new System.EventHandler(this.recordStaffSalaryPaymentToolStripMenuItem1_Click);
+            // 
+            // viewSalaryTransactionsToolStripMenuItem
+            // 
+            this.viewSalaryTransactionsToolStripMenuItem.Name = "viewSalaryTransactionsToolStripMenuItem";
+            this.viewSalaryTransactionsToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.viewSalaryTransactionsToolStripMenuItem.Text = "View Staff Salaries";
+            this.viewSalaryTransactionsToolStripMenuItem.Click += new System.EventHandler(this.viewSalaryTransactionsToolStripMenuItem_Click);
             // 
             // mainPanelContextMenu
             // 
@@ -550,6 +559,7 @@
         private System.Windows.Forms.ToolStripMenuItem recordStaffSalaryPaymentToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem viewTeacherAttendanceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editAttendanceTimesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewSalaryTransactionsToolStripMenuItem;
     }
 }
 

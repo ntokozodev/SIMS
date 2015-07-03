@@ -54,8 +54,13 @@ namespace SIMS.AccountModule
 
         private void RecordStaffSalaryPayment_Load(object sender, EventArgs e)
         {
+            
             try
             {
+                // TODO: This line of code loads data into the 'dS.STAFF_ATTENDANCE' table. You can move, or remove it, as needed.
+                this.staff_attendanceTA.Fill(this.dS.STAFF_ATTENDANCE);
+                // TODO: This line of code loads data into the 'dS.ATTENDEES' table. You can move, or remove it, as needed.
+                this.attendeesTA.Fill(this.dS.ATTENDEES);
                 // TODO: This line of code loads data into the 'dS.SALARY_CAPTURE' table. You can move, or remove it, as needed.
                 this.salary_captureTA.Fill(this.dS.SALARY_CAPTURE);
                 // TODO: This line of code loads data into the 'dS.TEACHERS_REGISTER' table. You can move, or remove it, as needed.
@@ -79,12 +84,14 @@ namespace SIMS.AccountModule
         private void fillStartDate()
         {
             SimsOracle db = new SimsOracle();
-
+            var id = Convert.ToDecimal(employee_id);
             string sql_start = "SELECT SIMS.STAFF_ATTENDANCE.TIME_IN " +
                                " FROM SIMS.STAFF_ATTENDANCE " +
                                " WHERE (EMPLOYEE_ID = '" + employee_id + "')";
             try
             {
+                clock_timesTA.FillByEmployeeID(this.clockDS.CLOCK_TIMES, id);
+
                 da = new OracleDataAdapter(sql_start, db.Connection);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -100,9 +107,10 @@ namespace SIMS.AccountModule
         private void fillEndDate()
         {
             SimsOracle db = new SimsOracle();
-            string sql_end = "SELECT SIMS.STAFF_ATTENDANCE.TIME_OUT " +
+            string sql_end = "SELECT SIMS.STAFF_ATTENDANCE.TIME_IN " +
                              " FROM SIMS.STAFF_ATTENDANCE " +
-                             " WHERE (EMPLOYEE_ID = '" + employee_id + "')";
+                             " WHERE (EMPLOYEE_ID = '" + employee_id + "') "+
+                             " ORDER BY SIMS.STAFF_ATTENDANCE.TIME_IN desc";
             try
             {
                 da = new OracleDataAdapter(sql_end, db.Connection);
@@ -120,9 +128,12 @@ namespace SIMS.AccountModule
 
         private void TileSalaryGenerate_Click(object sender, EventArgs e)
         {
+            label1.Text = "Check-" + comboBoxStart.Text;
             int rows = 0;
-            if (CheckBoxPayPeriod.Checked == false)
-                MessageBox.Show("Select the right pay period and then check the small box below to confirm");
+            if (comboBoxStart.Text == "" || comboBoxEnd.Text == "")
+                MessageBox.Show("You should select a pay period");
+            else if (CheckBoxPayPeriod.Checked == false)
+                MessageBox.Show("Select the correct pay period and then check the small box below to confirm");
             else if (TextBoxRate.Text == "")
                 MessageBox.Show("You should enter Payment Rate per lesson");
             else
@@ -130,8 +141,6 @@ namespace SIMS.AccountModule
                 rows = generateSalary();
                 if (rows > 0)
                     MessageBox.Show("Salary generated successfully");
-                else
-                    MetroMessageBox.Show(ParentForm, "Salary was not generated", "Unexpected error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }  
         }
 
@@ -141,50 +150,51 @@ namespace SIMS.AccountModule
             int rows = 0;
             try
             {
-                decimal lessons = computeLessons();
+                decimal lessons = computeLessons(db);
                 decimal pay = computeBasicPay(lessons);
 
-                string sql = "INTSERT INTO SIMS.SALARY " +
-                             "(START_DATE, END_DATE, LESSONS, RATE, BASIC_PAY, EMPLOYEE_ID) " +
-                             " VALUES " +
-                             "(:START_DATE, :END_DATE, :LESSONS, :RATE, :BASIC_PAY, :EMPLOYEE_ID)";
+                string sql = "INSERT INTO SIMS.SALARY " +
+                             " (START_DATE, END_DATE, LESSONS, RATE, BASIC_PAY, EMPLOYEE_ID)" +
+                             " VALUES" +
+                             "(to_date('" + comboBoxStart.Text.ToString() + "', 'YYYY-MM-DD HH24:MI:SS'), to_date('" + comboBoxEnd.Text.ToString() + "', 'YYYY-MM-DD HH24:MI:SS'), :LESSONS, :RATE, :BASIC_PAY, :EMPLOYEE_ID)";
 
                 OracleCommand cmd = new OracleCommand(sql, db.Connection);
-                cmd.Parameters.Add("START_DATE", OracleDbType.Date).Value = DateTime.Parse(comboBoxStart.Text);
-                cmd.Parameters.Add("END_DATE", OracleDbType.Date).Value = DateTime.Parse(comboBoxEnd.Text);
-                cmd.Parameters.Add("LESSONS", LabelLessons.Text);
+                cmd.Parameters.Add("LESSONS", lessons);
                 cmd.Parameters.Add("RATE", TextBoxRate.Text);
-                cmd.Parameters.Add("BASIC_PAY", LabelSalary.Text);
+                cmd.Parameters.Add("BASIC_PAY", pay);
                 cmd.Parameters.Add("EMPLOYEE_ID", LabelStaffNo.Text);
-
                 rows = cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error:\n" + ex.Message.ToString());
+                MessageBox.Show("Error generating salary:\n" + ex.Message.ToString());
             }
             finally
             {
                 db.CloseDatabase();
             }
-
             return rows;
+        }
+
+        private decimal computeLessons(SimsOracle db)
+        {
+            decimal lessons = 0;
+            string sql = "SELECT SUM(num_lessons) AS total_lessons " +
+                         " FROM SIMS.STAFF_ATTENDANCE " +
+                         " WHERE time_in BETWEEN to_date('" + comboBoxStart.Text.ToString() + "', 'YYYY-MM-DD HH24:MI:SS') "+
+                         " AND to_date('" + comboBoxEnd.Text.ToString() + "', 'YYYY-MM-DD HH24:MI:SS') " +
+                         " AND (employee_id = '" + employee_id + "')";
+            OracleCommand cmd = new OracleCommand(sql, db.Connection);
+            lessons = Convert.ToDecimal(cmd.ExecuteScalar());
+            return lessons;
         }
 
         private decimal computeBasicPay(decimal lessons)
         {
             decimal pay = lessons * Convert.ToInt32(TextBoxRate.Text);
             LabelSalary.Text = Convert.ToString(pay);
-            return pay;
-        }
-
-        private decimal computeLessons()
-        {
-            var start_date = Convert.ToDateTime(comboBoxStart.Text);
-            var end_date = Convert.ToDateTime(comboBoxEnd.Text);
-            decimal lessons = Convert.ToDecimal(staff_attendanceTA.Lessons_Sum(Convert.ToDecimal(LabelStaffNo.Text), start_date, end_date));
             LabelLessons.Text = Convert.ToString(lessons);
-            return lessons;
+            return pay;
         }
 
         private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)

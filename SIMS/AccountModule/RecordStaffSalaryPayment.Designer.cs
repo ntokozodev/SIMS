@@ -57,9 +57,12 @@
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.TileSalaryGenerate = new MetroFramework.Controls.MetroTile();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBoxEnd = new MetroFramework.Controls.MetroComboBox();
+            this.staff_attendanceBS = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBoxStart = new MetroFramework.Controls.MetroComboBox();
             this.TextBoxRate = new MetroFramework.Controls.MetroTextBox();
-            this.comboBoxEnd = new System.Windows.Forms.ComboBox();
-            this.comboBoxStart = new System.Windows.Forms.ComboBox();
+            this.clock_timesBS = new System.Windows.Forms.BindingSource(this.components);
+            this.clockDS = new SIMS.DS();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -72,6 +75,11 @@
             this.CheckBoxPayPeriod = new MetroFramework.Controls.MetroCheckBox();
             this.teacher_registerTA = new SIMS.DSTableAdapters.TEACHERS_REGISTERTableAdapter();
             this.salary_captureTA = new SIMS.DSTableAdapters.SALARY_CAPTURETableAdapter();
+            this.clock_timesTA = new SIMS.DSTableAdapters.CLOCK_TIMESTableAdapter();
+            this.salaryTA = new SIMS.DSTableAdapters.SALARYTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
+            this.attendeesBS = new System.Windows.Forms.BindingSource(this.components);
+            this.attendeesTA = new SIMS.DSTableAdapters.ATTENDEESTableAdapter();
             this.staff_attendanceTA = new SIMS.DSTableAdapters.STAFF_ATTENDANCETableAdapter();
             this.groupBoxHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -80,8 +88,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teacher_registerBS)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.staff_attendanceBS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clock_timesBS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clockDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.attendeesBS)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxHeader
@@ -334,7 +346,7 @@
             // 
             this.metroLabel11.AutoSize = true;
             this.metroLabel11.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel11.Location = new System.Drawing.Point(338, 30);
+            this.metroLabel11.Location = new System.Drawing.Point(369, 30);
             this.metroLabel11.Name = "metroLabel11";
             this.metroLabel11.Size = new System.Drawing.Size(24, 19);
             this.metroLabel11.TabIndex = 10;
@@ -361,7 +373,7 @@
             // 
             this.TileSalaryGenerate.ActiveControl = null;
             this.TileSalaryGenerate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TileSalaryGenerate.Location = new System.Drawing.Point(368, 91);
+            this.TileSalaryGenerate.Location = new System.Drawing.Point(399, 91);
             this.TileSalaryGenerate.Name = "TileSalaryGenerate";
             this.TileSalaryGenerate.Size = new System.Drawing.Size(132, 23);
             this.TileSalaryGenerate.Style = MetroFramework.MetroColorStyle.Green;
@@ -377,12 +389,12 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox1.Controls.Add(this.comboBoxEnd);
+            this.groupBox1.Controls.Add(this.comboBoxStart);
             this.groupBox1.Controls.Add(this.TileSalaryGenerate);
             this.groupBox1.Controls.Add(this.TextBoxRate);
             this.groupBox1.Controls.Add(this.metroLabel8);
-            this.groupBox1.Controls.Add(this.comboBoxEnd);
             this.groupBox1.Controls.Add(this.metroLabel4);
-            this.groupBox1.Controls.Add(this.comboBoxStart);
             this.groupBox1.Controls.Add(this.metroLabel10);
             this.groupBox1.Controls.Add(this.metroLabel11);
             this.groupBox1.Location = new System.Drawing.Point(198, 485);
@@ -390,6 +402,35 @@
             this.groupBox1.Size = new System.Drawing.Size(625, 129);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
+            // 
+            // comboBoxEnd
+            // 
+            this.comboBoxEnd.DataSource = this.staff_attendanceBS;
+            this.comboBoxEnd.DisplayMember = "TIME_IN";
+            this.comboBoxEnd.FormattingEnabled = true;
+            this.comboBoxEnd.ItemHeight = 23;
+            this.comboBoxEnd.Location = new System.Drawing.Point(399, 22);
+            this.comboBoxEnd.Name = "comboBoxEnd";
+            this.comboBoxEnd.Size = new System.Drawing.Size(146, 29);
+            this.comboBoxEnd.TabIndex = 20;
+            this.comboBoxEnd.UseSelectable = true;
+            // 
+            // staff_attendanceBS
+            // 
+            this.staff_attendanceBS.DataMember = "STAFF_ATTENDANCE";
+            this.staff_attendanceBS.DataSource = this.dS;
+            // 
+            // comboBoxStart
+            // 
+            this.comboBoxStart.DataSource = this.staff_attendanceBS;
+            this.comboBoxStart.DisplayMember = "TIME_IN";
+            this.comboBoxStart.FormattingEnabled = true;
+            this.comboBoxStart.ItemHeight = 23;
+            this.comboBoxStart.Location = new System.Drawing.Point(182, 22);
+            this.comboBoxStart.Name = "comboBoxStart";
+            this.comboBoxStart.Size = new System.Drawing.Size(146, 29);
+            this.comboBoxStart.TabIndex = 19;
+            this.comboBoxStart.UseSelectable = true;
             // 
             // TextBoxRate
             // 
@@ -407,25 +448,15 @@
             this.TextBoxRate.UseSelectable = true;
             this.TextBoxRate.UseStyleColors = true;
             // 
-            // comboBoxEnd
+            // clock_timesBS
             // 
-            this.comboBoxEnd.DataSource = this.salary_captureBS;
-            this.comboBoxEnd.DisplayMember = "TIME_OUT";
-            this.comboBoxEnd.FormattingEnabled = true;
-            this.comboBoxEnd.Location = new System.Drawing.Point(368, 30);
-            this.comboBoxEnd.Name = "comboBoxEnd";
-            this.comboBoxEnd.Size = new System.Drawing.Size(132, 21);
-            this.comboBoxEnd.TabIndex = 12;
+            this.clock_timesBS.DataMember = "CLOCK_TIMES";
+            this.clock_timesBS.DataSource = this.clockDS;
             // 
-            // comboBoxStart
+            // clockDS
             // 
-            this.comboBoxStart.DataSource = this.salary_captureBS;
-            this.comboBoxStart.DisplayMember = "TIME_IN";
-            this.comboBoxStart.FormattingEnabled = true;
-            this.comboBoxStart.Location = new System.Drawing.Point(184, 30);
-            this.comboBoxStart.Name = "comboBoxStart";
-            this.comboBoxStart.Size = new System.Drawing.Size(132, 21);
-            this.comboBoxStart.TabIndex = 11;
+            this.clockDS.DataSetName = "DS";
+            this.clockDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigator1
             // 
@@ -452,7 +483,7 @@
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
             this.bindingNavigator1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.bindingNavigator1.Size = new System.Drawing.Size(234, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(203, 25);
             this.bindingNavigator1.TabIndex = 19;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -545,6 +576,32 @@
             // 
             this.salary_captureTA.ClearBeforeFill = true;
             // 
+            // clock_timesTA
+            // 
+            this.clock_timesTA.ClearBeforeFill = true;
+            // 
+            // salaryTA
+            // 
+            this.salaryTA.ClearBeforeFill = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(87, 466);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "label1";
+            // 
+            // attendeesBS
+            // 
+            this.attendeesBS.DataMember = "ATTENDEES";
+            this.attendeesBS.DataSource = this.dS;
+            // 
+            // attendeesTA
+            // 
+            this.attendeesTA.ClearBeforeFill = true;
+            // 
             // staff_attendanceTA
             // 
             this.staff_attendanceTA.ClearBeforeFill = true;
@@ -554,6 +611,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1013, 647);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.CheckBoxPayPeriod);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.groupBox1);
@@ -575,9 +633,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.teacher_registerBS)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.staff_attendanceBS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clock_timesBS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clockDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.attendeesBS)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -625,8 +687,16 @@
         private System.Windows.Forms.BindingSource salary_captureBS;
         private DSTableAdapters.SALARY_CAPTURETableAdapter salary_captureTA;
         private MetroFramework.Controls.MetroCheckBox CheckBoxPayPeriod;
+        private System.Windows.Forms.BindingSource clock_timesBS;
+        private DS clockDS;
+        private DSTableAdapters.CLOCK_TIMESTableAdapter clock_timesTA;
+        private DSTableAdapters.SALARYTableAdapter salaryTA;
+        private System.Windows.Forms.Label label1;
+        private MetroFramework.Controls.MetroComboBox comboBoxEnd;
+        private MetroFramework.Controls.MetroComboBox comboBoxStart;
+        private System.Windows.Forms.BindingSource attendeesBS;
+        private DSTableAdapters.ATTENDEESTableAdapter attendeesTA;
+        private System.Windows.Forms.BindingSource staff_attendanceBS;
         private DSTableAdapters.STAFF_ATTENDANCETableAdapter staff_attendanceTA;
-        private System.Windows.Forms.ComboBox comboBoxEnd;
-        private System.Windows.Forms.ComboBox comboBoxStart;
     }
 }

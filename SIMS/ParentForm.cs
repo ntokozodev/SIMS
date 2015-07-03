@@ -82,6 +82,7 @@ namespace SIMS
         private DueFees dueFee = null;
         private StudentProfile studentPro = null;
         private StaffHours staffHr = null;
+        private ViewStaffSalaries salaries = null;
         #endregion
 
         #region "Properties Employee Module"
@@ -289,6 +290,15 @@ namespace SIMS
                 staffHr.Close();
             staffHr = new StaffHours();
             FormSetUp(staffHr);
+        }
+
+        private void viewSalaryTransactionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            if (salaries != null)
+                salaries.Close();
+            salaries = new ViewStaffSalaries();
+            FormSetUp(salaries);
         }
         #endregion
 
