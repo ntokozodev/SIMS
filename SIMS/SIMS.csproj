@@ -101,12 +101,6 @@
     <Compile Include="AccountModule\PrintPayslip.Designer.cs">
       <DependentUpon>PrintPayslip.cs</DependentUpon>
     </Compile>
-    <Compile Include="AccountModule\PrintReciept.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AccountModule\PrintReciept.Designer.cs">
-      <DependentUpon>PrintReciept.cs</DependentUpon>
-    </Compile>
     <Compile Include="AccountModule\ViewStaffSalaries.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,18 +131,6 @@
     <Compile Include="AdminControl\ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminControl\Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminControl\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminControl\Logout.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminControl\Logout.Designer.cs">
-      <DependentUpon>Logout.cs</DependentUpon>
-    </Compile>
     <Compile Include="AccountModule\Expenses.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,12 +149,6 @@
     <Compile Include="AccountModule\DueFees.Designer.cs">
       <DependentUpon>DueFees.cs</DependentUpon>
     </Compile>
-    <Compile Include="AccountModule\BrowseStaffPayments.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AccountModule\BrowseStaffPayments.Designer.cs">
-      <DependentUpon>BrowseStaffPayments.cs</DependentUpon>
-    </Compile>
     <Compile Include="AccountModule\RecordStaffSalaryPayment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,12 +160,6 @@
     </Compile>
     <Compile Include="AccountModule\RecordStudentPayment.Designer.cs">
       <DependentUpon>RecordStudentPayment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AccountModule\StaffHours.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AccountModule\StaffHours.Designer.cs">
-      <DependentUpon>StaffHours.cs</DependentUpon>
     </Compile>
     <Compile Include="AccountModule\ViewExpenses.cs">
       <SubType>Form</SubType>
@@ -325,9 +295,6 @@
     <EmbeddedResource Include="AccountModule\PrintPayslip.resx">
       <DependentUpon>PrintPayslip.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AccountModule\PrintReciept.resx">
-      <DependentUpon>PrintReciept.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AccountModule\ViewStaffSalaries.resx">
       <DependentUpon>ViewStaffSalaries.cs</DependentUpon>
     </EmbeddedResource>
@@ -343,12 +310,6 @@
     <EmbeddedResource Include="AdminControl\ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminControl\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminControl\Logout.resx">
-      <DependentUpon>Logout.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AccountModule\Expenses.resx">
       <DependentUpon>Expenses.cs</DependentUpon>
     </EmbeddedResource>
@@ -358,17 +319,11 @@
     <EmbeddedResource Include="AccountModule\DueFees.resx">
       <DependentUpon>DueFees.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AccountModule\BrowseStaffPayments.resx">
-      <DependentUpon>BrowseStaffPayments.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AccountModule\RecordStaffSalaryPayment.resx">
       <DependentUpon>RecordStaffSalaryPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AccountModule\RecordStudentPayment.resx">
       <DependentUpon>RecordStudentPayment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AccountModule\StaffHours.resx">
-      <DependentUpon>StaffHours.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AccountModule\ViewExpenses.resx">
       <DependentUpon>ViewExpenses.cs</DependentUpon>
@@ -440,7 +395,7 @@
     <None Include="DS.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>DS.Designer.cs</LastGenOutput>
+      <LastGenOutput>DS3.Designer.cs</LastGenOutput>
     </None>
     <None Include="DS.xss">
       <DependentUpon>DS.xsd</DependentUpon>

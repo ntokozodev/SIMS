@@ -53,15 +53,11 @@ D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AdminControl.AddCentre.re
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AdminControl.AddSchoolSubject.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccessControl.AddUser.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccessControl.ChangePassword.resources
-D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccessControl.Login.resources
-D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccessControl.Logout.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.Expenses.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.AddFeeStructure.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.DueFees.resources
-D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.BrowseStaffPayments.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.RecordStaffSalaryPayment.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.RecordStudentPayment.resources
-D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.StaffHours.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.ViewExpenses.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AdminControl.ViewSubject.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.EmployeeModule.AddStaffMember.resources
@@ -93,7 +89,6 @@ D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.exe
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.pdb
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.csprojResolveAssemblyReference.cache
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.LearnerModule.PrintStudentProfile.resources
-D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.PrintReciept.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.EmployeeModule.TeacherAttendance.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.EmployeeModule.EditTimes.resources
 D:\Ntokozo\Repos\VisualStudio\SIMS\SIMS\obj\Debug\SIMS.AccountModule.ViewStaffSalaries.resources

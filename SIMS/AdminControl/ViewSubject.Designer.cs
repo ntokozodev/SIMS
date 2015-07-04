@@ -30,12 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewSubject));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.sUBJECTDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subjectBS = new System.Windows.Forms.BindingSource(this.components);
             this.veiw_subjectDS = new SIMS.DS();
             this.subjectTA = new SIMS.DSTableAdapters.SUBJECTTableAdapter();
@@ -52,8 +49,11 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.sUBJECTBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SUBJECT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sUBJECTDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.subjectBS)).BeginInit();
@@ -76,44 +76,18 @@
             // 
             this.sUBJECTDataGridView.AllowUserToAddRows = false;
             this.sUBJECTDataGridView.AutoGenerateColumns = false;
+            this.sUBJECTDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.sUBJECTDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sUBJECTDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
+            this.SUBJECT,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.sUBJECTDataGridView.DataSource = this.subjectBS;
-            this.sUBJECTDataGridView.Location = new System.Drawing.Point(125, 62);
+            this.sUBJECTDataGridView.Location = new System.Drawing.Point(141, 62);
             this.sUBJECTDataGridView.Name = "sUBJECTDataGridView";
-            this.sUBJECTDataGridView.Size = new System.Drawing.Size(568, 324);
+            this.sUBJECTDataGridView.Size = new System.Drawing.Size(514, 324);
             this.sUBJECTDataGridView.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "SUBJECT_CODE";
-            this.dataGridViewTextBoxColumn1.HeaderText = "SUBJECT CODE";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 115;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "SUBJECT_NAME";
-            this.dataGridViewTextBoxColumn2.HeaderText = "SUBJECT DESCRIPTION";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 190;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "SUBJECT_COST";
-            this.dataGridViewTextBoxColumn3.HeaderText = "SUBJECT COST";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "CATEGORY";
-            this.dataGridViewTextBoxColumn4.HeaderText = "CATEGORY";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // subjectBS
             // 
@@ -131,9 +105,12 @@
             // 
             // tableAM
             // 
+            this.tableAM.ATTENDEESTableAdapter = null;
             this.tableAM.BackupDataSetBeforeUpdate = false;
             this.tableAM.CENTRETableAdapter = null;
             this.tableAM.CLASSTableAdapter = null;
+            this.tableAM.CLOCK_TIMESTableAdapter = null;
+            this.tableAM.EDIT_STAFF_ATTENDANCETableAdapter = null;
             this.tableAM.EMPLOYEETableAdapter = null;
             this.tableAM.SALARYTableAdapter = null;
             this.tableAM.SIMS_USERSTableAdapter = null;
@@ -161,7 +138,6 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorDeleteItem,
             this.sUBJECTBindingNavigatorSaveItem,
-            this.printToolStripButton,
             this.toolStripSeparator});
             this.subjectBN.Location = new System.Drawing.Point(20, 60);
             this.subjectBN.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
@@ -259,19 +235,39 @@
             this.sUBJECTBindingNavigatorSaveItem.Text = "Save Data";
             this.sUBJECTBindingNavigatorSaveItem.Click += new System.EventHandler(this.sUBJECTBindingNavigatorSaveItem_Click);
             // 
-            // printToolStripButton
-            // 
-            this.printToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.printToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripButton.Image")));
-            this.printToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printToolStripButton.Name = "printToolStripButton";
-            this.printToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.printToolStripButton.Text = "&Print";
-            // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
             this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "SUBJECT_CODE";
+            this.dataGridViewTextBoxColumn1.HeaderText = "SUBJECT CODE";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 115;
+            // 
+            // SUBJECT
+            // 
+            this.SUBJECT.DataPropertyName = "SUBJECT";
+            this.SUBJECT.HeaderText = "SUBJECT NAME";
+            this.SUBJECT.Name = "SUBJECT";
+            this.SUBJECT.Width = 135;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "SUBJECT_COST";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTextBoxColumn3.HeaderText = "SUBJECT COST";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "CATEGORY";
+            this.dataGridViewTextBoxColumn4.HeaderText = "CATEGORY";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // ViewSubject
             // 
@@ -285,6 +281,7 @@
             this.Name = "ViewSubject";
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "View School Subjects";
+            this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.Load += new System.EventHandler(this.ViewSubject_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sUBJECTDataGridView)).EndInit();
@@ -318,11 +315,11 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton sUBJECTBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView sUBJECTDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SUBJECT;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.ToolStripButton printToolStripButton;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
     }
 }

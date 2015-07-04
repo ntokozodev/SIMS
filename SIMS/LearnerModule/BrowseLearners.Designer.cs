@@ -38,9 +38,6 @@
             this.metroGridViewLearner = new System.Windows.Forms.DataGridView();
             this.metroTileSearchByAdminNo = new MetroFramework.Controls.MetroTile();
             this.metroTextBoxSearchByAdminNo = new MetroFramework.Controls.MetroTextBox();
-            this.sTUDENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.browse_learnerDS = new SIMS.DS();
-            this.studentTA = new SIMS.DSTableAdapters.STUDENTTableAdapter();
             this.aDMISSIONNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sURNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +46,9 @@
             this.eNROLLEDDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cITIZENIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTUDENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.browse_learnerDS = new SIMS.DS();
+            this.studentTA = new SIMS.DSTableAdapters.STUDENTTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridViewLearner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTUDENTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.browse_learnerDS)).BeginInit();
@@ -157,6 +157,7 @@
             this.metroGridViewLearner.AllowUserToAddRows = false;
             this.metroGridViewLearner.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.metroGridViewLearner.AutoGenerateColumns = false;
+            this.metroGridViewLearner.BackgroundColor = System.Drawing.Color.White;
             this.metroGridViewLearner.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.metroGridViewLearner.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.aDMISSIONNODataGridViewTextBoxColumn,
@@ -205,20 +206,6 @@
             this.metroTextBoxSearchByAdminNo.TabIndex = 11;
             this.metroTextBoxSearchByAdminNo.UseSelectable = true;
             this.metroTextBoxSearchByAdminNo.UseStyleColors = true;
-            // 
-            // sTUDENTBindingSource
-            // 
-            this.sTUDENTBindingSource.DataMember = "STUDENT";
-            this.sTUDENTBindingSource.DataSource = this.browse_learnerDS;
-            // 
-            // browse_learnerDS
-            // 
-            this.browse_learnerDS.DataSetName = "DS";
-            this.browse_learnerDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // studentTA
-            // 
-            this.studentTA.ClearBeforeFill = true;
             // 
             // aDMISSIONNODataGridViewTextBoxColumn
             // 
@@ -273,6 +260,20 @@
             this.eMAILDataGridViewTextBoxColumn.Name = "eMAILDataGridViewTextBoxColumn";
             this.eMAILDataGridViewTextBoxColumn.Width = 140;
             // 
+            // sTUDENTBindingSource
+            // 
+            this.sTUDENTBindingSource.DataMember = "STUDENT";
+            this.sTUDENTBindingSource.DataSource = this.browse_learnerDS;
+            // 
+            // browse_learnerDS
+            // 
+            this.browse_learnerDS.DataSetName = "DS";
+            this.browse_learnerDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // studentTA
+            // 
+            this.studentTA.ClearBeforeFill = true;
+            // 
             // BrowseLearners
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,7 +292,8 @@
             this.MinimizeBox = false;
             this.Name = "BrowseLearners";
             this.Style = MetroFramework.MetroColorStyle.Green;
-            this.Text = "Learner Details";
+            this.Text = "Student\'s Details";
+            this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.Load += new System.EventHandler(this.BrowseDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroGridViewLearner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTUDENTBindingSource)).EndInit();

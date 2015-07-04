@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterStudent));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.metroTileRegister = new MetroFramework.Controls.MetroTile();
             this.metroTileClear = new MetroFramework.Controls.MetroTile();
@@ -40,10 +40,6 @@
             this.metroTileClose = new MetroFramework.Controls.MetroTile();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.subjectsDGV = new System.Windows.Forms.DataGridView();
-            this.sUBJECTCODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sUBJECTNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sUBJECTCOSTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cATEGORYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subjectBS = new System.Windows.Forms.BindingSource(this.components);
             this.regDS = new SIMS.DS();
             this.metroTextBoxGrade = new MetroFramework.Controls.MetroTextBox();
@@ -57,6 +53,10 @@
             this.student_enrollmentTA = new SIMS.DSTableAdapters.STUDENT_ENROLLMENTTableAdapter();
             this.student_feeTA = new SIMS.DSTableAdapters.STUDENT_FEETableAdapter();
             this.student_paymentTA = new SIMS.DSTableAdapters.STUDENT_PAYMENTTableAdapter();
+            this.sUBJECTCODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SUBJECT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sUBJECTCOSTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cATEGORYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -156,7 +156,7 @@
             // 
             this.metroTileClose.ActiveControl = null;
             this.metroTileClose.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroTileClose.Location = new System.Drawing.Point(738, 316);
+            this.metroTileClose.Location = new System.Drawing.Point(764, 316);
             this.metroTileClose.Name = "metroTileClose";
             this.metroTileClose.Size = new System.Drawing.Size(112, 31);
             this.metroTileClose.Style = MetroFramework.MetroColorStyle.Green;
@@ -173,7 +173,7 @@
             this.groupBox3.Controls.Add(this.subjectsDGV);
             this.groupBox3.Location = new System.Drawing.Point(353, 17);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(497, 275);
+            this.groupBox3.Size = new System.Drawing.Size(523, 275);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Subjects Selection";
@@ -183,44 +183,18 @@
             this.subjectsDGV.AllowUserToAddRows = false;
             this.subjectsDGV.AllowUserToDeleteRows = false;
             this.subjectsDGV.AutoGenerateColumns = false;
+            this.subjectsDGV.BackgroundColor = System.Drawing.Color.White;
             this.subjectsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.subjectsDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sUBJECTCODEDataGridViewTextBoxColumn,
-            this.sUBJECTNAMEDataGridViewTextBoxColumn,
+            this.SUBJECT,
             this.sUBJECTCOSTDataGridViewTextBoxColumn,
             this.cATEGORYDataGridViewTextBoxColumn});
             this.subjectsDGV.DataSource = this.subjectBS;
             this.subjectsDGV.Location = new System.Drawing.Point(6, 19);
             this.subjectsDGV.Name = "subjectsDGV";
-            this.subjectsDGV.Size = new System.Drawing.Size(484, 245);
+            this.subjectsDGV.Size = new System.Drawing.Size(509, 245);
             this.subjectsDGV.TabIndex = 0;
-            // 
-            // sUBJECTCODEDataGridViewTextBoxColumn
-            // 
-            this.sUBJECTCODEDataGridViewTextBoxColumn.DataPropertyName = "SUBJECT_CODE";
-            this.sUBJECTCODEDataGridViewTextBoxColumn.HeaderText = "Subject Code";
-            this.sUBJECTCODEDataGridViewTextBoxColumn.Name = "sUBJECTCODEDataGridViewTextBoxColumn";
-            // 
-            // sUBJECTNAMEDataGridViewTextBoxColumn
-            // 
-            this.sUBJECTNAMEDataGridViewTextBoxColumn.DataPropertyName = "SUBJECT_NAME";
-            this.sUBJECTNAMEDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.sUBJECTNAMEDataGridViewTextBoxColumn.Name = "sUBJECTNAMEDataGridViewTextBoxColumn";
-            this.sUBJECTNAMEDataGridViewTextBoxColumn.Width = 140;
-            // 
-            // sUBJECTCOSTDataGridViewTextBoxColumn
-            // 
-            this.sUBJECTCOSTDataGridViewTextBoxColumn.DataPropertyName = "SUBJECT_COST";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.sUBJECTCOSTDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.sUBJECTCOSTDataGridViewTextBoxColumn.HeaderText = "Subject Cost";
-            this.sUBJECTCOSTDataGridViewTextBoxColumn.Name = "sUBJECTCOSTDataGridViewTextBoxColumn";
-            // 
-            // cATEGORYDataGridViewTextBoxColumn
-            // 
-            this.cATEGORYDataGridViewTextBoxColumn.DataPropertyName = "CATEGORY";
-            this.cATEGORYDataGridViewTextBoxColumn.HeaderText = "Category";
-            this.cATEGORYDataGridViewTextBoxColumn.Name = "cATEGORYDataGridViewTextBoxColumn";
             // 
             // subjectBS
             // 
@@ -342,6 +316,35 @@
             // 
             this.student_paymentTA.ClearBeforeFill = true;
             // 
+            // sUBJECTCODEDataGridViewTextBoxColumn
+            // 
+            this.sUBJECTCODEDataGridViewTextBoxColumn.DataPropertyName = "SUBJECT_CODE";
+            this.sUBJECTCODEDataGridViewTextBoxColumn.HeaderText = "SUBJECT CODE";
+            this.sUBJECTCODEDataGridViewTextBoxColumn.Name = "sUBJECTCODEDataGridViewTextBoxColumn";
+            this.sUBJECTCODEDataGridViewTextBoxColumn.Width = 115;
+            // 
+            // SUBJECT
+            // 
+            this.SUBJECT.DataPropertyName = "SUBJECT";
+            this.SUBJECT.HeaderText = "SUBJECT NAME";
+            this.SUBJECT.Name = "SUBJECT";
+            this.SUBJECT.Width = 135;
+            // 
+            // sUBJECTCOSTDataGridViewTextBoxColumn
+            // 
+            this.sUBJECTCOSTDataGridViewTextBoxColumn.DataPropertyName = "SUBJECT_COST";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.sUBJECTCOSTDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.sUBJECTCOSTDataGridViewTextBoxColumn.HeaderText = "SUBJECT COST";
+            this.sUBJECTCOSTDataGridViewTextBoxColumn.Name = "sUBJECTCOSTDataGridViewTextBoxColumn";
+            this.sUBJECTCOSTDataGridViewTextBoxColumn.Width = 115;
+            // 
+            // cATEGORYDataGridViewTextBoxColumn
+            // 
+            this.cATEGORYDataGridViewTextBoxColumn.DataPropertyName = "CATEGORY";
+            this.cATEGORYDataGridViewTextBoxColumn.HeaderText = "CATEGORY";
+            this.cATEGORYDataGridViewTextBoxColumn.Name = "cATEGORYDataGridViewTextBoxColumn";
+            // 
             // RegisterStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,6 +358,7 @@
             this.Name = "RegisterStudent";
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Student Registration Form";
+            this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.Load += new System.EventHandler(this.RegisterStudent_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -389,12 +393,13 @@
         private MetroFramework.Controls.MetroTile metroTileClose;
         private DSTableAdapters.STUDENTTableAdapter studentTA;
         private MetroFramework.Controls.MetroRadioButton RadioButtonAccept;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sUBJECTCODEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sUBJECTNAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sUBJECTCOSTDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cATEGORYDataGridViewTextBoxColumn;
         private DSTableAdapters.STUDENT_ENROLLMENTTableAdapter student_enrollmentTA;
         private DSTableAdapters.STUDENT_FEETableAdapter student_feeTA;
         private DSTableAdapters.STUDENT_PAYMENTTableAdapter student_paymentTA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sUBJECTCODEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SUBJECT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sUBJECTCOSTDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cATEGORYDataGridViewTextBoxColumn;
     }
 }

@@ -139,10 +139,13 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.ATTENDEESTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CENTRETableAdapter = null;
             this.tableAdapterManager.CLASSTableAdapter = null;
+            this.tableAdapterManager.CLOCK_TIMESTableAdapter = null;
             this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.EDIT_STAFF_ATTENDANCETableAdapter = null;
             this.tableAdapterManager.EMPLOYEETableAdapter = null;
             this.tableAdapterManager.SALARYTableAdapter = null;
             this.tableAdapterManager.SIMS_USERSTableAdapter = null;
@@ -279,6 +282,7 @@
             this.Name = "RegisteredStudents";
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Showing Registered Students";
+            this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.Load += new System.EventHandler(this.RegisteredStudents_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sTUDENT_ENROLLMENTDataGridView)).EndInit();

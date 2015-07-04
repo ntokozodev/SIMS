@@ -1,10 +1,10 @@
 ﻿/**
- * SIMS is (c) 2015 Ntokozo Company. All rights reserved.
+ * SIMS is (c) 2015 Ntokozo. All rights reserved.
  * 
  * http://www.ntokozo.co.za
  *
  * COPYRIGHTS:
- * Copyright (c) 2015 Ntokozo Company. All rights reserved.
+ * Copyright (c) 2015 Ntokozo. All rights reserved.
  * 
  * --------------------------------------------------------------------------------
  * Redistribution and use in source and binary forms, with or without modification, 

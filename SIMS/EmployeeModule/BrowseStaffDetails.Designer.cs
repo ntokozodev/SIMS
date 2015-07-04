@@ -33,16 +33,18 @@
             this.metroTileSearchStaff = new MetroFramework.Controls.MetroTile();
             this.TextBoxSearchStaff = new MetroFramework.Controls.MetroTextBox();
             this.employeeBN = new System.Windows.Forms.BindingNavigator(this.components);
+            this.employeeBS = new System.Windows.Forms.BindingSource(this.components);
+            this.dS = new SIMS.DS();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.eMPLOYEEBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.eMPLOYEEDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,15 +59,13 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeBS = new System.Windows.Forms.BindingSource(this.components);
-            this.dS = new SIMS.DS();
             this.employeeTA = new SIMS.DSTableAdapters.EMPLOYEETableAdapter();
             this.tableAM = new SIMS.DSTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBN)).BeginInit();
             this.employeeBN.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTileSearchStaff
@@ -75,11 +75,13 @@
             this.metroTileSearchStaff.Location = new System.Drawing.Point(25, 97);
             this.metroTileSearchStaff.Name = "metroTileSearchStaff";
             this.metroTileSearchStaff.Size = new System.Drawing.Size(168, 29);
+            this.metroTileSearchStaff.Style = MetroFramework.MetroColorStyle.Green;
             this.metroTileSearchStaff.TabIndex = 2;
             this.metroTileSearchStaff.Text = "Search Staff by Surname:";
             this.metroTileSearchStaff.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTileSearchStaff.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.metroTileSearchStaff.UseSelectable = true;
+            this.metroTileSearchStaff.UseStyleColors = true;
             this.metroTileSearchStaff.Click += new System.EventHandler(this.metroTileSearchStaff_Click);
             // 
             // TextBoxSearchStaff
@@ -94,7 +96,7 @@
             this.TextBoxSearchStaff.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TextBoxSearchStaff.SelectedText = "";
             this.TextBoxSearchStaff.Size = new System.Drawing.Size(176, 29);
-            this.TextBoxSearchStaff.Style = MetroFramework.MetroColorStyle.Blue;
+            this.TextBoxSearchStaff.Style = MetroFramework.MetroColorStyle.Green;
             this.TextBoxSearchStaff.TabIndex = 3;
             this.TextBoxSearchStaff.UseSelectable = true;
             this.TextBoxSearchStaff.UseStyleColors = true;
@@ -128,6 +130,32 @@
             this.employeeBN.TabIndex = 4;
             this.employeeBN.Text = "bindingNavigator1";
             // 
+            // employeeBS
+            // 
+            this.employeeBS.DataMember = "EMPLOYEE";
+            this.employeeBS.DataSource = this.dS;
+            // 
+            // dS
+            // 
+            this.dS.DataSetName = "DS";
+            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -160,16 +188,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -192,17 +213,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // eMPLOYEEBindingNavigatorSaveItem
             // 
@@ -218,6 +230,7 @@
             this.eMPLOYEEDataGridView.AllowUserToAddRows = false;
             this.eMPLOYEEDataGridView.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.eMPLOYEEDataGridView.AutoGenerateColumns = false;
+            this.eMPLOYEEDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.eMPLOYEEDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.eMPLOYEEDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -333,25 +346,18 @@
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
             this.dataGridViewTextBoxColumn12.Width = 59;
             // 
-            // employeeBS
-            // 
-            this.employeeBS.DataMember = "EMPLOYEE";
-            this.employeeBS.DataSource = this.dS;
-            // 
-            // dS
-            // 
-            this.dS.DataSetName = "DS";
-            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // employeeTA
             // 
             this.employeeTA.ClearBeforeFill = true;
             // 
             // tableAM
             // 
+            this.tableAM.ATTENDEESTableAdapter = null;
             this.tableAM.BackupDataSetBeforeUpdate = false;
             this.tableAM.CENTRETableAdapter = null;
             this.tableAM.CLASSTableAdapter = null;
+            this.tableAM.CLOCK_TIMESTableAdapter = null;
+            this.tableAM.EDIT_STAFF_ATTENDANCETableAdapter = null;
             this.tableAM.EMPLOYEETableAdapter = this.employeeTA;
             this.tableAM.SALARYTableAdapter = null;
             this.tableAM.SIMS_USERSTableAdapter = null;
@@ -375,13 +381,14 @@
             this.Name = "BrowseStaffDetails";
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Staff Details";
+            this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.Load += new System.EventHandler(this.BrowseStaffDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.employeeBN)).EndInit();
             this.employeeBN.ResumeLayout(false);
             this.employeeBN.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

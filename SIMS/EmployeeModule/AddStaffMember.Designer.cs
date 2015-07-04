@@ -461,6 +461,7 @@
             this.Name = "AddStaffMember";
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Add New Staff Member";
+            this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

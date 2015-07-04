@@ -63,10 +63,10 @@
             this.feesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recordStaffSalaryPaymentToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.viewSalaryTransactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printPayslipsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainPanelContextMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.clearAllControlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainPanel = new MetroFramework.Controls.MetroPanel();
-            this.printPayslipsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ParentButtonPanel.SuspendLayout();
             this.StudentMenu.SuspendLayout();
             this.AdminMenu.SuspendLayout();
@@ -311,7 +311,7 @@
             this.aboutTile.Size = new System.Drawing.Size(170, 27);
             this.aboutTile.Style = MetroFramework.MetroColorStyle.Red;
             this.aboutTile.TabIndex = 5;
-            this.aboutTile.Text = "About SIMS";
+            this.aboutTile.Text = "About SMS";
             this.aboutTile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.aboutTile.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.aboutTile.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
@@ -425,7 +425,7 @@
             this.AccountsMenu.Name = "AccountsMenu";
             this.AccountsMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.AccountsMenu.ShowImageMargin = false;
-            this.AccountsMenu.Size = new System.Drawing.Size(245, 156);
+            this.AccountsMenu.Size = new System.Drawing.Size(245, 134);
             // 
             // paymentsToolStripMenuItem
             // 
@@ -440,7 +440,7 @@
             this.feesToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.feesToolStripMenuItem.Name = "feesToolStripMenuItem";
             this.feesToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
-            this.feesToolStripMenuItem.Text = "Student Fees";
+            this.feesToolStripMenuItem.Text = "Student Transactions";
             this.feesToolStripMenuItem.Click += new System.EventHandler(this.feesToolStripMenuItem_Click);
             // 
             // recordStaffSalaryPaymentToolStripMenuItem1
@@ -456,6 +456,13 @@
             this.viewSalaryTransactionsToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
             this.viewSalaryTransactionsToolStripMenuItem.Text = "View Staff Salaries";
             this.viewSalaryTransactionsToolStripMenuItem.Click += new System.EventHandler(this.viewSalaryTransactionsToolStripMenuItem_Click);
+            // 
+            // printPayslipsToolStripMenuItem
+            // 
+            this.printPayslipsToolStripMenuItem.Name = "printPayslipsToolStripMenuItem";
+            this.printPayslipsToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.printPayslipsToolStripMenuItem.Text = "Print Staff Payslips";
+            this.printPayslipsToolStripMenuItem.Click += new System.EventHandler(this.printPayslipsToolStripMenuItem_Click);
             // 
             // mainPanelContextMenu
             // 
@@ -495,13 +502,6 @@
             this.MainPanel.VerticalScrollbarBarColor = true;
             this.MainPanel.VerticalScrollbarHighlightOnWheel = false;
             this.MainPanel.VerticalScrollbarSize = 10;
-            // 
-            // printPayslipsToolStripMenuItem
-            // 
-            this.printPayslipsToolStripMenuItem.Name = "printPayslipsToolStripMenuItem";
-            this.printPayslipsToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
-            this.printPayslipsToolStripMenuItem.Text = "Print Staff Payslips";
-            this.printPayslipsToolStripMenuItem.Click += new System.EventHandler(this.printPayslipsToolStripMenuItem_Click);
             // 
             // ParentForm
             // 

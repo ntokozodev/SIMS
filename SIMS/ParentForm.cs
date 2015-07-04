@@ -1,10 +1,10 @@
 ﻿/**
- * SIMS is (c) 2015 Geek Studio Company. All rights reserved.
+ * SIMS is (c) 2015 Ntokozo. All rights reserved.
  * 
- * http://www.gstudioc.co.za
+ * http://www.ntokozo.co.za
  *
  * COPYRIGHTS:
- * Copyright (c) 2015 Geek Studio Company (Pty) Ltd. All rights reserved.
+ * Copyright (c) 2015 Ntokozo. All rights reserved.
  * 
  * --------------------------------------------------------------------------------
  * Redistribution and use in source and binary forms, with or without modification, 
@@ -77,11 +77,8 @@ namespace SIMS
         private ViewExpenses viewExp = null;
         private RecordStudentPayment studentPay = null;
         private RecordStaffSalaryPayment salaryPay = null;
-        private BrowseStaffPayments staffPay = null;
-        private AddFeeStructure feeStruct = null;
         private DueFees dueFee = null;
         private StudentProfile studentPro = null;
-        private StaffHours staffHr = null;
         private ViewStaffSalaries salaries = null;
         PrintPayslip payslip = null;
         #endregion
@@ -98,8 +95,6 @@ namespace SIMS
 
         #region "Properties AccessControl"
         private AddUser addUser = null;
-        private Login logon = null;
-        private Logout logoff = null;
         private ChangePassword changeP = null;
         #endregion
 
@@ -262,15 +257,6 @@ namespace SIMS
             FormSetUp(salaryPay);
         }
 
-        private void browseStaffPaymentsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainPanel.Controls.Clear();
-            if (staffPay != null)
-                staffPay.Close();
-            staffPay = new BrowseStaffPayments();
-            FormSetUp(staffPay);
-        }
-
         private void feesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainPanel.Controls.Clear();
@@ -287,15 +273,6 @@ namespace SIMS
                 studentPro.Close();
             studentPro = new StudentProfile();
             FormSetUp(studentPro);
-        }
-
-        private void staffHoursToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainPanel.Controls.Clear();
-            if (staffHr != null)
-                staffHr.Close();
-            staffHr = new StaffHours();
-            FormSetUp(staffHr);
         }
 
         private void viewSalaryTransactionsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -381,24 +358,6 @@ namespace SIMS
                 addUser.Close();
             addUser = new AddUser();
             FormSetUp(addUser);
-        }
-
-        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainPanel.Controls.Clear();
-            if (logon != null)
-                logon.Close();
-            logon = new Login();
-            FormSetUp(logon);
-        }
-
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainPanel.Controls.Clear();
-            if (logoff != null)
-                logoff.Close();
-            logoff = new Logout();
-            FormSetUp(logoff);
         }
 
         private void changePwordStripMenuItem_Click(object sender, EventArgs e)

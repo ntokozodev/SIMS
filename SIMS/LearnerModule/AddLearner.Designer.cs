@@ -41,6 +41,8 @@ namespace SIMS.LearnerModule
             this.TextBoxLastName = new MetroFramework.Controls.MetroTextBox();
             this.TextBoxFirstName = new MetroFramework.Controls.MetroTextBox();
             this.ComboBoxCentre = new MetroFramework.Controls.MetroComboBox();
+            this.centreBS = new System.Windows.Forms.BindingSource(this.components);
+            this.add_learnerDS = new SIMS.DS();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.ComboBoxGender = new MetroFramework.Controls.MetroComboBox();
@@ -63,14 +65,12 @@ namespace SIMS.LearnerModule
             this.addDetailsTile = new MetroFramework.Controls.MetroTile();
             this.cancelTile = new MetroFramework.Controls.MetroTile();
             this.clearTile = new MetroFramework.Controls.MetroTile();
-            this.add_learnerDS = new SIMS.DS();
-            this.centreBS = new System.Windows.Forms.BindingSource(this.components);
             this.centreTA = new SIMS.DSTableAdapters.CENTRETableAdapter();
             this.detailsGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.guardianGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.add_learnerDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.centreBS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.add_learnerDS)).BeginInit();
+            this.guardianGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // detailsGroupBox
@@ -227,6 +227,16 @@ namespace SIMS.LearnerModule
             this.ComboBoxCentre.Theme = MetroFramework.MetroThemeStyle.Light;
             this.ComboBoxCentre.UseSelectable = true;
             this.ComboBoxCentre.UseStyleColors = true;
+            // 
+            // centreBS
+            // 
+            this.centreBS.DataMember = "CENTRE";
+            this.centreBS.DataSource = this.add_learnerDS;
+            // 
+            // add_learnerDS
+            // 
+            this.add_learnerDS.DataSetName = "DS";
+            this.add_learnerDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // metroLabel1
             // 
@@ -564,16 +574,6 @@ namespace SIMS.LearnerModule
             this.clearTile.UseSelectable = true;
             this.clearTile.Click += new System.EventHandler(this.clearTile_Click);
             // 
-            // add_learnerDS
-            // 
-            this.add_learnerDS.DataSetName = "DS";
-            this.add_learnerDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // centreBS
-            // 
-            this.centreBS.DataMember = "CENTRE";
-            this.centreBS.DataSource = this.add_learnerDS;
-            // 
             // centreTA
             // 
             this.centreTA.ClearBeforeFill = true;
@@ -593,15 +593,16 @@ namespace SIMS.LearnerModule
             this.Name = "AddLearner";
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Add New Learner";
+            this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.Load += new System.EventHandler(this.AddLearner_Load);
             this.detailsGroupBox.ResumeLayout(false);
             this.detailsGroupBox.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.centreBS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.add_learnerDS)).EndInit();
             this.guardianGroupBox.ResumeLayout(false);
             this.guardianGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.add_learnerDS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.centreBS)).EndInit();
             this.ResumeLayout(false);
 
         }
