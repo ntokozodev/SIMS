@@ -22,17 +22,19 @@ namespace SIMS.AccountModule
 
         private void PrintPayslip_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dS.PAYSLIP' table. You can move, or remove it, as needed.
+            this.pAYSLIPTableAdapter.Fill(this.dS.PAYSLIP);
 
         }
 
         private void printToolStripButton_Click(object sender, EventArgs e)
         {
             payslipBN.Visible = false;
-            payslipBN.Visible = false;
             printDialogPayslip.Document = printDocumentPayslip;
             DialogResult result = printDialogPayslip.ShowDialog();
             if (result == DialogResult.OK)
                 printDocumentPayslip.Print();
+            this.Close();
         }
 
         private void PrintPayslip_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)

@@ -36,6 +36,7 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.LabelLessons = new MetroFramework.Controls.MetroLabel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.labelE_D = new MetroFramework.Controls.MetroLabel();
             this.labelS_D = new MetroFramework.Controls.MetroLabel();
@@ -61,13 +62,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
             this.payslipBN = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
@@ -76,6 +76,9 @@
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.printDocumentPayslip = new System.Drawing.Printing.PrintDocument();
             this.printDialogPayslip = new System.Windows.Forms.PrintDialog();
+            this.dS = new SIMS.DS();
+            this.pAYSLIPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pAYSLIPTableAdapter = new SIMS.DSTableAdapters.PAYSLIPTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -87,6 +90,8 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.payslipBN)).BeginInit();
             this.payslipBN.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pAYSLIPBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -118,6 +123,7 @@
             // LabelSalary
             // 
             this.LabelSalary.AutoSize = true;
+            this.LabelSalary.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pAYSLIPBindingSource, "BASIC_PAY", true));
             this.LabelSalary.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.LabelSalary.Location = new System.Drawing.Point(6, 7);
             this.LabelSalary.Name = "LabelSalary";
@@ -137,6 +143,7 @@
             // LabelLessons
             // 
             this.LabelLessons.AutoSize = true;
+            this.LabelLessons.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pAYSLIPBindingSource, "LESSONS", true));
             this.LabelLessons.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.LabelLessons.Location = new System.Drawing.Point(6, 7);
             this.LabelLessons.Name = "LabelLessons";
@@ -153,6 +160,17 @@
             this.groupBox4.TabIndex = 24;
             this.groupBox4.TabStop = false;
             // 
+            // metroLabel13
+            // 
+            this.metroLabel13.AutoSize = true;
+            this.metroLabel13.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pAYSLIPBindingSource, "RATE", true));
+            this.metroLabel13.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel13.Location = new System.Drawing.Point(6, 7);
+            this.metroLabel13.Name = "metroLabel13";
+            this.metroLabel13.Size = new System.Drawing.Size(17, 19);
+            this.metroLabel13.TabIndex = 27;
+            this.metroLabel13.Text = "0";
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.labelE_D);
@@ -168,6 +186,7 @@
             // labelE_D
             // 
             this.labelE_D.AutoSize = true;
+            this.labelE_D.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pAYSLIPBindingSource, "END_DATE", true));
             this.labelE_D.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.labelE_D.Location = new System.Drawing.Point(297, 7);
             this.labelE_D.Name = "labelE_D";
@@ -178,6 +197,7 @@
             // labelS_D
             // 
             this.labelS_D.AutoSize = true;
+            this.labelS_D.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pAYSLIPBindingSource, "START_DATE", true));
             this.labelS_D.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.labelS_D.Location = new System.Drawing.Point(80, 7);
             this.labelS_D.Name = "labelS_D";
@@ -276,6 +296,7 @@
             // LabelSurname
             // 
             this.LabelSurname.AutoSize = true;
+            this.LabelSurname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pAYSLIPBindingSource, "SURNAME", true));
             this.LabelSurname.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.LabelSurname.Location = new System.Drawing.Point(487, 16);
             this.LabelSurname.Name = "LabelSurname";
@@ -298,6 +319,7 @@
             // LabelDateEmployed
             // 
             this.LabelDateEmployed.AutoSize = true;
+            this.LabelDateEmployed.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pAYSLIPBindingSource, "HIRE_DATE", true));
             this.LabelDateEmployed.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.LabelDateEmployed.Location = new System.Drawing.Point(487, 52);
             this.LabelDateEmployed.Name = "LabelDateEmployed";
@@ -308,6 +330,7 @@
             // LabeliDNo
             // 
             this.LabeliDNo.AutoSize = true;
+            this.LabeliDNo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pAYSLIPBindingSource, "CITIZEN_ID", true));
             this.LabeliDNo.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.LabeliDNo.Location = new System.Drawing.Point(153, 90);
             this.LabeliDNo.Name = "LabeliDNo";
@@ -318,6 +341,7 @@
             // LabelStaffNo
             // 
             this.LabelStaffNo.AutoSize = true;
+            this.LabelStaffNo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pAYSLIPBindingSource, "EMPLOYEE_ID", true));
             this.LabelStaffNo.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.LabelStaffNo.Location = new System.Drawing.Point(153, 52);
             this.LabelStaffNo.Name = "LabelStaffNo";
@@ -328,6 +352,7 @@
             // LabelName
             // 
             this.LabelName.AutoSize = true;
+            this.LabelName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pAYSLIPBindingSource, "NAME", true));
             this.LabelName.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.LabelName.Location = new System.Drawing.Point(153, 16);
             this.LabelName.Name = "LabelName";
@@ -436,19 +461,10 @@
             this.metroLabel6.Text = resources.GetString("metroLabel6.Text");
             this.metroLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // metroLabel13
-            // 
-            this.metroLabel13.AutoSize = true;
-            this.metroLabel13.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel13.Location = new System.Drawing.Point(6, 7);
-            this.metroLabel13.Name = "metroLabel13";
-            this.metroLabel13.Size = new System.Drawing.Size(17, 19);
-            this.metroLabel13.TabIndex = 27;
-            this.metroLabel13.Text = "0";
-            // 
             // payslipBN
             // 
             this.payslipBN.AddNewItem = null;
+            this.payslipBN.BindingSource = this.pAYSLIPBindingSource;
             this.payslipBN.CountItem = this.bindingNavigatorCountItem;
             this.payslipBN.DeleteItem = null;
             this.payslipBN.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -473,6 +489,13 @@
             this.payslipBN.Size = new System.Drawing.Size(798, 25);
             this.payslipBN.TabIndex = 23;
             this.payslipBN.Text = "payslipBN";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -506,16 +529,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -538,7 +554,7 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // printToolStripButton
@@ -559,6 +575,20 @@
             // printDialogPayslip
             // 
             this.printDialogPayslip.UseEXDialog = true;
+            // 
+            // dS
+            // 
+            this.dS.DataSetName = "DS";
+            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pAYSLIPBindingSource
+            // 
+            this.pAYSLIPBindingSource.DataMember = "PAYSLIP";
+            this.pAYSLIPBindingSource.DataSource = this.dS;
+            // 
+            // pAYSLIPTableAdapter
+            // 
+            this.pAYSLIPTableAdapter.ClearBeforeFill = true;
             // 
             // PrintPayslip
             // 
@@ -596,6 +626,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.payslipBN)).EndInit();
             this.payslipBN.ResumeLayout(false);
             this.payslipBN.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pAYSLIPBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -649,5 +681,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
         private System.Drawing.Printing.PrintDocument printDocumentPayslip;
         private System.Windows.Forms.PrintDialog printDialogPayslip;
+        private DS dS;
+        private System.Windows.Forms.BindingSource pAYSLIPBindingSource;
+        private DSTableAdapters.PAYSLIPTableAdapter pAYSLIPTableAdapter;
     }
 }
