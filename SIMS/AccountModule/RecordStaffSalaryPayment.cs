@@ -128,7 +128,6 @@ namespace SIMS.AccountModule
 
         private void TileSalaryGenerate_Click(object sender, EventArgs e)
         {
-            label1.Text = "Check-" + comboBoxStart.Text;
             int rows = 0;
             if (comboBoxStart.Text == "" || comboBoxEnd.Text == "")
                 MessageBox.Show("You should select a pay period");

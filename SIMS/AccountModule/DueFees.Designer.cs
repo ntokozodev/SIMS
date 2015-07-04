@@ -74,6 +74,7 @@
             this.metroGridDueFees.AllowUserToDeleteRows = false;
             this.metroGridDueFees.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.metroGridDueFees.AutoGenerateColumns = false;
+            this.metroGridDueFees.BackgroundColor = System.Drawing.Color.White;
             this.metroGridDueFees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.metroGridDueFees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.aDMISSIONNODataGridViewTextBoxColumn,
