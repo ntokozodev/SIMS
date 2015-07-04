@@ -66,6 +66,7 @@
             this.mainPanelContextMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.clearAllControlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainPanel = new MetroFramework.Controls.MetroPanel();
+            this.printPayslipsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ParentButtonPanel.SuspendLayout();
             this.StudentMenu.SuspendLayout();
             this.AdminMenu.SuspendLayout();
@@ -419,11 +420,12 @@
             this.paymentsToolStripMenuItem,
             this.feesToolStripMenuItem,
             this.recordStaffSalaryPaymentToolStripMenuItem1,
-            this.viewSalaryTransactionsToolStripMenuItem});
+            this.viewSalaryTransactionsToolStripMenuItem,
+            this.printPayslipsToolStripMenuItem});
             this.AccountsMenu.Name = "AccountsMenu";
             this.AccountsMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.AccountsMenu.ShowImageMargin = false;
-            this.AccountsMenu.Size = new System.Drawing.Size(245, 130);
+            this.AccountsMenu.Size = new System.Drawing.Size(245, 156);
             // 
             // paymentsToolStripMenuItem
             // 
@@ -494,6 +496,13 @@
             this.MainPanel.VerticalScrollbarHighlightOnWheel = false;
             this.MainPanel.VerticalScrollbarSize = 10;
             // 
+            // printPayslipsToolStripMenuItem
+            // 
+            this.printPayslipsToolStripMenuItem.Name = "printPayslipsToolStripMenuItem";
+            this.printPayslipsToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.printPayslipsToolStripMenuItem.Text = "Print Staff Payslips";
+            this.printPayslipsToolStripMenuItem.Click += new System.EventHandler(this.printPayslipsToolStripMenuItem_Click);
+            // 
             // ParentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -560,6 +569,7 @@
         private System.Windows.Forms.ToolStripMenuItem viewTeacherAttendanceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editAttendanceTimesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewSalaryTransactionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem printPayslipsToolStripMenuItem;
     }
 }
 

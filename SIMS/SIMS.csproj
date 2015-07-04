@@ -95,6 +95,12 @@
     <Compile Include="AboutSIMS.Designer.cs">
       <DependentUpon>AboutSIMS.cs</DependentUpon>
     </Compile>
+    <Compile Include="AccountModule\PrintPayslip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountModule\PrintPayslip.Designer.cs">
+      <DependentUpon>PrintPayslip.cs</DependentUpon>
+    </Compile>
     <Compile Include="AccountModule\PrintReciept.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,7 +210,7 @@
       <DependentUpon>DS.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DS2.Designer.cs">
+    <Compile Include="DS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS.xsd</DependentUpon>
@@ -315,6 +321,9 @@
     <Compile Include="Validation\Validation.cs" />
     <EmbeddedResource Include="AboutSIMS.resx">
       <DependentUpon>AboutSIMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountModule\PrintPayslip.resx">
+      <DependentUpon>PrintPayslip.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AccountModule\PrintReciept.resx">
       <DependentUpon>PrintReciept.cs</DependentUpon>
@@ -431,7 +440,7 @@
     <None Include="DS.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>DS2.Designer.cs</LastGenOutput>
+      <LastGenOutput>DS.Designer.cs</LastGenOutput>
     </None>
     <None Include="DS.xss">
       <DependentUpon>DS.xsd</DependentUpon>

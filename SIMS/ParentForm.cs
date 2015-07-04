@@ -83,6 +83,7 @@ namespace SIMS
         private StudentProfile studentPro = null;
         private StaffHours staffHr = null;
         private ViewStaffSalaries salaries = null;
+        PrintPayslip payslip = null;
         #endregion
 
         #region "Properties Employee Module"
@@ -219,6 +220,11 @@ namespace SIMS
         #endregion
 
         #region "Accounts Module"
+        private void printPayslipsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            payslip = new PrintPayslip();
+            payslip.ShowDialog();
+        }
 
         private void addExpenseTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
