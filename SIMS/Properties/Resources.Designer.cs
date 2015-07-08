@@ -63,6 +63,16 @@ namespace SIMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap geek_y2C_6 {
+            get {
+                object obj = ResourceManager.GetObject("geek_y2C_6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap GeekLogo {
             get {
                 object obj = ResourceManager.GetObject("GeekLogo", resourceCulture);
@@ -86,6 +96,26 @@ namespace SIMS.Properties {
         internal static System.Drawing.Bitmap Isibani_Pro_Tutor {
             get {
                 object obj = ResourceManager.GetObject("Isibani-Pro-Tutor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Isibani_Pro_Tutor_Geek {
+            get {
+                object obj = ResourceManager.GetObject("Isibani-Pro-Tutor-Geek", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Isibani_Pro_Tutor_Geek1 {
+            get {
+                object obj = ResourceManager.GetObject("Isibani-Pro-Tutor-Geek1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

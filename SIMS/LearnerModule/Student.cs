@@ -26,7 +26,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-using CentreModule;
 using Validation;
 using SIMS.DSTableAdapters;
 using Oracle.ManagedDataAccess.Client;
@@ -60,9 +59,6 @@ namespace SIMS.LearnerModule
         private DateTimePicker admittedDate;
         private SimsOracle db;
 
-        //private Centre schoolCentre;
-        //private ClassRoom studentClass;
-        //private Image picture;
 
         public Student( string fName, string lName, 
                         string sCitizenID, string genderValue, 
@@ -83,10 +79,6 @@ namespace SIMS.LearnerModule
             zipCode = zipV;
             emailAddress = email;
             centre = cent;
-
-            //picture = pic;
-            //schoolCentre = sCentre;
-            //studentClass = sClass;
         }
 
         #region "Properties"
@@ -227,10 +219,5 @@ namespace SIMS.LearnerModule
         {
             throw new NotImplementedException();
         }
-
-        //public void recordNewPayment(AccountsModule.Payment payment)
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }

@@ -5,10 +5,10 @@
     <Setting Name="SIMSConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;DATA SOURCE=XE_DB;PASSWORD=Nng#8089;USER ID=EDU_SCHEMA&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;DATA SOURCE=XE_DB;PASSWORD=oracle;USER ID=SIMS&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;Oracle.ManagedDataAccess.Client&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">DATA SOURCE=XE_DB;PASSWORD=Nng#8089;USER ID=EDU_SCHEMA</Value>
+      <Value Profile="(Default)">DATA SOURCE=XE_DB;PASSWORD=oracle;USER ID=SIMS</Value>
     </Setting>
   </Settings>
 </SettingsFile>

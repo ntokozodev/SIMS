@@ -613,10 +613,6 @@
         private MetroFramework.Controls.MetroLabel LabelTotal;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private System.Windows.Forms.GroupBox groupBoxSubjects;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sUBJECTCODEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sUBJECTNAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gRADEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aCADEMICYEARDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingNavigator student_profileBN;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;

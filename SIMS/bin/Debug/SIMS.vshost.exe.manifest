@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="SIMS.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="SIMS.exe" version="1.0.2.71" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="geek_y2C_6.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="SIMS" version="1.0.0.76" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="SIMS" version="1.0.2.71" language="neutral" processorArchitecture="msil" />
     <commandLine file="SIMS.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -84,14 +84,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIMS.exe" size="955800">
-      <assemblyIdentity name="SIMS" version="1.0.0.76" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIMS.exe" size="1147288">
+      <assemblyIdentity name="SIMS" version="1.0.2.71" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Qy0ftg3qztvXZ7pMruVaWfF+wLRr3ViDzgrMnBK+py0=</dsig:DigestValue>
+        <dsig:DigestValue>fS1uuX+mHQa/NUkvkgzwIjiTgEh1VPT2/WlN3ux1vyU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

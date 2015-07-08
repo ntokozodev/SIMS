@@ -37,7 +37,7 @@ namespace Validation
          * returns True if given input is a valid email address,
          * returns False otherwise.
          */
-        public Boolean isValidEmail(String email)
+        internal Boolean isValidEmail(String email)
         {
             try
             {
@@ -55,7 +55,7 @@ namespace Validation
          * returns true if name is valid
          * returns false otherwise
          */
-        public Boolean isValidName(String name)
+        internal Boolean isValidName(String name)
         {
             Regex regex = new Regex(@"^[A-z][A-z|\.|\s]+$");
             return regex.IsMatch(name);
@@ -66,11 +66,24 @@ namespace Validation
          * returns true if input is a valid phone number based on first digit 0 and 9 following digits
          * returns false otherwise. // This only works for south african phone numbers
          */
-        public Boolean isValidPhoneNumber(String phoneNumber)
+        internal Boolean isValidPhoneNumber(String phoneNumber)
         {
             //Accepts only 10 digits, no more no less.
             Regex regex = new Regex(@"^((\+)?27|0)\d{9}$");
             return regex.IsMatch(phoneNumber);
+        }
+
+
+        /** 
+         * <summary>
+         *     Check if a string is an integer.
+         * </summary>
+         * <param name="number">true if input string is an integer; otherwise, false.</param>
+         */
+        internal Boolean isValidInteger(string number)
+        {
+            Regex rgx = new Regex(@"^(\d)$");
+            return rgx.IsMatch(number);
         }
 
         /** 
@@ -79,7 +92,7 @@ namespace Validation
          * return false otherwise
          */
 
-        public Boolean isValidIDNumber(String idNumber)
+        internal Boolean isValidIDNumber(String idNumber)
         {
             Regex regex = new Regex(@"^(((\d{2}((0[13578]|1[02])(0[1-9]|[12]\d|3[01])|(0[13456789]|1[012])(0[1-9]|[12]\d|30)|02(0[1-9]|1\d|2[0-8])))|([02468][048]|[13579][26])0229))(( |-)(\d{4})( |-)(\d{3})|(\d{7}))$");
             return regex.IsMatch(idNumber);

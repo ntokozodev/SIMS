@@ -45,6 +45,7 @@
             this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePwordStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addCentreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewCentre = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewSubjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addSubjectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewSubjectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -232,12 +233,13 @@
             this.addUserToolStripMenuItem,
             this.changePwordStripMenuItem,
             this.addCentreToolStripMenuItem,
+            this.viewCentre,
             this.addNewSubjectToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.AdminMenu.Name = "AccessMenu";
             this.AdminMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.AdminMenu.ShowImageMargin = false;
-            this.AdminMenu.Size = new System.Drawing.Size(190, 134);
+            this.AdminMenu.Size = new System.Drawing.Size(190, 160);
             this.AdminMenu.Style = MetroFramework.MetroColorStyle.Purple;
             this.AdminMenu.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.AdminMenu.UseStyleColors = true;
@@ -267,6 +269,14 @@
             this.addCentreToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.addCentreToolStripMenuItem.Text = "Add Centre";
             this.addCentreToolStripMenuItem.Click += new System.EventHandler(this.addCentreToolStripMenuItem_Click);
+            // 
+            // viewCentre
+            // 
+            this.viewCentre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewCentre.Name = "viewCentre";
+            this.viewCentre.Size = new System.Drawing.Size(189, 26);
+            this.viewCentre.Text = "View Centres";
+            this.viewCentre.Click += new System.EventHandler(this.viewCentre_Click);
             // 
             // addNewSubjectToolStripMenuItem
             // 
@@ -487,7 +497,8 @@
             this.MainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.MainPanel.BackgroundImage = global::SIMS.Properties.Resources.isibani;
+            this.MainPanel.BackColor = System.Drawing.Color.White;
+            this.MainPanel.BackgroundImage = global::SIMS.Properties.Resources.Isibani_Pro_Tutor_Geek1;
             this.MainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.MainPanel.ContextMenuStrip = this.mainPanelContextMenu;
             this.MainPanel.HorizontalScrollbarBarColor = true;
@@ -570,6 +581,7 @@
         private System.Windows.Forms.ToolStripMenuItem editAttendanceTimesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewSalaryTransactionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem printPayslipsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewCentre;
     }
 }
 

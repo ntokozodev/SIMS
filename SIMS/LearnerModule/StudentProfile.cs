@@ -52,6 +52,7 @@ namespace SIMS.LearnerModule
                 this.student_enrollmentTA.Fill(this.student_profileDS.STUDENT_ENROLLMENT);
                 // TODO: This line of code loads data into the 'dS.STUDENT_PROFILE' table. You can move, or remove it, as needed.
                 this.student_profileTA.FillStudentProfile(this.student_profileDS.STUDENT_PROFILE);
+
                 LabelFullName.Text = LabelName.Text + " " + LabelSurname.Text;
                 admission_no = LabelAdmissionNo.Text;
                 displaySubjects();

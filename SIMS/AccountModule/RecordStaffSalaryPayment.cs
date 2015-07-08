@@ -54,7 +54,6 @@ namespace SIMS.AccountModule
 
         private void RecordStaffSalaryPayment_Load(object sender, EventArgs e)
         {
-            
             try
             {
                 // TODO: This line of code loads data into the 'dS.STAFF_ATTENDANCE' table. You can move, or remove it, as needed.

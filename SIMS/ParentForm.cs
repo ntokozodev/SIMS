@@ -61,6 +61,7 @@ namespace SIMS
         private AddSchoolSubject subjects;
         private ViewSubject viewSubj;
         private AddCentre center;
+        private ViewCentre viewCent;
         #endregion
 
         #region "Properties Learner Module"
@@ -371,6 +372,15 @@ namespace SIMS
         #endregion
 
         #region "Admin Control"
+        private void viewCentre_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            if (viewCent != null)
+                viewCent.Close();
+            viewCent = new ViewCentre();
+            FormSetUp(viewCent);
+        }
+
         private void addSubjectsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainPanel.Controls.Clear();

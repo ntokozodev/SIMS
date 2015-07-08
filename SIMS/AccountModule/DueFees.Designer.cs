@@ -55,10 +55,10 @@
             // 
             this.metroTileClose.ActiveControl = null;
             this.metroTileClose.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroTileClose.Location = new System.Drawing.Point(795, 522);
+            this.metroTileClose.Location = new System.Drawing.Point(795, 615);
             this.metroTileClose.Name = "metroTileClose";
             this.metroTileClose.Size = new System.Drawing.Size(148, 31);
-            this.metroTileClose.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTileClose.Style = MetroFramework.MetroColorStyle.Green;
             this.metroTileClose.TabIndex = 7;
             this.metroTileClose.Text = "Close Window";
             this.metroTileClose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -85,10 +85,10 @@
             this.cAPTUREDDATEDataGridViewTextBoxColumn,
             this.aCADEMICYEARDataGridViewTextBoxColumn});
             this.metroGridDueFees.DataSource = this.stu_paymentBS;
-            this.metroGridDueFees.Location = new System.Drawing.Point(23, 119);
+            this.metroGridDueFees.Location = new System.Drawing.Point(23, 63);
             this.metroGridDueFees.Name = "metroGridDueFees";
             this.metroGridDueFees.ReadOnly = true;
-            this.metroGridDueFees.Size = new System.Drawing.Size(920, 369);
+            this.metroGridDueFees.Size = new System.Drawing.Size(920, 534);
             this.metroGridDueFees.TabIndex = 9;
             // 
             // aDMISSIONNODataGridViewTextBoxColumn
@@ -161,7 +161,7 @@
             this.metroTextBoxTotalDue.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.metroTextBoxTotalDue.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.metroTextBoxTotalDue.Lines = new string[0];
-            this.metroTextBoxTotalDue.Location = new System.Drawing.Point(198, 522);
+            this.metroTextBoxTotalDue.Location = new System.Drawing.Point(198, 615);
             this.metroTextBoxTotalDue.MaxLength = 32767;
             this.metroTextBoxTotalDue.Name = "metroTextBoxTotalDue";
             this.metroTextBoxTotalDue.PasswordChar = '\0';
@@ -169,7 +169,7 @@
             this.metroTextBoxTotalDue.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBoxTotalDue.SelectedText = "";
             this.metroTextBoxTotalDue.Size = new System.Drawing.Size(135, 31);
-            this.metroTextBoxTotalDue.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBoxTotalDue.Style = MetroFramework.MetroColorStyle.Green;
             this.metroTextBoxTotalDue.TabIndex = 8;
             this.metroTextBoxTotalDue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.metroTextBoxTotalDue.UseSelectable = true;
@@ -181,7 +181,7 @@
             this.metroLabelTotalDue.AutoSize = true;
             this.metroLabelTotalDue.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabelTotalDue.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabelTotalDue.Location = new System.Drawing.Point(23, 528);
+            this.metroLabelTotalDue.Location = new System.Drawing.Point(23, 621);
             this.metroLabelTotalDue.Name = "metroLabelTotalDue";
             this.metroLabelTotalDue.Size = new System.Drawing.Size(169, 25);
             this.metroLabelTotalDue.TabIndex = 6;
@@ -205,7 +205,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(966, 576);
+            this.ClientSize = new System.Drawing.Size(966, 654);
             this.Controls.Add(this.metroGridDueFees);
             this.Controls.Add(this.metroTextBoxTotalDue);
             this.Controls.Add(this.metroTileClose);

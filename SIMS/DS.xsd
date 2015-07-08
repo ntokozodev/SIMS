@@ -36,8 +36,9 @@
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT CENTRE_ID, "NAME", ADDRESS, CLASSES FROM SIMS.CENTRE</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT CENTRE_ID, "NAME", ADDRESS, CLASSES FROM SIMS.CENTRE
+ORDER BY CENTRE_ID</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>

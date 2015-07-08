@@ -172,8 +172,6 @@
         private MetroFramework.Controls.MetroLabel userLabel;
         private MetroFramework.Controls.MetroLabel mainLabel;
         private SIMS.DS loginDS;
-        private SIMS.DSTableAdapters.SIMS_USERSTableAdapter SIMS_USERSTableAdapter;
-        private SIMS.DSTableAdapters.TableAdapterManager tableAdapterManager;
         private DSTableAdapters.SIMS_USERSTableAdapter usersTA;
     }
 }

@@ -22,8 +22,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>71</ApplicationRevision>
+    <ApplicationVersion>1.0.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -167,15 +167,18 @@
     <Compile Include="AccountModule\ViewExpenses.Designer.cs">
       <DependentUpon>ViewExpenses.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminControl\ViewCentre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminControl\ViewCentre.Designer.cs">
+      <DependentUpon>ViewCentre.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminControl\ViewSubject.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminControl\ViewSubject.Designer.cs">
       <DependentUpon>ViewSubject.cs</DependentUpon>
     </Compile>
-    <Compile Include="CentreModule\Address.cs" />
-    <Compile Include="CentreModule\Centre.cs" />
-    <Compile Include="CentreModule\ClassRoom.cs" />
     <Compile Include="DS.cs">
       <DependentUpon>DS.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -328,6 +331,9 @@
     <EmbeddedResource Include="AccountModule\ViewExpenses.resx">
       <DependentUpon>ViewExpenses.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminControl\ViewCentre.resx">
+      <DependentUpon>ViewCentre.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminControl\ViewSubject.resx">
       <DependentUpon>ViewSubject.cs</DependentUpon>
     </EmbeddedResource>
@@ -395,7 +401,7 @@
     <None Include="DS.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>DS3.Designer.cs</LastGenOutput>
+      <LastGenOutput>DS.Designer.cs</LastGenOutput>
     </None>
     <None Include="DS.xss">
       <DependentUpon>DS.xsd</DependentUpon>
@@ -437,6 +443,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="geek_y2C_6.ico" />
+    <None Include="Resources\geek_y2C_6.png" />
+    <None Include="Resources\Isibani-Pro-Tutor-Geek1.png" />
+    <None Include="Resources\Isibani-Pro-Tutor2.png" />
+    <None Include="Resources\Isibani-Pro-Tutor-Geek.png" />
     <None Include="Resources\Isibani-Pro-Tutor1.png" />
     <None Include="Resources\Isibani-Pro-Tutor.png" />
     <None Include="Resources\pro-tutor.png" />

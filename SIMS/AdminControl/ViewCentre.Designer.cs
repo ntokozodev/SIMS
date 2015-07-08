@@ -1,6 +1,6 @@
-﻿namespace SIMS.LearnerModule
+﻿namespace SIMS.AdminControl
 {
-    partial class RegisteredStudents
+    partial class ViewCentre
     {
         /// <summary>
         /// Required designer variable.
@@ -29,20 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisteredStudents));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.sTUDENT_ENROLLMENTDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sTUDENT_ENROLLMENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewCentre));
             this.dS = new SIMS.DS();
-            this.sTUDENT_ENROLLMENTTableAdapter = new SIMS.DSTableAdapters.STUDENT_ENROLLMENTTableAdapter();
+            this.cENTREBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cENTRETableAdapter = new SIMS.DSTableAdapters.CENTRETableAdapter();
             this.tableAdapterManager = new SIMS.DSTableAdapters.TableAdapterManager();
-            this.sTUDENT_ENROLLMENTBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.cENTREBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -51,98 +45,40 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sTUDENT_ENROLLMENTDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTUDENT_ENROLLMENTBindingSource)).BeginInit();
+            this.cENTREBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.cENTREDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTUDENT_ENROLLMENTBindingNavigator)).BeginInit();
-            this.sTUDENT_ENROLLMENTBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cENTREBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cENTREBindingNavigator)).BeginInit();
+            this.cENTREBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cENTREDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox1.Controls.Add(this.sTUDENT_ENROLLMENTDataGridView);
-            this.groupBox1.Location = new System.Drawing.Point(90, 80);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(637, 482);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            // 
-            // sTUDENT_ENROLLMENTDataGridView
-            // 
-            this.sTUDENT_ENROLLMENTDataGridView.AllowUserToAddRows = false;
-            this.sTUDENT_ENROLLMENTDataGridView.AutoGenerateColumns = false;
-            this.sTUDENT_ENROLLMENTDataGridView.BackgroundColor = System.Drawing.Color.White;
-            this.sTUDENT_ENROLLMENTDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.sTUDENT_ENROLLMENTDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
-            this.sTUDENT_ENROLLMENTDataGridView.DataSource = this.sTUDENT_ENROLLMENTBindingSource;
-            this.sTUDENT_ENROLLMENTDataGridView.Location = new System.Drawing.Point(15, 19);
-            this.sTUDENT_ENROLLMENTDataGridView.Name = "sTUDENT_ENROLLMENTDataGridView";
-            this.sTUDENT_ENROLLMENTDataGridView.Size = new System.Drawing.Size(606, 449);
-            this.sTUDENT_ENROLLMENTDataGridView.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ADMISSION_NO";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ADMISSION NO";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 115;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "SUBJECT_CODE";
-            this.dataGridViewTextBoxColumn2.HeaderText = "SUBJECT CODE";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "ACADEMIC_YEAR";
-            this.dataGridViewTextBoxColumn3.HeaderText = "ACADEMIC YEAR";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 123;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "GRADE";
-            this.dataGridViewTextBoxColumn4.HeaderText = "GRADE";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "COST";
-            this.dataGridViewTextBoxColumn5.HeaderText = "COST";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 105;
-            // 
-            // sTUDENT_ENROLLMENTBindingSource
-            // 
-            this.sTUDENT_ENROLLMENTBindingSource.DataMember = "STUDENT_ENROLLMENT";
-            this.sTUDENT_ENROLLMENTBindingSource.DataSource = this.dS;
             // 
             // dS
             // 
             this.dS.DataSetName = "DS";
             this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // sTUDENT_ENROLLMENTTableAdapter
+            // cENTREBindingSource
             // 
-            this.sTUDENT_ENROLLMENTTableAdapter.ClearBeforeFill = true;
+            this.cENTREBindingSource.DataMember = "CENTRE";
+            this.cENTREBindingSource.DataSource = this.dS;
+            // 
+            // cENTRETableAdapter
+            // 
+            this.cENTRETableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.ATTENDEESTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CENTRETableAdapter = null;
+            this.tableAdapterManager.CENTRETableAdapter = this.cENTRETableAdapter;
             this.tableAdapterManager.CLASSTableAdapter = null;
             this.tableAdapterManager.CLOCK_TIMESTableAdapter = null;
-            this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.EDIT_STAFF_ATTENDANCETableAdapter = null;
             this.tableAdapterManager.EMPLOYEETableAdapter = null;
             this.tableAdapterManager.SALARYTableAdapter = null;
@@ -153,13 +89,13 @@
             this.tableAdapterManager.SUBJECTTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = SIMS.DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // sTUDENT_ENROLLMENTBindingNavigator
+            // cENTREBindingNavigator
             // 
-            this.sTUDENT_ENROLLMENTBindingNavigator.AddNewItem = null;
-            this.sTUDENT_ENROLLMENTBindingNavigator.BindingSource = this.sTUDENT_ENROLLMENTBindingSource;
-            this.sTUDENT_ENROLLMENTBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.sTUDENT_ENROLLMENTBindingNavigator.DeleteItem = null;
-            this.sTUDENT_ENROLLMENTBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cENTREBindingNavigator.AddNewItem = null;
+            this.cENTREBindingNavigator.BindingSource = this.cENTREBindingSource;
+            this.cENTREBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.cENTREBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.cENTREBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -168,17 +104,19 @@
             this.bindingNavigatorSeparator1,
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2});
-            this.sTUDENT_ENROLLMENTBindingNavigator.Location = new System.Drawing.Point(20, 60);
-            this.sTUDENT_ENROLLMENTBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.sTUDENT_ENROLLMENTBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.sTUDENT_ENROLLMENTBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.sTUDENT_ENROLLMENTBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.sTUDENT_ENROLLMENTBindingNavigator.Name = "sTUDENT_ENROLLMENTBindingNavigator";
-            this.sTUDENT_ENROLLMENTBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.sTUDENT_ENROLLMENTBindingNavigator.Size = new System.Drawing.Size(802, 25);
-            this.sTUDENT_ENROLLMENTBindingNavigator.TabIndex = 1;
-            this.sTUDENT_ENROLLMENTBindingNavigator.Text = "bindingNavigator1";
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorDeleteItem,
+            this.cENTREBindingNavigatorSaveItem});
+            this.cENTREBindingNavigator.Location = new System.Drawing.Point(20, 60);
+            this.cENTREBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.cENTREBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.cENTREBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.cENTREBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.cENTREBindingNavigator.Name = "cENTREBindingNavigator";
+            this.cENTREBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.cENTREBindingNavigator.Size = new System.Drawing.Size(817, 25);
+            this.cENTREBindingNavigator.TabIndex = 0;
+            this.cENTREBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
             // 
@@ -186,6 +124,15 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -247,28 +194,78 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // RegisteredStudents
+            // cENTREBindingNavigatorSaveItem
+            // 
+            this.cENTREBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.cENTREBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("cENTREBindingNavigatorSaveItem.Image")));
+            this.cENTREBindingNavigatorSaveItem.Name = "cENTREBindingNavigatorSaveItem";
+            this.cENTREBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.cENTREBindingNavigatorSaveItem.Text = "Save Data";
+            this.cENTREBindingNavigatorSaveItem.Click += new System.EventHandler(this.cENTREBindingNavigatorSaveItem_Click);
+            // 
+            // cENTREDataGridView
+            // 
+            this.cENTREDataGridView.AllowUserToAddRows = false;
+            this.cENTREDataGridView.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cENTREDataGridView.AutoGenerateColumns = false;
+            this.cENTREDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.cENTREDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cENTREDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.cENTREDataGridView.DataSource = this.cENTREBindingSource;
+            this.cENTREDataGridView.Location = new System.Drawing.Point(143, 103);
+            this.cENTREDataGridView.Name = "cENTREDataGridView";
+            this.cENTREDataGridView.Size = new System.Drawing.Size(544, 455);
+            this.cENTREDataGridView.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "CENTRE_ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "CENTRE ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "NAME";
+            this.dataGridViewTextBoxColumn2.HeaderText = "NAME";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "ADDRESS";
+            this.dataGridViewTextBoxColumn3.HeaderText = "ADDRESS";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "CLASSES";
+            this.dataGridViewTextBoxColumn4.HeaderText = "CLASSES";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // ViewCentre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(842, 577);
-            this.Controls.Add(this.sTUDENT_ENROLLMENTBindingNavigator);
-            this.Controls.Add(this.groupBox1);
-            this.KeyPreview = true;
+            this.ClientSize = new System.Drawing.Size(857, 581);
+            this.Controls.Add(this.cENTREDataGridView);
+            this.Controls.Add(this.cENTREBindingNavigator);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "RegisteredStudents";
+            this.Name = "ViewCentre";
             this.Style = MetroFramework.MetroColorStyle.Green;
-            this.Text = "Showing Registered Students";
+            this.Text = "View Centres";
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
-            this.Load += new System.EventHandler(this.RegisteredStudents_Load);
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.sTUDENT_ENROLLMENTDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTUDENT_ENROLLMENTBindingSource)).EndInit();
+            this.Load += new System.EventHandler(this.ViewCentre_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTUDENT_ENROLLMENTBindingNavigator)).EndInit();
-            this.sTUDENT_ENROLLMENTBindingNavigator.ResumeLayout(false);
-            this.sTUDENT_ENROLLMENTBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cENTREBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cENTREBindingNavigator)).EndInit();
+            this.cENTREBindingNavigator.ResumeLayout(false);
+            this.cENTREBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cENTREDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,13 +273,13 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
         private DS dS;
-        private System.Windows.Forms.BindingSource sTUDENT_ENROLLMENTBindingSource;
-        private DSTableAdapters.STUDENT_ENROLLMENTTableAdapter sTUDENT_ENROLLMENTTableAdapter;
+        private System.Windows.Forms.BindingSource cENTREBindingSource;
+        private DSTableAdapters.CENTRETableAdapter cENTRETableAdapter;
         private DSTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator sTUDENT_ENROLLMENTBindingNavigator;
+        private System.Windows.Forms.BindingNavigator cENTREBindingNavigator;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -291,11 +288,11 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.DataGridView sTUDENT_ENROLLMENTDataGridView;
+        private System.Windows.Forms.ToolStripButton cENTREBindingNavigatorSaveItem;
+        private System.Windows.Forms.DataGridView cENTREDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
     }
 }

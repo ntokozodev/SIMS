@@ -32,11 +32,13 @@ using System.Windows.Forms;
 using MetroFramework.Forms;
 using Oracle.ManagedDataAccess.Types;
 using Oracle.ManagedDataAccess.Client;
+using Validation;
 
 namespace SIMS.AdminControl
 {
     public partial class AddCentre : MetroForm
     {
+        ValidationClass checkValue = new ValidationClass();
         public AddCentre()
         {
             InitializeComponent();
@@ -61,13 +63,23 @@ namespace SIMS.AdminControl
 
             if (TextBoxName.Text == "")
             {
-                MessageBox.Show("You should enter address name");
+                MessageBox.Show("You should enter centre name");
                 TextBoxName.Focus();
             }
             else if (TextBoxAddress.Text == "")
             {
                 MessageBox.Show("You should enter centre address");
                 TextBoxAddress.Focus();
+            }
+            else if (TextBoxClasses.Text == "")
+            {
+                MessageBox.Show("You should enter number of classes");
+                TextBoxClasses.Focus();
+            }
+            else if (!checkValue.isValidInteger(TextBoxClasses.Text))
+            {
+                MessageBox.Show("The number format is not valid");
+                TextBoxClasses.Focus();
             }
             else
             {

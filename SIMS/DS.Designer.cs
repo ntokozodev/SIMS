@@ -12320,7 +12320,7 @@ namespace SIMS.DSTableAdapters {
             this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT CENTRE_ID, \"NAME\", ADDRESS, CLASSES FROM SIMS.CENTRE";
+            this._commandCollection[0].CommandText = "SELECT CENTRE_ID, \"NAME\", ADDRESS, CLASSES FROM SIMS.CENTRE\r\nORDER BY CENTRE_ID";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -18783,7 +18783,7 @@ namespace SIMS.DSTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[6];
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[7];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ADMISSION_NO, \"NAME\", SURNAME, GENDER, PHONE, ENROLLED_DATE, CITIZEN_ID, A" +
@@ -18822,23 +18822,29 @@ namespace SIMS.DSTableAdapters {
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT ADDRESS, ADMISSION_NO, CENTRE, CITIZEN_ID, CITY, EMAIL, ENROLLED_DATE, GEN" +
-                "DER, \"NAME\", PHONE, PICTURE, SUBURB, SURNAME, ZIPCODE FROM SIMS.STUDENT ORDER BY" +
-                " SURNAME";
+            this._commandCollection[4].CommandText = "SELECT ADMISSION_NO, \"NAME\", SURNAME, GENDER, PHONE, ENROLLED_DATE, CITIZEN_ID, A" +
+                "DDRESS, SUBURB, CITY, ZIPCODE, EMAIL, CENTRE, PICTURE FROM SIMS.STUDENT\r\nORDER B" +
+                "Y CENTRE";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[5].Connection = this.Connection;
             this._commandCollection[5].CommandText = "SELECT ADDRESS, ADMISSION_NO, CENTRE, CITIZEN_ID, CITY, EMAIL, ENROLLED_DATE, GEN" +
+                "DER, \"NAME\", PHONE, PICTURE, SUBURB, SURNAME, ZIPCODE FROM SIMS.STUDENT ORDER BY" +
+                " SURNAME";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "SELECT ADDRESS, ADMISSION_NO, CENTRE, CITIZEN_ID, CITY, EMAIL, ENROLLED_DATE, GEN" +
                 "DER, \"NAME\", PHONE, PICTURE, SUBURB, SURNAME, ZIPCODE FROM SIMS.STUDENT WHERE (A" +
                 "DMISSION_NO LIKE :ADMISSION_NO)";
-            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":ADMISSION_NO";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 255;
             param.IsNullable = true;
             param.SourceColumn = "ADMISSION_NO";
-            this._commandCollection[5].Parameters.Add(param);
+            this._commandCollection[6].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18965,8 +18971,21 @@ namespace SIMS.DSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int OrderBySurname(DS.STUDENTDataTable dataTable) {
+        public virtual int OrderByCentre(DS.STUDENTDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int OrderBySurname(DS.STUDENTDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -18979,7 +18998,7 @@ namespace SIMS.DSTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DS.STUDENTDataTable GetDataBySurname() {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             DS.STUDENTDataTable dataTable = new DS.STUDENTDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -18990,7 +19009,7 @@ namespace SIMS.DSTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int SearchByAdminNo(DS.STUDENTDataTable dataTable, string ADMISSION_NO) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             if ((ADMISSION_NO == null)) {
                 throw new global::System.ArgumentNullException("ADMISSION_NO");
             }
@@ -19009,7 +19028,7 @@ namespace SIMS.DSTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DS.STUDENTDataTable GetDataByAdminNo(string ADMISSION_NO) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             if ((ADMISSION_NO == null)) {
                 throw new global::System.ArgumentNullException("ADMISSION_NO");
             }

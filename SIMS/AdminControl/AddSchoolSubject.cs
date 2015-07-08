@@ -70,6 +70,8 @@ namespace SIMS.AdminControl
             }
             else if (TextBoxCode.Text == "")
                 MessageBox.Show("Enter subject code");
+            else if (TextBoxCode.Text.Length != 4)
+                MessageBox.Show("Subject code must contain exactly four characters");
             else if (TextBoxCost.Text == "")
                 MessageBox.Show("Enter subject cost");
             else if (ComboBoxCategory.Text == "")

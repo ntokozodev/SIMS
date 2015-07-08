@@ -248,7 +248,6 @@
             this.eMPLOYEEDataGridView.DataSource = this.employeeBS;
             this.eMPLOYEEDataGridView.Location = new System.Drawing.Point(20, 147);
             this.eMPLOYEEDataGridView.Name = "eMPLOYEEDataGridView";
-            this.eMPLOYEEDataGridView.ReadOnly = true;
             this.eMPLOYEEDataGridView.Size = new System.Drawing.Size(1124, 415);
             this.eMPLOYEEDataGridView.TabIndex = 4;
             // 
@@ -257,7 +256,6 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "EMPLOYEE_ID";
             this.dataGridViewTextBoxColumn1.HeaderText = "STAFF NO";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 82;
             // 
             // dataGridViewTextBoxColumn2
@@ -265,14 +263,12 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "NAME";
             this.dataGridViewTextBoxColumn2.HeaderText = "NAME";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "SURNAME";
             this.dataGridViewTextBoxColumn3.HeaderText = "SURNAME";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 90;
             // 
             // dataGridViewTextBoxColumn4
@@ -280,7 +276,6 @@
             this.dataGridViewTextBoxColumn4.DataPropertyName = "GENDER";
             this.dataGridViewTextBoxColumn4.HeaderText = "GENDER";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 70;
             // 
             // dataGridViewTextBoxColumn5
@@ -288,7 +283,6 @@
             this.dataGridViewTextBoxColumn5.DataPropertyName = "CITIZEN_ID";
             this.dataGridViewTextBoxColumn5.HeaderText = "ID NUMBER";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 92;
             // 
             // dataGridViewTextBoxColumn6
@@ -296,7 +290,6 @@
             this.dataGridViewTextBoxColumn6.DataPropertyName = "PHONE";
             this.dataGridViewTextBoxColumn6.HeaderText = "PHONE";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Width = 85;
             // 
             // dataGridViewTextBoxColumn7
@@ -304,7 +297,6 @@
             this.dataGridViewTextBoxColumn7.DataPropertyName = "ROLE";
             this.dataGridViewTextBoxColumn7.HeaderText = "ROLE";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Width = 70;
             // 
             // dataGridViewTextBoxColumn8
@@ -312,7 +304,6 @@
             this.dataGridViewTextBoxColumn8.DataPropertyName = "HIRE_DATE";
             this.dataGridViewTextBoxColumn8.HeaderText = "HIRE DATE";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             this.dataGridViewTextBoxColumn8.Width = 90;
             // 
             // dataGridViewTextBoxColumn9
@@ -320,7 +311,6 @@
             this.dataGridViewTextBoxColumn9.DataPropertyName = "EMAIL";
             this.dataGridViewTextBoxColumn9.HeaderText = "EMAIL";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             this.dataGridViewTextBoxColumn9.Width = 115;
             // 
             // dataGridViewTextBoxColumn10
@@ -328,7 +318,6 @@
             this.dataGridViewTextBoxColumn10.DataPropertyName = "ADDRESS";
             this.dataGridViewTextBoxColumn10.HeaderText = "ADDRESS";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
             this.dataGridViewTextBoxColumn10.Width = 128;
             // 
             // dataGridViewTextBoxColumn11
@@ -336,14 +325,12 @@
             this.dataGridViewTextBoxColumn11.DataPropertyName = "CITY";
             this.dataGridViewTextBoxColumn11.HeaderText = "CITY";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn12
             // 
             this.dataGridViewTextBoxColumn12.DataPropertyName = "ZIPCODE";
             this.dataGridViewTextBoxColumn12.HeaderText = "ZIPCODE";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
             this.dataGridViewTextBoxColumn12.Width = 59;
             // 
             // employeeTA

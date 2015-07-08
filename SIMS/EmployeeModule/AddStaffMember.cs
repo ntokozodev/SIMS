@@ -46,7 +46,7 @@ namespace SIMS.EmployeeModule
     {
         private SimsOracle db;
         private OracleCommand cmd;
-        ValidationClass checkIf = new ValidationClass();
+        private ValidationClass checkIf = new ValidationClass();
         
         public AddStaffMember()
         {
@@ -86,6 +86,8 @@ namespace SIMS.EmployeeModule
                 MessageBox.Show("Enter employee city");
             else if (TextBoxZipCode.Text == "" || TextBoxZipCode.Text.Length > 4 || TextBoxZipCode.Text.Length < 0)
                 MessageBox.Show("Employee postal code is not valid");
+            else if (TextBoxEmail.Text != "" && !checkIf.isValidEmail(TextBoxEmail.Text))
+                MessageBox.Show("Email address format is not valid");
             else
             {
                 var dateString = DateTimeHireStaff.Value.ToShortDateString();

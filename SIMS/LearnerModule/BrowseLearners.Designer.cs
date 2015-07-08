@@ -307,17 +307,9 @@
         private MetroFramework.Controls.MetroTile metroTileUpdateLearner;
         private MetroFramework.Controls.MetroTile metroTileSearchLearner;
         private MetroFramework.Controls.MetroTextBox metroTextBoxSearchLearner;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aDMISIONNODataGridViewTextBoxColumn;
         private MetroFramework.Controls.MetroTile metroTileClose;
         private MetroFramework.Controls.MetroComboBox metroComboBoxFilter;
         private MetroFramework.Controls.MetroTile metroTileFilter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fIRSTNAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lASTNAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sTUDENTGENDERDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pHONENUMBERDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aDMITTEDDATEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sTUDENTCITIZENIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cENTREDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView metroGridViewLearner;
         private MetroFramework.Controls.MetroTile metroTileSearchByAdminNo;
         private MetroFramework.Controls.MetroTextBox metroTextBoxSearchByAdminNo;

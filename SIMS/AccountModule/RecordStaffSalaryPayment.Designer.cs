@@ -560,10 +560,10 @@
             this.CheckBoxPayPeriod.FontWeight = MetroFramework.MetroCheckBoxWeight.Bold;
             this.CheckBoxPayPeriod.Location = new System.Drawing.Point(198, 621);
             this.CheckBoxPayPeriod.Name = "CheckBoxPayPeriod";
-            this.CheckBoxPayPeriod.Size = new System.Drawing.Size(293, 19);
+            this.CheckBoxPayPeriod.Size = new System.Drawing.Size(309, 19);
             this.CheckBoxPayPeriod.Style = MetroFramework.MetroColorStyle.Green;
             this.CheckBoxPayPeriod.TabIndex = 22;
-            this.CheckBoxPayPeriod.Text = "Have you selected the right pay period?";
+            this.CheckBoxPayPeriod.Text = "Have you selected the correct pay period?";
             this.CheckBoxPayPeriod.UseSelectable = true;
             this.CheckBoxPayPeriod.UseStyleColors = true;
             // 
