@@ -63,7 +63,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>geek_y2C_6.ico</ApplicationIcon>
+    <ApplicationIcon>glogo_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MetroFramework">
@@ -419,7 +419,9 @@
     <None Include="SIMS_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
@@ -443,6 +445,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="geek_y2C_6.ico" />
+    <Content Include="glogo_icon.ico" />
     <None Include="Resources\geek_y2C_6.png" />
     <None Include="Resources\Isibani-Pro-Tutor-Geek1.png" />
     <None Include="Resources\Isibani-Pro-Tutor2.png" />
