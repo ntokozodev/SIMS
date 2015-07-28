@@ -63,7 +63,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>glogo_icon.ico</ApplicationIcon>
+    <ApplicationIcon>glogo_icon0.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MetroFramework">
@@ -446,6 +446,7 @@
   <ItemGroup>
     <Content Include="geek_y2C_6.ico" />
     <Content Include="glogo_icon.ico" />
+    <Content Include="glogo_icon0.ico" />
     <None Include="Resources\geek_y2C_6.png" />
     <None Include="Resources\Isibani-Pro-Tutor-Geek1.png" />
     <None Include="Resources\Isibani-Pro-Tutor2.png" />

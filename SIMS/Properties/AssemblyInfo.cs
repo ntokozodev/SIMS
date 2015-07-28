@@ -9,9 +9,9 @@ using System.Resources;
 [assembly: AssemblyTitle("School Management Software")]
 [assembly: AssemblyDescription("This is a management software designed for schools to manage student enrolment and teachers.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Geek Studio Company")]
+[assembly: AssemblyCompany("Ntokozo Shagala Company")]
 [assembly: AssemblyProduct("School Management Software")]
-[assembly: AssemblyCopyright("Copyright © 2015, Geek Studio Company, (Pty) Ltd. All Rights Reserved.")]
+[assembly: AssemblyCopyright("Copyright © 2015, Ntokozo Shagala. All Rights Reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

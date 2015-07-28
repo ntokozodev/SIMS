@@ -498,7 +498,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MainPanel.BackColor = System.Drawing.Color.White;
-            this.MainPanel.BackgroundImage = global::SIMS.Properties.Resources.Isibani_Pro_Tutor_Geek1;
+            this.MainPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MainPanel.BackgroundImage")));
             this.MainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.MainPanel.ContextMenuStrip = this.mainPanelContextMenu;
             this.MainPanel.HorizontalScrollbarBarColor = true;
@@ -526,7 +526,7 @@
             this.Name = "ParentForm";
             this.Opacity = 0.98D;
             this.Style = MetroFramework.MetroColorStyle.Green;
-            this.Text = "GSC School Management Software";
+            this.Text = "School Management Software";
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TransparencyKey = System.Drawing.Color.Empty;
