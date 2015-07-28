@@ -1,7 +1,7 @@
 # SIMS
 School Information Management Software(SIMS) is an application designed to make management of school information
 and its administrative task more efficient and easily accessible at any particular time.
-This software has also been donated to Isibani Educational Empowerment (www.isibani-edu.org).
+This software has also been donated to Isibani Educational Empowerment and Pro-Tutoring.
 
 Installation:
 1. Download and install ODT with ODAC form oracle (set hostname to XE_DB).
