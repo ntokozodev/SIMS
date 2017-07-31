@@ -1,7 +1,7 @@
 ﻿/**
  * SIMS is (c) 2015 Ntokozo. All rights reserved.
  * 
- * http://www.ntokozo.co.za
+ * https://www.ntokozos.com
  *
  * COPYRIGHTS:
  * Copyright (c) 2015 Ntokozo. All rights reserved.
